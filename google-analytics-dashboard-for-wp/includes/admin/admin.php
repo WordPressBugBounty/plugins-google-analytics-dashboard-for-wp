@@ -38,63 +38,76 @@ function exactmetrics_admin_menu()
 		$menu_notification_indicator = ExactMetrics()->notifications->get_license_expired_indicator();
 	}
 
-	if ($hook === 'exactmetrics_settings') {
-		// If dashboards disabled, first settings page
-		add_menu_page(__('ExactMetrics', 'google-analytics-dashboard-for-wp'), 'ExactMetrics' . $menu_notification_indicator, 'exactmetrics_save_settings', 'exactmetrics_settings', 'exactmetrics_settings_page', $menu_icon_inline, '100.00013467543');
-		$hook = 'exactmetrics_settings';
+	$parent_slug          = 'exactmetrics_reports';
+	$hide_reports_submenu = false;
+	$is_lite              = ! exactmetrics_is_pro_version();
 
-		add_submenu_page($hook, __('ExactMetrics', 'google-analytics-dashboard-for-wp'), __('Settings', 'google-analytics-dashboard-for-wp'), 'exactmetrics_save_settings', 'exactmetrics_settings');
-	} else {
-		// if dashboards enabled, first dashboard
-		add_menu_page(__('General:', 'google-analytics-dashboard-for-wp'), 'ExactMetrics' . $menu_notification_indicator, 'exactmetrics_view_dashboard', 'exactmetrics_reports', 'exactmetrics_reports_page', $menu_icon_inline, '100.00013467543');
+    // If user not dismissed setup checklist.
+	if ( ! ExactMetrics()->setup_checklist->is_dismissed() ) {
+		$hide_reports_submenu = true;
+    }
 
-		if ( ! ExactMetrics()->setup_checklist->is_dismissed() ) {
-			add_submenu_page( $hook, __( 'Setup Checklist', 'google-analytics-dashboard-for-wp' ), __( 'Setup Checklist', 'google-analytics-dashboard-for-wp' ) . ExactMetrics()->setup_checklist->get_menu_count(), 'exactmetrics_save_settings', 'exactmetrics_settings#/setup-checklist', 'exactmetrics_settings_page' );
-		}
+    // If user disabled report view, and it is a lite user.
+	if ( $hook === 'exactmetrics_settings' ) {
+		$hide_reports_submenu = true;
+    }
 
-		add_submenu_page( $hook, __( 'General Reports:', 'google-analytics-dashboard-for-wp' ), __( 'Reports', 'google-analytics-dashboard-for-wp' ), 'exactmetrics_view_dashboard', 'exactmetrics_reports', 'exactmetrics_reports_page' );
+	add_menu_page(__('ExactMetrics', 'google-analytics-dashboard-for-wp'), 'ExactMetrics' . $menu_notification_indicator, 'exactmetrics_view_dashboard', $parent_slug, 'exactmetrics_reports_page', $menu_icon_inline, '100.00013467543');
 
-		// then settings page
-		add_submenu_page( $hook, __( 'ExactMetrics', 'google-analytics-dashboard-for-wp' ), __( 'Settings', 'google-analytics-dashboard-for-wp' ), 'exactmetrics_save_settings', 'exactmetrics_settings', 'exactmetrics_settings_page' );
+    if ( ! ExactMetrics()->setup_checklist->is_dismissed() ) {
+        add_submenu_page( $hook, __( 'Setup Checklist', 'google-analytics-dashboard-for-wp' ), __( 'Setup Checklist', 'google-analytics-dashboard-for-wp' ) . ExactMetrics()->setup_checklist->get_menu_count(), 'exactmetrics_save_settings', 'exactmetrics_settings#/setup-checklist', 'exactmetrics_settings_page' );
+    }
 
-		// Add dashboard submenu.
-		add_submenu_page( 'index.php', __( 'General Reports:', 'google-analytics-dashboard-for-wp' ), 'ExactMetrics', 'exactmetrics_view_dashboard', 'admin.php?page=exactmetrics_reports' );
-
-		// If the setup checklist is not dismissed, remove the own submenu of `Insights` main menu that we added on line 52.
-		// This way the Checklist will be the first submenu which is an important thing for onboarding.
-		if ( ! ExactMetrics()->setup_checklist->is_dismissed() ) {
-
-			// Check if the user has the capability to save settings and view dashboard.
-			// We should skip this for editors that have only view capability have only item in the submenu, removing that would break the menu.
-			if ( ! ( ! current_user_can( 'exactmetrics_save_settings' ) && current_user_can( 'exactmetrics_view_dashboard' ) ) ) {
-				// Remove own submenu of `Insights` main menu.
-				remove_submenu_page( 'exactmetrics_reports', 'exactmetrics_reports' );
-			}
-		}
+	if ( $hook === 'exactmetrics_reports' ) {
+		add_submenu_page( $parent_slug, __( 'General Reports:', 'google-analytics-dashboard-for-wp' ), __( 'Reports', 'google-analytics-dashboard-for-wp' ), 'exactmetrics_view_dashboard', 'exactmetrics_reports', 'exactmetrics_reports_page' );
 	}
+
+    // then settings page
+    add_submenu_page( $parent_slug, __( 'ExactMetrics', 'google-analytics-dashboard-for-wp' ), __( 'Settings', 'google-analytics-dashboard-for-wp' ), 'exactmetrics_save_settings', 'exactmetrics_settings', 'exactmetrics_settings_page' );
+
+    // Add dashboard submenu.
+    add_submenu_page( 'index.php', __( 'General Reports:', 'google-analytics-dashboard-for-wp' ), 'ExactMetrics', 'exactmetrics_view_dashboard', 'admin.php?page=exactmetrics_reports' );
+
+    // If the setup checklist is not dismissed, remove the own submenu of `Insights` main menu that we added on line 52.
+    // This way the Checklist will be the first submenu which is an important thing for onboarding.
+    if ( $hide_reports_submenu ) {
+
+        // Check if the user has the capability to save settings and view dashboard.
+        // We should skip this for editors that have only view capability have only item in the submenu, removing that would break the menu.
+        if ( ! ( ! current_user_can( 'exactmetrics_save_settings' ) && current_user_can( 'exactmetrics_view_dashboard' ) ) ) {
+            // Remove own submenu of `Insights` main menu.
+            remove_submenu_page( 'exactmetrics_reports', 'exactmetrics_reports' );
+        }
+    }
 
 	$submenu_base = add_query_arg('page', 'exactmetrics_settings', admin_url('admin.php'));
 
     //  Site Notes
-	add_submenu_page( $hook, __( 'Site Notes:', 'google-analytics-dashboard-for-wp' ), __( 'Site Notes', 'google-analytics-dashboard-for-wp' ), 'exactmetrics_save_settings', $submenu_base . '#/site-notes' );
+	add_submenu_page( $parent_slug, __( 'Site Notes:', 'google-analytics-dashboard-for-wp' ), __( 'Site Notes', 'google-analytics-dashboard-for-wp' ), 'exactmetrics_save_settings', $submenu_base . '#/site-notes' );
 
-	//  AI Insights
-	// translators: Icon
-	add_submenu_page( $hook, __( 'AI Insights:', 'google-analytics-dashboard-for-wp' ), sprintf( __( '%s AI Insights', 'google-analytics-dashboard-for-wp' ), exactmetrics_get_ai_menu_icon() ), 'exactmetrics_save_settings', 'admin.php?page=exactmetrics_reports#/ai-insights' );
+    // If report disabled then remove this menu.
+    if ( $hook === 'exactmetrics_reports' || $is_lite ) {
+	    //  AI Insights
+	    // translators: Icon
+	    add_submenu_page( $parent_slug, __( 'AI Insights:', 'google-analytics-dashboard-for-wp' ), sprintf( __( '%s AI Insights', 'google-analytics-dashboard-for-wp' ), exactmetrics_get_ai_menu_icon() ), 'exactmetrics_save_settings', 'admin.php?page=exactmetrics_reports#/ai-insights' );
+    }
 
 	$license_type = ExactMetrics()->license->get_license_type();
 
 	//  AI Chat
-	if ( ! exactmetrics_is_pro_version() || 'plus' === $license_type ) {
-		// translators: Placeholder adds an svg icon
-		add_submenu_page( $hook, __( 'Conversations AI:', 'google-analytics-dashboard-for-wp' ), sprintf( __( '%s Conversations AI', 'google-analytics-dashboard-for-wp' ), exactmetrics_get_ai_menu_icon() ), 'exactmetrics_save_settings', 'admin.php?page=exactmetrics_reports#/ai-insights/chat' );
+	if ( $is_lite || 'plus' === $license_type ) {
+		// translators: Placeholder adds a svg icon
+		add_submenu_page( $parent_slug, __( 'Conversations AI:', 'google-analytics-dashboard-for-wp' ), sprintf( __( '%s Conversations AI', 'google-analytics-dashboard-for-wp' ), exactmetrics_get_ai_menu_icon() ), 'exactmetrics_save_settings', 'admin.php?page=exactmetrics_reports#/ai-insights/chat' );
 	}
 
 	// Add Popular Posts menu item.
-	add_submenu_page( $hook, __( 'Popular Posts:', 'google-analytics-dashboard-for-wp' ), __( 'Popular Posts', 'google-analytics-dashboard-for-wp' ), 'exactmetrics_save_settings', $submenu_base . '#/popular-posts' );
+	add_submenu_page( $parent_slug, __( 'Popular Posts:', 'google-analytics-dashboard-for-wp' ), __( 'Popular Posts', 'google-analytics-dashboard-for-wp' ), 'exactmetrics_save_settings', $submenu_base . '#/popular-posts' );
 
-	// Add submenu under `Insights` main menu for user journey report.
-	add_submenu_page( $hook, __( 'User Journey:', 'google-analytics-dashboard-for-wp' ), __( 'User Journey', 'google-analytics-dashboard-for-wp' ), 'exactmetrics_view_dashboard', 'admin.php?page=exactmetrics_reports#/user-journey-report' );
+	// If report disabled then remove this menu.
+	if ( $hook === 'exactmetrics_reports' || $is_lite ) {
+		// Add submenu under `Insights` main menu for user journey report.
+		add_submenu_page( $parent_slug, __( 'User Journey:', 'google-analytics-dashboard-for-wp' ), __( 'User Journey', 'google-analytics-dashboard-for-wp' ), 'exactmetrics_view_dashboard', 'admin.php?page=exactmetrics_reports#/user-journey-report' );
+	}
 
 	if ( function_exists( 'aioseo' ) ) {
 		$seo_url = exactmetrics_aioseo_dashboard_url();
@@ -102,19 +115,19 @@ function exactmetrics_admin_menu()
 		$seo_url = $submenu_base . '#/seo';
 	}
 	// then SEO
-	add_submenu_page($hook, __('SEO', 'google-analytics-dashboard-for-wp'), __('SEO', 'google-analytics-dashboard-for-wp'), 'manage_options', $seo_url);
+	add_submenu_page($parent_slug, __('SEO', 'google-analytics-dashboard-for-wp'), __('SEO', 'google-analytics-dashboard-for-wp'), 'manage_options', $seo_url);
 
 	// then tools
-	add_submenu_page($hook, __('Tools:', 'google-analytics-dashboard-for-wp'), __('Tools', 'google-analytics-dashboard-for-wp'), 'manage_options', $submenu_base . '#/tools');
+	add_submenu_page($parent_slug, __('Tools:', 'google-analytics-dashboard-for-wp'), __('Tools', 'google-analytics-dashboard-for-wp'), 'manage_options', $submenu_base . '#/tools');
 
 	// then addons
 	$network_key = exactmetrics_is_pro_version() ? ExactMetrics()->license->get_network_license_key() : '';
 	if (!exactmetrics_is_network_active() || (exactmetrics_is_network_active() && empty($network_key))) {
-		add_submenu_page($hook, __('Addons:', 'google-analytics-dashboard-for-wp'), '<span style="color:' . exactmetrics_menu_highlight_color() . '"> ' . __('Addons', 'google-analytics-dashboard-for-wp') . '</span>', 'exactmetrics_save_settings', $submenu_base . '#/addons');
+		add_submenu_page($parent_slug, __('Addons:', 'google-analytics-dashboard-for-wp'), '<span style="color:' . exactmetrics_menu_highlight_color() . '"> ' . __('Addons', 'google-analytics-dashboard-for-wp') . '</span>', 'exactmetrics_save_settings', $submenu_base . '#/addons');
 	}
 
 	add_submenu_page(
-		$hook,
+		$parent_slug,
 		__('UserFeedback:', 'google-analytics-dashboard-for-wp'),
 		__('UserFeedback', 'google-analytics-dashboard-for-wp') . $new_indicator,
 		'manage_options',
@@ -122,24 +135,24 @@ function exactmetrics_admin_menu()
 	);
 
 	// then About Us page.
-	add_submenu_page($hook, __('About Us:', 'google-analytics-dashboard-for-wp'), __('About Us', 'google-analytics-dashboard-for-wp'), 'manage_options', $submenu_base . '#/about');
+	add_submenu_page($parent_slug, __('About Us:', 'google-analytics-dashboard-for-wp'), __('About Us', 'google-analytics-dashboard-for-wp'), 'manage_options', $submenu_base . '#/about');
 
 	if (!exactmetrics_is_pro_version() && !strstr(plugin_basename(__FILE__), 'dashboard-for')) {
 		// automated promotion
 		exactmetrics_automated_menu($hook);
 	}
 
-	add_submenu_page($hook, __('Growth Tools:', 'google-analytics-dashboard-for-wp'), __('Growth Tools', 'google-analytics-dashboard-for-wp'), 'manage_options', $submenu_base . '#/growth-tools');
+	add_submenu_page($parent_slug, __('Growth Tools:', 'google-analytics-dashboard-for-wp'), __('Growth Tools', 'google-analytics-dashboard-for-wp'), 'manage_options', $submenu_base . '#/growth-tools');
 
 	// then Upgrade To Pro.
 	if (!exactmetrics_is_pro_version()) {
-		add_submenu_page($hook, __('Upgrade to Pro:', 'google-analytics-dashboard-for-wp'), '<span class="exactmetrics-upgrade-submenu"> ' . __('Upgrade to Pro', 'google-analytics-dashboard-for-wp') . '</span>', 'exactmetrics_save_settings', exactmetrics_get_upgrade_link('admin-menu', 'submenu', "https://www.exactmetrics.com/lite/"));
+		add_submenu_page($parent_slug, __('Upgrade to Pro:', 'google-analytics-dashboard-for-wp'), '<span class="exactmetrics-upgrade-submenu"> ' . __('Upgrade to Pro', 'google-analytics-dashboard-for-wp') . '</span>', 'exactmetrics_save_settings', exactmetrics_get_upgrade_link('admin-menu', 'submenu', "https://www.exactmetrics.com/lite/"));
 	}
 
 	if ( class_exists( 'WooCommerce' ) ) {
 		// Show the Payments submenu only when WooCommerce is active.
 		add_submenu_page(
-			$hook,
+			$parent_slug,
 			__('Payments:', 'google-analytics-dashboard-for-wp'),
 			__('Payments', 'google-analytics-dashboard-for-wp'),
 			'manage_options',
@@ -226,7 +239,7 @@ function exactmetrics_woocommerce_menu_item()
 		} else {
 			$submenu_base = add_query_arg('page', 'exactmetrics_settings', admin_url('admin.php'));
 			add_submenu_page('wc-admin&path=/analytics/overview', 'ExactMetrics', 'ExactMetrics', 'manage_options', $submenu_base . '#/woocommerce-insights', '', 1);
-		}		
+		}
 	}
 }
 add_action('admin_menu', 'exactmetrics_woocommerce_menu_item', 11);

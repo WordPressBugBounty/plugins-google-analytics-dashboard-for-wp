@@ -54,11 +54,14 @@ class ExactMetrics_Onboarding_Wizard {
 	 */
 	public function maybe_load_onboarding_wizard() {
 
-		// Check for wizard-specific parameter
-		// Allow plugins to disable the onboarding wizard
-		// Check if current user is allowed to save settings.
-		if ( ! ( isset( $_GET['page'] ) || 'exactmetrics-onboarding' !== $_GET['page'] || apply_filters( 'exactmetrics_enable_onboarding_wizard', true ) || ! current_user_can( 'exactmetrics_save_settings' ) ) ) { // WPCS: CSRF ok, input var ok.
-			return;
+		// Check if the page is not set, or if it's not the onboarding wizard page
+		if ( empty( $_GET['page'] ) || 'exactmetrics-onboarding' !== $_GET['page'] ) {
+		        return;
+		}
+
+		// Check if the current user is allowed to save settings
+		if ( ! current_user_can( 'exactmetrics_save_settings' ) ) {
+		        return;
 		}
 
 		// Don't load the interface if doing an ajax call.

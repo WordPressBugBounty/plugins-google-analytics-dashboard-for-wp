@@ -114,6 +114,9 @@ class ExactMetrics_Rest_Routes {
 			'network_viewname'                    => $auth->get_network_viewname(),
 			'network_manual_v4'                   => $auth->get_network_manual_v4_id(),
 			'network_measurement_protocol_secret' => $auth->get_network_measurement_protocol_secret(),
+			//  Custom tracking fields (Gtag selector)
+			'gtag_selector_tracking_tag'          => exactmetrics_get_option( 'gtag_selector_tracking_tag', '' ),
+			'gtag_selector_tracking_mp'           => exactmetrics_get_option( 'gtag_selector_tracking_mp', '' ),
 		) );
 
 	}
