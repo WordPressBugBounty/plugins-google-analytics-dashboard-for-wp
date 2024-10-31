@@ -3702,6 +3702,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_HeadlinePanelWordCount__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/HeadlinePanelWordCount */ "./src/plugins/exactmetrics-Headline-Analyzer/components/HeadlinePanelWordCount.js");
 /* harmony import */ var _components_HeadlinePanelStartEndWords__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/HeadlinePanelStartEndWords */ "./src/plugins/exactmetrics-Headline-Analyzer/components/HeadlinePanelStartEndWords.js");
 /* harmony import */ var _components_HeadlinePanelSearchPreview__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/HeadlinePanelSearchPreview */ "./src/plugins/exactmetrics-Headline-Analyzer/components/HeadlinePanelSearchPreview.js");
+var _wp$editor$PluginSide, _wp$editPost$PluginSi, _wp$editor$PluginSide2, _wp$editPost$PluginSi2;
 
 const {
   __
@@ -3714,10 +3715,8 @@ const {
 const {
   registerPlugin
 } = wp.plugins;
-const {
-  PluginSidebar,
-  PluginSidebarMoreMenuItem
-} = wp.editor;
+const PluginSidebar = (_wp$editor$PluginSide = wp.editor?.PluginSidebar) !== null && _wp$editor$PluginSide !== void 0 ? _wp$editor$PluginSide : (_wp$editPost$PluginSi = wp.editPost?.PluginSidebar) !== null && _wp$editPost$PluginSi !== void 0 ? _wp$editPost$PluginSi : wp.editSite?.PluginSidebar;
+const PluginSidebarMoreMenuItem = (_wp$editor$PluginSide2 = wp.editor?.PluginSidebarMoreMenuItem) !== null && _wp$editor$PluginSide2 !== void 0 ? _wp$editor$PluginSide2 : (_wp$editPost$PluginSi2 = wp.editPost?.PluginSidebarMoreMenuItem) !== null && _wp$editPost$PluginSi2 !== void 0 ? _wp$editPost$PluginSi2 : wp.editSite?.PluginSidebarMoreMenuItem;
 const {
   useSelect
 } = wp.data;
@@ -4400,6 +4399,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_pro_badge__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/pro-badge */ "./src/plugins/metabox/components/pro-badge.js");
 /* harmony import */ var _components_page_insights_GUTENBERG_APP_VERSION__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/page-insights-GUTENBERG_APP_VERSION */ "./src/plugins/metabox/components/page-insights-Lite.js");
 /* harmony import */ var _components_site_notes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/site-notes */ "./src/plugins/metabox/components/site-notes.js");
+var _wp$editor$PluginDocu, _wp$editPost$PluginDo;
 
 const {
   ToggleControl
@@ -4414,9 +4414,7 @@ const {
 const {
   __
 } = wp.i18n;
-const {
-  PluginDocumentSettingPanel
-} = wp.editor;
+const PluginDocumentSettingPanel = (_wp$editor$PluginDocu = wp.editor?.PluginDocumentSettingPanel) !== null && _wp$editor$PluginDocu !== void 0 ? _wp$editor$PluginDocu : (_wp$editPost$PluginDo = wp.editPost?.PluginDocumentSettingPanel) !== null && _wp$editPost$PluginDo !== void 0 ? _wp$editPost$PluginDo : wp.editSite?.PluginDocumentSettingPanel;
 const {
   useState,
   Fragment
