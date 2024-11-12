@@ -681,7 +681,7 @@ function exactmetrics_maybe_add_wp_php_version_notification() {
 add_action( 'admin_init', 'exactmetrics_maybe_add_wp_php_version_notification' );
 
 /**
- * Add notification for Year In Review report for year 2023.
+ * Add notification for Year In Review report.
  *
  * @return void
  * @since 7.13.2
@@ -689,14 +689,14 @@ add_action( 'admin_init', 'exactmetrics_maybe_add_wp_php_version_notification' )
  */
 function exactmetrics_year_in_review_notification() {
 
-	// Check if dates are between Jan 1st 2023 & 14th Jan 2023.
-	if ( exactmetrics_date_is_between( '2023-01-01', '2023-01-14' ) ) {
+	// Check if dates are between Jan 1st 2024 & 14th Jan 2024.
+	if ( exactmetrics_date_is_between( '2024-01-01', '2024-01-14' ) ) {
 
 		$notification['id']      = 'exactmetrics_notification_year_in_review';
 		$notification['type']    = array( 'basic', 'lite', 'master', 'plus', 'pro' );
-		$notification['start']   = '2023-01-01';
-		$notification['end']     = '2023-01-14';
-		$notification['title']   = esc_html__( 'View 2023 Year in Review report!', 'google-analytics-dashboard-for-wp' );
+		$notification['start']   = '2024-01-01';
+		$notification['end']     = '2024-01-14';
+		$notification['title']   = esc_html__( 'View 2024 Year in Review report!', 'google-analytics-dashboard-for-wp' );
 		$notification['content'] = esc_html__( 'See how your website performed this year and find tips along the way to help grow even more in 2024!', 'google-analytics-dashboard-for-wp' );
 		$notification['btns']    = array(
 			'learn_more' => array(
@@ -739,8 +739,8 @@ function exactmetrics_yearinreview_dates() {
 	$current_date = wp_date( 'Y-m-d' );
 	$current_year = wp_date( 'Y' );
 	$report_year = $current_year - 1;
-	$report_year = 2023;
-	$next_year = 2024;
+	$report_year = 2024;
+	$next_year = 2025;
 	$show_report = false;
 
 	$next_year = (string) $report_year + 1;

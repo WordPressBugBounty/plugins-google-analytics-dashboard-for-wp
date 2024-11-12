@@ -2,24 +2,24 @@
 # This file is distributed under the same license as the Google Analytics Dashboard for WP (GADWP) plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Google Analytics Dashboard for WP (GADWP) 8.2.1\n"
+"Project-Id-Version: Google Analytics Dashboard for WP (GADWP) 8.2.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/google-analytics-dashboard-for-wp-working-dir\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-10-31T16:14:47+00:00\n"
+"POT-Creation-Date: 2024-11-12T15:27:20+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: google-analytics-dashboard-for-wp\n"
 
-#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:106
+#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:105
 msgctxt "google-analytics-dashboard-for-wp"
 msgid " and add a new one."
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:253
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:251
 msgctxt "google-analytics-dashboard-for-wp"
 msgid " visitors"
 msgstr ""
@@ -44,7 +44,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "& Many More!"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:258
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:256
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "#1"
 msgstr ""
@@ -96,12 +96,12 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "% of Visits"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:458
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:453
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "%1$s&#37 of your visitors were %2$s"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:465
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:460
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "%1$s&#37 of your visitors were between the ages of %2$s"
 msgstr ""
@@ -340,15 +340,20 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "%s results"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:440
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:435
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "%s Visitors"
 msgstr ""
 
 #: src/modules/reports/components/exactmetrics-ReportsNavigation.vue:84
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:351
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:347
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "%s Year in Review"
+msgstr ""
+
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:370
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "© ExactMetrics, %s"
 msgstr ""
 
 #: src/modules/site-notes/components/overview-report/list.vue:131
@@ -569,12 +574,12 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "A session is the browsing session of a single user to your site."
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:365
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:360
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "A Tip for %s"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:367
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:362
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "A Tip For %s"
 msgstr ""
@@ -792,7 +797,7 @@ msgid "Add Top 5 Posts from Google Analytics"
 msgstr ""
 
 #: src/modules/settings/components/exactmetrics-SettingsNetwork.vue:82
-#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:100
+#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:99
 #: src/modules/settings/components/tabs/exactmetrics-SettingsTabGeneral-Lite.vue:123
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Add your ExactMetrics license key from the email receipt or account area. %1$sRetrieve your license key%2$s."
@@ -1086,7 +1091,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Apply"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:312
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:309
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "April"
 msgstr ""
@@ -1132,12 +1137,12 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "At least 0 item required."
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:249
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:247
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Audience"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:316
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:313
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "August"
 msgstr ""
@@ -1251,7 +1256,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Available in PRO version"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:266
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:264
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Average Age"
 msgstr ""
@@ -1328,7 +1333,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Back to Inbox"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:248
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:246
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Back to Overview Report"
 msgstr ""
@@ -1361,14 +1366,14 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Basic Widget"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:373
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:368
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Become a WordPress expert in %s. Join our amazing communities and take your website to the next level."
 msgstr ""
 
 #: src/modules/popular-posts/components/PopularPostsInline.vue:120
 #: src/modules/popular-posts/components/PopularPostsWidget.vue:113
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:267
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:265
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Behavior"
 msgstr ""
@@ -1608,7 +1613,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "CEO, Solergo"
 msgstr ""
 
-#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:96
+#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:95
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Change Key"
 msgstr ""
@@ -1763,7 +1768,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Choose your badge style."
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:292
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:290
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Chris Christoff"
 msgstr ""
@@ -1788,12 +1793,12 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Click %1$sExport Settings%2$s to export a file with your ExactMetrics settings."
 msgstr ""
 
-#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:91
+#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:90
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Click %1$sRefresh Key%2$s if your license has been recently upgraded or the license type is incorrect. "
 msgstr ""
 
-#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:105
+#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:104
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "click here to deactivate"
 msgstr ""
@@ -1810,7 +1815,7 @@ msgstr ""
 
 #: src/modules/reports/components/reports/exactmetrics-ReportEngagementOverview.vue:161
 #: src/modules/reports/components/reports/exactmetrics-ReportSearchConsole.vue:74
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:277
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:275
 #: src/modules/widget/components/reports/WidgetReportDownloadLinks.vue:31
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Clicks"
@@ -1913,7 +1918,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Compliant"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:250
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:248
 #: src/modules/settings/components/input/tab-setup-checklist/SettingsTabSetupChecklist.vue:408
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Congrats!"
@@ -1926,7 +1931,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Congrats! All-in-One SEO Installed."
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:251
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:249
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Congrats! This year your website had "
 msgstr ""
@@ -2029,10 +2034,10 @@ msgstr ""
 #: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputAuthenticate-Lite.vue:223
 #: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputAuthenticate-Lite.vue:260
 #: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputAuthenticate-Lite.vue:271
-#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:244
-#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:259
-#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:290
-#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:304
+#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:243
+#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:258
+#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:289
+#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:303
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Continue %s"
 msgstr ""
@@ -2119,11 +2124,6 @@ msgstr ""
 #: src/modules/tools/components/exactmetrics-ToolsTabUrlBuilder.vue:202
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Copy to Pretty Links"
-msgstr ""
-
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:375
-msgctxt "google-analytics-dashboard-for-wp"
-msgid "Copyright ExactMetrics, %s"
 msgstr ""
 
 #: src/modules/reports/components/reports/exactmetrics-ReportRealTime.vue:232
@@ -2405,7 +2405,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Deactivate"
 msgstr ""
 
-#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:97
+#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:96
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Deactivate this license key"
 msgstr ""
@@ -2415,8 +2415,8 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Deactivating Addon"
 msgstr ""
 
-#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:270
-#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:315
+#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:269
+#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:314
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Deactivating License"
 msgstr ""
@@ -2432,7 +2432,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Deauthenticating"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:320
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:317
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "December"
 msgstr ""
@@ -2459,7 +2459,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Deleting Exception"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:257
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:255
 #: src/modules/settings/components/tabs/exactmetrics-SettingsTabEngagement.vue:88
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Demographics"
@@ -2515,7 +2515,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Device Breakdown"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:272
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:270
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Device Type"
 msgstr ""
@@ -2525,17 +2525,17 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Did the login/registration step of the checkout put users off?"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:294
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:292
 msgctxt "google-analytics-dashboard-for-wp"
-msgid "Did you know over 10 million websites use our plugins?"
+msgid "Did you know over 25 million websites use our plugins?"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:273
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:271
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Did you know that using internal links can give you huge SEO gains? Get the scoop on internal links and how to build them in our guide."
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:284
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:282
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Did you know you might have direct traffic that's getting counted wrong by Google Analytics? Learn how to track it correctly in our direct traffic guide."
 msgstr ""
@@ -2732,11 +2732,6 @@ msgstr ""
 #: src/modules/settings/components/input/tab-conversions/SettingsInputDimensions.vue:174
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Each dimension needs to have an id set."
-msgstr ""
-
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:526
-msgctxt "google-analytics-dashboard-for-wp"
-msgid "Each visitor spent an average of <strong>%1$s minutes</strong> on your website in <strong>%2$s</strong>."
 msgstr ""
 
 #: src/modules/seo/components/aioseo.vue:186
@@ -3036,7 +3031,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Enhanced Link Attribution is enabled the moment you set up ExactMetrics"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:289
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:287
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Enjoying ExactMetrics?"
 msgstr ""
@@ -3272,7 +3267,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Extensions of Files to Track as Downloads"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:296
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:294
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Facebook Group"
 msgstr ""
@@ -3302,7 +3297,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "FEATURES"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:310
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:307
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "February"
 msgstr ""
@@ -3312,7 +3307,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Feedback submitted will include your analytics data & insights provided so we can improve. Thank you!"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:262
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:260
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Female"
 msgstr ""
@@ -3372,12 +3367,12 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "First Page"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:304
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:301
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Follow ExactMetrics on social media to stay up to date with latest updates, trends, and tutorials on how to make the most out of analytics."
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:303
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:300
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Follow Us!"
 msgstr ""
@@ -3472,7 +3467,7 @@ msgid "GDPR Guide"
 msgstr ""
 
 #: src/modules/reports/components/reports/exactmetrics-ReportEngagementOverview.vue:181
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:261
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:259
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Gender"
 msgstr ""
@@ -3777,7 +3772,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Here are the features that make ExactMetrics the most powerful and user-friendly WordPress analytics plugin in the market."
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:369
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:364
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Here's to an amazing %s!"
 msgstr ""
@@ -3787,11 +3782,6 @@ msgstr ""
 #: src/modules/user-journey/components/ExactMetricsUpsell.vue:39
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Here's what you get:"
-msgstr ""
-
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:302
-msgctxt "google-analytics-dashboard-for-wp"
-msgid "Hey! 👋 <br />Your Year in Review Report  is only showing statistics after July 1, 2023 due to the Google Analytics 3 sunset!"
 msgstr ""
 
 #: src/modules/settings/components/tabs/exactmetrics-SettingsTabAdvanced.vue:139
@@ -3888,7 +3878,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "If enabled ExactMetrics will send some information about your WordPress site like what plugins and themes you use and which ExactMetrics settings you use to us so that we can improve our product. For a complete list of what we send and what we use it for, %1$svisit our website.%2$s"
 msgstr ""
 
-#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:84
+#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:83
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "If you would like to use a different license for this subsite, you can enter it below."
 msgstr ""
@@ -4275,12 +4265,12 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Jack Brown"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:309
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:306
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "January"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:354
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:350
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "January 1, %1$s - December 31, %2$s"
 msgstr ""
@@ -4296,12 +4286,12 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Join 2,000,000+ Professionals who use AIOSEO to Improve Their Website Search Rankings."
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:298
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:296
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Join Now...It’s Free!"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:295
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:293
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Join our Communities!"
 msgstr ""
@@ -4311,7 +4301,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Join Our Community"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:297
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:295
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Join our team of WordPress experts and other motivated website owners in the WPBeginner Engage Facebook Group."
 msgstr ""
@@ -4323,12 +4313,12 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Julie Dupuis - Faraway Land Travel"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:315
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:312
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "July"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:314
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:311
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "June"
 msgstr ""
@@ -4535,7 +4525,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Learn more about one-click eCommerce tracking"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:290
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:288
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Leave a five star review!"
 msgstr ""
@@ -4545,7 +4535,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Left"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:260
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:258
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Let’s get to know your visitors a little better, shall we?"
 msgstr ""
@@ -4671,7 +4661,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Make your website more compliant with privacy regulations like GDPR, CCPA, and PECR."
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:264
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:262
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Male"
 msgstr ""
@@ -4699,12 +4689,12 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Manually enter your GA4 Measurement ID"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:311
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:308
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "March"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:313
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:310
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "May"
 msgstr ""
@@ -4765,7 +4755,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Minor only %1$s- Get bugfixes and security updates, but not major features.%2$s"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:271
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:269
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "minutes"
 msgstr ""
@@ -5116,7 +5106,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "No landing pages tracked during this time period."
 msgstr ""
 
-#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:85
+#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:84
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "No license key activated on this subsite"
 msgstr ""
@@ -5243,7 +5233,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Notifications"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:319
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:316
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "November"
 msgstr ""
@@ -5263,7 +5253,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Number of Posts"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:318
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:315
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "October"
 msgstr ""
@@ -5277,9 +5267,9 @@ msgstr ""
 #: src/modules/reports/components/exactmetrics-YearInReviewReportsPdfExport.vue:180
 #: src/modules/reports/components/exactmetrics-YearInReviewReportsPdfExport.vue:203
 #: src/modules/reports/components/ReportReAuth.vue:47
-#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:197
-#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:209
-#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:335
+#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:196
+#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:208
+#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:334
 #: src/modules/settings/components/input/tab-general/SettingsInputLicense-Lite.vue:84
 #: src/modules/settings/components/tabs/exactmetrics-SettingsTabGeneral-Lite.vue:194
 #: src/modules/tools/components/exactmetrics-ToolsTabImportExport.vue:113
@@ -5364,7 +5354,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Oops! There was an error processing request. Please try again later."
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:283
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:281
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Opportunity"
 msgstr ""
@@ -5547,8 +5537,8 @@ msgstr ""
 #: src/modules/reports/components/reports-overview/ReportSiteSummary.vue:266
 #: src/modules/reports/components/reports/exactmetrics-ReportCountries.vue:103
 #: src/modules/reports/components/reports/exactmetrics-ReportOverview.vue:359
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:269
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:281
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:267
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:279
 #: src/modules/reports/components/traffic/CommonSessionChart.vue:93
 #: src/modules/reports/components/traffic/exactmetrics-ReportTrafficCampaign.vue:112
 #: src/modules/reports/components/traffic/exactmetrics-ReportTrafficLandindPages.vue:112
@@ -5565,7 +5555,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Pageviews Per Minute"
 msgstr ""
 
-#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:98
+#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:97
 #: src/modules/settings/components/input/tab-general/SettingsInputLicense-Lite.vue:40
 #: src/modules/settings/components/tabs/exactmetrics-SettingsTabGeneral-Lite.vue:124
 #: src/modules/wizard-onboarding/components/steps/exactmetrics-OnboardingStepSuccess.vue:170
@@ -5977,12 +5967,12 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Re-Authenticating"
 msgstr ""
 
-#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:107
+#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:106
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Reactivate This License"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:274
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:272
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Read - How to Use WordPress Internal Links for SEO"
 msgstr ""
@@ -6110,7 +6100,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Refresh Cache Every"
 msgstr ""
 
-#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:88
+#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:87
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Refresh Key"
 msgstr ""
@@ -6121,7 +6111,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Refreshing Addons"
 msgstr ""
 
-#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:223
+#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:222
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Refreshing License"
 msgstr ""
@@ -6250,11 +6240,6 @@ msgstr ""
 #: src/modules/growth-tools/exactmetrics-growth-tools.vue:217
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Revenue Tools"
-msgstr ""
-
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:408
-msgctxt "google-analytics-dashboard-for-wp"
-msgid "Review your top referral traffic sources and top pages for the month of %s in the Overview report to replicate your success."
 msgstr ""
 
 #: src/modules/tools/components/ToolsTabVerifiedBadge.vue:83
@@ -6474,7 +6459,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "See How Many Sessions are Needed for a Purchase"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:361
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:356
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "See how your website performed this year and find tips along the way to help grow even more in %s!"
 msgstr ""
@@ -6507,6 +6492,11 @@ msgstr ""
 #: src/modules/settings/components/tabs/exactmetrics-SettingsTabEcommerce-Lite.vue:88
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "See The Time it Takes for Customers to Purchase"
+msgstr ""
+
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:397
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "See the top %sTraffic Sources%s and %sTop Pages%s for the Month of %s in the Overview Report to replicate your success."
 msgstr ""
 
 #: src/modules/settings/components/tabs/exactmetrics-SettingsTabEcommerce-Lite.vue:72
@@ -6686,7 +6676,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "SEO user roles allow you to manage access to important SEO features without handing over control of your website."
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:317
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:314
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "September"
 msgstr ""
@@ -6998,7 +6988,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Smash Balloon - Instagram"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:276
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:274
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "So, where did all of these visitors come from?"
 msgstr ""
@@ -7177,7 +7167,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Step-by-Step Purchase Paths"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:247
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:245
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Still Calculating..."
 msgstr ""
@@ -7193,9 +7183,9 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Submit"
 msgstr ""
 
-#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:195
-#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:241
-#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:287
+#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:194
+#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:240
+#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:286
 #: src/modules/wizard-onboarding/components/steps/exactmetrics-OnboardingStepSuccess.vue:156
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Success"
@@ -7233,7 +7223,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Switch to AIOSEO"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:291
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:289
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Syed Balkhi"
 msgstr ""
@@ -7294,7 +7284,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Thank you for choosing ExactMetrics -%s The Most Powerful WordPress Analytics Plugin"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:287
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:285
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Thank you for using ExactMetrics!"
 msgstr ""
@@ -7360,7 +7350,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "The full website URL (e.g. %1$s %2$s%3$s)"
 msgstr ""
 
-#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:101
+#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:100
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "The license key is used to enable updates for ExactMetrics Pro and addons, as well enable the ability to view reports. Deactivate your license if you want to use it on another WordPress site."
 msgstr ""
@@ -7496,7 +7486,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "The value entered does not match the required format"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:282
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:280
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "The websites that link back to your website"
 msgstr ""
@@ -7535,13 +7525,13 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "There is an issue with your Google Account authentication. Please use the button below to fix it by re-authenticating."
 msgstr ""
 
-#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:301
-#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:333
+#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:300
+#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:332
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "There was an error deactivating your license"
 msgstr ""
 
-#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:256
+#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:255
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "There was an error refreshing your license"
 msgstr ""
@@ -7553,7 +7543,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "There was an error unlocking ExactMetrics PRO please try again or install manually."
 msgstr ""
 
-#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:207
+#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:206
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "There was an error verifying your license"
 msgstr ""
@@ -7806,7 +7796,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Time on Page"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:270
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:268
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Time Spent on Site"
 msgstr ""
@@ -8030,7 +8020,7 @@ msgid "Total Revenue"
 msgstr ""
 
 #: src/modules/reports/components/reports-overview/ReportSiteSummary.vue:255
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:255
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:253
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Total Sessions"
 msgstr ""
@@ -8044,7 +8034,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Total Users"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:254
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:252
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Total Visitors"
 msgstr ""
@@ -8146,7 +8136,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Try it out today, for free."
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:371
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:366
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Try our other popular WordPress plugins to grow your website in %s."
 msgstr ""
@@ -8213,7 +8203,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Unique %s Sessions"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:265
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:263
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Unknown"
 msgstr ""
@@ -8306,7 +8296,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Upgrade to"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:306
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:303
 #: src/modules/wizard-onboarding/components/steps/exactmetrics-OnboardingStepSuccess.vue:162
 #: src/modules/settings/components/SettingsLiteUpsellLarge.vue:42
 #: src/modules/site-notes/components/category-Lite.vue:30
@@ -8320,7 +8310,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Upgrade to ExactMetrics Pro Now"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:305
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:302
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Upgrade to ExactMetrics Pro to Unlock Additional Actionable Insights"
 msgstr ""
@@ -8574,7 +8564,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Value has to be a round number"
 msgstr ""
 
-#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:95
+#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:94
 #: src/modules/settings/components/input/tab-general/SettingsInputLicense-Lite.vue:41
 #: src/modules/wizard-onboarding/components/steps/exactmetrics-OnboardingStepSuccess.vue:171
 msgctxt "google-analytics-dashboard-for-wp"
@@ -8601,8 +8591,8 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Verifying Credentials"
 msgstr ""
 
-#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:152
-#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:174
+#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:151
+#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:173
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Verifying License"
 msgstr ""
@@ -8823,7 +8813,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Visit Website"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:301
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:299
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Visit WPBeginner"
 msgstr ""
@@ -8833,7 +8823,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Visit your Overview Report"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:256
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:254
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Visitors by Month"
 msgstr ""
@@ -8910,7 +8900,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "We will recommend the optimal settings for ExactMetrics based on your choice."
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:288
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:286
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "We’re grateful for your continued support. If there’s anything we can do to help you grow your business, please don’t hesitate to contact our team."
 msgstr ""
@@ -8988,12 +8978,12 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "What do you think about this feature?"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:285
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:283
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "What is Google Analytics Direct Traffic? (Complete GA4 Guide)"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:279
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:277
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "What keywords visitors searched for to find your site"
 msgstr ""
@@ -9082,7 +9072,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "With ExactMetrics Pro, you can easily measure individual affiliate performance inside Google Analytics, no coding needed. Track clicks, revenue, and more."
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:263
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:261
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Women"
 msgstr ""
@@ -9097,7 +9087,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "WordPress Admin Area Reports"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:299
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:297
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "WordPress Tutorials by WPBeginner"
 msgstr ""
@@ -9127,7 +9117,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "WP Simple Pay"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:300
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:298
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "WPBeginner is the largest free WordPress resource site for beginners and non-techy users."
 msgstr ""
@@ -9154,12 +9144,12 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "WPForms, Ninja Forms, Contact Form 7, Gravity Forms and any other WordPress form plugin"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:293
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:291
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Write Review"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:378
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:372
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Year In Review %s!"
 msgstr ""
@@ -9232,7 +9222,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "You can re-enable the ExactMetrics widget at any time using the \"Screen Options\" menu on the top right of this page"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:252
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:250
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "You had "
 msgstr ""
@@ -9283,7 +9273,7 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "You should be aiming for a Total Blocking Time of 300ms or less."
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:259
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:257
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "You Top 5 Countries"
 msgstr ""
@@ -9321,32 +9311,32 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "You've disconnected your site from ExactMetrics. Your site is no longer being tracked by Google Analytics and you won't see reports anymore."
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:349
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:345
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Your %s Year in Review"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:345
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:341
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Your %s Year in Review is still calculating. Please check back later to see how your website performed last year."
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:430
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:425
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Your <strong>%1$s</strong> visitors viewed a total of <strong>%2$s</strong> pages."
 msgstr ""
 
-#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:83
+#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:82
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Your license key has been set at the network level of your WordPress Multisite."
 msgstr ""
 
-#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:104
+#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:103
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Your license key has expired. Reactivate the current license, or "
 msgstr ""
 
-#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:87
+#: src/modules/settings/components/input/tab-general/exactmetrics-SettingsInputLicenseSite.vue:86
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Your license key type for this site is %s. "
 msgstr ""
@@ -9376,17 +9366,17 @@ msgctxt "google-analytics-dashboard-for-wp"
 msgid "Your site is connected to ExactMetrics!"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:278
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:276
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Your Top 5 Keywords"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:268
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:266
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Your Top 5 Pages"
 msgstr ""
 
-#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:280
+#: src/modules/reports/components/reports/exactmetrics-YearInReview-Lite.vue:278
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Your Top 5 Referrals"
 msgstr ""
@@ -9760,7 +9750,7 @@ msgid "Your license key for ExactMetrics has been disabled. Please use a differe
 msgstr ""
 
 #: includes/admin/admin.php:560
-#: includes/admin/api-auth.php:299
+#: includes/admin/api-auth.php:305
 msgid "Your license key for ExactMetrics is invalid. The key no longer exists or the user associated with the key has been deleted. Please use a different key."
 msgstr ""
 
@@ -9871,57 +9861,65 @@ msgstr ""
 msgid "Oops! There has been an error authenticating. Please try again in a few minutes. If the problem persists, please %1$scontact our support%2$s team."
 msgstr ""
 
-#: includes/admin/api-auth.php:284
+#: includes/admin/api-auth.php:290
 msgid "You don't have the correct WordPress user permissions to re-authenticate into ExactMetrics. Please check with your site administrator that your role is included in the ExactMetrics permissions settings. %1$sClick here for more information%2$s."
 msgstr ""
 
-#: includes/admin/api-auth.php:307
-#: includes/admin/api-auth.php:317
+#: includes/admin/api-auth.php:313
+#: includes/admin/api-auth.php:323
 msgid "Oops! There was a problem while re-authenticating. Please try to complete the ExactMetrics %1$ssetup wizard%2$s again. If the problem persists, please %3$scontact our support%4$s team."
 msgstr ""
 
-#: includes/admin/api-auth.php:437
+#: includes/admin/api-auth.php:449
 msgid "You don't have the correct user permissions to verify the ExactMetrics license you are trying to use. Please check with your site administrator that your role is included in the ExactMetrics permissions settings. %1$sClick here for more information%2$s."
 msgstr ""
 
-#: includes/admin/api-auth.php:452
-#: includes/admin/api-auth.php:460
+#: includes/admin/api-auth.php:464
 #: includes/admin/api-auth.php:472
+#: includes/admin/api-auth.php:484
 msgid "Please enter a valid license within the ExactMetrics settings panel. You can check your license by logging into your ExactMetrics account by %1$sclicking here%2$s."
 msgstr ""
 
-#: includes/admin/api-auth.php:482
+#: includes/admin/api-auth.php:494
 msgid "Successfully verified."
 msgstr ""
 
-#: includes/admin/api-auth.php:486
-#: includes/admin/api-auth.php:500
+#: includes/admin/api-auth.php:498
+#: includes/admin/api-auth.php:512
 msgid "Oops! There has been an error while trying to verify your license. Please try again or contact our support team by %1$sclicking here%2$s."
 msgstr ""
 
-#: includes/admin/api-auth.php:537
+#: includes/admin/api-auth.php:549
 msgid "You don't have the correct WordPress user permissions to deauthenticate into ExactMetrics. Please check with your site administrator that your role is included in the ExactMetrics permissions settings. %1$sClick here for more information%2$s."
 msgstr ""
 
-#: includes/admin/api-auth.php:552
-#: includes/admin/api-auth.php:562
+#: includes/admin/api-auth.php:564
+#: includes/admin/api-auth.php:574
 msgid "Could not disconnect as you are not currently authenticated properly. Please try to authenticate again with our ExactMetrics %1$ssetup wizard%2$s.  If you are still having problems, please %3$scontact our support%4$s team."
 msgstr ""
 
-#: includes/admin/api-auth.php:576
+#: includes/admin/api-auth.php:588
 msgid "Could not disconnect your account, as you are not currently authenticated properly. Please try to authenticate again with our %1$sExactMetrics setup wizard%2$s.  If you are still having problems, please %3$scontact our support%4$s team."
 msgstr ""
 
-#: includes/admin/api-auth.php:590
+#: includes/admin/api-auth.php:602
 msgid "Successfully deauthenticated."
 msgstr ""
 
-#: includes/admin/api-auth.php:593
+#: includes/admin/api-auth.php:605
 msgid "Successfully force deauthenticated."
 msgstr ""
 
-#: includes/admin/api-auth.php:597
+#: includes/admin/api-auth.php:609
 msgid "Oops! There has been an error while trying to deauthenticate. Please try again. If the issue persists, please %1$scontact our support%2$s team."
+msgstr ""
+
+#: includes/admin/api-auth.php:824
+msgid "Website & Google Analytics Timezone Mismatch"
+msgstr ""
+
+#: includes/admin/api-auth.php:827
+msgid "We detected your Google Analytics property is set to a different timezone than your website. This may slightly impact your stats, especially when comparing day over day performance. You may want to adjust your website's time zone %1$shere%2$s."
 msgstr ""
 
 #. Translators: Placeholders are for links to fix the issue.
@@ -9970,7 +9968,7 @@ msgid "To update, we recommend following this %1$sstep by step guide for updatin
 msgstr ""
 
 #: includes/admin/common.php:699
-msgid "View 2023 Year in Review report!"
+msgid "View 2024 Year in Review report!"
 msgstr ""
 
 #: includes/admin/common.php:700
