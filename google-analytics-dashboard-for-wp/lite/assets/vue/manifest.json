@@ -46,14 +46,6 @@
       "_index-a27b8464.min.js"
     ]
   },
-  "_exactmetrics-reports-helper-plugin-dd4ae058.min.js": {
-    "file": "js/chunks/exactmetrics-reports-helper-plugin-dd4ae058.min.js",
-    "imports": [
-      "_vendor-b9834729.min.js",
-      "_SettingsInfoTooltip-facc1a56.min.js",
-      "_date-intervals-991e3d8a.min.js"
-    ]
-  },
   "_html2canvas-c6e0047e.min.js": {
     "file": "js/chunks/html2canvas-c6e0047e.min.js",
     "imports": [
@@ -96,6 +88,14 @@
     "file": "js/chunks/index-a27b8464.min.js",
     "imports": [
       "_vendor-b9834729.min.js"
+    ]
+  },
+  "_report-table-helper-79adf3a3.min.js": {
+    "file": "js/chunks/report-table-helper-79adf3a3.min.js",
+    "imports": [
+      "_vendor-b9834729.min.js",
+      "_SettingsInfoTooltip-facc1a56.min.js",
+      "_date-intervals-991e3d8a.min.js"
     ]
   },
   "_vendor-b9834729.min.js": {
@@ -1152,7 +1152,7 @@
     "imports": [
       "_vendor-b9834729.min.js",
       "_date-intervals-991e3d8a.min.js",
-      "_exactmetrics-reports-helper-plugin-dd4ae058.min.js",
+      "_report-table-helper-79adf3a3.min.js",
       "_SettingsInfoTooltip-facc1a56.min.js",
       "_index-8bfee37d.min.js",
       "_index-a27b8464.min.js",
@@ -1441,7 +1441,7 @@
     "imports": [
       "_vendor-b9834729.min.js",
       "_date-intervals-991e3d8a.min.js",
-      "_exactmetrics-reports-helper-plugin-dd4ae058.min.js",
+      "_report-table-helper-79adf3a3.min.js",
       "_SettingsInfoTooltip-facc1a56.min.js",
       "_WidgetReportError-1a54c6a5.min.js",
       "_index-a27b8464.min.js"

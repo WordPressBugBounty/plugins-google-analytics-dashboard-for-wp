@@ -114,8 +114,12 @@ class ExactMetrics_Onboarding_Wizard {
 		wp_register_script( 'exactmetrics-vue-script', $app_js_url, array( 'wp-i18n' ), exactmetrics_get_asset_version(), true );
 		wp_enqueue_script( 'exactmetrics-vue-script' );
 
-		$settings_page = is_network_admin() ? add_query_arg( 'page', 'exactmetrics_network', network_admin_url( 'admin.php' ) ) : add_query_arg( 'page', 'exactmetrics_settings', admin_url( 'admin.php' ) );
-
+		$settings_page        = is_network_admin() ? add_query_arg( 'page', 'exactmetrics_network', network_admin_url( 'admin.php' ) ) : add_query_arg( 'page', 'exactmetrics_settings', admin_url( 'admin.php' ) );
+		$is_file_edit_allowed = 1;
+		// Determine whether file modifications are allowed.
+		if ( function_exists( 'wp_is_file_mod_allowed' ) && ! wp_is_file_mod_allowed( 'exactmetrics_can_install' ) ) {
+			$is_file_edit_allowed = 0;
+		}
 		wp_localize_script(
 			'exactmetrics-vue-script',
 			'exactmetrics',
@@ -131,13 +135,14 @@ class ExactMetrics_Onboarding_Wizard {
 				'is_eu'                => $this->should_include_eu_addon(),
 				'activate_nonce'       => wp_create_nonce( 'exactmetrics-activate' ),
 				'install_nonce'        => wp_create_nonce( 'exactmetrics-install' ),
-				'exit_url'             => $settings_page,
+				'exit_url'             => add_query_arg( 'page', 'exactmetrics_reports', admin_url( 'admin.php' ) ),
 				'shareasale_id'        => exactmetrics_get_shareasale_id(),
 				'shareasale_url'       => exactmetrics_get_shareasale_url( exactmetrics_get_shareasale_id(), '' ),
 				// Used to add notices for future deprecations.
 				'versions'             => exactmetrics_get_php_wp_version_warning_data(),
 				'plugin_version'       => EXACTMETRICS_VERSION,
 				'migrated'             => exactmetrics_get_option( 'gadwp_migrated', false ),
+				'allow_file_edit'      => $is_file_edit_allowed,
 			)
 		);
 
