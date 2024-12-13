@@ -53,12 +53,18 @@
     ],
     "isDynamicEntry": true
   },
-  "_index-8bfee37d.min.js": {
+  "_index-a27b8464.min.js": {
+    "file": "js/chunks/index-a27b8464.min.js",
+    "imports": [
+      "_vendor-b9834729.min.js"
+    ]
+  },
+  "_index-c23ea956.min.js": {
     "assets": [
       "img/logo-ExactMetrics.png",
-      "img/logo-ExactMetrics@2x2.png",
-      "img/icon-info.svg",
       "img/logo-ExactMetrics@2x.png",
+      "img/icon-info.svg",
+      "img/logo-ExactMetrics@2x2.png",
       "fonts/Roboto-Regular.woff2",
       "fonts/Roboto-Bold.woff2",
       "fonts/lato-regular-webfont.woff",
@@ -78,16 +84,10 @@
     "css": [
       "css/index.css"
     ],
-    "file": "js/chunks/index-8bfee37d.min.js",
+    "file": "js/chunks/index-c23ea956.min.js",
     "imports": [
       "_vendor-b9834729.min.js",
       "_ContentIconList-bbe6e6ed.min.js"
-    ]
-  },
-  "_index-a27b8464.min.js": {
-    "file": "js/chunks/index-a27b8464.min.js",
-    "imports": [
-      "_vendor-b9834729.min.js"
     ]
   },
   "_report-table-helper-79adf3a3.min.js": {
@@ -414,7 +414,7 @@
     "src": "src/assets/img/exactmetrics/loading-background.jpg"
   },
   "src/assets/img/exactmetrics/logo-ExactMetrics@2x.png": {
-    "file": "img/logo-ExactMetrics@2x.png",
+    "file": "img/logo-ExactMetrics@2x2.png",
     "src": "src/assets/img/exactmetrics/logo-ExactMetrics@2x.png"
   },
   "src/assets/img/exactmetrics/media-report-upsell.png": {
@@ -670,7 +670,7 @@
     "src": "src/assets/img/logo-ExactMetrics.png"
   },
   "src/assets/img/logo-ExactMetrics@2x.png": {
-    "file": "img/logo-ExactMetrics@2x2.png",
+    "file": "img/logo-ExactMetrics@2x.png",
     "src": "src/assets/img/logo-ExactMetrics@2x.png"
   },
   "src/assets/img/logo-ExactMetrics.png": {
@@ -1154,7 +1154,7 @@
       "_date-intervals-991e3d8a.min.js",
       "_report-table-helper-79adf3a3.min.js",
       "_SettingsInfoTooltip-facc1a56.min.js",
-      "_index-8bfee37d.min.js",
+      "_index-c23ea956.min.js",
       "_index-a27b8464.min.js",
       "_ContentIconList-bbe6e6ed.min.js"
     ],
@@ -1337,7 +1337,7 @@
       "_index-a27b8464.min.js",
       "_ContentIconList-bbe6e6ed.min.js",
       "_AboutTestimonialsSlider-a497a870.min.js",
-      "_index-8bfee37d.min.js",
+      "_index-c23ea956.min.js",
       "_SettingsInfoTooltip-facc1a56.min.js"
     ],
     "isEntry": true,
@@ -1468,7 +1468,7 @@
       "fonts/icons.woff",
       "fonts/icons.ttf",
       "fonts/icons.otf",
-      "img/logo-ExactMetrics@2x.png",
+      "img/logo-ExactMetrics@2x2.png",
       "img/icon-smile.png",
       "img/wpforms.png",
       "img/forms-screen.png",

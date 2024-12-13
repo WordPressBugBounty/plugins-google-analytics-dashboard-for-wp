@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Google Analytics Dashboard for WP (GADWP) plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Google Analytics Dashboard for WP (GADWP) 8.2.3\n"
+"Project-Id-Version: Google Analytics Dashboard for WP (GADWP) 8.2.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/google-analytics-dashboard-for-wp-working-dir\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-12-10T14:56:15+00:00\n"
+"POT-Creation-Date: 2024-12-13T14:25:49+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: google-analytics-dashboard-for-wp\n"
@@ -32,11 +32,6 @@ msgstr ""
 #: src/modules/addons/AddonsPage.vue:90
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "...and MUCH More!"
-msgstr ""
-
-#: src/modules/wizard-onboarding/components/steps/OnboardingStepRecommendedAddons.vue:134
-msgctxt "google-analytics-dashboard-for-wp"
-msgid "\"Website Backup and Migration\" Backup your website's files and databases for free with the #1 backup solution."
 msgstr ""
 
 #: src/modules/tools/components/exactmetrics-ToolsTabUrlBuilder.vue:200
@@ -1349,6 +1344,11 @@ msgstr ""
 #: src/modules/popular-posts/components/input/PopularPostsWidgetThemeCustomize.vue:187
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Background"
+msgstr ""
+
+#: src/modules/wizard-onboarding/components/steps/OnboardingStepRecommendedAddons.vue:134
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Backup your website's files and databases for free with the #1 backup solution."
 msgstr ""
 
 #: src/modules/tools/components/ToolsTabEEACompliance.vue:64
@@ -2732,11 +2732,6 @@ msgstr ""
 #: src/modules/wizard-onboarding/components/steps/OnboardingStepRecommendedAddons.vue:137
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "Duplicator is already installed"
-msgstr ""
-
-#: src/modules/wizard-onboarding/components/steps/OnboardingStepRecommendedAddons.vue:133
-msgctxt "google-analytics-dashboard-for-wp"
-msgid "Duplicator: Backups & Migration Plugin"
 msgstr ""
 
 #: src/modules/about/components/exactmetrics-AboutTabLiteVsPro.vue:169
@@ -8939,6 +8934,11 @@ msgstr ""
 #: src/modules/wizard-onboarding/components/steps/OnboardingStepRecommendedAddons.vue:55
 msgctxt "google-analytics-dashboard-for-wp"
 msgid "We’ve already selected our recommended features based on your site. "
+msgstr ""
+
+#: src/modules/wizard-onboarding/components/steps/OnboardingStepRecommendedAddons.vue:133
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Website Backup and Migration"
 msgstr ""
 
 #: src/modules/tools/components/ToolsNavigation.vue:20
