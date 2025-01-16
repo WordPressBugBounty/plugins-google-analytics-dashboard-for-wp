@@ -1,10 +1,10 @@
-=== ExactMetrics - Google Analytics Dashboard for WordPress (Website Stats Plugin) ===
+﻿=== ExactMetrics - Google Analytics Dashboard for WordPress (Website Stats Plugin) ===
 Contributors: chriscct7, smub
 Donate link: http://www.wpbeginner.com/wpbeginner-needs-your-help/
 Tags: analytics,google analytics,google analytics dashboard,google analytics plugin,website stats
 Requires at least: 5.6.0
 Tested up to: 6.7.1
-Stable tag: 8.3.0
+Stable tag: 8.3.1
 Requires PHP: 7.2
 License: GPL v3
 
@@ -131,6 +131,9 @@ You can translate Google Analytics Dashboard for WP by ExactMetrics on [translat
 4. Want more features? <a href="https://www.exactmetrics.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion">Purchase ExactMetrics Pro</a>!
 
 == Changelog ==
+= 8.3.1: January 16, 2025 =
+- Fixed: Minor updates and bug fixes
+
 = 8.3.0: January 15, 2025 =
 - New: Overview Report Metrics
 - New: Cart Abandonment Report
