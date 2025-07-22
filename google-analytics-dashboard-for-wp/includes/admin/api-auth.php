@@ -263,8 +263,10 @@ final class ExactMetrics_API_Auth {
 		$where = $this->is_network_admin() ? 'network' : 'site';
 		ExactMetrics()->reporting->delete_aggregate_data( $where );
 		
-		// Clear any Google Ads stored data
-		ExactMetrics_Google_Ads::clear_data();
+		if ( class_exists( 'ExactMetrics_Google_Ads' ) ) {
+			// Clear any Google Ads stored data
+			ExactMetrics_Google_Ads::clear_data();
+		}
 
 		// Check site and property timezone.
 		$this->check_property_timezone();
@@ -429,8 +431,10 @@ final class ExactMetrics_API_Auth {
 		$where = $this->is_network_admin() ? 'network' : 'site';
 		ExactMetrics()->reporting->delete_aggregate_data( $where );
 		
-		// Clear any Google Ads stored data
-		ExactMetrics_Google_Ads::clear_data();
+		if ( class_exists( 'ExactMetrics_Google_Ads' ) ) {
+			// Clear any Google Ads stored data
+			ExactMetrics_Google_Ads::clear_data();
+		}
 
 		// Check site and property timezone.
 		$this->check_property_timezone();
@@ -609,8 +613,10 @@ final class ExactMetrics_API_Auth {
 
 		$worked = $this->delete_auth( $force );
 		if ( $worked && ! is_wp_error( $worked ) ) {
-			// Clear any Google Ads stored data
-			ExactMetrics_Google_Ads::clear_data();
+			if ( class_exists( 'ExactMetrics_Google_Ads' ) ) {
+				// Clear any Google Ads stored data
+				ExactMetrics_Google_Ads::clear_data();
+			}
 			
 			wp_send_json_success( array( 'message' => __( "Successfully deauthenticated.", 'google-analytics-dashboard-for-wp' ) ) );
 		} else {

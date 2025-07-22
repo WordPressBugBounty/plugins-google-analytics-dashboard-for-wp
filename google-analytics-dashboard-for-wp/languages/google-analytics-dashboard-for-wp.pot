@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Google Analytics Dashboard for WP (GADWP) plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Google Analytics Dashboard for WP (GADWP) 8.7.0\n"
+"Project-Id-Version: Google Analytics Dashboard for WP (GADWP) 8.7.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/google-analytics-dashboard-for-wp-working-dir\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-07-22T14:30:00+00:00\n"
+"POT-Creation-Date: 2025-07-22T22:50:05+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: google-analytics-dashboard-for-wp\n"
@@ -6154,7 +6154,7 @@ msgid "Your license key for ExactMetrics has been disabled. Please use a differe
 msgstr ""
 
 #: includes/admin/admin.php:553
-#: includes/admin/api-auth.php:309
+#: includes/admin/api-auth.php:311
 msgid "Your license key for ExactMetrics is invalid. The key no longer exists or the user associated with the key has been deleted. Please use a different key."
 msgstr ""
 
@@ -6535,85 +6535,85 @@ msgid "You don't have the correct WordPress user permissions to authenticate int
 msgstr ""
 
 #: includes/admin/api-auth.php:105
-#: includes/admin/api-auth.php:869
+#: includes/admin/api-auth.php:875
 msgid "Cannot authenticate. Please enter a valid, active license key for ExactMetrics Pro into the settings page."
 msgstr ""
 
 #: includes/admin/api-auth.php:113
 #: includes/admin/api-auth.php:121
-#: includes/admin/api-auth.php:876
-#: includes/admin/api-auth.php:884
+#: includes/admin/api-auth.php:882
+#: includes/admin/api-auth.php:890
 #, php-format
 msgid "Oops! There has been an error authenticating. Please try again in a few minutes. If the problem persists, please %1$scontact our support%2$s team."
 msgstr ""
 
-#: includes/admin/api-auth.php:294
+#: includes/admin/api-auth.php:296
 #, php-format
 msgid "You don't have the correct WordPress user permissions to re-authenticate into ExactMetrics. Please check with your site administrator that your role is included in the ExactMetrics permissions settings. %1$sClick here for more information%2$s."
 msgstr ""
 
-#: includes/admin/api-auth.php:317
-#: includes/admin/api-auth.php:327
+#: includes/admin/api-auth.php:319
+#: includes/admin/api-auth.php:329
 #, php-format
 msgid "Oops! There was a problem while re-authenticating. Please try to complete the ExactMetrics %1$ssetup wizard%2$s again. If the problem persists, please %3$scontact our support%4$s team."
 msgstr ""
 
-#: includes/admin/api-auth.php:459
+#: includes/admin/api-auth.php:463
 #, php-format
 msgid "You don't have the correct user permissions to verify the ExactMetrics license you are trying to use. Please check with your site administrator that your role is included in the ExactMetrics permissions settings. %1$sClick here for more information%2$s."
 msgstr ""
 
-#: includes/admin/api-auth.php:474
-#: includes/admin/api-auth.php:482
-#: includes/admin/api-auth.php:494
+#: includes/admin/api-auth.php:478
+#: includes/admin/api-auth.php:486
+#: includes/admin/api-auth.php:498
 #, php-format
 msgid "Please enter a valid license within the ExactMetrics settings panel. You can check your license by logging into your ExactMetrics account by %1$sclicking here%2$s."
 msgstr ""
 
-#: includes/admin/api-auth.php:504
+#: includes/admin/api-auth.php:508
 msgid "Successfully verified."
 msgstr ""
 
-#: includes/admin/api-auth.php:508
-#: includes/admin/api-auth.php:522
+#: includes/admin/api-auth.php:512
+#: includes/admin/api-auth.php:526
 #, php-format
 msgid "Oops! There has been an error while trying to verify your license. Please try again or contact our support team by %1$sclicking here%2$s."
 msgstr ""
 
-#: includes/admin/api-auth.php:559
+#: includes/admin/api-auth.php:563
 #, php-format
 msgid "You don't have the correct WordPress user permissions to deauthenticate into ExactMetrics. Please check with your site administrator that your role is included in the ExactMetrics permissions settings. %1$sClick here for more information%2$s."
 msgstr ""
 
-#: includes/admin/api-auth.php:574
-#: includes/admin/api-auth.php:584
+#: includes/admin/api-auth.php:578
+#: includes/admin/api-auth.php:588
 #, php-format
 msgid "Could not disconnect as you are not currently authenticated properly. Please try to authenticate again with our ExactMetrics %1$ssetup wizard%2$s.  If you are still having problems, please %3$scontact our support%4$s team."
 msgstr ""
 
-#: includes/admin/api-auth.php:598
+#: includes/admin/api-auth.php:602
 #, php-format
 msgid "Could not disconnect your account, as you are not currently authenticated properly. Please try to authenticate again with our %1$sExactMetrics setup wizard%2$s.  If you are still having problems, please %3$scontact our support%4$s team."
 msgstr ""
 
-#: includes/admin/api-auth.php:615
+#: includes/admin/api-auth.php:621
 msgid "Successfully deauthenticated."
 msgstr ""
 
-#: includes/admin/api-auth.php:618
+#: includes/admin/api-auth.php:624
 msgid "Successfully force deauthenticated."
 msgstr ""
 
-#: includes/admin/api-auth.php:622
+#: includes/admin/api-auth.php:628
 #, php-format
 msgid "Oops! There has been an error while trying to deauthenticate. Please try again. If the issue persists, please %1$scontact our support%2$s team."
 msgstr ""
 
-#: includes/admin/api-auth.php:837
+#: includes/admin/api-auth.php:843
 msgid "Website & Google Analytics Timezone Mismatch"
 msgstr ""
 
-#: includes/admin/api-auth.php:840
+#: includes/admin/api-auth.php:846
 #, php-format
 msgid "We detected your Google Analytics property is set to a different timezone than your website. This may slightly impact your stats, especially when comparing day over day performance. You may want to adjust your website's time zone %1$shere%2$s."
 msgstr ""
