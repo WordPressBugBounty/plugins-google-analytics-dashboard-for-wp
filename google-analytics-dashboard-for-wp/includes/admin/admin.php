@@ -65,6 +65,16 @@ function exactmetrics_admin_menu()
 	// then settings page
 	add_submenu_page( $parent_slug, __( 'ExactMetrics', 'google-analytics-dashboard-for-wp' ), __( 'Settings', 'google-analytics-dashboard-for-wp' ), 'exactmetrics_save_settings', 'exactmetrics_settings', 'exactmetrics_settings_page' );
 
+	/**
+	 * Output the Custom Dashboard app mount node.
+	 *
+	 * @return void
+	 */
+	function exactmetrics_custom_dashboard_page() {
+		do_action( 'exactmetrics_head' );
+		echo '<div id="exactmetrics-custom-dashboard-app" class="mi-custom-dashboard-app">Loading</div>';
+	}
+
 	// Add dashboard submenu.
 	add_submenu_page( 'index.php', __( 'General Reports:', 'google-analytics-dashboard-for-wp' ), 'ExactMetrics', 'exactmetrics_view_dashboard', 'admin.php?page=exactmetrics_reports' );
 
@@ -118,7 +128,7 @@ function exactmetrics_admin_menu()
 	add_submenu_page($parent_slug, __('SEO', 'google-analytics-dashboard-for-wp'), __('SEO', 'google-analytics-dashboard-for-wp'), 'manage_options', $seo_url);
 
 	// Google PAX
-	add_submenu_page($parent_slug, __('Google Ads', 'google-analytics-dashboard-for-wp'), __('Google Ads', 'google-analytics-dashboard-for-wp'), 'exactmetrics_view_dashboard', $submenu_base . '#/google-ads');
+	add_submenu_page($parent_slug, __('Google Ads', 'google-analytics-dashboard-for-wp'), __('Google Ads', 'google-analytics-dashboard-for-wp') . $new_indicator, 'exactmetrics_view_dashboard', $submenu_base . '#/google-ads');
 
 	// then tools
 	add_submenu_page($parent_slug, __('Tools:', 'google-analytics-dashboard-for-wp'), __('Tools', 'google-analytics-dashboard-for-wp'), 'manage_options', $submenu_base . '#/tools');
@@ -137,16 +147,16 @@ function exactmetrics_admin_menu()
 		$submenu_base . '#/userfeedback'
 	);
 
-	// then About Us page.
-	add_submenu_page($parent_slug, __('About Us:', 'google-analytics-dashboard-for-wp'), __('About Us', 'google-analytics-dashboard-for-wp'), 'manage_options', $submenu_base . '#/about');
-
 	add_submenu_page(
 		$parent_slug,
-		__('WPConsent:', 'google-analytics-dashboard-for-wp'),
-		__('WPConsent', 'google-analytics-dashboard-for-wp') . $new_indicator,
+		__('Privacy Compliance:', 'google-analytics-dashboard-for-wp'),
+		__('Privacy Compliance', 'google-analytics-dashboard-for-wp'),
 		'manage_options',
 		$submenu_base . '#/wpconsent'
 	);
+
+	// then About Us page.
+	add_submenu_page($parent_slug, __('About Us:', 'google-analytics-dashboard-for-wp'), __('About Us', 'google-analytics-dashboard-for-wp'), 'manage_options', $submenu_base . '#/about');
 
 	if (!exactmetrics_is_pro_version() && !strstr(plugin_basename(__FILE__), 'dashboard-for')) {
 		// automated promotion
@@ -464,7 +474,7 @@ function exactmetrics_admin_footer($text)
 	) {
 		$url = 'https://wordpress.org/support/view/plugin-reviews/google-analytics-dashboard-for-wp?filter=5';
 		// Translators: Placeholders add a link to the wordpress.org repository.
-		$text = sprintf(esc_html__('Please rate %1$sExactMetrics%2$s on %3$s %4$sWordPress.org%5$s to help us spread the word.', 'google-analytics-dashboard-for-wp'), '<strong>', '</strong>', '<a class="exactmetrics-no-text-decoration" href="' . $url . '" target="_blank" rel="noopener noreferrer"><i class="monstericon-star"></i><i class="monstericon-star"></i><i class="monstericon-star"></i><i class="monstericon-star"></i><i class="monstericon-star"></i></a>', '<a href="' . $url . '" target="_blank" rel="noopener noreferrer">', '</a>');
+		$text = sprintf(esc_html__('Please rate %1$sExactMetrics%2$s %3$s on %4$sWordPress.org%5$s to help us spread the word.', 'google-analytics-dashboard-for-wp'), '<strong>', '</strong>', '<a class="exactmetrics-no-text-decoration" href="' . $url . '" target="_blank" rel="noopener noreferrer"><i class="monstericon-star"></i><i class="monstericon-star"></i><i class="monstericon-star"></i><i class="monstericon-star"></i><i class="monstericon-star"></i></a>', '<a href="' . $url . '" target="_blank" rel="noopener noreferrer">', '</a>');
 	}
 
 	return $text;
@@ -889,6 +899,11 @@ function exactmetrics_ads_addon_installed_notice() {
 		return;
 	}
 
+	// Hide notice if dismissed in the last 30 days.
+	if ( get_transient( 'exactmetrics_ads_addon_installed_notice_dismissed' ) ) {
+		return;
+	}
+
 	if ( exactmetrics_is_pro_version() && ExactMetrics()->license->get_license_type() === 'pro' ) {
 		$addons_url = admin_url() . '/admin.php?page=exactmetrics_settings#/addons?ads_addon_ppc_alert=1';
 		$button_text = esc_html__( 'Install Now', 'google-analytics-dashboard-for-wp' );
@@ -911,10 +926,21 @@ function exactmetrics_ads_addon_installed_notice() {
 		'</a>'
 	);
 
-	echo '<div class="notice notice-info is-dismissible"><p>' . $message . '</p><p><a href="' . $addons_url . '" class="button button-primary" target="' . $button_target . '">' . $button_text . '</a></p></div>'; // phpcs:ignore
+	// Output notice with an ID so the common admin JS can catch the dismiss and persist it for 30 days.
+	echo '<div id="exactmetrics-ads-addon-notice" class="notice notice-info is-dismissible"><p>' . $message . '</p><p><a href="' . $addons_url . '" class="button button-primary" target="' . $button_target . '">' . $button_text . '</a></p></div>'; // phpcs:ignore
 }
 
 add_action( 'admin_notices', 'exactmetrics_ads_addon_installed_notice' );
+
+/**
+ * AJAX handler to persist dismissal of the Ads addon installed notice for 30 days.
+ */
+function exactmetrics_dismiss_ads_addon_notice_ajax() {
+	check_ajax_referer( 'exactmetrics-dismiss-notice', 'nonce' );
+	set_transient( 'exactmetrics_ads_addon_installed_notice_dismissed', 1, 30 * DAY_IN_SECONDS );
+	wp_send_json_success();
+}
+add_action( 'wp_ajax_exactmetrics_dismiss_ads_addon_notice', 'exactmetrics_dismiss_ads_addon_notice_ajax' );
 
 /**
  * Check if the plugin is MI Lite.
@@ -971,6 +997,13 @@ add_action( 'in_admin_footer', 'exactmetrics_in_admin_footer' );
  * Display notice in admin to install WPConsent.
  */
 function exactmetrics_wpconsent_install_notice() {
+	global $pagenow;
+
+	// Dont show the notice on update page.
+	if ( 'update-core.php' === $pagenow ) {
+		return;
+	}
+
 	// If WPConsent plugin active.
 	if ( function_exists( 'WPConsent' ) ) {
 		return;

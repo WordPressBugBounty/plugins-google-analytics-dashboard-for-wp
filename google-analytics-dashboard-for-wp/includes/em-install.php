@@ -96,6 +96,10 @@ class ExactMetrics_Install {
 			if ( version_compare( $version, '6.5.0', '<' ) ) {
 				$this->v650_upgrades();
 			}
+			
+			if ( version_compare( $version, '8.11.0', '<' ) ) {
+				$this->v8110_upgrades();
+			}
 
 			// Do not use. See exactmetrics_after_install_routine comment below.
 			do_action( 'exactmetrics_after_existing_upgrade_routine', $version );
@@ -110,6 +114,22 @@ class ExactMetrics_Install {
 		// As this hook is not for public use, we've intentionally not docbloc'd this
 		// hook to avoid developers seeing it future public dev docs.
 		do_action( 'exactmetrics_after_install_routine', $version );
+
+		// Run database migrations (since 8.11.0)
+		// This runs after all legacy upgrade routines
+		require_once EXACTMETRICS_PLUGIN_DIR . 'includes/database/loader.php';
+		$migration_results = exactmetrics_run_database_migrations();
+
+		// Log migration results (but skip "already running" messages - that's not an error)
+		if ( ! $migration_results['success'] && defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+			// Only log actual errors, not lock collisions
+			if ( empty( $migration_results['error'] ) || $migration_results['error'] !== 'Migration is already running' ) {
+				// phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+				error_log( 'ExactMetrics: Database migrations failed' );
+				// phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log, WordPress.PHP.DevelopmentFunctions.error_log_print_r
+				error_log( print_r( $migration_results, true ) );
+			}
+		}
 
 		// This is the version of MI installed
 		update_option( 'exactmetrics_current_version', EXACTMETRICS_VERSION );
@@ -194,6 +214,10 @@ class ExactMetrics_Install {
 		);
 
 		update_option( 'exactmetrics_over_time', $data, false );
+		
+		/*  Custom DB Schemas */
+		// Tracking
+		ExactMetrics_Tracking::setup_tracking_schema();
 
 		// Let addons + MI Pro/Lite hook in here. @todo: doc as nonpublic
 		do_action( 'exactmetrics_after_new_install_routine', EXACTMETRICS_VERSION );
@@ -237,6 +261,8 @@ class ExactMetrics_Install {
 			'email_summaries'                          => 'on',
 			'summaries_html_template'                  => 'yes',
 			'summaries_email_addresses'                => $admin_email_array,
+			'summaries_show_blog_posts'                => 'yes',
+			'summaries_show_update_notices'            => 'yes',
 			'exception_alert_email_addresses'          => $admin_email_array,
 			'automatic_updates'                        => 'all',
 			'popular_posts_inline_theme'               => 'alpha',
@@ -454,5 +480,18 @@ class ExactMetrics_Install {
 		if ( empty( $this->new_settings['gtagtracker_compatibility_mode'] ) ) {
 			$this->new_settings['gtagtracker_compatibility_mode'] = true;
 		}
+	}
+	
+	/**
+	 * Upgrade routine for 8.10.0
+	 * @return void
+	 */
+	public function v8110_upgrades() {
+		if ( !class_exists( 'ExactMetrics_Tracking' ) ) {
+			require_once EXACTMETRICS_PLUGIN_DIR . 'includes/tracking/class-exactmetrics-tracking.php';
+		}
+		
+		// Create new tracking DB schema
+		ExactMetrics_Tracking::setup_tracking_schema();
 	}
 }

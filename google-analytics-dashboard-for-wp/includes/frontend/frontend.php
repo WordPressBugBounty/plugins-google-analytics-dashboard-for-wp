@@ -14,6 +14,41 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * Check if we are in an AMP context
+ *
+ * @return bool
+ * @since 8.0.0
+ */
+function exactmetrics_is_amp() {
+	// Check for AMP plugin
+	if ( function_exists( 'is_amp_endpoint' ) && is_amp_endpoint() ) {
+		return true;
+	}
+	
+	// Check for AMP theme
+	if ( function_exists( 'amp_is_request' ) && amp_is_request() ) {
+		return true;
+	}
+	
+	// Check for AMP query parameter
+	if ( isset( $_GET['amp'] ) && '1' === $_GET['amp'] ) {
+		return true;
+	}
+	
+	// Check for AMP in URL path
+	if ( isset( $_SERVER['REQUEST_URI'] ) && false !== strpos( $_SERVER['REQUEST_URI'], '/amp/' ) ) {
+		return true;
+	}
+	
+	// Check for AMP in theme
+	if ( function_exists( 'amp_is_canonical' ) && amp_is_canonical() ) {
+		return true;
+	}
+	
+	return false;
+}
+
+/**
  * Print Monsterinsights frontend tracking script.
  *
  * @return void
@@ -21,6 +56,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @access public
  */
 function exactmetrics_tracking_script() {
+	// Check if we're in AMP context - if so, don't output any scripts
+	if ( exactmetrics_is_amp() ) {
+		return;
+	}
+
 	if ( exactmetrics_skip_tracking() ) {
 		return;
 	}
@@ -170,35 +210,60 @@ function exactmetrics_frontend_admin_bar_scripts() {
 		return;
 	}
 
-	if ( ! class_exists( 'ExactMetrics_Admin_Assets' ) ) {
-		require_once EXACTMETRICS_PLUGIN_DIR . 'includes/admin/admin-assets.php';
+	// React-based admin bar implementation
+	$version = exactmetrics_is_pro_version() ? 'pro' : 'lite';
+	$asset_file = EXACTMETRICS_PLUGIN_DIR . "{$version}/assets/admin-bar/index.asset.php";
+
+	if (!file_exists($asset_file)) {
+		return;
 	}
 
-	if ( ! defined( 'EXACTMETRICS_LOCAL_JS_URL' ) ) {
-		ExactMetrics_Admin_Assets::enqueue_script_specific_css( 'src/modules/frontend/frontend.js' );
-	}
+	$asset_data = require $asset_file;
 
-	$version_path    = exactmetrics_is_pro_version() ? 'pro' : 'lite';
-	$frontend_js_url = ExactMetrics_Admin_Assets::get_js_url( 'src/modules/frontend/frontend.js' );
-	wp_register_script( 'exactmetrics-vue-frontend', $frontend_js_url, array( 'wp-i18n' ), exactmetrics_get_asset_version(), true );
-	wp_enqueue_script( 'exactmetrics-vue-frontend' );
+	// Enqueue styles
+	wp_enqueue_style(
+		'exactmetrics-admin-bar',
+		plugins_url("{$version}/assets/admin-bar/insights.css", EXACTMETRICS_PLUGIN_FILE),
+		array('wp-components'),
+		$asset_data['version']
+	);
 
+	// Ensure wp-util is loaded (provides wp.ajax)
+	wp_enqueue_script('wp-util');
+
+	// Enqueue script
+	wp_enqueue_script(
+		'exactmetrics-admin-bar',
+		plugins_url("{$version}/assets/admin-bar/index.js", EXACTMETRICS_PLUGIN_FILE),
+		$asset_data['dependencies'],
+		$asset_data['version'],
+		true
+	);
+
+	// Set script translations for the admin bar app
+	$textdomain = exactmetrics_is_pro_version() ? 'exactmetrics-premium' : 'google-analytics-dashboard-for-wp';
+	wp_set_script_translations(
+		'exactmetrics-admin-bar',
+		$textdomain,
+		plugin_dir_path( EXACTMETRICS_PLUGIN_FILE ) . $version . '/languages'
+	);
+
+	// Localize data (same structure as Vue version for compatibility)
 	$page_title = is_singular() ? get_the_title() : exactmetrics_get_page_title();
-	// We do not have a current auth.
 	$site_auth = ExactMetrics()->auth->get_viewname();
-	$ms_auth   = is_multisite() && ExactMetrics()->auth->get_network_viewname();
+	$ms_auth = is_multisite() && ExactMetrics()->auth->get_network_viewname();
 
 	// Check if any of the other admin scripts are enqueued, if so, use their object.
-	if ( ! wp_script_is( 'exactmetrics-vue-script' ) && ! wp_script_is( 'exactmetrics-vue-reports' ) && ! wp_script_is( 'exactmetrics-vue-widget' ) ) {
+	if ( ! wp_script_is( 'exactmetrics-vue-script' ) && ! wp_script_is( 'exactmetrics-vue-reports' ) && ! wp_script_is( 'exactmetrics-vue-widget' ) && ! wp_script_is( 'exactmetrics-vue3-custom-dashboard' ) ) {
 		$reports_url = is_network_admin() ? add_query_arg( 'page', 'exactmetrics_reports', network_admin_url( 'admin.php' ) ) : add_query_arg( 'page', 'exactmetrics_reports', admin_url( 'admin.php' ) );
 		wp_localize_script(
-			'exactmetrics-vue-frontend',
+			'exactmetrics-admin-bar',
 			'exactmetrics',
 			array(
 				'ajax'                 => admin_url( 'admin-ajax.php' ),
 				'nonce'                => wp_create_nonce( 'mi-admin-nonce' ),
 				'network'              => is_network_admin(),
-				'assets'               => plugins_url( $version_path . '/assets/vue', EXACTMETRICS_PLUGIN_FILE ),
+				'assets'               => plugins_url( $version . '/assets/admin-bar', EXACTMETRICS_PLUGIN_FILE ),
 				'addons_url'           => is_multisite() ? network_admin_url( 'admin.php?page=exactmetrics_network#/addons' ) : admin_url( 'admin.php?page=exactmetrics_settings#/addons' ),
 				'page_id'              => is_singular() ? get_the_ID() : false,
 				'page_title'           => $page_title,
@@ -208,10 +273,11 @@ function exactmetrics_frontend_admin_bar_scripts() {
 				'is_admin'             => is_admin(),
 				'reports_url'          => $reports_url,
 				'authed'               => $site_auth || $ms_auth,
+				'auth_connect_url'     => is_network_admin() ? network_admin_url( 'index.php?page=exactmetrics-onboarding' ) : admin_url( 'index.php?page=exactmetrics-onboarding' ),
 				'getting_started_url'  => is_multisite() ? network_admin_url( 'admin.php?page=exactmetrics_network#/about/getting-started' ) : admin_url( 'admin.php?page=exactmetrics_settings#/about/getting-started' ),
 				'wizard_url'           => is_network_admin() ? network_admin_url( 'index.php?page=exactmetrics-onboarding' ) : admin_url( 'index.php?page=exactmetrics-onboarding' ),
 				'roles_manage_options' => exactmetrics_get_manage_options_roles(),
-				'user_roles'   => $current_user->roles,
+				'user_roles'           => $current_user->roles,
 				'roles_view_reports'   => exactmetrics_get_option('view_reports'),
 			)
 		);

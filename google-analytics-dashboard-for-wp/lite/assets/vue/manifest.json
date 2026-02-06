@@ -7,76 +7,38 @@
     "file": "css/ContentIconList.css",
     "src": "ContentIconList.css"
   },
-  "_AboutTestimonialsSlider-a497a870.min.js": {
+  "_AboutTestimonialsSlider-5e143a3c.min.js": {
     "css": [
       "css/AboutTestimonialsSlider.css"
     ],
-    "file": "js/chunks/AboutTestimonialsSlider-a497a870.min.js",
+    "file": "js/chunks/AboutTestimonialsSlider-5e143a3c.min.js",
     "imports": [
-      "_vendor-b9834729.min.js",
-      "_SettingsInfoTooltip-facc1a56.min.js",
-      "_ContentIconList-bbe6e6ed.min.js"
+      "_vendor-3aa45264.min.js",
+      "_exactmetrics-helper-plugin-ce356fcb.min.js",
+      "_ContentIconList-cd53ea66.min.js"
     ]
   },
-  "_ContentIconList-bbe6e6ed.min.js": {
+  "_ContentIconList-cd53ea66.min.js": {
     "css": [
       "css/ContentIconList.css"
     ],
-    "file": "js/chunks/ContentIconList-bbe6e6ed.min.js",
+    "file": "js/chunks/ContentIconList-cd53ea66.min.js",
     "imports": [
-      "_vendor-b9834729.min.js"
+      "_vendor-3aa45264.min.js"
     ]
   },
-  "_LaunchWizardButton-f581f36d.min.js": {
-    "file": "js/chunks/LaunchWizardButton-f581f36d.min.js",
-    "imports": [
-      "_vendor-b9834729.min.js"
-    ]
+  "_exactmetrics-icons-497ded17.min.js": {
+    "file": "js/chunks/exactmetrics-icons-497ded17.min.js"
   },
-  "_SettingsInfoTooltip-facc1a56.min.js": {
-    "file": "js/chunks/SettingsInfoTooltip-facc1a56.min.js",
-    "imports": [
-      "_vendor-b9834729.min.js"
-    ]
-  },
-  "_WidgetReportError-1a54c6a5.min.js": {
-    "file": "js/chunks/WidgetReportError-1a54c6a5.min.js",
-    "imports": [
-      "_vendor-b9834729.min.js"
-    ]
-  },
-  "_date-intervals-8636ef17.min.js": {
-    "file": "js/chunks/date-intervals-8636ef17.min.js",
-    "imports": [
-      "_vendor-b9834729.min.js",
-      "_index-076ae19a.min.js"
-    ]
-  },
-  "_exactmetrics-icons-f933244e.min.js": {
-    "file": "js/chunks/exactmetrics-icons-f933244e.min.js"
-  },
-  "_html2canvas-c6e0047e.min.js": {
-    "file": "js/chunks/html2canvas-c6e0047e.min.js",
-    "imports": [
-      "_vendor-b9834729.min.js"
-    ],
-    "isDynamicEntry": true
-  },
-  "_index-076ae19a.min.js": {
-    "file": "js/chunks/index-076ae19a.min.js",
-    "imports": [
-      "_vendor-b9834729.min.js"
-    ]
-  },
-  "_index-31ac34c3.min.js": {
+  "_index-c4388dec.min.js": {
     "assets": [
       "img/logo-ExactMetrics.png",
-      "img/logo-ExactMetrics@2x2.png",
+      "img/logo-ExactMetrics@2x.png",
       "img/logo-exactmetrics-agency.svg",
       "img/logo-exactmetrics-pro.svg",
       "img/logo-exactmetrics-plus.svg",
       "img/icon-info.svg",
-      "img/logo-ExactMetrics@2x.png",
+      "img/logo-ExactMetrics@2x2.png",
       "fonts/Roboto-Regular.woff2",
       "fonts/Roboto-Bold.woff2",
       "fonts/lato-regular-webfont.woff",
@@ -96,35 +58,35 @@
     "css": [
       "css/index.css"
     ],
-    "file": "js/chunks/index-31ac34c3.min.js",
+    "file": "js/chunks/index-c4388dec.min.js",
     "imports": [
-      "_vendor-b9834729.min.js",
-      "_ContentIconList-bbe6e6ed.min.js",
-      "_index-076ae19a.min.js"
+      "_vendor-3aa45264.min.js",
+      "_ContentIconList-cd53ea66.min.js",
+      "_exactmetrics-helper-plugin-ce356fcb.min.js"
     ]
   },
-  "_report-table-helper-604ecd03.min.js": {
-    "file": "js/chunks/report-table-helper-604ecd03.min.js",
+  "_exactmetrics-helper-plugin-ce356fcb.min.js": {
+    "file": "js/chunks/exactmetrics-helper-plugin-ce356fcb.min.js",
     "imports": [
-      "_vendor-b9834729.min.js",
-      "_SettingsInfoTooltip-facc1a56.min.js",
-      "_date-intervals-8636ef17.min.js",
-      "_exactmetrics-icons-f933244e.min.js"
+      "_vendor-3aa45264.min.js"
     ]
   },
-  "_vendor-b9834729.min.js": {
+  "_report-table-helper-0540d7f9.min.js": {
+    "file": "js/chunks/report-table-helper-0540d7f9.min.js",
+    "imports": [
+      "_vendor-3aa45264.min.js",
+      "_exactmetrics-helper-plugin-ce356fcb.min.js",
+      "_exactmetrics-icons-497ded17.min.js"
+    ]
+  },
+  "_vendor-3aa45264.min.js": {
     "assets": [
       "img/sucker.png"
     ],
     "css": [
       "css/vendor.css"
     ],
-    "dynamicImports": [
-      "_html2canvas-c6e0047e.min.js",
-      "node_modules/dompurify/dist/purify.es.js",
-      "node_modules/canvg/lib/index.es.js"
-    ],
-    "file": "js/chunks/vendor-b9834729.min.js"
+    "file": "js/chunks/vendor-3aa45264.min.js"
   },
   "index.css": {
     "file": "css/index.css",
@@ -133,19 +95,6 @@
   "node_modules/@caohenghu/vue-colorpicker/src/img/sucker.png": {
     "file": "img/sucker.png",
     "src": "node_modules/@caohenghu/vue-colorpicker/src/img/sucker.png"
-  },
-  "node_modules/canvg/lib/index.es.js": {
-    "file": "js/chunks/index.es-1793971a.min.js",
-    "imports": [
-      "_vendor-b9834729.min.js"
-    ],
-    "isDynamicEntry": true,
-    "src": "node_modules/canvg/lib/index.es.js"
-  },
-  "node_modules/dompurify/dist/purify.es.js": {
-    "file": "js/chunks/purify.es-dceb4668.min.js",
-    "isDynamicEntry": true,
-    "src": "node_modules/dompurify/dist/purify.es.js"
   },
   "src/assets/fonts/Roboto-Bold.woff2": {
     "file": "fonts/Roboto-Bold.woff2",
@@ -218,6 +167,10 @@
   "src/assets/img/about-icon-guide.png": {
     "file": "img/about-icon-guide.png",
     "src": "src/assets/img/about-icon-guide.png"
+  },
+  "src/assets/img/about-team.jpg": {
+    "file": "img/about-team.jpg",
+    "src": "src/assets/img/about-team.jpg"
   },
   "src/assets/img/aioseo-client-logo-1.svg": {
     "file": "img/aioseo-client-logo-1.svg",
@@ -295,13 +248,13 @@
     "file": "img/check.svg",
     "src": "src/assets/img/check.svg"
   },
-  "src/assets/img/chris.png": {
-    "file": "img/chris.png",
-    "src": "src/assets/img/chris.png"
-  },
   "src/assets/img/easy-digital-downloads.png": {
     "file": "img/easy-digital-downloads.png",
     "src": "src/assets/img/easy-digital-downloads.png"
+  },
+  "src/assets/img/edd-xsell-banner.svg": {
+    "file": "img/edd-xsell-banner.svg",
+    "src": "src/assets/img/edd-xsell-banner.svg"
   },
   "src/assets/img/em-ai-insights.svg": {
     "file": "img/em-ai-insights.svg",
@@ -322,10 +275,6 @@
   "src/assets/img/exactmetrics/about-getting-started-video.png": {
     "file": "img/about-getting-started-video.png",
     "src": "src/assets/img/exactmetrics/about-getting-started-video.png"
-  },
-  "src/assets/img/exactmetrics/about-team-photo.png": {
-    "file": "img/about-team-photo.png",
-    "src": "src/assets/img/exactmetrics/about-team-photo.png"
   },
   "src/assets/img/exactmetrics/addons-help-screen.png": {
     "file": "img/addons-help-screen.png",
@@ -351,6 +300,26 @@
     "file": "img/badge-light.svg",
     "src": "src/assets/img/exactmetrics/badge-light.svg"
   },
+  "src/assets/img/exactmetrics/bg-ecommerce-purchases-by-location.png": {
+    "file": "img/bg-ecommerce-purchases-by-location.png",
+    "src": "src/assets/img/exactmetrics/bg-ecommerce-purchases-by-location.png"
+  },
+  "src/assets/img/exactmetrics/bg-ecommerce-refunds-by-geo.png": {
+    "file": "img/bg-ecommerce-refunds-by-geo.png",
+    "src": "src/assets/img/exactmetrics/bg-ecommerce-refunds-by-geo.png"
+  },
+  "src/assets/img/exactmetrics/bg-ecommerce-refunds.png": {
+    "file": "img/bg-ecommerce-refunds.png",
+    "src": "src/assets/img/exactmetrics/bg-ecommerce-refunds.png"
+  },
+  "src/assets/img/exactmetrics/bg-ecommerce-spend-by-day.png": {
+    "file": "img/bg-ecommerce-spend-by-day.png",
+    "src": "src/assets/img/exactmetrics/bg-ecommerce-spend-by-day.png"
+  },
+  "src/assets/img/exactmetrics/bg-ecommerce-spend-by-hour.png": {
+    "file": "img/bg-ecommerce-spend-by-hour.png",
+    "src": "src/assets/img/exactmetrics/bg-ecommerce-spend-by-hour.png"
+  },
   "src/assets/img/exactmetrics/cart-abandonment-screen.png": {
     "file": "img/cart-abandonment-screen.png",
     "src": "src/assets/img/exactmetrics/cart-abandonment-screen.png"
@@ -362,6 +331,10 @@
   "src/assets/img/exactmetrics/custom-dimensions-screen.png": {
     "file": "img/custom-dimensions-screen.png",
     "src": "src/assets/img/exactmetrics/custom-dimensions-screen.png"
+  },
+  "src/assets/img/exactmetrics/custom-events-report-screen.png": {
+    "file": "img/custom-events-report-screen.png",
+    "src": "src/assets/img/exactmetrics/custom-events-report-screen.png"
   },
   "src/assets/img/exactmetrics/dimensions-report-screen.png": {
     "file": "img/dimensions-report-screen.png",
@@ -428,7 +401,7 @@
     "src": "src/assets/img/exactmetrics/loading-background.jpg"
   },
   "src/assets/img/exactmetrics/logo-ExactMetrics@2x.png": {
-    "file": "img/logo-ExactMetrics@2x.png",
+    "file": "img/logo-ExactMetrics@2x2.png",
     "src": "src/assets/img/exactmetrics/logo-ExactMetrics@2x.png"
   },
   "src/assets/img/exactmetrics/media-report-upsell.png": {
@@ -462,6 +435,10 @@
   "src/assets/img/exactmetrics/pp-theme-widget-icons.png": {
     "file": "img/pp-theme-widget-icons.png",
     "src": "src/assets/img/exactmetrics/pp-theme-widget-icons.png"
+  },
+  "src/assets/img/exactmetrics/pretty-links-logo-white.svg": {
+    "file": "img/pretty-links-logo-white.svg",
+    "src": "src/assets/img/exactmetrics/pretty-links-logo-white.svg"
   },
   "src/assets/img/exactmetrics/publishers-screen.png": {
     "file": "img/publishers-screen.png",
@@ -583,10 +560,6 @@
     "file": "img/icon-em-watch.png",
     "src": "src/assets/img/icon-em-watch.png"
   },
-  "src/assets/img/icon-fb-small.png": {
-    "file": "img/icon-fb-small.png",
-    "src": "src/assets/img/icon-fb-small.png"
-  },
   "src/assets/img/icon-plus.png": {
     "file": "img/icon-plus.png",
     "src": "src/assets/img/icon-plus.png"
@@ -603,10 +576,6 @@
     "file": "img/icon-star.png",
     "src": "src/assets/img/icon-star.png"
   },
-  "src/assets/img/icon-twitter-small.png": {
-    "file": "img/icon-twitter-small.png",
-    "src": "src/assets/img/icon-twitter-small.png"
-  },
   "src/assets/img/icon-warning.png": {
     "file": "img/icon-warning.png",
     "src": "src/assets/img/icon-warning.png"
@@ -620,7 +589,7 @@
     "src": "src/assets/img/logo-ExactMetrics.png"
   },
   "src/assets/img/logo-ExactMetrics@2x.png": {
-    "file": "img/logo-ExactMetrics@2x2.png",
+    "file": "img/logo-ExactMetrics@2x.png",
     "src": "src/assets/img/logo-ExactMetrics@2x.png"
   },
   "src/assets/img/logo-ExactMetrics.png": {
@@ -666,6 +635,14 @@
   "src/assets/img/logo-wp-forms.png": {
     "file": "img/logo-wp-forms.png",
     "src": "src/assets/img/logo-wp-forms.png"
+  },
+  "src/assets/img/logo/exactmetrics-logo.svg": {
+    "file": "img/exactmetrics-logo.svg",
+    "src": "src/assets/img/logo/exactmetrics-logo.svg"
+  },
+  "src/assets/img/logo/exactmetrics-logo.svg": {
+    "file": "img/exactmetrics-logo.svg",
+    "src": "src/assets/img/logo/exactmetrics-logo.svg"
   },
   "src/assets/img/memberpress.png": {
     "file": "img/memberpress.png",
@@ -758,10 +735,6 @@
   "src/assets/img/popular-posts/theme-widget-8.jpg": {
     "file": "img/theme-widget-8.jpg",
     "src": "src/assets/img/popular-posts/theme-widget-8.jpg"
-  },
-  "src/assets/img/pretty-links-logo-white.svg": {
-    "file": "img/pretty-links-logo-white.svg",
-    "src": "src/assets/img/pretty-links-logo-white.svg"
   },
   "src/assets/img/rcp.png": {
     "file": "img/rcp.png",
@@ -903,14 +876,6 @@
     "file": "img/report-arrow-up-red.png",
     "src": "src/assets/img/reports/report-arrow-up-red.png"
   },
-  "src/assets/img/site-notes-category-upsell-em.jpg": {
-    "file": "img/site-notes-category-upsell-em.jpg",
-    "src": "src/assets/img/site-notes-category-upsell-em.jpg"
-  },
-  "src/assets/img/site-notes-integration-upsell.png": {
-    "file": "img/site-notes-integration-upsell.png",
-    "src": "src/assets/img/site-notes-integration-upsell.png"
-  },
   "src/assets/img/site-notes-trigger-icon-em.svg": {
     "file": "img/site-notes-trigger-icon-em.svg",
     "src": "src/assets/img/site-notes-trigger-icon-em.svg"
@@ -947,10 +912,6 @@
     "file": "img/site-speed-blur.png",
     "src": "src/assets/img/site-speed-blur.png"
   },
-  "src/assets/img/syed.png": {
-    "file": "img/syed.png",
-    "src": "src/assets/img/syed.png"
-  },
   "src/assets/img/underline-small.png": {
     "file": "img/underline-small.png",
     "src": "src/assets/img/underline-small.png"
@@ -967,9 +928,9 @@
     "file": "img/woo-insights-ecommerce-report-image.png",
     "src": "src/assets/img/woo-insights-ecommerce-report-image.png"
   },
-  "src/assets/img/woo-insights-hero-image.png": {
-    "file": "img/woo-insights-hero-image.png",
-    "src": "src/assets/img/woo-insights-hero-image.png"
+  "src/assets/img/woo-insights-hero-image-exactmetrics.png": {
+    "file": "img/woo-insights-hero-image-exactmetrics.png",
+    "src": "src/assets/img/woo-insights-hero-image-exactmetrics.png"
   },
   "src/assets/img/woo-insights-save-60-badge.svg": {
     "file": "img/woo-insights-save-60-badge.svg",
@@ -987,41 +948,61 @@
     "file": "img/wpconsent-page-feature-image.png",
     "src": "src/assets/img/wpconsent-page-feature-image.png"
   },
+  "src/assets/img/year-in-review/behavior-funnel.png": {
+    "file": "img/behavior-funnel.png",
+    "src": "src/assets/img/year-in-review/behavior-funnel.png"
+  },
+  "src/assets/img/year-in-review/devices-summary-left-icon.svg": {
+    "file": "img/devices-summary-left-icon.svg",
+    "src": "src/assets/img/year-in-review/devices-summary-left-icon.svg"
+  },
+  "src/assets/img/year-in-review/devices-summary-right-icon.svg": {
+    "file": "img/devices-summary-right-icon.svg",
+    "src": "src/assets/img/year-in-review/devices-summary-right-icon.svg"
+  },
+  "src/assets/img/year-in-review/em-behavior-section-bg.png": {
+    "file": "img/em-behavior-section-bg.png",
+    "src": "src/assets/img/year-in-review/em-behavior-section-bg.png"
+  },
+  "src/assets/img/year-in-review/em-dashboard-preview.png": {
+    "file": "img/em-dashboard-preview.png",
+    "src": "src/assets/img/year-in-review/em-dashboard-preview.png"
+  },
+  "src/assets/img/year-in-review/em-ecommerce-cart-image.svg": {
+    "file": "img/em-ecommerce-cart-image.svg",
+    "src": "src/assets/img/year-in-review/em-ecommerce-cart-image.svg"
+  },
+  "src/assets/img/year-in-review/em-form-insights-bar-left-icon.png": {
+    "file": "img/em-form-insights-bar-left-icon.png",
+    "src": "src/assets/img/year-in-review/em-form-insights-bar-left-icon.png"
+  },
+  "src/assets/img/year-in-review/em-google-performance-bar-left-icon.png": {
+    "file": "img/em-google-performance-bar-left-icon.png",
+    "src": "src/assets/img/year-in-review/em-google-performance-bar-left-icon.png"
+  },
+  "src/assets/img/year-in-review/em-hero-image.jpg": {
+    "file": "img/em-hero-image.jpg",
+    "src": "src/assets/img/year-in-review/em-hero-image.jpg"
+  },
+  "src/assets/img/year-in-review/em-thankyou-bg.png": {
+    "file": "img/em-thankyou-bg.png",
+    "src": "src/assets/img/year-in-review/em-thankyou-bg.png"
+  },
+  "src/assets/img/year-in-review/hero-image.jpg": {
+    "file": "img/hero-image.jpg",
+    "src": "src/assets/img/year-in-review/hero-image.jpg"
+  },
   "src/assets/img/yir-bar-chart-bg.svg": {
     "file": "img/yir-bar-chart-bg.svg",
     "src": "src/assets/img/yir-bar-chart-bg.svg"
-  },
-  "src/assets/img/yir-em-dashboard.png": {
-    "file": "img/yir-em-dashboard.png",
-    "src": "src/assets/img/yir-em-dashboard.png"
   },
   "src/assets/img/yir-em-hero.svg": {
     "file": "img/yir-em-hero.svg",
     "src": "src/assets/img/yir-em-hero.svg"
   },
-  "src/assets/img/yir-em-icon-desktop-small.svg": {
-    "file": "img/yir-em-icon-desktop-small.svg",
-    "src": "src/assets/img/yir-em-icon-desktop-small.svg"
-  },
-  "src/assets/img/yir-em-icon-mobile-small.svg": {
-    "file": "img/yir-em-icon-mobile-small.svg",
-    "src": "src/assets/img/yir-em-icon-mobile-small.svg"
-  },
-  "src/assets/img/yir-em-icon-tablet-small.svg": {
-    "file": "img/yir-em-icon-tablet-small.svg",
-    "src": "src/assets/img/yir-em-icon-tablet-small.svg"
-  },
   "src/assets/img/yir-em-icon-tip.svg": {
     "file": "img/yir-em-icon-tip.svg",
     "src": "src/assets/img/yir-em-icon-tip.svg"
-  },
-  "src/assets/img/yir-em-purple-star.svg": {
-    "file": "img/yir-em-purple-star.svg",
-    "src": "src/assets/img/yir-em-purple-star.svg"
-  },
-  "src/assets/img/yir-icon-bar-chart.svg": {
-    "file": "img/yir-icon-bar-chart.svg",
-    "src": "src/assets/img/yir-icon-bar-chart.svg"
   },
   "src/assets/img/yir-icon-behavior.svg": {
     "file": "img/yir-icon-behavior.svg",
@@ -1031,18 +1012,6 @@
     "file": "img/yir-icon-chart.svg",
     "src": "src/assets/img/yir-icon-chart.svg"
   },
-  "src/assets/img/yir-icon-chat.svg": {
-    "file": "img/yir-icon-chat.svg",
-    "src": "src/assets/img/yir-icon-chat.svg"
-  },
-  "src/assets/img/yir-icon-desktop.svg": {
-    "file": "img/yir-icon-desktop.svg",
-    "src": "src/assets/img/yir-icon-desktop.svg"
-  },
-  "src/assets/img/yir-icon-dollar.svg": {
-    "file": "img/yir-icon-dollar.svg",
-    "src": "src/assets/img/yir-icon-dollar.svg"
-  },
   "src/assets/img/yir-icon-em-sessions.svg": {
     "file": "img/yir-icon-em-sessions.svg",
     "src": "src/assets/img/yir-icon-em-sessions.svg"
@@ -1051,33 +1020,9 @@
     "file": "img/yir-icon-em-visitors.svg",
     "src": "src/assets/img/yir-icon-em-visitors.svg"
   },
-  "src/assets/img/yir-icon-global.svg": {
-    "file": "img/yir-icon-global.svg",
-    "src": "src/assets/img/yir-icon-global.svg"
-  },
-  "src/assets/img/yir-icon-google.svg": {
-    "file": "img/yir-icon-google.svg",
-    "src": "src/assets/img/yir-icon-google.svg"
-  },
-  "src/assets/img/yir-icon-loyalty.svg": {
-    "file": "img/yir-icon-loyalty.svg",
-    "src": "src/assets/img/yir-icon-loyalty.svg"
-  },
-  "src/assets/img/yir-icon-mobile.svg": {
-    "file": "img/yir-icon-mobile.svg",
-    "src": "src/assets/img/yir-icon-mobile.svg"
-  },
-  "src/assets/img/yir-icon-pen.svg": {
-    "file": "img/yir-icon-pen.svg",
-    "src": "src/assets/img/yir-icon-pen.svg"
-  },
   "src/assets/img/yir-icon-point.svg": {
     "file": "img/yir-icon-point.svg",
     "src": "src/assets/img/yir-icon-point.svg"
-  },
-  "src/assets/img/yir-icon-tablet.svg": {
-    "file": "img/yir-icon-tablet.svg",
-    "src": "src/assets/img/yir-icon-tablet.svg"
   },
   "src/assets/img/yir-icon-world.svg": {
     "file": "img/yir-icon-world.svg",
@@ -1094,6 +1039,18 @@
   "src/assets/img/yir-time-spent-table-icon.svg": {
     "file": "img/yir-time-spent-table-icon.svg",
     "src": "src/assets/img/yir-time-spent-table-icon.svg"
+  },
+  "src/modules/admin/admin.css": {
+    "file": "css/admin.css",
+    "src": "src/modules/admin/admin.css"
+  },
+  "src/modules/admin/admin.js": {
+    "css": [
+      "css/admin.css"
+    ],
+    "file": "js/admin.min.js",
+    "isEntry": true,
+    "src": "src/modules/admin/admin.js"
   },
   "src/modules/feature-feedback/icons/nps/rate-1.svg": {
     "file": "img/rate-1.svg",
@@ -1115,37 +1072,14 @@
     "file": "img/rate-5.svg",
     "src": "src/modules/feature-feedback/icons/nps/rate-5.svg"
   },
-  "src/modules/frontend/frontend.css": {
-    "file": "css/frontend.css",
-    "src": "src/modules/frontend/frontend.css"
-  },
-  "src/modules/frontend/frontend.js": {
-    "assets": [
-      "img/report-arrow-down-red.png",
-      "img/report-arrow-down-green.png",
-      "img/report-arrow-up-green.png",
-      "img/report-arrow-up-red.png"
-    ],
-    "css": [
-      "css/frontend.css"
-    ],
-    "file": "js/frontend.min.js",
-    "imports": [
-      "_vendor-b9834729.min.js",
-      "_date-intervals-8636ef17.min.js",
-      "_WidgetReportError-1a54c6a5.min.js",
-      "_LaunchWizardButton-f581f36d.min.js",
-      "_index-076ae19a.min.js"
-    ],
-    "isEntry": true,
-    "src": "src/modules/frontend/frontend.js"
-  },
   "src/modules/reports/reports.css": {
     "file": "css/reports.css",
     "src": "src/modules/reports/reports.css"
   },
   "src/modules/reports/reports.js": {
     "assets": [
+      "img/em-hero-image.jpg",
+      "img/exactmetrics-logo.svg",
       "img/rate-1.svg",
       "img/rate-2.svg",
       "img/rate-3.svg",
@@ -1179,11 +1113,16 @@
       "img/dimensions-report-screen.png",
       "img/media-report-upsell.png",
       "img/exception-report-screen.png",
+      "img/custom-events-report-screen.png",
+      "img/bg-ecommerce-refunds.png",
+      "img/bg-ecommerce-refunds-by-geo.png",
+      "img/bg-ecommerce-purchases-by-location.png",
+      "img/bg-ecommerce-spend-by-day.png",
+      "img/bg-ecommerce-spend-by-hour.png",
       "img/forms-screen.png",
       "img/optimize-screen.png",
       "img/custom-dimensions-screen.png",
       "img/forms-wpforms-upsell.png",
-      "img/yir-em-hero.svg",
       "img/yir-icon-em-visitors.svg",
       "img/yir-icon-em-sessions.svg",
       "img/yir-bar-chart-bg.svg",
@@ -1193,29 +1132,19 @@
       "img/yir-icon-behavior.svg",
       "img/icon-em-watch.png",
       "img/yir-time-spent-table-icon.svg",
-      "img/yir-icon-mobile.svg",
-      "img/yir-icon-desktop.svg",
-      "img/yir-icon-tablet.svg",
-      "img/yir-em-icon-mobile-small.svg",
-      "img/yir-em-icon-desktop-small.svg",
-      "img/yir-em-icon-tablet-small.svg",
-      "img/yir-icon-loyalty.svg",
-      "img/yir-icon-dollar.svg",
-      "img/em-logo-lg.png",
-      "img/yir-icon-bar-chart.svg",
-      "img/yir-icon-google.svg",
-      "img/yir-em-dashboard.png",
-      "img/chris.png",
-      "img/yir-em-purple-star.svg",
-      "img/syed.png",
+      "img/em-thankyou-bg.png",
+      "img/em-dashboard-preview.png",
       "img/yir-star.svg",
-      "img/yir-icon-chat.svg",
-      "img/yir-icon-pen.svg",
-      "img/yir-icon-global.svg",
-      "img/icon-fb-small.png",
-      "img/icon-twitter-small.png",
       "img/yir-icon-point.svg",
       "img/yir-icon-chart.svg",
+      "img/yir-em-hero.svg",
+      "img/devices-summary-left-icon.svg",
+      "img/devices-summary-right-icon.svg",
+      "img/em-behavior-section-bg.png",
+      "img/behavior-funnel.png",
+      "img/em-ecommerce-cart-image.svg",
+      "img/em-form-insights-bar-left-icon.png",
+      "img/em-google-performance-bar-left-icon.png",
       "img/site-speed-blur.png",
       "img/site-notes-trigger-icon-em.svg",
       "img/star.svg",
@@ -1239,15 +1168,12 @@
     ],
     "file": "js/reports.min.js",
     "imports": [
-      "_vendor-b9834729.min.js",
-      "_date-intervals-8636ef17.min.js",
-      "_report-table-helper-604ecd03.min.js",
-      "_SettingsInfoTooltip-facc1a56.min.js",
-      "_index-31ac34c3.min.js",
-      "_index-076ae19a.min.js",
-      "_ContentIconList-bbe6e6ed.min.js",
-      "_LaunchWizardButton-f581f36d.min.js",
-      "_exactmetrics-icons-f933244e.min.js"
+      "_vendor-3aa45264.min.js",
+      "_report-table-helper-0540d7f9.min.js",
+      "_exactmetrics-helper-plugin-ce356fcb.min.js",
+      "_index-c4388dec.min.js",
+      "_ContentIconList-cd53ea66.min.js",
+      "_exactmetrics-icons-497ded17.min.js"
     ],
     "isEntry": true,
     "src": "src/modules/reports/reports.js"
@@ -1263,6 +1189,7 @@
       "img/woo-insights-sessions-revenue.png",
       "img/wpconsent-page-feature-image.png",
       "img/google-ads-welcome.png",
+      "img/edd-xsell-banner.svg",
       "img/em-logo-lg.png",
       "img/icon-download.png",
       "img/pretty-links-logo-white.svg",
@@ -1275,7 +1202,7 @@
       "img/about-icon-gdpr.png",
       "img/about-icon-addons-em.png",
       "img/about-icon-ecommerce.png",
-      "img/about-team-photo.png",
+      "img/about-team.jpg",
       "img/em-logo.png",
       "img/about-getting-started-video.png",
       "img/testimonial-image-1.png",
@@ -1336,7 +1263,7 @@
       "img/aioseo-screen-1.svg",
       "img/aioseo-screen-2.svg",
       "img/exactmetrics-aioseo.jpg",
-      "img/woo-insights-hero-image.png",
+      "img/woo-insights-hero-image-exactmetrics.png",
       "img/underline.png",
       "img/underline-small.png",
       "img/icon-site-notes.svg",
@@ -1344,8 +1271,6 @@
       "img/star-empty.svg",
       "img/icon-media.svg",
       "img/arrow-down.svg",
-      "img/site-notes-category-upsell-em.jpg",
-      "img/site-notes-integration-upsell.png",
       "img/icon-plus.svg",
       "img/icon-lock2.svg",
       "img/upsell-button-arrow.svg",
@@ -1374,6 +1299,12 @@
       "img/dimensions-report-screen.png",
       "img/media-report-upsell.png",
       "img/exception-report-screen.png",
+      "img/custom-events-report-screen.png",
+      "img/bg-ecommerce-refunds.png",
+      "img/bg-ecommerce-refunds-by-geo.png",
+      "img/bg-ecommerce-purchases-by-location.png",
+      "img/bg-ecommerce-spend-by-day.png",
+      "img/bg-ecommerce-spend-by-hour.png",
       "img/forms-screen.png",
       "img/optimize-screen.png",
       "img/custom-dimensions-screen.png",
@@ -1435,14 +1366,12 @@
     ],
     "file": "js/settings.min.js",
     "imports": [
-      "_vendor-b9834729.min.js",
-      "_index-076ae19a.min.js",
-      "_ContentIconList-bbe6e6ed.min.js",
-      "_AboutTestimonialsSlider-a497a870.min.js",
-      "_index-31ac34c3.min.js",
-      "_LaunchWizardButton-f581f36d.min.js",
-      "_SettingsInfoTooltip-facc1a56.min.js",
-      "_exactmetrics-icons-f933244e.min.js"
+      "_vendor-3aa45264.min.js",
+      "_exactmetrics-helper-plugin-ce356fcb.min.js",
+      "_ContentIconList-cd53ea66.min.js",
+      "_AboutTestimonialsSlider-5e143a3c.min.js",
+      "_index-c4388dec.min.js",
+      "_exactmetrics-icons-497ded17.min.js"
     ],
     "isEntry": true,
     "src": "src/modules/settings/settings.js"
@@ -1484,11 +1413,16 @@
       "img/dimensions-report-screen.png",
       "img/media-report-upsell.png",
       "img/exception-report-screen.png",
+      "img/custom-events-report-screen.png",
+      "img/bg-ecommerce-refunds.png",
+      "img/bg-ecommerce-refunds-by-geo.png",
+      "img/bg-ecommerce-purchases-by-location.png",
+      "img/bg-ecommerce-spend-by-day.png",
+      "img/bg-ecommerce-spend-by-hour.png",
       "img/forms-screen.png",
       "img/optimize-screen.png",
       "img/custom-dimensions-screen.png",
       "img/forms-wpforms-upsell.png",
-      "img/yir-em-hero.svg",
       "img/yir-icon-em-visitors.svg",
       "img/yir-icon-em-sessions.svg",
       "img/yir-bar-chart-bg.svg",
@@ -1498,29 +1432,19 @@
       "img/yir-icon-behavior.svg",
       "img/icon-em-watch.png",
       "img/yir-time-spent-table-icon.svg",
-      "img/yir-icon-mobile.svg",
-      "img/yir-icon-desktop.svg",
-      "img/yir-icon-tablet.svg",
-      "img/yir-em-icon-mobile-small.svg",
-      "img/yir-em-icon-desktop-small.svg",
-      "img/yir-em-icon-tablet-small.svg",
-      "img/yir-icon-loyalty.svg",
-      "img/yir-icon-dollar.svg",
-      "img/em-logo-lg.png",
-      "img/yir-icon-bar-chart.svg",
-      "img/yir-icon-google.svg",
-      "img/yir-em-dashboard.png",
-      "img/chris.png",
-      "img/yir-em-purple-star.svg",
-      "img/syed.png",
+      "img/em-thankyou-bg.png",
+      "img/em-dashboard-preview.png",
       "img/yir-star.svg",
-      "img/yir-icon-chat.svg",
-      "img/yir-icon-pen.svg",
-      "img/yir-icon-global.svg",
-      "img/icon-fb-small.png",
-      "img/icon-twitter-small.png",
       "img/yir-icon-point.svg",
       "img/yir-icon-chart.svg",
+      "img/yir-em-hero.svg",
+      "img/devices-summary-left-icon.svg",
+      "img/devices-summary-right-icon.svg",
+      "img/em-behavior-section-bg.png",
+      "img/behavior-funnel.png",
+      "img/em-ecommerce-cart-image.svg",
+      "img/em-form-insights-bar-left-icon.png",
+      "img/em-google-performance-bar-left-icon.png",
       "img/site-speed-blur.png",
       "img/site-notes-trigger-icon-em.svg",
       "img/star.svg",
@@ -1545,13 +1469,10 @@
     ],
     "file": "js/widget.min.js",
     "imports": [
-      "_vendor-b9834729.min.js",
-      "_date-intervals-8636ef17.min.js",
-      "_report-table-helper-604ecd03.min.js",
-      "_SettingsInfoTooltip-facc1a56.min.js",
-      "_WidgetReportError-1a54c6a5.min.js",
-      "_index-076ae19a.min.js",
-      "_exactmetrics-icons-f933244e.min.js"
+      "_vendor-3aa45264.min.js",
+      "_report-table-helper-0540d7f9.min.js",
+      "_exactmetrics-helper-plugin-ce356fcb.min.js",
+      "_exactmetrics-icons-497ded17.min.js"
     ],
     "isEntry": true,
     "src": "src/modules/widget/widget.js"
@@ -1575,7 +1496,7 @@
       "fonts/icons.woff",
       "fonts/icons.ttf",
       "fonts/icons.otf",
-      "img/logo-ExactMetrics@2x.png",
+      "img/logo-ExactMetrics@2x2.png",
       "img/icon-smile.png",
       "img/wpforms.png",
       "img/forms-screen.png",
@@ -1587,7 +1508,7 @@
       "img/about-icon-gdpr.png",
       "img/about-icon-addons-em.png",
       "img/about-icon-ecommerce.png",
-      "img/about-team-photo.png",
+      "img/about-team.jpg",
       "img/em-logo.png",
       "img/about-getting-started-video.png",
       "img/testimonial-image-1.png",
@@ -1619,6 +1540,12 @@
       "img/dimensions-report-screen.png",
       "img/media-report-upsell.png",
       "img/exception-report-screen.png",
+      "img/custom-events-report-screen.png",
+      "img/bg-ecommerce-refunds.png",
+      "img/bg-ecommerce-refunds-by-geo.png",
+      "img/bg-ecommerce-purchases-by-location.png",
+      "img/bg-ecommerce-spend-by-day.png",
+      "img/bg-ecommerce-spend-by-hour.png",
       "img/optimize-screen.png",
       "img/custom-dimensions-screen.png",
       "img/forms-wpforms-upsell.png",
@@ -1629,12 +1556,10 @@
     ],
     "file": "js/wizard.min.js",
     "imports": [
-      "_vendor-b9834729.min.js",
-      "_AboutTestimonialsSlider-a497a870.min.js",
-      "_SettingsInfoTooltip-facc1a56.min.js",
-      "_index-076ae19a.min.js",
-      "_ContentIconList-bbe6e6ed.min.js",
-      "_LaunchWizardButton-f581f36d.min.js"
+      "_vendor-3aa45264.min.js",
+      "_AboutTestimonialsSlider-5e143a3c.min.js",
+      "_exactmetrics-helper-plugin-ce356fcb.min.js",
+      "_ContentIconList-cd53ea66.min.js"
     ],
     "isEntry": true,
     "src": "src/modules/wizard-onboarding/wizard.js"

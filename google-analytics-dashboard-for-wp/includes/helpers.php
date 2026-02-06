@@ -1062,11 +1062,8 @@ function exactmetrics_get_licensing_url() {
  * @since 6.0.0
  */
 function exactmetrics_perform_remote_request( $action, $body = array(), $headers = array(), $return_format = 'json' ) {
-	$key = '';
-	if ( class_exists( 'ExactMetrics' ) && ExactMetrics() && isset( ExactMetrics()->license ) ) {
-		$key = is_network_admin() ? ExactMetrics()->license->get_network_license_key() : ExactMetrics()->license->get_site_license_key();
-	}
 
+	$key = is_network_admin() ? ExactMetrics()->license->get_network_license_key() : ExactMetrics()->license->get_site_license_key();
 	// Build the body of the request.
 	$query_params = wp_parse_args(
 		$body,
@@ -1082,7 +1079,6 @@ function exactmetrics_perform_remote_request( $action, $body = array(), $headers
 	$args = [
 		'headers' => $headers,
 	];
-	// echo add_query_arg( $query_params, exactmetrics_get_licensing_url() ); die;
 	// Perform the query and retrieve the response.
 	$response      = wp_remote_get( add_query_arg( $query_params, exactmetrics_get_licensing_url() ), $args );
 	$response_code = wp_remote_retrieve_response_code( $response );
@@ -1717,7 +1713,7 @@ function exactmetrics_menu_highlight_color() {
  * @param string $url The url to which users get redirected.
  */
 function exactmetrics_custom_track_pretty_links_redirect( $url ) {
-	if ( ! function_exists( 'exactmetrics_mp_collect_v4' ) ) {
+	if ( ! function_exists( 'exactmetrics_tracking' ) || ! exactmetrics_get_v4_id_to_output() ) {
 		return;
 	}
 
@@ -1757,41 +1753,32 @@ function exactmetrics_custom_track_pretty_links_redirect( $url ) {
 		// no paths setup in ExactMetrics settings
 		return;
 	}
-
-	if ( exactmetrics_get_v4_id_to_output() ) {
-		// Get Pretty Links settings.
-		$pretty_track = exactmetrics_get_option( 'pretty_links_backend_track', '' );
-
-		if ( 'pretty_link' == $pretty_track ) {
-			global $prli_link;
-			$pretty_link = $prli_link->get_one_by( 'url', $url );
-			$link_url    = PrliUtils::get_pretty_link_url( $pretty_link->slug );
-		} else {
-			$link_url = $url;
-		}
-
-		$url_components = parse_url( $url );
-		$params_args    = array(
-			'link_text'   => 'external-redirect',
-			'link_url'    => $link_url,
-			'link_domain' => $url_components['host'],
-			'outbound'    => 'true',
-		);
-
-		if ( ! empty( $label ) ) {
-			$params_args['affiliate_label']   = $label;
-			$params_args['is_affiliate_link'] = 'true';
-		}
-
-		exactmetrics_mp_collect_v4( array(
-			'events' => array(
-				array(
-					'name'   => 'click',
-					'params' => $params_args,
-				)
-			),
-		) );
+	
+	// Get Pretty Links settings.
+	$pretty_track = exactmetrics_get_option( 'pretty_links_backend_track', '' );
+	
+	if ( 'pretty_link' == $pretty_track ) {
+		global $prli_link;
+		$pretty_link = $prli_link->get_one_by( 'url', $url );
+		$link_url    = PrliUtils::get_pretty_link_url( $pretty_link->slug );
+	} else {
+		$link_url = $url;
 	}
+	
+	$url_components = parse_url( $url );
+	$event_data    = array(
+		'link_text'   => 'external-redirect',
+		'link_url'    => $link_url,
+		'link_domain' => $url_components['host'],
+		'outbound'    => 'true',
+	);
+	
+	if ( ! empty( $label ) ) {
+		$event_data['affiliate_label']   = $label;
+		$event_data['is_affiliate_link'] = 'true';
+	}
+	
+	exactmetrics_tracking()->send( 'click', $event_data );
 }
 
 add_action( 'prli_before_redirect', 'exactmetrics_custom_track_pretty_links_redirect' );
@@ -1835,23 +1822,16 @@ function exactmetrics_track_pretty_links_file_download_redirect( $url ) {
 
 	global $prli_link;
 	$pretty_link = $prli_link->get_one_by( 'url', $url );
-
-	$args = array(
-		'events' => array(
-			array(
-				'name'   => 'file_download',
-				'params' => array(
-					'link_text'      => $pretty_link->name,
-					'link_url'       => $url,
-					'link_domain'    => $url_components['host'],
-					'file_extension' => $file_info['extension'],
-					'file_name'      => $file_info['basename'],
-				)
-			)
-		),
+	
+	$event_data = array(
+		'link_text'      => $pretty_link->name,
+		'link_url'       => $url,
+		'link_domain'    => $url_components['host'],
+		'file_extension' => $file_info['extension'],
+		'file_name'      => $file_info['basename'],
 	);
-
-	exactmetrics_mp_collect_v4( $args );
+	
+	exactmetrics_tracking()->send( 'file_download', $event_data );
 }
 
 /**
@@ -2596,4 +2576,61 @@ function exactmetrics_wpconsent_is_cmp_plugin_active() {
 	}
 
 	return false;
+}
+
+/**
+ * Get the eCommerce currency code from the active eCommerce platform.
+ *
+ * Checks for WooCommerce, Easy Digital Downloads, MemberPress, LifterLMS,
+ * Restrict Content Pro, and GiveWP. Falls back to 'USD' if no platform is detected.
+ *
+ * @since 9.4.0
+ *
+ * @return string The 3-letter ISO 4217 currency code.
+ */
+function exactmetrics_get_ecommerce_currency() {
+	// Check WooCommerce first (most common).
+	if ( function_exists( 'get_woocommerce_currency' ) ) {
+		return get_woocommerce_currency();
+	}
+
+	// Check Easy Digital Downloads.
+	if ( function_exists( 'edd_get_currency' ) ) {
+		return edd_get_currency();
+	}
+
+	// Check MemberPress.
+	if ( class_exists( 'MeprOptions' ) ) {
+		$mepr_options = MeprOptions::fetch();
+		if ( ! empty( $mepr_options->currency_code ) ) {
+			return $mepr_options->currency_code;
+		}
+	}
+
+	// Check LifterLMS.
+	if ( function_exists( 'get_lifterlms_currency' ) ) {
+		return get_lifterlms_currency();
+	}
+
+	// Check Restrict Content Pro.
+	if ( function_exists( 'rcp_get_currency' ) ) {
+		return rcp_get_currency();
+	}
+
+	// Check GiveWP.
+	if ( function_exists( 'give_get_currency' ) ) {
+		return give_get_currency();
+	}
+
+	/**
+	 * Filter the eCommerce currency code.
+	 *
+	 * Allows other plugins or custom code to provide the currency code
+	 * when no supported eCommerce platform is detected.
+	 *
+	 * @since 9.4.0
+	 *
+	 * @param string $currency The 3-letter ISO 4217 currency code. Default 'USD'.
+	 */
+	return apply_filters( 'exactmetrics_ecommerce_currency', 'USD' );
 }

@@ -176,6 +176,8 @@ class ExactMetrics_Dashboard_Widget {
 			$wpforms_installed      = false;
 			$userfeedback_url       = false;
 			$userfeedback_installed = false;
+			$formidableforms_installed = false;
+
 			if ( exactmetrics_can_install_plugins() ) {
 				$wpforms_key = 'wpforms-lite/wpforms.php';
 				if ( array_key_exists( $wpforms_key, $plugins ) ) {
@@ -194,6 +196,10 @@ class ExactMetrics_Dashboard_Widget {
 					$userfeedback_installed = true;
 				} else {
 					$userfeedback_url = wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=userfeedback-lite' ), 'install-plugin_userfeedback-lite' );
+				}
+
+				if ( array_key_exists( 'formidable/formidable.php', $plugins ) ) {
+					$formidableforms_installed = true;
 				}
 			}
 
@@ -226,6 +232,7 @@ class ExactMetrics_Dashboard_Widget {
 					'reports_url'            => add_query_arg( 'page', 'exactmetrics_reports', admin_url( 'admin.php' ) ),
 					'getting_started_url'    => is_multisite() ? network_admin_url( 'admin.php?page=exactmetrics_network#/about/getting-started' ) : admin_url( 'admin.php?page=exactmetrics_settings#/about/getting-started' ),
 					'wizard_url'             => admin_url( 'index.php?page=exactmetrics-onboarding' ),
+					'formidableforms_installed' => $formidableforms_installed,
 				)
 			);
 

@@ -1,6 +1,17 @@
 <?php
 
 add_action('init', function () {
+	
+	// Load API classes
+	require_once EXACTMETRICS_PLUGIN_DIR . 'includes/api/class-exactmetrics-api-error.php';
+	require_once EXACTMETRICS_PLUGIN_DIR . 'includes/api/class-exactmetrics-api.php';
+	require_once EXACTMETRICS_PLUGIN_DIR . 'includes/api/class-exactmetrics-api-reports.php';
+	require_once EXACTMETRICS_PLUGIN_DIR . 'includes/api/class-exactmetrics-api-tracking.php';
+	
+	// Load Tracking classes
+	require_once EXACTMETRICS_PLUGIN_DIR . 'includes/tracking/class-exactmetrics-tracking.php';
+	require_once EXACTMETRICS_PLUGIN_DIR . 'includes/tracking/class-exactmetrics-tracking-event.php';
+	
 	if ( is_admin() ) {
 		require_once EXACTMETRICS_PLUGIN_DIR . 'lite/includes/admin/tools.php';
 		require_once EXACTMETRICS_PLUGIN_DIR . 'lite/includes/admin/metaboxes.php';
@@ -47,6 +58,10 @@ add_action('init', function () {
 		require_once EXACTMETRICS_PLUGIN_DIR . 'lite/includes/admin/reports/report-summaries.php';
 		$summaries = new ExactMetrics_Report_Summaries();
 		ExactMetrics()->reporting->add_report( $summaries );
+		
+		require_once EXACTMETRICS_PLUGIN_DIR . 'lite/includes/admin/reports/report-ecommerce-product-feed.php';
+		$ecommerce_product_feed = new ExactMetrics_Report_Ecommerce_Product_Feed();
+		ExactMetrics()->reporting->add_report( $ecommerce_product_feed );
 
 		// Email summaries related classes
 		require_once EXACTMETRICS_PLUGIN_DIR . 'lite/includes/emails/summaries-infoblocks.php';
@@ -58,6 +73,10 @@ add_action('init', function () {
 		require_once EXACTMETRICS_PLUGIN_DIR . 'includes/api/class-exactmetrics-api.php';
 		require_once EXACTMETRICS_PLUGIN_DIR . 'includes/api/class-exactmetrics-api-reports.php';
 		require_once EXACTMETRICS_PLUGIN_DIR . 'includes/api/class-exactmetrics-api-tracking.php';
+		require_once EXACTMETRICS_PLUGIN_DIR . 'includes/api/class-exactmetrics-api-ads.php';
+
+		// Load Google Ads admin classes
+		require_once EXACTMETRICS_PLUGIN_DIR . 'includes/ppc/google/class-exactmetrics-google-ads.php';
 	}
 
 	if ( is_admin() ) {
@@ -107,5 +126,11 @@ add_action('init', function () {
 	require_once EXACTMETRICS_PLUGIN_DIR . 'includes/connect.php';
 
 	// Run hook to load ExactMetrics addons.
-	do_action( 'exactmetrics_load_plugins' ); // the updater class for each addon needs to be instantiated via `exactmetrics_updater`
+	// the updater class for each addon needs to be instantiated via `exactmetrics_updater`
+	do_action( 'exactmetrics_load_plugins' );
+
+	if ( ! is_admin() ) {
+		// Load PPC Core for frontend conversion tracking
+		require_once EXACTMETRICS_PLUGIN_DIR . 'includes/ppc/class-exactmetrics-ppc-tracking-core.php';
+	}
 }, 0 );

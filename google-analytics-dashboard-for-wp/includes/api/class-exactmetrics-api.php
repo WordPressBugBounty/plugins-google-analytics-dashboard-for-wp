@@ -2,48 +2,50 @@
 /**
  * Base API Client class for ExactMetrics.
  *
+ * This abstract class provides the foundational structure for making API requests
+ * to the ExactMetrics service. It handles authentication, request setup,
+ * and response processing.
  *
  * @package ExactMetrics
  */
-
 abstract class ExactMetrics_API_Client {
 	/**
-	 * Base API URL.
+	 * Base URL for the ExactMetrics API.
 	 *
 	 * @var string
 	 */
-	protected $base_url = '';
+	protected $base_url = 'https://app.exactmetrics.com/api/v3';
 
 	/**
-	 * API token.
+	 * The site-specific token for API authentication.
 	 *
 	 * @var string
 	 */
 	protected $token;
 
 	/**
-	 * API key.
+	 * The site-specific key for API authentication.
 	 *
 	 * @var string
 	 */
 	protected $key;
 
 	/**
-	 * License key.
+	 * The license key for premium features.
 	 *
 	 * @var string
 	 */
 	protected $license;
 
 	/**
-	 * Site URL.
+	 * The URL of the WordPress site.
 	 *
 	 * @var string
 	 */
 	protected $site_url;
 
 	/**
-	 * ExactMetrics version.
+	 * The current version of the ExactMetrics plugin.
 	 *
 	 * @var string
 	 */
@@ -51,6 +53,10 @@ abstract class ExactMetrics_API_Client {
 
 	/**
 	 * Constructor.
+	 *
+	 * Initializes the API client by setting up the necessary authentication
+	 * and site information.
+	 *
 	 */
 	public function __construct() {
 		$this->token     = $this->get_token();
@@ -61,27 +67,33 @@ abstract class ExactMetrics_API_Client {
 	}
 
 	/**
-	 * Get the API token.
+	 * Get the Site token for API authentication.
 	 *
-	 * @return string
+	 * Retrieves the token for the current site or network.
+	 *
+	 * @return string The site or network token.
 	 */
 	protected function get_token() {
 		return is_network_admin() ? ExactMetrics()->auth->get_network_token() : ExactMetrics()->auth->get_token();
 	}
 
 	/**
-	 * Get the API key.
+	 * Get the Site key for API authentication.
 	 *
-	 * @return string
+	 * Retrieves the key for the current site or network.
+	 *
+	 * @return string The site or network key.
 	 */
 	protected function get_key() {
 		return is_network_admin() ? ExactMetrics()->auth->get_network_key() : ExactMetrics()->auth->get_key();
 	}
 
 	/**
-	 * Get the license key.
+	 * Get the license key for the plugin.
 	 *
-	 * @return string
+	 * Retrieves the license key for Pro versions of the plugin.
+	 *
+	 * @return string The site or network license key, or an empty string for Lite version.
 	 */
 	protected function get_license() {
 		if ( ! exactmetrics_is_pro_version() ) {
@@ -94,44 +106,42 @@ abstract class ExactMetrics_API_Client {
 	/**
 	 * Get the site URL.
 	 *
-	 * @return string
+	 * Returns the appropriate admin URL based on whether it's a network or single site.
+	 *
+	 * @return string The site URL.
 	 */
 	protected function get_site_url() {
 		return is_network_admin() ? network_admin_url() : home_url();
 	}
 
 	/**
-	 * Get common request parameters.
+	 * Get the base URL for the API.
 	 *
-	 * @return array
+	 * This can be filtered to allow for different API endpoints.
+	 *
+	 * @return string The base URL for API requests.
 	 */
-	protected function get_common_params() {
-		$params = array(
-			'token'     => $this->token,
-			'key'       => $this->key,
-			'miversion' => $this->miversion,
-			'site_url'  => $this->site_url,
+	protected function get_base_url() {
+		return trailingslashit(
+			apply_filters( 'exactmetrics_api_url', $this->base_url )
 		);
-
-		if ( ! empty( $this->license ) ) {
-			$params['license'] = $this->license;
-		}
-
-		return $params;
 	}
 
 	/**
 	 * Make an API request.
 	 *
-	 * @param string $endpoint The API endpoint.
-	 * @param array  $params   The request parameters.
-	 * @param string $method   The request method.
+	 * This method sends a request to the specified API endpoint and handles the response.
 	 *
-	 * @return array|WP_Error
+	 *
+	 * @param string $endpoint The API endpoint to call.
+	 * @param array  $params   The parameters to send with the request.
+	 * @param string $method   The HTTP method to use (e.g., 'POST', 'GET').
+	 *
+	 * @return array|ExactMetrics_API_Error|WP_Error The decoded JSON response as an array,
+	 *                                                  or a WP_Error/ExactMetrics_API_Error on failure.
 	 */
 	protected function request( $endpoint, $params = array(), $method = 'POST' ) {
-		$url = apply_filters( 'exactmetrics_api_url', trailingslashit( $this->base_url ) . $endpoint );
-		$params = array_merge( $this->get_common_params(), $params );
+		$url = $this->get_base_url() . $endpoint;
 
 		$args = array(
 			'method'      => $method,
@@ -144,10 +154,21 @@ abstract class ExactMetrics_API_Client {
 				'Accept'        => 'application/json',
 				'MIAPI-Sender'  => 'WordPress',
 				'MIAPI-Referer' => $this->site_url,
+				// Authentication headers
+				'X-Relay-Site-Key'  => $this->key,
+				'X-Relay-Token'     => $this->token,
+				'X-Relay-Site-Url'  => $this->site_url,
+				'X-Relay-License'   => $this->license
 			),
-			'body'        => $params,
+			
 			'cookies'     => array(),
 		);
+		
+		if ( $method === 'GET' ) {
+			$url = add_query_arg($params, $url);
+		} else {
+			$args['body'] = json_encode($params);
+		}
 
 		$response = wp_remote_request( $url, $args );
 

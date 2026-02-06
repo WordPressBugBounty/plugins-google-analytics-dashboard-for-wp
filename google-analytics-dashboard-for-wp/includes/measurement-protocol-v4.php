@@ -4,6 +4,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
+/**
+ * @deprecated The MP integration has been deprecated. Use the newer tracking class instead
+ * @see ExactMetrics_Tracking
+ * @see exactmetrics_tracking()
+ */
 class ExactMetrics_Measurement_Protocol_V4 {
 	private static $instance;
 
@@ -71,7 +76,13 @@ class ExactMetrics_Measurement_Protocol_V4 {
 			$this->get_base_url()
 		);
 	}
-
+	
+	/**
+	 * @deprecated
+	 * @param $args
+	 *
+	 * @return bool|mixed|string
+	 */
 	private function get_client_id( $args ) {
 		if ( ! empty( $args['client_id'] ) ) {
 			return $args['client_id'];
@@ -89,6 +100,12 @@ class ExactMetrics_Measurement_Protocol_V4 {
 		$sanitized_params = array();
 
 		foreach ( $params as $key => $value ) {
+			// Skip empty string values to prevent sending invalid data to Google
+			// Google may reject events with empty string parameters
+			if ( $value === '' && $key !== 'transaction_id' ) {
+				continue;
+			}
+
 			if ( ! array_key_exists( $key, $schema ) ||
 				 ( ! is_array( $value ) && gettype( $value ) === $schema[ $key ] )
 			) {
@@ -208,6 +225,20 @@ class ExactMetrics_Measurement_Protocol_V4 {
 	}
 }
 
+/**
+ * @deprecated The MP integration has been deprecated. Use the newer tracking class instead
+ * @see ExactMetrics_Tracking
+ * @see exactmetrics_tracking()
+ */
 function exactmetrics_mp_collect_v4( $args ) {
-	return ExactMetrics_Measurement_Protocol_V4::get_instance()->collect( $args );
+	_deprecated_function(__FUNCTION__, "9.10.0", "exactmetrics_tracking()->send()");
+	
+	// Transform args for backwards compat, send:
+	if ( empty( $args ) || empty( $args['events'] ) ) {
+		return;
+	}
+	
+	foreach ( $args['events'] as $raw_event ) {
+		exactmetrics_tracking()->send( $raw_event['name'], $raw_event['params'] ?? [] );
+	}
 }

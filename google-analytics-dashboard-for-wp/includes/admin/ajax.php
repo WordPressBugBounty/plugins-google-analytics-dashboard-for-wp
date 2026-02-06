@@ -230,12 +230,12 @@ function exactmetrics_ajax_dismiss_notice() {
 add_action( 'wp_ajax_exactmetrics_ajax_dismiss_notice', 'exactmetrics_ajax_dismiss_notice' );
 
 /**
- * Dismiss SEMRush CTA
+ * Dismiss SEOBoost CTA
  *
  * @access public
  * @since 7.12.3
  */
-function exactmetrics_ajax_dismiss_semrush_cta() {
+function exactmetrics_ajax_dismiss_seoboost_cta() {
 	check_ajax_referer( 'mi-admin-nonce', 'nonce' );
 
 	if ( ! current_user_can( 'exactmetrics_save_settings' ) ) {
@@ -243,7 +243,7 @@ function exactmetrics_ajax_dismiss_semrush_cta() {
 	}
 
 	// Deactivate the notice
-	if ( update_option( 'exactmetrics_dismiss_semrush_cta', 'yes' ) ) {
+	if ( update_option( 'exactmetrics_dismiss_seoboost_cta', 'yes' ) ) {
 		// Return true
 		wp_send_json( array(
 			'dismissed' => 'yes',
@@ -258,7 +258,7 @@ function exactmetrics_ajax_dismiss_semrush_cta() {
 	wp_die();
 }
 
-add_action( 'wp_ajax_exactmetrics_vue_dismiss_semrush_cta', 'exactmetrics_ajax_dismiss_semrush_cta' );
+add_action( 'wp_ajax_exactmetrics_vue_dismiss_seoboost_cta', 'exactmetrics_ajax_dismiss_seoboost_cta' );
 
 
 /**
@@ -295,17 +295,17 @@ add_action( 'wp_ajax_exactmetrics_vue_dismiss_aiseo_cta', 'exactmetrics_vue_dism
 /**
  * Get the sem rush cta dismiss status value
  */
-function exactmetrics_get_sem_rush_cta_status() {
+function exactmetrics_get_seo_boost_cta_status() {
 	check_ajax_referer( 'mi-admin-nonce', 'nonce' );
 
-	$dismissed_cta = get_option( 'exactmetrics_dismiss_semrush_cta', 'no' );
+	$dismissed_cta = get_option( 'exactmetrics_dismiss_seoboost_cta', 'no' );
 
 	wp_send_json( array(
 		'dismissed' => $dismissed_cta,
 	) );
 }
 
-add_action( 'wp_ajax_exactmetrics_get_sem_rush_cta_status', 'exactmetrics_get_sem_rush_cta_status' );
+add_action( 'wp_ajax_exactmetrics_get_seo_boost_cta_status', 'exactmetrics_get_seo_boost_cta_status' );
 
 /**
  * Checks if AISEO call-to-action is dismissed.

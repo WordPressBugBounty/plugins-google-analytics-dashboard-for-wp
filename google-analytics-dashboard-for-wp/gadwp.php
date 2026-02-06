@@ -5,7 +5,7 @@
  * Plugin URI: https://exactmetrics.com
  * Description: Displays Google Analytics Reports and Real-Time Statistics in your Dashboard. Automatically inserts the tracking code in every page of your website.
  * Author: ExactMetrics
- * Version: 8.8.0
+ * Version: 9.0.1
  * Requires at least: 5.6.0
  * Requires PHP: 7.2
  * Author URI: https://exactmetrics.com/lite/?utm_source=liteplugin&utm_medium=pluginheader&utm_campaign=authoruri&utm_content=7%2E0%2E0
@@ -16,6 +16,14 @@
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
+}
+
+// Load AMP compatibility very early if we're in AMP context
+if ( ( isset( $_GET['amp'] ) && $_GET['amp'] === '1' ) || 
+	 ( function_exists( 'is_amp_endpoint' ) && is_amp_endpoint() ) ||
+	 ( function_exists( 'amp_is_request' ) && amp_is_request() ) ||
+	 ( isset( $_SERVER['REQUEST_URI'] ) && false !== strpos( $_SERVER['REQUEST_URI'], '/amp/' ) ) ) {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/frontend/class-amp-compatibility-early.php';
 }
 
 /**
@@ -47,7 +55,7 @@ final class ExactMetrics_Lite {
 	 * @var string $version Plugin version.
 	 */
 
-	public $version = '8.8.0';
+	public $version = '9.0.1';
 
 	/**
 	 * Plugin file.
@@ -218,7 +226,7 @@ final class ExactMetrics_Lite {
 
 			// This does the version to version background upgrade routines and initial install
 			$em_version = get_option( 'exactmetrics_current_version', '5.5.3' );
-			if ( version_compare( $em_version, '7.13.1', '<' ) ) {
+			if ( version_compare( $em_version, '8.11.0', '<' ) ) {
 				exactmetrics_lite_call_install_and_upgrade();
 			}
 
@@ -290,7 +298,15 @@ final class ExactMetrics_Lite {
 				require_once EXACTMETRICS_PLUGIN_DIR . 'includes/auth.php';
 				self::$instance->auth = new ExactMetrics_Auth();
 			}
-
+   
+			return self::$instance->$key;
+		} else if ( $key === 'license' ) {
+			if ( empty( self::$instance->license ) ) {
+				// LazyLoad Licensing for Frontend
+				require_once EXACTMETRICS_PLUGIN_DIR . 'lite/includes/license-compat.php';
+				self::$instance->license = new ExactMetrics_License_Compat();
+			}
+			
 			return self::$instance->$key;
 		} else {
 			return self::$instance->$key;
@@ -401,6 +417,9 @@ final class ExactMetrics_Lite {
 		require_once EXACTMETRICS_PLUGIN_DIR . 'includes/options.php';
 		require_once EXACTMETRICS_PLUGIN_DIR . 'includes/helpers.php';
 		require_once EXACTMETRICS_PLUGIN_DIR . 'includes/deprecated.php';
+		require_once EXACTMETRICS_PLUGIN_DIR . 'includes/database/loader.php';
+		require_once EXACTMETRICS_PLUGIN_DIR . 'includes/cache/functions.php';
+		require_once EXACTMETRICS_PLUGIN_DIR . 'includes/cache/cron-handler.php';
 		$exactmetrics_settings = exactmetrics_get_options();
 	}
 
@@ -494,6 +513,9 @@ final class ExactMetrics_Lite {
 			require_once EXACTMETRICS_PLUGIN_DIR . 'includes/admin/notification-event-runner.php';
 			// Add notification manual events for lite version.
 			require_once EXACTMETRICS_PLUGIN_DIR . 'includes/admin/notifications/notification-events.php';
+			
+			// Product Feed Cronjob
+			require_once EXACTMETRICS_PLUGIN_DIR . 'includes/admin/product-feed-cronjob.php';
 		}
 
 		require_once EXACTMETRICS_PLUGIN_DIR . 'includes/admin/exclude-page-metabox.php';
@@ -503,7 +525,7 @@ final class ExactMetrics_Lite {
 
 		if ( is_admin() || ( defined( 'DOING_CRON' ) && DOING_CRON ) ) {
 			// Late loading classes (self instantiating)
-			require_once EXACTMETRICS_PLUGIN_DIR . 'includes/admin/tracking.php';
+			require_once EXACTMETRICS_PLUGIN_DIR . 'includes/admin/class-exactmetrics-usage-tracking.php';
 		}
 
 		if (is_admin()) {
@@ -779,6 +801,10 @@ if ( ! function_exists( 'ExactMetrics' ) ) {
 function exactmetrics_lite_deactivation_hook() {
 	wp_clear_scheduled_hook( 'exactmetrics_usage_tracking_cron' );
 	wp_clear_scheduled_hook( 'exactmetrics_email_summaries_cron' );
+	wp_clear_scheduled_hook( 'exactmetrics_charitable_notice_cron' );
+
+	// Unschedule cache cleanup
+	exactmetrics_unschedule_cache_cleanup();
 }
 
 register_deactivation_hook( __FILE__, 'exactmetrics_lite_deactivation_hook' );

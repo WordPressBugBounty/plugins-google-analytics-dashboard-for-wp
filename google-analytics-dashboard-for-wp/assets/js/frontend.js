@@ -230,6 +230,8 @@ var ExactMetrics = function () {
       return el.alt.replace(/\n/ig, '');
     } else if (el.textContent && el.textContent.replace(/\n/ig, '')) {
       return el.textContent.replace(/\n/ig, '');
+    } else if (el.href) {
+      return el.href;
     } else {
       return undefined;
     }
