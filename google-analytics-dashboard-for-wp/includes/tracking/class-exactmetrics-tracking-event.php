@@ -189,7 +189,8 @@ class ExactMetrics_Tracking_Event implements JsonSerializable {
 	/**
 	 * @inheritdoc
 	 */
-	public function jsonSerialize(): mixed {
+	#[\ReturnTypeWillChange]
+	public function jsonSerialize() {
 		$json = [
 			'client_event_id'   => $this->id,
 			'event_name'        => $this->name,

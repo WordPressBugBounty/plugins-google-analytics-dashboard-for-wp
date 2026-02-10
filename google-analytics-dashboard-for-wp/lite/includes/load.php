@@ -8,9 +8,6 @@ add_action('init', function () {
 	require_once EXACTMETRICS_PLUGIN_DIR . 'includes/api/class-exactmetrics-api-reports.php';
 	require_once EXACTMETRICS_PLUGIN_DIR . 'includes/api/class-exactmetrics-api-tracking.php';
 	
-	// Load Tracking classes
-	require_once EXACTMETRICS_PLUGIN_DIR . 'includes/tracking/class-exactmetrics-tracking.php';
-	require_once EXACTMETRICS_PLUGIN_DIR . 'includes/tracking/class-exactmetrics-tracking-event.php';
 	
 	if ( is_admin() ) {
 		require_once EXACTMETRICS_PLUGIN_DIR . 'lite/includes/admin/tools.php';

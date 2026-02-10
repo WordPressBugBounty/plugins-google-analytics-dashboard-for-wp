@@ -1713,7 +1713,7 @@ function exactmetrics_menu_highlight_color() {
  * @param string $url The url to which users get redirected.
  */
 function exactmetrics_custom_track_pretty_links_redirect( $url ) {
-	if ( ! function_exists( 'exactmetrics_tracking' ) || ! exactmetrics_get_v4_id_to_output() ) {
+	if ( ! function_exists( 'exactmetrics_mp_collect_v4' ) ) {
 		return;
 	}
 
@@ -1753,32 +1753,41 @@ function exactmetrics_custom_track_pretty_links_redirect( $url ) {
 		// no paths setup in ExactMetrics settings
 		return;
 	}
-	
-	// Get Pretty Links settings.
-	$pretty_track = exactmetrics_get_option( 'pretty_links_backend_track', '' );
-	
-	if ( 'pretty_link' == $pretty_track ) {
-		global $prli_link;
-		$pretty_link = $prli_link->get_one_by( 'url', $url );
-		$link_url    = PrliUtils::get_pretty_link_url( $pretty_link->slug );
-	} else {
-		$link_url = $url;
+
+	if ( exactmetrics_get_v4_id_to_output() ) {
+		// Get Pretty Links settings.
+		$pretty_track = exactmetrics_get_option( 'pretty_links_backend_track', '' );
+
+		if ( 'pretty_link' == $pretty_track ) {
+			global $prli_link;
+			$pretty_link = $prli_link->get_one_by( 'url', $url );
+			$link_url    = PrliUtils::get_pretty_link_url( $pretty_link->slug );
+		} else {
+			$link_url = $url;
+		}
+
+		$url_components = parse_url( $url );
+		$params_args    = array(
+			'link_text'   => 'external-redirect',
+			'link_url'    => $link_url,
+			'link_domain' => $url_components['host'],
+			'outbound'    => 'true',
+		);
+
+		if ( ! empty( $label ) ) {
+			$params_args['affiliate_label']   = $label;
+			$params_args['is_affiliate_link'] = 'true';
+		}
+
+		exactmetrics_mp_collect_v4( array(
+			'events' => array(
+				array(
+					'name'   => 'click',
+					'params' => $params_args,
+				)
+			),
+		) );
 	}
-	
-	$url_components = parse_url( $url );
-	$event_data    = array(
-		'link_text'   => 'external-redirect',
-		'link_url'    => $link_url,
-		'link_domain' => $url_components['host'],
-		'outbound'    => 'true',
-	);
-	
-	if ( ! empty( $label ) ) {
-		$event_data['affiliate_label']   = $label;
-		$event_data['is_affiliate_link'] = 'true';
-	}
-	
-	exactmetrics_tracking()->send( 'click', $event_data );
 }
 
 add_action( 'prli_before_redirect', 'exactmetrics_custom_track_pretty_links_redirect' );
@@ -1822,16 +1831,23 @@ function exactmetrics_track_pretty_links_file_download_redirect( $url ) {
 
 	global $prli_link;
 	$pretty_link = $prli_link->get_one_by( 'url', $url );
-	
-	$event_data = array(
-		'link_text'      => $pretty_link->name,
-		'link_url'       => $url,
-		'link_domain'    => $url_components['host'],
-		'file_extension' => $file_info['extension'],
-		'file_name'      => $file_info['basename'],
+
+	$args = array(
+		'events' => array(
+			array(
+				'name'   => 'file_download',
+				'params' => array(
+					'link_text'      => $pretty_link->name,
+					'link_url'       => $url,
+					'link_domain'    => $url_components['host'],
+					'file_extension' => $file_info['extension'],
+					'file_name'      => $file_info['basename'],
+				)
+			)
+		),
 	);
-	
-	exactmetrics_tracking()->send( 'file_download', $event_data );
+
+	exactmetrics_mp_collect_v4( $args );
 }
 
 /**
