@@ -25,9 +25,11 @@
   align-items: center;
   gap: 20px;
 }
+
 .exactmetrics-float-right {
   margin-left: auto;
 }
+
 .exactmetrics-container {
   max-width: 100%;
   width: 100%;
@@ -35,6 +37,7 @@
   margin: 0 auto;
   box-sizing: border-box;
 }
+
 .exactmetrics-card {
   background: #F4F3F7;
   border: 2px solid transparent;
@@ -110,6 +113,7 @@
   transform: none;
   box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.02);
 }
+
 .exactmetrics-grid {
   width: 100%;
   display: flex;
@@ -117,6 +121,7 @@
   gap: 30px;
   justify-content: center;
 }
+
 .exactmetrics-template-illustration {
   display: flex;
   align-items: center;
@@ -124,6 +129,7 @@
   width: 100%;
   height: 100%;
 }
+
 .exactmetrics-template-fallback {
   display: flex;
   align-items: center;
@@ -131,6 +137,7 @@
   width: 100%;
   height: 100%;
 }
+
 .exactmetrics-widget-item {
   display: flex;
   align-items: center;
@@ -165,6 +172,7 @@
 .exactmetrics-widget-item__name {
   white-space: nowrap;
 }
+
 .exactmetrics-widget {
   background: #F4F3F7;
   border: 1px solid #d6e2ed;
@@ -182,6 +190,7 @@
 .exactmetrics-widget--loading {
   opacity: 0.7;
 }
+
 .exactmetrics-widget__header {
   display: flex;
   align-items: center;
@@ -190,12 +199,14 @@
   border-bottom: 1px solid #d6e2ed;
   min-height: 50px;
 }
+
 .exactmetrics-widget__title {
   margin: 0;
   font-size: 18px;
   font-weight: 700;
   color: #210f59;
 }
+
 .exactmetrics-widget__title-input {
   margin: 0;
   padding: 4px 8px;
@@ -214,12 +225,14 @@
   border-color: #37276a;
   box-shadow: 0 0 0 3px rgba(101, 40, 245, 0.1);
 }
+
 .exactmetrics-widget__actions {
   position: relative;
   display: flex;
   align-items: center;
   gap: 8px;
 }
+
 .exactmetrics-widget__settings {
   display: flex;
   align-items: center;
@@ -241,6 +254,7 @@
 .exactmetrics-widget__settings:active {
   background: #e8e8e8;
 }
+
 .exactmetrics-widget__menu {
   position: absolute;
   top: 100%;
@@ -251,8 +265,9 @@
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   z-index: 100;
-  overflow: visible;
+  overflow: hidden;
 }
+
 .exactmetrics-widget__menu-item {
   display: flex;
   align-items: center;
@@ -302,6 +317,7 @@
 .exactmetrics-widget__menu-item--danger:hover {
   background: rgb(253.65, 244.85, 247.15);
 }
+
 .exactmetrics-widget__checkbox {
   appearance: none;
   width: 16px;
@@ -330,16 +346,19 @@
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
+
 .exactmetrics-widget__checkbox-text {
   font-size: 14px;
   color: #210f59;
   line-height: 1.2;
   user-select: none;
 }
+
 .exactmetrics-widget__menu-arrow {
   margin-left: auto;
   color: #9087ac;
 }
+
 .exactmetrics-widget__submenu {
   position: absolute;
   left: 100%;
@@ -352,6 +371,13 @@
   overflow: hidden;
   z-index: 1010;
 }
+.exactmetrics-widget__submenu--teleported {
+  position: fixed;
+  left: auto;
+  top: auto;
+  margin-left: 0;
+}
+
 .exactmetrics-widget__body {
   overflow: hidden;
   border-radius: 0 0 8px 8px;
@@ -359,6 +385,7 @@
   display: flex;
   flex-direction: column;
 }
+
 .exactmetrics-widget__loading,
 .exactmetrics-widget__error {
   display: flex;
@@ -370,6 +397,7 @@
   color: #4d3f7a;
   padding: 20px;
 }
+
 .exactmetrics-widget__error {
   color: #e43462;
 }
@@ -377,20 +405,25 @@
   margin: 0;
   font-size: 14px;
 }
+
 .exactmetrics-widget__content {
   flex: 1;
   display: flex;
   flex-direction: column;
 }
+
 .exactmetrics-widget--category-metric .exactmetrics-widget__content {
   padding: 15px 20px;
 }
+
 .exactmetrics-widget--category-chart .exactmetrics-widget__content {
   padding: 0;
 }
+
 .exactmetrics-widget--category-table .exactmetrics-widget__content {
   padding: 0;
 }
+
 .exactmetrics-widget-display {
   border-radius: 4px;
   height: 100%;
@@ -494,6 +527,7 @@
 .exactmetrics-widget-display__content {
   width: 100%;
 }
+
 .exactmetrics-widget-metric {
   text-align: center;
 }
@@ -522,6 +556,7 @@
 .exactmetrics-widget-metric__comparison--down::before {
   content: "↓ ";
 }
+
 .exactmetrics-widget-list__item {
   display: flex;
   justify-content: space-between;
@@ -547,6 +582,7 @@
   color: #210f59;
   flex-shrink: 0;
 }
+
 .exactmetrics-drop-zone--occupied {
   padding: 0;
   border: none;
@@ -556,6 +592,7 @@
   border: none;
   background: transparent;
 }
+
 .exactmetrics-view-dropdown {
   position: relative;
 }
@@ -620,15 +657,18 @@
 .exactmetrics-view-dropdown__item--danger:hover {
   background: rgba(228, 52, 98, 0.1);
 }
+
 .dropdown-enter-active,
 .dropdown-leave-active {
   transition: opacity 0.2s, transform 0.2s;
 }
+
 .dropdown-enter-from,
 .dropdown-leave-to {
   opacity: 0;
   transform: translateY(-10px);
 }
+
 .exactmetrics-view-tab {
   display: flex;
   align-items: center;
@@ -684,6 +724,7 @@
 .exactmetrics-view-tab--editing .exactmetrics-view-dropdown {
   display: none;
 }
+
 .exactmetrics-logo-area {
   float: left;
   padding: 0;
@@ -706,6 +747,7 @@
 .exactmetrics-logo-area.exactmetrics-logo-area-premium a {
   width: 225px;
 }
+
 .screen-reader-text {
   position: absolute;
   left: -10000px;
@@ -714,6 +756,7 @@
   height: 1px;
   overflow: hidden;
 }
+
 .exactmetrics-datepicker-input-switch {
   border-top: 1px solid #D6E2ED;
   padding: 14px 20px 5px 20px;
@@ -758,6 +801,7 @@
   display: block;
   border-radius: 50%;
 }
+
 .exactmetrics-reports-intervals-dropdown {
   position: absolute;
   z-index: 100;
@@ -770,6 +814,7 @@
   top: 100%;
   display: flex;
 }
+
 .exactmetrics-datepicker-default-buttons {
   width: 315px;
   flex-shrink: 0;
@@ -792,11 +837,13 @@
 .exactmetrics-datepicker-default-buttons button.exactmetrics-button i {
   margin-right: 10px;
 }
+
 .exactmetrics-datepicker-range-inputs {
   background: #F9FBFF;
   border-bottom: 1px solid #D6E2ED;
   display: flex;
 }
+
 .exactmetrics-datepicker-range-input {
   padding: 12px;
 }
@@ -808,6 +855,7 @@
 .exactmetrics-datepicker-range-input + .exactmetrics-datepicker-range-input {
   border-left: 1px solid #D6E2ED;
 }
+
 .exactmetrics-datepicker-range-input-fields {
   display: flex;
   justify-content: space-between;
@@ -828,9 +876,11 @@
   background-color: #fff;
   height: 30px;
 }
+
 .exactmetrics-datepicker-calenders {
   display: flex;
 }
+
 .exactmetrics-datepicker-calender {
   border-bottom: 1px solid #D6E2ED;
   padding: 12px;
@@ -847,6 +897,7 @@
 .exactmetrics-datepicker-calender .flatpickr-wrapper .flatpickr-calendar.inline {
   position: static;
 }
+
 .exactmetrics-datepicker-calenders-bottom {
   display: flex;
   padding: 12px;
@@ -866,6 +917,7 @@
   border-color: #d7d9dd;
   color: #393F4C;
 }
+
 .exactmetrics-reports-interval-date-info {
   background: #e9e7ee;
   border-radius: 3px;
@@ -894,9 +946,11 @@
   background: #ddd9e5;
   border-color: #c9c4d3;
 }
+
 .exactmetrics-reports-interval-dropdown-container {
   position: relative;
 }
+
 .exactmetrics-reports-datepicker {
   display: flex;
 }
@@ -905,9 +959,11 @@
   cursor: not-allowed;
   pointer-events: none;
 }
+
 .exactmetrics-hide {
   display: none !important;
 }
+
 .numInputWrapper span {
   position: absolute;
   right: 0;
@@ -950,18 +1006,21 @@
   border-top: 4px solid rgba(57, 57, 57, 0.6);
   top: 40%;
 }
+
 .flatpickr-current-month .numInputWrapper span.arrowUp:after {
   border-bottom-color: rgba(0, 0, 0, 0.9);
 }
 .flatpickr-current-month .numInputWrapper span.arrowDown:after {
   border-top-color: rgba(0, 0, 0, 0.9);
 }
+
 .numInputWrapper:hover {
   background: rgba(0, 0, 0, 0.05);
 }
 .numInputWrapper:hover span {
   opacity: 1;
 }
+
 .exactmetrics-button.exactmetrics-export-pdf-button {
   background: #ECEFF5;
   border-color: #D6E2ED;
@@ -974,14 +1033,17 @@
   background: #e4e8ee;
   color: #393F4C;
 }
+
 .exactmetrics-datepicker-calendar-icon {
   font-size: 0;
   display: inline-block;
   padding-left: 7px;
 }
+
 .mi-header-notifications {
   position: relative;
 }
+
 .exactmetrics-notificationsv3-inbox-button {
   position: relative;
   display: inline-block;
@@ -1041,6 +1103,7 @@
 .exactmetrics-notificationsv3-inbox-button .exactmetrics-notificationsv3-inbox-number.number-less-than-10 {
   right: -10px;
 }
+
 .exactmetrics-notificationsv3-container {
   display: inline-block;
 }
@@ -1294,6 +1357,7 @@
 .exactmetrics-notificationsv3-container .exactmetrics-notificationsv3-sidebar .exactmetrics-notificationsv3-sidebar-notifications .exactmetrics-notificationsv3-single-notification .exactmetrics-notificationsv3-notification-details .exactmetrics-notificationsv3-notification-actions span:hover, .exactmetrics-notificationsv3-container .exactmetrics-notificationsv3-sidebar .exactmetrics-notificationsv3-sidebar-notifications .exactmetrics-notificationsv3-single-notification .exactmetrics-notificationsv3-notification-details .exactmetrics-notificationsv3-notification-actions span:focus, .exactmetrics-notificationsv3-container .exactmetrics-notificationsv3-sidebar .exactmetrics-notificationsv3-sidebar-notifications .exactmetrics-notificationsv3-single-notification .exactmetrics-notificationsv3-notification-details .exactmetrics-notificationsv3-notification-actions span:active {
   color: #a9b1c3;
 }
+
 /**
  * Upsell Modal & Sample Data Notice Styles
  *
@@ -1388,14 +1452,14 @@
   font-size: 23px;
   line-height: 1.2;
   color: #23262E;
-  margin: 0 0 8px 0;
+  margin: 0 0 24px 0;
 }
 .exactmetrics-upsell-overlay h4 {
   font-size: 16px;
   line-height: 1.4;
   color: #444444;
-  margin: 0 0 16px 0;
-  font-weight: 400;
+  margin: 0 0 24px 0;
+  font-weight: 700;
 }
 .exactmetrics-upsell-overlay p {
   margin: 24px 0;
@@ -1455,25 +1519,22 @@
   gap: 6px;
 }
 .exactmetrics-upsell-overlay .exactmetrics-upsell-content__features ul li .feature-checkmark {
-  flex: 0 0 16px; /* Don't grow, don't shrink, fixed 16px */
+  flex: 0 0 16px;
+  /* Don't grow, don't shrink, fixed 16px */
   width: 16px;
   height: 16px;
-  color: #4AB866;
+  color: #6527F5;
+  background-color: #F7F3FE;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 1px;
 }
 .exactmetrics-upsell-overlay .exactmetrics-upsell-content__features ul li span {
   flex: 1;
-  min-width: 0; /* Allow text to wrap properly */
-}
-.exactmetrics-upsell-overlay .exactmetrics-upsell-content__features-cliff {
-  margin-top: -14px;
-}
-.exactmetrics-upsell-overlay .exactmetrics-upsell-content__features-cliff p {
-  font-size: 13px !important;
-  line-height: 1.4;
-  color: #393F4C !important;
-  margin: 0 0 16px 0 !important;
-  font-style: italic;
+  min-width: 0;
+  /* Allow text to wrap properly */
 }
 .exactmetrics-upsell-overlay .exactmetrics-upsell-content__img {
   width: 200px;
@@ -1490,20 +1551,21 @@
 .exactmetrics-upsell-overlay .exactmetrics-upsell-content__img:after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -20px;
   right: 0;
   width: 50%;
   height: 100%;
   background-image: var(--upsell-image);
   background-repeat: no-repeat;
+  background-size: contain;
   background-position: bottom right;
-  right: -100px;
+  right: -120px;
 }
 .exactmetrics-upsell-overlay .exactmetrics-upsell-content-buttons {
   display: flex;
   flex-direction: column;
   width: max-content;
-  align-items: flex-start;
+  align-items: center;
   gap: 16px;
 }
 .exactmetrics-upsell-overlay .exactmetrics-upsell-content .exactmetrics-button-upgrade {
@@ -1570,6 +1632,7 @@
     font-size: 14px;
   }
 }
+
 .exactmetrics-sample-data-notice {
   position: sticky;
   top: 0;
@@ -1670,6 +1733,7 @@
   outline: 2px solid #6528f5;
   outline-offset: 2px;
 }
+
 .exactmetrics-content-blurred {
   filter: blur(5px);
   pointer-events: none;
@@ -1681,6 +1745,7 @@
     transition: none;
   }
 }
+
 .upsell-fade-enter-active,
 .upsell-fade-leave-active {
   transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1691,10 +1756,12 @@
     transition: none;
   }
 }
+
 .upsell-fade-enter-from,
 .upsell-fade-leave-to {
   opacity: 0;
 }
+
 .exactmetrics-upsell-learn-more {
   color: #6528f5;
   text-decoration: underline;
@@ -1708,6 +1775,7 @@
   outline-offset: 2px;
   border-radius: 2px;
 }
+
 .exactmetrics-dashboard-list {
   padding: 40px 0;
 }
@@ -1727,6 +1795,7 @@
   margin: 0 auto;
   padding: 0 20px;
 }
+
 .exactmetrics-dashboard-error {
   text-align: center;
   padding: 40px 20px;
@@ -1742,6 +1811,7 @@
   margin-bottom: 16px;
   color: #210f59;
 }
+
 .exactmetrics-dashboard-loading {
   text-align: center;
   padding: 40px 20px;
@@ -1751,9 +1821,11 @@
 .exactmetrics-dashboard-loading p {
   color: #210f59;
 }
+
 .exactmetrics-dashboard-create {
   padding: 0;
 }
+
 .exactmetrics-dashboard-tabs {
   display: flex;
   justify-content: space-between;
@@ -1852,6 +1924,7 @@
   background: #210f59;
   border-radius: 50%;
 }
+
 .exactmetrics-page-header {
   display: flex;
   justify-content: space-between;
@@ -1876,6 +1949,7 @@
   gap: 15px;
   flex-wrap: wrap;
 }
+
 .exactmetrics-date-picker {
   display: flex;
   align-items: center;
@@ -1893,6 +1967,7 @@
 .exactmetrics-date-picker span {
   font-weight: 400;
 }
+
 .exactmetrics-dashboard-main-content {
   display: flex;
   gap: 0;
@@ -1906,13 +1981,16 @@
 .exactmetrics-dashboard-main-content--saving .exactmetrics-widget-sidebar {
   opacity: 0.6;
 }
+
 .exactmetrics-dashboard-main {
   flex: 1;
-  padding: 0 40px 0 20px;
+  padding: 0 0 0 20px;
   min-width: 0;
   position: relative;
   z-index: 2;
+  margin-right: 40px;
 }
+
 .exactmetrics-empty-state {
   background: #fff;
   border: 1px solid #d6e2ed;
@@ -1939,11 +2017,13 @@
 .exactmetrics-empty-state__illustration {
   flex-shrink: 0;
 }
+
 .exactmetrics-widget-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: minmax(167px, auto);
   gap: 20px;
+  max-width: 100%;
 }
 .exactmetrics-widget-grid .exactmetrics-empty-state {
   grid-column: 1/-1;
@@ -1962,8 +2042,10 @@
 .exactmetrics-widget-grid--disabled .exactmetrics-widget-display__header {
   cursor: not-allowed;
 }
+
 .exactmetrics-widget-sidebar {
   width: 320px;
+  flex-shrink: 0;
   background: #fff;
   border-left: 1px solid #d6e2ed;
   border-bottom: 1px solid #d6e2ed;
@@ -1972,22 +2054,27 @@
   position: relative;
   top: 0;
   transition: width 0.3s ease, border-left 0.3s ease;
-  z-index: 1;
+  z-index: 3;
 }
+
 .exactmetrics-widget-sidebar--collapsed {
   width: 0;
   border-left: none;
   background: transparent;
 }
+
 .exactmetrics-widget-sidebar--collapsed .exactmetrics-widget-sidebar__content {
+  width: 0;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  overflow: hidden;
 }
+
 .exactmetrics-widget-sidebar__toggle {
   position: absolute;
   left: -20px;
-  top: 50%;
+  top: 36px;
   transform: translateY(-50%);
   width: 20px;
   height: 72px;
@@ -2004,20 +2091,24 @@
   color: #9087ac;
   transition: color 0.2s ease, background-color 0.2s ease;
 }
+
 .exactmetrics-widget-sidebar__toggle:hover {
   background-color: rgba(214, 226, 237, 0.3);
   color: #6528f5;
 }
+
 .exactmetrics-widget-sidebar__toggle:focus {
   outline: none;
-  box-shadow: 0 0 0 2px rgba(101, 40, 245, 0.2);
 }
+
 .exactmetrics-widget-sidebar__toggle-icon {
   transition: transform 0.3s ease;
 }
+
 .exactmetrics-widget-sidebar__toggle-icon--collapsed {
   transform: rotate(180deg);
 }
+
 .exactmetrics-widget-sidebar__content {
   width: 320px;
   opacity: 1;
@@ -2026,6 +2117,7 @@
   overflow-y: auto;
   height: 100%;
 }
+
 .exactmetrics-widget-search {
   padding: 16px 20px;
   border-bottom: 1px solid #d6e2ed;
@@ -2052,9 +2144,11 @@
   left: 35px;
   top: 27px;
 }
+
 .exactmetrics-widget-sections {
   padding: 20px 0;
 }
+
 .exactmetrics-widget-section {
   margin-bottom: 32px;
 }
@@ -2066,12 +2160,14 @@
   padding-bottom: 8px;
   border-bottom: 1px solid #d6e2ed;
 }
+
 .exactmetrics-widget-list {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   padding: 0 20px;
 }
+
 .exactmetrics-widget-group {
   margin-bottom: 20px;
 }
@@ -2090,6 +2186,7 @@
   gap: 10px;
   padding: 0 20px;
 }
+
 .exactmetrics-widget-item {
   display: inline-flex;
   align-items: center;
@@ -2127,6 +2224,7 @@
 .exactmetrics-widget-item__name {
   white-space: nowrap;
 }
+
 .exactmetrics-button {
   display: inline-flex;
   align-items: center;
@@ -2161,6 +2259,7 @@
 .exactmetrics-button--secondary:hover:not(:disabled) {
   background: #ddd9e5;
 }
+
 .exactmetrics-saving-overlay {
   position: absolute;
   top: 0;
@@ -2173,6 +2272,7 @@
   z-index: 100;
   pointer-events: all;
 }
+
 .exactmetrics-saving-spinner {
   display: inline-block;
   width: 32px;
@@ -2182,6 +2282,7 @@
   border-radius: 50%;
   animation: exactmetrics-saving-spin 0.8s linear infinite;
 }
+
 @keyframes exactmetrics-saving-spin {
   to {
     transform: rotate(360deg);
@@ -2189,26 +2290,35 @@
 }
 .exactmetrics-widget-display__header {
   user-select: none;
+}
+
+.exactmetrics-widget-grid--edit-mode:not(.exactmetrics-widget-grid--disabled) .exactmetrics-widget-display__header {
   cursor: move;
 }
+
 body.exactmetrics_page {
   background-color: #fff;
 }
+
 .exactmetrics_page #wpcontent {
   padding-left: 0;
 }
+
 .exactmetrics_page #wpbody-content {
   padding-bottom: 0;
 }
+
 #exactmetrics-custom-dashboard-app {
   background-color: #fff;
   min-height: 100vh;
 }
+
 .exactmetrics-dashboard-content {
   margin-left: 0;
   width: 100%;
   position: relative;
 }
+
 .button.button-primary {
   background: #6528f5;
   border-color: rgb(81.4933333333, 12.7666666667, 243.7333333333);
@@ -2217,6 +2327,7 @@ body.exactmetrics_page {
   background: #37276a;
   border-color: rgb(49.5, 35.1, 95.4);
 }
+
 #wpfooter {
   position: relative;
   padding-top: 0;
@@ -2224,6 +2335,7 @@ body.exactmetrics_page {
 #wpfooter:before {
   display: none;
 }
+
 .exactmetrics-footer-love {
   display: block;
   clear: both;

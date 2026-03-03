@@ -203,6 +203,14 @@ class ExactMetrics_Rest_Routes {
 
 		if ( isset( $_POST['setting'] ) ) {
 			$setting = sanitize_text_field( wp_unslash( $_POST['setting'] ) );
+
+			// Prevent non-admin users from modifying access-control settings.
+			if ( exactmetrics_is_admin_only_setting( $setting ) && ! current_user_can( 'manage_options' ) ) {
+				wp_send_json_error( array(
+					'message' => esc_html__( 'You do not have permission to update this setting.', 'google-analytics-dashboard-for-wp' ),
+				) );
+			}
+
 			if ( isset( $_POST['value'] ) ) {
 				$value = $this->handle_sanitization( $setting, $_POST['value'] ); // phpcs:ignore
 				exactmetrics_update_option( $setting, $value );
@@ -232,6 +240,10 @@ class ExactMetrics_Rest_Routes {
 		if ( isset( $_POST['settings'] ) ) {
 			$settings = json_decode( sanitize_text_field( wp_unslash( $_POST['settings'] ) ), true );
 			foreach ( $settings as $setting => $value ) {
+				// Skip admin-only settings for non-admin users.
+				if ( exactmetrics_is_admin_only_setting( $setting ) && ! current_user_can( 'manage_options' ) ) {
+					continue;
+				}
 				$value = $this->handle_sanitization( $setting, $value );
 				exactmetrics_update_option( $setting, $value );
 				do_action( 'exactmetrics_after_update_settings', $setting, $value );
@@ -1067,7 +1079,18 @@ class ExactMetrics_Rest_Routes {
 
 		foreach ( $exclude as $e ) {
 			if ( ! empty( $settings[ $e ] ) ) {
-				$new_settings = $settings[ $e ];
+				$new_settings[ $e ] = $settings[ $e ];
+			}
+		}
+
+		// Prevent non-admin users from importing access-control settings.
+		if ( ! current_user_can( 'manage_options' ) ) {
+			$admin_only_settings = exactmetrics_get_admin_only_settings();
+			foreach ( $admin_only_settings as $admin_setting ) {
+				unset( $new_settings[ $admin_setting ] );
+				if ( isset( $settings[ $admin_setting ] ) ) {
+					$new_settings[ $admin_setting ] = $settings[ $admin_setting ];
+				}
 			}
 		}
 

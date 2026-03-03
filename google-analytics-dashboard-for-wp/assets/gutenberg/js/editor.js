@@ -4334,113 +4334,129 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-class SiteNotes extends _wordpress_element__WEBPACK_IMPORTED_MODULE_1__.Component {
-  constructor() {
-    super();
-    const metas = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.select)('core/editor').getEditedPostAttribute('meta');
-    this.state = {
-      addSiteNote: !!metas['_exactmetrics_sitenote_active'],
-      siteNoteText: metas['_exactmetrics_sitenote_note'] ? metas['_exactmetrics_sitenote_note'] : '',
-      customSiteNote: false,
-      category: metas['_exactmetrics_sitenote_category'] ? metas['_exactmetrics_sitenote_category'] : 0
+const SiteNotes = () => {
+  // Use useSelect to safely get meta and title from editor store
+  const {
+    metas,
+    currentTitle
+  } = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.useSelect)(select => {
+    const editor = select('core/editor');
+    return {
+      metas: editor?.getEditedPostAttribute('meta') || {},
+      currentTitle: editor?.getEditedPostAttribute('title') || ''
     };
-    this.texts = {
-      checkbox: {
-        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Add a Site Note when publishing this post", "google-analytics-dashboard-for-wp"),
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Add a Site Note", "google-analytics-dashboard-for-wp")
-      },
-      category: {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Category", "google-analytics-dashboard-for-wp")
-      },
-      published_template: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Published: %s', "google-analytics-dashboard-for-wp")
-    };
-    this.categories = window.exactmetrics_gutenberg_tool_vars ? window.exactmetrics_gutenberg_tool_vars['site_notes_categories'] : [];
-    this.onToggleControlChange = this.onToggleControlChange.bind(this);
-  }
-  refreshNoteText(current_title = '') {
-    if (!current_title) {
-      current_title = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.select)("core/editor").getEditedPostAttribute('title');
+  }, []);
+
+  // Use useDispatch to get dispatch function
+  const {
+    editPost
+  } = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.useDispatch)('core/editor');
+
+  // State hooks
+  const [addSiteNote, setAddSiteNote] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(false);
+  const [siteNoteText, setSiteNoteText] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)('');
+  const [customSiteNote, setCustomSiteNote] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(false);
+  const [category, setCategory] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(0);
+
+  // Memoized constants
+  const texts = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useMemo)(() => ({
+    checkbox: {
+      help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Add a Site Note when publishing this post", "google-analytics-dashboard-for-wp"),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Add a Site Note", "google-analytics-dashboard-for-wp")
+    },
+    category: {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Category", "google-analytics-dashboard-for-wp")
+    },
+    published_template: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Published: %s', "google-analytics-dashboard-for-wp")
+  }), []);
+  const categories = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useMemo)(() => {
+    return window.exactmetrics_gutenberg_tool_vars?.site_notes_categories || [];
+  }, []);
+
+  // Initialize state from metas when they become available
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {
+    if (metas && Object.keys(metas).length > 0) {
+      setAddSiteNote(!!metas['_exactmetrics_sitenote_active']);
+      setSiteNoteText(metas['_exactmetrics_sitenote_note'] || '');
+      setCategory(metas['_exactmetrics_sitenote_category'] || 0);
     }
-    this.setState({
-      siteNoteText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.sprintf)(this.texts.published_template, current_title)
-    }, this.saveNoteField);
-  }
-  saveActiveField(value = null) {
-    if (null === value) {
-      value = this.state.addSiteNote;
-    }
-    (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.dispatch)('core/editor').editPost({
+  }, [metas]);
+
+  // Save functions
+  const saveActiveField = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useCallback)(value => {
+    editPost({
       meta: {
         _exactmetrics_sitenote_active: !!value
       }
     });
-  }
-  saveNoteField(value = null) {
-    if (null === value) {
-      value = this.state.siteNoteText;
-    }
-    (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.dispatch)('core/editor').editPost({
+  }, [editPost]);
+  const saveNoteField = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useCallback)(value => {
+    editPost({
       meta: {
         _exactmetrics_sitenote_note: value
       }
     });
-  }
-  saveCategoryField(value = null) {
-    if (null === value) {
-      value = this.state.category;
-    }
-    (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.dispatch)('core/editor').editPost({
+  }, [editPost]);
+  const saveCategoryField = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useCallback)(value => {
+    editPost({
       meta: {
         _exactmetrics_sitenote_category: value
       }
     });
-  }
-  render() {
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
-        checked: this.state.addSiteNote,
-        help: this.texts.checkbox.help,
-        label: this.texts.checkbox.label,
-        onChange: this.onToggleControlChange
-      }), this.state.addSiteNote && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextareaControl, {
-        help: "",
-        label: "",
-        value: this.state.siteNoteText,
-        onChange: text => {
-          let templateRegex = new RegExp('^' + this.texts.published_template.replace('%s', '.*').replaceAll('"', '\\"') + '$', 'g');
-          let siteNoteNotChanged = templateRegex.test(text);
-          this.setState({
-            siteNoteText: text,
-            customSiteNote: !siteNoteNotChanged
-          }, this.saveNoteField);
-        }
-      }), this.state.addSiteNote && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
-        label: this.texts.category.label,
-        options: this.categories,
-        value: this.state.category,
-        className: 'site-notes-select',
-        onChange: category_id => {
-          this.setState({
-            category: category_id
-          }, this.saveCategoryField);
-        },
-        __nextHasNoMarginBottom: true
-      })]
-    });
-  }
-  onToggleControlChange(value) {
-    // When user open site-note toggle, Set first category as selected.
-    if (value && this.state.category === 0 && this.categories.length > 0) {
-      this.setState({
-        category: this.categories[0]['value']
-      }, this.saveCategoryField);
+  }, [editPost]);
+
+  // Refresh note text function
+  const refreshNoteText = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useCallback)((current_title = '') => {
+    if (!current_title) {
+      current_title = currentTitle;
     }
-    this.setState({
-      addSiteNote: !!value
-    }, this.saveActiveField);
-    this.refreshNoteText();
-  }
-}
+    const newText = (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.sprintf)(texts.published_template, current_title);
+    setSiteNoteText(newText);
+    saveNoteField(newText);
+  }, [currentTitle, texts.published_template, saveNoteField]);
+
+  // Toggle control change handler
+  const onToggleControlChange = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useCallback)(value => {
+    // When user opens site-note toggle, set first category as selected
+    if (value && category === 0 && categories.length > 0) {
+      const firstCategory = categories[0].value;
+      setCategory(firstCategory);
+      saveCategoryField(firstCategory);
+    }
+    setAddSiteNote(!!value);
+    saveActiveField(!!value);
+    refreshNoteText();
+  }, [category, categories, saveActiveField, saveCategoryField, refreshNoteText]);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
+      checked: addSiteNote,
+      help: texts.checkbox.help,
+      label: texts.checkbox.label,
+      onChange: onToggleControlChange
+    }), addSiteNote && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextareaControl, {
+      help: "",
+      label: "",
+      value: siteNoteText,
+      onChange: text => {
+        let templateRegex = new RegExp('^' + texts.published_template.replace('%s', '.*').replaceAll('"', '\\"') + '$', 'g');
+        let siteNoteNotChanged = templateRegex.test(text);
+        setSiteNoteText(text);
+        setCustomSiteNote(!siteNoteNotChanged);
+        saveNoteField(text);
+      }
+    }), addSiteNote && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
+      label: texts.category.label,
+      options: categories,
+      value: category,
+      className: 'site-notes-select',
+      onChange: category_id => {
+        setCategory(category_id);
+        saveCategoryField(category_id);
+      },
+      __nextHasNoMarginBottom: true
+    })]
+  });
+};
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SiteNotes);
 
 /***/ },
@@ -4482,9 +4498,24 @@ __webpack_require__.r(__webpack_exports__);
 
 const ExactMetricsMetabox = () => {
   const ExactMetricsVars = window.exactmetrics_gutenberg_tool_vars;
-  if (!ExactMetricsVars || "1" !== ExactMetricsVars['supports_custom_fields']) {
+
+  // Basic validation - ensure vars are loaded
+  if (!ExactMetricsVars) {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__.Fragment, {});
   }
+
+  // Use useSelect hook to get meta data safely
+  const metas = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_2__.useSelect)(select => {
+    return select('core/editor')?.getEditedPostAttribute('meta') || {};
+  }, []);
+  const [hasSkipTracking, setHasSkipTracking] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_5__.useState)(!!metas['_exactmetrics_skip_tracking']);
+
+  // Use useDispatch hook
+  const {
+    editPost
+  } = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_2__.useDispatch)('core/editor');
+
+  // For non-public post types, show only SiteNotes
   if ("1" !== ExactMetricsVars['public_post_type']) {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_wordpress_editor__WEBPACK_IMPORTED_MODULE_4__.PluginDocumentSettingPanel, {
       name: "exactmetrics-metabox",
@@ -4494,11 +4525,8 @@ const ExactMetricsMetabox = () => {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_site_notes__WEBPACK_IMPORTED_MODULE_8__["default"], {})
     });
   }
-  const metas = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_2__.select)("core/editor").getEditedPostAttribute('meta') || [];
-  if (!metas['_exactmetrics_skip_tracking']) {
-    metas['_exactmetrics_skip_tracking'] = false;
-  }
-  const [hasSkipTracking, setHasSkipTracking] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_5__.useState)(!!metas['_exactmetrics_skip_tracking']);
+
+  // For public post types, show everything
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_wordpress_editor__WEBPACK_IMPORTED_MODULE_4__.PluginDocumentSettingPanel, {
     name: "exactmetrics-metabox",
     title: "ExactMetrics",
@@ -4511,7 +4539,7 @@ const ExactMetricsMetabox = () => {
       disabled: 'lite' === ExactMetricsVars.license_type,
       onChange: value => {
         setHasSkipTracking(!!value);
-        (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_2__.dispatch)('core/editor').editPost({
+        editPost({
           meta: {
             '_exactmetrics_skip_tracking': value
           }

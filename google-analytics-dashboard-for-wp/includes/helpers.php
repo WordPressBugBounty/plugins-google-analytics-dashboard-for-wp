@@ -1033,8 +1033,13 @@ function exactmetrics_get_onboarding_key() {
 	if ( empty( $key ) ) {
 		$key = wp_generate_password( 32, false );
 		set_transient( 'exactmetrics_onboarding_key', $key, 30 * MINUTE_IN_SECONDS );
+		set_transient( 'exactmetrics_onboarding_user_id', get_current_user_id(), 30 * MINUTE_IN_SECONDS );
 	}
 	return $key;
+}
+
+function exactmetrics_get_onboarding_user_id() {
+	return (int) get_transient( 'exactmetrics_onboarding_user_id' );
 }
 /**
  * Clears the onboarding key

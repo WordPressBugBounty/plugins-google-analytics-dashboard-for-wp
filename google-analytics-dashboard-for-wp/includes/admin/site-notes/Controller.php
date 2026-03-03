@@ -1158,11 +1158,34 @@ class ExactMetrics_SiteNotes_Controller {
 	}
 
 	public function load_metabox_assets() {
+		// Don't load classic editor assets on block editor
+		if ( $this->is_gutenberg_editor() ) {
+			return;
+		}
+
 		wp_register_style('exactmetrics-admin-metabox-sitenotes-style', plugins_url('assets/css/admin-metabox-sitenotes.css', EXACTMETRICS_PLUGIN_FILE), array(), exactmetrics_get_asset_version());
 		wp_enqueue_style('exactmetrics-admin-metabox-sitenotes-style');
 
 		wp_register_script('exactmetrics-admin-metabox-sitenotes-script', plugins_url('assets/js/admin-metabox-sitenotes.js', EXACTMETRICS_PLUGIN_FILE), array('jquery'), exactmetrics_get_asset_version());
 		wp_enqueue_script('exactmetrics-admin-metabox-sitenotes-script');
+	}
+
+	/**
+	 * Check if the current screen is the Gutenberg (block) editor.
+	 *
+	 * @return bool True if on block editor, false otherwise.
+	 */
+	private function is_gutenberg_editor() {
+		if ( function_exists( 'is_gutenberg_page' ) && is_gutenberg_page() ) {
+			return true;
+		}
+
+		$current_screen = get_current_screen();
+		if ( method_exists( $current_screen, 'is_block_editor' ) && $current_screen->is_block_editor() ) {
+			return true;
+		}
+
+		return false;
 	}
 
 	/**

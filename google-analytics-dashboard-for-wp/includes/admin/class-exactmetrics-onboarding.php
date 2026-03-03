@@ -225,9 +225,26 @@ class ExactMetrics_Onboarding {
 		$is_network = boolval( $request->get_param( 'is_network' ) );
 		// Process settings
 		$settings = $request->get_param( 'settings' );
+		$onboarding_user_id = exactmetrics_get_onboarding_user_id();
 
 		if ( ! empty( $settings ) ) {
+			$allowed_settings = apply_filters( 'exactmetrics_onboarding_allowed_settings', array(
+				'site_type',
+				'extensions_of_files',
+				'affiliate_links',
+				'view_reports',
+				'automatic_updates',
+				'anonymous_data',
+				'verified_automatic',
+			) );
 			foreach ( $settings as $key => $value ) {
+				if ( ! in_array( $key, $allowed_settings, true ) ) {
+					continue;
+				}
+				// Skip admin-only settings for non-admin users.
+				if ( exactmetrics_is_admin_only_setting( $key ) && ! user_can( $onboarding_user_id, 'manage_options' ) ) {
+					continue;
+				}
 				exactmetrics_update_option( $key, $value );
 			}
 		}
@@ -269,8 +286,7 @@ class ExactMetrics_Onboarding {
 			);
 			$is_network ? ExactMetrics()->auth->set_network_analytics_profile( $profile ) : ExactMetrics()->auth->set_analytics_profile( $profile );
 		}
-		$triggered_by_user = $request->get_param( 'triggered_by' );
-		$can_install       = exactmetrics_can_install_plugins( $triggered_by_user );
+		$can_install = exactmetrics_can_install_plugins( $onboarding_user_id ?: null );
 		if ( $can_install && ! empty( $settings['addons_to_install'] ) ) {
 			$plugins = $settings['addons_to_install'];
 			
@@ -502,6 +518,7 @@ class ExactMetrics_Onboarding {
 	 */
 	public function delete_onboarding_key( $request ) {
 		delete_transient( 'exactmetrics_onboarding_key' );
+		delete_transient( 'exactmetrics_onboarding_user_id' );
 		return new WP_REST_Response(
 			array(
 				'success' => true,

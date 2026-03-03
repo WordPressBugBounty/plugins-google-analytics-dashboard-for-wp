@@ -218,6 +218,7 @@ function exactmetrics_frontend_admin_bar_scripts() {
 		return;
 	}
 
+	// phpcs:ignore PHPCS_SecurityAudit.Misc.IncludeMismatch.ErrMiscIncludeMismatchNoExt -- File path is validated with file_exists() above.
 	$asset_data = require $asset_file;
 
 	// Enqueue styles

@@ -248,6 +248,15 @@ class ExactMetrics_Admin_Assets {
 			$site_auth = $auth->get_viewname();
 			$ms_auth   = is_multisite() && $auth->get_network_viewname();
 
+			// Get bearer token for direct browser-to-API requests.
+			$bearer_token_data = ExactMetrics_API_Token::get_token( is_network_admin() );
+			$bearer_token      = '';
+			$bearer_expires    = 0;
+			if ( ! is_wp_error( $bearer_token_data ) ) {
+				$bearer_token   = $bearer_token_data['token'];
+				$bearer_expires = $bearer_token_data['expires_at'];
+			}
+
 			wp_localize_script(
 				$handle,
 				'exactmetrics',
@@ -265,6 +274,10 @@ class ExactMetrics_Admin_Assets {
 					'wizard_url'           => exactmetrics_get_onboarding_url(),
 					'rest_url'             => get_rest_url(),
 					'rest_nonce'           => wp_create_nonce( 'wp_rest' ),
+					// Direct API access (bypasses WordPress for performance).
+					'relay_api_url'        => apply_filters( 'exactmetrics_api_url_custom_dashboard', 'https://app.exactmetrics.com/' ),
+					'bearer_token'         => $bearer_token,
+					'bearer_expires'       => $bearer_expires,
 				)
 			);
 

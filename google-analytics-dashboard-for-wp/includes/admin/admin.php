@@ -62,9 +62,6 @@ function exactmetrics_admin_menu()
 		add_submenu_page( $parent_slug, __( 'General Reports:', 'google-analytics-dashboard-for-wp' ), __( 'Reports', 'google-analytics-dashboard-for-wp' ), 'exactmetrics_view_dashboard', 'exactmetrics_reports', 'exactmetrics_reports_page' );
 	}
 
-	// then settings page
-	add_submenu_page( $parent_slug, __( 'ExactMetrics', 'google-analytics-dashboard-for-wp' ), __( 'Settings', 'google-analytics-dashboard-for-wp' ), 'exactmetrics_save_settings', 'exactmetrics_settings', 'exactmetrics_settings_page' );
-
 	/**
 	 * Output the Custom Dashboard app mount node.
 	 *
@@ -72,8 +69,26 @@ function exactmetrics_admin_menu()
 	 */
 	function exactmetrics_custom_dashboard_page() {
 		do_action( 'exactmetrics_head' );
-		echo '<div id="exactmetrics-custom-dashboard-app" class="mi-custom-dashboard-app">Loading</div>';
+		// Hide WordPress admin notices on this page - Vue app handles its own notifications
+		echo '<style>.exactmetrics_page_exactmetrics_custom_dashboard .notice:not(.exactmetrics-notice),.exactmetrics_page_exactmetrics_custom_dashboard .error:not(.exactmetrics-notice),.exactmetrics_page_exactmetrics_custom_dashboard .updated:not(.exactmetrics-notice){display:none !important;}</style>';
+		echo '<div id="exactmetrics-custom-dashboard-app" class="mi-custom-dashboard-app">';
+		echo '<div class="mi-app-loading"><span class="dashicons dashicons-update mi-spin"></span></div>';
+		echo '<style>.mi-app-loading{display:flex;align-items:center;justify-content:center;min-height:400px;}.mi-spin{animation:mi-spin 1s linear infinite;font-size:40px;width:40px;height:40px;color:#338eef;}@keyframes mi-spin{to{transform:rotate(360deg);}}</style>';
+		echo '</div>';
 	}
+
+// 	// Add Dashboard page (Vue 3 app)
+// 	add_submenu_page(
+// 		$parent_slug,
+// 		__( 'Dashboard:', 'google-analytics-dashboard-for-wp' ),
+// 		__( 'Dashboard', 'google-analytics-dashboard-for-wp' ) . $new_indicator,
+// 		'exactmetrics_view_dashboard',
+// 		'exactmetrics_custom_dashboard',
+// 		'exactmetrics_custom_dashboard_page'
+// 	);
+
+	// then settings page
+	add_submenu_page( $parent_slug, __( 'ExactMetrics', 'google-analytics-dashboard-for-wp' ), __( 'Settings', 'google-analytics-dashboard-for-wp' ), 'exactmetrics_save_settings', 'exactmetrics_settings', 'exactmetrics_settings_page' );
 
 	// Add dashboard submenu.
 	add_submenu_page( 'index.php', __( 'General Reports:', 'google-analytics-dashboard-for-wp' ), 'ExactMetrics', 'exactmetrics_view_dashboard', 'admin.php?page=exactmetrics_reports' );
