@@ -1523,7 +1523,7 @@ class ExactMetrics_Rest_Routes {
 		if ( ! current_user_can( 'exactmetrics_view_dashboard' ) ) {
 			// Translators: Link tag starts with url and link tag ends.
 			$message = sprintf(
-				esc_html__( 'Oops! You don not have permissions to view or access Popular Posts. Please check with your site administrator that your role is included in the ExactMetrics permissions settings. %1$sClick here for more information%2$s.', 'google-analytics-dashboard-for-wp' ),
+				esc_html__( 'Oops! You do not have permissions to view or access Popular Posts. Please check with your site administrator that your role is included in the ExactMetrics permissions settings. %1$sClick here for more information%2$s.', 'google-analytics-dashboard-for-wp' ),
 				'<a target="_blank" href="' . exactmetrics_get_url( 'notice', 'cannot-view-dashboard', 'https://www.exactmetrics.com/docs/how-to-allow-user-roles-to-access-the-exactmetrics-reports-and-settings/' ) . '">',
 				'</a>'
 			);

@@ -20,6 +20,7 @@ class ExactMetrics_Admin_Assets {
 		'exactmetrics-vue-widget',
 		// Vue 3 handles (type=module)
 		'exactmetrics-vue3-custom-dashboard',
+		'exactmetrics-vue3-reports',
 	);
 
 	/**
@@ -128,14 +129,12 @@ class ExactMetrics_Admin_Assets {
 		// If this is a Vue 3 page, enqueue only Vue 3 styles and return early.
 		if ( $this->is_vue3_admin_page() ) {
 			// In dev mode, Vite injects CSS via JS; skip manual CSS enqueues.
-			if ( ! $this->is_vue3_dev() ) {
-				list( $base_url, $entry ) = $this->get_vue3_entry( 'src/modules/custom-dashboard/main.js' );
+			if ( ! defined( 'EXACTMETRICS_V3_DEV_URL' ) || ! EXACTMETRICS_V3_DEV_URL ) {
+				// Map each Vue 3 page slug to its entry point.
+				$page      = isset( $_GET['page'] ) ? sanitize_key( wp_unslash( $_GET['page'] ) ) : '';
+				$entry_key = $this->get_vue3_entry_key( $page );
 
-				if ( ! empty( $entry['css'] ) && is_array( $entry['css'] ) ) {
-					foreach ( $entry['css'] as $i => $css_file ) {
-						wp_enqueue_style( 'exactmetrics-v3-style-' . $i, $base_url . ltrim( $css_file, '/' ), array(), exactmetrics_get_asset_version() );
-					}
-				}
+				$this->enqueue_vue3_entry_css( $entry_key );
 			}
 			return;
 		}
@@ -184,6 +183,16 @@ class ExactMetrics_Admin_Assets {
 			)
 		);
 
+		// Flush Vue 3 localStorage cache registry if flagged (e.g. after Google re-auth).
+		if ( get_transient( 'exactmetrics_flush_cache_registry' ) ) {
+			delete_transient( 'exactmetrics_flush_cache_registry' );
+			wp_add_inline_script(
+				'exactmetrics-admin-common-script',
+				'try{localStorage.removeItem("mi_cache_registry")}catch(e){}',
+				'before'
+			);
+		}
+
 		// Load setup wizard handler script for all admin pages where the setup wizard link might appear
 		// This includes ExactMetrics pages and any admin page where the setup notice might show
 		wp_enqueue_script( 'exactmetrics-admin-setup-wizard', plugins_url( 'assets/js/admin-setup-wizard.js', EXACTMETRICS_PLUGIN_FILE ), array( 'jquery' ), exactmetrics_get_asset_version(), true );
@@ -229,10 +238,15 @@ class ExactMetrics_Admin_Assets {
 
 		// If this is a Vue 3 page, enqueue only Vue 3 script and return early.
 		if ( $this->is_vue3_admin_page() ) {
+			if(strpos($screen->id, 'exactmetrics_overview_report') !== false) {
+				$this->load_vue3_report_script($auth, $auth_data, $license_info, $version_path);
+				return;
+			}
+
 			$handle = 'exactmetrics-vue3-custom-dashboard';
 
-			if ( $this->is_vue3_dev() ) {
-				$dev_url = trailingslashit( $this->get_vue3_dev_url() ) . 'src/modules/custom-dashboard/main.js';
+			if ( defined( 'EXACTMETRICS_V3_DEV_URL' ) && EXACTMETRICS_V3_DEV_URL ) {
+				$dev_url = trailingslashit( EXACTMETRICS_V3_DEV_URL ) . 'src/modules/custom-dashboard/main.js';
 				wp_register_script( $handle, $dev_url, array( 'wp-i18n', 'wp-util' ), exactmetrics_get_asset_version(), true );
 				wp_enqueue_script( $handle );
 			} else {
@@ -278,6 +292,10 @@ class ExactMetrics_Admin_Assets {
 					'relay_api_url'        => apply_filters( 'exactmetrics_api_url_custom_dashboard', 'https://app.exactmetrics.com/' ),
 					'bearer_token'         => $bearer_token,
 					'bearer_expires'       => $bearer_expires,
+					// Sample data mode: when true, frontend should bypass direct API and use WP AJAX for sample data.
+					'sample_data_enabled'  => apply_filters( 'exactmetrics_sample_data_enabled', false ),
+					'can_view_reports'     => current_user_can( 'exactmetrics_view_dashboard' ),
+					'update_settings'      => current_user_can( 'exactmetrics_save_settings' ),
 				)
 			);
 
@@ -359,7 +377,7 @@ class ExactMetrics_Admin_Assets {
 					'admin_email'                     => get_option( 'admin_email' ),
 					'site_url'                        => get_site_url(),
 					'site_name'                       => get_bloginfo( 'name' ),
-					'reports_url'                     => add_query_arg( 'page', 'exactmetrics_reports', admin_url( 'admin.php' ) ),
+					'reports_url'                     => add_query_arg( 'page', 'exactmetrics_overview_report', admin_url( 'admin.php' ) ),
 					'landing_pages_top_reports_url'   => add_query_arg( 'page', 'exactmetrics_reports#/top-landing-pages', admin_url( 'admin.php' ) ),
 					'custom_view_url'                 => add_query_arg( 'page', 'exactmetrics_custom_dashboard', admin_url( 'admin.php' ) ),
 					'ecommerce_report_url'            => add_query_arg( 'page', 'exactmetrics_reports#/ecommerce', admin_url( 'admin.php' ) ),
@@ -434,7 +452,7 @@ class ExactMetrics_Admin_Assets {
 					'update_settings'     => current_user_can( 'exactmetrics_save_settings' ),
 					'migrated'            => exactmetrics_get_option( 'gadwp_migrated', 0 ),
 					'yearinreview'        => exactmetrics_yearinreview_dates(),
-					'reports_url'         => add_query_arg( 'page', 'exactmetrics_reports', admin_url( 'admin.php' ) ),
+					'reports_url'         => add_query_arg( 'page', 'exactmetrics_overview_report', admin_url( 'admin.php' ) ),
 					'feedback'            => ExactMetrics_Feature_Feedback::get_settings(),
 					'addons_pre_check'    => array(
 						'ai_insights' => is_plugin_active( 'exactmetrics-ai-insights/exactmetrics-ai-insights.php' ),
@@ -608,6 +626,22 @@ class ExactMetrics_Admin_Assets {
 	}
 
 	/**
+	 * Map a Vue 3 page slug to its Vite entry point.
+	 *
+	 * @param string $page The sanitized page slug.
+	 * @return string Entry key for the manifest (defaults to custom-dashboard).
+	 */
+	private function get_vue3_entry_key( $page ) {
+		$entry_map = apply_filters( 'exactmetrics_vue3_entry_map', array(
+			'exactmetrics_overview_report'    => 'src/modules/reports/main.js',
+			'exactmetrics_custom_dashboard'   => 'src/modules/custom-dashboard/main.js',
+			'exactmetrics-custom-dashboards'  => 'src/modules/custom-dashboard/main.js',
+		) );
+
+		return isset( $entry_map[ $page ] ) ? $entry_map[ $page ] : 'src/modules/custom-dashboard/main.js';
+	}
+
+	/**
 	 * Determine if current admin page should load Vue 3 assets.
 	 * Uses the `page` query arg (menu_slug from add_submenu_page) and allows filters for future modules.
 	 *
@@ -629,6 +663,7 @@ class ExactMetrics_Admin_Assets {
 		$vue3_pages = apply_filters( 'exactmetrics_vue3_pages', array(
 			'exactmetrics_custom_dashboard',
 			'exactmetrics-custom-dashboards', // Support hyphenated plural version
+			'exactmetrics_overview_report',
 		) );
 
 		return in_array( $page, $vue3_pages, true );
@@ -661,26 +696,76 @@ class ExactMetrics_Admin_Assets {
 	}
 
 	/**
-	 * Check if Vue 3 dev server is enabled.
+	 * Enqueue all CSS files for a Vue 3 entry point, including its imports and dynamic imports.
 	 *
-	 * @return bool
+	 * Walks the manifest dependency tree to collect CSS from the entry, its static imports,
+	 * and its dynamic imports (lazy-loaded chunks like route components).
+	 *
+	 * @param string $entry_key Manifest key (e.g., 'src/modules/reports/main.js').
 	 */
-	private function is_vue3_dev() {
-		$dev_url = $this->get_vue3_dev_url();
-		return ! empty( $dev_url );
+	private function enqueue_vue3_entry_css( $entry_key ) {
+		list( $base_url, $entry ) = $this->get_vue3_entry( $entry_key );
+
+		if ( empty( $entry ) ) {
+			return;
+		}
+
+		$css_files = array();
+		$visited   = array();
+
+		// Recursively collect CSS from entry and all its dependencies.
+		$this->collect_vue3_css( $entry_key, $css_files, $visited );
+
+		foreach ( $css_files as $i => $css_file ) {
+			wp_enqueue_style(
+				'exactmetrics-v3-style-' . $i,
+				$base_url . ltrim( $css_file, '/' ),
+				array(),
+				exactmetrics_get_asset_version()
+			);
+		}
 	}
 
 	/**
-	 * Get Vue 3 dev server base URL.
-	 * Define EXACTMETRICS_V3_DEV_URL in wp-config.php (e.g. http://localhost:5174)
+	 * Recursively collect CSS files from a manifest entry and its imports/dynamic imports.
 	 *
-	 * @return string
+	 * @param string $key      Manifest key to process.
+	 * @param array  $css_files Collected CSS files (passed by reference).
+	 * @param array  $visited   Already visited keys to prevent cycles (passed by reference).
 	 */
-	private function get_vue3_dev_url() {
-		if ( defined( 'EXACTMETRICS_V3_DEV_URL' ) && EXACTMETRICS_V3_DEV_URL ) {
-			return EXACTMETRICS_V3_DEV_URL;
+	private function collect_vue3_css( $key, &$css_files, &$visited ) {
+		if ( isset( $visited[ $key ] ) ) {
+			return;
 		}
-		return '';
+		$visited[ $key ] = true;
+
+		$entry = isset( self::$manifest_data_v3[ $key ] ) ? self::$manifest_data_v3[ $key ] : null;
+		if ( empty( $entry ) ) {
+			return;
+		}
+
+		// Collect CSS from this entry.
+		if ( ! empty( $entry['css'] ) && is_array( $entry['css'] ) ) {
+			foreach ( $entry['css'] as $css_file ) {
+				if ( ! in_array( $css_file, $css_files, true ) ) {
+					$css_files[] = $css_file;
+				}
+			}
+		}
+
+		// Walk static imports (shared chunks like _Icon-xxx.js).
+		if ( ! empty( $entry['imports'] ) && is_array( $entry['imports'] ) ) {
+			foreach ( $entry['imports'] as $import_key ) {
+				$this->collect_vue3_css( $import_key, $css_files, $visited );
+			}
+		}
+
+		// Walk dynamic imports (lazy-loaded route chunks like OverviewReport.vue).
+		if ( ! empty( $entry['dynamicImports'] ) && is_array( $entry['dynamicImports'] ) ) {
+			foreach ( $entry['dynamicImports'] as $dynamic_key ) {
+				$this->collect_vue3_css( $dynamic_key, $css_files, $visited );
+			}
+		}
 	}
 
 	/**
@@ -748,6 +833,113 @@ class ExactMetrics_Admin_Assets {
 		}
 
 		return exactmetrics_get_option( 'show_charitable_notice', false );
+	}
+
+	/**
+	 * Load Vue 3 report script.
+	 */
+	private function load_vue3_report_script($auth, $auth_data, $license_info, $version_path) {
+		$handle = 'exactmetrics-vue3-reports';
+
+		if ( defined( 'EXACTMETRICS_V3_DEV_URL' ) && EXACTMETRICS_V3_DEV_URL ) {
+			$dev_url = trailingslashit( EXACTMETRICS_V3_DEV_URL ) . 'src/modules/reports/main.js';
+			wp_register_script( $handle, $dev_url, array( 'wp-i18n', 'wp-util' ), exactmetrics_get_asset_version(), true );
+			wp_enqueue_script( $handle );
+		} else {
+			list( $base_url, $entry ) = $this->get_vue3_entry( 'src/modules/reports/main.js' );
+			if ( ! empty( $entry['file'] ) ) {
+				$src = $base_url . ltrim( $entry['file'], '/' );
+				wp_register_script( $handle, $src, array( 'wp-i18n', 'wp-util' ), exactmetrics_get_asset_version(), true );
+				wp_enqueue_script( $handle );
+			}
+		}
+
+		// Provide bootstrap payload for the Vue 3 app in build
+		$site_auth = $auth->get_viewname();
+		$ms_auth   = is_multisite() && $auth->get_network_viewname();
+
+		// Reporting API credentials for direct client-side requests to api/v3/reporting/query
+		$reporting_api = array(
+			'url'      => apply_filters( 'exactmetrics_api_url_custom_dashboard', 'https://app.exactmetrics.com/' ),
+			'license'  => exactmetrics_is_pro_version() ? ( is_network_admin() ? ExactMetrics()->license->get_network_license_key() : ExactMetrics()->license->get_site_license_key() ) : '',
+			'key'      => is_network_admin() ? $auth->get_network_key() : $auth->get_key(),
+			'token'    => is_network_admin() ? $auth->get_network_token() : $auth->get_token(),
+			'site_url' => is_network_admin() ? network_admin_url() : home_url(),
+		);
+
+		// Bearer token for direct browser-to-API requests (Relay), same pattern as Custom Dashboard.
+		$bearer_token_data = ExactMetrics_API_Token::get_token( is_network_admin() );
+		$bearer_token      = '';
+		$bearer_expires    = 0;
+
+		if ( ! is_wp_error( $bearer_token_data ) ) {
+			$bearer_token   = $bearer_token_data['token'];
+			$bearer_expires = $bearer_token_data['expires_at'];
+		}
+
+		// Build addon info (active, installed, basename) for Vue 3 report addon gates.
+		$installed_plugins = get_plugins();
+		$addon_defs = array(
+			'ecommerce'     => array( 'exactmetrics-ecommerce', 'ga-ecommerce' ),
+			'dimensions'    => array( 'exactmetrics-dimensions' ),
+			'forms'         => array( 'exactmetrics-forms' ),
+			'page_insights' => array( 'exactmetrics-page-insights' ),
+		);
+		$addons_active    = array();
+		$addons_info      = array();
+		foreach ( $addon_defs as $key => $slugs ) {
+			$is_active    = false;
+			$is_installed = false;
+			$basename     = '';
+			foreach ( $slugs as $slug ) {
+				$bn = exactmetrics_get_plugin_basename_from_slug( $slug );
+				if ( $bn && isset( $installed_plugins[ $bn ] ) ) {
+					$is_installed = true;
+					$basename     = $bn;
+					if ( is_plugin_active( $bn ) ) {
+						$is_active = true;
+					}
+					break;
+				}
+			}
+			$addons_active[ $key ] = $is_active;
+			$addons_info[ $key ]   = array(
+				'installed' => $is_installed,
+				'basename'  => $basename,
+			);
+		}
+
+		wp_localize_script(
+			$handle,
+			'exactmetrics',
+			array(
+				'ajax'               => admin_url( 'admin-ajax.php' ),
+				'assets_url'         => apply_filters( 'exactmetrics_vue3_assets_url', plugins_url( $version_path . '/assets/vue3', EXACTMETRICS_PLUGIN_FILE ) ),
+				'nonce'              => wp_create_nonce( 'mi-admin-nonce' ),
+				'license'            => $license_info,
+				'auth'               => $auth_data,
+				'authed'             => $site_auth || $ms_auth, // Boolean for admin bar compatibility
+				'can_view_reports'   => current_user_can( 'exactmetrics_view_dashboard' ),
+				'license_expired'    => exactmetrics_is_pro_version() && ExactMetrics()->license->license_has_error(),
+				'plugin_version'     => EXACTMETRICS_VERSION,
+				'reporting_api'      => $reporting_api,
+				// Direct API access (Relay) for Overview/Reports, aligned with Custom Dashboard.
+				'relay_api_url'      => apply_filters( 'exactmetrics_api_url_custom_dashboard', 'https://app.exactmetrics.com/' ),
+				'bearer_token'       => $bearer_token,
+				'bearer_expires'     => $bearer_expires,
+				// Sample data mode: when true, frontend should bypass direct API and use WP AJAX for sample data.
+				'sample_data_enabled' => apply_filters( 'exactmetrics_sample_data_enabled', false ),
+				'wizard_url'         => is_admin() ? exactmetrics_get_onboarding_url() : '',
+				'addons'             => $addons_active,
+				'addons_info'        => $addons_info,
+				'activate_nonce'     => wp_create_nonce( 'exactmetrics-activate' ),
+				'install_nonce'      => wp_create_nonce( 'exactmetrics-install' ),
+				'addons_page_url'    => is_multisite() ? network_admin_url( 'admin.php?page=exactmetrics_network#/addons' ) : admin_url( 'admin.php?page=exactmetrics_settings#/addons' ),
+				'update_settings'    => current_user_can( 'exactmetrics_save_settings' ),
+			)
+		);
+		// Load translations for Vue 3 app using WordPress's script translation system
+		wp_set_script_translations( $handle, 'google-analytics-dashboard-for-wp' );
 	}
 }
 

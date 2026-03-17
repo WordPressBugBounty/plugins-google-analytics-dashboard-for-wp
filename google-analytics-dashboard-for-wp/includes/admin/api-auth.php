@@ -262,7 +262,8 @@ final class ExactMetrics_API_Auth {
 		// Clear cache
 		$where = $this->is_network_admin() ? 'network' : 'site';
 		ExactMetrics()->reporting->delete_aggregate_data( $where );
-		
+		exactmetrics_flag_flush_cache_registry();
+
 		if ( class_exists( 'ExactMetrics_Google_Ads' ) ) {
 			// Clear any Google Ads stored data
 			ExactMetrics_Google_Ads::clear_data();
@@ -430,7 +431,8 @@ final class ExactMetrics_API_Auth {
 		// Clear cache
 		$where = $this->is_network_admin() ? 'network' : 'site';
 		ExactMetrics()->reporting->delete_aggregate_data( $where );
-		
+		exactmetrics_flag_flush_cache_registry();
+
 		if ( class_exists( 'ExactMetrics_Google_Ads' ) ) {
 			// Clear any Google Ads stored data
 			ExactMetrics_Google_Ads::clear_data();

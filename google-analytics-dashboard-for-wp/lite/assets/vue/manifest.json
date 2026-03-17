@@ -7,14 +7,14 @@
     "file": "css/ContentIconList.css",
     "src": "ContentIconList.css"
   },
-  "_AboutTestimonialsSlider-5e143a3c.min.js": {
+  "_AboutTestimonialsSlider-f67c6f0c.min.js": {
     "css": [
       "css/AboutTestimonialsSlider.css"
     ],
-    "file": "js/chunks/AboutTestimonialsSlider-5e143a3c.min.js",
+    "file": "js/chunks/AboutTestimonialsSlider-f67c6f0c.min.js",
     "imports": [
       "_vendor-3aa45264.min.js",
-      "_exactmetrics-helper-plugin-ce356fcb.min.js",
+      "_exactmetrics-helper-plugin-547b38ac.min.js",
       "_ContentIconList-cd53ea66.min.js"
     ]
   },
@@ -30,7 +30,7 @@
   "_exactmetrics-icons-497ded17.min.js": {
     "file": "js/chunks/exactmetrics-icons-497ded17.min.js"
   },
-  "_index-a75c66c3.min.js": {
+  "_index-8db1349e.min.js": {
     "assets": [
       "img/logo-ExactMetrics.png",
       "img/logo-ExactMetrics@2x2.png",
@@ -58,24 +58,24 @@
     "css": [
       "css/index.css"
     ],
-    "file": "js/chunks/index-a75c66c3.min.js",
+    "file": "js/chunks/index-8db1349e.min.js",
     "imports": [
       "_vendor-3aa45264.min.js",
       "_ContentIconList-cd53ea66.min.js",
-      "_exactmetrics-helper-plugin-ce356fcb.min.js"
+      "_exactmetrics-helper-plugin-547b38ac.min.js"
     ]
   },
-  "_exactmetrics-helper-plugin-ce356fcb.min.js": {
-    "file": "js/chunks/exactmetrics-helper-plugin-ce356fcb.min.js",
+  "_exactmetrics-helper-plugin-547b38ac.min.js": {
+    "file": "js/chunks/exactmetrics-helper-plugin-547b38ac.min.js",
     "imports": [
       "_vendor-3aa45264.min.js"
     ]
   },
-  "_report-table-helper-0540d7f9.min.js": {
-    "file": "js/chunks/report-table-helper-0540d7f9.min.js",
+  "_report-table-helper-42fccf08.min.js": {
+    "file": "js/chunks/report-table-helper-42fccf08.min.js",
     "imports": [
       "_vendor-3aa45264.min.js",
-      "_exactmetrics-helper-plugin-ce356fcb.min.js",
+      "_exactmetrics-helper-plugin-547b38ac.min.js",
       "_exactmetrics-icons-497ded17.min.js"
     ]
   },
@@ -1169,9 +1169,9 @@
     "file": "js/reports.min.js",
     "imports": [
       "_vendor-3aa45264.min.js",
-      "_report-table-helper-0540d7f9.min.js",
-      "_exactmetrics-helper-plugin-ce356fcb.min.js",
-      "_index-a75c66c3.min.js",
+      "_report-table-helper-42fccf08.min.js",
+      "_exactmetrics-helper-plugin-547b38ac.min.js",
+      "_index-8db1349e.min.js",
       "_ContentIconList-cd53ea66.min.js",
       "_exactmetrics-icons-497ded17.min.js"
     ],
@@ -1197,6 +1197,7 @@
       "img/em-pl-logo.svg",
       "img/badge-light.svg",
       "img/badge-dark.svg",
+      "img/icon-plus.svg",
       "img/about-icon-connect.png",
       "img/about-icon-guide.png",
       "img/about-icon-gdpr.png",
@@ -1271,7 +1272,6 @@
       "img/star-empty.svg",
       "img/icon-media.svg",
       "img/arrow-down.svg",
-      "img/icon-plus.svg",
       "img/icon-lock2.svg",
       "img/upsell-button-arrow.svg",
       "img/upsell-screen.png",
@@ -1367,10 +1367,10 @@
     "file": "js/settings.min.js",
     "imports": [
       "_vendor-3aa45264.min.js",
-      "_exactmetrics-helper-plugin-ce356fcb.min.js",
+      "_exactmetrics-helper-plugin-547b38ac.min.js",
       "_ContentIconList-cd53ea66.min.js",
-      "_AboutTestimonialsSlider-5e143a3c.min.js",
-      "_index-a75c66c3.min.js",
+      "_AboutTestimonialsSlider-f67c6f0c.min.js",
+      "_index-8db1349e.min.js",
       "_exactmetrics-icons-497ded17.min.js"
     ],
     "isEntry": true,
@@ -1470,8 +1470,8 @@
     "file": "js/widget.min.js",
     "imports": [
       "_vendor-3aa45264.min.js",
-      "_report-table-helper-0540d7f9.min.js",
-      "_exactmetrics-helper-plugin-ce356fcb.min.js",
+      "_report-table-helper-42fccf08.min.js",
+      "_exactmetrics-helper-plugin-547b38ac.min.js",
       "_exactmetrics-icons-497ded17.min.js"
     ],
     "isEntry": true,
@@ -1557,8 +1557,8 @@
     "file": "js/wizard.min.js",
     "imports": [
       "_vendor-3aa45264.min.js",
-      "_AboutTestimonialsSlider-5e143a3c.min.js",
-      "_exactmetrics-helper-plugin-ce356fcb.min.js",
+      "_AboutTestimonialsSlider-f67c6f0c.min.js",
+      "_exactmetrics-helper-plugin-547b38ac.min.js",
       "_ContentIconList-cd53ea66.min.js"
     ],
     "isEntry": true,

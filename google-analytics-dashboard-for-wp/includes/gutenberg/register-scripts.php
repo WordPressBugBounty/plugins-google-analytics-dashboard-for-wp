@@ -101,7 +101,7 @@ function exactmetrics_gutenberg_editor_assets() {
 			'allowed_post_types'           => apply_filters( 'exactmetrics_headline_analyzer_post_types', array( 'post' ) ),
 			'current_post_type'            => $posttype,
 			'is_headline_analyzer_enabled' => apply_filters( 'exactmetrics_headline_analyzer_enabled', true ) && 'true' !== exactmetrics_get_option( 'disable_headline_analyzer' ),
-			'reports_url'                  => add_query_arg( 'page', 'exactmetrics_reports', admin_url( 'admin.php' ) ),
+			'reports_url'                  => add_query_arg( 'page', 'exactmetrics_overview_report', admin_url( 'admin.php' ) ),
 			'vue_assets_path'              => plugins_url( $version_path . '/assets/vue/', EXACTMETRICS_PLUGIN_FILE ),
 			'is_woocommerce_installed'     => class_exists( 'WooCommerce' ),
 			'license_type'                 => ExactMetrics()->license->get_license_type(),

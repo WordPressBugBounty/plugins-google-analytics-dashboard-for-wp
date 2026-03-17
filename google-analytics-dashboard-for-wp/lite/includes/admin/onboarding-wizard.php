@@ -37,7 +37,7 @@ class ExactMetrics_Onboarding_Wizard {
 			$this,
 			'get_install_errors',
 		) );
-		
+
 		add_action( 'wp_ajax_nopriv_onboarding_exactmetrics_onboarding_get_errors', array(
 			$this,
 			'onboarding_get_install_errors',
@@ -139,7 +139,7 @@ class ExactMetrics_Onboarding_Wizard {
 				'is_eu'                => $this->should_include_eu_addon(),
 				'activate_nonce'       => wp_create_nonce( 'exactmetrics-activate' ),
 				'install_nonce'        => wp_create_nonce( 'exactmetrics-install' ),
-				'exit_url'             => add_query_arg( 'page', 'exactmetrics_reports', admin_url( 'admin.php' ) ),
+				'exit_url'             => add_query_arg( 'page', 'exactmetrics_overview_report', admin_url( 'admin.php' ) ),
 				'shareasale_id'        => exactmetrics_get_shareasale_id(),
 				'shareasale_url'       => exactmetrics_get_shareasale_url( exactmetrics_get_shareasale_id(), '' ),
 				// Used to add notices for future deprecations.
@@ -147,7 +147,7 @@ class ExactMetrics_Onboarding_Wizard {
 				'plugin_version'       => EXACTMETRICS_VERSION,
 				'migrated'             => exactmetrics_get_option( 'gadwp_migrated', false ),
 				'allow_file_edit'      => $is_file_edit_allowed,
-				'reports_url'          => admin_url( 'admin.php?page=exactmetrics_reports' ),
+				'reports_url'          => admin_url( 'admin.php?page=exactmetrics_overview_report' ),
 			)
 		);
 

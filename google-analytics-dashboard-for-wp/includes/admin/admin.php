@@ -59,7 +59,18 @@ function exactmetrics_admin_menu()
 	}
 
 	if ( $hook === 'exactmetrics_reports' ) {
-		add_submenu_page( $parent_slug, __( 'General Reports:', 'google-analytics-dashboard-for-wp' ), __( 'Reports', 'google-analytics-dashboard-for-wp' ), 'exactmetrics_view_dashboard', 'exactmetrics_reports', 'exactmetrics_reports_page' );
+		// Add Overview report page (Vue 3 app) - this is the visible Reports menu item
+		add_submenu_page(
+			$parent_slug,
+			__( 'Overview Report:', 'google-analytics-dashboard-for-wp' ),
+			__( 'Reports', 'google-analytics-dashboard-for-wp' ),
+			'exactmetrics_view_dashboard',
+			'exactmetrics_overview_report',
+			'exactmetrics_overview_report_page'
+		);
+
+		// Register reports page with null parent to keep it accessible but hidden from menu
+		add_submenu_page( null, __( 'General Reports:', 'google-analytics-dashboard-for-wp' ), __( 'Reports', 'google-analytics-dashboard-for-wp' ), 'exactmetrics_view_dashboard', 'exactmetrics_reports', 'exactmetrics_reports_page' );
 	}
 
 	/**
@@ -93,9 +104,15 @@ function exactmetrics_admin_menu()
 	// Add dashboard submenu.
 	add_submenu_page( 'index.php', __( 'General Reports:', 'google-analytics-dashboard-for-wp' ), 'ExactMetrics', 'exactmetrics_view_dashboard', 'admin.php?page=exactmetrics_reports' );
 
-	// If the setup checklist is not dismissed, remove the own submenu of `Insights` main menu that we added on line 52.
+	// Remove own auto-generated `Insights` submenu when Reports submenu is explicitly registered.
+	// Because the first submenu slug is not `exactmetrics_reports`, WordPress adds this item automatically.
+	if ( $hook === 'exactmetrics_reports' ) {
+		remove_submenu_page( 'exactmetrics_reports', 'exactmetrics_reports' );
+	}
+
+	// If the setup checklist is not dismissed, remove the own submenu of `Insights` main menu.
 	// This way the Checklist will be the first submenu which is an important thing for onboarding.
-	if ( $hide_reports_submenu ) {
+	if ( $hide_reports_submenu && $hook !== 'exactmetrics_reports' ) {
 
 		// Check if the user has the capability to save settings and view dashboard.
 		// We should skip this for editors that have only view capability have only item in the submenu, removing that would break the menu.
@@ -1074,6 +1091,19 @@ function exactmetrics_wpconsent_install_notice() {
 add_action( 'admin_notices', 'exactmetrics_wpconsent_install_notice' );
 
 /**
+ * Add Overview report page (Vue 3 app)
+ */
+function exactmetrics_overview_report_page() {
+	do_action( 'exactmetrics_head' );
+	// Hide WordPress admin notices on this page - Vue app handles its own notifications
+	echo '<style>.exactmetrics_page .notice:not(.exactmetrics-notice),.exactmetrics_page .error:not(.exactmetrics-notice),.exactmetrics_page .updated:not(.exactmetrics-notice){display:none !important;}</style>';
+	echo '<div id="exactmetrics-overview-report-app">';
+	echo '<div class="mi-app-loading"><span class="dashicons dashicons-update mi-spin"></span></div>';
+	echo '<style>.mi-app-loading{display:flex;align-items:center;justify-content:center;min-height:400px;}.mi-spin{animation:mi-spin 1s linear infinite;font-size:40px;width:40px;height:40px;color:#338eef;}@keyframes mi-spin{to{transform:rotate(360deg);}}</style>';
+	echo '</div>';
+}
+
+/**
  * Add EEA Compliance file.
  */
 require_once __DIR__ . '/eea-compliance.php';
@@ -1082,3 +1112,8 @@ require_once __DIR__ . '/eea-compliance.php';
  * Add translations functionality.
  */
 require_once __DIR__ . '/translations.php';
+
+/**
+ * Report filter CRUD ajax handler.
+ */
+require_once __DIR__ . '/reports/filter-ajax.php';
