@@ -206,7 +206,7 @@
     "src": "src/assets/img/sample-image-exactmetrics.png"
   },
   "src/modules/custom-dashboard/main.js": {
-    "file": "js/custom-dashboard-BrGya0lz.js",
+    "file": "js/custom-dashboard-CGmb_wW3.js",
     "name": "custom-dashboard",
     "src": "src/modules/custom-dashboard/main.js",
     "isEntry": true,
@@ -221,7 +221,7 @@
     ]
   },
   "src/modules/custom-dashboard/styles/main-exactmetrics.scss": {
-    "file": "css/main-exactmetrics-BuTjrZzs.css",
+    "file": "css/main-exactmetrics-Ey0IgSK7.css",
     "src": "src/modules/custom-dashboard/styles/main-exactmetrics.scss"
   },
   "src/modules/custom-dashboard/views/DashboardCreate.vue": {
@@ -282,7 +282,7 @@
     ]
   },
   "src/modules/reports/main.js": {
-    "file": "js/reports-407n8A6l.js",
+    "file": "js/reports-CMQsyKDB.js",
     "name": "reports",
     "src": "src/modules/reports/main.js",
     "isEntry": true,
@@ -302,11 +302,11 @@
     ]
   },
   "src/modules/reports/styles/main-exactmetrics.scss": {
-    "file": "css/main-exactmetrics-CheP4nIw.css",
+    "file": "css/main-exactmetrics-D7dUT--C.css",
     "src": "src/modules/reports/styles/main-exactmetrics.scss"
   },
   "src/modules/reports/views/OverviewReport.vue": {
-    "file": "js/chunks/OverviewReport-BuGJPBzP.js",
+    "file": "js/chunks/OverviewReport-Dly_W9I6.js",
     "name": "OverviewReport",
     "src": "src/modules/reports/views/OverviewReport.vue",
     "isDynamicEntry": true,
@@ -318,7 +318,7 @@
       "_html2pdf-DUUmuX6G.js"
     ],
     "css": [
-      "css/main-exactmetrics-BO8lMViZ.css"
+      "css/main-exactmetrics-DN0v1tIW.css"
     ],
     "assets": [
       "assets/woocom-CGR3qW2E.png",
