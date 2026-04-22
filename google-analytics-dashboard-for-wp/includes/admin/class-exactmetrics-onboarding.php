@@ -113,7 +113,20 @@ class ExactMetrics_Onboarding {
 		if ( empty( $provided_key ) || false === $stored_key || ! hash_equals( $stored_key, $provided_key ) ) {
 			return new WP_Error(
 				'exactmetrics_invalid_key',
-				'Invalid onboarding key',
+				esc_html__( 'Invalid onboarding key', 'google-analytics-dashboard-for-wp' ),
+				array( 'status' => 403 )
+			);
+		}
+
+		// Ensure the user who generated the key has plugin installation capability.
+		// Only enforce when the user ID transient is present; if it has been evicted
+		// from the object cache independently of the key transient, skip this check
+		// rather than blocking a legitimate upgrade flow.
+		$onboarding_user_id = exactmetrics_get_onboarding_user_id();
+		if ( $onboarding_user_id && ! exactmetrics_can_install_plugins( $onboarding_user_id ) ) {
+			return new WP_Error(
+				'exactmetrics_insufficient_permissions',
+				esc_html__( 'Insufficient permissions', 'google-analytics-dashboard-for-wp' ),
 				array( 'status' => 403 )
 			);
 		}

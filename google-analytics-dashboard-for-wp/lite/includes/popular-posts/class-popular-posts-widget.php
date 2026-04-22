@@ -121,7 +121,7 @@ class ExactMetrics_Popular_Posts_Widget extends ExactMetrics_Popular_Posts {
 			$html .= '<a href="' . esc_url($post['link']) . '">';
 			if ( ! empty( $theme_styles['image'] ) && ! empty( $post['image'] ) ) {
 				$html .= '<div class="exactmetrics-widget-popular-posts-image">';
-				$html .= '<img src="' . esc_url($post['image']) . '" srcset=" ' . esc_attr($post['srcset']) . ' " alt="' . esc_attr( $post['title'] ) . '" />';
+				$html .= '<img src="' . esc_url($post['image']) . '" srcset=" ' . esc_attr($post['srcset']) . ' " alt="' . esc_attr( wp_strip_all_tags( $post['title'] ) ) . '" />';
 				$html .= '</div>';
 			}
 			$html .= '<div class="exactmetrics-widget-popular-posts-text">';
@@ -132,7 +132,7 @@ class ExactMetrics_Popular_Posts_Widget extends ExactMetrics_Popular_Posts {
 			}
 			$html .= '<span class="exactmetrics-widget-popular-posts-title" ';
 			$html .= ! empty( $this->get_element_style( $theme, 'title', $atts ) ) ? 'style="' . esc_attr( $this->get_element_style( $theme, 'title', $atts ) ) . '"' : '';
-			$html .= '>' . esc_html( $post['title'] ) . '</span>';
+			$html .= '>' . wp_kses_post( $post['title'] ) . '</span>';
 			$html .= '</div>'; // exactmetrics-widget-popular-posts-text.
 			$html .= '</a>';
 			$html .= '</li>';

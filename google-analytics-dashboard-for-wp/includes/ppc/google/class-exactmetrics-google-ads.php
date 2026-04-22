@@ -167,6 +167,12 @@ class ExactMetrics_Google_Ads
 	public function reset_experience() {
 		check_ajax_referer('mi-admin-nonce', 'nonce');
 
+		if (! current_user_can('exactmetrics_save_settings')) {
+			wp_send_json_error(array(
+				'message' => __('You do not have permission to reset the Google Ads experience.', 'google-analytics-dashboard-for-wp'),
+			));
+		}
+
 		self::clear_data();
 
 		wp_send_json_success(array(
@@ -243,6 +249,12 @@ class ExactMetrics_Google_Ads
 	public function get_ads_access_token()
 	{
 		check_ajax_referer('mi-admin-nonce', 'nonce');
+
+		if (! current_user_can('exactmetrics_save_settings')) {
+			wp_send_json_error(array(
+				'message' => __('You do not have permission to retrieve the Google Ads access token.', 'google-analytics-dashboard-for-wp'),
+			));
+		}
 
 		$access_token_result = $this->get_access_token();
 

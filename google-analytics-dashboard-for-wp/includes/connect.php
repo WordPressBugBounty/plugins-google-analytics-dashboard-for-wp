@@ -24,7 +24,7 @@ class ExactMetrics_Connect {
 	public function hooks() {
 
 		add_action( 'wp_ajax_exactmetrics_connect_url', array( $this, 'generate_connect_url' ) );
-		add_action( 'wp_ajax_nopriv_exactmetrics_connect_process', array( $this, 'process' ) );
+		add_action( 'wp_ajax_exactmetrics_connect_process', array( $this, 'process' ) );
 	}
 
 	/**
@@ -140,6 +140,11 @@ class ExactMetrics_Connect {
 			'<a target="_blank" href="' . exactmetrics_get_url( 'notice', 'could-not-upgrade', 'https://www.exactmetrics.com/' ) . '">',
 			'</a>'
 		);
+
+		// Check for permissions.
+		if ( ! exactmetrics_can_install_plugins() ) {
+			wp_send_json_error( $error );
+		}
 
 		// verify params present (oth & download link).
 		$post_oth = ! empty( $_REQUEST['oth'] ) ? sanitize_text_field($_REQUEST['oth']) : '';

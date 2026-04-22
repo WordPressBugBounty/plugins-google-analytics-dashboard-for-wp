@@ -285,7 +285,7 @@ class ExactMetrics_Admin_Assets {
 					'auth'                 => $auth_data,
 					'authed'               => $site_auth || $ms_auth, // Boolean for admin bar compatibility
 					'plugin_version'       => EXACTMETRICS_VERSION,
-					'wizard_url'           => exactmetrics_get_onboarding_url(),
+					'wizard_url'           => exactmetrics_can_install_plugins() ? exactmetrics_get_onboarding_url() : '',
 					'rest_url'             => get_rest_url(),
 					'rest_nonce'           => wp_create_nonce( 'wp_rest' ),
 					// Direct API access (bypasses WordPress for performance).
@@ -929,7 +929,7 @@ class ExactMetrics_Admin_Assets {
 				'bearer_expires'     => $bearer_expires,
 				// Sample data mode: when true, frontend should bypass direct API and use WP AJAX for sample data.
 				'sample_data_enabled' => apply_filters( 'exactmetrics_sample_data_enabled', false ),
-				'wizard_url'         => is_admin() ? exactmetrics_get_onboarding_url() : '',
+				'wizard_url'         => exactmetrics_can_install_plugins() ? exactmetrics_get_onboarding_url() : '',
 				'addons'             => $addons_active,
 				'addons_info'        => $addons_info,
 				'activate_nonce'     => wp_create_nonce( 'exactmetrics-activate' ),
