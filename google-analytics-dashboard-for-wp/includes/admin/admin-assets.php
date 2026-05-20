@@ -1,4 +1,9 @@
 <?php
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * WP ADMIN assets will be enqueued here.
  *
@@ -274,7 +279,7 @@ class ExactMetrics_Admin_Assets {
 			wp_localize_script(
 				$handle,
 				'exactmetrics',
-				array(
+				apply_filters( 'exactmetrics_localize_script_data', array(
 					'ajax'                 => admin_url( 'admin-ajax.php' ),
 					'assets_url'           => apply_filters( 'exactmetrics_vue3_assets_url', plugins_url( $version_path . '/assets/vue3', EXACTMETRICS_PLUGIN_FILE ) ),
 					'nonce'                => wp_create_nonce( 'mi-admin-nonce' ),
@@ -290,13 +295,14 @@ class ExactMetrics_Admin_Assets {
 					'rest_nonce'           => wp_create_nonce( 'wp_rest' ),
 					// Direct API access (bypasses WordPress for performance).
 					'relay_api_url'        => apply_filters( 'exactmetrics_api_url_custom_dashboard', 'https://app.exactmetrics.com/' ),
+					'ai_chat_api_url'      => apply_filters( 'exactmetrics_ai_chat_api_url', 'https://ai-api.exactmetrics.com' ),
 					'bearer_token'         => $bearer_token,
 					'bearer_expires'       => $bearer_expires,
 					// Sample data mode: when true, frontend should bypass direct API and use WP AJAX for sample data.
 					'sample_data_enabled'  => apply_filters( 'exactmetrics_sample_data_enabled', false ),
 					'can_view_reports'     => current_user_can( 'exactmetrics_view_dashboard' ),
 					'update_settings'      => current_user_can( 'exactmetrics_save_settings' ),
-				)
+				) )
 			);
 
 			// Load translations for Vue 3 app using WordPress's script translation system
@@ -348,7 +354,7 @@ class ExactMetrics_Admin_Assets {
 			wp_localize_script(
 				'exactmetrics-vue-script',
 				'exactmetrics',
-				array(
+				apply_filters( 'exactmetrics_localize_script_data', array(
 					'ajax'                            => admin_url( 'admin-ajax.php' ),
 					'nonce'                           => wp_create_nonce( 'mi-admin-nonce' ),
 					'network'                         => is_network_admin(),
@@ -396,7 +402,7 @@ class ExactMetrics_Admin_Assets {
 					'site_notes_import_synced'        => exactmetrics_get_option( 'site_notes_import_synced', 0 ),
 					'license'                         => $license_info,
 					'currency'                        => exactmetrics_get_ecommerce_currency(),
-				)
+				) )
 			);
 
 			wp_scripts()->add_inline_script(
@@ -425,7 +431,7 @@ class ExactMetrics_Admin_Assets {
 			wp_localize_script(
 				'exactmetrics-vue-reports',
 				'exactmetrics',
-				array(
+				apply_filters( 'exactmetrics_localize_script_data', array(
 					'ajax'                => admin_url( 'admin-ajax.php' ),
 					'nonce'               => wp_create_nonce( 'mi-admin-nonce' ),
 					'rest_nonce'          => wp_create_nonce( 'wp_rest' ),
@@ -455,13 +461,12 @@ class ExactMetrics_Admin_Assets {
 					'reports_url'         => add_query_arg( 'page', 'exactmetrics_overview_report', admin_url( 'admin.php' ) ),
 					'feedback'            => ExactMetrics_Feature_Feedback::get_settings(),
 					'addons_pre_check'    => array(
-						'ai_insights' => is_plugin_active( 'exactmetrics-ai-insights/exactmetrics-ai-insights.php' ),
 						'woo_product_feed_pro' => is_plugin_active( 'woo-product-feed-pro/woocommerce-sea.php' ),
 					),
 					'license'             => $license_info,
 					'charitablewp_notice' => $this->show_charitablewp_notice(),
 					'currency'            => exactmetrics_get_ecommerce_currency(),
-				)
+				) )
 			);
 
 			wp_scripts()->add_inline_script(
@@ -912,7 +917,7 @@ class ExactMetrics_Admin_Assets {
 		wp_localize_script(
 			$handle,
 			'exactmetrics',
-			array(
+			apply_filters( 'exactmetrics_localize_script_data', array(
 				'ajax'               => admin_url( 'admin-ajax.php' ),
 				'assets_url'         => apply_filters( 'exactmetrics_vue3_assets_url', plugins_url( $version_path . '/assets/vue3', EXACTMETRICS_PLUGIN_FILE ) ),
 				'nonce'              => wp_create_nonce( 'mi-admin-nonce' ),
@@ -925,6 +930,7 @@ class ExactMetrics_Admin_Assets {
 				'reporting_api'      => $reporting_api,
 				// Direct API access (Relay) for Overview/Reports, aligned with Custom Dashboard.
 				'relay_api_url'      => apply_filters( 'exactmetrics_api_url_custom_dashboard', 'https://app.exactmetrics.com/' ),
+				'ai_chat_api_url'    => apply_filters( 'exactmetrics_ai_chat_api_url', 'https://ai-api.exactmetrics.com' ),
 				'bearer_token'       => $bearer_token,
 				'bearer_expires'     => $bearer_expires,
 				// Sample data mode: when true, frontend should bypass direct API and use WP AJAX for sample data.
@@ -936,7 +942,7 @@ class ExactMetrics_Admin_Assets {
 				'install_nonce'      => wp_create_nonce( 'exactmetrics-install' ),
 				'addons_page_url'    => is_multisite() ? network_admin_url( 'admin.php?page=exactmetrics_network#/addons' ) : admin_url( 'admin.php?page=exactmetrics_settings#/addons' ),
 				'update_settings'    => current_user_can( 'exactmetrics_save_settings' ),
-			)
+			) )
 		);
 		// Load translations for Vue 3 app using WordPress's script translation system
 		wp_set_script_translations( $handle, 'google-analytics-dashboard-for-wp' );

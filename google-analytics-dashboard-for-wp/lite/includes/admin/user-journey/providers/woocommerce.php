@@ -1,4 +1,8 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * This file contains the code to display metabox for WooCommerce Admin Orders Page.
  *
@@ -47,7 +51,7 @@ class ExactMetrics_Lite_User_Journey_WooCommerce_Metabox extends ExactMetrics_Us
 	public function add_user_journey_metabox() {
 		add_meta_box(
 			'woocommerce-exactmetrics-lite-user-journey-metabox',
-			esc_html__( 'User Journey by ExactMetrics', 'exactmetrics' ),
+			esc_html__( 'User Journey by ExactMetrics', 'google-analytics-dashboard-for-wp' ),
 			array( $this, 'display_meta_box' ),
 			'shop_order',
 			'normal',

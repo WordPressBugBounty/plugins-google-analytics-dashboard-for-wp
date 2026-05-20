@@ -1,5 +1,9 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Class ExactMetrics_Google_Ads
  *
@@ -126,6 +130,7 @@ class ExactMetrics_Google_Ads
 			return new WP_Error(
 				'not_authed',
 				sprintf(
+					/* translators: %s: URL to ExactMetrics settings page */
 					__('To use this feature, please connect to ExactMetrics. <a href="%s">Click here to connect.</a>', 'google-analytics-dashboard-for-wp'),
 					admin_url('admin.php?page=exactmetrics_settings')
 				)
@@ -290,8 +295,8 @@ class ExactMetrics_Google_Ads
 			));
 		}
 
-		$key = sanitize_text_field($_POST['key']);
-		$value = $_POST['value'];
+		$key = sanitize_text_field( wp_unslash( $_POST['key'] ) );
+		$value = wp_unslash( $_POST['value'] );
 
 		// Convert '1'/'0' strings to boolean for physical_products
 		if ($key === 'physical_products' || $key === 'user_onboarded') {

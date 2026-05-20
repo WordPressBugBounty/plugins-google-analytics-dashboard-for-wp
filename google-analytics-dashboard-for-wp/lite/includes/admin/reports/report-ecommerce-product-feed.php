@@ -27,7 +27,7 @@ final class ExactMetrics_Report_Ecommerce_Product_Feed extends ExactMetrics_Repo
 	 * Primary class constructor.
 	 */
 	public function __construct() {
-		$this->title = __( 'Product Feed', 'exactmetrics-premium' );
+		$this->title = __( 'Product Feed', 'google-analytics-dashboard-for-wp' );
 
 		parent::__construct();
 	}

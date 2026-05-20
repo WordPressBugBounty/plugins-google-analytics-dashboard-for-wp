@@ -1,5 +1,9 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 if ( ! class_exists( 'ExactMetrics_Compatibility_Check' ) ) {
 	/**
 	 * Check PHP and WP compatibility
@@ -258,7 +262,7 @@ if ( ! class_exists( 'ExactMetrics_Compatibility_Check' ) ) {
 
 			if ( ! empty( $compatible_php_version['required'] ) && ! $this->is_php_compatible() ) {
 				deactivate_plugins( $plugin );
-				// Translators: HTML strong tag starts, PHP version number, HTML string tag end, plugins page Link tag starts with url and plugins page link tag ends.
+				/* translators: hTML strong tag starts, PHP version number, HTML string tag end, plugins page Link tag starts with url and plugins page link tag ends. */
 				wp_die(
 					sprintf( esc_html__( 'Sorry, but your current version of PHP does not meet the minimum required version %1$s%2$s%3$s or newer to run ExactMetrics properly. For information on how to upgrade your PHP version, contact your web host. %4$sClick here to return to the Dashboard%5$s.', 'google-analytics-dashboard-for-wp' ),
 						'<strong>',
@@ -272,7 +276,7 @@ if ( ! class_exists( 'ExactMetrics_Compatibility_Check' ) ) {
 
 			if ( ! empty( $compatible_wp_version['required'] ) && ! $this->is_wp_compatible() ) {
 				deactivate_plugins( plugin_basename( __FILE__ ) );
-				// Translators: HTML strong tag starts, WP version number, HTML string tag end, plugins page Link tag starts with url and plugins page link tag ends.
+				/* translators: hTML strong tag starts, WP version number, HTML string tag end, plugins page Link tag starts with url and plugins page link tag ends. */
 				wp_die(
 					sprintf(
 						esc_html__( 'Sorry, but your WordPress version is not %1$s%2$s%3$s or newer. Please update your WordPress version and then activate ExactMetrics. For help on how to update your WordPress %4$sclick here%5$s.', 'google-analytics-dashboard-for-wp' ),
@@ -309,7 +313,7 @@ if ( ! class_exists( 'ExactMetrics_Compatibility_Check' ) ) {
 			<div class="error">
 				<p>
 					<?php
-					// Translators: HTML strong tag starts, PHP version number, HTML string tag end, plugins page Link tag starts with url and plugins page link tag ends.
+					/* translators: hTML strong tag starts, PHP version number, HTML string tag end, plugins page Link tag starts with url and plugins page link tag ends. */
 					echo sprintf(
 						esc_html__( 'Sorry, but your current version of PHP does not meet the minimum required version %1$s%2$s%3$s or newer to run ExactMetrics properly. For information on how to upgrade your PHP version, contact your web host. %4$sClick here to return to the Dashboard%5$s.', 'google-analytics-dashboard-for-wp' ),
 						'<strong>',
@@ -342,7 +346,7 @@ if ( ! class_exists( 'ExactMetrics_Compatibility_Check' ) ) {
 			<div class="error">
 				<p>
 					<?php
-					// Translators: Make version number bold and add a link to return to the plugins page.
+					/* translators: make version number bold and add a link to return to the plugins page. */
 					echo sprintf(
 						esc_html__( 'Sorry, but your WordPress version is not %1$s%2$s%3$s or newer. Please update your WordPress version and then activate ExactMetrics. For help on how to update your WordPress %4$sclick here%5$s.', 'google-analytics-dashboard-for-wp' ),
 						'<strong>',

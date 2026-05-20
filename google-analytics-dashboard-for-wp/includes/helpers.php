@@ -51,7 +51,7 @@ function exactmetrics_is_page_reload() {
 	}
 
 	// IF the referrer is identical to the current page request, then it's a refresh
-	return ( $_SERVER['HTTP_REFERER'] === home_url( $_SERVER['REQUEST_URI'] ) ); // phpcs:ignore
+	return ( wp_unslash( $_SERVER['HTTP_REFERER'] ) === home_url( wp_unslash( $_SERVER['REQUEST_URI'] ) ) ); // phpcs:ignore
 }
 
 
@@ -138,7 +138,7 @@ function exactmetrics_get_uuid() {
 	 * if the first page visited is AMP, the cookie may be in the format amp-XXXXXXXXXXXXX-XXXXXXXX
 	 */
 
-	$ga_cookie    = sanitize_text_field($_COOKIE['_ga']); // phpcs:ignore WordPressVIPMinimum.Variables.RestrictedVariables.cache_constraints___COOKIE
+	$ga_cookie    = sanitize_text_field( wp_unslash( $_COOKIE['_ga'] ) ); // phpcs:ignore WordPressVIPMinimum.Variables.RestrictedVariables.cache_constraints___COOKIE
 	$cookie_parts = explode( '.', $ga_cookie );
 	if ( is_array( $cookie_parts ) && ! empty( $cookie_parts[2] ) ) {
 		$cookie_parts = array_slice( $cookie_parts, 2 );
@@ -174,7 +174,7 @@ function exactmetrics_get_browser_session_id( $measurement_id ) {
 		return null;
 	}
 
-	$cookie = sanitize_text_field( $_COOKIE[ $cookie_name ] ); // phpcs:ignore WordPressVIPMinimum.Variables.RestrictedVariables.cache_constraints___COOKIE
+	$cookie = sanitize_text_field( wp_unslash( $_COOKIE[ $cookie_name ] ) ); // phpcs:ignore WordPressVIPMinimum.Variables.RestrictedVariables.cache_constraints___COOKIE
 
 	// Check if it's GS2 format
 	// New format: 'GS2.1.s1747078634$o1$g1$t1747081074$j0$l0$h0'
@@ -210,21 +210,21 @@ function exactmetrics_generate_uuid() {
 	return sprintf(
 		'%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
 		// 32 bits for "time_low"
-		random_int( 0, 0xffff ),
-		random_int( 0, 0xffff ),
+		wp_rand( 0, 0xffff ),
+		wp_rand( 0, 0xffff ),
 		// 16 bits for "time_mid"
-		random_int( 0, 0xffff ),
+		wp_rand( 0, 0xffff ),
 		// 16 bits for "time_hi_and_version",
 		// four most significant bits holds version number 4
-		random_int( 0, 0x0fff ) | 0x4000,
+		wp_rand( 0, 0x0fff ) | 0x4000,
 		// 16 bits, 8 bits for "clk_seq_hi_res",
 		// 8 bits for "clk_seq_low",
 		// two most significant bits holds zero and one for variant DCE1.1
-		random_int( 0, 0x3fff ) | 0x8000,
+		wp_rand( 0, 0x3fff ) | 0x8000,
 		// 48 bits for "node"
-		random_int( 0, 0xffff ),
-		random_int( 0, 0xffff ),
-		random_int( 0, 0xffff )
+		wp_rand( 0, 0xffff ),
+		wp_rand( 0, 0xffff ),
+		wp_rand( 0, 0xffff )
 	);
 }
 
@@ -239,7 +239,7 @@ function exactmetrics_get_cookie( $debug = false ) {
 		return ( $debug ) ? 'FCE' : false;
 	}
 
-	$ga_cookie    = sanitize_text_field( $_COOKIE['_ga'] ); // phpcs:ignore WordPressVIPMinimum.Variables.RestrictedVariables.cache_constraints___COOKIE
+	$ga_cookie    = sanitize_text_field( wp_unslash( $_COOKIE['_ga'] ) ); // phpcs:ignore WordPressVIPMinimum.Variables.RestrictedVariables.cache_constraints___COOKIE
 	$cookie_parts = explode( '.', $ga_cookie );
 	if ( is_array( $cookie_parts ) && ! empty( $cookie_parts[2] ) ) {
 		$cookie_parts = array_slice( $cookie_parts, 2 );
@@ -393,7 +393,7 @@ function exactmetrics_is_dev_url( $url = '' ) {
 	if ( false === strpos( $url, 'http://' ) && false === strpos( $url, 'https://' ) ) {
 		$url = 'http://' . $url;
 	}
-	$url_parts = parse_url( $url );
+	$url_parts = wp_parse_url( $url );
 	$host      = ! empty( $url_parts['host'] ) ? $url_parts['host'] : false;
 	if ( ! empty( $url ) && ! empty( $host ) ) {
 		if ( false !== ip2long( $host ) ) {
@@ -1428,6 +1428,9 @@ function exactmetrics_get_inline_menu_icon() {
 	}
 }
 
+/**
+ * @deprecated Kept for backward compatibility with the legacy AI Insights addon.
+ */
 function exactmetrics_get_ai_menu_icon() {
 	return '
         <span class="exactmetrics-sidebar-icon">
@@ -1435,7 +1438,6 @@ function exactmetrics_get_ai_menu_icon() {
         </span>
     ';
 }
-
 
 function exactmetrics_get_shareasale_id() {
 	// Check if there's a constant.
@@ -1493,49 +1495,49 @@ function exactmetrics_get_shareasale_url( $shareasale_id, $shareasale_redirect )
  */
 function exactmetrics_get_page_title() {
 
-	$title = __( 'Archives' );
+	$title = __( 'Archives', 'google-analytics-dashboard-for-wp' );
 
 	if ( is_category() ) {
 		/* translators: Category archive title. %s: Category name */
-		$title = sprintf( __( 'Category: %s' ), single_cat_title( '', false ) );
+		$title = sprintf( __( 'Category: %s', 'google-analytics-dashboard-for-wp' ), single_cat_title( '', false ) );
 	} elseif ( is_tag() ) {
 		/* translators: Tag archive title. %s: Tag name */
-		$title = sprintf( __( 'Tag: %s' ), single_tag_title( '', false ) );
+		$title = sprintf( __( 'Tag: %s', 'google-analytics-dashboard-for-wp' ), single_tag_title( '', false ) );
 	} elseif ( is_author() ) {
 		/* translators: Author archive title. %s: Author name */
-		$title = sprintf( __( 'Author: %s' ), '<span class="vcard">' . get_the_author() . '</span>' );
+		$title = sprintf( __( 'Author: %s', 'google-analytics-dashboard-for-wp' ), '<span class="vcard">' . get_the_author() . '</span>' );
 	} elseif ( is_year() ) {
 		/* translators: Yearly archive title. %s: Year */
-		$title = sprintf( __( 'Year: %s' ), get_the_date( _x( 'Y', 'yearly archives date format' ) ) );
+		$title = sprintf( __( 'Year: %s', 'google-analytics-dashboard-for-wp' ), get_the_date( _x( 'Y', 'yearly archives date format', 'google-analytics-dashboard-for-wp' ) ) );
 	} elseif ( is_month() ) {
 		/* translators: Monthly archive title. %s: Month name and year */
-		$title = sprintf( __( 'Month: %s' ), get_the_date( _x( 'F Y', 'monthly archives date format' ) ) );
+		$title = sprintf( __( 'Month: %s', 'google-analytics-dashboard-for-wp' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'google-analytics-dashboard-for-wp' ) ) );
 	} elseif ( is_day() ) {
 		/* translators: Daily archive title. %s: Date */
-		$title = sprintf( __( 'Day: %s' ), get_the_date( _x( 'F j, Y', 'daily archives date format' ) ) );
+		$title = sprintf( __( 'Day: %s', 'google-analytics-dashboard-for-wp' ), get_the_date( _x( 'F j, Y', 'daily archives date format', 'google-analytics-dashboard-for-wp' ) ) );
 	} elseif ( is_tax( 'post_format' ) ) {
 		if ( is_tax( 'post_format', 'post-format-aside' ) ) {
-			$title = _x( 'Asides', 'post format archive title' );
+			$title = _x( 'Asides', 'post format archive title', 'google-analytics-dashboard-for-wp' );
 		} elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) {
-			$title = _x( 'Galleries', 'post format archive title' );
+			$title = _x( 'Galleries', 'post format archive title', 'google-analytics-dashboard-for-wp' );
 		} elseif ( is_tax( 'post_format', 'post-format-image' ) ) {
-			$title = _x( 'Images', 'post format archive title' );
+			$title = _x( 'Images', 'post format archive title', 'google-analytics-dashboard-for-wp' );
 		} elseif ( is_tax( 'post_format', 'post-format-video' ) ) {
-			$title = _x( 'Videos', 'post format archive title' );
+			$title = _x( 'Videos', 'post format archive title', 'google-analytics-dashboard-for-wp' );
 		} elseif ( is_tax( 'post_format', 'post-format-quote' ) ) {
-			$title = _x( 'Quotes', 'post format archive title' );
+			$title = _x( 'Quotes', 'post format archive title', 'google-analytics-dashboard-for-wp' );
 		} elseif ( is_tax( 'post_format', 'post-format-link' ) ) {
-			$title = _x( 'Links', 'post format archive title' );
+			$title = _x( 'Links', 'post format archive title', 'google-analytics-dashboard-for-wp' );
 		} elseif ( is_tax( 'post_format', 'post-format-status' ) ) {
-			$title = _x( 'Statuses', 'post format archive title' );
+			$title = _x( 'Statuses', 'post format archive title', 'google-analytics-dashboard-for-wp' );
 		} elseif ( is_tax( 'post_format', 'post-format-audio' ) ) {
-			$title = _x( 'Audio', 'post format archive title' );
+			$title = _x( 'Audio', 'post format archive title', 'google-analytics-dashboard-for-wp' );
 		} elseif ( is_tax( 'post_format', 'post-format-chat' ) ) {
-			$title = _x( 'Chats', 'post format archive title' );
+			$title = _x( 'Chats', 'post format archive title', 'google-analytics-dashboard-for-wp' );
 		}
 	} elseif ( is_post_type_archive() ) {
 		/* translators: Post type archive title. %s: Post type name */
-		$title = sprintf( __( 'Archives: %s' ), post_type_archive_title( '', false ) );
+		$title = sprintf( __( 'Archives: %s', 'google-analytics-dashboard-for-wp' ), post_type_archive_title( '', false ) );
 	} elseif ( is_tax() ) {
 		$queried_object = get_queried_object();
 		if ( $queried_object && isset( $queried_object->taxonomy ) ) {
@@ -1595,7 +1597,7 @@ function exactmetrics_detect_tracking_code_error( $body ) {
 	$current_code = exactmetrics_get_v4_id_to_output();
 
 	$url = exactmetrics_get_url( 'notice', 'using-cache', 'https://www.wpbeginner.com/beginners-guide/how-to-clear-your-cache-in-wordpress/' );
-	// Translators: The placeholders are for making the "We noticed you're using a caching plugin" text bold.
+	/* translators: the placeholders are for making the "We noticed you're using a caching plugin" text bold. */
 	$cache_error = sprintf(
 		esc_html__( '%1$sWe noticed you\'re using a caching plugin or caching from your hosting provider.%2$s Be sure to clear the cache to ensure the tracking appears on all pages and posts. %3$s(See this guide on how to clear cache)%4$s.', 'google-analytics-dashboard-for-wp' ),
 		'<b>',
@@ -1659,7 +1661,7 @@ function exactmetrics_detect_tracking_code_error( $body ) {
 	}
 
 	if ( $total_count > $limit ) {
-		// Translators: The placeholders are for making the "We have detected multiple tracking codes" text bold & adding a link to support.
+		/* translators: the placeholders are for making the "We have detected multiple tracking codes" text bold & adding a link to support. */
 		$message           = esc_html__( '%1$sWe have detected multiple tracking codes%2$s! You should remove non-ExactMetrics ones. If you need help finding them please %3$sread this article%4$s.', 'google-analytics-dashboard-for-wp' );
 		$url               = exactmetrics_get_url( 'site-health', 'comingsoon', 'https://www.exactmetrics.com/docs/how-to-find-duplicate-google-analytics-tracking-codes-in-wordpress/' );
 		$multiple_ua_error = sprintf(
@@ -1736,7 +1738,7 @@ function exactmetrics_custom_track_pretty_links_redirect( $url ) {
 	exactmetrics_track_pretty_links_file_download_redirect( $url );
 
 	// Try to determine if click originated on the same site.
-	$referer = ! empty( $_SERVER['HTTP_REFERER'] ) ? esc_url( $_SERVER['HTTP_REFERER'] ) : '';
+	$referer = ! empty( $_SERVER['HTTP_REFERER'] ) ? esc_url( wp_unslash( $_SERVER['HTTP_REFERER'] ) ) : '';
 	if ( ! empty( $referer ) ) {
 		$current_site_url    = get_bloginfo( 'url' );
 		$current_site_parsed = wp_parse_url( $current_site_url );
@@ -1781,7 +1783,7 @@ function exactmetrics_custom_track_pretty_links_redirect( $url ) {
 			$link_url = $url;
 		}
 
-		$url_components = parse_url( $url );
+		$url_components = wp_parse_url( $url );
 		$params_args    = array(
 			'link_text'   => 'external-redirect',
 			'link_url'    => $link_url,
@@ -1842,7 +1844,7 @@ function exactmetrics_track_pretty_links_file_download_redirect( $url ) {
 		return;
 	}
 
-	$url_components = parse_url( $url );
+	$url_components = wp_parse_url( $url );
 
 	global $prli_link;
 	$pretty_link = $prli_link->get_one_by( 'url', $url );
@@ -1963,8 +1965,8 @@ function exactmetrics_trim_text( $text, $count ) {
 function exactmetrics_tools_copy_url_to_prettylinks() {
 	global $pagenow;
 
-	$post_type                 = isset( $_GET['post_type'] ) ? sanitize_text_field( $_GET['post_type'] ) : '';
-	$exactmetrics_reference = isset( $_GET['exactmetrics_reference'] ) ? sanitize_text_field( $_GET['exactmetrics_reference'] ) : '';
+	$post_type                 = isset( $_GET['post_type'] ) ? sanitize_text_field( wp_unslash( $_GET['post_type'] ) ) : '';
+	$exactmetrics_reference = isset( $_GET['exactmetrics_reference'] ) ? sanitize_text_field( wp_unslash( $_GET['exactmetrics_reference'] ) ) : '';
 
 	if ( 'post-new.php' === $pagenow && 'pretty-link' === $post_type && 'url_builder' === $exactmetrics_reference ) { ?>
 <script>
@@ -2025,8 +2027,8 @@ add_action( 'admin_footer', 'exactmetrics_tools_copy_url_to_prettylinks' );
 function exactmetrics_skip_prettylinks_welcome_screen() {
 	global $pagenow;
 
-	$post_type                 = isset( $_GET['post_type'] ) ? sanitize_text_field( $_GET['post_type'] ) : '';
-	$exactmetrics_reference = isset( $_GET['exactmetrics_reference'] ) ? sanitize_text_field( $_GET['exactmetrics_reference'] ) : '';
+	$post_type                 = isset( $_GET['post_type'] ) ? sanitize_text_field( wp_unslash( $_GET['post_type'] ) ) : '';
+	$exactmetrics_reference = isset( $_GET['exactmetrics_reference'] ) ? sanitize_text_field( wp_unslash( $_GET['exactmetrics_reference'] ) ) : '';
 
 	if ( 'post-new.php' === $pagenow && 'pretty-link' === $post_type && 'url_builder' === $exactmetrics_reference ) {
 		$onboard = get_option( 'prli_onboard' );
@@ -2047,7 +2049,7 @@ add_action( 'wp_loaded', 'exactmetrics_skip_prettylinks_welcome_screen', 9 );
 function exactmetrics_restore_prettylinks_onboard_value() {
 	global $pagenow;
 
-	$post_type = isset( $_GET['post_type'] ) ? sanitize_text_field( $_GET['post_type'] ) : '';
+	$post_type = isset( $_GET['post_type'] ) ? sanitize_text_field( wp_unslash( $_GET['post_type'] ) ) : '';
 
 	if ( 'edit.php' === $pagenow && 'pretty-link' === $post_type ) {
 		$onboard = get_option( 'exactmetrics_backup_prli_onboard_value' );
@@ -2068,26 +2070,16 @@ add_action( 'wp_loaded', 'exactmetrics_restore_prettylinks_onboard_value', 15 );
  */
 function exactmetrics_require_upgrader( $custom_upgrader = true ) {
 
-	global $wp_version;
-
 	$base = ExactMetrics();
 
 	if ( ! $custom_upgrader ) {
 		require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
 	}
 
-	// WP 5.3 changes the upgrader skin.
-	if ( version_compare( $wp_version, '5.3', '<' ) ) {
-		if ( $custom_upgrader ) {
-			require_once plugin_dir_path( $base->file ) . 'includes/admin/licensing/plugin-upgrader.php';
-		}
-		require_once plugin_dir_path( $base->file ) . '/includes/admin/licensing/skin-legacy.php';
-	} else {
-		if ( $custom_upgrader ) {
-			require_once plugin_dir_path( $base->file ) . 'includes/admin/licensing/plugin-upgrader.php';
-		}
-		require_once plugin_dir_path( $base->file ) . '/includes/admin/licensing/skin.php';
+	if ( $custom_upgrader ) {
+		require_once plugin_dir_path( $base->file ) . 'includes/admin/licensing/plugin-upgrader.php';
 	}
+	require_once plugin_dir_path( $base->file ) . '/includes/admin/licensing/skin.php';
 }
 
 /**
@@ -2097,12 +2089,6 @@ function exactmetrics_require_upgrader( $custom_upgrader = true ) {
  * @since 7.12.3
  */
 function exactmetrics_load_gutenberg_app() {
-	global $wp_version;
-
-	if ( version_compare( $wp_version, '5.4', '<' ) ) {
-		return false;
-	}
-
 	return true;
 }
 

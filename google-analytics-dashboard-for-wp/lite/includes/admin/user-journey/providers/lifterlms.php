@@ -1,4 +1,8 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * This file contains the code to display metabox for LifterLMS Admin Orders Page.
  *
@@ -36,7 +40,7 @@ class ExactMetrics_Lite_User_Journey_LifterLMS_Metabox extends ExactMetrics_User
 	public function add_user_journey_metabox() {
 		add_meta_box(
 			'lifterlms-exactmetrics-lite-user-journey-metabox',
-			esc_html__( 'User Journey by ExactMetrics', 'exactmetrics' ),
+			esc_html__( 'User Journey by ExactMetrics', 'google-analytics-dashboard-for-wp' ),
 			array( $this, 'display_meta_box' ),
 			'llms_order',
 			'normal',

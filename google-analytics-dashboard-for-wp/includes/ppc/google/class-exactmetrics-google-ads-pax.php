@@ -1,5 +1,9 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 class ExactMetrics_Google_Ads_Pax extends ExactMetrics_Ads_Tracking_Provider {
 
 	/**

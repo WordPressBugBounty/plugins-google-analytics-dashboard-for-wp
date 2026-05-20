@@ -1,4 +1,8 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * This file contains the code to display metabox for EDD Admin Orders Page.
  *
@@ -89,7 +93,7 @@ class ExactMetrics_Lite_User_Journey_EDD_Metabox extends ExactMetrics_User_Journ
 	protected function metabox_title() {
 		?>
 		<div class="exactmetrics-uj-metabox-title">
-			<h2><?php esc_html_e( 'User Journey by ExactMetrics', 'exactmetrics' ); ?></h2>
+			<h2><?php esc_html_e( 'User Journey by ExactMetrics', 'google-analytics-dashboard-for-wp' ); ?></h2>
 		</div>
 		<?php
 	}

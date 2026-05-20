@@ -1,5 +1,9 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * ExactMetrics Onboarding Class
  *
@@ -235,6 +239,10 @@ class ExactMetrics_Onboarding {
 	 * @return WP_REST_Response Response indicating success.
 	 */
 	public function store_settings( $request ) {
+		if ( ! function_exists( 'exactmetrics_get_addons_data' ) ) {
+			require_once EXACTMETRICS_PLUGIN_DIR . 'includes/admin/pages/addons.php';
+		}
+
 		$is_network = boolval( $request->get_param( 'is_network' ) );
 		// Process settings
 		$settings = $request->get_param( 'settings' );

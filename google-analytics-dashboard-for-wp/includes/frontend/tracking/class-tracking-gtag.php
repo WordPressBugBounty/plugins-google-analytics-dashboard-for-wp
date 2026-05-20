@@ -211,7 +211,7 @@ class ExactMetrics_Tracking_Gtag extends ExactMetrics_Tracking_Abstract {
 				$reason = __( 'Note: ExactMetrics is not currently configured on this site. The site owner needs to authenticate with Google Analytics in the ExactMetrics settings panel.', 'google-analytics-dashboard-for-wp' );
 				$output .= '<!-- ' . esc_html( $reason ) . ' -->' . PHP_EOL;
 			} elseif ( current_user_can( 'exactmetrics_save_settings' ) ) {
-				$reason = __( 'Note: ExactMetrics does not track you as a logged-in site administrator to prevent site owners from accidentally skewing their own Google Analytics data.' . PHP_EOL . 'If you are testing Google Analytics code, please do so either logged out or in the private browsing/incognito mode of your web browser.', 'google-analytics-dashboard-for-wp' );
+				$reason = __( 'Note: ExactMetrics does not track you as a logged-in site administrator to prevent site owners from accidentally skewing their own Google Analytics data. If you are testing Google Analytics code, please do so either logged out or in the private browsing/incognito mode of your web browser.', 'google-analytics-dashboard-for-wp' );
 				$output .= '<!-- ' . esc_html( $reason ) . ' -->' . PHP_EOL;
 			} else {
 				$reason = __( 'Note: The site owner has disabled Google Analytics tracking for your user role.', 'google-analytics-dashboard-for-wp' );

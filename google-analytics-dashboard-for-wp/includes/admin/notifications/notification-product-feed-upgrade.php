@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 /**
  * Add upgradenotification when Product Feed report has data.
@@ -52,22 +55,22 @@ final class ExactMetrics_Notification_Product_Feed_Upgrade extends ExactMetrics_
 						? 'https://www.exactmetrics.com/pricing/'
 						: 'https://www.exactmetrics.com/pricing/';
 
-					$notification['title'] = __( 'Upgrade to Pro for Product Feed Analytics', 'exactmetrics-premium' );
-					// Translators: Product Feed Pro upgrade notification content
+					$notification['title'] = __( 'Upgrade to Pro for Product Feed Analytics', 'google-analytics-dashboard-for-wp' );
+					/* translators: product Feed Pro upgrade notification content */
 					$notification['content'] = sprintf( 
-						__( 'Great news! We detected that you have WooCommerce Product Feed Pro installed and there\'s product feed data available. Upgrade to ExactMetrics Pro to unlock detailed analytics for your product feed campaigns, track conversions, and optimize your shopping ads performance. %1$sUpgrade now%2$s to see your product feed insights!', 'exactmetrics-premium' ), 
+						__( 'Great news! We detected that you have WooCommerce Product Feed Pro installed and there\'s product feed data available. Upgrade to ExactMetrics Pro to unlock detailed analytics for your product feed campaigns, track conversions, and optimize your shopping ads performance. %1$sUpgrade now%2$s to see your product feed insights!', 'google-analytics-dashboard-for-wp' ), 
 						'<a href="' . $this->build_external_link( $upgrade_url ) . '" target="_blank">', 
 						'</a>' 
 					);
 					$notification['btns'] = array(
 						'upgrade_now' => array(
 							'url'         => $this->build_external_link( $upgrade_url ),
-							'text'        => __( 'Upgrade to Pro', 'exactmetrics-premium' ),
+							'text'        => __( 'Upgrade to Pro', 'google-analytics-dashboard-for-wp' ),
 							'is_external' => true,
 						),
 						'learn_more'  => array(
 							'url'         => $this->build_external_link( 'https://www.exactmetrics.com/product-feed-analytics/' ),
-							'text'        => __( 'Learn More', 'exactmetrics-premium' ),
+							'text'        => __( 'Learn More', 'google-analytics-dashboard-for-wp' ),
 							'is_external' => true,
 						),
 					);
@@ -91,22 +94,22 @@ final class ExactMetrics_Notification_Product_Feed_Upgrade extends ExactMetrics_
 						? 'https://www.exactmetrics.com/how-to-set-up-google-shopping-campaigns/'
 						: 'https://www.exactmetrics.com/how-to-set-up-google-shopping-campaigns/';
 
-					$notification['title'] = __( 'Product Feed Report Has No Data', 'exactmetrics-premium' );
-					// Translators: Product Feed empty notification content
+					$notification['title'] = __( 'Product Feed Report Has No Data', 'google-analytics-dashboard-for-wp' );
+					/* translators: product Feed empty notification content */
 					$notification['content'] = sprintf( 
-						__( 'Your Product Feed report is currently empty, which means you may not be tracking product feed performance properly. This could indicate that your product feeds are not set up correctly or there are no product feed campaigns running. <br><br>Learn how to set up product feeds with %1$sthis guide%2$s to start tracking your product feed performance.', 'exactmetrics-premium' ), 
+						__( 'Your Product Feed report is currently empty, which means you may not be tracking product feed performance properly. This could indicate that your product feeds are not set up correctly or there are no product feed campaigns running. <br><br>Learn how to set up product feeds with %1$sthis guide%2$s to start tracking your product feed performance.', 'google-analytics-dashboard-for-wp' ), 
 						'<a href="' . $this->build_external_link( $learn_more_url ) . '" target="_blank">', 
 						'</a>' 
 					);
 					$notification['btns'] = array(
 						'learn_more'  => array(
 							'url'         => $this->build_external_link( $learn_more_url ),
-							'text'        => __( 'Learn More', 'exactmetrics-premium' ),
+							'text'        => __( 'Learn More', 'google-analytics-dashboard-for-wp' ),
 							'is_external' => true,
 						),
 						'view_report' => array(
 							'url'  => $this->get_view_url( 'exactmetrics-report-ecommerce-product-feed', 'exactmetrics_reports', 'ecommerce-product-feed' ),
-							'text' => __( 'View Product Feed Report', 'exactmetrics-premium' ),
+							'text' => __( 'View Product Feed Report', 'google-analytics-dashboard-for-wp' ),
 						),
 					);
 

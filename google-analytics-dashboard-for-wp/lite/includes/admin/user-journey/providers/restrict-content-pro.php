@@ -1,4 +1,8 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * This file contains the code to display metabox for Restrict Content Pro Admin Orders Page.
  *
@@ -97,7 +101,7 @@ class ExactMetrics_Lite_User_Journey_Restrict_Content_Pro_Metabox extends ExactM
 	protected function metabox_title() {
 		?>
 		<div class="exactmetrics-uj-metabox-title">
-			<h2><?php esc_html_e( 'User Journey by ExactMetrics', 'exactmetrics' ); ?></h2>
+			<h2><?php esc_html_e( 'User Journey by ExactMetrics', 'google-analytics-dashboard-for-wp' ); ?></h2>
 		</div>
 		<?php
 	}

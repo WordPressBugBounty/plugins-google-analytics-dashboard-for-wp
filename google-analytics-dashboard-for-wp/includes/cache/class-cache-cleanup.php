@@ -123,15 +123,14 @@ class ExactMetrics_Cache_Cleanup {
 		$table_name = $wpdb->prefix . 'exactmetrics_cache';
 		$now        = current_time( 'mysql' );
 
-		// phpcs:disable WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- Table name is safely constructed.
-		$total = $wpdb->get_var( "SELECT COUNT(*) FROM {$table_name}" );
+		$total = $wpdb->get_var( $wpdb->prepare( 'SELECT COUNT(*) FROM %i', $table_name ) );
 		$valid = $wpdb->get_var(
 			$wpdb->prepare(
-				"SELECT COUNT(*) FROM {$table_name} WHERE expires_at >= %s",
+				'SELECT COUNT(*) FROM %i WHERE expires_at >= %s',
+				$table_name,
 				$now
 			)
 		);
-		// phpcs:enable
 
 		return array(
 			'total_entries'   => (int) $total,

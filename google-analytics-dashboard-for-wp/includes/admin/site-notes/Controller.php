@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 class ExactMetrics_SiteNotes_Controller {
 
@@ -116,7 +119,7 @@ class ExactMetrics_SiteNotes_Controller {
 			);
 		}
 
-		$params = !empty($_POST['params']) ? json_decode(html_entity_decode(stripslashes($_POST['params'])), true) : [];
+		$params = !empty($_POST['params']) ? json_decode(html_entity_decode(wp_unslash($_POST['params'])), true) : [];
 
 		$output = $this->prepare_notes($params);
 
@@ -190,7 +193,7 @@ class ExactMetrics_SiteNotes_Controller {
 			);
 		}
 
-		$params = !empty($_POST['params']) ? json_decode(html_entity_decode(stripslashes($_POST['params'])), true) : [];
+		$params = !empty($_POST['params']) ? json_decode(html_entity_decode(wp_unslash($_POST['params'])), true) : [];
 
 		$args = wp_parse_args($params, array(
 			'per_page' => -1,
@@ -235,7 +238,7 @@ class ExactMetrics_SiteNotes_Controller {
 			);
 		}
 
-		$note = !empty($_POST['note']) ? json_decode(html_entity_decode(stripslashes($_POST['note']))) : [];
+		$note = !empty($_POST['note']) ? json_decode(html_entity_decode(wp_unslash($_POST['note']))) : [];
 
 		$note_details = array(
 			'note' => sanitize_text_field($note->note_title),
@@ -285,7 +288,7 @@ class ExactMetrics_SiteNotes_Controller {
 			);
 		}
 
-		$category = !empty($_POST['category']) ? json_decode(html_entity_decode(stripslashes($_POST['category']))) : [];
+		$category = !empty($_POST['category']) ? json_decode(html_entity_decode(wp_unslash($_POST['category']))) : [];
 
 		if (empty($category->name)) {
 			wp_send_json(
@@ -352,7 +355,7 @@ class ExactMetrics_SiteNotes_Controller {
 			);
 		}
 
-		$ids = !empty($_POST['ids']) ? json_decode(html_entity_decode(stripslashes($_POST['ids']))) : [];
+		$ids = !empty($_POST['ids']) ? json_decode(html_entity_decode(wp_unslash($_POST['ids']))) : [];
 
 		if (empty($ids)) {
 			wp_send_json(
@@ -390,7 +393,7 @@ class ExactMetrics_SiteNotes_Controller {
 			);
 		}
 
-		$ids = !empty($_POST['ids']) ? json_decode(html_entity_decode(stripslashes($_POST['ids']))) : [];
+		$ids = !empty($_POST['ids']) ? json_decode(html_entity_decode(wp_unslash($_POST['ids']))) : [];
 
 		if (empty($ids)) {
 			wp_send_json(
@@ -428,7 +431,7 @@ class ExactMetrics_SiteNotes_Controller {
 			);
 		}
 
-		$ids = !empty($_POST['ids']) ? json_decode(html_entity_decode(stripslashes($_POST['ids']))) : [];
+		$ids = !empty($_POST['ids']) ? json_decode(html_entity_decode(wp_unslash($_POST['ids']))) : [];
 
 		if (empty($ids)) {
 			wp_send_json(
@@ -466,7 +469,7 @@ class ExactMetrics_SiteNotes_Controller {
 			);
 		}
 
-		$ids = !empty($_POST['ids']) ? json_decode(html_entity_decode(stripslashes($_POST['ids']))) : [];
+		$ids = !empty($_POST['ids']) ? json_decode(html_entity_decode(wp_unslash($_POST['ids']))) : [];
 
 		if (empty($ids)) {
 			wp_send_json(
@@ -550,7 +553,7 @@ class ExactMetrics_SiteNotes_Controller {
 			fputcsv($outstream, $row);
 		}
 
-		fclose($outstream);
+		fclose($outstream); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fclose
 		exit;
 	}
 	/**
@@ -575,7 +578,7 @@ class ExactMetrics_SiteNotes_Controller {
 
 		check_ajax_referer( 'mi-admin-nonce', 'nonce' );
 
-		$annotations = isset( $_POST['annotations'] ) ? json_decode( stripslashes( $_POST['annotations'] ), true ) : array();
+		$annotations = isset( $_POST['annotations'] ) ? json_decode( wp_unslash( $_POST['annotations'] ), true ) : array();
 		if ( empty( $annotations ) ) {
 			wp_send_json_error(
 				array(
@@ -812,6 +815,7 @@ class ExactMetrics_SiteNotes_Controller {
 
 			// Skip if note is empty.
 			if ( empty( $note_details['note'] ) ) {
+				/* translators: %s: annotation ID */
 				$errors[] = sprintf(
 					__(
 						'Skipped annotation with empty title (ID: %s)',
@@ -826,9 +830,10 @@ class ExactMetrics_SiteNotes_Controller {
 			$note_id = $this->create_note( $note_details );
 
 			if ( is_wp_error( $note_id ) ) {
+				/* translators: %1$s: annotation title, %2$s: error message */
 				$errors[] = sprintf(
 					__(
-						'Failed to import annotation "%s": %s',
+						'Failed to import annotation "%1$s": %2$s',
 						'google-analytics-dashboard-for-wp'
 					),
 					$note_details['note'],
@@ -844,6 +849,7 @@ class ExactMetrics_SiteNotes_Controller {
 		}
 
 		// Prepare response message.
+		/* translators: %d: number of annotations successfully imported */
 		$message = sprintf(
 			__(
 				'Successfully imported %d annotations.',
@@ -853,6 +859,7 @@ class ExactMetrics_SiteNotes_Controller {
 		);
 
 		if ( $skipped_count > 0 ) {
+			/* translators: %d: number of annotations skipped */
 			$message .= ' ' . sprintf(
 				__( '%d annotations were skipped (already exist).', 'google-analytics-dashboard-for-wp' ),
 				$skipped_count
@@ -860,6 +867,7 @@ class ExactMetrics_SiteNotes_Controller {
 		}
 
 		if ( ! empty( $errors ) ) {
+			/* translators: %d: number of annotations that failed to import */
 			$message .= ' ' . sprintf(
 				__(
 					'%d annotations could not be imported.',
@@ -993,7 +1001,7 @@ class ExactMetrics_SiteNotes_Controller {
 	}
 
 	public function save_custom_fields($current_post_id) {
-		if (!isset($_POST['exactmetrics_metabox_nonce']) || !wp_verify_nonce($_POST['exactmetrics_metabox_nonce'], 'exactmetrics_metabox')) {
+		if (!isset($_POST['exactmetrics_metabox_nonce']) || !wp_verify_nonce(wp_unslash($_POST['exactmetrics_metabox_nonce']), 'exactmetrics_metabox')) {
 			return;
 		}
 
@@ -1011,7 +1019,7 @@ class ExactMetrics_SiteNotes_Controller {
 			return;
 		}
 
-		$note = isset($_POST['_exactmetrics_sitenote_note']) ? esc_html($_POST['_exactmetrics_sitenote_note']) : '';
+		$note = isset($_POST['_exactmetrics_sitenote_note']) ? esc_html(wp_unslash($_POST['_exactmetrics_sitenote_note'])) : '';
 		update_post_meta($current_post_id, '_exactmetrics_sitenote_note', $note);
 
 		$category = isset($_POST['_exactmetrics_sitenote_category']) ? intval($_POST['_exactmetrics_sitenote_category']) : 0;
@@ -1128,7 +1136,7 @@ class ExactMetrics_SiteNotes_Controller {
 			<div class="exactmetrics-metabox-input exactmetrics-metabox-input-checkbox">
 				<label class="">
 					<input type="checkbox" name="_exactmetrics_sitenote_active" value="1" <?php checked($sitenote_active); ?>>
-					<span class="exactmetrics-metabox-input-checkbox-label"><?php _e('Add a Site Note', 'google-analytics-dashboard-for-wp'); ?></span>
+					<span class="exactmetrics-metabox-input-checkbox-label"><?php esc_html_e('Add a Site Note', 'google-analytics-dashboard-for-wp'); ?></span>
 				</label>
 			</div>
 
@@ -1139,7 +1147,7 @@ class ExactMetrics_SiteNotes_Controller {
 
 				<div class="exactmetrics-metabox-input exactmetrics-metabox-select">
 					<label>
-						<?php _e('Category', 'google-analytics-dashboard-for-wp'); ?>
+						<?php esc_html_e('Category', 'google-analytics-dashboard-for-wp'); ?>
 						<select name="_exactmetrics_sitenote_category">
 							<?php if (!empty($categories)) {
 								foreach ($categories as $category) {
@@ -1166,7 +1174,7 @@ class ExactMetrics_SiteNotes_Controller {
 		wp_register_style('exactmetrics-admin-metabox-sitenotes-style', plugins_url('assets/css/admin-metabox-sitenotes.css', EXACTMETRICS_PLUGIN_FILE), array(), exactmetrics_get_asset_version());
 		wp_enqueue_style('exactmetrics-admin-metabox-sitenotes-style');
 
-		wp_register_script('exactmetrics-admin-metabox-sitenotes-script', plugins_url('assets/js/admin-metabox-sitenotes.js', EXACTMETRICS_PLUGIN_FILE), array('jquery'), exactmetrics_get_asset_version());
+		wp_register_script('exactmetrics-admin-metabox-sitenotes-script', plugins_url('assets/js/admin-metabox-sitenotes.js', EXACTMETRICS_PLUGIN_FILE), array('jquery'), exactmetrics_get_asset_version(), true);
 		wp_enqueue_script('exactmetrics-admin-metabox-sitenotes-script');
 	}
 

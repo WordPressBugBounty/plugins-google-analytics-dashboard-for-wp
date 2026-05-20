@@ -79,7 +79,7 @@ function exactmetrics_ajax_install_addon() {
 		ob_start();
 		if ( false === ( $creds = request_filesystem_credentials( $url, $method, false, false, null ) ) ) {
 			$form = ob_get_clean();
-			echo json_encode( array( 'form' => $form ) );
+			echo wp_json_encode( array( 'form' => $form ) );
 			wp_die();
 		}
 
@@ -88,7 +88,7 @@ function exactmetrics_ajax_install_addon() {
 			ob_start();
 			request_filesystem_credentials( $url, $method, true, false, null );
 			$form = ob_get_clean();
-			echo json_encode( array( 'form' => $form ) );
+			echo wp_json_encode( array( 'form' => $form ) );
 			wp_die();
 		}
 
@@ -103,13 +103,13 @@ function exactmetrics_ajax_install_addon() {
 		wp_cache_flush();
 		if ( $installer->plugin_info() ) {
 			$plugin_basename = $installer->plugin_info();
-			echo json_encode( array( 'plugin' => $plugin_basename ) );
+			echo wp_json_encode( array( 'plugin' => $plugin_basename ) );
 			wp_die();
 		}
 	}
 
 	// Send back a response.
-	echo json_encode( true );
+	echo wp_json_encode( true );
 	wp_die();
 
 }
@@ -148,7 +148,7 @@ function exactmetrics_ajax_activate_addon() {
 		}
 
 		if ( is_wp_error( $activate ) ) {
-			echo json_encode( array( 'error' => $activate->get_error_message() ) );
+			echo wp_json_encode( array( 'error' => $activate->get_error_message() ) );
 			wp_die();
 		}
 
@@ -165,7 +165,7 @@ function exactmetrics_ajax_activate_addon() {
 		}
 	}
 
-	echo json_encode( true );
+	echo wp_json_encode( true );
 	wp_die();
 }
 
@@ -198,7 +198,7 @@ function exactmetrics_ajax_deactivate_addon() {
 
 	do_action( 'exactmetrics_after_ajax_deactivate_addon', sanitize_text_field( $_POST['plugin'] ) );
 
-	echo json_encode( true );
+	echo wp_json_encode( true );
 	wp_die();
 }
 
@@ -222,12 +222,12 @@ function exactmetrics_ajax_dismiss_notice() {
 		ExactMetrics()->notices->dismiss( $_POST['notice'] );
 
 		// Return true
-		echo json_encode( true );
+		echo wp_json_encode( true );
 		wp_die();
 	}
 
 	// If here, an error occurred
-	echo json_encode( false );
+	echo wp_json_encode( false );
 	wp_die();
 
 }
@@ -420,11 +420,11 @@ function exactmetrics_check_plugin_funnelkit_funnelkit_stripe_woo_gateway_config
 	$fkwcs_con_status = get_option('fkwcs_con_status');
 
 	if ( 'success' === $fkwcs_con_status ) {
-		echo json_encode( true );
+		echo wp_json_encode( true );
 		wp_die();
 	}
 
-	echo json_encode( false );
+	echo wp_json_encode( false );
 	wp_die();
 
 }

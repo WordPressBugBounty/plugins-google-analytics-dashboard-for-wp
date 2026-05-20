@@ -1,6 +1,11 @@
 <?php
 // phpcs:ignoreFile
+
 namespace ExactMetricsHeadlineToolPlugin;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 // setup defines
 define( 'EXACTMETRICS_HEADLINE_TOOL_DIR_PATH', plugin_dir_path( __FILE__ ) );

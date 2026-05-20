@@ -108,7 +108,7 @@ class ExactMetrics_API_Overview extends ExactMetrics_API_Client {
 			$today    = strtotime( 'today' );
 
 			if ( $end_date > $today ) {
-				$date_range['end'] = date( 'Y-m-d', $today );
+				$date_range['end'] = gmdate( 'Y-m-d', $today );
 			}
 		}
 
@@ -131,8 +131,8 @@ class ExactMetrics_API_Overview extends ExactMetrics_API_Client {
 		$start_ts   = strtotime( '-' . ( $days - 1 ) . ' days', $end_ts );
 
 		return array(
-			'start' => date( 'Y-m-d', $start_ts ),
-			'end'   => date( 'Y-m-d', $end_ts ),
+			'start' => gmdate( 'Y-m-d', $start_ts ),
+			'end'   => gmdate( 'Y-m-d', $end_ts ),
 		);
 	}
 
@@ -228,7 +228,7 @@ class ExactMetrics_API_Overview extends ExactMetrics_API_Client {
 
 		$args = array(
 			'method'  => $method,
-			'timeout' => 15,
+			'timeout' => 15, // phpcs:ignore WordPressVIPMinimum.Performance.RemoteRequestTimeout.timeout_timeout -- relay API needs adequate time.
 			'headers' => array(
 				'X-Relay-License'  => $this->license,
 				'X-Relay-Site-Key' => $this->key,

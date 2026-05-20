@@ -13,6 +13,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+// Clear snoozed notifications on login.
+// Registered here (frontend) because the notifications class file is only
+// loaded inside is_admin(), but wp_login fires on the frontend login form.
+add_action( 'wp_login', 'exactmetrics_clear_snoozed_on_login', 10, 2 );
+
+/**
+ * Clear snoozed notifications when a user logs in.
+ *
+ * @param string   $user_login Username.
+ * @param \WP_User $user       WP_User object.
+ */
+function exactmetrics_clear_snoozed_on_login( $user_login, $user ) {
+	delete_user_meta( $user->ID, 'exactmetrics_notifications_snoozed' );
+}
+
 /**
  * Check if we are in an AMP context
  *

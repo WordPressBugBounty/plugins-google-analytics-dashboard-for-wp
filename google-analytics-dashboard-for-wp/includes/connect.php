@@ -1,4 +1,9 @@
 <?php
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * ExactMetrics Connect is our service that makes it easy for non-techy users to
  * upgrade to ExactMetrics Pro without having to manually install the ExactMetrics Pro plugin.
@@ -134,7 +139,7 @@ class ExactMetrics_Connect {
 	 * Process ExactMetrics Connect.
 	 */
 	public function process() {
-		// Translators: Link tag starts with url and link tag ends.
+		/* translators: link tag starts with url and link tag ends. */
 		$error = sprintf(
 			esc_html__( 'Oops! We could not automatically install an upgrade. Please install manually by visiting %1$sexactmetrics.com%2$s.', 'google-analytics-dashboard-for-wp' ),
 			'<a target="_blank" href="' . exactmetrics_get_url( 'notice', 'could-not-upgrade', 'https://www.exactmetrics.com/' ) . '">',
@@ -147,8 +152,8 @@ class ExactMetrics_Connect {
 		}
 
 		// verify params present (oth & download link).
-		$post_oth = ! empty( $_REQUEST['oth'] ) ? sanitize_text_field($_REQUEST['oth']) : '';
-		$post_url = ! empty( $_REQUEST['file'] ) ? sanitize_url($_REQUEST['file']) : '';
+		$post_oth = ! empty( $_REQUEST['oth'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['oth'] ) ) : '';
+		$post_url = ! empty( $_REQUEST['file'] ) ? sanitize_url( wp_unslash( $_REQUEST['file'] ) ) : '';
 		$license  = get_option( 'exactmetrics_connect', false );
 		$network  = ! empty( $license['network'] ) ? (bool) $license['network'] : false;
 		if ( empty( $post_oth ) || empty( $post_url ) ) {

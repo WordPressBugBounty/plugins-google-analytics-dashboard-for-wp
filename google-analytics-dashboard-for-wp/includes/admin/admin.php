@@ -88,15 +88,15 @@ function exactmetrics_admin_menu()
 		echo '</div>';
 	}
 
-// 	// Add Dashboard page (Vue 3 app)
-// 	add_submenu_page(
-// 		$parent_slug,
-// 		__( 'Dashboard:', 'google-analytics-dashboard-for-wp' ),
-// 		__( 'Dashboard', 'google-analytics-dashboard-for-wp' ) . $new_indicator,
-// 		'exactmetrics_view_dashboard',
-// 		'exactmetrics_custom_dashboard',
-// 		'exactmetrics_custom_dashboard_page'
-// 	);
+	// Add Dashboard page (Vue 3 app) — kept hidden until ready for release.
+	// add_submenu_page(
+	// 	$parent_slug,
+	// 	__( 'Dashboard:', 'google-analytics-dashboard-for-wp' ),
+	// 	__( 'Dashboard', 'google-analytics-dashboard-for-wp' ) . $new_indicator,
+	// 	'exactmetrics_view_dashboard',
+	// 	'exactmetrics_custom_dashboard',
+	// 	'exactmetrics_custom_dashboard_page'
+	// );
 
 	// then settings page
 	add_submenu_page( $parent_slug, __( 'ExactMetrics', 'google-analytics-dashboard-for-wp' ), __( 'Settings', 'google-analytics-dashboard-for-wp' ), 'exactmetrics_save_settings', 'exactmetrics_settings', 'exactmetrics_settings_page' );
@@ -127,37 +127,8 @@ function exactmetrics_admin_menu()
 	//  Site Notes
 	add_submenu_page( $parent_slug, __( 'Site Notes:', 'google-analytics-dashboard-for-wp' ), __( 'Site Notes', 'google-analytics-dashboard-for-wp' ), 'exactmetrics_save_settings', $submenu_base . '#/site-notes' );
 
-	// If report disabled then remove this menu.
-	if ( $hook === 'exactmetrics_reports' || $is_lite ) {
-		//  AI Insights
-		// translators: Icon
-		add_submenu_page( $parent_slug, __( 'AI Insights:', 'google-analytics-dashboard-for-wp' ), sprintf( __( '%s AI Insights', 'google-analytics-dashboard-for-wp' ), exactmetrics_get_ai_menu_icon() ), 'exactmetrics_save_settings', 'admin.php?page=exactmetrics_reports#/ai-insights' );
-	}
-
-	$license_type = ExactMetrics()->license->get_license_type();
-
-	//  AI Chat
-	if ( $is_lite || 'plus' === $license_type ) {
-		// translators: Placeholder adds a svg icon
-		add_submenu_page( $parent_slug, __( 'Conversations AI:', 'google-analytics-dashboard-for-wp' ), sprintf( __( '%s Conversations AI', 'google-analytics-dashboard-for-wp' ), exactmetrics_get_ai_menu_icon() ), 'exactmetrics_save_settings', 'admin.php?page=exactmetrics_reports#/ai-insights/chat' );
-	}
-
 	// Add Popular Posts menu item.
 	add_submenu_page( $parent_slug, __( 'Popular Posts:', 'google-analytics-dashboard-for-wp' ), __( 'Popular Posts', 'google-analytics-dashboard-for-wp' ), 'exactmetrics_save_settings', $submenu_base . '#/popular-posts' );
-
-	// If report disabled then remove this menu.
-	if ( $hook === 'exactmetrics_reports' || $is_lite ) {
-		// Add submenu under `Insights` main menu for user journey report.
-		add_submenu_page( $parent_slug, __( 'User Journey:', 'google-analytics-dashboard-for-wp' ), __( 'User Journey', 'google-analytics-dashboard-for-wp' ), 'exactmetrics_view_dashboard', 'admin.php?page=exactmetrics_reports#/user-journey-report' );
-	}
-
-	if ( function_exists( 'aioseo' ) ) {
-		$seo_url = exactmetrics_aioseo_dashboard_url();
-	} else {
-		$seo_url = $submenu_base . '#/seo';
-	}
-	// then SEO
-	add_submenu_page($parent_slug, __('SEO', 'google-analytics-dashboard-for-wp'), __('SEO', 'google-analytics-dashboard-for-wp'), 'manage_options', $seo_url);
 
 	// Google PAX
 	add_submenu_page($parent_slug, __('Google Ads', 'google-analytics-dashboard-for-wp'), __('Google Ads', 'google-analytics-dashboard-for-wp') . $new_indicator, 'exactmetrics_view_dashboard', $submenu_base . '#/google-ads');
@@ -171,20 +142,14 @@ function exactmetrics_admin_menu()
 		add_submenu_page($parent_slug, __('Addons:', 'google-analytics-dashboard-for-wp'), '<span style="color:' . exactmetrics_menu_highlight_color() . '"> ' . __('Addons', 'google-analytics-dashboard-for-wp') . '</span>', 'exactmetrics_save_settings', $submenu_base . '#/addons');
 	}
 
+	// Rotating promotional submenu (cycles every 14 days).
+	$promo = exactmetrics_get_rotating_promo_submenu( $submenu_base, $new_indicator );
 	add_submenu_page(
 		$parent_slug,
-		__('UserFeedback:', 'google-analytics-dashboard-for-wp'),
-		__('UserFeedback', 'google-analytics-dashboard-for-wp') . $new_indicator,
+		$promo['page_title'],
+		$promo['menu_title'],
 		'manage_options',
-		$submenu_base . '#/userfeedback'
-	);
-
-	add_submenu_page(
-		$parent_slug,
-		__('Privacy Compliance:', 'google-analytics-dashboard-for-wp'),
-		__('Privacy Compliance', 'google-analytics-dashboard-for-wp'),
-		'manage_options',
-		$submenu_base . '#/wpconsent'
+		$promo['menu_slug']
 	);
 
 	// then About Us page.
@@ -203,6 +168,66 @@ function exactmetrics_admin_menu()
 
 add_action('admin_menu', 'exactmetrics_admin_menu');
 
+/**
+ * Returns the current rotating promotional submenu item (cycles every 14 days).
+ *
+ * Sequence: 0=UserFeedback, 1=Privacy Compliance, 2=AIOSEO, 3=RewardsWP
+ *
+ * @param string $submenu_base Base settings URL.
+ * @param string $new_indicator HTML string for the "NEW" badge.
+ * @return array Keys: menu_title, page_title, menu_slug.
+ */
+function exactmetrics_get_rotating_promo_submenu( $submenu_base, $new_indicator ) {
+	$start = get_option( 'exactmetrics_promo_rotation_start' );
+	if ( ! $start || $start > time() ) {
+		$start = time();
+		update_option( 'exactmetrics_promo_rotation_start', $start, false );
+	}
+
+	$index = (int) floor( ( time() - $start ) / ( 14 * DAY_IN_SECONDS ) ) % 4;
+
+
+	$seo_url = $submenu_base . '#/seo';
+
+	if ( function_exists( 'aioseo' ) ) {
+		$seo_url = exactmetrics_aioseo_dashboard_url();
+	}
+
+	$items = [
+		[
+			'label'     => __( 'UserFeedback', 'google-analytics-dashboard-for-wp' ) . $new_indicator,
+			'menu_slug' => $submenu_base . '#/userfeedback',
+		],
+		[
+			'label'     => __( 'Privacy Compliance', 'google-analytics-dashboard-for-wp' ),
+			'menu_slug' => $submenu_base . '#/wpconsent',
+		],
+		[
+			'label'     => __( 'SEO', 'google-analytics-dashboard-for-wp' ),
+			'menu_slug' => $seo_url,
+		],
+		[
+			'label'     => __( 'RewardsWP', 'google-analytics-dashboard-for-wp' ),
+			'menu_slug' => $submenu_base . '#/rewardswp',
+		],
+	];
+
+	$item = $items[ $index ];
+
+	return [
+		'menu_title' => $item['label'],
+		'page_title' => wp_strip_all_tags( $item['label'] ) . ':',
+		'menu_slug'  => $item['menu_slug'],
+	];
+}
+
+/**
+ * Reset the promo rotation timer on plugin deactivation.
+ */
+function exactmetrics_promo_rotation_reset() {
+	delete_option( 'exactmetrics_promo_rotation_start' );
+}
+add_action( 'exactmetrics_plugin_deactivated', 'exactmetrics_promo_rotation_reset' );
 
 function exactmetrics_automated_menu($hook){
 	$display = false;
@@ -505,7 +530,7 @@ function exactmetrics_admin_footer($text)
 		&& ! exactmetrics_is_pro_version()
 	) {
 		$url = 'https://wordpress.org/support/view/plugin-reviews/google-analytics-dashboard-for-wp?filter=5';
-		// Translators: Placeholders add a link to the wordpress.org repository.
+		/* translators: placeholders add a link to the wordpress.org repository. */
 		$text = sprintf(esc_html__('Please rate %1$sExactMetrics%2$s %3$s on %4$sWordPress.org%5$s to help us spread the word.', 'google-analytics-dashboard-for-wp'), '<strong>', '</strong>', '<a class="exactmetrics-no-text-decoration" href="' . $url . '" target="_blank" rel="noopener noreferrer"><i class="monstericon-star"></i><i class="monstericon-star"></i><i class="monstericon-star"></i><i class="monstericon-star"></i><i class="monstericon-star"></i></a>', '<a href="' . $url . '" target="_blank" rel="noopener noreferrer">', '</a>');
 	}
 
@@ -581,7 +606,7 @@ function exactmetrics_admin_setup_notices()
 	$key = exactmetrics_is_pro_version() ? ExactMetrics()->license->get_license_key() : '';
 	if (exactmetrics_is_pro_version() && empty($key)) {
 		$page = is_network_admin() ? network_admin_url('admin.php?page=exactmetrics_network') : admin_url('admin.php?page=exactmetrics_settings');
-		// Translators: Adds a link to retrieve the license.
+		/* translators: adds a link to retrieve the license. */
 		$message = sprintf(esc_html__('Warning: No valid license key has been entered for ExactMetrics. You are currently not getting updates, and are not able to view reports. %1$sPlease click here to enter your license key and begin receiving updates and reports.%2$s', 'google-analytics-dashboard-for-wp'), '<a href="' . esc_url($page) . '">', '</a>');
 		echo '<div class="error"><p>' . $message . '</p></div>'; // phpcs:ignore
 
@@ -593,7 +618,7 @@ function exactmetrics_admin_setup_notices()
 		$message = '';
 		if (ExactMetrics()->license->get_site_license_key()) {
 			if (ExactMetrics()->license->site_license_expired()) {
-				// Translators: Adds a link to the license renewal.
+				/* translators: adds a link to the license renewal. */
 				$message = sprintf(esc_html__('Your license key for ExactMetrics has expired. %1$sPlease click here to renew your license key.%2$s', 'google-analytics-dashboard-for-wp'), '<a href="' . exactmetrics_get_url('admin-notices', 'expired-license', "https://www.exactmetrics.com/login/") . '" target="_blank" rel="noopener noreferrer" referrer="no-referrer">', '</a>');
 			} else if (ExactMetrics()->license->site_license_disabled()) {
 				$message = esc_html__('Your license key for ExactMetrics has been disabled. Please use a different key.', 'google-analytics-dashboard-for-wp');
@@ -602,7 +627,7 @@ function exactmetrics_admin_setup_notices()
 			}
 		} else if (ExactMetrics()->license->get_network_license_key()) {
 			if (ExactMetrics()->license->network_license_expired()) {
-				// Translators: Adds a link to renew license.
+				/* translators: adds a link to renew license. */
 				$message = sprintf(esc_html__('Your network license key for ExactMetrics has expired. %1$sPlease click here to renew your license key.%2$s', 'google-analytics-dashboard-for-wp'), '<a href="' . exactmetrics_get_url('admin-notices', 'expired-license', "https://www.exactmetrics.com/login/") . '" target="_blank" rel="noopener noreferrer" referrer="no-referrer">', '</a>');
 			} else if (ExactMetrics()->license->network_license_disabled()) {
 				$message = esc_html__('Your network license key for ExactMetrics has been disabled. Please use a different key.', 'google-analytics-dashboard-for-wp');
@@ -628,13 +653,13 @@ function exactmetrics_admin_setup_notices()
 
 		$message = false;
 		if (version_compare(phpversion(), $compatible_php_version['required'], '<')) {
-			// Translators: Placeholders add the PHP version, a link to the ExactMetrics blog and a line break.
+			/* translators: placeholders add the PHP version, a link to the ExactMetrics blog and a line break. */
 			$message = sprintf(esc_html__('Your site is running an outdated, insecure version of PHP (%1$s), which could be putting your site at risk for being hacked.%4$sWordPress stopped supporting your PHP version in April, 2019.%4$sUpdating PHP only takes a few minutes and will make your website significantly faster and more secure.%4$s%2$sLearn more about updating PHP%3$s', 'google-analytics-dashboard-for-wp'), phpversion(), '<a href="' . $url . '" target="_blank">', '</a>', '<br>');
 		} else if (version_compare(phpversion(), $compatible_php_version['warning'], '<')) {
-			// Translators: Placeholders add the PHP version, a link to the ExactMetrics blog and a line break.
+			/* translators: placeholders add the PHP version, a link to the ExactMetrics blog and a line break. */
 			$message = sprintf(esc_html__('Your site is running an outdated, insecure version of PHP (%1$s), which could be putting your site at risk for being hacked.%4$sWordPress stopped supporting your PHP version in November, 2019.%4$sUpdating PHP only takes a few minutes and will make your website significantly faster and more secure.%4$s%2$sLearn more about updating PHP%3$s', 'google-analytics-dashboard-for-wp'), phpversion(), '<a href="' . $url . '" target="_blank">', '</a>', '<br>');
 		} else if (version_compare(phpversion(), $compatible_php_version['recommended'], '<')) {
-			// Translators: Placeholders add the PHP version, a link to the ExactMetrics blog and a line break.
+			/* translators: placeholders add the PHP version, a link to the ExactMetrics blog and a line break. */
 			$message = sprintf(esc_html__('Your site is running an outdated, insecure version of PHP (%1$s), which could be putting your site at risk for being hacked.%4$sWordPress is working towards discontinuing support for your PHP version.%4$sUpdating PHP only takes a few minutes and will make your website significantly faster and more secure.%4$s%2$sLearn more about updating PHP%3$s', 'google-analytics-dashboard-for-wp'), phpversion(), '<a href="' . $url . '" target="_blank">', '</a>', '<br>');
 		}
 
@@ -656,7 +681,7 @@ function exactmetrics_admin_setup_notices()
 		// WordPress 4.9
 		/* else if ( version_compare( $wp_version, '5.0', '<' ) ) {
 			$url = exactmetrics_get_url( 'global-notice', 'settings-page', 'https://www.exactmetrics.com/docs/update-wordpress/' );
-			// Translators: Placeholders add the current WordPress version and links to the ExactMetrics blog
+			// translators: placeholders add a link to the wordpress.org repository.
 			$message = sprintf( esc_html__( 'Your site is running an outdated version of WordPress (%1$s).%4$sExactMetrics will stop supporting WordPress versions lower than 5.0 in 2021.%4$sUpdating WordPress takes just a few minutes and will also solve many bugs that exist in your WordPress install.%4$s%2$sLearn more about updating WordPress%3$s', 'google-analytics-dashboard-for-wp' ), $wp_version, '<a href="' . $url . '" target="_blank">', '</a>', '<br>' );
 			echo '<div class="error"><p>'. $message.'</p></div>';
 			return;
@@ -712,12 +737,12 @@ function exactmetrics_admin_setup_notices()
 	$authed  = ExactMetrics()->auth->is_authed() || ExactMetrics()->auth->is_network_authed();
 	$url     = is_network_admin() ? network_admin_url('admin.php?page=exactmetrics_network') : admin_url('admin.php?page=exactmetrics_settings');
 	$tracking_code = exactmetrics_get_v4_id_to_output();
-	// Translators: Placeholders add links to the settings panel.
+	/* translators: placeholders add links to the settings panel. */
 	$manual_text = sprintf(esc_html__('Important: You are currently using manual GA4 Measurement ID output. We highly recommend %1$sauthenticating with ExactMetrics%2$s so that you can access our new reporting area and take advantage of new ExactMetrics features.', 'google-analytics-dashboard-for-wp'), '<a href="' . $url . '">', '</a>');
 	$migrated    = exactmetrics_get_option('gadwp_migrated', 0);
 	if ($migrated > 0) {
 		$url = admin_url('admin.php?page=exactmetrics-getting-started&exactmetrics-migration=1');
-		// Translators: Placeholders add links to the settings panel.
+		/* translators: placeholders add links to the settings panel. */
 		$text        = esc_html__('Click %1$shere%2$s to reauthenticate to be able to access reports. For more information why this is required, see our %3$sblog post%4$s.', 'google-analytics-dashboard-for-wp');
 		$manual_text = sprintf($text, '<a href="' . esc_url($url) . '">', '</a>', '<a href="' . exactmetrics_get_url('notice', 'manual-ua', 'https://www.exactmetrics.com/why-did-we-implement-the-new-google-analytics-authentication-flow-challenges-explained/') . '" target="_blank">', '</a>');
 	}
@@ -764,7 +789,7 @@ function exactmetrics_admin_setup_notices()
 			</div>';
 
 			$woo_notice_button = sprintf(
-				// Translators: Placeholders add a link to the ExactMetrics website.
+				/* translators: placeholders add a link to the ExactMetrics website. */
 				esc_html__('%1$sGet ExactMetrics Pro%2$s', 'google-analytics-dashboard-for-wp'),
 				'<a class="button button-primary button-hero" target="_blank" href="' . esc_url(exactmetrics_get_upgrade_link('admin-notices', 'woocommerce-upgrade')) . '">',
 				' &raquo;</a>'
@@ -817,6 +842,7 @@ function exactmetrics_admin_setup_notices()
 			echo '<p>';
 			echo esc_html('Start making data-driven decisions to grow your business.', 'google-analytics-dashboard-for-wp');
 			echo '</p>';
+			/* translators: %1$s: Opening link tag, %2$s: Closing link tag */
 			echo sprintf(esc_html__('%1$sGet ExactMetrics Pro%2$s', 'google-analytics-dashboard-for-wp'), '<a class="button button-primary button-hero" target="_blank" href="' . esc_url(exactmetrics_get_upgrade_link('admin-notices', 'edd-upgrade')) . '">', ' &raquo;</a>');
 			echo '</p>';
 			echo '</div><div class="exactmetrics-wooedd-upsell-right">';
@@ -830,10 +856,10 @@ function exactmetrics_admin_setup_notices()
 
 
 	if (isset($notices['exactmetrics_cross_domains_extracted']) && false === $notices['exactmetrics_cross_domains_extracted']) {
-		$page = is_network_admin() ? network_admin_url('admin.php?page=exactmetrics_network') : admin_url('admin.php?page=exactmetrics_settings');
-		$page = $page . '#/advanced';
-		// Translators: Adds a link to the settings panel.
-		$message = sprintf(esc_html__('Warning: ExactMetrics found cross-domain settings in the custom code field and converted them to the new settings structure.  %1$sPlease click here to review and remove the code no longer needed.%2$s', 'google-analytics-dashboard-for-wp'), '<a href="' . esc_url($page) . '">', '</a>');
+		$settings_url = is_network_admin() ? network_admin_url('admin.php?page=exactmetrics_network') : admin_url('admin.php?page=exactmetrics_settings');
+		$settings_url = $settings_url . '#/advanced';
+		/* translators: adds a link to the settings panel. */
+		$message = sprintf(esc_html__('Warning: ExactMetrics found cross-domain settings in the custom code field and converted them to the new settings structure.  %1$sPlease click here to review and remove the code no longer needed.%2$s', 'google-analytics-dashboard-for-wp'), '<a href="' . esc_url($settings_url) . '">', '</a>');
 		echo '<div class="notice notice-success is-dismissible exactmetrics-notice" data-notice="exactmetrics_cross_domains_extracted"><p>' . $message . '</p></div>'; // phpcs:ignore
 
 		return;
@@ -975,11 +1001,54 @@ function exactmetrics_dismiss_ads_addon_notice_ajax() {
 add_action( 'wp_ajax_exactmetrics_dismiss_ads_addon_notice', 'exactmetrics_dismiss_ads_addon_notice_ajax' );
 
 /**
+ * Display notice in admin when the legacy ExactMetrics AI Insights addon is still active.
+ * AI Charlie replaces AI Insights, so users should deactivate the old addon.
+ */
+function exactmetrics_ai_insights_addon_installed_notice() {
+	if ( ! class_exists( 'ExactMetrics_AI_Insights_Addon' ) ) {
+		return;
+	}
+
+	// Hide notice if dismissed in the last 30 days.
+	if ( get_transient( 'exactmetrics_ai_insights_addon_notice_dismissed' ) ) {
+		return;
+	}
+
+	$plugins_url = admin_url( 'plugins.php' );
+
+	$message = sprintf(
+		/* translators: %1$s and %2$s are bold tags, %3$s and %4$s are bold tags. */
+		esc_html__(
+			'The %1$sExactMetrics AI Insights%2$s addon has been replaced by %3$sAI Charlie%4$s. Please deactivate the AI Insights addon as it is no longer needed.',
+			'google-analytics-dashboard-for-wp'
+		),
+		'<strong>',
+		'</strong>',
+		'<strong>',
+		'</strong>'
+	);
+
+	echo '<div id="exactmetrics-ai-insights-addon-notice" class="notice notice-warning is-dismissible"><p>' . $message . '</p><p><a href="' . esc_url( $plugins_url ) . '" class="button button-primary">' . esc_html__( 'Go to Plugins', 'google-analytics-dashboard-for-wp' ) . '</a></p></div>'; // phpcs:ignore
+}
+
+add_action( 'admin_notices', 'exactmetrics_ai_insights_addon_installed_notice' );
+
+/**
+ * AJAX handler to persist dismissal of the AI Insights addon notice for 30 days.
+ */
+function exactmetrics_dismiss_ai_insights_addon_notice_ajax() {
+	check_ajax_referer( 'exactmetrics-dismiss-notice', 'nonce' );
+	set_transient( 'exactmetrics_ai_insights_addon_notice_dismissed', 1, 30 * DAY_IN_SECONDS );
+	wp_send_json_success();
+}
+add_action( 'wp_ajax_exactmetrics_dismiss_ai_insights_addon_notice', 'exactmetrics_dismiss_ai_insights_addon_notice_ajax' );
+
+/**
  * Check if the plugin is MI Lite.
  *
  * @return bool
  */
-function check_is_it_exactmetrics_lite() {
+function exactmetrics_check_is_it_exactmetrics_lite() {
 	return 'googleanalytics.php' == basename( EXACTMETRICS_PLUGIN_FILE );
 }
 
@@ -1014,6 +1083,7 @@ function exactmetrics_in_admin_footer() {
 	];
 
 	echo '<div class="exactmetrics-footer-love">';
+	/* translators: %1$s: Heart icon HTML */
 	echo sprintf(esc_html__('Made with %1$s by the ExactMetrics Team', 'google-analytics-dashboard-for-wp'), '<span class="exactmetrics-footer-love-icon">♥</span>');
 	$links_output = [];
 	foreach($links as $link){

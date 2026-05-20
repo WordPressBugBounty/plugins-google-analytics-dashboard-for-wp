@@ -1,47 +1,77 @@
 {
-  "_ReAuthModal-Deg5HLL-.js": {
-    "file": "js/chunks/ReAuthModal-Deg5HLL-.js",
+  "_Icon--fkRQaED.js": {
+    "file": "js/chunks/Icon--fkRQaED.js",
+    "name": "Icon",
+    "imports": [
+      "__plugin-vue_export-helper-oSXMEj3A.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-DdCOUrGJ.css"
+    ]
+  },
+  "_ReAuthModal-Cp18Y62o.js": {
+    "file": "js/chunks/ReAuthModal-Cp18Y62o.js",
     "name": "ReAuthModal",
     "imports": [
-      "_TheAppHeader-CnbU8fIT.js"
+      "__plugin-vue_export-helper-oSXMEj3A.js"
     ],
     "css": [
       "css/main-exactmetrics-Du5DxmSn.css"
     ]
   },
-  "_TheAppHeader-CnbU8fIT.js": {
-    "file": "js/chunks/TheAppHeader-CnbU8fIT.js",
+  "_TheAppHeader-yUeOxtaF.js": {
+    "file": "js/chunks/TheAppHeader-yUeOxtaF.js",
     "name": "TheAppHeader",
-    "dynamicImports": [
-      "src/stores/sample-data/custom-dashboard/sample-view.json",
-      "src/stores/sample-data/custom-dashboard/widgets-data.json"
+    "imports": [
+      "__plugin-vue_export-helper-oSXMEj3A.js"
     ],
     "css": [
-      "css/main-exactmetrics-C4z96CgN.css"
-    ],
-    "assets": [
-      "assets/logo-exactmetrics-g7cO_2BB.png",
-      "assets/logo-exactmetrics@2x-D852PtD5.png"
+      "css/main-exactmetrics-BlALUF99.css"
     ]
   },
-  "_html2pdf-DUUmuX6G.js": {
-    "file": "js/chunks/html2pdf-DUUmuX6G.js",
+  "__plugin-vue_export-helper-oSXMEj3A.js": {
+    "file": "js/chunks/_plugin-vue_export-helper-oSXMEj3A.js",
+    "name": "_plugin-vue_export-helper",
+    "assets": [
+      "assets/charitable-jZ8z8e4W.png",
+      "assets/easy-BvW_B_Ta.png",
+      "assets/givewp-C405d0U0.png",
+      "assets/lifterlms-a1S06NYR.png",
+      "assets/memberhouse-BJdHvZB4.png",
+      "assets/memberpress-D3zMNxUg.png",
+      "assets/restrict-x0XNKniw.png",
+      "assets/wishlistmember-logo 1-Dtdt0jIO.png",
+      "assets/woocom-CGR3qW2E.png",
+      "assets/overview-upsell-cta-chart-with-charlie-L7ZsqcRa.png",
+      "assets/header-bar-charlie-exactmetrics-CE12fdgp.png",
+      "assets/overview-charlie-exactmetrics-CNY4Zz40.png",
+      "assets/popup-button-charlie-exactmetrics-BFrnq-D-.png",
+      "assets/logo-exactmetrics-agency-BDxiPOwg.svg",
+      "assets/logo-exactmetrics-plus-D5AZCVIR.svg",
+      "assets/logo-exactmetrics-pro-CGL-8xqK.svg",
+      "assets/logo-exactmetrics-g7cO_2BB.png",
+      "assets/logo-exactmetrics@2x-D852PtD5.png",
+      "assets/sample-image-exactmetrics-BgF3d33A.png"
+    ]
+  },
+  "_html2pdf-MPm2rWml.js": {
+    "file": "js/chunks/html2pdf-MPm2rWml.js",
     "name": "html2pdf",
     "imports": [
-      "_TheAppHeader-CnbU8fIT.js",
-      "_useFeatureGate-Dycj7kF_.js"
+      "__plugin-vue_export-helper-oSXMEj3A.js",
+      "_useFeatureGate-AuD4tn8P.js"
     ],
     "css": [
       "css/main-exactmetrics-D5i6pgxk.css"
     ]
   },
+  "_main-exactmetrics-BlALUF99.css": {
+    "file": "css/main-exactmetrics-BlALUF99.css",
+    "src": "_main-exactmetrics-BlALUF99.css"
+  },
   "_main-exactmetrics-C1F5oIAZ.css": {
     "file": "css/main-exactmetrics-C1F5oIAZ.css",
     "src": "_main-exactmetrics-C1F5oIAZ.css"
-  },
-  "_main-exactmetrics-C4z96CgN.css": {
-    "file": "css/main-exactmetrics-C4z96CgN.css",
-    "src": "_main-exactmetrics-C4z96CgN.css"
   },
   "_main-exactmetrics-D5i6pgxk.css": {
     "file": "css/main-exactmetrics-D5i6pgxk.css",
@@ -59,35 +89,41 @@
     "file": "css/main-exactmetrics-tn0RQdqM.css",
     "src": "_main-exactmetrics-tn0RQdqM.css"
   },
-  "_useAuthGate-C9a7UCIP.js": {
-    "file": "js/chunks/useAuthGate-C9a7UCIP.js",
+  "_useAuthGate-CZakOJgu.js": {
+    "file": "js/chunks/useAuthGate-CZakOJgu.js",
     "name": "useAuthGate",
     "imports": [
-      "_TheAppHeader-CnbU8fIT.js",
-      "_useFeatureGate-Dycj7kF_.js",
-      "_ReAuthModal-Deg5HLL-.js",
-      "_html2pdf-DUUmuX6G.js"
+      "__plugin-vue_export-helper-oSXMEj3A.js",
+      "_Icon--fkRQaED.js",
+      "_TheAppHeader-yUeOxtaF.js",
+      "_useFeatureGate-AuD4tn8P.js",
+      "_ReAuthModal-Cp18Y62o.js",
+      "_html2pdf-MPm2rWml.js"
     ],
     "css": [
       "css/main-exactmetrics-C1F5oIAZ.css"
     ]
   },
-  "_useFeatureGate-Dycj7kF_.js": {
-    "file": "js/chunks/useFeatureGate-Dycj7kF_.js",
+  "_useFeatureGate-AuD4tn8P.js": {
+    "file": "js/chunks/useFeatureGate-AuD4tn8P.js",
     "name": "useFeatureGate",
     "imports": [
-      "_TheAppHeader-CnbU8fIT.js"
+      "_TheAppHeader-yUeOxtaF.js",
+      "__plugin-vue_export-helper-oSXMEj3A.js"
     ],
-    "css": [
-      "css/main-exactmetrics-DdCOUrGJ.css"
+    "dynamicImports": [
+      "src/stores/sample-data/custom-dashboard/sample-view.json",
+      "src/stores/sample-data/custom-dashboard/widgets-data.json"
     ]
   },
-  "_useSampleData-BTkWHSB3.js": {
-    "file": "js/chunks/useSampleData-BTkWHSB3.js",
+  "_useSampleData-BG9kvNlB.js": {
+    "file": "js/chunks/useSampleData-BG9kvNlB.js",
     "name": "useSampleData",
     "imports": [
-      "_TheAppHeader-CnbU8fIT.js",
-      "_useFeatureGate-Dycj7kF_.js"
+      "__plugin-vue_export-helper-oSXMEj3A.js",
+      "_Icon--fkRQaED.js",
+      "_TheAppHeader-yUeOxtaF.js",
+      "_useFeatureGate-AuD4tn8P.js"
     ],
     "css": [
       "css/main-exactmetrics-tn0RQdqM.css"
@@ -100,6 +136,18 @@
   "src/assets/icons/settings.svg": {
     "file": "assets/settings-BqFaYr7J.svg",
     "src": "src/assets/icons/settings.svg"
+  },
+  "src/assets/img/ai-charlie/header-bar-charlie-exactmetrics.png": {
+    "file": "assets/header-bar-charlie-exactmetrics-CE12fdgp.png",
+    "src": "src/assets/img/ai-charlie/header-bar-charlie-exactmetrics.png"
+  },
+  "src/assets/img/ai-charlie/overview-charlie-exactmetrics.png": {
+    "file": "assets/overview-charlie-exactmetrics-CNY4Zz40.png",
+    "src": "src/assets/img/ai-charlie/overview-charlie-exactmetrics.png"
+  },
+  "src/assets/img/ai-charlie/popup-button-charlie-exactmetrics.png": {
+    "file": "assets/popup-button-charlie-exactmetrics-BFrnq-D-.png",
+    "src": "src/assets/img/ai-charlie/popup-button-charlie-exactmetrics.png"
   },
   "src/assets/img/exactmetrics/em-arrows.jpg": {
     "file": "assets/em-arrows-Dq2c4rA5.jpg",
@@ -205,13 +253,27 @@
     "file": "assets/sample-image-exactmetrics-BioGsEoh.png",
     "src": "src/assets/img/sample-image-exactmetrics.png"
   },
+  "src/modules/ai-charlie/main.js": {
+    "file": "js/ai-charlie-s04ucGcj.js",
+    "name": "ai-charlie",
+    "src": "src/modules/ai-charlie/main.js",
+    "isEntry": true,
+    "imports": [
+      "__plugin-vue_export-helper-oSXMEj3A.js",
+      "_Icon--fkRQaED.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-CmAFduMk.css"
+    ]
+  },
   "src/modules/custom-dashboard/main.js": {
-    "file": "js/custom-dashboard-CGmb_wW3.js",
+    "file": "js/custom-dashboard-CsN1SA-r.js",
     "name": "custom-dashboard",
     "src": "src/modules/custom-dashboard/main.js",
     "isEntry": true,
     "imports": [
-      "_TheAppHeader-CnbU8fIT.js"
+      "_TheAppHeader-yUeOxtaF.js",
+      "__plugin-vue_export-helper-oSXMEj3A.js"
     ],
     "dynamicImports": [
       "src/modules/custom-dashboard/views/DashboardList.lite.vue",
@@ -225,71 +287,81 @@
     "src": "src/modules/custom-dashboard/styles/main-exactmetrics.scss"
   },
   "src/modules/custom-dashboard/views/DashboardCreate.vue": {
-    "file": "js/chunks/DashboardCreate-BC-JNWcR.js",
+    "file": "js/chunks/DashboardCreate-C0KY_OIO.js",
     "name": "DashboardCreate",
     "src": "src/modules/custom-dashboard/views/DashboardCreate.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_TheAppHeader-CnbU8fIT.js",
-      "_useAuthGate-C9a7UCIP.js",
-      "_useFeatureGate-Dycj7kF_.js",
-      "_useSampleData-BTkWHSB3.js",
-      "_html2pdf-DUUmuX6G.js",
-      "_ReAuthModal-Deg5HLL-.js"
+      "_TheAppHeader-yUeOxtaF.js",
+      "__plugin-vue_export-helper-oSXMEj3A.js",
+      "_useAuthGate-CZakOJgu.js",
+      "_Icon--fkRQaED.js",
+      "_useSampleData-BG9kvNlB.js",
+      "_html2pdf-MPm2rWml.js",
+      "_ReAuthModal-Cp18Y62o.js",
+      "_useFeatureGate-AuD4tn8P.js"
     ],
     "css": [
       "css/main-exactmetrics-Bs2heOd-.css"
     ]
   },
   "src/modules/custom-dashboard/views/DashboardEdit.vue": {
-    "file": "js/chunks/DashboardEdit-M4vnTprW.js",
+    "file": "js/chunks/DashboardEdit-5N_ulWBT.js",
     "name": "DashboardEdit",
     "src": "src/modules/custom-dashboard/views/DashboardEdit.vue",
     "isDynamicEntry": true,
     "imports": [
       "src/modules/custom-dashboard/views/DashboardCreate.vue",
-      "_TheAppHeader-CnbU8fIT.js",
-      "_useAuthGate-C9a7UCIP.js",
-      "_useFeatureGate-Dycj7kF_.js",
-      "_ReAuthModal-Deg5HLL-.js",
-      "_html2pdf-DUUmuX6G.js",
-      "_useSampleData-BTkWHSB3.js"
+      "__plugin-vue_export-helper-oSXMEj3A.js",
+      "_TheAppHeader-yUeOxtaF.js",
+      "_useAuthGate-CZakOJgu.js",
+      "_Icon--fkRQaED.js",
+      "_useFeatureGate-AuD4tn8P.js",
+      "_ReAuthModal-Cp18Y62o.js",
+      "_html2pdf-MPm2rWml.js",
+      "_useSampleData-BG9kvNlB.js"
     ]
   },
   "src/modules/custom-dashboard/views/DashboardList.lite.vue": {
-    "file": "js/chunks/DashboardList.lite-CO5053mJ.js",
+    "file": "js/chunks/DashboardList.lite-DBVTu_xU.js",
     "name": "DashboardList.lite",
     "src": "src/modules/custom-dashboard/views/DashboardList.lite.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_TheAppHeader-CnbU8fIT.js",
-      "_useSampleData-BTkWHSB3.js",
-      "_useFeatureGate-Dycj7kF_.js"
+      "_TheAppHeader-yUeOxtaF.js",
+      "_useSampleData-BG9kvNlB.js",
+      "_useFeatureGate-AuD4tn8P.js",
+      "__plugin-vue_export-helper-oSXMEj3A.js",
+      "_Icon--fkRQaED.js"
     ]
   },
   "src/modules/custom-dashboard/views/DashboardView.vue": {
-    "file": "js/chunks/DashboardView-CL2eHZmU.js",
+    "file": "js/chunks/DashboardView-CWTr6dhH.js",
     "name": "DashboardView",
     "src": "src/modules/custom-dashboard/views/DashboardView.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_TheAppHeader-CnbU8fIT.js",
-      "_useAuthGate-C9a7UCIP.js",
-      "_html2pdf-DUUmuX6G.js",
-      "_useSampleData-BTkWHSB3.js",
-      "_ReAuthModal-Deg5HLL-.js",
-      "_useFeatureGate-Dycj7kF_.js"
+      "_TheAppHeader-yUeOxtaF.js",
+      "__plugin-vue_export-helper-oSXMEj3A.js",
+      "_useAuthGate-CZakOJgu.js",
+      "_html2pdf-MPm2rWml.js",
+      "_useSampleData-BG9kvNlB.js",
+      "_ReAuthModal-Cp18Y62o.js",
+      "_useFeatureGate-AuD4tn8P.js",
+      "_Icon--fkRQaED.js"
     ]
   },
   "src/modules/reports/main.js": {
-    "file": "js/reports-CMQsyKDB.js",
+    "file": "js/reports-BTjFnIgr.js",
     "name": "reports",
     "src": "src/modules/reports/main.js",
     "isEntry": true,
     "imports": [
-      "_TheAppHeader-CnbU8fIT.js",
-      "_useFeatureGate-Dycj7kF_.js",
-      "_html2pdf-DUUmuX6G.js"
+      "_TheAppHeader-yUeOxtaF.js",
+      "__plugin-vue_export-helper-oSXMEj3A.js",
+      "_Icon--fkRQaED.js",
+      "_html2pdf-MPm2rWml.js",
+      "_useFeatureGate-AuD4tn8P.js"
     ],
     "dynamicImports": [
       "src/modules/reports/views/OverviewReport.vue"
@@ -302,20 +374,22 @@
     ]
   },
   "src/modules/reports/styles/main-exactmetrics.scss": {
-    "file": "css/main-exactmetrics-D7dUT--C.css",
+    "file": "css/main-exactmetrics-D9nhexn5.css",
     "src": "src/modules/reports/styles/main-exactmetrics.scss"
   },
   "src/modules/reports/views/OverviewReport.vue": {
-    "file": "js/chunks/OverviewReport-Dly_W9I6.js",
+    "file": "js/chunks/OverviewReport-BfWxQNwu.js",
     "name": "OverviewReport",
     "src": "src/modules/reports/views/OverviewReport.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_TheAppHeader-CnbU8fIT.js",
-      "_ReAuthModal-Deg5HLL-.js",
-      "_useFeatureGate-Dycj7kF_.js",
+      "__plugin-vue_export-helper-oSXMEj3A.js",
+      "_ReAuthModal-Cp18Y62o.js",
+      "_Icon--fkRQaED.js",
       "src/modules/reports/main.js",
-      "_html2pdf-DUUmuX6G.js"
+      "_html2pdf-MPm2rWml.js",
+      "_useFeatureGate-AuD4tn8P.js",
+      "_TheAppHeader-yUeOxtaF.js"
     ],
     "css": [
       "css/main-exactmetrics-DN0v1tIW.css"

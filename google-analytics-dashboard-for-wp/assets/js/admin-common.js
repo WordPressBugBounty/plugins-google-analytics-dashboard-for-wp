@@ -68,6 +68,20 @@ jQuery(document).ready(function ($) {
       'json'
     );
   });
+
+  // Persist dismissal of AI Insights addon notice for 30 days
+  $('#exactmetrics-ai-insights-addon-notice').on('click', 'button.notice-dismiss', function (e) {
+    e.preventDefault();
+    $.post(
+      exactmetrics_admin_common.ajax,
+      {
+        action: 'exactmetrics_dismiss_ai_insights_addon_notice',
+        nonce: exactmetrics_admin_common.dismiss_notice_nonce
+      },
+      function () {},
+      'json'
+    );
+  });
 });
 
 var submenu_item = document.querySelector('.exactmetrics-upgrade-submenu');

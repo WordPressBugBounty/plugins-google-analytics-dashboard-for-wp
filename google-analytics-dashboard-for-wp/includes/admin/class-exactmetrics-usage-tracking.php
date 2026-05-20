@@ -199,10 +199,10 @@ class ExactMetrics_Usage_Tracking {
 	public function schedule_send() {
 		if ( ! wp_next_scheduled( 'exactmetrics_usage_tracking_cron' ) ) {
 			$tracking             = array();
-			$tracking['day']      = rand( 0, 6 );
-			$tracking['hour']     = rand( 0, 23 );
-			$tracking['minute']   = rand( 0, 59 );
-			$tracking['second']   = rand( 0, 59 );
+			$tracking['day']      = wp_rand( 0, 6 );
+			$tracking['hour']     = wp_rand( 0, 23 );
+			$tracking['minute']   = wp_rand( 0, 59 );
+			$tracking['second']   = wp_rand( 0, 59 );
 			$tracking['offset']   = ( $tracking['day'] * DAY_IN_SECONDS ) +
 									( $tracking['hour'] * HOUR_IN_SECONDS ) +
 									( $tracking['minute'] * MINUTE_IN_SECONDS ) +

@@ -1,5 +1,9 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Ask for some love.
  *
@@ -122,6 +126,7 @@ class ExactMetrics_Review {
 			<div class="exactmetrics-review-step">
 				<p>
 					<?php
+					/* translators: %1$s: plugin name (ExactMetrics) */
 					echo wp_kses(
 						sprintf(
 							__( 'Hey - we noticed you\'ve been using %1$s for a while - that\'s great! Could you do us a BIG favor and give it a 5-star review on WordPress to help us spread the word and boost our motivation?', 'google-analytics-dashboard-for-wp' ),
@@ -133,7 +138,7 @@ class ExactMetrics_Review {
 				</p>
 				<p>
 					<a
-						href="https://wordpress.org/support/plugin/google-analytics-dashboard-for-wp/reviews/?filter=5#new-post"
+						href="https://wordpress.org/support/plugin/google-analytics-dashboard-for-wp/reviews/#new-post"
 						   class="exactmetrics-dismiss-review-notice exactmetrics-review-out"
 						target="_blank"
 						   rel="noopener noreferrer"

@@ -152,11 +152,11 @@ class ExactMetrics_Notification_Event {
 	 */
 	public function build_external_link( $url ) {
 		$build_url   = wp_specialchars_decode( exactmetrics_get_url( 'exactmetrics-notifications-sidebar', 'notifications', $url ) );
-		$host        = parse_url( $build_url, PHP_URL_HOST );
+		$host        = wp_parse_url( $build_url, PHP_URL_HOST );
 		$domain_name = preg_replace( '/^www\./', '', $host );
 
 		if ( 'exactmetrics.com' != $domain_name ) {
-			parse_str( parse_url( $build_url, PHP_URL_QUERY ), $queries );
+			parse_str( wp_parse_url( $build_url, PHP_URL_QUERY ), $queries );
 
 			if ( isset( $queries['utm_source'] ) ) {
 				$queries['utm_source'] = 'exactmetrics';

@@ -30,7 +30,7 @@ class ExactMetrics_WooCommerce_Marketing {
 	 * @return void
 	 */
 	public function handle_enqueuing_assets( $page ) {
-		if ( ! check_is_it_exactmetrics_lite() ) {
+		if ( ! exactmetrics_check_is_it_exactmetrics_lite() ) {
 			return;
 		}
 
