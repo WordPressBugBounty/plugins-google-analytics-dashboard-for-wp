@@ -74,11 +74,7 @@ add_action('init', function () {
 		require_once EXACTMETRICS_PLUGIN_DIR . 'includes/api/class-exactmetrics-api.php';
 		require_once EXACTMETRICS_PLUGIN_DIR . 'includes/api/class-exactmetrics-api-reports.php';
 		require_once EXACTMETRICS_PLUGIN_DIR . 'includes/api/class-exactmetrics-api-tracking.php';
-		require_once EXACTMETRICS_PLUGIN_DIR . 'includes/api/class-exactmetrics-api-ads.php';
 		require_once EXACTMETRICS_PLUGIN_DIR . 'includes/api/class-exactmetrics-api-token.php';
-
-		// Load Google Ads admin classes
-		require_once EXACTMETRICS_PLUGIN_DIR . 'includes/ppc/google/class-exactmetrics-google-ads.php';
 	}
 
 	if ( is_admin() ) {

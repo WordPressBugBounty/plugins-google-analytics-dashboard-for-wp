@@ -1,8 +1,8 @@
 <?php
 /**
- * AI Charlie Assets Loader
+ * AI Chat Assets Loader
  *
- * Injects the AI Charlie chat assistant module on ALL ExactMetrics admin pages
+ * Injects the AI Chat chat assistant module on ALL ExactMetrics admin pages
  * (both Vue 2 and Vue 3 pages).
  *
  * @package exactmetrics
@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class ExactMetrics_AI_Charlie_Assets {
 
 	/**
-	 * Script handle for AI Charlie.
+	 * Script handle for AI Chat.
 	 */
 	const SCRIPT_HANDLE = 'exactmetrics-ai-charlie';
 
@@ -59,7 +59,7 @@ class ExactMetrics_AI_Charlie_Assets {
 	}
 
 	/**
-	 * Enqueue AI Charlie assets on all ExactMetrics admin pages.
+	 * Enqueue AI Chat assets on all ExactMetrics admin pages.
 	 *
 	 * @return void
 	 */
@@ -96,7 +96,7 @@ class ExactMetrics_AI_Charlie_Assets {
 	}
 
 	/**
-	 * Enqueue the AI Charlie script.
+	 * Enqueue the AI Chat script.
 	 *
 	 * @return void
 	 */
@@ -162,7 +162,7 @@ class ExactMetrics_AI_Charlie_Assets {
 	}
 
 	/**
-	 * Enqueue AI Charlie CSS.
+	 * Enqueue AI Chat CSS.
 	 *
 	 * @return void
 	 */

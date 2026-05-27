@@ -122,11 +122,14 @@ function exactmetrics_gutenberg_editor_assets() {
 		) )
 	);
 
-	$textdomain  = exactmetrics_is_pro_version() ? 'exactmetrics-premium' : 'google-analytics-dashboard-for-wp';
+	$textdomain = exactmetrics_get_plugin_textdomain();
 
-	wp_scripts()->add_inline_script(
+	wp_set_script_translations( 'exactmetrics-gutenberg-editor-js', $textdomain );
+
+	wp_add_inline_script(
 		'exactmetrics-gutenberg-editor-js',
-		exactmetrics_get_printable_translations( $textdomain )
+		exactmetrics_get_printable_translations( $textdomain ),
+		'before'
 	);
 
 }

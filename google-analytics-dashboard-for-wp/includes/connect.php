@@ -139,8 +139,8 @@ class ExactMetrics_Connect {
 	 * Process ExactMetrics Connect.
 	 */
 	public function process() {
-		/* translators: link tag starts with url and link tag ends. */
 		$error = sprintf(
+			/* translators: %1$s: Opening link tag, %2$s: Closing link tag. */
 			esc_html__( 'Oops! We could not automatically install an upgrade. Please install manually by visiting %1$sexactmetrics.com%2$s.', 'google-analytics-dashboard-for-wp' ),
 			'<a target="_blank" href="' . exactmetrics_get_url( 'notice', 'could-not-upgrade', 'https://www.exactmetrics.com/' ) . '">',
 			'</a>'

@@ -104,7 +104,7 @@ class ExactMetrics_Skin extends WP_Upgrader_Skin {
 				if ( ! empty( $message ) ) {
 					$error_message = sprintf(
 						/* translators: %1$s: Addon name, %2$s: Support link tag start, %3$s: Support link tag end */
-						esc_html__( 'There was an error installing the addon, %1$s. Please try again. If you are still having issues, please %2$scontact our support%3$s team. ', 'google-analytics-dashboard-for-wp' ),
+						esc_html__( 'There was an error installing the addon, %1$s. Please try again. If you are still having issues, please %2$scontact our support%3$s team.', 'google-analytics-dashboard-for-wp' ),
 						esc_html( $message ),
 						'<a target="_blank" href="' . exactmetrics_get_url( 'notice', 'error-installing-addons', 'https://www.exactmetrics.com/my-account/support/' ) . '">',
 						'</a>'

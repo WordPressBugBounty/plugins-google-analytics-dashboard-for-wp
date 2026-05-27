@@ -97,7 +97,7 @@ class ExactMetrics_Translation {
 			$value->translations = [];
 		}
 
-		$slug = exactmetrics_is_pro_version() ? 'exactmetrics-premium' : 'google-analytics-dashboard-for-wp';
+		$slug = exactmetrics_get_plugin_textdomain();
 
 		$translations = $this->get_translations( $slug );
 
@@ -243,7 +243,7 @@ class ExactMetrics_Translation {
 	 * Trigger on plugin activate.
 	 */
 	public function plugin_activated() {
-		$slug = exactmetrics_is_pro_version() ? 'exactmetrics-premium' : 'google-analytics-dashboard-for-wp';
+		$slug = exactmetrics_get_plugin_textdomain();
 
 		$translations = $this->get_translations( $slug );
 

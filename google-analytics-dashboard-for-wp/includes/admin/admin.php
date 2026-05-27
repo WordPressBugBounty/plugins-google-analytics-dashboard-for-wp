@@ -130,9 +130,6 @@ function exactmetrics_admin_menu()
 	// Add Popular Posts menu item.
 	add_submenu_page( $parent_slug, __( 'Popular Posts:', 'google-analytics-dashboard-for-wp' ), __( 'Popular Posts', 'google-analytics-dashboard-for-wp' ), 'exactmetrics_save_settings', $submenu_base . '#/popular-posts' );
 
-	// Google PAX
-	add_submenu_page($parent_slug, __('Google Ads', 'google-analytics-dashboard-for-wp'), __('Google Ads', 'google-analytics-dashboard-for-wp') . $new_indicator, 'exactmetrics_view_dashboard', $submenu_base . '#/google-ads');
-
 	// then tools
 	add_submenu_page($parent_slug, __('Tools:', 'google-analytics-dashboard-for-wp'), __('Tools', 'google-analytics-dashboard-for-wp'), 'manage_options', $submenu_base . '#/tools');
 
@@ -618,7 +615,7 @@ function exactmetrics_admin_setup_notices()
 		$message = '';
 		if (ExactMetrics()->license->get_site_license_key()) {
 			if (ExactMetrics()->license->site_license_expired()) {
-				/* translators: adds a link to the license renewal. */
+				/* translators: %1$s: Opening link tag, %2$s: Closing link tag. */
 				$message = sprintf(esc_html__('Your license key for ExactMetrics has expired. %1$sPlease click here to renew your license key.%2$s', 'google-analytics-dashboard-for-wp'), '<a href="' . exactmetrics_get_url('admin-notices', 'expired-license', "https://www.exactmetrics.com/login/") . '" target="_blank" rel="noopener noreferrer" referrer="no-referrer">', '</a>');
 			} else if (ExactMetrics()->license->site_license_disabled()) {
 				$message = esc_html__('Your license key for ExactMetrics has been disabled. Please use a different key.', 'google-analytics-dashboard-for-wp');
@@ -789,7 +786,7 @@ function exactmetrics_admin_setup_notices()
 			</div>';
 
 			$woo_notice_button = sprintf(
-				/* translators: placeholders add a link to the ExactMetrics website. */
+				/* translators: %1$s: Opening link tag, %2$s: Closing link tag. */
 				esc_html__('%1$sGet ExactMetrics Pro%2$s', 'google-analytics-dashboard-for-wp'),
 				'<a class="button button-primary button-hero" target="_blank" href="' . esc_url(exactmetrics_get_upgrade_link('admin-notices', 'woocommerce-upgrade')) . '">',
 				' &raquo;</a>'
@@ -842,7 +839,7 @@ function exactmetrics_admin_setup_notices()
 			echo '<p>';
 			echo esc_html('Start making data-driven decisions to grow your business.', 'google-analytics-dashboard-for-wp');
 			echo '</p>';
-			/* translators: %1$s: Opening link tag, %2$s: Closing link tag */
+			/* translators: %1$s: Opening link tag, %2$s: Closing link tag. */
 			echo sprintf(esc_html__('%1$sGet ExactMetrics Pro%2$s', 'google-analytics-dashboard-for-wp'), '<a class="button button-primary button-hero" target="_blank" href="' . esc_url(exactmetrics_get_upgrade_link('admin-notices', 'edd-upgrade')) . '">', ' &raquo;</a>');
 			echo '</p>';
 			echo '</div><div class="exactmetrics-wooedd-upsell-right">';
@@ -1002,7 +999,7 @@ add_action( 'wp_ajax_exactmetrics_dismiss_ads_addon_notice', 'exactmetrics_dismi
 
 /**
  * Display notice in admin when the legacy ExactMetrics AI Insights addon is still active.
- * AI Charlie replaces AI Insights, so users should deactivate the old addon.
+ * AI Chat replaces AI Insights, so users should deactivate the old addon.
  */
 function exactmetrics_ai_insights_addon_installed_notice() {
 	if ( ! class_exists( 'ExactMetrics_AI_Insights_Addon' ) ) {
@@ -1019,7 +1016,7 @@ function exactmetrics_ai_insights_addon_installed_notice() {
 	$message = sprintf(
 		/* translators: %1$s and %2$s are bold tags, %3$s and %4$s are bold tags. */
 		esc_html__(
-			'The %1$sExactMetrics AI Insights%2$s addon has been replaced by %3$sAI Charlie%4$s. Please deactivate the AI Insights addon as it is no longer needed.',
+			'The %1$sExactMetrics AI Insights%2$s addon has been replaced by %3$sAI Chat%4$s. Please deactivate the AI Insights addon as it is no longer needed.',
 			'google-analytics-dashboard-for-wp'
 		),
 		'<strong>',

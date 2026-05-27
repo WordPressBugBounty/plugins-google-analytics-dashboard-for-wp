@@ -72,9 +72,9 @@ abstract class ExactMetrics_User_Journey_Lite_Metabox {
 							<h4><?php esc_html_e( 'With ExactMetrics Pro, See Each Step Your Visitor Took Before Purchasing From Your Website.', 'google-analytics-dashboard-for-wp' ); ?></h4>
 							<p>
 								<?php
-								// Translators: strong tag to make text bold, link to website to learn more
 								echo sprintf(
-									esc_html__('%1$sPlus%2$s, upgrading to pro will unlock %3$sall%4$s of advanced reports, tracking, and integrations. %5$sLearn more about Pro%6$s', 'google-analytics-dashboard-for-wp'),
+									/* translators: %1$s: Opening strong tag, %2$s: Closing strong tag, %3$s: Opening strong tag, %4$s: Closing strong tag, %5$s: Opening link tag, %6$s: Closing link tag. */
+									esc_html__('%1$sPlus%2$s, upgrading to Pro will unlock %3$sall%4$s of advanced reports, tracking, and integrations. %5$sLearn more about Pro%6$s', 'google-analytics-dashboard-for-wp'),
 									'<strong>',
 									'</strong>',
 									'<strong>',

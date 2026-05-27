@@ -18,7 +18,7 @@ const _sfc_main$6 = {
       return openBlock(), createElementBlock("button", {
         type: "button",
         class: "exactmetrics-ai-charlie__toggle",
-        title: "AI Charlie",
+        title: "AI Chat",
         onClick: _cache[0] || (_cache[0] = ($event) => _ctx.$emit("toggle")),
         onMouseenter: _cache[1] || (_cache[1] = ($event) => isHovered.value = true),
         onMouseleave: _cache[2] || (_cache[2] = ($event) => isHovered.value = false)
@@ -39,7 +39,7 @@ const _sfc_main$6 = {
         _cache[4] || (_cache[4] = createBaseVNode("span", { class: "exactmetrics-ai-charlie__toggle-glow" }, null, -1)),
         createBaseVNode("img", {
           src: unref(toggleImage),
-          alt: "AI Charlie",
+          alt: "AI Chat",
           class: "exactmetrics-ai-charlie__toggle-img"
         }, null, 8, _hoisted_1$6)
       ], 32);
@@ -4072,12 +4072,12 @@ const _sfc_main$1 = {
             createBaseVNode("div", _hoisted_14, [
               createBaseVNode("img", {
                 src: unref(mascotImage),
-                alt: "AI Charlie"
+                alt: "AI Chat"
               }, null, 8, _hoisted_15)
             ]),
             createBaseVNode("div", _hoisted_16, [
-              createBaseVNode("h3", _hoisted_17, toDisplayString(unref(__)("Connect ExactMetrics to use AI Charlie", "google-analytics-dashboard-for-wp")), 1),
-              createBaseVNode("p", _hoisted_18, toDisplayString(unref(__)("AI Charlie requires an active ExactMetrics connection. Please connect your site to get started.", "google-analytics-dashboard-for-wp")), 1),
+              createBaseVNode("h3", _hoisted_17, toDisplayString(unref(__)("Connect ExactMetrics to use AI Chat", "google-analytics-dashboard-for-wp")), 1),
+              createBaseVNode("p", _hoisted_18, toDisplayString(unref(__)("AI Chat requires an active ExactMetrics connection. Please connect your site to get started.", "google-analytics-dashboard-for-wp")), 1),
               unref(wizardUrl) ? (openBlock(), createElementBlock("a", {
                 key: 0,
                 href: unref(wizardUrl),
@@ -4110,7 +4110,7 @@ const _sfc_main$1 = {
             createBaseVNode("div", _hoisted_21, [
               createBaseVNode("img", {
                 src: unref(mascotImage),
-                alt: "AI Charlie"
+                alt: "AI Chat"
               }, null, 8, _hoisted_22)
             ]),
             createBaseVNode("h3", _hoisted_23, [
@@ -4219,7 +4219,7 @@ const _sfc_main$1 = {
               ref: inputField,
               "onUpdate:modelValue": _cache[3] || (_cache[3] = ($event) => inputText.value = $event),
               class: "exactmetrics-ai-charlie__popup-input-field",
-              placeholder: unref(__)("Ask Charlie AI", "google-analytics-dashboard-for-wp"),
+              placeholder: unref(__)("Ask AI Chat", "google-analytics-dashboard-for-wp"),
               rows: "1",
               disabled: unref(chatStore).outOfCredits.active,
               onInput: autoResize,
@@ -4313,7 +4313,7 @@ function initAiCharlie() {
   const app = createApp(_sfc_main);
   app.use(createPinia());
   app.config.errorHandler = (err, _vm, info) => {
-    console.error("[AI Charlie] Error:", err, info);
+    console.error("[AI Chat] Error:", err, info);
   };
   app.mount(mountEl);
   return app;

@@ -287,7 +287,7 @@ function exactmetrics_frontend_admin_bar_scripts() {
 	);
 
 	// Set script translations for the admin bar app
-	$textdomain = exactmetrics_is_pro_version() ? 'exactmetrics-premium' : 'google-analytics-dashboard-for-wp';
+	$textdomain = exactmetrics_get_plugin_textdomain();
 	wp_set_script_translations(
 		'exactmetrics-admin-bar',
 		$textdomain,

@@ -1,6 +1,6 @@
 <?php
 /**
- * AI Charlie Chat AJAX Handlers.
+ * AI Chat Chat AJAX Handlers.
  *
  * Handles save, list, load, and delete operations for AI chat conversations.
  * Uses the ExactMetrics cache system with per-user groups.

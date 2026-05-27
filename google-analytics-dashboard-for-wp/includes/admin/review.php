@@ -126,9 +126,9 @@ class ExactMetrics_Review {
 			<div class="exactmetrics-review-step">
 				<p>
 					<?php
-					/* translators: %1$s: plugin name (ExactMetrics) */
 					echo wp_kses(
 						sprintf(
+							/* translators: %1$s: plugin name (ExactMetrics). */
 							__( 'Hey - we noticed you\'ve been using %1$s for a while - that\'s great! Could you do us a BIG favor and give it a 5-star review on WordPress to help us spread the word and boost our motivation?', 'google-analytics-dashboard-for-wp' ),
 							'<strong>ExactMetrics</strong>'
 						),

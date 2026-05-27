@@ -34,7 +34,6 @@ class ExactMetrics_PPC_Tracking_Core {
 		$this->require_files();
 		$this->init_ad_providers();
 		$this->init_ecommerce_providers();
-		$this->init_forms();
 	}
 
 	/**
@@ -43,10 +42,8 @@ class ExactMetrics_PPC_Tracking_Core {
 	 * @return void
 	 */
 	private function init_ad_providers() {
-		$core_providers = [
-			new ExactMetrics_Google_Ads_Pax()
-		];
-		
+		$core_providers = array();
+
 		$this->ad_providers = apply_filters( 'exactmetrics_ppc_ad_providers_register', $core_providers );
 	}
 
@@ -62,17 +59,8 @@ class ExactMetrics_PPC_Tracking_Core {
 		new ExactMetrics_Ads_Tracking_Ecommerce_RCP( $this->ad_providers );
 		new ExactMetrics_Ads_Tracking_Ecommerce_GiveWP( $this->ad_providers );
 		new ExactMetrics_Ads_Tracking_Ecommerce_Lifter_LMS( $this->ad_providers );
-		
-		do_action( 'exactmetrics_ppc_ecommerce_providers_register', $this->ad_providers );
-	}
 
-	/**
-	 * Initialize forms
-	 *
-	 * @return void
-	 */
-	private function init_forms() {
-		new ExactMetrics_Ads_Forms();
+		do_action( 'exactmetrics_ppc_ecommerce_providers_register', $this->ad_providers );
 	}
 
 	/**
@@ -82,51 +70,45 @@ class ExactMetrics_PPC_Tracking_Core {
 	 */
 	private function require_files() {
 
-		//  Load forms class
-		require_once EXACTMETRICS_PLUGIN_DIR . 'includes/ppc/class-exactmetrics-ads-forms.php';
-		
 		//  Load parent classes
-		if ( !class_exists('ExactMetrics_Ads_Tracking_Provider') ) {
+		if ( ! class_exists( 'ExactMetrics_Ads_Tracking_Provider' ) ) {
 			require_once EXACTMETRICS_PLUGIN_DIR . 'includes/ppc/class-exactmetrics-ads-tracking-provider.php';
 		}
-		
-		if ( !class_exists('ExactMetrics_Ads_Tracking_Ecommerce_Tracking') ) {
+
+		if ( ! class_exists( 'ExactMetrics_Ads_Tracking_Ecommerce_Tracking' ) ) {
 			require_once EXACTMETRICS_PLUGIN_DIR . 'includes/ppc/ecommerce-providers/class-exactmetrics-ads-tracking-ecommerce-tracking.php';
 		}
-		
-		//  Load Google PAX Tracking class
-		require_once EXACTMETRICS_PLUGIN_DIR . 'includes/ppc/google/class-exactmetrics-google-ads-pax.php';
 
 		//  Allow PPC addon to load its own things
-		do_action('exactmetrics_ppc_tracking_require_files');
-		
+		do_action( 'exactmetrics_ppc_tracking_require_files' );
+
 		//  WooCommerce
-		if ( !class_exists('ExactMetrics_Ads_Tracking_Ecommerce_Woo') ) {
+		if ( ! class_exists( 'ExactMetrics_Ads_Tracking_Ecommerce_Woo' ) ) {
 			require_once EXACTMETRICS_PLUGIN_DIR . 'includes/ppc/ecommerce-providers/class-exactmetrics-ads-tracking-ecommerce-woo.php';
 		}
 
 		//  EDD
-		if ( !class_exists('ExactMetrics_Ads_Tracking_Ecommerce_EDD') ) {
+		if ( ! class_exists( 'ExactMetrics_Ads_Tracking_Ecommerce_EDD' ) ) {
 			require_once EXACTMETRICS_PLUGIN_DIR . 'includes/ppc/ecommerce-providers/class-exactmetrics-ads-tracking-ecommerce-edd.php';
 		}
 
 		//  MemberPress
-		if ( !class_exists('ExactMetrics_Ads_Tracking_Ecommerce_MemberPress') ) {
+		if ( ! class_exists( 'ExactMetrics_Ads_Tracking_Ecommerce_MemberPress' ) ) {
 			require_once EXACTMETRICS_PLUGIN_DIR . 'includes/ppc/ecommerce-providers/class-exactmetrics-ads-tracking-ecommerce-memberpress.php';
 		}
 
 		//  RCP
-		if ( !class_exists('ExactMetrics_Ads_Tracking_Ecommerce_RCP') ) {
+		if ( ! class_exists( 'ExactMetrics_Ads_Tracking_Ecommerce_RCP' ) ) {
 			require_once EXACTMETRICS_PLUGIN_DIR . 'includes/ppc/ecommerce-providers/class-exactmetrics-ads-tracking-ecommerce-rcp.php';
 		}
 
 		//  GiveWP
-		if ( !class_exists('ExactMetrics_Ads_Tracking_Ecommerce_GiveWP') ) {
+		if ( ! class_exists( 'ExactMetrics_Ads_Tracking_Ecommerce_GiveWP' ) ) {
 			require_once EXACTMETRICS_PLUGIN_DIR . 'includes/ppc/ecommerce-providers/class-exactmetrics-ads-tracking-ecommerce-give-wp.php';
 		}
 
 		//  LifterLMS
-		if ( !class_exists('ExactMetrics_Ads_Tracking_Ecommerce_Lifter_LMS') ) {
+		if ( ! class_exists( 'ExactMetrics_Ads_Tracking_Ecommerce_Lifter_LMS' ) ) {
 			require_once EXACTMETRICS_PLUGIN_DIR . 'includes/ppc/ecommerce-providers/class-exactmetrics-ads-tracking-ecommerce-lifter-lms.php';
 		}
 	}

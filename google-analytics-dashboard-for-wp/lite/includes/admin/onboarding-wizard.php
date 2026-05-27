@@ -151,7 +151,7 @@ class ExactMetrics_Onboarding_Wizard {
 			)
 		);
 
-		$text_domain = exactmetrics_is_pro_version() ? 'exactmetrics-premium' : 'google-analytics-dashboard-for-wp';
+		$text_domain = exactmetrics_get_plugin_textdomain();
 
 		wp_scripts()->add_inline_script(
 			'exactmetrics-vue-script',

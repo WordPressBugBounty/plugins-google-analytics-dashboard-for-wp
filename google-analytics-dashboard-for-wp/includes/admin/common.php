@@ -41,10 +41,6 @@ function exactmetrics_is_settings_page() {
 		$settings_page = true;
 	}
 
-	if ( strpos( $current_screen->id, 'exactmetrics_google_ads' ) !== false ) {
-		$settings_page = true;
-	}
-
 	if ( ! empty( $current_screen->base ) && strpos( $current_screen->base, 'exactmetrics_network' ) !== false ) {
 		$settings_page = true;
 	}
@@ -100,14 +96,6 @@ function exactmetrics_is_own_admin_page() {
 	}
 
 	return false;
-}
-
-/**
- * Determine if the current page is Google Ads
- * @return bool
- */
-function exactmetrics_is_ads_page() {
-	return str_contains( get_current_screen()->id, 'exactmetrics_google_ads' );
 }
 
 /**
@@ -740,7 +728,7 @@ function exactmetrics_get_sitei() {
 require_once __DIR__ . '/admin-assets.php';
 
 /**
- * Include AI Charlie assets loader.
+ * Include AI Chat assets loader.
  */
 require_once __DIR__ . '/ai-charlie-assets.php';
 

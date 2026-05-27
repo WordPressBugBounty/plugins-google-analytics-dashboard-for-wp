@@ -31,6 +31,10 @@ class ExactMetrics_Ads_Tracking_Ecommerce_GiveWP extends ExactMetrics_Ads_Tracki
 	public function do_conversion_checks() {
 		global $post;
 
+		if ( ! $post instanceof WP_Post ) {
+			return false;
+		}
+
 		$current_page_id      = $post->ID;
 		$success_page_id = give_get_option( 'success_page' );
 

@@ -507,10 +507,6 @@
     "file": "img/givewp.png",
     "src": "src/assets/img/givewp.png"
   },
-  "src/assets/img/google-ads-welcome.png": {
-    "file": "img/google-ads-welcome.png",
-    "src": "src/assets/img/google-ads-welcome.png"
-  },
   "src/assets/img/icon-addon-ads.png": {
     "file": "img/icon-addon-ads.png",
     "src": "src/assets/img/icon-addon-ads.png"
@@ -1132,7 +1128,6 @@
       "img/woo-insights-ecommerce-report-image.png",
       "img/woo-insights-sessions-revenue.png",
       "img/wpconsent-page-feature-image.png",
-      "img/google-ads-welcome.png",
       "img/edd-xsell-banner.svg",
       "img/em-logo-lg.png",
       "img/icon-download.png",

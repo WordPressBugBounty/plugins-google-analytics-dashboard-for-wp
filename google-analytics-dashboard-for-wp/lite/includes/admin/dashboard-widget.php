@@ -136,8 +136,8 @@ class ExactMetrics_Dashboard_Widget {
 		?>
 		<div class="mi-dw-not-authed">
 			<?php
-			// Translators: Wizrd Link tag starts with url and Wizard link tag ends.
 			$message = sprintf(
+				/* translators: %1$s: Opening wizard link tag, %2$s: Closing wizard link tag. */
 				esc_html__( 'Your website analytics dashboard is not currently configured. Please use our %1$ssetup wizard%2$s to get started.', 'google-analytics-dashboard-for-wp' ),
 				'<a class="exactmetrics-setup-wizard-link">',
 				'</a>'
@@ -238,7 +238,7 @@ class ExactMetrics_Dashboard_Widget {
 
 			$this->remove_conflicting_asset_files();
 
-			$text_domain = exactmetrics_is_pro_version() ? 'exactmetrics-premium' : 'google-analytics-dashboard-for-wp';
+			$text_domain = exactmetrics_get_plugin_textdomain();
 
 			wp_scripts()->add_inline_script(
 				'exactmetrics-vue-widget',

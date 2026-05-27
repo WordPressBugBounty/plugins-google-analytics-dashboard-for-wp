@@ -56,9 +56,9 @@ final class ExactMetrics_Notification_Product_Feed_Upgrade extends ExactMetrics_
 						: 'https://www.exactmetrics.com/pricing/';
 
 					$notification['title'] = __( 'Upgrade to Pro for Product Feed Analytics', 'google-analytics-dashboard-for-wp' );
-					/* translators: product Feed Pro upgrade notification content */
-					$notification['content'] = sprintf( 
-						__( 'Great news! We detected that you have WooCommerce Product Feed Pro installed and there\'s product feed data available. Upgrade to ExactMetrics Pro to unlock detailed analytics for your product feed campaigns, track conversions, and optimize your shopping ads performance. %1$sUpgrade now%2$s to see your product feed insights!', 'google-analytics-dashboard-for-wp' ), 
+					$notification['content'] = sprintf(
+						/* translators: %1$s: Opening link tag, %2$s: Closing link tag. */
+						__( 'Great news! We detected that you have WooCommerce Product Feed Pro installed and there\'s product feed data available. Upgrade to ExactMetrics Pro to unlock detailed analytics for your product feed campaigns, track conversions, and optimize your shopping ads performance. %1$sUpgrade now%2$s to see your product feed insights!', 'google-analytics-dashboard-for-wp' ),
 						'<a href="' . $this->build_external_link( $upgrade_url ) . '" target="_blank">', 
 						'</a>' 
 					);
@@ -95,9 +95,9 @@ final class ExactMetrics_Notification_Product_Feed_Upgrade extends ExactMetrics_
 						: 'https://www.exactmetrics.com/how-to-set-up-google-shopping-campaigns/';
 
 					$notification['title'] = __( 'Product Feed Report Has No Data', 'google-analytics-dashboard-for-wp' );
-					/* translators: product Feed empty notification content */
-					$notification['content'] = sprintf( 
-						__( 'Your Product Feed report is currently empty, which means you may not be tracking product feed performance properly. This could indicate that your product feeds are not set up correctly or there are no product feed campaigns running. <br><br>Learn how to set up product feeds with %1$sthis guide%2$s to start tracking your product feed performance.', 'google-analytics-dashboard-for-wp' ), 
+					$notification['content'] = sprintf(
+						/* translators: %1$s: Opening link tag, %2$s: Closing link tag. */
+						__( 'Your Product Feed report is currently empty, which means you may not be tracking product feed performance properly. This could indicate that your product feeds are not set up correctly or there are no product feed campaigns running. <br><br>Learn how to set up product feeds with %1$sthis guide%2$s to start tracking your product feed performance.', 'google-analytics-dashboard-for-wp' ),
 						'<a href="' . $this->build_external_link( $learn_more_url ) . '" target="_blank">', 
 						'</a>' 
 					);
