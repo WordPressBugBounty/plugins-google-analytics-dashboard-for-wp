@@ -30,10 +30,10 @@
   "_exactmetrics-icons-6503547c.min.js": {
     "file": "js/chunks/exactmetrics-icons-6503547c.min.js"
   },
-  "_index-862226ff.min.js": {
+  "_index-14922756.min.js": {
     "assets": [
       "img/logo-ExactMetrics.png",
-      "img/logo-ExactMetrics@2x.png",
+      "img/logo-ExactMetrics@2x2.png",
       "img/logo-exactmetrics-agency.svg",
       "img/logo-exactmetrics-pro.svg",
       "img/logo-exactmetrics-plus.svg",
@@ -57,7 +57,7 @@
     "css": [
       "css/index.css"
     ],
-    "file": "js/chunks/index-862226ff.min.js",
+    "file": "js/chunks/index-14922756.min.js",
     "imports": [
       "_vendor-3b659282.min.js",
       "_LaunchWizardButton-87e30561.min.js",
@@ -384,7 +384,7 @@
     "src": "src/assets/img/exactmetrics/loading-background.jpg"
   },
   "src/assets/img/exactmetrics/logo-ExactMetrics@2x.png": {
-    "file": "img/logo-ExactMetrics@2x2.png",
+    "file": "img/logo-ExactMetrics@2x.png",
     "src": "src/assets/img/exactmetrics/logo-ExactMetrics@2x.png"
   },
   "src/assets/img/exactmetrics/media-report-upsell.png": {
@@ -568,7 +568,7 @@
     "src": "src/assets/img/logo-ExactMetrics.png"
   },
   "src/assets/img/logo-ExactMetrics@2x.png": {
-    "file": "img/logo-ExactMetrics@2x.png",
+    "file": "img/logo-ExactMetrics@2x2.png",
     "src": "src/assets/img/logo-ExactMetrics@2x.png"
   },
   "src/assets/img/logo-ExactMetrics.png": {
@@ -1110,7 +1110,7 @@
       "_vendor-3b659282.min.js",
       "_report-table-helper-09cb80d4.min.js",
       "_exactmetrics-helper-plugin-25bc9f0d.min.js",
-      "_index-862226ff.min.js",
+      "_index-14922756.min.js",
       "_LaunchWizardButton-87e30561.min.js",
       "_exactmetrics-icons-6503547c.min.js"
     ],
@@ -1308,7 +1308,7 @@
       "_exactmetrics-helper-plugin-25bc9f0d.min.js",
       "_LaunchWizardButton-87e30561.min.js",
       "_AboutTestimonialsSlider-8c975d20.min.js",
-      "_index-862226ff.min.js",
+      "_index-14922756.min.js",
       "_exactmetrics-icons-6503547c.min.js"
     ],
     "isEntry": true,
@@ -1432,7 +1432,7 @@
       "fonts/icons.woff",
       "fonts/icons.ttf",
       "fonts/icons.otf",
-      "img/logo-ExactMetrics@2x2.png",
+      "img/logo-ExactMetrics@2x.png",
       "img/icon-smile.png",
       "img/wpforms.png",
       "img/forms-screen.png",
