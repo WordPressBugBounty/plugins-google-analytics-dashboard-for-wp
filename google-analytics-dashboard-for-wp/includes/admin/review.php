@@ -172,6 +172,7 @@ class ExactMetrics_Review {
 					}
 					$.post(ajaxurl, {
 						action: 'exactmetrics_review_dismiss',
+						nonce: '<?php echo esc_js( wp_create_nonce( 'exactmetrics-review-dismiss' ) ); ?>',
 						review_later: $(this).hasClass('exactmetrics-review-later')
 					});
 					$('.exactmetrics-review-notice').remove();
@@ -187,6 +188,13 @@ class ExactMetrics_Review {
 	 * @since 7.0.7
 	 */
 	public function review_dismiss() {
+
+		check_ajax_referer( 'exactmetrics-review-dismiss', 'nonce' );
+
+		if ( ! current_user_can( 'exactmetrics_save_settings' ) ) {
+			wp_die();
+		}
+
 		$review              = get_option( 'exactmetrics_review', array() );
 		$review['time']      = time();
 		$review['dismissed'] = true;

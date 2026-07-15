@@ -107,9 +107,13 @@ function exactmetrics_gutenberg_editor_assets() {
 			'current_post_type'            => $posttype,
 			'is_headline_analyzer_enabled' => apply_filters( 'exactmetrics_headline_analyzer_enabled', true ) && 'true' !== exactmetrics_get_option( 'disable_headline_analyzer' ),
 			'reports_url'                  => add_query_arg( 'page', 'exactmetrics_overview_report', admin_url( 'admin.php' ) ),
-			'vue_assets_path'              => plugins_url( $version_path . '/assets/vue/', EXACTMETRICS_PLUGIN_FILE ),
+			'vue_assets_path'              => plugins_url( 'assets/gutenberg/', EXACTMETRICS_PLUGIN_FILE ),
 			'is_woocommerce_installed'     => class_exists( 'WooCommerce' ),
 			'license_type'                 => ExactMetrics()->license->get_license_type(),
+			// AI optimizer needs a bearer token, gated on exactmetrics_view_dashboard.
+			// Expose the same cap so the editor can hide the button for roles that would
+			// otherwise pass the license check but fail token retrieval (e.g. Authors).
+			'can_optimize_headline'        => current_user_can( 'exactmetrics_view_dashboard' ),
 			'upgrade_url'                  => exactmetrics_get_upgrade_link( 'pageinsights-meta', 'products' ),
 			'install_woocommerce_url'      => $install_woocommerce_url,
 			'supports_custom_fields'       => post_type_supports( $posttype, 'custom-fields' ),
@@ -119,6 +123,12 @@ function exactmetrics_gutenberg_editor_assets() {
 			'isnetwork'                    => is_network_admin(),
 			'is_v4'                        => true,
 			'conversion_tracking_upgrade_url' => exactmetrics_get_upgrade_link( 'conversion-tracking', 'products' ),
+			'block_preview_urls'           => array(
+				'inline'        => plugins_url( 'assets/images/gutenberg/block-preview-inline.svg', EXACTMETRICS_PLUGIN_FILE ),
+				'widget'        => plugins_url( 'assets/images/gutenberg/block-preview-widget.svg', EXACTMETRICS_PLUGIN_FILE ),
+				'products'      => plugins_url( 'assets/images/gutenberg/block-preview-products.svg', EXACTMETRICS_PLUGIN_FILE ),
+				'site-insights' => plugins_url( 'assets/images/gutenberg/block-preview-site-insights.svg', EXACTMETRICS_PLUGIN_FILE ),
+			),
 		) )
 	);
 

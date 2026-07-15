@@ -85,19 +85,12 @@ class ExactMetrics_API_Token {
 		$expires_at = $timestamp + self::TOKEN_EXPIRATION;
 
 		// Include the license key so the AI Chat API can determine the plan
-		// without a DB lookup. Lite users have no license key.
-		$license_key = '';
-		if ( exactmetrics_is_pro_version() ) {
-			$license_key = $network
-				? ExactMetrics()->license->get_network_license_key()
-				: ExactMetrics()->license->get_site_license_key();
-		}
-
+		// without a DB lookup. The Lite compat accessor returns an empty string.
 		$payload = array(
 			'site_url'   => $network ? network_admin_url() : home_url(),
-			'license'    => $license_key ?: '',
 			'issued_at'  => $timestamp,
 			'expires_at' => $expires_at,
+			'license'    => ExactMetrics()->license->get_license_key_by_context( $network ),
 		);
 
 		// Encrypt the payload.
@@ -319,4 +312,13 @@ class ExactMetrics_API_Token {
 add_action(
 	'wp_ajax_exactmetrics_get_bearer_token',
 	array( 'ExactMetrics_API_Token', 'ajax_get_token' )
+);
+
+// Drop the cached token whenever the license changes so the next AI request
+// uses the new license key rather than the stale one.
+add_action(
+	'exactmetrics_license_changed',
+	static function ( $network ) {
+		ExactMetrics_API_Token::invalidate( (bool) $network );
+	}
 );

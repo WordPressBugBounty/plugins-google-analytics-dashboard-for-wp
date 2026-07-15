@@ -283,7 +283,7 @@ final class ExactMetrics_API_Auth {
 		// Check nonce
 		check_ajax_referer( 'mi-admin-nonce', 'nonce' );
 
-		$url = admin_url( 'admin.php?page=exactmetrics-onboarding' );
+		$url = exactmetrics_get_onboarding_url();
 
 		// current user can authenticate
 		if ( ! current_user_can( 'exactmetrics_save_settings' ) ) {
@@ -546,7 +546,7 @@ final class ExactMetrics_API_Auth {
 		// Check nonce
 		check_ajax_referer( 'mi-admin-nonce', 'nonce' );
 
-		$url = network_admin_url( 'admin.php?page=exactmetrics-onboarding' );
+		$url = exactmetrics_get_onboarding_url();
 
 		// current user can delete
 		if ( ! current_user_can( 'exactmetrics_save_settings' ) ) {
@@ -789,6 +789,10 @@ final class ExactMetrics_API_Auth {
 		$public_key = $is_network
 			? $auth->get_network_key()
 			: $auth->get_key();
+
+		if ( empty( $public_key ) ) {
+			wp_send_json_error( new WP_Error( 'exactmetrics_mp_token_no_public_key' ) );
+		}
 
 		$hashed_data = array(
 			'mp_token'  => !empty($_POST['mp_token']) ? sanitize_text_field( wp_unslash( $_POST['mp_token'] ) ) : '', // phpcs:ignore WordPress.Security.NonceVerification.Missing

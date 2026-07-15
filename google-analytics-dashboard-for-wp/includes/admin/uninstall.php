@@ -24,6 +24,11 @@ function exactmetrics_uninstall_remove_options() {
 	delete_option( 'exactmetrics_admin_menu_tooltip' );
 	delete_option( 'exactmetrics_review' );
 
+	// Remove Ads addon-notice dismissal option (and any legacy transient from
+	// before the option-based persistence).
+	delete_option( 'exactmetrics_ads_addon_installed_notice_dismissed' );
+	delete_transient( 'exactmetrics_ads_addon_installed_notice_dismissed' );
+
 	// Delete addons transient.
 	delete_transient( 'exactmetrics_addons' );
 

@@ -302,6 +302,8 @@ function exactmetrics_frontend_admin_bar_scripts() {
 		'exactmetrics-vue-widget',
 		'exactmetrics-vue3-custom-dashboard',
 		'exactmetrics-vue3-reports',
+		'exactmetrics-vue3-settings',
+		'exactmetrics-vue3-widget',
 	);
 
 	foreach ( $competing_handles as $handle ) {
@@ -332,9 +334,9 @@ function exactmetrics_frontend_admin_bar_scripts() {
 			'is_admin'             => is_admin(),
 			'reports_url'          => $reports_url,
 			'authed'               => $site_auth || $ms_auth,
-			'auth_connect_url'     => is_network_admin() ? network_admin_url( 'index.php?page=exactmetrics-onboarding' ) : admin_url( 'index.php?page=exactmetrics-onboarding' ),
+			'auth_connect_url'     => exactmetrics_can_install_plugins() ? exactmetrics_get_onboarding_url() : '',
 			'getting_started_url'  => is_multisite() ? network_admin_url( 'admin.php?page=exactmetrics_network#/about/getting-started' ) : admin_url( 'admin.php?page=exactmetrics_settings#/about/getting-started' ),
-			'wizard_url'           => is_network_admin() ? network_admin_url( 'index.php?page=exactmetrics-onboarding' ) : admin_url( 'index.php?page=exactmetrics-onboarding' ),
+			'wizard_url'           => exactmetrics_can_install_plugins() ? exactmetrics_get_onboarding_url() : '',
 			'roles_manage_options' => exactmetrics_get_manage_options_roles(),
 			'user_roles'           => $current_user->roles,
 			'roles_view_reports'   => exactmetrics_get_option('view_reports'),
@@ -526,6 +528,10 @@ add_action( 'wp_footer', 'exactmetrics_administrator_tracking_notice', 300 );
 function exactmetrics_dismiss_tracking_notice() {
 
 	check_ajax_referer( 'exactmetrics-tracking-notice', 'nonce' );
+
+	if ( ! current_user_can( 'exactmetrics_save_settings' ) ) {
+		wp_die();
+	}
 
 	update_option( 'exactmetrics_frontend_tracking_notice_viewed', 1 );
 

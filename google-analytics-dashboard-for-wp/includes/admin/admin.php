@@ -562,7 +562,7 @@ function exactmetrics_admin_setup_notices()
 		$title = __('Urgent: Your Website is Not Tracking Any Google Analytics Data!', 'google-analytics-dashboard-for-wp');
 		$message = __('Google Analytics 3 (UA) and support was sunset on July 1, 2023. Your website is currently NOT tracking any analytics. </br>Create or connect a new Google Analytics 4 property immediately to start tracking.', 'google-analytics-dashboard-for-wp');
 
-		$wizard_url     = admin_url('admin.php?page=exactmetrics-onboarding');
+		$wizard_url     = exactmetrics_get_onboarding_url();
 
 		echo '<div class="notice notice-error is-dismissible exactmetrics-notice" data-notice="exactmetrics_ua_sunset">';
 		echo '<p><strong>' . esc_html($title) . '</strong></p>';
@@ -589,7 +589,6 @@ function exactmetrics_admin_setup_notices()
 		$submenu_base = is_network_admin() ? add_query_arg( 'page', 'exactmetrics_network', network_admin_url( 'admin.php' ) ) : add_query_arg( 'page', 'exactmetrics_settings', admin_url( 'admin.php' ) );
 		$title        = esc_html__( 'Please Setup Website Analytics to See Audience Insights', 'google-analytics-dashboard-for-wp' );
 		$primary      = esc_html__( 'Please Connect Your Website to ExactMetrics', 'google-analytics-dashboard-for-wp' );
-		$urlone       = is_network_admin() ? network_admin_url( 'admin.php?page=exactmetrics-onboarding' ) : admin_url( 'admin.php?page=exactmetrics-onboarding' );
 		$secondary    = esc_html__( 'Learn More', 'google-analytics-dashboard-for-wp' );
 		$urltwo       = $submenu_base . '#/about/getting-started';
 		$disclaimer   = __( 'Note: You will be transfered to ExactMetrics.com to complete the setup wizard.', 'google-analytics-dashboard-for-wp' );
@@ -738,7 +737,7 @@ function exactmetrics_admin_setup_notices()
 	$manual_text = sprintf(esc_html__('Important: You are currently using manual GA4 Measurement ID output. We highly recommend %1$sauthenticating with ExactMetrics%2$s so that you can access our new reporting area and take advantage of new ExactMetrics features.', 'google-analytics-dashboard-for-wp'), '<a href="' . $url . '">', '</a>');
 	$migrated    = exactmetrics_get_option('gadwp_migrated', 0);
 	if ($migrated > 0) {
-		$url = admin_url('admin.php?page=exactmetrics-getting-started&exactmetrics-migration=1');
+		$url = exactmetrics_get_onboarding_url();
 		/* translators: placeholders add links to the settings panel. */
 		$text        = esc_html__('Click %1$shere%2$s to reauthenticate to be able to access reports. For more information why this is required, see our %3$sblog post%4$s.', 'google-analytics-dashboard-for-wp');
 		$manual_text = sprintf($text, '<a href="' . esc_url($url) . '">', '</a>', '<a href="' . exactmetrics_get_url('notice', 'manual-ua', 'https://www.exactmetrics.com/why-did-we-implement-the-new-google-analytics-authentication-flow-challenges-explained/') . '" target="_blank">', '</a>');
@@ -947,6 +946,32 @@ add_action( 'admin_notices', 'exactmetrics_empty_measurement_protocol_token' );
 add_action( 'network_admin_notices', 'exactmetrics_admin_setup_notices' );
 
 /**
+ * Whether an addon admin notice was dismissed within the last 30 days.
+ *
+ * The dismissal timestamp is stored in an option rather than a transient: on
+ * hosts with a persistent object cache, transients can be evicted at any time,
+ * which made dismissed notices reappear within minutes. The legacy transient is
+ * still checked as a fallback so dismissals saved by the previous implementation
+ * stay honored until they expire.
+ *
+ * @since 10.2.3
+ *
+ * @param string $key Base key shared by the option and the legacy transient.
+ * @return bool True if dismissed less than 30 days ago, false otherwise.
+ */
+function exactmetrics_is_addon_notice_dismissed( $key ) {
+	$key          = sanitize_key( $key );
+	$dismissed_at = (int) get_option( $key, 0 );
+
+	if ( $dismissed_at && ( time() - $dismissed_at ) < 30 * DAY_IN_SECONDS ) {
+		return true;
+	}
+
+	// Legacy transient fallback for dismissals saved by the previous implementation.
+	return (bool) get_transient( $key );
+}
+
+/**
  * Display notice in admin when ExactMetrics Ads addon is installed.
  */
 function exactmetrics_ads_addon_installed_notice() {
@@ -954,8 +979,14 @@ function exactmetrics_ads_addon_installed_notice() {
 		return;
 	}
 
+	// Only admins can act on the addon recommendation, and the dismiss
+	// handler requires the same capability.
+	if ( ! current_user_can( 'manage_options' ) ) {
+		return;
+	}
+
 	// Hide notice if dismissed in the last 30 days.
-	if ( get_transient( 'exactmetrics_ads_addon_installed_notice_dismissed' ) ) {
+	if ( exactmetrics_is_addon_notice_dismissed( 'exactmetrics_ads_addon_installed_notice_dismissed' ) ) {
 		return;
 	}
 
@@ -977,12 +1008,12 @@ function exactmetrics_ads_addon_installed_notice() {
 		),
 		'<strong>',
 		'</strong>',
-		'<a href="' . $addons_url . '" target="' . $button_target . '">',
+		'<a href="' . esc_url( $addons_url ) . '" target="' . esc_attr( $button_target ) . '">',
 		'</a>'
 	);
 
-	// Output notice with an ID so the common admin JS can catch the dismiss and persist it for 30 days.
-	echo '<div id="exactmetrics-ads-addon-notice" class="notice notice-info is-dismissible"><p>' . $message . '</p><p><a href="' . $addons_url . '" class="button button-primary" target="' . $button_target . '">' . $button_text . '</a></p></div>'; // phpcs:ignore
+	// Output notice with an ID so the common admin JS can catch the dismiss and persist it.
+	echo '<div id="exactmetrics-ads-addon-notice" class="notice notice-info is-dismissible"><p>' . $message . '</p><p><a href="' . esc_url( $addons_url ) . '" class="button button-primary" target="' . esc_attr( $button_target ) . '">' . $button_text . '</a></p></div>'; // phpcs:ignore
 }
 
 add_action( 'admin_notices', 'exactmetrics_ads_addon_installed_notice' );
@@ -992,7 +1023,16 @@ add_action( 'admin_notices', 'exactmetrics_ads_addon_installed_notice' );
  */
 function exactmetrics_dismiss_ads_addon_notice_ajax() {
 	check_ajax_referer( 'exactmetrics-dismiss-notice', 'nonce' );
-	set_transient( 'exactmetrics_ads_addon_installed_notice_dismissed', 1, 30 * DAY_IN_SECONDS );
+	if ( ! current_user_can( 'exactmetrics_save_settings' ) ) {
+		wp_send_json_error( array( 'message' => esc_html__( 'Insufficient permissions', 'google-analytics-dashboard-for-wp' ) ) );
+		return;
+	}
+
+	// Store the dismissal timestamp in an option (not a transient): transients
+	// live in the object cache on sites with persistent caching and can be
+	// evicted early, which made the notice reappear after a successful dismissal.
+	// Not autoloaded: only read in admin.
+	update_option( 'exactmetrics_ads_addon_installed_notice_dismissed', time(), false );
 	wp_send_json_success();
 }
 add_action( 'wp_ajax_exactmetrics_dismiss_ads_addon_notice', 'exactmetrics_dismiss_ads_addon_notice_ajax' );
@@ -1035,6 +1075,9 @@ add_action( 'admin_notices', 'exactmetrics_ai_insights_addon_installed_notice' )
  */
 function exactmetrics_dismiss_ai_insights_addon_notice_ajax() {
 	check_ajax_referer( 'exactmetrics-dismiss-notice', 'nonce' );
+	if ( ! current_user_can( 'exactmetrics_save_settings' ) ) {
+		wp_send_json_error();
+	}
 	set_transient( 'exactmetrics_ai_insights_addon_notice_dismissed', 1, 30 * DAY_IN_SECONDS );
 	wp_send_json_success();
 }

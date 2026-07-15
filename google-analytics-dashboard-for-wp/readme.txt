@@ -4,7 +4,7 @@ Donate link: http://www.wpbeginner.com/wpbeginner-needs-your-help/
 Tags: analytics,google analytics,google analytics dashboard,google analytics plugin,website stats
 Requires at least: 5.6.0
 Tested up to: 7.0.0
-Stable tag: 9.2.2
+Stable tag: 10.1.0
 Requires PHP: 7.2
 License: GPL v3
 
@@ -28,7 +28,7 @@ Basically, we made the same advanced Google analytics setup that big enterprise 
 This is why even the large companies like Microsoft, Quickbooks, Pizza Hut, Delta, Pepsi, Coldwell Bankers, and many others are using ExactMetrics to properly setup Google Analytics and see the custom analytics reports in WordPress.
 
 > <strong>ExactMetrics Pro</strong><br />
-> This plugin is the lite version of ExactMetrics Pro plugin that comes with all the Google analytics tracking features you will ever need including events tracking, ecommerce tracking, custom dimensions tracking, form conversion tracking, affiliate link tracking, and tons more. [click here to purchase the best premium Google Analytics plugin for WordPress Now!](https://exactmetrics.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion). 
+> This plugin is the lite version of ExactMetrics Pro plugin that comes with all the Google analytics tracking features you will ever need including events tracking, ecommerce tracking, custom dimensions tracking, form conversion tracking, affiliate link tracking, and tons more. [click here to purchase the best premium Google Analytics plugin for WordPress Now!](https://exactmetrics.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion).
 We are on a mission to level the playing field for small businesses, so they can grow their business faster with data-driven decisions.
 
 https://www.youtube.com/watch?v=4GZ-IgZssao
@@ -131,6 +131,19 @@ You can translate Google Analytics Dashboard for WP by ExactMetrics on [translat
 4. Want more features? <a href="https://www.exactmetrics.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion">Purchase ExactMetrics Pro</a>!
 
 == Changelog ==
+= 10.1.0: July 15, 2026 =
+- New: Introducing new AI-Powered Headline Analyser
+- Enhancements: Various Performance Improvements and Bug Fixes
+
+= 10.0.1: July 7, 2026 =
+- Fixes: Various bug fixes and updates
+
+= 10.0.0: June 15, 2026 =
+- Fixes: Various bug fixes and updates
+
+= 9.2.99: June 11, 2026 =
+- Fixes: Various bug fixes and updates
+
 = 9.2.2: May 29, 2026 =
 - Fixes: Various bug fixes and updates
 
@@ -267,7 +280,7 @@ You can translate Google Analytics Dashboard for WP by ExactMetrics on [translat
 = 8.1.0: September 19, 2024 =
 - New: Stats at a Glance report shows you information about your website in a whole new way.
 - New: Google Ads Enhanced Conversion Support & Meta Conversion API Support (CAPI) for PPC Campaigns
-- Enhanced: Updated Google Analytics tag loading order to help increase Core Web Vital scores. 
+- Enhanced: Updated Google Analytics tag loading order to help increase Core Web Vital scores.
 - Fixed: Lots of minor updates and bug fixes.
 
 = 8.0.1: August 21, 2024 =
@@ -276,7 +289,7 @@ You can translate Google Analytics Dashboard for WP by ExactMetrics on [translat
 = 8.0.0: July 25, 2024 =
 - New: Conversations AI - chat with your website's analytics without any need to read reports
 - New: AI Insights - Get automated insights about your website with the power of AI
-- Fix: We fixed a PHP error occurring inside our Forms reports 
+- Fix: We fixed a PHP error occurring inside our Forms reports
 
 = 7.28.0: July 08, 2024 =
 -New: Date Comparisons - Now you can easily compare your stats on any chart or graph.
@@ -284,7 +297,7 @@ You can translate Google Analytics Dashboard for WP by ExactMetrics on [translat
 -Enhancement: We updated tooltips to make it easier to understand some options.
 
 = 7.27.0: May 29, 2024 =
-- New: Site Notes Automations addon. 
+- New: Site Notes Automations addon.
 - Fix: We fixed an issue related to eCommerce abandoned checkouts.
 - Fix: We fixed an issue related to UserJourney report pages.
 - Enhancement: We improved the notification system.
@@ -351,11 +364,11 @@ You can translate Google Analytics Dashboard for WP by ExactMetrics on [translat
 
 = 7.20: October 02, 2023 =
 - New: Google Analytics and eCommerce support for WishList Member
-- New: Google Analytics and eCommerce support for WPCharitable 
+- New: Google Analytics and eCommerce support for WPCharitable
 - Enhanced: Improved support for PHP 8.2.
 - Enhanced: Improved Site Health compatibility.
 - Fixed: Restrict Content Pro, we fixed the refund event in GoogleAnalytics when order status is failed or abandoned.
-- Fixed: We fixed some minor bugs related to notifications. 
+- Fixed: We fixed some minor bugs related to notifications.
 - Fixed: Popular posts, we fixed a bug occurring in curated popular posts.
 - Fixed: We fixed some minor bugs related to User Journey.
 
@@ -380,8 +393,8 @@ You can translate Google Analytics Dashboard for WP by ExactMetrics on [translat
 - Fixed: We fixed a bug in the AffiliateWP integration.
 
 = 7.16: June 15, 2023 =
-- New: User Journey report now available! See all of your website's purchases in one screen. 
-- Update: We updated the Popular Posts to support themes that allow widgets. 
+- New: User Journey report now available! See all of your website's purchases in one screen.
+- Update: We updated the Popular Posts to support themes that allow widgets.
 - Fixed: We fixed some layout issues in exported PDF reports.
 - Fixed: We fixed the deprecated YOAST function WPSEO_Utils::translate_score().
 - Fixed: We fixed a bug occurring while downloading files having the file download tracking enabled.

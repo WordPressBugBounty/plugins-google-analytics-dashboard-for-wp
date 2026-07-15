@@ -31,6 +31,12 @@ class ExactMetrics_WP_Site_Health_Lite {
 	 * @var bool|string
 	 */
 	private $ecommerce;
+	/**
+	 * Is the website being tracked?
+	 *
+	 * @var bool
+	 */
+	private $is_tracking;
 
 	/**
 	 * ExactMetrics_WP_Site_Health_Lite constructor.
@@ -326,18 +332,54 @@ class ExactMetrics_WP_Site_Health_Lite {
 			$result['description'] = __( 'ExactMetrics minor updates are enabled and you are getting the latest bugfixes and security updates, but not major features.', 'google-analytics-dashboard-for-wp' );
 		}
 		if ( 'none' === $updates_option ) {
-			$result['status']      = 'recommended';
-			$result['label']       = __( 'Automatic updates are disabled', 'google-analytics-dashboard-for-wp' );
-			$result['description'] = __( 'ExactMetrics automatic updates are disabled. We recommend enabling automatic updates so you can get access to the latest features, bugfixes, and security updates as they are released.', 'google-analytics-dashboard-for-wp' );
-			$result['actions']     = sprintf(
-				'<p><a href="%s" target="_blank" rel="noopener noreferrer">%s</a></p>',
-				add_query_arg( 'page', 'exactmetrics_settings#/advanced', admin_url( 'admin.php' ) ),
-				__( 'Update Settings', 'google-analytics-dashboard-for-wp' )
-			);
+			if ( $this->is_wp_auto_update_enabled() ) {
+				$result['label']       = __( 'Your website is receiving automatic updates', 'google-analytics-dashboard-for-wp' );
+				$result['description'] = __( 'ExactMetrics automatic updates are enabled via WordPress auto-update settings.', 'google-analytics-dashboard-for-wp' );
+			} else {
+				$result['status']      = 'recommended';
+				$result['label']       = __( 'Automatic updates are disabled', 'google-analytics-dashboard-for-wp' );
+				$result['description'] = __( 'ExactMetrics automatic updates are disabled. We recommend enabling automatic updates so you can get access to the latest features, bugfixes, and security updates as they are released.', 'google-analytics-dashboard-for-wp' );
+				$result['actions']     = sprintf(
+					'<p><a href="%s" target="_blank" rel="noopener noreferrer">%s</a></p>',
+					add_query_arg( 'page', 'exactmetrics_settings#/advanced', admin_url( 'admin.php' ) ),
+					__( 'Update Settings', 'google-analytics-dashboard-for-wp' )
+				);
+			}
 		}
 
 		return $result;
 
+	}
+
+	/**
+	 * Check if WordPress auto-updates are enabled for the ExactMetrics plugin
+	 * via the built-in auto-update plugins list or the auto_update_plugin filter.
+	 *
+	 * @return bool
+	 */
+	private function is_wp_auto_update_enabled() {
+		$plugin_file = plugin_basename( EXACTMETRICS_PLUGIN_FILE );
+
+		// Determine the default state from the WordPress auto-update plugins list.
+		$auto_updates = (array) get_site_option( 'auto_update_plugins', array() );
+		$default      = in_array( $plugin_file, $auto_updates, true );
+
+		// Check if any other filter on auto_update_plugin would enable or disable auto-updates.
+		// Temporarily remove our filter to isolate external filters.
+		remove_filter( 'auto_update_plugin', 'exactmetrics_automatic_updates', 10 );
+
+		$item = (object) array(
+			'slug'   => 'google-analytics-dashboard-for-wp',
+			'plugin' => $plugin_file,
+		);
+
+		/** This filter is documented in wp-admin/includes/class-wp-automatic-updater.php */
+		$enabled = apply_filters( 'auto_update_plugin', $default, $item );
+
+		// Re-add our filter.
+		add_filter( 'auto_update_plugin', 'exactmetrics_automatic_updates', 10, 2 );
+
+		return (bool) $enabled;
 	}
 
 	/**

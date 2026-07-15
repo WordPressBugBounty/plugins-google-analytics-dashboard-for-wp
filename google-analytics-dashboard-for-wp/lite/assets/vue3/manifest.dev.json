@@ -1,0 +1,4763 @@
+{
+  "_ApexBarChart-DqWhakFR.js": {
+    "file": "js/chunks/ApexBarChart-DqWhakFR.js",
+    "name": "ApexBarChart",
+    "imports": [
+      "_default-i18n-KrIlCc2E.js",
+      "_vue3-apexcharts-ErQ4EB6K.js",
+      "_useChartColors-DfB5TXg7.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_toastStore-CjmlShHI.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-Bh3HHjmL.css"
+    ]
+  },
+  "_ApexLineChart-Df-zujYW.js": {
+    "file": "js/chunks/ApexLineChart-Df-zujYW.js",
+    "name": "ApexLineChart",
+    "imports": [
+      "_default-i18n-KrIlCc2E.js",
+      "_vue3-apexcharts-ErQ4EB6K.js",
+      "_useChartColors-DfB5TXg7.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_toastStore-CjmlShHI.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-BiXBtaTy.css"
+    ]
+  },
+  "_AppOverlays-GGnrWZ9e.js": {
+    "file": "js/chunks/AppOverlays-GGnrWZ9e.js",
+    "name": "AppOverlays",
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-BqoTIBUO.css"
+    ]
+  },
+  "_ContentIconList-Cbwc93uo.js": {
+    "file": "js/chunks/ContentIconList-Cbwc93uo.js",
+    "name": "ContentIconList",
+    "imports": [
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_ajax-Uw5S1uqk.js",
+      "_toastStore-CjmlShHI.js"
+    ]
+  },
+  "_ContentIntroFullWidth-Cv-KKuIE.js": {
+    "file": "js/chunks/ContentIntroFullWidth-Cv-KKuIE.js",
+    "name": "ContentIntroFullWidth",
+    "imports": [
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_ajax-Uw5S1uqk.js",
+      "_toastStore-CjmlShHI.js"
+    ]
+  },
+  "_ContentTitleTop-8n-knvtm.js": {
+    "file": "js/chunks/ContentTitleTop-8n-knvtm.js",
+    "name": "ContentTitleTop",
+    "imports": [
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_ajax-Uw5S1uqk.js",
+      "_toastStore-CjmlShHI.js"
+    ]
+  },
+  "_DatePicker-0IkGB934.js": {
+    "file": "js/chunks/DatePicker-0IkGB934.js",
+    "name": "DatePicker",
+    "imports": [
+      "_default-i18n-KrIlCc2E.js",
+      "_toastStore-CjmlShHI.js",
+      "_flatpickr-rZFU0y0u.js",
+      "_dateIntervals-BPoui_3H.js",
+      "_useFeatureGate-Cpz_XvaQ.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-C6k6S7Kx.css"
+    ]
+  },
+  "_ErrorModal-CSWM7gHU.js": {
+    "file": "js/chunks/ErrorModal-CSWM7gHU.js",
+    "name": "ErrorModal",
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_default-i18n-KrIlCc2E.js",
+      "_Icon-BKVJ2HHT.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_useFeatureGate-Cpz_XvaQ.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_useChartColors-DfB5TXg7.js",
+      "_LoadingSpinnerInline-CEN6fdH3.js",
+      "_ajax-Uw5S1uqk.js",
+      "_vue3-apexcharts-ErQ4EB6K.js",
+      "_ApexBarChart-DqWhakFR.js",
+      "_dateIntervals-BPoui_3H.js",
+      "_DatePicker-0IkGB934.js",
+      "_Modal-CzneZfPu.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-DyLOCFBa.css"
+    ]
+  },
+  "_FunnelModal-Bdv9NcJE.js": {
+    "file": "js/chunks/FunnelModal-Bdv9NcJE.js",
+    "name": "FunnelModal",
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_Icon-BKVJ2HHT.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_addons-DcCBQDEz.js",
+      "src/modules/reports/main.js",
+      "_default-i18n-KrIlCc2E.js"
+    ]
+  },
+  "_Icon-BKVJ2HHT.js": {
+    "file": "js/chunks/Icon-BKVJ2HHT.js",
+    "name": "Icon",
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-DdCOUrGJ.css"
+    ]
+  },
+  "_LaunchWizardButton-BuPkh4Ew.js": {
+    "file": "js/chunks/LaunchWizardButton-BuPkh4Ew.js",
+    "name": "LaunchWizardButton",
+    "imports": [
+      "_ajax-Uw5S1uqk.js",
+      "_addons-DcCBQDEz.js",
+      "_toastStore-CjmlShHI.js"
+    ]
+  },
+  "_LoadingSpinnerInline-CEN6fdH3.js": {
+    "file": "js/chunks/LoadingSpinnerInline-CEN6fdH3.js",
+    "name": "LoadingSpinnerInline",
+    "imports": [
+      "_default-i18n-KrIlCc2E.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_toastStore-CjmlShHI.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-CKJSBouy.css"
+    ]
+  },
+  "_Modal-CzneZfPu.js": {
+    "file": "js/chunks/Modal-CzneZfPu.js",
+    "name": "Modal",
+    "imports": [
+      "_toastStore-CjmlShHI.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-B5HoD7CV.css"
+    ]
+  },
+  "_PopularPostsVideoModal-BQ3eoJ-t.js": {
+    "file": "js/chunks/PopularPostsVideoModal-BQ3eoJ-t.js",
+    "name": "PopularPostsVideoModal",
+    "imports": [
+      "_settings-BVkGy_Cz.js",
+      "_toastStore-CjmlShHI.js",
+      "_popularPosts-LBEcKCPS.js",
+      "_addons-DcCBQDEz.js",
+      "_ajax-Uw5S1uqk.js",
+      "_SettingsInputText-Si-V9oum.js",
+      "_vue-multiselect.esm-CupFr6V6.js",
+      "_SettingsInputSelect-Dtl5Sysl.js",
+      "_Modal-CzneZfPu.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-BfA9e5wT.css"
+    ]
+  },
+  "_ReportChartSection-W3cI7Zby.js": {
+    "file": "js/chunks/ReportChartSection-W3cI7Zby.js",
+    "name": "ReportChartSection",
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_default-i18n-KrIlCc2E.js",
+      "_ApexLineChart-Df-zujYW.js",
+      "_LoadingSpinnerInline-CEN6fdH3.js",
+      "_Icon-BKVJ2HHT.js",
+      "_SiteNotes-DTNIQUYd.js",
+      "_overviewTableFormatters-CC_6ogRL.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_useOverviewChartData-DE1ommJa.js",
+      "_useChartColors-DfB5TXg7.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-JsfEpJsg.css"
+    ]
+  },
+  "_ReportDataTable-BRD0H1Zv.js": {
+    "file": "js/chunks/ReportDataTable-BRD0H1Zv.js",
+    "name": "ReportDataTable",
+    "imports": [
+      "_default-i18n-KrIlCc2E.js",
+      "_Icon-BKVJ2HHT.js",
+      "_LoadingSpinnerInline-CEN6fdH3.js",
+      "_ReportTableModal-BsCwm9nW.js",
+      "src/modules/reports/main.js",
+      "_ajax-Uw5S1uqk.js",
+      "_overviewTableFormatters-CC_6ogRL.js",
+      "_toastStore-CjmlShHI.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-Bwn3eYFP.css"
+    ]
+  },
+  "_ReportKeyMetrics-a29-oLzY.js": {
+    "file": "js/chunks/ReportKeyMetrics-a29-oLzY.js",
+    "name": "ReportKeyMetrics",
+    "imports": [
+      "_Icon-BKVJ2HHT.js",
+      "_toastStore-CjmlShHI.js"
+    ]
+  },
+  "_ReportPageLayout-C4sDdqO7.js": {
+    "file": "js/chunks/ReportPageLayout-C4sDdqO7.js",
+    "name": "ReportPageLayout",
+    "imports": [
+      "_default-i18n-KrIlCc2E.js",
+      "_addons-DcCBQDEz.js",
+      "_ajax-Uw5S1uqk.js",
+      "_useReportPermissions-_eyKnlni.js",
+      "src/modules/reports/main.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js",
+      "_useAuthGate-Ci3sAzws.js",
+      "_toastStore-CjmlShHI.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-uXEj5soP.css"
+    ]
+  },
+  "_ReportPieChart-CWTEHavI.js": {
+    "file": "js/chunks/ReportPieChart-CWTEHavI.js",
+    "name": "ReportPieChart",
+    "imports": [
+      "_default-i18n-KrIlCc2E.js",
+      "_vue3-apexcharts-ErQ4EB6K.js",
+      "_toastStore-CjmlShHI.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-DwI9-V5g.css"
+    ]
+  },
+  "_ReportTableModal-BsCwm9nW.js": {
+    "file": "js/chunks/ReportTableModal-BsCwm9nW.js",
+    "name": "ReportTableModal",
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_Modal-CzneZfPu.js",
+      "_Icon-BKVJ2HHT.js",
+      "_overviewTableFormatters-CC_6ogRL.js",
+      "_default-i18n-KrIlCc2E.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-PhT_QwHw.css"
+    ]
+  },
+  "_SettingsAddonDisabled-BK0ydGiM.js": {
+    "file": "js/chunks/SettingsAddonDisabled-BK0ydGiM.js",
+    "name": "SettingsAddonDisabled",
+    "imports": [
+      "_ajax-Uw5S1uqk.js",
+      "_toastStore-CjmlShHI.js"
+    ]
+  },
+  "_SettingsAddonUpgrade-DbDUMvnr.js": {
+    "file": "js/chunks/SettingsAddonUpgrade-DbDUMvnr.js",
+    "name": "SettingsAddonUpgrade",
+    "imports": [
+      "_ajax-Uw5S1uqk.js",
+      "_toastStore-CjmlShHI.js"
+    ]
+  },
+  "_SettingsBlock-Bsp6Fu6H.js": {
+    "file": "js/chunks/SettingsBlock-Bsp6Fu6H.js",
+    "name": "SettingsBlock",
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_SlideDownUp-69HctpXG.js"
+    ]
+  },
+  "_SettingsInfoTooltip-DGz1RdtP.js": {
+    "file": "js/chunks/SettingsInfoTooltip-DGz1RdtP.js",
+    "name": "SettingsInfoTooltip",
+    "imports": [
+      "_toastStore-CjmlShHI.js"
+    ]
+  },
+  "_SettingsInputCheckbox-B6Cq-zQE.js": {
+    "file": "js/chunks/SettingsInputCheckbox-B6Cq-zQE.js",
+    "name": "SettingsInputCheckbox",
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_settings-BVkGy_Cz.js",
+      "_exactmetrics-Lite-BcFa0OAR.js",
+      "_addons-DcCBQDEz.js",
+      "_SettingsInfoTooltip-DGz1RdtP.js",
+      "_SlideDownUp-69HctpXG.js"
+    ]
+  },
+  "_SettingsInputNumber--SxI7Hdh.js": {
+    "file": "js/chunks/SettingsInputNumber--SxI7Hdh.js",
+    "name": "SettingsInputNumber",
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_ajax-Uw5S1uqk.js",
+      "_settings-BVkGy_Cz.js",
+      "_exactmetrics-Lite-BcFa0OAR.js",
+      "_addons-DcCBQDEz.js",
+      "_SettingsInfoTooltip-DGz1RdtP.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-BQlCMxYl.css"
+    ]
+  },
+  "_SettingsInputRadio-BIIVvaRz.js": {
+    "file": "js/chunks/SettingsInputRadio-BIIVvaRz.js",
+    "name": "SettingsInputRadio",
+    "imports": [
+      "_settings-BVkGy_Cz.js",
+      "_exactmetrics-Lite-BcFa0OAR.js",
+      "_addons-DcCBQDEz.js",
+      "_toastStore-CjmlShHI.js"
+    ]
+  },
+  "_SettingsInputRepeater-B2m236qz.js": {
+    "file": "js/chunks/SettingsInputRepeater-B2m236qz.js",
+    "name": "SettingsInputRepeater",
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_ajax-Uw5S1uqk.js",
+      "_settings-BVkGy_Cz.js",
+      "_exactmetrics-Lite-BcFa0OAR.js",
+      "_addons-DcCBQDEz.js"
+    ]
+  },
+  "_SettingsInputSelect-Dtl5Sysl.js": {
+    "file": "js/chunks/SettingsInputSelect-Dtl5Sysl.js",
+    "name": "SettingsInputSelect",
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_vue-multiselect.esm-CupFr6V6.js",
+      "_settings-BVkGy_Cz.js",
+      "_addons-DcCBQDEz.js",
+      "_exactmetrics-Lite-BcFa0OAR.js",
+      "_SettingsInfoTooltip-DGz1RdtP.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-BQCovfZ-.css"
+    ]
+  },
+  "_SettingsInputText-Si-V9oum.js": {
+    "file": "js/chunks/SettingsInputText-Si-V9oum.js",
+    "name": "SettingsInputText",
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_settings-BVkGy_Cz.js",
+      "_exactmetrics-Lite-BcFa0OAR.js",
+      "_addons-DcCBQDEz.js",
+      "_SettingsInfoTooltip-DGz1RdtP.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-D0h0-uQX.css"
+    ]
+  },
+  "_SiteNotes-DTNIQUYd.js": {
+    "file": "js/chunks/SiteNotes-DTNIQUYd.js",
+    "name": "SiteNotes",
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_default-i18n-KrIlCc2E.js",
+      "_flatpickr-rZFU0y0u.js",
+      "_LoadingSpinnerInline-CEN6fdH3.js",
+      "_Icon-BKVJ2HHT.js",
+      "_siteNotes-DsF95A7r.js"
+    ]
+  },
+  "_SlideDownUp-69HctpXG.js": {
+    "file": "js/chunks/SlideDownUp-69HctpXG.js",
+    "name": "SlideDownUp",
+    "imports": [
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_toastStore-CjmlShHI.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-DCic6-mZ.css"
+    ]
+  },
+  "_TheAppHeader-BI_ZrtNW.js": {
+    "file": "js/chunks/TheAppHeader-BI_ZrtNW.js",
+    "name": "TheAppHeader",
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_ajax-Uw5S1uqk.js"
+    ]
+  },
+  "_UniversallyPromo-lKsveXRx.js": {
+    "file": "js/chunks/UniversallyPromo-lKsveXRx.js",
+    "name": "UniversallyPromo",
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_addons-DcCBQDEz.js",
+      "_default-i18n-KrIlCc2E.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-Bue-tRpB.css"
+    ]
+  },
+  "__plugin-vue_export-helper-1tPrXgE0.js": {
+    "file": "js/chunks/_plugin-vue_export-helper-1tPrXgE0.js",
+    "name": "_plugin-vue_export-helper"
+  },
+  "_addons-DcCBQDEz.js": {
+    "file": "js/chunks/addons-DcCBQDEz.js",
+    "name": "addons",
+    "imports": [
+      "_useNotices-BosR4uY_.js",
+      "_toastStore-CjmlShHI.js",
+      "_ajax-Uw5S1uqk.js",
+      "_Modal-CzneZfPu.js"
+    ]
+  },
+  "_aggregateDateEntityRows-i7QMgwng.js": {
+    "file": "js/chunks/aggregateDateEntityRows-i7QMgwng.js",
+    "name": "aggregateDateEntityRows"
+  },
+  "_ajax-Uw5S1uqk.js": {
+    "file": "js/chunks/ajax-Uw5S1uqk.js",
+    "name": "ajax",
+    "imports": [
+      "_toastStore-CjmlShHI.js"
+    ],
+    "dynamicImports": [
+      "src/stores/sample-data/custom-dashboard/sample-view.json",
+      "src/stores/sample-data/custom-dashboard/widgets-data.json"
+    ]
+  },
+  "_auth-Rcit4ziJ.js": {
+    "file": "js/chunks/auth-Rcit4ziJ.js",
+    "name": "auth",
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_ajax-Uw5S1uqk.js"
+    ]
+  },
+  "_buildGaExplorerReportUrl-EaZ84MNO.js": {
+    "file": "js/chunks/buildGaExplorerReportUrl-EaZ84MNO.js",
+    "name": "buildGaExplorerReportUrl"
+  },
+  "_compareDateLabels-B56Y3XjZ.js": {
+    "file": "js/chunks/compareDateLabels-B56Y3XjZ.js",
+    "name": "compareDateLabels"
+  },
+  "_dateIntervals-BPoui_3H.js": {
+    "file": "js/chunks/dateIntervals-BPoui_3H.js",
+    "name": "dateIntervals",
+    "imports": [
+      "_default-i18n-KrIlCc2E.js"
+    ]
+  },
+  "_default-i18n-KrIlCc2E.js": {
+    "file": "js/chunks/default-i18n-KrIlCc2E.js",
+    "name": "default-i18n"
+  },
+  "_ecommerceReports-C20tM74X.js": {
+    "file": "js/chunks/ecommerceReports-C20tM74X.js",
+    "name": "ecommerceReports",
+    "imports": [
+      "src/modules/reports/main.js",
+      "_reportCache-DcJQ7wbP.js",
+      "_ecommerceSampleData-CfcmM5cV.js"
+    ]
+  },
+  "_ecommerceSampleData-CfcmM5cV.js": {
+    "file": "js/chunks/ecommerceSampleData-CfcmM5cV.js",
+    "name": "ecommerceSampleData"
+  },
+  "_exactmetrics-Lite-BcFa0OAR.js": {
+    "file": "js/chunks/exactmetrics-Lite-BcFa0OAR.js",
+    "name": "exactmetrics-Lite",
+    "imports": [
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_settings-BVkGy_Cz.js",
+      "_ajax-Uw5S1uqk.js",
+      "_toastStore-CjmlShHI.js",
+      "_addons-DcCBQDEz.js",
+      "_license-C6i4W44s.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-CBx8Q5I2.css"
+    ],
+    "assets": [
+      "assets/upsell-screen-DU5gKqan.png",
+      "assets/exactmetrics-Bg-IbxMo.png",
+      "assets/one-click-integrations-CKb4nKpx.png",
+      "assets/publishers-screen-KVLGYgNW.png",
+      "assets/addons-help-screen-GpaLKPNl.png",
+      "assets/search-console-screen-DpC1s2FO.png",
+      "assets/traffic-overview-screen-D2QfD0By.png",
+      "assets/traffic-landing-pages-screen-D6ajy99M.png",
+      "assets/traffic-technology-screen-g_-jWG7b.png",
+      "assets/traffic-source-medium-screen-DNkv8GJI.png",
+      "assets/traffic-campaigns-screen-D8US3qTo.png",
+      "assets/traffic-social-screen-8tAxluFY.png",
+      "assets/traffic-ai-screen-EaYKB90k.jpeg",
+      "assets/engagement-pages-screen-BUMX-t6M.png",
+      "assets/ecommerce-overview-screen-GGv9wdyw.png",
+      "assets/ecommerce-coupons-screen-CJzS-99J.png",
+      "assets/cart-abandonment-screen-Mu4LjlvL.png",
+      "assets/ecommerce-funnel-upsell-CDIZtMoT.png",
+      "assets/real-time-screen-lrNAdsm-.png",
+      "assets/site-speed-screen-BLIxY8p3.png",
+      "assets/country-report-screen-B5HBG0hM.png",
+      "assets/forms-report-screen-vpTdd3UW.png",
+      "assets/dimensions-report-screen-BV3EGZCN.png",
+      "assets/media-report-upsell-CE0-Wy_S.png",
+      "assets/exception-report-screen-lYJ_W3io.png",
+      "assets/custom-events-report-screen-D5UtywA8.png",
+      "assets/bg-ecommerce-refunds-CKrYyTpX.png",
+      "assets/bg-ecommerce-refunds-by-geo-BvdVH8Od.png",
+      "assets/bg-ecommerce-purchases-by-location-DrPnzxXe.png",
+      "assets/bg-ecommerce-spend-by-day-DRlj_Gv_.png",
+      "assets/bg-ecommerce-spend-by-hour-D9VAnAWv.png",
+      "assets/user-journey-report-screen-YDBN-Xzo.png",
+      "assets/forms-screen-C9hswgIt.png",
+      "assets/optimize-screen-BIXAkako.png",
+      "assets/custom-dimensions-screen-BRXR6iez.png",
+      "assets/forms-wpforms-upsell-DiGJ1ioc.png",
+      "assets/bg-publisher@2x-DV7AEtV1.png",
+      "assets/bg-queries@2x-hMqBKeO_.png",
+      "assets/bg-forms@2x-DDCVkM3t.png",
+      "assets/bg-realtime@2x-Bj4r4U3g.png",
+      "assets/bg-ecommerce@2x-DqQIAx_E.png",
+      "assets/ecommerce-funnel@2x-BfPSZdMV.png",
+      "assets/bg-dimensions@2x-Dygf0shE.png",
+      "assets/bg-sitespeed@2x-DwC9jlLe.png",
+      "assets/bg-media-upsell-DnlL8gmw.svg",
+      "assets/bg-traffic-overview@2x-W3v8TZRO.png",
+      "assets/bg-traffic-landing-page@2x-Do5N_DFy.png",
+      "assets/bg-traffic-technology@2x-pzDGfzkl.png",
+      "assets/bg-traffic-source-medium@2x-BEWmnm2N.png",
+      "assets/bg-traffic-campaigns@2x-BEsLG5lW.png",
+      "assets/bg-ecommerce-product-sales@2x-Cn07L8ZY.png",
+      "assets/bg-ecommerce-coupons@2x-D9yDcdG9.png",
+      "assets/bg-cart-abandonment@2x-CY5dDLOX.png",
+      "assets/bg-engagement-pages@2x-Cy1-nvFe.png",
+      "assets/bg-countries-DLn_BDC3.png",
+      "assets/social-media-report@2x-CcLLHYek.png",
+      "assets/exceptions-report-BYAZOdma.png",
+      "assets/woocommerce-DV6kDMP6.png",
+      "assets/easy-digital-downloads-Cd4s_trb.png",
+      "assets/memberpress-CXCdB84n.png",
+      "assets/logo-wp-forms-BVfgY4Md.png",
+      "assets/rcp-CSXRrTgu.png",
+      "assets/givewp-DMywhpeP.png",
+      "assets/easy-affiliate-logo-BgGyElpp.png",
+      "assets/affiliate-wp-logo-CbYltpS1.png",
+      "assets/logo-formidable-forms-BXGgG_Pj.png",
+      "assets/setup-checklist-site-note-PH9YJDTj.png",
+      "assets/exactmetrics-report-ecommerce-B_2lR7XO.png",
+      "assets/affiliates-promo-logo-CZ0hdlbw.png",
+      "assets/wpconsent-promo-banner-lZdTUIfp.svg",
+      "assets/pp-theme-icons-BqbJsOK1.png",
+      "assets/theme-preview-beta-BQP5wRCQ.png",
+      "assets/theme-preview-image-Du73yHJK.jpg",
+      "assets/theme-preview-image-2-8ut-7vzL.jpg",
+      "assets/theme-widget-1-DocKd3_n.jpg",
+      "assets/theme-widget-2-Fe5eNsT3.jpg",
+      "assets/theme-widget-3-DdfI88iG.jpg",
+      "assets/theme-widget-4-CDuJt5xU.jpg",
+      "assets/theme-widget-5-3tXH4Mu7.jpg",
+      "assets/theme-widget-6-CB-hOUaa.jpg",
+      "assets/theme-widget-7-DJMvonAM.jpg",
+      "assets/theme-widget-8-DUkCJs1D.jpg",
+      "assets/theme-products-2-B6VA5RVe.jpg",
+      "assets/theme-products-3-DOsrRHWQ.jpg",
+      "assets/theme-products-4-CojNbWYE.jpg",
+      "assets/theme-products-5-CsY2njtT.jpg",
+      "assets/theme-products-6-CvgwDkIc.jpg",
+      "assets/theme-products-7-BcGvEFHc.jpg",
+      "assets/theme-products-8-BjDTGZfl.jpg",
+      "assets/popular-products-bg-DGc7Vr5u.jpg",
+      "assets/popular-products-browser-BlyRAAm4.jpg",
+      "assets/em-logo-lg-VJAZE3vu.png",
+      "assets/about-icon-connect-DAoaUoSQ.png",
+      "assets/about-icon-guide-COBxne7W.png",
+      "assets/about-icon-gdpr-BTD6obvj.png",
+      "assets/about-icon-addons-em-D6mL-SIE.png",
+      "assets/about-icon-ecommerce-CAFOtSeP.png",
+      "assets/about-team-BIYjWj57.jpg",
+      "assets/em-logo-D9qqdn5z.png",
+      "assets/about-getting-started-video-4Nri1eIG.png",
+      "assets/testimonial-image-1-gOgIARMk.jpg",
+      "assets/testimonial-image-2-CcUw_Zp-.jpg",
+      "assets/testimonial-image-3-CC_xZLPB.jpg",
+      "fonts/Roboto-Regular.woff2",
+      "fonts/Roboto-Bold.woff2",
+      "fonts/lato-regular-webfont.woff",
+      "fonts/lato-regular-webfont.woff2",
+      "fonts/lato-bold-webfont.woff",
+      "fonts/lato-bold-webfont.woff2",
+      "fonts/icons.woff2",
+      "fonts/icons.woff",
+      "fonts/icons.ttf",
+      "assets/aioseo-client-logo-1-tH1SYrXg.svg",
+      "assets/aioseo-client-logo-2-DffWHG7x.svg",
+      "assets/aioseo-client-logo-3-CJQ3YNjp.svg",
+      "assets/aioseo-client-logo-4-rmUdiF8S.svg",
+      "assets/aioseo-client-logo-5-BFbbcR6D.svg",
+      "assets/aioseo-client-logo-6-B1Xil_91.svg",
+      "assets/aioseo-client-logo-7-zu-ySb0j.svg",
+      "assets/aioseo-client-logo-8-MyDSqUcV.svg",
+      "assets/aioseo-client-logo-9-Cs1wjsF9.svg",
+      "assets/aioseo-client-logo-10-Bl7JSYeC.svg",
+      "assets/aioseo-client-logo-11-DVMVeIgg.svg",
+      "assets/aioseo-client-logo-12-BEkB8B5R.svg",
+      "assets/aioseo-screen-1-BQGPIB3_.svg",
+      "assets/aioseo-screen-2-By8FTTOW.svg",
+      "assets/exactmetrics-aioseo-DI_WvfmV.jpg",
+      "assets/pretty-links-logo-white-C4v9fTEj.svg",
+      "assets/em-pl-logo-DuSkixaX.svg",
+      "assets/badge-light-BsYgDwvF.svg",
+      "assets/badge-dark-kwfUYar-.svg",
+      "assets/charitable-logo-DHu2whGR.png",
+      "assets/membermouse-logo-BfPOOXow.png",
+      "assets/affiliates-promo-logo-CXLL8Y6U.png"
+    ]
+  },
+  "_flatpickr-rZFU0y0u.js": {
+    "file": "js/chunks/flatpickr-rZFU0y0u.js",
+    "name": "flatpickr",
+    "imports": [
+      "_toastStore-CjmlShHI.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-CMSe2SYd.css"
+    ]
+  },
+  "_license-C6i4W44s.js": {
+    "file": "js/chunks/license-C6i4W44s.js",
+    "name": "license",
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_ajax-Uw5S1uqk.js",
+      "_useNotices-BosR4uY_.js"
+    ]
+  },
+  "_main-exactmetrics-B5HoD7CV.css": {
+    "file": "css/main-exactmetrics-B5HoD7CV.css",
+    "src": "_main-exactmetrics-B5HoD7CV.css"
+  },
+  "_main-exactmetrics-BQCovfZ-.css": {
+    "file": "css/main-exactmetrics-BQCovfZ-.css",
+    "src": "_main-exactmetrics-BQCovfZ-.css"
+  },
+  "_main-exactmetrics-BQlCMxYl.css": {
+    "file": "css/main-exactmetrics-BQlCMxYl.css",
+    "src": "_main-exactmetrics-BQlCMxYl.css"
+  },
+  "_main-exactmetrics-BfA9e5wT.css": {
+    "file": "css/main-exactmetrics-BfA9e5wT.css",
+    "src": "_main-exactmetrics-BfA9e5wT.css"
+  },
+  "_main-exactmetrics-Bh3HHjmL.css": {
+    "file": "css/main-exactmetrics-Bh3HHjmL.css",
+    "src": "_main-exactmetrics-Bh3HHjmL.css"
+  },
+  "_main-exactmetrics-BiXBtaTy.css": {
+    "file": "css/main-exactmetrics-BiXBtaTy.css",
+    "src": "_main-exactmetrics-BiXBtaTy.css"
+  },
+  "_main-exactmetrics-BqoTIBUO.css": {
+    "file": "css/main-exactmetrics-BqoTIBUO.css",
+    "src": "_main-exactmetrics-BqoTIBUO.css"
+  },
+  "_main-exactmetrics-Bue-tRpB.css": {
+    "file": "css/main-exactmetrics-Bue-tRpB.css",
+    "src": "_main-exactmetrics-Bue-tRpB.css"
+  },
+  "_main-exactmetrics-Bwn3eYFP.css": {
+    "file": "css/main-exactmetrics-Bwn3eYFP.css",
+    "src": "_main-exactmetrics-Bwn3eYFP.css"
+  },
+  "_main-exactmetrics-C6k6S7Kx.css": {
+    "file": "css/main-exactmetrics-C6k6S7Kx.css",
+    "src": "_main-exactmetrics-C6k6S7Kx.css"
+  },
+  "_main-exactmetrics-CBx8Q5I2.css": {
+    "file": "css/main-exactmetrics-CBx8Q5I2.css",
+    "src": "_main-exactmetrics-CBx8Q5I2.css"
+  },
+  "_main-exactmetrics-CKJSBouy.css": {
+    "file": "css/main-exactmetrics-CKJSBouy.css",
+    "src": "_main-exactmetrics-CKJSBouy.css"
+  },
+  "_main-exactmetrics-CMSe2SYd.css": {
+    "file": "css/main-exactmetrics-CMSe2SYd.css",
+    "src": "_main-exactmetrics-CMSe2SYd.css"
+  },
+  "_main-exactmetrics-CusxVmhz.css": {
+    "file": "css/main-exactmetrics-CusxVmhz.css",
+    "src": "_main-exactmetrics-CusxVmhz.css"
+  },
+  "_main-exactmetrics-D0h0-uQX.css": {
+    "file": "css/main-exactmetrics-D0h0-uQX.css",
+    "src": "_main-exactmetrics-D0h0-uQX.css"
+  },
+  "_main-exactmetrics-DCic6-mZ.css": {
+    "file": "css/main-exactmetrics-DCic6-mZ.css",
+    "src": "_main-exactmetrics-DCic6-mZ.css"
+  },
+  "_main-exactmetrics-DdCOUrGJ.css": {
+    "file": "css/main-exactmetrics-DdCOUrGJ.css",
+    "src": "_main-exactmetrics-DdCOUrGJ.css"
+  },
+  "_main-exactmetrics-DwI9-V5g.css": {
+    "file": "css/main-exactmetrics-DwI9-V5g.css",
+    "src": "_main-exactmetrics-DwI9-V5g.css"
+  },
+  "_main-exactmetrics-DyLOCFBa.css": {
+    "file": "css/main-exactmetrics-DyLOCFBa.css",
+    "src": "_main-exactmetrics-DyLOCFBa.css"
+  },
+  "_main-exactmetrics-JsfEpJsg.css": {
+    "file": "css/main-exactmetrics-JsfEpJsg.css",
+    "src": "_main-exactmetrics-JsfEpJsg.css"
+  },
+  "_main-exactmetrics-PhT_QwHw.css": {
+    "file": "css/main-exactmetrics-PhT_QwHw.css",
+    "src": "_main-exactmetrics-PhT_QwHw.css"
+  },
+  "_main-exactmetrics-tn0RQdqM.css": {
+    "file": "css/main-exactmetrics-tn0RQdqM.css",
+    "src": "_main-exactmetrics-tn0RQdqM.css"
+  },
+  "_main-exactmetrics-uXEj5soP.css": {
+    "file": "css/main-exactmetrics-uXEj5soP.css",
+    "src": "_main-exactmetrics-uXEj5soP.css"
+  },
+  "_exactmetrics-SettingsInputAuthenticate-Lite-DNJt1JSz.js": {
+    "file": "js/chunks/exactmetrics-SettingsInputAuthenticate-Lite-DNJt1JSz.js",
+    "name": "exactmetrics-SettingsInputAuthenticate-Lite",
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_ajax-Uw5S1uqk.js",
+      "_addons-DcCBQDEz.js",
+      "_auth-Rcit4ziJ.js",
+      "_SlideDownUp-69HctpXG.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js"
+    ]
+  },
+  "_overviewTableFormatters-CC_6ogRL.js": {
+    "file": "js/chunks/overviewTableFormatters-CC_6ogRL.js",
+    "name": "overviewTableFormatters",
+    "imports": [
+      "_ajax-Uw5S1uqk.js"
+    ]
+  },
+  "_popularPosts-LBEcKCPS.js": {
+    "file": "js/chunks/popularPosts-LBEcKCPS.js",
+    "name": "popularPosts",
+    "imports": [
+      "_ajax-Uw5S1uqk.js"
+    ]
+  },
+  "_reportCache-DcJQ7wbP.js": {
+    "file": "js/chunks/reportCache-DcJQ7wbP.js",
+    "name": "reportCache",
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "src/modules/reports/main.js"
+    ]
+  },
+  "_reportValues-WD297wEw.js": {
+    "file": "js/chunks/reportValues-WD297wEw.js",
+    "name": "reportValues",
+    "imports": [
+      "_default-i18n-KrIlCc2E.js",
+      "_settings-BVkGy_Cz.js"
+    ]
+  },
+  "_seo-B-a9LBIc.js": {
+    "file": "js/chunks/seo-B-a9LBIc.js",
+    "name": "seo",
+    "imports": [
+      "_ajax-Uw5S1uqk.js",
+      "_toastStore-CjmlShHI.js"
+    ]
+  },
+  "_settings-BVkGy_Cz.js": {
+    "file": "js/chunks/settings-BVkGy_Cz.js",
+    "name": "settings",
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_ajax-Uw5S1uqk.js"
+    ]
+  },
+  "_siteNotes-DsF95A7r.js": {
+    "file": "js/chunks/siteNotes-DsF95A7r.js",
+    "name": "siteNotes",
+    "imports": [
+      "_ajax-Uw5S1uqk.js"
+    ]
+  },
+  "_toastStore-CjmlShHI.js": {
+    "file": "js/chunks/toastStore-CjmlShHI.js",
+    "name": "toastStore",
+    "assets": [
+      "assets/about-icon-addons-em-D6mL-SIE.png",
+      "assets/about-icon-addons-C2ixtqJP.png",
+      "assets/about-icon-connect-DAoaUoSQ.png",
+      "assets/about-icon-ecommerce-CAFOtSeP.png",
+      "assets/about-icon-gdpr-BTD6obvj.png",
+      "assets/about-icon-guide-COBxne7W.png",
+      "assets/about-team-BIYjWj57.jpg",
+      "assets/affiliates-promo-logo-CXLL8Y6U.png",
+      "assets/aioseo-client-logo-1-tH1SYrXg.svg",
+      "assets/aioseo-client-logo-10-Bl7JSYeC.svg",
+      "assets/aioseo-client-logo-11-DVMVeIgg.svg",
+      "assets/aioseo-client-logo-12-BEkB8B5R.svg",
+      "assets/aioseo-client-logo-2-DffWHG7x.svg",
+      "assets/aioseo-client-logo-3-CJQ3YNjp.svg",
+      "assets/aioseo-client-logo-4-rmUdiF8S.svg",
+      "assets/aioseo-client-logo-5-BFbbcR6D.svg",
+      "assets/aioseo-client-logo-6-B1Xil_91.svg",
+      "assets/aioseo-client-logo-7-zu-ySb0j.svg",
+      "assets/aioseo-client-logo-8-MyDSqUcV.svg",
+      "assets/aioseo-client-logo-9-Cs1wjsF9.svg",
+      "assets/aioseo-screen-1-BQGPIB3_.svg",
+      "assets/aioseo-screen-2-By8FTTOW.svg",
+      "assets/badge-dark-D_gbrV0g.svg",
+      "assets/badge-light-CbU2HY-C.svg",
+      "assets/charlie-ai-CpIAtARD.svg",
+      "assets/charlie-front-CY3xVt1R.svg",
+      "assets/charlie-with-heart-DgXDZoCa.svg",
+      "assets/charlie-BzOnX0S1.png",
+      "assets/chris-BbkhLLpc.png",
+      "assets/easy-affiliate-logo-BgGyElpp.png",
+      "assets/easy-digital-downloads-Cd4s_trb.png",
+      "assets/ecommerce-report-gDSXb6tx.png",
+      "assets/edd-xsell-banner-DBceVxLc.svg",
+      "assets/em-ai-insights-DN-61trs.svg",
+      "assets/em-logo-lg-VJAZE3vu.png",
+      "assets/em-logo-Cpepvj1O.svg",
+      "assets/em-pl-logo-DuSkixaX.svg",
+      "assets/flags-Ck9rBLLL.png",
+      "assets/givewp-DMywhpeP.png",
+      "assets/google-ads-welcome-DrZfoDoR.png",
+      "assets/icon-advancedcoupons-CWll3WTF.svg",
+      "assets/icon-constantcontact-DBCKokOt.svg",
+      "assets/icon-easyaffiliate-BUCr-VFu.svg",
+      "assets/icon-memberpress-ObZq7Mz3.svg",
+      "assets/icon-mi-COe6NJ5l.svg",
+      "assets/icon-optinmonster-WMF7vG3B.svg",
+      "assets/icon-prettylinks-CONBnp_w.svg",
+      "assets/icon-rafflepress-BENUGiPx.svg",
+      "assets/icon-searchwp-DSobd2yu.svg",
+      "assets/icon-seedprod-y7aXvxCG.png",
+      "assets/icon-semrush-BKcP2fo0.svg",
+      "assets/icon-thirstyaffiliates-CcID5F-x.png",
+      "assets/icon-wpforms-BN6tBu2J.svg",
+      "assets/logo-formidable-forms-BXGgG_Pj.png",
+      "assets/logo-wp-forms-BVfgY4Md.png",
+      "assets/memberpress-CXCdB84n.png",
+      "assets/mi-and-pl-logo-DJQ06oSp.svg",
+      "assets/charitable-logo-DHu2whGR.png",
+      "assets/membermouse-logo-BfPOOXow.png",
+      "assets/rewardswp-rewards-widget-promo-Do7LAdUj.png",
+      "assets/popular-products-bg-DGc7Vr5u.jpg",
+      "assets/popular-products-browser-BlyRAAm4.jpg",
+      "assets/theme-icons-Bp8c8B8G.png",
+      "assets/theme-preview-beta-BQP5wRCQ.png",
+      "assets/theme-preview-image-2-8ut-7vzL.jpg",
+      "assets/theme-preview-image-Du73yHJK.jpg",
+      "assets/theme-products-2-B6VA5RVe.jpg",
+      "assets/theme-products-3-DOsrRHWQ.jpg",
+      "assets/theme-products-4-CojNbWYE.jpg",
+      "assets/theme-products-5-CsY2njtT.jpg",
+      "assets/theme-products-6-CvgwDkIc.jpg",
+      "assets/theme-products-7-BcGvEFHc.jpg",
+      "assets/theme-products-8-BjDTGZfl.jpg",
+      "assets/theme-widget-1-DocKd3_n.jpg",
+      "assets/theme-widget-2-Fe5eNsT3.jpg",
+      "assets/theme-widget-3-DdfI88iG.jpg",
+      "assets/theme-widget-4-CDuJt5xU.jpg",
+      "assets/theme-widget-5-3tXH4Mu7.jpg",
+      "assets/theme-widget-6-CB-hOUaa.jpg",
+      "assets/theme-widget-7-DJMvonAM.jpg",
+      "assets/theme-widget-8-DUkCJs1D.jpg",
+      "assets/pretty-links-logo-white-C6bLj4eu.svg",
+      "assets/rcp-CSXRrTgu.png",
+      "assets/reports-upsell-bg-Ce6isHlL.png",
+      "assets/bg-ai-insights-em-oFvF6FhV.png",
+      "assets/bg-ai-insights-Dz0Vrjwp.png",
+      "assets/bg-cart-abandonment@2x-CY5dDLOX.png",
+      "assets/bg-conversations-ai-em-hYbhIFTi.png",
+      "assets/bg-conversations-ai-CGVtajpe.png",
+      "assets/bg-countries-DLn_BDC3.png",
+      "assets/bg-dimensions-Ce3cqC0p.png",
+      "assets/bg-dimensions@2x-Dygf0shE.png",
+      "assets/bg-ecommerce-coupons-4jHQ_ezT.png",
+      "assets/bg-ecommerce-coupons@2x-D9yDcdG9.png",
+      "assets/bg-ecommerce-product-sales-yHMKveM2.png",
+      "assets/bg-ecommerce-product-sales@2x-Cn07L8ZY.png",
+      "assets/bg-ecommerce-purchases-by-location-BmdZbgBZ.png",
+      "assets/bg-ecommerce-refunds-by-geo-CF8FERm4.png",
+      "assets/bg-ecommerce-refunds-DxdhP2e9.png",
+      "assets/bg-ecommerce-spend-by-day-DIonvSx0.png",
+      "assets/bg-ecommerce-spend-by-hour-q1WFcc3y.png",
+      "assets/bg-ecommerce-CSsv5T3y.png",
+      "assets/bg-ecommerce@2x-DqQIAx_E.png",
+      "assets/bg-engagement-pages-DHCNXcIr.png",
+      "assets/bg-engagement-pages@2x-Cy1-nvFe.png",
+      "assets/bg-forms-D88OVto6.png",
+      "assets/bg-forms@2x-DDCVkM3t.png",
+      "assets/bg-media-upsell-DnlL8gmw.svg",
+      "assets/bg-publisher-54sZqopu.png",
+      "assets/bg-publisher@2x-DV7AEtV1.png",
+      "assets/bg-queries-m7JyFwyd.png",
+      "assets/bg-queries@2x-hMqBKeO_.png",
+      "assets/bg-realtime-BaCu7kOE.png",
+      "assets/bg-realtime@2x-Bj4r4U3g.png",
+      "assets/bg-sitespeed-WMXhJeY5.png",
+      "assets/bg-sitespeed@2x-DwC9jlLe.png",
+      "assets/bg-traffic-ai-BccoVVrZ.jpeg",
+      "assets/bg-traffic-campaigns-CSLYRffe.png",
+      "assets/bg-traffic-campaigns@2x-BEsLG5lW.png",
+      "assets/bg-traffic-landing-page-Cjie3IXW.png",
+      "assets/bg-traffic-landing-page@2x-Do5N_DFy.png",
+      "assets/bg-traffic-overview-B6RFcNAg.png",
+      "assets/bg-traffic-overview@2x-W3v8TZRO.png",
+      "assets/bg-traffic-source-medium-DZqysmXj.png",
+      "assets/bg-traffic-source-medium@2x-BEWmnm2N.png",
+      "assets/bg-traffic-technology-CRCRYkFO.png",
+      "assets/bg-traffic-technology@2x-pzDGfzkl.png",
+      "assets/bg-traffic-CKOi-xGN.png",
+      "assets/bg-traffic@2x-DFMSQGX_.png",
+      "assets/bg-user-journey-CpHFTtAb.svg",
+      "assets/custom-events-report-screen-D5UtywA8.png",
+      "assets/ecommerce-funnel-DbIAlAAe.png",
+      "assets/ecommerce-funnel@2x-BfPSZdMV.png",
+      "assets/exceptions-report-BYAZOdma.png",
+      "assets/social-media-report-BEm-c88m.png",
+      "assets/social-media-report@2x-CcLLHYek.png",
+      "assets/charitable-jZ8z8e4W.png",
+      "assets/easy-BvW_B_Ta.png",
+      "assets/givewp-C405d0U0.png",
+      "assets/lifterlms-a1S06NYR.png",
+      "assets/memberhouse-BJdHvZB4.png",
+      "assets/memberpress-D3zMNxUg.png",
+      "assets/restrict-x0XNKniw.png",
+      "assets/wishlistmember-logo 1-Dtdt0jIO.png",
+      "assets/woocom-CGR3qW2E.png",
+      "assets/overview-upsell-cta-chart-with-charlie-L7ZsqcRa.png",
+      "assets/logo-em-Dwc2Jt52.svg",
+      "assets/logo-mi-CN6yrjqJ.svg",
+      "assets/logo-uncanny-Bx5rB0v5.svg",
+      "assets/site-speed-blur-DoVih4Q8.png",
+      "assets/syed-BxTRPvLD.png",
+      "assets/prettylinks-illustration-mi-DQmg-MF9.svg",
+      "assets/custom-events-report-screen-DRoz-NBh.png",
+      "assets/testimonial-avatar-2-DB0r_FKc.png",
+      "assets/testimonial-avatar-BKwcm7oS.jpeg",
+      "assets/welcome-mascot-fQ-PwOf4.png",
+      "assets/welcome-video-image-1nUiOJg9.jpg",
+      "assets/wpforms-Cuk4Z7aO.png",
+      "assets/woo-insights-ecommerce-report-image-COB42oRo.png",
+      "assets/woo-insights-save-60-badge-DPP-r2r1.svg",
+      "assets/woo-insights-sessions-revenue-CnxsdiTy.png",
+      "assets/woocommerce-DV6kDMP6.png",
+      "assets/wpconsent-page-feature-image-ry1szA4S.png",
+      "assets/wpconsent-promo-banner-lZdTUIfp.svg",
+      "assets/behavior-funnel-Bqu0VQSD.png",
+      "assets/behavior-section-bg-C1O08P4E.png",
+      "assets/dashboard-preview-B7S76NX3.png",
+      "assets/devices-summary-left-icon-gX_b0Ok3.svg",
+      "assets/devices-summary-right-icon-BoEqE0Bn.svg",
+      "assets/ecommerce-cart-image-Ci8PdgXd.svg",
+      "assets/em-behavior-section-bg-DvwjdNKA.png",
+      "assets/em-dashboard-preview-BOd2zFLo.png",
+      "assets/em-google-performance-bar-left-icon-Dhe9nwji.png",
+      "assets/em-hero-image-C8H-yg5V.jpg",
+      "assets/em-thankyou-bg-Bmhmoyy_.png",
+      "assets/form-insights-bar-left-icon-CYSAcDYA.svg",
+      "assets/google-performance-bar-left-icon-7ZPbul8K.svg",
+      "assets/hero-image-LP6tVZa-.jpg",
+      "assets/thankyou-bg-CXOBcxig.png",
+      "assets/yir-dashboard-p7UBxo-j.png",
+      "assets/yir-em-dashboard-BXpJSk1K.png",
+      "assets/yir-em-hero-ERYG3vtb.svg",
+      "assets/yir-icon-world-CwfbI13I.svg",
+      "assets/yir-map-bg-CKEdtzdG.svg",
+      "assets/yir-mi-hero-DPm5eoml.svg",
+      "assets/header-bar-charlie-exactmetrics-CE12fdgp.png",
+      "assets/overview-charlie-exactmetrics-CNY4Zz40.png",
+      "assets/popup-button-charlie-exactmetrics-BFrnq-D-.png",
+      "assets/exactmetrics-Bg-IbxMo.png",
+      "assets/exactmetrics-aioseo-DI_WvfmV.jpg",
+      "assets/license-modal-agency-exactmetrics-xHShT6gQ.gif",
+      "assets/license-modal-plus-exactmetrics-CpXYyV4l.gif",
+      "assets/license-modal-pro-exactmetrics-BdU60h_K.gif",
+      "assets/logo-exactmetrics-agency-BDxiPOwg.svg",
+      "assets/logo-exactmetrics-plus-D5AZCVIR.svg",
+      "assets/logo-exactmetrics-pro-CGL-8xqK.svg",
+      "assets/logo-exactmetrics-g7cO_2BB.png",
+      "assets/logo-exactmetrics@2x-D852PtD5.png",
+      "assets/exactmetrics-logo-RF-dhWSp.svg",
+      "assets/sample-image-exactmetrics-BgF3d33A.png",
+      "assets/woo-insights-hero-image-exactmetrics-DonfMRmw.png"
+    ]
+  },
+  "_trafficSampleData-Vl-puaTC.js": {
+    "file": "js/chunks/trafficSampleData-Vl-puaTC.js",
+    "name": "trafficSampleData",
+    "imports": [
+      "src/modules/reports/main.js",
+      "_reportCache-DcJQ7wbP.js"
+    ]
+  },
+  "_useAuthGate-Ci3sAzws.js": {
+    "file": "js/chunks/useAuthGate-Ci3sAzws.js",
+    "name": "useAuthGate",
+    "imports": [
+      "_default-i18n-KrIlCc2E.js",
+      "_toastStore-CjmlShHI.js",
+      "_Modal-CzneZfPu.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_auth-Rcit4ziJ.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-CusxVmhz.css"
+    ]
+  },
+  "_useChartColors-DfB5TXg7.js": {
+    "file": "js/chunks/useChartColors-DfB5TXg7.js",
+    "name": "useChartColors"
+  },
+  "_useFeatureGate-Cpz_XvaQ.js": {
+    "file": "js/chunks/useFeatureGate-Cpz_XvaQ.js",
+    "name": "useFeatureGate",
+    "imports": [
+      "_default-i18n-KrIlCc2E.js",
+      "_toastStore-CjmlShHI.js"
+    ]
+  },
+  "_useNotices-BosR4uY_.js": {
+    "file": "js/chunks/useNotices-BosR4uY_.js",
+    "name": "useNotices",
+    "imports": [
+      "_toastStore-CjmlShHI.js"
+    ]
+  },
+  "_useOverviewChartData-DE1ommJa.js": {
+    "file": "js/chunks/useOverviewChartData-DE1ommJa.js",
+    "name": "useOverviewChartData",
+    "imports": [
+      "_default-i18n-KrIlCc2E.js",
+      "_toastStore-CjmlShHI.js"
+    ]
+  },
+  "_useReport-Nv5_YTN8.js": {
+    "file": "js/chunks/useReport-Nv5_YTN8.js",
+    "name": "useReport",
+    "imports": [
+      "_default-i18n-KrIlCc2E.js",
+      "_toastStore-CjmlShHI.js"
+    ]
+  },
+  "_useReportPermissions-_eyKnlni.js": {
+    "file": "js/chunks/useReportPermissions-_eyKnlni.js",
+    "name": "useReportPermissions",
+    "imports": [
+      "_useAuthGate-Ci3sAzws.js",
+      "_ajax-Uw5S1uqk.js",
+      "_toastStore-CjmlShHI.js"
+    ]
+  },
+  "_useSampleData-as2jswHs.js": {
+    "file": "js/chunks/useSampleData-as2jswHs.js",
+    "name": "useSampleData",
+    "imports": [
+      "_default-i18n-KrIlCc2E.js",
+      "_Modal-CzneZfPu.js",
+      "_Icon-BKVJ2HHT.js",
+      "_license-C6i4W44s.js",
+      "_toastStore-CjmlShHI.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_ajax-Uw5S1uqk.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-tn0RQdqM.css"
+    ]
+  },
+  "_vTooltip-DWqiyUWL.js": {
+    "file": "js/chunks/vTooltip-DWqiyUWL.js",
+    "name": "vTooltip"
+  },
+  "_vue-multiselect.esm-CupFr6V6.js": {
+    "file": "js/chunks/vue-multiselect.esm-CupFr6V6.js",
+    "name": "vue-multiselect.esm",
+    "imports": [
+      "_toastStore-CjmlShHI.js"
+    ]
+  },
+  "_vue3-apexcharts-ErQ4EB6K.js": {
+    "file": "js/chunks/vue3-apexcharts-ErQ4EB6K.js",
+    "name": "vue3-apexcharts",
+    "imports": [
+      "_toastStore-CjmlShHI.js"
+    ]
+  },
+  "src/assets/icons/no-saved-filters.svg": {
+    "file": "assets/no-saved-filters-BDWM6O1q.svg",
+    "src": "src/assets/icons/no-saved-filters.svg"
+  },
+  "src/assets/icons/search-console-average-position.svg": {
+    "file": "assets/search-console-average-position-BR8h9jPb.svg",
+    "src": "src/assets/icons/search-console-average-position.svg"
+  },
+  "src/assets/icons/settings.svg": {
+    "file": "assets/settings-BqFaYr7J.svg",
+    "src": "src/assets/icons/settings.svg"
+  },
+  "src/assets/img/about-icon-addons-em.png": {
+    "file": "assets/about-icon-addons-em-D6mL-SIE.png",
+    "src": "src/assets/img/about-icon-addons-em.png"
+  },
+  "src/assets/img/about-icon-addons.png": {
+    "file": "assets/about-icon-addons-C2ixtqJP.png",
+    "src": "src/assets/img/about-icon-addons.png"
+  },
+  "src/assets/img/about-icon-connect.png": {
+    "file": "assets/about-icon-connect-DAoaUoSQ.png",
+    "src": "src/assets/img/about-icon-connect.png"
+  },
+  "src/assets/img/about-icon-ecommerce.png": {
+    "file": "assets/about-icon-ecommerce-CAFOtSeP.png",
+    "src": "src/assets/img/about-icon-ecommerce.png"
+  },
+  "src/assets/img/about-icon-gdpr.png": {
+    "file": "assets/about-icon-gdpr-BTD6obvj.png",
+    "src": "src/assets/img/about-icon-gdpr.png"
+  },
+  "src/assets/img/about-icon-guide.png": {
+    "file": "assets/about-icon-guide-COBxne7W.png",
+    "src": "src/assets/img/about-icon-guide.png"
+  },
+  "src/assets/img/about-team.jpg": {
+    "file": "assets/about-team-BIYjWj57.jpg",
+    "src": "src/assets/img/about-team.jpg"
+  },
+  "src/assets/img/affiliates-promo-logo.png": {
+    "file": "assets/affiliates-promo-logo-CXLL8Y6U.png",
+    "src": "src/assets/img/affiliates-promo-logo.png"
+  },
+  "src/assets/img/ai-charlie/header-bar-charlie-exactmetrics.png": {
+    "file": "assets/header-bar-charlie-exactmetrics-CE12fdgp.png",
+    "src": "src/assets/img/ai-charlie/header-bar-charlie-exactmetrics.png"
+  },
+  "src/assets/img/ai-charlie/overview-charlie-exactmetrics.png": {
+    "file": "assets/overview-charlie-exactmetrics-CNY4Zz40.png",
+    "src": "src/assets/img/ai-charlie/overview-charlie-exactmetrics.png"
+  },
+  "src/assets/img/ai-charlie/popup-button-charlie-exactmetrics.png": {
+    "file": "assets/popup-button-charlie-exactmetrics-BFrnq-D-.png",
+    "src": "src/assets/img/ai-charlie/popup-button-charlie-exactmetrics.png"
+  },
+  "src/assets/img/aioseo-client-logo-1.svg": {
+    "file": "assets/aioseo-client-logo-1-tH1SYrXg.svg",
+    "src": "src/assets/img/aioseo-client-logo-1.svg"
+  },
+  "src/assets/img/aioseo-client-logo-10.svg": {
+    "file": "assets/aioseo-client-logo-10-Bl7JSYeC.svg",
+    "src": "src/assets/img/aioseo-client-logo-10.svg"
+  },
+  "src/assets/img/aioseo-client-logo-11.svg": {
+    "file": "assets/aioseo-client-logo-11-DVMVeIgg.svg",
+    "src": "src/assets/img/aioseo-client-logo-11.svg"
+  },
+  "src/assets/img/aioseo-client-logo-12.svg": {
+    "file": "assets/aioseo-client-logo-12-BEkB8B5R.svg",
+    "src": "src/assets/img/aioseo-client-logo-12.svg"
+  },
+  "src/assets/img/aioseo-client-logo-2.svg": {
+    "file": "assets/aioseo-client-logo-2-DffWHG7x.svg",
+    "src": "src/assets/img/aioseo-client-logo-2.svg"
+  },
+  "src/assets/img/aioseo-client-logo-3.svg": {
+    "file": "assets/aioseo-client-logo-3-CJQ3YNjp.svg",
+    "src": "src/assets/img/aioseo-client-logo-3.svg"
+  },
+  "src/assets/img/aioseo-client-logo-4.svg": {
+    "file": "assets/aioseo-client-logo-4-rmUdiF8S.svg",
+    "src": "src/assets/img/aioseo-client-logo-4.svg"
+  },
+  "src/assets/img/aioseo-client-logo-5.svg": {
+    "file": "assets/aioseo-client-logo-5-BFbbcR6D.svg",
+    "src": "src/assets/img/aioseo-client-logo-5.svg"
+  },
+  "src/assets/img/aioseo-client-logo-6.svg": {
+    "file": "assets/aioseo-client-logo-6-B1Xil_91.svg",
+    "src": "src/assets/img/aioseo-client-logo-6.svg"
+  },
+  "src/assets/img/aioseo-client-logo-7.svg": {
+    "file": "assets/aioseo-client-logo-7-zu-ySb0j.svg",
+    "src": "src/assets/img/aioseo-client-logo-7.svg"
+  },
+  "src/assets/img/aioseo-client-logo-8.svg": {
+    "file": "assets/aioseo-client-logo-8-MyDSqUcV.svg",
+    "src": "src/assets/img/aioseo-client-logo-8.svg"
+  },
+  "src/assets/img/aioseo-client-logo-9.svg": {
+    "file": "assets/aioseo-client-logo-9-Cs1wjsF9.svg",
+    "src": "src/assets/img/aioseo-client-logo-9.svg"
+  },
+  "src/assets/img/aioseo-screen-1.svg": {
+    "file": "assets/aioseo-screen-1-BQGPIB3_.svg",
+    "src": "src/assets/img/aioseo-screen-1.svg"
+  },
+  "src/assets/img/aioseo-screen-2.svg": {
+    "file": "assets/aioseo-screen-2-By8FTTOW.svg",
+    "src": "src/assets/img/aioseo-screen-2.svg"
+  },
+  "src/assets/img/badge-dark.svg": {
+    "file": "assets/badge-dark-D_gbrV0g.svg",
+    "src": "src/assets/img/badge-dark.svg"
+  },
+  "src/assets/img/badge-light.svg": {
+    "file": "assets/badge-light-CbU2HY-C.svg",
+    "src": "src/assets/img/badge-light.svg"
+  },
+  "src/assets/img/charlie-ai.svg": {
+    "file": "assets/charlie-ai-CpIAtARD.svg",
+    "src": "src/assets/img/charlie-ai.svg"
+  },
+  "src/assets/img/charlie-front.svg": {
+    "file": "assets/charlie-front-CY3xVt1R.svg",
+    "src": "src/assets/img/charlie-front.svg"
+  },
+  "src/assets/img/charlie-with-heart.svg": {
+    "file": "assets/charlie-with-heart-DgXDZoCa.svg",
+    "src": "src/assets/img/charlie-with-heart.svg"
+  },
+  "src/assets/img/charlie.png": {
+    "file": "assets/charlie-BzOnX0S1.png",
+    "src": "src/assets/img/charlie.png"
+  },
+  "src/assets/img/chris.png": {
+    "file": "assets/chris-BbkhLLpc.png",
+    "src": "src/assets/img/chris.png"
+  },
+  "src/assets/img/easy-affiliate-logo.png": {
+    "file": "assets/easy-affiliate-logo-BgGyElpp.png",
+    "src": "src/assets/img/easy-affiliate-logo.png"
+  },
+  "src/assets/img/easy-digital-downloads.png": {
+    "file": "assets/easy-digital-downloads-Cd4s_trb.png",
+    "src": "src/assets/img/easy-digital-downloads.png"
+  },
+  "src/assets/img/ecommerce-report.png": {
+    "file": "assets/ecommerce-report-gDSXb6tx.png",
+    "src": "src/assets/img/ecommerce-report.png"
+  },
+  "src/assets/img/edd-xsell-banner.svg": {
+    "file": "assets/edd-xsell-banner-DBceVxLc.svg",
+    "src": "src/assets/img/edd-xsell-banner.svg"
+  },
+  "src/assets/img/em-ai-insights.svg": {
+    "file": "assets/em-ai-insights-DN-61trs.svg",
+    "src": "src/assets/img/em-ai-insights.svg"
+  },
+  "src/assets/img/em-logo-lg.png": {
+    "file": "assets/em-logo-lg-VJAZE3vu.png",
+    "src": "src/assets/img/em-logo-lg.png"
+  },
+  "src/assets/img/em-logo.svg": {
+    "file": "assets/em-logo-Cpepvj1O.svg",
+    "src": "src/assets/img/em-logo.svg"
+  },
+  "src/assets/img/em-pl-logo.svg": {
+    "file": "assets/em-pl-logo-DuSkixaX.svg",
+    "src": "src/assets/img/em-pl-logo.svg"
+  },
+  "src/assets/img/exactmetrics.png": {
+    "file": "assets/exactmetrics-Bg-IbxMo.png",
+    "src": "src/assets/img/exactmetrics.png"
+  },
+  "src/assets/img/exactmetrics/about-getting-started-video.png": {
+    "file": "assets/about-getting-started-video-4Nri1eIG.png",
+    "src": "src/assets/img/exactmetrics/about-getting-started-video.png"
+  },
+  "src/assets/img/exactmetrics/addons-help-screen.png": {
+    "file": "assets/addons-help-screen-GpaLKPNl.png",
+    "src": "src/assets/img/exactmetrics/addons-help-screen.png"
+  },
+  "src/assets/img/exactmetrics/affiliate-wp-logo.png": {
+    "file": "assets/affiliate-wp-logo-CbYltpS1.png",
+    "src": "src/assets/img/exactmetrics/affiliate-wp-logo.png"
+  },
+  "src/assets/img/exactmetrics/affiliates-promo-logo.png": {
+    "file": "assets/affiliates-promo-logo-CZ0hdlbw.png",
+    "src": "src/assets/img/exactmetrics/affiliates-promo-logo.png"
+  },
+  "src/assets/img/exactmetrics/badge-dark.svg": {
+    "file": "assets/badge-dark-kwfUYar-.svg",
+    "src": "src/assets/img/exactmetrics/badge-dark.svg"
+  },
+  "src/assets/img/exactmetrics/badge-light.svg": {
+    "file": "assets/badge-light-BsYgDwvF.svg",
+    "src": "src/assets/img/exactmetrics/badge-light.svg"
+  },
+  "src/assets/img/exactmetrics/bg-ecommerce-purchases-by-location.png": {
+    "file": "assets/bg-ecommerce-purchases-by-location-DrPnzxXe.png",
+    "src": "src/assets/img/exactmetrics/bg-ecommerce-purchases-by-location.png"
+  },
+  "src/assets/img/exactmetrics/bg-ecommerce-refunds-by-geo.png": {
+    "file": "assets/bg-ecommerce-refunds-by-geo-BvdVH8Od.png",
+    "src": "src/assets/img/exactmetrics/bg-ecommerce-refunds-by-geo.png"
+  },
+  "src/assets/img/exactmetrics/bg-ecommerce-refunds.png": {
+    "file": "assets/bg-ecommerce-refunds-CKrYyTpX.png",
+    "src": "src/assets/img/exactmetrics/bg-ecommerce-refunds.png"
+  },
+  "src/assets/img/exactmetrics/bg-ecommerce-spend-by-day.png": {
+    "file": "assets/bg-ecommerce-spend-by-day-DRlj_Gv_.png",
+    "src": "src/assets/img/exactmetrics/bg-ecommerce-spend-by-day.png"
+  },
+  "src/assets/img/exactmetrics/bg-ecommerce-spend-by-hour.png": {
+    "file": "assets/bg-ecommerce-spend-by-hour-D9VAnAWv.png",
+    "src": "src/assets/img/exactmetrics/bg-ecommerce-spend-by-hour.png"
+  },
+  "src/assets/img/exactmetrics/cart-abandonment-screen.png": {
+    "file": "assets/cart-abandonment-screen-Mu4LjlvL.png",
+    "src": "src/assets/img/exactmetrics/cart-abandonment-screen.png"
+  },
+  "src/assets/img/exactmetrics/country-report-screen.png": {
+    "file": "assets/country-report-screen-B5HBG0hM.png",
+    "src": "src/assets/img/exactmetrics/country-report-screen.png"
+  },
+  "src/assets/img/exactmetrics/custom-dimensions-screen.png": {
+    "file": "assets/custom-dimensions-screen-BRXR6iez.png",
+    "src": "src/assets/img/exactmetrics/custom-dimensions-screen.png"
+  },
+  "src/assets/img/exactmetrics/custom-events-report-screen.png": {
+    "file": "assets/custom-events-report-screen-D5UtywA8.png",
+    "src": "src/assets/img/exactmetrics/custom-events-report-screen.png"
+  },
+  "src/assets/img/exactmetrics/dimensions-report-screen.png": {
+    "file": "assets/dimensions-report-screen-BV3EGZCN.png",
+    "src": "src/assets/img/exactmetrics/dimensions-report-screen.png"
+  },
+  "src/assets/img/exactmetrics/easy-affiliate-logo.png": {
+    "file": "assets/easy-affiliate-logo-BgGyElpp.png",
+    "src": "src/assets/img/easy-affiliate-logo.png"
+  },
+  "src/assets/img/exactmetrics/ecommerce-coupons-screen.png": {
+    "file": "assets/ecommerce-coupons-screen-CJzS-99J.png",
+    "src": "src/assets/img/exactmetrics/ecommerce-coupons-screen.png"
+  },
+  "src/assets/img/exactmetrics/ecommerce-funnel-upsell.png": {
+    "file": "assets/ecommerce-funnel-upsell-CDIZtMoT.png",
+    "src": "src/assets/img/exactmetrics/ecommerce-funnel-upsell.png"
+  },
+  "src/assets/img/exactmetrics/ecommerce-overview-screen.png": {
+    "file": "assets/ecommerce-overview-screen-GGv9wdyw.png",
+    "src": "src/assets/img/exactmetrics/ecommerce-overview-screen.png"
+  },
+  "src/assets/img/exactmetrics/em-arrows.jpg": {
+    "file": "assets/em-arrows-Dq2c4rA5.jpg",
+    "src": "src/assets/img/exactmetrics/em-arrows.jpg"
+  },
+  "src/assets/img/exactmetrics/em-background.jpg": {
+    "file": "assets/em-background-BPt0ZyG0.jpg",
+    "src": "src/assets/img/exactmetrics/em-background.jpg"
+  },
+  "src/assets/img/exactmetrics/em-logo.png": {
+    "file": "assets/em-logo-D9qqdn5z.png",
+    "src": "src/assets/img/exactmetrics/em-logo.png"
+  },
+  "src/assets/img/exactmetrics/em-screenshot.png": {
+    "file": "assets/em-screenshot-Dav_Tstv.png",
+    "src": "src/assets/img/exactmetrics/em-screenshot.png"
+  },
+  "src/assets/img/exactmetrics/engagement-pages-screen.png": {
+    "file": "assets/engagement-pages-screen-BUMX-t6M.png",
+    "src": "src/assets/img/exactmetrics/engagement-pages-screen.png"
+  },
+  "src/assets/img/exactmetrics/exactmetrics-aioseo.jpg": {
+    "file": "assets/exactmetrics-aioseo-DI_WvfmV.jpg",
+    "src": "src/assets/img/exactmetrics/exactmetrics-aioseo.jpg"
+  },
+  "src/assets/img/exactmetrics/exception-report-screen.png": {
+    "file": "assets/exception-report-screen-lYJ_W3io.png",
+    "src": "src/assets/img/exactmetrics/exception-report-screen.png"
+  },
+  "src/assets/img/exactmetrics/forms-report-screen.png": {
+    "file": "assets/forms-report-screen-vpTdd3UW.png",
+    "src": "src/assets/img/exactmetrics/forms-report-screen.png"
+  },
+  "src/assets/img/exactmetrics/forms-screen.png": {
+    "file": "assets/forms-screen-C9hswgIt.png",
+    "src": "src/assets/img/exactmetrics/forms-screen.png"
+  },
+  "src/assets/img/exactmetrics/forms-wpforms-upsell.png": {
+    "file": "assets/forms-wpforms-upsell-DiGJ1ioc.png",
+    "src": "src/assets/img/exactmetrics/forms-wpforms-upsell.png"
+  },
+  "src/assets/img/exactmetrics/loading-background.jpg": {
+    "file": "assets/loading-background-Dayz1jqc.jpg",
+    "src": "src/assets/img/exactmetrics/loading-background.jpg"
+  },
+  "src/assets/img/exactmetrics/media-report-upsell.png": {
+    "file": "assets/media-report-upsell-CE0-Wy_S.png",
+    "src": "src/assets/img/exactmetrics/media-report-upsell.png"
+  },
+  "src/assets/img/exactmetrics/one-click-integrations.png": {
+    "file": "assets/one-click-integrations-CKb4nKpx.png",
+    "src": "src/assets/img/exactmetrics/one-click-integrations.png"
+  },
+  "src/assets/img/exactmetrics/optimize-screen.png": {
+    "file": "assets/optimize-screen-BIXAkako.png",
+    "src": "src/assets/img/exactmetrics/optimize-screen.png"
+  },
+  "src/assets/img/exactmetrics/pp-theme-icons.png": {
+    "file": "assets/pp-theme-icons-BqbJsOK1.png",
+    "src": "src/assets/img/exactmetrics/pp-theme-icons.png"
+  },
+  "src/assets/img/exactmetrics/pretty-links-logo-white.svg": {
+    "file": "assets/pretty-links-logo-white-C4v9fTEj.svg",
+    "src": "src/assets/img/exactmetrics/pretty-links-logo-white.svg"
+  },
+  "src/assets/img/exactmetrics/publishers-screen.png": {
+    "file": "assets/publishers-screen-KVLGYgNW.png",
+    "src": "src/assets/img/exactmetrics/publishers-screen.png"
+  },
+  "src/assets/img/exactmetrics/real-time-screen.png": {
+    "file": "assets/real-time-screen-lrNAdsm-.png",
+    "src": "src/assets/img/exactmetrics/real-time-screen.png"
+  },
+  "src/assets/img/exactmetrics/search-console-screen.png": {
+    "file": "assets/search-console-screen-DpC1s2FO.png",
+    "src": "src/assets/img/exactmetrics/search-console-screen.png"
+  },
+  "src/assets/img/exactmetrics/setup-checklist-site-note.png": {
+    "file": "assets/setup-checklist-site-note-PH9YJDTj.png",
+    "src": "src/assets/img/exactmetrics/setup-checklist-site-note.png"
+  },
+  "src/assets/img/exactmetrics/site-speed-screen.png": {
+    "file": "assets/site-speed-screen-BLIxY8p3.png",
+    "src": "src/assets/img/exactmetrics/site-speed-screen.png"
+  },
+  "src/assets/img/exactmetrics/testimonial-image-1.jpg": {
+    "file": "assets/testimonial-image-1-gOgIARMk.jpg",
+    "src": "src/assets/img/exactmetrics/testimonial-image-1.jpg"
+  },
+  "src/assets/img/exactmetrics/testimonial-image-2.jpg": {
+    "file": "assets/testimonial-image-2-CcUw_Zp-.jpg",
+    "src": "src/assets/img/exactmetrics/testimonial-image-2.jpg"
+  },
+  "src/assets/img/exactmetrics/testimonial-image-3.jpg": {
+    "file": "assets/testimonial-image-3-CC_xZLPB.jpg",
+    "src": "src/assets/img/exactmetrics/testimonial-image-3.jpg"
+  },
+  "src/assets/img/exactmetrics/tools/prettylinks-illustration.svg": {
+    "file": "assets/prettylinks-illustration-DiDnqFhJ.svg",
+    "src": "src/assets/img/exactmetrics/tools/prettylinks-illustration.svg"
+  },
+  "src/assets/img/exactmetrics/traffic-ai-screen.jpeg": {
+    "file": "assets/traffic-ai-screen-EaYKB90k.jpeg",
+    "src": "src/assets/img/exactmetrics/traffic-ai-screen.jpeg"
+  },
+  "src/assets/img/exactmetrics/traffic-campaigns-screen.png": {
+    "file": "assets/traffic-campaigns-screen-D8US3qTo.png",
+    "src": "src/assets/img/exactmetrics/traffic-campaigns-screen.png"
+  },
+  "src/assets/img/exactmetrics/traffic-landing-pages-screen.png": {
+    "file": "assets/traffic-landing-pages-screen-D6ajy99M.png",
+    "src": "src/assets/img/exactmetrics/traffic-landing-pages-screen.png"
+  },
+  "src/assets/img/exactmetrics/traffic-overview-screen.png": {
+    "file": "assets/traffic-overview-screen-D2QfD0By.png",
+    "src": "src/assets/img/exactmetrics/traffic-overview-screen.png"
+  },
+  "src/assets/img/exactmetrics/traffic-social-screen.png": {
+    "file": "assets/traffic-social-screen-8tAxluFY.png",
+    "src": "src/assets/img/exactmetrics/traffic-social-screen.png"
+  },
+  "src/assets/img/exactmetrics/traffic-source-medium-screen.png": {
+    "file": "assets/traffic-source-medium-screen-DNkv8GJI.png",
+    "src": "src/assets/img/exactmetrics/traffic-source-medium-screen.png"
+  },
+  "src/assets/img/exactmetrics/traffic-technology-screen.png": {
+    "file": "assets/traffic-technology-screen-g_-jWG7b.png",
+    "src": "src/assets/img/exactmetrics/traffic-technology-screen.png"
+  },
+  "src/assets/img/exactmetrics/upsell-background.png": {
+    "file": "assets/upsell-background-Do7dbo25.png",
+    "src": "src/assets/img/exactmetrics/upsell-background.png"
+  },
+  "src/assets/img/exactmetrics/upsell-screen.png": {
+    "file": "assets/upsell-screen-DU5gKqan.png",
+    "src": "src/assets/img/exactmetrics/upsell-screen.png"
+  },
+  "src/assets/img/exactmetrics/user-journey-report-screen.png": {
+    "file": "assets/user-journey-report-screen-YDBN-Xzo.png",
+    "src": "src/assets/img/exactmetrics/user-journey-report-screen.png"
+  },
+  "src/assets/img/flags.png": {
+    "file": "assets/flags-Ck9rBLLL.png",
+    "src": "src/assets/img/flags.png"
+  },
+  "src/assets/img/givewp.png": {
+    "file": "assets/givewp-DMywhpeP.png",
+    "src": "src/assets/img/givewp.png"
+  },
+  "src/assets/img/google-ads-welcome.png": {
+    "file": "assets/google-ads-welcome-DrZfoDoR.png",
+    "src": "src/assets/img/google-ads-welcome.png"
+  },
+  "src/assets/img/growth-tools-icons/icon-advancedcoupons.svg": {
+    "file": "assets/icon-advancedcoupons-CWll3WTF.svg",
+    "src": "src/assets/img/growth-tools-icons/icon-advancedcoupons.svg"
+  },
+  "src/assets/img/growth-tools-icons/icon-constantcontact.svg": {
+    "file": "assets/icon-constantcontact-DBCKokOt.svg",
+    "src": "src/assets/img/growth-tools-icons/icon-constantcontact.svg"
+  },
+  "src/assets/img/growth-tools-icons/icon-easyaffiliate.svg": {
+    "file": "assets/icon-easyaffiliate-BUCr-VFu.svg",
+    "src": "src/assets/img/growth-tools-icons/icon-easyaffiliate.svg"
+  },
+  "src/assets/img/growth-tools-icons/icon-memberpress.svg": {
+    "file": "assets/icon-memberpress-ObZq7Mz3.svg",
+    "src": "src/assets/img/growth-tools-icons/icon-memberpress.svg"
+  },
+  "src/assets/img/growth-tools-icons/icon-mi.svg": {
+    "file": "assets/icon-mi-COe6NJ5l.svg",
+    "src": "src/assets/img/growth-tools-icons/icon-mi.svg"
+  },
+  "src/assets/img/growth-tools-icons/icon-optinmonster.svg": {
+    "file": "assets/icon-optinmonster-WMF7vG3B.svg",
+    "src": "src/assets/img/growth-tools-icons/icon-optinmonster.svg"
+  },
+  "src/assets/img/growth-tools-icons/icon-prettylinks.svg": {
+    "file": "assets/icon-prettylinks-CONBnp_w.svg",
+    "src": "src/assets/img/growth-tools-icons/icon-prettylinks.svg"
+  },
+  "src/assets/img/growth-tools-icons/icon-rafflepress.svg": {
+    "file": "assets/icon-rafflepress-BENUGiPx.svg",
+    "src": "src/assets/img/growth-tools-icons/icon-rafflepress.svg"
+  },
+  "src/assets/img/growth-tools-icons/icon-searchwp.svg": {
+    "file": "assets/icon-searchwp-DSobd2yu.svg",
+    "src": "src/assets/img/growth-tools-icons/icon-searchwp.svg"
+  },
+  "src/assets/img/growth-tools-icons/icon-seedprod.png": {
+    "file": "assets/icon-seedprod-y7aXvxCG.png",
+    "src": "src/assets/img/growth-tools-icons/icon-seedprod.png"
+  },
+  "src/assets/img/growth-tools-icons/icon-semrush.svg": {
+    "file": "assets/icon-semrush-BKcP2fo0.svg",
+    "src": "src/assets/img/growth-tools-icons/icon-semrush.svg"
+  },
+  "src/assets/img/growth-tools-icons/icon-thirstyaffiliates.png": {
+    "file": "assets/icon-thirstyaffiliates-CcID5F-x.png",
+    "src": "src/assets/img/growth-tools-icons/icon-thirstyaffiliates.png"
+  },
+  "src/assets/img/growth-tools-icons/icon-wpforms.svg": {
+    "file": "assets/icon-wpforms-BN6tBu2J.svg",
+    "src": "src/assets/img/growth-tools-icons/icon-wpforms.svg"
+  },
+  "src/assets/img/license-modal-agency-exactmetrics.gif": {
+    "file": "assets/license-modal-agency-exactmetrics-xHShT6gQ.gif",
+    "src": "src/assets/img/license-modal-agency-exactmetrics.gif"
+  },
+  "src/assets/img/license-modal-agency-exactmetrics.gif": {
+    "file": "assets/license-modal-agency-exactmetrics-CJIr97N2.gif",
+    "src": "src/assets/img/license-modal-agency-exactmetrics.gif"
+  },
+  "src/assets/img/license-modal-plus-exactmetrics.gif": {
+    "file": "assets/license-modal-plus-exactmetrics-CpXYyV4l.gif",
+    "src": "src/assets/img/license-modal-plus-exactmetrics.gif"
+  },
+  "src/assets/img/license-modal-plus-exactmetrics.gif": {
+    "file": "assets/license-modal-plus-exactmetrics-BqpwvtKI.gif",
+    "src": "src/assets/img/license-modal-plus-exactmetrics.gif"
+  },
+  "src/assets/img/license-modal-pro-exactmetrics.gif": {
+    "file": "assets/license-modal-pro-exactmetrics-BdU60h_K.gif",
+    "src": "src/assets/img/license-modal-pro-exactmetrics.gif"
+  },
+  "src/assets/img/license-modal-pro-exactmetrics.gif": {
+    "file": "assets/license-modal-pro-exactmetrics-DOSf_9L0.gif",
+    "src": "src/assets/img/license-modal-pro-exactmetrics.gif"
+  },
+  "src/assets/img/logo-exactmetrics-agency.svg": {
+    "file": "assets/logo-exactmetrics-agency-BDxiPOwg.svg",
+    "src": "src/assets/img/logo-exactmetrics-agency.svg"
+  },
+  "src/assets/img/logo-exactmetrics-plus.svg": {
+    "file": "assets/logo-exactmetrics-plus-D5AZCVIR.svg",
+    "src": "src/assets/img/logo-exactmetrics-plus.svg"
+  },
+  "src/assets/img/logo-exactmetrics-pro.svg": {
+    "file": "assets/logo-exactmetrics-pro-CGL-8xqK.svg",
+    "src": "src/assets/img/logo-exactmetrics-pro.svg"
+  },
+  "src/assets/img/logo-exactmetrics.png": {
+    "file": "assets/logo-exactmetrics-g7cO_2BB.png",
+    "src": "src/assets/img/logo-exactmetrics.png"
+  },
+  "src/assets/img/logo-exactmetrics@2x.png": {
+    "file": "assets/logo-exactmetrics@2x-D852PtD5.png",
+    "src": "src/assets/img/logo-exactmetrics@2x.png"
+  },
+  "src/assets/img/logo-formidable-forms.png": {
+    "file": "assets/logo-formidable-forms-BXGgG_Pj.png",
+    "src": "src/assets/img/logo-formidable-forms.png"
+  },
+  "src/assets/img/logo-exactmetrics-agency.svg": {
+    "file": "assets/logo-exactmetrics-agency-D_g3Ka4m.svg",
+    "src": "src/assets/img/logo-exactmetrics-agency.svg"
+  },
+  "src/assets/img/logo-exactmetrics-plus.svg": {
+    "file": "assets/logo-exactmetrics-plus-CQ8cmXAv.svg",
+    "src": "src/assets/img/logo-exactmetrics-plus.svg"
+  },
+  "src/assets/img/logo-exactmetrics-pro.svg": {
+    "file": "assets/logo-exactmetrics-pro-DFpEr1k8.svg",
+    "src": "src/assets/img/logo-exactmetrics-pro.svg"
+  },
+  "src/assets/img/logo-exactmetrics.png": {
+    "file": "assets/logo-exactmetrics-DHwCZrg_.png",
+    "src": "src/assets/img/logo-exactmetrics.png"
+  },
+  "src/assets/img/logo-exactmetrics@2x.png": {
+    "file": "assets/logo-exactmetrics@2x-Dzlx8UQP.png",
+    "src": "src/assets/img/logo-exactmetrics@2x.png"
+  },
+  "src/assets/img/logo-wp-forms.png": {
+    "file": "assets/logo-wp-forms-BVfgY4Md.png",
+    "src": "src/assets/img/logo-wp-forms.png"
+  },
+  "src/assets/img/logo/exactmetrics-logo.svg": {
+    "file": "assets/exactmetrics-logo-RF-dhWSp.svg",
+    "src": "src/assets/img/logo/exactmetrics-logo.svg"
+  },
+  "src/assets/img/memberpress.png": {
+    "file": "assets/memberpress-CXCdB84n.png",
+    "src": "src/assets/img/memberpress.png"
+  },
+  "src/assets/img/mi-and-pl-logo.svg": {
+    "file": "assets/mi-and-pl-logo-DJQ06oSp.svg",
+    "src": "src/assets/img/mi-and-pl-logo.svg"
+  },
+  "src/assets/img/exactmetrics-addons-upsell-logo.svg": {
+    "file": "assets/exactmetrics-addons-upsell-logo-DE5_WyLu.svg",
+    "src": "src/assets/img/exactmetrics-addons-upsell-logo.svg"
+  },
+  "src/assets/img/exactmetrics-aioseo.jpg": {
+    "file": "assets/exactmetrics-aioseo-sPgRSjfv.jpg",
+    "src": "src/assets/img/exactmetrics-aioseo.jpg"
+  },
+  "src/assets/img/exactmetrics-report-ecommerce.png": {
+    "file": "assets/exactmetrics-report-ecommerce-B_2lR7XO.png",
+    "src": "src/assets/img/exactmetrics-report-ecommerce.png"
+  },
+  "src/assets/img/exactmetrics-setup-checklist-site-note.png": {
+    "file": "assets/exactmetrics-setup-checklist-site-note-ByMJoe2K.png",
+    "src": "src/assets/img/exactmetrics-setup-checklist-site-note.png"
+  },
+  "src/assets/img/plugins/charitable-logo.png": {
+    "file": "assets/charitable-logo-DHu2whGR.png",
+    "src": "src/assets/img/plugins/charitable-logo.png"
+  },
+  "src/assets/img/plugins/membermouse-logo.png": {
+    "file": "assets/membermouse-logo-BfPOOXow.png",
+    "src": "src/assets/img/plugins/membermouse-logo.png"
+  },
+  "src/assets/img/plugins/rewardswp-rewards-widget-promo.png": {
+    "file": "assets/rewardswp-rewards-widget-promo-Do7LAdUj.png",
+    "src": "src/assets/img/plugins/rewardswp-rewards-widget-promo.png"
+  },
+  "src/assets/img/popular-posts/popular-products-bg.jpg": {
+    "file": "assets/popular-products-bg-DGc7Vr5u.jpg",
+    "src": "src/assets/img/popular-posts/popular-products-bg.jpg"
+  },
+  "src/assets/img/popular-posts/popular-products-browser.jpg": {
+    "file": "assets/popular-products-browser-BlyRAAm4.jpg",
+    "src": "src/assets/img/popular-posts/popular-products-browser.jpg"
+  },
+  "src/assets/img/popular-posts/theme-icons.png": {
+    "file": "assets/theme-icons-Bp8c8B8G.png",
+    "src": "src/assets/img/popular-posts/theme-icons.png"
+  },
+  "src/assets/img/popular-posts/theme-preview-beta.png": {
+    "file": "assets/theme-preview-beta-BQP5wRCQ.png",
+    "src": "src/assets/img/popular-posts/theme-preview-beta.png"
+  },
+  "src/assets/img/popular-posts/theme-preview-image-2.jpg": {
+    "file": "assets/theme-preview-image-2-8ut-7vzL.jpg",
+    "src": "src/assets/img/popular-posts/theme-preview-image-2.jpg"
+  },
+  "src/assets/img/popular-posts/theme-preview-image.jpg": {
+    "file": "assets/theme-preview-image-Du73yHJK.jpg",
+    "src": "src/assets/img/popular-posts/theme-preview-image.jpg"
+  },
+  "src/assets/img/popular-posts/theme-products-2.jpg": {
+    "file": "assets/theme-products-2-B6VA5RVe.jpg",
+    "src": "src/assets/img/popular-posts/theme-products-2.jpg"
+  },
+  "src/assets/img/popular-posts/theme-products-3.jpg": {
+    "file": "assets/theme-products-3-DOsrRHWQ.jpg",
+    "src": "src/assets/img/popular-posts/theme-products-3.jpg"
+  },
+  "src/assets/img/popular-posts/theme-products-4.jpg": {
+    "file": "assets/theme-products-4-CojNbWYE.jpg",
+    "src": "src/assets/img/popular-posts/theme-products-4.jpg"
+  },
+  "src/assets/img/popular-posts/theme-products-5.jpg": {
+    "file": "assets/theme-products-5-CsY2njtT.jpg",
+    "src": "src/assets/img/popular-posts/theme-products-5.jpg"
+  },
+  "src/assets/img/popular-posts/theme-products-6.jpg": {
+    "file": "assets/theme-products-6-CvgwDkIc.jpg",
+    "src": "src/assets/img/popular-posts/theme-products-6.jpg"
+  },
+  "src/assets/img/popular-posts/theme-products-7.jpg": {
+    "file": "assets/theme-products-7-BcGvEFHc.jpg",
+    "src": "src/assets/img/popular-posts/theme-products-7.jpg"
+  },
+  "src/assets/img/popular-posts/theme-products-8.jpg": {
+    "file": "assets/theme-products-8-BjDTGZfl.jpg",
+    "src": "src/assets/img/popular-posts/theme-products-8.jpg"
+  },
+  "src/assets/img/popular-posts/theme-widget-1.jpg": {
+    "file": "assets/theme-widget-1-DocKd3_n.jpg",
+    "src": "src/assets/img/popular-posts/theme-widget-1.jpg"
+  },
+  "src/assets/img/popular-posts/theme-widget-2.jpg": {
+    "file": "assets/theme-widget-2-Fe5eNsT3.jpg",
+    "src": "src/assets/img/popular-posts/theme-widget-2.jpg"
+  },
+  "src/assets/img/popular-posts/theme-widget-3.jpg": {
+    "file": "assets/theme-widget-3-DdfI88iG.jpg",
+    "src": "src/assets/img/popular-posts/theme-widget-3.jpg"
+  },
+  "src/assets/img/popular-posts/theme-widget-4.jpg": {
+    "file": "assets/theme-widget-4-CDuJt5xU.jpg",
+    "src": "src/assets/img/popular-posts/theme-widget-4.jpg"
+  },
+  "src/assets/img/popular-posts/theme-widget-5.jpg": {
+    "file": "assets/theme-widget-5-3tXH4Mu7.jpg",
+    "src": "src/assets/img/popular-posts/theme-widget-5.jpg"
+  },
+  "src/assets/img/popular-posts/theme-widget-6.jpg": {
+    "file": "assets/theme-widget-6-CB-hOUaa.jpg",
+    "src": "src/assets/img/popular-posts/theme-widget-6.jpg"
+  },
+  "src/assets/img/popular-posts/theme-widget-7.jpg": {
+    "file": "assets/theme-widget-7-DJMvonAM.jpg",
+    "src": "src/assets/img/popular-posts/theme-widget-7.jpg"
+  },
+  "src/assets/img/popular-posts/theme-widget-8.jpg": {
+    "file": "assets/theme-widget-8-DUkCJs1D.jpg",
+    "src": "src/assets/img/popular-posts/theme-widget-8.jpg"
+  },
+  "src/assets/img/pretty-links-logo-white.svg": {
+    "file": "assets/pretty-links-logo-white-C6bLj4eu.svg",
+    "src": "src/assets/img/pretty-links-logo-white.svg"
+  },
+  "src/assets/img/rcp.png": {
+    "file": "assets/rcp-CSXRrTgu.png",
+    "src": "src/assets/img/rcp.png"
+  },
+  "src/assets/img/reports-upsell-bg.png": {
+    "file": "assets/reports-upsell-bg-Ce6isHlL.png",
+    "src": "src/assets/img/reports-upsell-bg.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-ai-insights-em.png": {
+    "file": "assets/bg-ai-insights-em-oFvF6FhV.png",
+    "src": "src/assets/img/reports/lite-modals/bg-ai-insights-em.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-ai-insights.png": {
+    "file": "assets/bg-ai-insights-Dz0Vrjwp.png",
+    "src": "src/assets/img/reports/lite-modals/bg-ai-insights.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-cart-abandonment@2x.png": {
+    "file": "assets/bg-cart-abandonment@2x-CY5dDLOX.png",
+    "src": "src/assets/img/reports/lite-modals/bg-cart-abandonment@2x.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-conversations-ai-em.png": {
+    "file": "assets/bg-conversations-ai-em-hYbhIFTi.png",
+    "src": "src/assets/img/reports/lite-modals/bg-conversations-ai-em.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-conversations-ai.png": {
+    "file": "assets/bg-conversations-ai-CGVtajpe.png",
+    "src": "src/assets/img/reports/lite-modals/bg-conversations-ai.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-countries.png": {
+    "file": "assets/bg-countries-DLn_BDC3.png",
+    "src": "src/assets/img/reports/lite-modals/bg-countries.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-dimensions.png": {
+    "file": "assets/bg-dimensions-Ce3cqC0p.png",
+    "src": "src/assets/img/reports/lite-modals/bg-dimensions.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-dimensions@2x.png": {
+    "file": "assets/bg-dimensions@2x-Dygf0shE.png",
+    "src": "src/assets/img/reports/lite-modals/bg-dimensions@2x.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-ecommerce-coupons.png": {
+    "file": "assets/bg-ecommerce-coupons-4jHQ_ezT.png",
+    "src": "src/assets/img/reports/lite-modals/bg-ecommerce-coupons.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-ecommerce-coupons@2x.png": {
+    "file": "assets/bg-ecommerce-coupons@2x-D9yDcdG9.png",
+    "src": "src/assets/img/reports/lite-modals/bg-ecommerce-coupons@2x.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-ecommerce-product-sales.png": {
+    "file": "assets/bg-ecommerce-product-sales-yHMKveM2.png",
+    "src": "src/assets/img/reports/lite-modals/bg-ecommerce-product-sales.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-ecommerce-product-sales@2x.png": {
+    "file": "assets/bg-ecommerce-product-sales@2x-Cn07L8ZY.png",
+    "src": "src/assets/img/reports/lite-modals/bg-ecommerce-product-sales@2x.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-ecommerce-purchases-by-location.png": {
+    "file": "assets/bg-ecommerce-purchases-by-location-BmdZbgBZ.png",
+    "src": "src/assets/img/reports/lite-modals/bg-ecommerce-purchases-by-location.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-ecommerce-refunds-by-geo.png": {
+    "file": "assets/bg-ecommerce-refunds-by-geo-CF8FERm4.png",
+    "src": "src/assets/img/reports/lite-modals/bg-ecommerce-refunds-by-geo.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-ecommerce-refunds.png": {
+    "file": "assets/bg-ecommerce-refunds-DxdhP2e9.png",
+    "src": "src/assets/img/reports/lite-modals/bg-ecommerce-refunds.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-ecommerce-spend-by-day.png": {
+    "file": "assets/bg-ecommerce-spend-by-day-DIonvSx0.png",
+    "src": "src/assets/img/reports/lite-modals/bg-ecommerce-spend-by-day.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-ecommerce-spend-by-hour.png": {
+    "file": "assets/bg-ecommerce-spend-by-hour-q1WFcc3y.png",
+    "src": "src/assets/img/reports/lite-modals/bg-ecommerce-spend-by-hour.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-ecommerce.png": {
+    "file": "assets/bg-ecommerce-CSsv5T3y.png",
+    "src": "src/assets/img/reports/lite-modals/bg-ecommerce.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-ecommerce@2x.png": {
+    "file": "assets/bg-ecommerce@2x-DqQIAx_E.png",
+    "src": "src/assets/img/reports/lite-modals/bg-ecommerce@2x.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-engagement-pages.png": {
+    "file": "assets/bg-engagement-pages-DHCNXcIr.png",
+    "src": "src/assets/img/reports/lite-modals/bg-engagement-pages.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-engagement-pages@2x.png": {
+    "file": "assets/bg-engagement-pages@2x-Cy1-nvFe.png",
+    "src": "src/assets/img/reports/lite-modals/bg-engagement-pages@2x.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-forms.png": {
+    "file": "assets/bg-forms-D88OVto6.png",
+    "src": "src/assets/img/reports/lite-modals/bg-forms.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-forms@2x.png": {
+    "file": "assets/bg-forms@2x-DDCVkM3t.png",
+    "src": "src/assets/img/reports/lite-modals/bg-forms@2x.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-media-upsell.svg": {
+    "file": "assets/bg-media-upsell-DnlL8gmw.svg",
+    "src": "src/assets/img/reports/lite-modals/bg-media-upsell.svg"
+  },
+  "src/assets/img/reports/lite-modals/bg-publisher.png": {
+    "file": "assets/bg-publisher-54sZqopu.png",
+    "src": "src/assets/img/reports/lite-modals/bg-publisher.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-publisher@2x.png": {
+    "file": "assets/bg-publisher@2x-DV7AEtV1.png",
+    "src": "src/assets/img/reports/lite-modals/bg-publisher@2x.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-queries.png": {
+    "file": "assets/bg-queries-m7JyFwyd.png",
+    "src": "src/assets/img/reports/lite-modals/bg-queries.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-queries@2x.png": {
+    "file": "assets/bg-queries@2x-hMqBKeO_.png",
+    "src": "src/assets/img/reports/lite-modals/bg-queries@2x.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-realtime.png": {
+    "file": "assets/bg-realtime-BaCu7kOE.png",
+    "src": "src/assets/img/reports/lite-modals/bg-realtime.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-realtime@2x.png": {
+    "file": "assets/bg-realtime@2x-Bj4r4U3g.png",
+    "src": "src/assets/img/reports/lite-modals/bg-realtime@2x.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-sitespeed.png": {
+    "file": "assets/bg-sitespeed-WMXhJeY5.png",
+    "src": "src/assets/img/reports/lite-modals/bg-sitespeed.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-sitespeed@2x.png": {
+    "file": "assets/bg-sitespeed@2x-DwC9jlLe.png",
+    "src": "src/assets/img/reports/lite-modals/bg-sitespeed@2x.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-traffic-ai.jpeg": {
+    "file": "assets/bg-traffic-ai-BccoVVrZ.jpeg",
+    "src": "src/assets/img/reports/lite-modals/bg-traffic-ai.jpeg"
+  },
+  "src/assets/img/reports/lite-modals/bg-traffic-campaigns.png": {
+    "file": "assets/bg-traffic-campaigns-CSLYRffe.png",
+    "src": "src/assets/img/reports/lite-modals/bg-traffic-campaigns.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-traffic-campaigns@2x.png": {
+    "file": "assets/bg-traffic-campaigns@2x-BEsLG5lW.png",
+    "src": "src/assets/img/reports/lite-modals/bg-traffic-campaigns@2x.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-traffic-landing-page.png": {
+    "file": "assets/bg-traffic-landing-page-Cjie3IXW.png",
+    "src": "src/assets/img/reports/lite-modals/bg-traffic-landing-page.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-traffic-landing-page@2x.png": {
+    "file": "assets/bg-traffic-landing-page@2x-Do5N_DFy.png",
+    "src": "src/assets/img/reports/lite-modals/bg-traffic-landing-page@2x.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-traffic-overview.png": {
+    "file": "assets/bg-traffic-overview-B6RFcNAg.png",
+    "src": "src/assets/img/reports/lite-modals/bg-traffic-overview.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-traffic-overview@2x.png": {
+    "file": "assets/bg-traffic-overview@2x-W3v8TZRO.png",
+    "src": "src/assets/img/reports/lite-modals/bg-traffic-overview@2x.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-traffic-source-medium.png": {
+    "file": "assets/bg-traffic-source-medium-DZqysmXj.png",
+    "src": "src/assets/img/reports/lite-modals/bg-traffic-source-medium.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-traffic-source-medium@2x.png": {
+    "file": "assets/bg-traffic-source-medium@2x-BEWmnm2N.png",
+    "src": "src/assets/img/reports/lite-modals/bg-traffic-source-medium@2x.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-traffic-technology.png": {
+    "file": "assets/bg-traffic-technology-CRCRYkFO.png",
+    "src": "src/assets/img/reports/lite-modals/bg-traffic-technology.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-traffic-technology@2x.png": {
+    "file": "assets/bg-traffic-technology@2x-pzDGfzkl.png",
+    "src": "src/assets/img/reports/lite-modals/bg-traffic-technology@2x.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-traffic.png": {
+    "file": "assets/bg-traffic-CKOi-xGN.png",
+    "src": "src/assets/img/reports/lite-modals/bg-traffic.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-traffic@2x.png": {
+    "file": "assets/bg-traffic@2x-DFMSQGX_.png",
+    "src": "src/assets/img/reports/lite-modals/bg-traffic@2x.png"
+  },
+  "src/assets/img/reports/lite-modals/bg-user-journey.svg": {
+    "file": "assets/bg-user-journey-CpHFTtAb.svg",
+    "src": "src/assets/img/reports/lite-modals/bg-user-journey.svg"
+  },
+  "src/assets/img/reports/lite-modals/custom-events-report-screen.png": {
+    "file": "assets/custom-events-report-screen-D5UtywA8.png",
+    "src": "src/assets/img/exactmetrics/custom-events-report-screen.png"
+  },
+  "src/assets/img/reports/lite-modals/ecommerce-funnel.png": {
+    "file": "assets/ecommerce-funnel-DbIAlAAe.png",
+    "src": "src/assets/img/reports/lite-modals/ecommerce-funnel.png"
+  },
+  "src/assets/img/reports/lite-modals/ecommerce-funnel@2x.png": {
+    "file": "assets/ecommerce-funnel@2x-BfPSZdMV.png",
+    "src": "src/assets/img/reports/lite-modals/ecommerce-funnel@2x.png"
+  },
+  "src/assets/img/reports/lite-modals/exceptions-report.png": {
+    "file": "assets/exceptions-report-BYAZOdma.png",
+    "src": "src/assets/img/reports/lite-modals/exceptions-report.png"
+  },
+  "src/assets/img/reports/lite-modals/social-media-report.png": {
+    "file": "assets/social-media-report-BEm-c88m.png",
+    "src": "src/assets/img/reports/lite-modals/social-media-report.png"
+  },
+  "src/assets/img/reports/lite-modals/social-media-report@2x.png": {
+    "file": "assets/social-media-report@2x-CcLLHYek.png",
+    "src": "src/assets/img/reports/lite-modals/social-media-report@2x.png"
+  },
+  "src/assets/img/reports/overview/ecommerce-logo/charitable.png": {
+    "file": "assets/charitable-jZ8z8e4W.png",
+    "src": "src/assets/img/reports/overview/ecommerce-logo/charitable.png"
+  },
+  "src/assets/img/reports/overview/ecommerce-logo/easy.png": {
+    "file": "assets/easy-BvW_B_Ta.png",
+    "src": "src/assets/img/reports/overview/ecommerce-logo/easy.png"
+  },
+  "src/assets/img/reports/overview/ecommerce-logo/givewp.png": {
+    "file": "assets/givewp-C405d0U0.png",
+    "src": "src/assets/img/reports/overview/ecommerce-logo/givewp.png"
+  },
+  "src/assets/img/reports/overview/ecommerce-logo/lifterlms.png": {
+    "file": "assets/lifterlms-a1S06NYR.png",
+    "src": "src/assets/img/reports/overview/ecommerce-logo/lifterlms.png"
+  },
+  "src/assets/img/reports/overview/ecommerce-logo/memberhouse.png": {
+    "file": "assets/memberhouse-BJdHvZB4.png",
+    "src": "src/assets/img/reports/overview/ecommerce-logo/memberhouse.png"
+  },
+  "src/assets/img/reports/overview/ecommerce-logo/memberpress.png": {
+    "file": "assets/memberpress-D3zMNxUg.png",
+    "src": "src/assets/img/reports/overview/ecommerce-logo/memberpress.png"
+  },
+  "src/assets/img/reports/overview/ecommerce-logo/restrict.png": {
+    "file": "assets/restrict-x0XNKniw.png",
+    "src": "src/assets/img/reports/overview/ecommerce-logo/restrict.png"
+  },
+  "src/assets/img/reports/overview/ecommerce-logo/wishlistmember-logo 1.png": {
+    "file": "assets/wishlistmember-logo 1-Dtdt0jIO.png",
+    "src": "src/assets/img/reports/overview/ecommerce-logo/wishlistmember-logo 1.png"
+  },
+  "src/assets/img/reports/overview/ecommerce-logo/woocom.png": {
+    "file": "assets/woocom-CGR3qW2E.png",
+    "src": "src/assets/img/reports/overview/ecommerce-logo/woocom.png"
+  },
+  "src/assets/img/reports/overview/overview-upsell-cta-chart-with-charlie.png": {
+    "file": "assets/overview-upsell-cta-chart-with-charlie-L7ZsqcRa.png",
+    "src": "src/assets/img/reports/overview/overview-upsell-cta-chart-with-charlie.png"
+  },
+  "src/assets/img/sample-image-exactmetrics.png": {
+    "file": "assets/sample-image-exactmetrics-BgF3d33A.png",
+    "src": "src/assets/img/sample-image-exactmetrics.png"
+  },
+  "src/assets/img/sample-image-exactmetrics.png": {
+    "file": "assets/sample-image-exactmetrics-BioGsEoh.png",
+    "src": "src/assets/img/sample-image-exactmetrics.png"
+  },
+  "src/assets/img/site-notes/integration/logo-em.svg": {
+    "file": "assets/logo-em-Dwc2Jt52.svg",
+    "src": "src/assets/img/site-notes/integration/logo-em.svg"
+  },
+  "src/assets/img/site-notes/integration/logo-mi.svg": {
+    "file": "assets/logo-mi-CN6yrjqJ.svg",
+    "src": "src/assets/img/site-notes/integration/logo-mi.svg"
+  },
+  "src/assets/img/site-notes/integration/logo-uncanny.svg": {
+    "file": "assets/logo-uncanny-Bx5rB0v5.svg",
+    "src": "src/assets/img/site-notes/integration/logo-uncanny.svg"
+  },
+  "src/assets/img/site-speed-blur.png": {
+    "file": "assets/site-speed-blur-DoVih4Q8.png",
+    "src": "src/assets/img/site-speed-blur.png"
+  },
+  "src/assets/img/syed.png": {
+    "file": "assets/syed-BxTRPvLD.png",
+    "src": "src/assets/img/syed.png"
+  },
+  "src/assets/img/theme-products-5.jpg": {
+    "file": "assets/theme-products-5-CsY2njtT.jpg",
+    "src": "src/assets/img/popular-posts/theme-products-5.jpg"
+  },
+  "src/assets/img/theme-products-6.jpg": {
+    "file": "assets/theme-products-6-CvgwDkIc.jpg",
+    "src": "src/assets/img/popular-posts/theme-products-6.jpg"
+  },
+  "src/assets/img/theme-products-7.jpg": {
+    "file": "assets/theme-products-7-BcGvEFHc.jpg",
+    "src": "src/assets/img/popular-posts/theme-products-7.jpg"
+  },
+  "src/assets/img/theme-products-8.jpg": {
+    "file": "assets/theme-products-8-BjDTGZfl.jpg",
+    "src": "src/assets/img/popular-posts/theme-products-8.jpg"
+  },
+  "src/assets/img/tools/prettylinks-illustration-mi.svg": {
+    "file": "assets/prettylinks-illustration-mi-DQmg-MF9.svg",
+    "src": "src/assets/img/tools/prettylinks-illustration-mi.svg"
+  },
+  "src/assets/img/upsell/bg-ai-insights-em.png": {
+    "file": "assets/bg-ai-insights-em-oFvF6FhV.png",
+    "src": "src/assets/img/reports/lite-modals/bg-ai-insights-em.png"
+  },
+  "src/assets/img/upsell/bg-ai-insights.png": {
+    "file": "assets/bg-ai-insights-Dz0Vrjwp.png",
+    "src": "src/assets/img/reports/lite-modals/bg-ai-insights.png"
+  },
+  "src/assets/img/upsell/bg-cart-abandonment@2x.png": {
+    "file": "assets/bg-cart-abandonment@2x-CY5dDLOX.png",
+    "src": "src/assets/img/reports/lite-modals/bg-cart-abandonment@2x.png"
+  },
+  "src/assets/img/upsell/bg-conversations-ai-em.png": {
+    "file": "assets/bg-conversations-ai-em-hYbhIFTi.png",
+    "src": "src/assets/img/reports/lite-modals/bg-conversations-ai-em.png"
+  },
+  "src/assets/img/upsell/bg-conversations-ai.png": {
+    "file": "assets/bg-conversations-ai-CGVtajpe.png",
+    "src": "src/assets/img/reports/lite-modals/bg-conversations-ai.png"
+  },
+  "src/assets/img/upsell/bg-countries.png": {
+    "file": "assets/bg-countries-DLn_BDC3.png",
+    "src": "src/assets/img/reports/lite-modals/bg-countries.png"
+  },
+  "src/assets/img/upsell/bg-dimensions.png": {
+    "file": "assets/bg-dimensions-Ce3cqC0p.png",
+    "src": "src/assets/img/reports/lite-modals/bg-dimensions.png"
+  },
+  "src/assets/img/upsell/bg-dimensions@2x.png": {
+    "file": "assets/bg-dimensions@2x-Dygf0shE.png",
+    "src": "src/assets/img/reports/lite-modals/bg-dimensions@2x.png"
+  },
+  "src/assets/img/upsell/bg-ecommerce-coupons.png": {
+    "file": "assets/bg-ecommerce-coupons-4jHQ_ezT.png",
+    "src": "src/assets/img/reports/lite-modals/bg-ecommerce-coupons.png"
+  },
+  "src/assets/img/upsell/bg-ecommerce-coupons@2x.png": {
+    "file": "assets/bg-ecommerce-coupons@2x-D9yDcdG9.png",
+    "src": "src/assets/img/reports/lite-modals/bg-ecommerce-coupons@2x.png"
+  },
+  "src/assets/img/upsell/bg-ecommerce-product-sales.png": {
+    "file": "assets/bg-ecommerce-product-sales-yHMKveM2.png",
+    "src": "src/assets/img/reports/lite-modals/bg-ecommerce-product-sales.png"
+  },
+  "src/assets/img/upsell/bg-ecommerce-product-sales@2x.png": {
+    "file": "assets/bg-ecommerce-product-sales@2x-Cn07L8ZY.png",
+    "src": "src/assets/img/reports/lite-modals/bg-ecommerce-product-sales@2x.png"
+  },
+  "src/assets/img/upsell/bg-ecommerce-purchases-by-location.png": {
+    "file": "assets/bg-ecommerce-purchases-by-location-BmdZbgBZ.png",
+    "src": "src/assets/img/reports/lite-modals/bg-ecommerce-purchases-by-location.png"
+  },
+  "src/assets/img/upsell/bg-ecommerce-refunds-by-geo.png": {
+    "file": "assets/bg-ecommerce-refunds-by-geo-CF8FERm4.png",
+    "src": "src/assets/img/reports/lite-modals/bg-ecommerce-refunds-by-geo.png"
+  },
+  "src/assets/img/upsell/bg-ecommerce-refunds.png": {
+    "file": "assets/bg-ecommerce-refunds-DxdhP2e9.png",
+    "src": "src/assets/img/reports/lite-modals/bg-ecommerce-refunds.png"
+  },
+  "src/assets/img/upsell/bg-ecommerce-spend-by-day.png": {
+    "file": "assets/bg-ecommerce-spend-by-day-DIonvSx0.png",
+    "src": "src/assets/img/reports/lite-modals/bg-ecommerce-spend-by-day.png"
+  },
+  "src/assets/img/upsell/bg-ecommerce-spend-by-hour.png": {
+    "file": "assets/bg-ecommerce-spend-by-hour-q1WFcc3y.png",
+    "src": "src/assets/img/reports/lite-modals/bg-ecommerce-spend-by-hour.png"
+  },
+  "src/assets/img/upsell/bg-ecommerce.png": {
+    "file": "assets/bg-ecommerce-CSsv5T3y.png",
+    "src": "src/assets/img/reports/lite-modals/bg-ecommerce.png"
+  },
+  "src/assets/img/upsell/bg-ecommerce@2x.png": {
+    "file": "assets/bg-ecommerce@2x-DqQIAx_E.png",
+    "src": "src/assets/img/reports/lite-modals/bg-ecommerce@2x.png"
+  },
+  "src/assets/img/upsell/bg-engagement-pages.png": {
+    "file": "assets/bg-engagement-pages-DHCNXcIr.png",
+    "src": "src/assets/img/reports/lite-modals/bg-engagement-pages.png"
+  },
+  "src/assets/img/upsell/bg-engagement-pages@2x.png": {
+    "file": "assets/bg-engagement-pages@2x-Cy1-nvFe.png",
+    "src": "src/assets/img/reports/lite-modals/bg-engagement-pages@2x.png"
+  },
+  "src/assets/img/upsell/bg-forms.png": {
+    "file": "assets/bg-forms-D88OVto6.png",
+    "src": "src/assets/img/reports/lite-modals/bg-forms.png"
+  },
+  "src/assets/img/upsell/bg-forms@2x.png": {
+    "file": "assets/bg-forms@2x-DDCVkM3t.png",
+    "src": "src/assets/img/reports/lite-modals/bg-forms@2x.png"
+  },
+  "src/assets/img/upsell/bg-media-upsell.svg": {
+    "file": "assets/bg-media-upsell-DnlL8gmw.svg",
+    "src": "src/assets/img/reports/lite-modals/bg-media-upsell.svg"
+  },
+  "src/assets/img/upsell/bg-publisher.png": {
+    "file": "assets/bg-publisher-54sZqopu.png",
+    "src": "src/assets/img/reports/lite-modals/bg-publisher.png"
+  },
+  "src/assets/img/upsell/bg-publisher@2x.png": {
+    "file": "assets/bg-publisher@2x-DV7AEtV1.png",
+    "src": "src/assets/img/reports/lite-modals/bg-publisher@2x.png"
+  },
+  "src/assets/img/upsell/bg-queries.png": {
+    "file": "assets/bg-queries-m7JyFwyd.png",
+    "src": "src/assets/img/reports/lite-modals/bg-queries.png"
+  },
+  "src/assets/img/upsell/bg-queries@2x.png": {
+    "file": "assets/bg-queries@2x-hMqBKeO_.png",
+    "src": "src/assets/img/reports/lite-modals/bg-queries@2x.png"
+  },
+  "src/assets/img/upsell/bg-realtime.png": {
+    "file": "assets/bg-realtime-BaCu7kOE.png",
+    "src": "src/assets/img/reports/lite-modals/bg-realtime.png"
+  },
+  "src/assets/img/upsell/bg-realtime@2x.png": {
+    "file": "assets/bg-realtime@2x-Bj4r4U3g.png",
+    "src": "src/assets/img/reports/lite-modals/bg-realtime@2x.png"
+  },
+  "src/assets/img/upsell/bg-sitespeed.png": {
+    "file": "assets/bg-sitespeed-WMXhJeY5.png",
+    "src": "src/assets/img/reports/lite-modals/bg-sitespeed.png"
+  },
+  "src/assets/img/upsell/bg-sitespeed@2x.png": {
+    "file": "assets/bg-sitespeed@2x-DwC9jlLe.png",
+    "src": "src/assets/img/reports/lite-modals/bg-sitespeed@2x.png"
+  },
+  "src/assets/img/upsell/bg-traffic-ai.jpeg": {
+    "file": "assets/bg-traffic-ai-BccoVVrZ.jpeg",
+    "src": "src/assets/img/reports/lite-modals/bg-traffic-ai.jpeg"
+  },
+  "src/assets/img/upsell/bg-traffic-campaigns.png": {
+    "file": "assets/bg-traffic-campaigns-CSLYRffe.png",
+    "src": "src/assets/img/reports/lite-modals/bg-traffic-campaigns.png"
+  },
+  "src/assets/img/upsell/bg-traffic-campaigns@2x.png": {
+    "file": "assets/bg-traffic-campaigns@2x-BEsLG5lW.png",
+    "src": "src/assets/img/reports/lite-modals/bg-traffic-campaigns@2x.png"
+  },
+  "src/assets/img/upsell/bg-traffic-landing-page.png": {
+    "file": "assets/bg-traffic-landing-page-Cjie3IXW.png",
+    "src": "src/assets/img/reports/lite-modals/bg-traffic-landing-page.png"
+  },
+  "src/assets/img/upsell/bg-traffic-landing-page@2x.png": {
+    "file": "assets/bg-traffic-landing-page@2x-Do5N_DFy.png",
+    "src": "src/assets/img/reports/lite-modals/bg-traffic-landing-page@2x.png"
+  },
+  "src/assets/img/upsell/bg-traffic-overview.png": {
+    "file": "assets/bg-traffic-overview-B6RFcNAg.png",
+    "src": "src/assets/img/reports/lite-modals/bg-traffic-overview.png"
+  },
+  "src/assets/img/upsell/bg-traffic-overview@2x.png": {
+    "file": "assets/bg-traffic-overview@2x-W3v8TZRO.png",
+    "src": "src/assets/img/reports/lite-modals/bg-traffic-overview@2x.png"
+  },
+  "src/assets/img/upsell/bg-traffic-source-medium.png": {
+    "file": "assets/bg-traffic-source-medium-DZqysmXj.png",
+    "src": "src/assets/img/reports/lite-modals/bg-traffic-source-medium.png"
+  },
+  "src/assets/img/upsell/bg-traffic-source-medium@2x.png": {
+    "file": "assets/bg-traffic-source-medium@2x-BEWmnm2N.png",
+    "src": "src/assets/img/reports/lite-modals/bg-traffic-source-medium@2x.png"
+  },
+  "src/assets/img/upsell/bg-traffic-technology.png": {
+    "file": "assets/bg-traffic-technology-CRCRYkFO.png",
+    "src": "src/assets/img/reports/lite-modals/bg-traffic-technology.png"
+  },
+  "src/assets/img/upsell/bg-traffic-technology@2x.png": {
+    "file": "assets/bg-traffic-technology@2x-pzDGfzkl.png",
+    "src": "src/assets/img/reports/lite-modals/bg-traffic-technology@2x.png"
+  },
+  "src/assets/img/upsell/bg-traffic.png": {
+    "file": "assets/bg-traffic-CKOi-xGN.png",
+    "src": "src/assets/img/reports/lite-modals/bg-traffic.png"
+  },
+  "src/assets/img/upsell/bg-traffic@2x.png": {
+    "file": "assets/bg-traffic@2x-DFMSQGX_.png",
+    "src": "src/assets/img/reports/lite-modals/bg-traffic@2x.png"
+  },
+  "src/assets/img/upsell/bg-user-journey.svg": {
+    "file": "assets/bg-user-journey-CpHFTtAb.svg",
+    "src": "src/assets/img/reports/lite-modals/bg-user-journey.svg"
+  },
+  "src/assets/img/upsell/custom-events-report-screen.png": {
+    "file": "assets/custom-events-report-screen-DRoz-NBh.png",
+    "src": "src/assets/img/upsell/custom-events-report-screen.png"
+  },
+  "src/assets/img/upsell/ecommerce-funnel.png": {
+    "file": "assets/ecommerce-funnel-DbIAlAAe.png",
+    "src": "src/assets/img/reports/lite-modals/ecommerce-funnel.png"
+  },
+  "src/assets/img/upsell/ecommerce-funnel@2x.png": {
+    "file": "assets/ecommerce-funnel@2x-BfPSZdMV.png",
+    "src": "src/assets/img/reports/lite-modals/ecommerce-funnel@2x.png"
+  },
+  "src/assets/img/upsell/exceptions-report.png": {
+    "file": "assets/exceptions-report-BYAZOdma.png",
+    "src": "src/assets/img/reports/lite-modals/exceptions-report.png"
+  },
+  "src/assets/img/upsell/social-media-report.png": {
+    "file": "assets/social-media-report-BEm-c88m.png",
+    "src": "src/assets/img/reports/lite-modals/social-media-report.png"
+  },
+  "src/assets/img/upsell/social-media-report@2x.png": {
+    "file": "assets/social-media-report@2x-CcLLHYek.png",
+    "src": "src/assets/img/reports/lite-modals/social-media-report@2x.png"
+  },
+  "src/assets/img/welcome/testimonial-avatar-2.png": {
+    "file": "assets/testimonial-avatar-2-DB0r_FKc.png",
+    "src": "src/assets/img/welcome/testimonial-avatar-2.png"
+  },
+  "src/assets/img/welcome/testimonial-avatar.jpeg": {
+    "file": "assets/testimonial-avatar-BKwcm7oS.jpeg",
+    "src": "src/assets/img/welcome/testimonial-avatar.jpeg"
+  },
+  "src/assets/img/welcome/welcome-mascot.png": {
+    "file": "assets/welcome-mascot-fQ-PwOf4.png",
+    "src": "src/assets/img/welcome/welcome-mascot.png"
+  },
+  "src/assets/img/welcome/welcome-video-image.jpg": {
+    "file": "assets/welcome-video-image-1nUiOJg9.jpg",
+    "src": "src/assets/img/welcome/welcome-video-image.jpg"
+  },
+  "src/assets/img/wizard-onboarding/wpforms.png": {
+    "file": "assets/wpforms-Cuk4Z7aO.png",
+    "src": "src/assets/img/wizard-onboarding/wpforms.png"
+  },
+  "src/assets/img/woo-insights-ecommerce-report-image.png": {
+    "file": "assets/woo-insights-ecommerce-report-image-COB42oRo.png",
+    "src": "src/assets/img/woo-insights-ecommerce-report-image.png"
+  },
+  "src/assets/img/woo-insights-hero-image-exactmetrics.png": {
+    "file": "assets/woo-insights-hero-image-exactmetrics-DonfMRmw.png",
+    "src": "src/assets/img/woo-insights-hero-image-exactmetrics.png"
+  },
+  "src/assets/img/woo-insights-hero-image-exactmetrics.png": {
+    "file": "assets/woo-insights-hero-image-exactmetrics-Dm_gOLua.png",
+    "src": "src/assets/img/woo-insights-hero-image-exactmetrics.png"
+  },
+  "src/assets/img/woo-insights-save-60-badge.svg": {
+    "file": "assets/woo-insights-save-60-badge-DPP-r2r1.svg",
+    "src": "src/assets/img/woo-insights-save-60-badge.svg"
+  },
+  "src/assets/img/woo-insights-sessions-revenue.png": {
+    "file": "assets/woo-insights-sessions-revenue-CnxsdiTy.png",
+    "src": "src/assets/img/woo-insights-sessions-revenue.png"
+  },
+  "src/assets/img/woocommerce.png": {
+    "file": "assets/woocommerce-DV6kDMP6.png",
+    "src": "src/assets/img/woocommerce.png"
+  },
+  "src/assets/img/wpconsent-page-feature-image.png": {
+    "file": "assets/wpconsent-page-feature-image-ry1szA4S.png",
+    "src": "src/assets/img/wpconsent-page-feature-image.png"
+  },
+  "src/assets/img/wpconsent-promo-banner.svg": {
+    "file": "assets/wpconsent-promo-banner-lZdTUIfp.svg",
+    "src": "src/assets/img/wpconsent-promo-banner.svg"
+  },
+  "src/assets/img/year-in-review/behavior-funnel.png": {
+    "file": "assets/behavior-funnel-Bqu0VQSD.png",
+    "src": "src/assets/img/year-in-review/behavior-funnel.png"
+  },
+  "src/assets/img/year-in-review/behavior-section-bg.png": {
+    "file": "assets/behavior-section-bg-C1O08P4E.png",
+    "src": "src/assets/img/year-in-review/behavior-section-bg.png"
+  },
+  "src/assets/img/year-in-review/dashboard-preview.png": {
+    "file": "assets/dashboard-preview-B7S76NX3.png",
+    "src": "src/assets/img/year-in-review/dashboard-preview.png"
+  },
+  "src/assets/img/year-in-review/devices-summary-left-icon.svg": {
+    "file": "assets/devices-summary-left-icon-gX_b0Ok3.svg",
+    "src": "src/assets/img/year-in-review/devices-summary-left-icon.svg"
+  },
+  "src/assets/img/year-in-review/devices-summary-right-icon.svg": {
+    "file": "assets/devices-summary-right-icon-BoEqE0Bn.svg",
+    "src": "src/assets/img/year-in-review/devices-summary-right-icon.svg"
+  },
+  "src/assets/img/year-in-review/ecommerce-cart-image.svg": {
+    "file": "assets/ecommerce-cart-image-Ci8PdgXd.svg",
+    "src": "src/assets/img/year-in-review/ecommerce-cart-image.svg"
+  },
+  "src/assets/img/year-in-review/em-behavior-section-bg.png": {
+    "file": "assets/em-behavior-section-bg-DvwjdNKA.png",
+    "src": "src/assets/img/year-in-review/em-behavior-section-bg.png"
+  },
+  "src/assets/img/year-in-review/em-dashboard-preview.png": {
+    "file": "assets/em-dashboard-preview-BOd2zFLo.png",
+    "src": "src/assets/img/year-in-review/em-dashboard-preview.png"
+  },
+  "src/assets/img/year-in-review/em-google-performance-bar-left-icon.png": {
+    "file": "assets/em-google-performance-bar-left-icon-Dhe9nwji.png",
+    "src": "src/assets/img/year-in-review/em-google-performance-bar-left-icon.png"
+  },
+  "src/assets/img/year-in-review/em-hero-image.jpg": {
+    "file": "assets/em-hero-image-C8H-yg5V.jpg",
+    "src": "src/assets/img/year-in-review/em-hero-image.jpg"
+  },
+  "src/assets/img/year-in-review/em-thankyou-bg.png": {
+    "file": "assets/em-thankyou-bg-Bmhmoyy_.png",
+    "src": "src/assets/img/year-in-review/em-thankyou-bg.png"
+  },
+  "src/assets/img/year-in-review/form-insights-bar-left-icon.svg": {
+    "file": "assets/form-insights-bar-left-icon-CYSAcDYA.svg",
+    "src": "src/assets/img/year-in-review/form-insights-bar-left-icon.svg"
+  },
+  "src/assets/img/year-in-review/google-performance-bar-left-icon.svg": {
+    "file": "assets/google-performance-bar-left-icon-7ZPbul8K.svg",
+    "src": "src/assets/img/year-in-review/google-performance-bar-left-icon.svg"
+  },
+  "src/assets/img/year-in-review/hero-image.jpg": {
+    "file": "assets/hero-image-LP6tVZa-.jpg",
+    "src": "src/assets/img/year-in-review/hero-image.jpg"
+  },
+  "src/assets/img/year-in-review/thankyou-bg.png": {
+    "file": "assets/thankyou-bg-CXOBcxig.png",
+    "src": "src/assets/img/year-in-review/thankyou-bg.png"
+  },
+  "src/assets/img/yir-dashboard.png": {
+    "file": "assets/yir-dashboard-p7UBxo-j.png",
+    "src": "src/assets/img/yir-dashboard.png"
+  },
+  "src/assets/img/yir-em-dashboard.png": {
+    "file": "assets/yir-em-dashboard-BXpJSk1K.png",
+    "src": "src/assets/img/yir-em-dashboard.png"
+  },
+  "src/assets/img/yir-em-hero.svg": {
+    "file": "assets/yir-em-hero-ERYG3vtb.svg",
+    "src": "src/assets/img/yir-em-hero.svg"
+  },
+  "src/assets/img/yir-icon-world.svg": {
+    "file": "assets/yir-icon-world-CwfbI13I.svg",
+    "src": "src/assets/img/yir-icon-world.svg"
+  },
+  "src/assets/img/yir-map-bg.svg": {
+    "file": "assets/yir-map-bg-CKEdtzdG.svg",
+    "src": "src/assets/img/yir-map-bg.svg"
+  },
+  "src/assets/img/yir-mi-hero.svg": {
+    "file": "assets/yir-mi-hero-DPm5eoml.svg",
+    "src": "src/assets/img/yir-mi-hero.svg"
+  },
+  "src/assets/scss/fonts/Roboto-Bold.woff2": {
+    "file": "fonts/Roboto-Bold.woff2",
+    "src": "src/assets/scss/fonts/Roboto-Bold.woff2"
+  },
+  "src/assets/scss/fonts/Roboto-Regular.woff2": {
+    "file": "fonts/Roboto-Regular.woff2",
+    "src": "src/assets/scss/fonts/Roboto-Regular.woff2"
+  },
+  "src/assets/scss/fonts/icons.ttf": {
+    "file": "fonts/icons.ttf",
+    "src": "src/assets/scss/fonts/icons.ttf"
+  },
+  "src/assets/scss/fonts/icons.woff": {
+    "file": "fonts/icons.woff",
+    "src": "src/assets/scss/fonts/icons.woff"
+  },
+  "src/assets/scss/fonts/icons.woff2": {
+    "file": "fonts/icons.woff2",
+    "src": "src/assets/scss/fonts/icons.woff2"
+  },
+  "src/assets/scss/fonts/lato-bold-webfont.woff": {
+    "file": "fonts/lato-bold-webfont.woff",
+    "src": "src/assets/scss/fonts/lato-bold-webfont.woff"
+  },
+  "src/assets/scss/fonts/lato-bold-webfont.woff2": {
+    "file": "fonts/lato-bold-webfont.woff2",
+    "src": "src/assets/scss/fonts/lato-bold-webfont.woff2"
+  },
+  "src/assets/scss/fonts/lato-regular-webfont.woff": {
+    "file": "fonts/lato-regular-webfont.woff",
+    "src": "src/assets/scss/fonts/lato-regular-webfont.woff"
+  },
+  "src/assets/scss/fonts/lato-regular-webfont.woff2": {
+    "file": "fonts/lato-regular-webfont.woff2",
+    "src": "src/assets/scss/fonts/lato-regular-webfont.woff2"
+  },
+  "src/modules/ai-charlie/main.js": {
+    "file": "js/ai-charlie-CN_7DiZd.js",
+    "name": "ai-charlie",
+    "src": "src/modules/ai-charlie/main.js",
+    "isEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_AppOverlays-GGnrWZ9e.js",
+      "_default-i18n-KrIlCc2E.js",
+      "_Icon-BKVJ2HHT.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-CFSDJy4y.css"
+    ]
+  },
+  "src/modules/custom-dashboard/main.js": {
+    "file": "js/custom-dashboard-V5fA7hqu.js",
+    "name": "custom-dashboard",
+    "src": "src/modules/custom-dashboard/main.js",
+    "isEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_ajax-Uw5S1uqk.js",
+      "_AppOverlays-GGnrWZ9e.js",
+      "_default-i18n-KrIlCc2E.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js"
+    ],
+    "dynamicImports": [
+      "src/modules/custom-dashboard/views/DashboardList.lite.vue",
+      "src/modules/custom-dashboard/views/DashboardCreate.vue",
+      "src/modules/custom-dashboard/views/DashboardEdit.vue",
+      "src/modules/custom-dashboard/views/DashboardView.vue"
+    ],
+    "css": [
+      "css/main-exactmetrics-B6jDag_3.css"
+    ]
+  },
+  "src/modules/custom-dashboard/views/DashboardCreate.vue": {
+    "file": "js/chunks/DashboardCreate-D_ftMmj3.js",
+    "name": "DashboardCreate",
+    "src": "src/modules/custom-dashboard/views/DashboardCreate.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_default-i18n-KrIlCc2E.js",
+      "_ErrorModal-CSWM7gHU.js",
+      "_toastStore-CjmlShHI.js",
+      "_Icon-BKVJ2HHT.js",
+      "_license-C6i4W44s.js",
+      "_DatePicker-0IkGB934.js",
+      "_Modal-CzneZfPu.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_useSampleData-as2jswHs.js",
+      "_useAuthGate-Ci3sAzws.js",
+      "_useFeatureGate-Cpz_XvaQ.js",
+      "_ajax-Uw5S1uqk.js",
+      "_useChartColors-DfB5TXg7.js",
+      "_LoadingSpinnerInline-CEN6fdH3.js",
+      "_vue3-apexcharts-ErQ4EB6K.js",
+      "_ApexBarChart-DqWhakFR.js",
+      "_dateIntervals-BPoui_3H.js",
+      "_useNotices-BosR4uY_.js",
+      "_flatpickr-rZFU0y0u.js",
+      "_auth-Rcit4ziJ.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-DnsKVjAM.css"
+    ]
+  },
+  "src/modules/custom-dashboard/views/DashboardEdit.vue": {
+    "file": "js/chunks/DashboardEdit-DcLHfmUo.js",
+    "name": "DashboardEdit",
+    "src": "src/modules/custom-dashboard/views/DashboardEdit.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/modules/custom-dashboard/views/DashboardCreate.vue",
+      "_toastStore-CjmlShHI.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_ajax-Uw5S1uqk.js",
+      "_default-i18n-KrIlCc2E.js",
+      "_ErrorModal-CSWM7gHU.js",
+      "_Icon-BKVJ2HHT.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_useFeatureGate-Cpz_XvaQ.js",
+      "_useChartColors-DfB5TXg7.js",
+      "_LoadingSpinnerInline-CEN6fdH3.js",
+      "_vue3-apexcharts-ErQ4EB6K.js",
+      "_ApexBarChart-DqWhakFR.js",
+      "_dateIntervals-BPoui_3H.js",
+      "_DatePicker-0IkGB934.js",
+      "_flatpickr-rZFU0y0u.js",
+      "_Modal-CzneZfPu.js",
+      "_license-C6i4W44s.js",
+      "_useNotices-BosR4uY_.js",
+      "_useSampleData-as2jswHs.js",
+      "_useAuthGate-Ci3sAzws.js",
+      "_auth-Rcit4ziJ.js"
+    ]
+  },
+  "src/modules/custom-dashboard/views/DashboardList.lite.vue": {
+    "file": "js/chunks/DashboardList.lite-ydFdTIRm.js",
+    "name": "DashboardList.lite",
+    "src": "src/modules/custom-dashboard/views/DashboardList.lite.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_useSampleData-as2jswHs.js",
+      "_useFeatureGate-Cpz_XvaQ.js",
+      "_toastStore-CjmlShHI.js",
+      "_ajax-Uw5S1uqk.js",
+      "_default-i18n-KrIlCc2E.js",
+      "_Modal-CzneZfPu.js",
+      "_Icon-BKVJ2HHT.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_license-C6i4W44s.js",
+      "_useNotices-BosR4uY_.js"
+    ]
+  },
+  "src/modules/custom-dashboard/views/DashboardView.vue": {
+    "file": "js/chunks/DashboardView-EGIw_nTx.js",
+    "name": "DashboardView",
+    "src": "src/modules/custom-dashboard/views/DashboardView.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_default-i18n-KrIlCc2E.js",
+      "_ErrorModal-CSWM7gHU.js",
+      "_DatePicker-0IkGB934.js",
+      "_useSampleData-as2jswHs.js",
+      "_useAuthGate-Ci3sAzws.js",
+      "_useFeatureGate-Cpz_XvaQ.js",
+      "_toastStore-CjmlShHI.js",
+      "_ajax-Uw5S1uqk.js",
+      "_Icon-BKVJ2HHT.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_useChartColors-DfB5TXg7.js",
+      "_LoadingSpinnerInline-CEN6fdH3.js",
+      "_vue3-apexcharts-ErQ4EB6K.js",
+      "_ApexBarChart-DqWhakFR.js",
+      "_dateIntervals-BPoui_3H.js",
+      "_Modal-CzneZfPu.js",
+      "_flatpickr-rZFU0y0u.js",
+      "_license-C6i4W44s.js",
+      "_useNotices-BosR4uY_.js",
+      "_auth-Rcit4ziJ.js"
+    ]
+  },
+  "src/modules/reports/main.js": {
+    "file": "js/reports-DMcJDRGZ.js",
+    "name": "reports",
+    "src": "src/modules/reports/main.js",
+    "isEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_AppOverlays-GGnrWZ9e.js",
+      "_ajax-Uw5S1uqk.js",
+      "_dateIntervals-BPoui_3H.js",
+      "_default-i18n-KrIlCc2E.js",
+      "_addons-DcCBQDEz.js",
+      "_Icon-BKVJ2HHT.js",
+      "_DatePicker-0IkGB934.js",
+      "_Modal-CzneZfPu.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_UniversallyPromo-lKsveXRx.js",
+      "_useNotices-BosR4uY_.js",
+      "_flatpickr-rZFU0y0u.js",
+      "_useFeatureGate-Cpz_XvaQ.js"
+    ],
+    "dynamicImports": [
+      "src/modules/reports/views/OverviewReport.vue",
+      "src/modules/reports/views/traffic/TrafficOverviewReport.vue",
+      "src/modules/reports/views/traffic/TrafficTechnologyReport.vue",
+      "src/modules/reports/views/traffic/TrafficLandingPagesReport.vue",
+      "src/modules/reports/views/traffic/TrafficCampaignReport.vue",
+      "src/modules/reports/views/traffic/TrafficSourceMediumReport.vue",
+      "src/modules/reports/views/traffic/TrafficSocialReport.vue",
+      "src/modules/reports/views/traffic/TrafficAIReport.vue",
+      "src/modules/reports/views/FormsReport.vue",
+      "src/modules/reports/views/ExceptionsReport.vue",
+      "src/modules/reports/views/MediaReport.vue",
+      "src/modules/reports/views/dimensions/DimensionsReport.vue",
+      "src/modules/reports/views/realtime/RealtimeReport.vue",
+      "src/modules/reports/views/search-console/SearchConsoleReport.vue",
+      "src/modules/reports/views/site-speed/SiteSpeedReport.vue",
+      "src/modules/reports/views/ecommerce/EcommerceOverviewReport.vue",
+      "src/modules/reports/views/ecommerce/EcommerceCouponsReport.vue",
+      "src/modules/reports/views/ecommerce/EcommerceCartAbandonmentReport.vue",
+      "src/modules/reports/views/ecommerce/EcommerceFunnelReport.vue",
+      "src/modules/reports/views/ecommerce/EcommercePurchasesByLocationReport.vue",
+      "src/modules/reports/views/ecommerce/EcommerceSpendByDayReport.vue",
+      "src/modules/reports/views/ecommerce/EcommerceSpendByHourReport.vue",
+      "src/modules/reports/views/ecommerce/EcommerceRefundsReport.vue",
+      "src/modules/reports/views/ecommerce/EcommerceRefundsByGeoReport.vue",
+      "src/modules/reports/views/ecommerce/EcommerceProductFeedReport.vue",
+      "src/modules/reports/views/publishers/CountriesReport.vue",
+      "src/modules/reports/views/publishers/PublishersOverviewReport.vue",
+      "src/modules/reports/views/publishers/PublishersPagesReport.vue",
+      "src/modules/reports/views/publishers/CustomEventsReport.vue",
+      "src/modules/reports/views/UserJourneyReport.vue"
+    ],
+    "css": [
+      "css/main-exactmetrics-CURP6H5A.css"
+    ],
+    "assets": [
+      "assets/em-arrows-Dq2c4rA5.jpg"
+    ]
+  },
+  "src/modules/reports/views/ExceptionsReport.vue": {
+    "file": "js/chunks/ExceptionsReport-BGT11odf.js",
+    "name": "ExceptionsReport",
+    "src": "src/modules/reports/views/ExceptionsReport.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_default-i18n-KrIlCc2E.js",
+      "src/modules/reports/main.js",
+      "_useReportPermissions-_eyKnlni.js",
+      "_addons-DcCBQDEz.js",
+      "_ajax-Uw5S1uqk.js",
+      "_ReportPageLayout-C4sDdqO7.js",
+      "_Icon-BKVJ2HHT.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_AppOverlays-GGnrWZ9e.js",
+      "_dateIntervals-BPoui_3H.js",
+      "_DatePicker-0IkGB934.js",
+      "_flatpickr-rZFU0y0u.js",
+      "_useFeatureGate-Cpz_XvaQ.js",
+      "_Modal-CzneZfPu.js",
+      "_UniversallyPromo-lKsveXRx.js",
+      "_useNotices-BosR4uY_.js",
+      "_useAuthGate-Ci3sAzws.js",
+      "_auth-Rcit4ziJ.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-D7IMHQB2.css"
+    ]
+  },
+  "src/modules/reports/views/FormsReport.vue": {
+    "file": "js/chunks/FormsReport-DBJ93JKk.js",
+    "name": "FormsReport",
+    "src": "src/modules/reports/views/FormsReport.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_default-i18n-KrIlCc2E.js",
+      "src/modules/reports/main.js",
+      "_reportCache-DcJQ7wbP.js",
+      "_useReportPermissions-_eyKnlni.js",
+      "_useReport-Nv5_YTN8.js",
+      "_overviewTableFormatters-CC_6ogRL.js",
+      "_reportValues-WD297wEw.js",
+      "_compareDateLabels-B56Y3XjZ.js",
+      "_useOverviewChartData-DE1ommJa.js",
+      "_ReportPageLayout-C4sDdqO7.js",
+      "_ReportChartSection-W3cI7Zby.js",
+      "_ReportDataTable-BRD0H1Zv.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_ajax-Uw5S1uqk.js",
+      "_AppOverlays-GGnrWZ9e.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_dateIntervals-BPoui_3H.js",
+      "_addons-DcCBQDEz.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js",
+      "_Icon-BKVJ2HHT.js",
+      "_DatePicker-0IkGB934.js",
+      "_flatpickr-rZFU0y0u.js",
+      "_useFeatureGate-Cpz_XvaQ.js",
+      "_UniversallyPromo-lKsveXRx.js",
+      "_useAuthGate-Ci3sAzws.js",
+      "_auth-Rcit4ziJ.js",
+      "_settings-BVkGy_Cz.js",
+      "_ApexLineChart-Df-zujYW.js",
+      "_vue3-apexcharts-ErQ4EB6K.js",
+      "_useChartColors-DfB5TXg7.js",
+      "_LoadingSpinnerInline-CEN6fdH3.js",
+      "_SiteNotes-DTNIQUYd.js",
+      "_siteNotes-DsF95A7r.js",
+      "_ReportTableModal-BsCwm9nW.js"
+    ]
+  },
+  "src/modules/reports/views/MediaReport.vue": {
+    "file": "js/chunks/MediaReport-D_3_m-s7.js",
+    "name": "MediaReport",
+    "src": "src/modules/reports/views/MediaReport.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_default-i18n-KrIlCc2E.js",
+      "src/modules/reports/main.js",
+      "_reportCache-DcJQ7wbP.js",
+      "_useReportPermissions-_eyKnlni.js",
+      "_useReport-Nv5_YTN8.js",
+      "_overviewTableFormatters-CC_6ogRL.js",
+      "_reportValues-WD297wEw.js",
+      "_compareDateLabels-B56Y3XjZ.js",
+      "_useOverviewChartData-DE1ommJa.js",
+      "_ReportPageLayout-C4sDdqO7.js",
+      "_ReportChartSection-W3cI7Zby.js",
+      "_ReportDataTable-BRD0H1Zv.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_ajax-Uw5S1uqk.js",
+      "_AppOverlays-GGnrWZ9e.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_dateIntervals-BPoui_3H.js",
+      "_addons-DcCBQDEz.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js",
+      "_Icon-BKVJ2HHT.js",
+      "_DatePicker-0IkGB934.js",
+      "_flatpickr-rZFU0y0u.js",
+      "_useFeatureGate-Cpz_XvaQ.js",
+      "_UniversallyPromo-lKsveXRx.js",
+      "_useAuthGate-Ci3sAzws.js",
+      "_auth-Rcit4ziJ.js",
+      "_settings-BVkGy_Cz.js",
+      "_ApexLineChart-Df-zujYW.js",
+      "_vue3-apexcharts-ErQ4EB6K.js",
+      "_useChartColors-DfB5TXg7.js",
+      "_LoadingSpinnerInline-CEN6fdH3.js",
+      "_SiteNotes-DTNIQUYd.js",
+      "_siteNotes-DsF95A7r.js",
+      "_ReportTableModal-BsCwm9nW.js"
+    ]
+  },
+  "src/modules/reports/views/OverviewReport.vue": {
+    "file": "js/chunks/OverviewReport-DuSGQ8fN.js",
+    "name": "OverviewReport",
+    "src": "src/modules/reports/views/OverviewReport.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_default-i18n-KrIlCc2E.js",
+      "_ApexLineChart-Df-zujYW.js",
+      "_LoadingSpinnerInline-CEN6fdH3.js",
+      "_Icon-BKVJ2HHT.js",
+      "src/modules/reports/main.js",
+      "_SiteNotes-DTNIQUYd.js",
+      "_ajax-Uw5S1uqk.js",
+      "_useOverviewChartData-DE1ommJa.js",
+      "_ReportTableModal-BsCwm9nW.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_overviewTableFormatters-CC_6ogRL.js",
+      "_reportValues-WD297wEw.js",
+      "_FunnelModal-Bdv9NcJE.js",
+      "_UniversallyPromo-lKsveXRx.js",
+      "_useReportPermissions-_eyKnlni.js",
+      "_useAuthGate-Ci3sAzws.js",
+      "_vue3-apexcharts-ErQ4EB6K.js",
+      "_useChartColors-DfB5TXg7.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_AppOverlays-GGnrWZ9e.js",
+      "_dateIntervals-BPoui_3H.js",
+      "_addons-DcCBQDEz.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js",
+      "_DatePicker-0IkGB934.js",
+      "_flatpickr-rZFU0y0u.js",
+      "_useFeatureGate-Cpz_XvaQ.js",
+      "_siteNotes-DsF95A7r.js",
+      "_settings-BVkGy_Cz.js",
+      "_auth-Rcit4ziJ.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-gHk6Gj8a.css"
+    ],
+    "assets": [
+      "assets/woocom-CGR3qW2E.png",
+      "assets/easy-BvW_B_Ta.png",
+      "assets/memberpress-D3zMNxUg.png",
+      "assets/lifterlms-a1S06NYR.png",
+      "assets/givewp-C405d0U0.png",
+      "assets/restrict-x0XNKniw.png",
+      "assets/charitable-jZ8z8e4W.png",
+      "assets/wishlistmember-logo 1-Dtdt0jIO.png",
+      "assets/memberhouse-BJdHvZB4.png",
+      "assets/em-background-BPt0ZyG0.jpg",
+      "assets/em-screenshot-Dav_Tstv.png"
+    ]
+  },
+  "src/modules/reports/views/UserJourneyReport.vue": {
+    "file": "js/chunks/UserJourneyReport-C3wrTNjL.js",
+    "name": "UserJourneyReport",
+    "src": "src/modules/reports/views/UserJourneyReport.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_ReportPageLayout-C4sDdqO7.js",
+      "_toastStore-CjmlShHI.js",
+      "_vue-multiselect.esm-CupFr6V6.js",
+      "_ajax-Uw5S1uqk.js",
+      "_flatpickr-rZFU0y0u.js",
+      "_dateIntervals-BPoui_3H.js",
+      "_DatePicker-0IkGB934.js",
+      "src/modules/reports/main.js",
+      "_useReportPermissions-_eyKnlni.js",
+      "_addons-DcCBQDEz.js",
+      "_useNotices-BosR4uY_.js",
+      "_default-i18n-KrIlCc2E.js",
+      "_Modal-CzneZfPu.js",
+      "_useAuthGate-Ci3sAzws.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_auth-Rcit4ziJ.js",
+      "_useFeatureGate-Cpz_XvaQ.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_AppOverlays-GGnrWZ9e.js",
+      "_Icon-BKVJ2HHT.js",
+      "_UniversallyPromo-lKsveXRx.js"
+    ]
+  },
+  "src/modules/reports/views/dimensions/DimensionsReport.vue": {
+    "file": "js/chunks/DimensionsReport-xz7-8yOy.js",
+    "name": "DimensionsReport",
+    "src": "src/modules/reports/views/dimensions/DimensionsReport.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_default-i18n-KrIlCc2E.js",
+      "src/modules/reports/main.js",
+      "_reportCache-DcJQ7wbP.js",
+      "_ajax-Uw5S1uqk.js",
+      "_overviewTableFormatters-CC_6ogRL.js",
+      "_reportValues-WD297wEw.js",
+      "_aggregateDateEntityRows-i7QMgwng.js",
+      "_compareDateLabels-B56Y3XjZ.js",
+      "_useReportPermissions-_eyKnlni.js",
+      "_useReport-Nv5_YTN8.js",
+      "_addons-DcCBQDEz.js",
+      "_ReportPageLayout-C4sDdqO7.js",
+      "_ReportDataTable-BRD0H1Zv.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_AppOverlays-GGnrWZ9e.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_dateIntervals-BPoui_3H.js",
+      "_Icon-BKVJ2HHT.js",
+      "_DatePicker-0IkGB934.js",
+      "_flatpickr-rZFU0y0u.js",
+      "_useFeatureGate-Cpz_XvaQ.js",
+      "_Modal-CzneZfPu.js",
+      "_UniversallyPromo-lKsveXRx.js",
+      "_useNotices-BosR4uY_.js",
+      "_settings-BVkGy_Cz.js",
+      "_useAuthGate-Ci3sAzws.js",
+      "_auth-Rcit4ziJ.js",
+      "_LoadingSpinnerInline-CEN6fdH3.js",
+      "_ReportTableModal-BsCwm9nW.js"
+    ]
+  },
+  "src/modules/reports/views/ecommerce/EcommerceCartAbandonmentReport.vue": {
+    "file": "js/chunks/EcommerceCartAbandonmentReport-CXhk_F5E.js",
+    "name": "EcommerceCartAbandonmentReport",
+    "src": "src/modules/reports/views/ecommerce/EcommerceCartAbandonmentReport.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_default-i18n-KrIlCc2E.js",
+      "src/modules/reports/main.js",
+      "_ecommerceReports-C20tM74X.js",
+      "_useReportPermissions-_eyKnlni.js",
+      "_useReport-Nv5_YTN8.js",
+      "_ecommerceSampleData-CfcmM5cV.js",
+      "_overviewTableFormatters-CC_6ogRL.js",
+      "_useOverviewChartData-DE1ommJa.js",
+      "_aggregateDateEntityRows-i7QMgwng.js",
+      "_compareDateLabels-B56Y3XjZ.js",
+      "_reportValues-WD297wEw.js",
+      "_ReportPageLayout-C4sDdqO7.js",
+      "_ReportDataTable-BRD0H1Zv.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_ajax-Uw5S1uqk.js",
+      "_AppOverlays-GGnrWZ9e.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_dateIntervals-BPoui_3H.js",
+      "_addons-DcCBQDEz.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js",
+      "_Icon-BKVJ2HHT.js",
+      "_DatePicker-0IkGB934.js",
+      "_flatpickr-rZFU0y0u.js",
+      "_useFeatureGate-Cpz_XvaQ.js",
+      "_UniversallyPromo-lKsveXRx.js",
+      "_reportCache-DcJQ7wbP.js",
+      "_useAuthGate-Ci3sAzws.js",
+      "_auth-Rcit4ziJ.js",
+      "_settings-BVkGy_Cz.js",
+      "_LoadingSpinnerInline-CEN6fdH3.js",
+      "_ReportTableModal-BsCwm9nW.js"
+    ]
+  },
+  "src/modules/reports/views/ecommerce/EcommerceCouponsReport.vue": {
+    "file": "js/chunks/EcommerceCouponsReport-DRuc2s58.js",
+    "name": "EcommerceCouponsReport",
+    "src": "src/modules/reports/views/ecommerce/EcommerceCouponsReport.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_default-i18n-KrIlCc2E.js",
+      "src/modules/reports/main.js",
+      "_ecommerceReports-C20tM74X.js",
+      "_useReportPermissions-_eyKnlni.js",
+      "_useReport-Nv5_YTN8.js",
+      "_ecommerceSampleData-CfcmM5cV.js",
+      "_overviewTableFormatters-CC_6ogRL.js",
+      "_aggregateDateEntityRows-i7QMgwng.js",
+      "_compareDateLabels-B56Y3XjZ.js",
+      "_reportValues-WD297wEw.js",
+      "_ReportPageLayout-C4sDdqO7.js",
+      "_ReportDataTable-BRD0H1Zv.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_ajax-Uw5S1uqk.js",
+      "_AppOverlays-GGnrWZ9e.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_dateIntervals-BPoui_3H.js",
+      "_addons-DcCBQDEz.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js",
+      "_Icon-BKVJ2HHT.js",
+      "_DatePicker-0IkGB934.js",
+      "_flatpickr-rZFU0y0u.js",
+      "_useFeatureGate-Cpz_XvaQ.js",
+      "_UniversallyPromo-lKsveXRx.js",
+      "_reportCache-DcJQ7wbP.js",
+      "_useAuthGate-Ci3sAzws.js",
+      "_auth-Rcit4ziJ.js",
+      "_settings-BVkGy_Cz.js",
+      "_LoadingSpinnerInline-CEN6fdH3.js",
+      "_ReportTableModal-BsCwm9nW.js"
+    ]
+  },
+  "src/modules/reports/views/ecommerce/EcommerceFunnelReport.vue": {
+    "file": "js/chunks/EcommerceFunnelReport-5cHSoUmd.js",
+    "name": "EcommerceFunnelReport",
+    "src": "src/modules/reports/views/ecommerce/EcommerceFunnelReport.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_default-i18n-KrIlCc2E.js",
+      "src/modules/reports/main.js",
+      "_useReportPermissions-_eyKnlni.js",
+      "_ecommerceSampleData-CfcmM5cV.js",
+      "_Icon-BKVJ2HHT.js",
+      "_LoadingSpinnerInline-CEN6fdH3.js",
+      "_FunnelModal-Bdv9NcJE.js",
+      "_ReportPageLayout-C4sDdqO7.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_ajax-Uw5S1uqk.js",
+      "_AppOverlays-GGnrWZ9e.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_dateIntervals-BPoui_3H.js",
+      "_addons-DcCBQDEz.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js",
+      "_DatePicker-0IkGB934.js",
+      "_flatpickr-rZFU0y0u.js",
+      "_useFeatureGate-Cpz_XvaQ.js",
+      "_UniversallyPromo-lKsveXRx.js",
+      "_useAuthGate-Ci3sAzws.js",
+      "_auth-Rcit4ziJ.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-BACmtAc6.css"
+    ]
+  },
+  "src/modules/reports/views/ecommerce/EcommerceOverviewReport.vue": {
+    "file": "js/chunks/EcommerceOverviewReport-DQGVs-Uy.js",
+    "name": "EcommerceOverviewReport",
+    "src": "src/modules/reports/views/ecommerce/EcommerceOverviewReport.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_default-i18n-KrIlCc2E.js",
+      "src/modules/reports/main.js",
+      "_ecommerceReports-C20tM74X.js",
+      "_useReportPermissions-_eyKnlni.js",
+      "_useReport-Nv5_YTN8.js",
+      "_ecommerceSampleData-CfcmM5cV.js",
+      "_overviewTableFormatters-CC_6ogRL.js",
+      "_useOverviewChartData-DE1ommJa.js",
+      "_ajax-Uw5S1uqk.js",
+      "_aggregateDateEntityRows-i7QMgwng.js",
+      "_compareDateLabels-B56Y3XjZ.js",
+      "_reportValues-WD297wEw.js",
+      "_ReportPageLayout-C4sDdqO7.js",
+      "_ReportChartSection-W3cI7Zby.js",
+      "_ReportDataTable-BRD0H1Zv.js",
+      "_ReportKeyMetrics-a29-oLzY.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_AppOverlays-GGnrWZ9e.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_dateIntervals-BPoui_3H.js",
+      "_addons-DcCBQDEz.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js",
+      "_Icon-BKVJ2HHT.js",
+      "_DatePicker-0IkGB934.js",
+      "_flatpickr-rZFU0y0u.js",
+      "_useFeatureGate-Cpz_XvaQ.js",
+      "_UniversallyPromo-lKsveXRx.js",
+      "_reportCache-DcJQ7wbP.js",
+      "_useAuthGate-Ci3sAzws.js",
+      "_auth-Rcit4ziJ.js",
+      "_settings-BVkGy_Cz.js",
+      "_ApexLineChart-Df-zujYW.js",
+      "_vue3-apexcharts-ErQ4EB6K.js",
+      "_useChartColors-DfB5TXg7.js",
+      "_LoadingSpinnerInline-CEN6fdH3.js",
+      "_SiteNotes-DTNIQUYd.js",
+      "_siteNotes-DsF95A7r.js",
+      "_ReportTableModal-BsCwm9nW.js"
+    ]
+  },
+  "src/modules/reports/views/ecommerce/EcommerceProductFeedReport.vue": {
+    "file": "js/chunks/EcommerceProductFeedReport-rI91mxO5.js",
+    "name": "EcommerceProductFeedReport",
+    "src": "src/modules/reports/views/ecommerce/EcommerceProductFeedReport.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_default-i18n-KrIlCc2E.js",
+      "src/modules/reports/main.js",
+      "_useReportPermissions-_eyKnlni.js",
+      "_overviewTableFormatters-CC_6ogRL.js",
+      "_reportValues-WD297wEw.js",
+      "_ReportPageLayout-C4sDdqO7.js",
+      "_ReportChartSection-W3cI7Zby.js",
+      "_ReportDataTable-BRD0H1Zv.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_ajax-Uw5S1uqk.js",
+      "_AppOverlays-GGnrWZ9e.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_dateIntervals-BPoui_3H.js",
+      "_addons-DcCBQDEz.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js",
+      "_Icon-BKVJ2HHT.js",
+      "_DatePicker-0IkGB934.js",
+      "_flatpickr-rZFU0y0u.js",
+      "_useFeatureGate-Cpz_XvaQ.js",
+      "_UniversallyPromo-lKsveXRx.js",
+      "_useAuthGate-Ci3sAzws.js",
+      "_auth-Rcit4ziJ.js",
+      "_settings-BVkGy_Cz.js",
+      "_ApexLineChart-Df-zujYW.js",
+      "_vue3-apexcharts-ErQ4EB6K.js",
+      "_useChartColors-DfB5TXg7.js",
+      "_LoadingSpinnerInline-CEN6fdH3.js",
+      "_SiteNotes-DTNIQUYd.js",
+      "_siteNotes-DsF95A7r.js",
+      "_useOverviewChartData-DE1ommJa.js",
+      "_ReportTableModal-BsCwm9nW.js"
+    ]
+  },
+  "src/modules/reports/views/ecommerce/EcommercePurchasesByLocationReport.vue": {
+    "file": "js/chunks/EcommercePurchasesByLocationReport-Cti19aSk.js",
+    "name": "EcommercePurchasesByLocationReport",
+    "src": "src/modules/reports/views/ecommerce/EcommercePurchasesByLocationReport.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_default-i18n-KrIlCc2E.js",
+      "src/modules/reports/main.js",
+      "_ecommerceReports-C20tM74X.js",
+      "_useReportPermissions-_eyKnlni.js",
+      "_useReport-Nv5_YTN8.js",
+      "_ecommerceSampleData-CfcmM5cV.js",
+      "_overviewTableFormatters-CC_6ogRL.js",
+      "_aggregateDateEntityRows-i7QMgwng.js",
+      "_compareDateLabels-B56Y3XjZ.js",
+      "_reportValues-WD297wEw.js",
+      "_ReportPageLayout-C4sDdqO7.js",
+      "_ReportDataTable-BRD0H1Zv.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_ajax-Uw5S1uqk.js",
+      "_AppOverlays-GGnrWZ9e.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_dateIntervals-BPoui_3H.js",
+      "_addons-DcCBQDEz.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js",
+      "_Icon-BKVJ2HHT.js",
+      "_DatePicker-0IkGB934.js",
+      "_flatpickr-rZFU0y0u.js",
+      "_useFeatureGate-Cpz_XvaQ.js",
+      "_UniversallyPromo-lKsveXRx.js",
+      "_reportCache-DcJQ7wbP.js",
+      "_useAuthGate-Ci3sAzws.js",
+      "_auth-Rcit4ziJ.js",
+      "_settings-BVkGy_Cz.js",
+      "_LoadingSpinnerInline-CEN6fdH3.js",
+      "_ReportTableModal-BsCwm9nW.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-eahFLOfq.css"
+    ]
+  },
+  "src/modules/reports/views/ecommerce/EcommerceRefundsByGeoReport.vue": {
+    "file": "js/chunks/EcommerceRefundsByGeoReport-RKRrVWQ7.js",
+    "name": "EcommerceRefundsByGeoReport",
+    "src": "src/modules/reports/views/ecommerce/EcommerceRefundsByGeoReport.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_default-i18n-KrIlCc2E.js",
+      "src/modules/reports/main.js",
+      "_ecommerceReports-C20tM74X.js",
+      "_useReportPermissions-_eyKnlni.js",
+      "_useReport-Nv5_YTN8.js",
+      "_ecommerceSampleData-CfcmM5cV.js",
+      "_overviewTableFormatters-CC_6ogRL.js",
+      "_aggregateDateEntityRows-i7QMgwng.js",
+      "_compareDateLabels-B56Y3XjZ.js",
+      "_reportValues-WD297wEw.js",
+      "_ReportPageLayout-C4sDdqO7.js",
+      "_ReportDataTable-BRD0H1Zv.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_ajax-Uw5S1uqk.js",
+      "_AppOverlays-GGnrWZ9e.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_dateIntervals-BPoui_3H.js",
+      "_addons-DcCBQDEz.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js",
+      "_Icon-BKVJ2HHT.js",
+      "_DatePicker-0IkGB934.js",
+      "_flatpickr-rZFU0y0u.js",
+      "_useFeatureGate-Cpz_XvaQ.js",
+      "_UniversallyPromo-lKsveXRx.js",
+      "_reportCache-DcJQ7wbP.js",
+      "_useAuthGate-Ci3sAzws.js",
+      "_auth-Rcit4ziJ.js",
+      "_settings-BVkGy_Cz.js",
+      "_LoadingSpinnerInline-CEN6fdH3.js",
+      "_ReportTableModal-BsCwm9nW.js"
+    ]
+  },
+  "src/modules/reports/views/ecommerce/EcommerceRefundsReport.vue": {
+    "file": "js/chunks/EcommerceRefundsReport-D6MQ6rsi.js",
+    "name": "EcommerceRefundsReport",
+    "src": "src/modules/reports/views/ecommerce/EcommerceRefundsReport.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_default-i18n-KrIlCc2E.js",
+      "src/modules/reports/main.js",
+      "_ecommerceReports-C20tM74X.js",
+      "_useReportPermissions-_eyKnlni.js",
+      "_useReport-Nv5_YTN8.js",
+      "_ecommerceSampleData-CfcmM5cV.js",
+      "_overviewTableFormatters-CC_6ogRL.js",
+      "_useOverviewChartData-DE1ommJa.js",
+      "_aggregateDateEntityRows-i7QMgwng.js",
+      "_compareDateLabels-B56Y3XjZ.js",
+      "_reportValues-WD297wEw.js",
+      "_ReportPageLayout-C4sDdqO7.js",
+      "_ReportChartSection-W3cI7Zby.js",
+      "_ReportDataTable-BRD0H1Zv.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_ajax-Uw5S1uqk.js",
+      "_AppOverlays-GGnrWZ9e.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_dateIntervals-BPoui_3H.js",
+      "_addons-DcCBQDEz.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js",
+      "_Icon-BKVJ2HHT.js",
+      "_DatePicker-0IkGB934.js",
+      "_flatpickr-rZFU0y0u.js",
+      "_useFeatureGate-Cpz_XvaQ.js",
+      "_UniversallyPromo-lKsveXRx.js",
+      "_reportCache-DcJQ7wbP.js",
+      "_useAuthGate-Ci3sAzws.js",
+      "_auth-Rcit4ziJ.js",
+      "_settings-BVkGy_Cz.js",
+      "_ApexLineChart-Df-zujYW.js",
+      "_vue3-apexcharts-ErQ4EB6K.js",
+      "_useChartColors-DfB5TXg7.js",
+      "_LoadingSpinnerInline-CEN6fdH3.js",
+      "_SiteNotes-DTNIQUYd.js",
+      "_siteNotes-DsF95A7r.js",
+      "_ReportTableModal-BsCwm9nW.js"
+    ]
+  },
+  "src/modules/reports/views/ecommerce/EcommerceSpendByDayReport.vue": {
+    "file": "js/chunks/EcommerceSpendByDayReport-txNt0g7d.js",
+    "name": "EcommerceSpendByDayReport",
+    "src": "src/modules/reports/views/ecommerce/EcommerceSpendByDayReport.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_default-i18n-KrIlCc2E.js",
+      "src/modules/reports/main.js",
+      "_ecommerceReports-C20tM74X.js",
+      "_useReportPermissions-_eyKnlni.js",
+      "_useReport-Nv5_YTN8.js",
+      "_ecommerceSampleData-CfcmM5cV.js",
+      "_overviewTableFormatters-CC_6ogRL.js",
+      "_compareDateLabels-B56Y3XjZ.js",
+      "_ReportPageLayout-C4sDdqO7.js",
+      "_ReportChartSection-W3cI7Zby.js",
+      "_ReportDataTable-BRD0H1Zv.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_ajax-Uw5S1uqk.js",
+      "_AppOverlays-GGnrWZ9e.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_dateIntervals-BPoui_3H.js",
+      "_addons-DcCBQDEz.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js",
+      "_Icon-BKVJ2HHT.js",
+      "_DatePicker-0IkGB934.js",
+      "_flatpickr-rZFU0y0u.js",
+      "_useFeatureGate-Cpz_XvaQ.js",
+      "_UniversallyPromo-lKsveXRx.js",
+      "_reportCache-DcJQ7wbP.js",
+      "_useAuthGate-Ci3sAzws.js",
+      "_auth-Rcit4ziJ.js",
+      "_ApexLineChart-Df-zujYW.js",
+      "_vue3-apexcharts-ErQ4EB6K.js",
+      "_useChartColors-DfB5TXg7.js",
+      "_LoadingSpinnerInline-CEN6fdH3.js",
+      "_SiteNotes-DTNIQUYd.js",
+      "_siteNotes-DsF95A7r.js",
+      "_useOverviewChartData-DE1ommJa.js",
+      "_ReportTableModal-BsCwm9nW.js"
+    ]
+  },
+  "src/modules/reports/views/ecommerce/EcommerceSpendByHourReport.vue": {
+    "file": "js/chunks/EcommerceSpendByHourReport-Ctb24iVn.js",
+    "name": "EcommerceSpendByHourReport",
+    "src": "src/modules/reports/views/ecommerce/EcommerceSpendByHourReport.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_default-i18n-KrIlCc2E.js",
+      "src/modules/reports/main.js",
+      "_ecommerceReports-C20tM74X.js",
+      "_useReportPermissions-_eyKnlni.js",
+      "_useReport-Nv5_YTN8.js",
+      "_ecommerceSampleData-CfcmM5cV.js",
+      "_overviewTableFormatters-CC_6ogRL.js",
+      "_aggregateDateEntityRows-i7QMgwng.js",
+      "_compareDateLabels-B56Y3XjZ.js",
+      "_ReportPageLayout-C4sDdqO7.js",
+      "_ReportChartSection-W3cI7Zby.js",
+      "_ReportDataTable-BRD0H1Zv.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_ajax-Uw5S1uqk.js",
+      "_AppOverlays-GGnrWZ9e.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_dateIntervals-BPoui_3H.js",
+      "_addons-DcCBQDEz.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js",
+      "_Icon-BKVJ2HHT.js",
+      "_DatePicker-0IkGB934.js",
+      "_flatpickr-rZFU0y0u.js",
+      "_useFeatureGate-Cpz_XvaQ.js",
+      "_UniversallyPromo-lKsveXRx.js",
+      "_reportCache-DcJQ7wbP.js",
+      "_useAuthGate-Ci3sAzws.js",
+      "_auth-Rcit4ziJ.js",
+      "_ApexLineChart-Df-zujYW.js",
+      "_vue3-apexcharts-ErQ4EB6K.js",
+      "_useChartColors-DfB5TXg7.js",
+      "_LoadingSpinnerInline-CEN6fdH3.js",
+      "_SiteNotes-DTNIQUYd.js",
+      "_siteNotes-DsF95A7r.js",
+      "_useOverviewChartData-DE1ommJa.js",
+      "_ReportTableModal-BsCwm9nW.js"
+    ]
+  },
+  "src/modules/reports/views/publishers/CountriesReport.vue": {
+    "file": "js/chunks/CountriesReport-D-4mcAcM.js",
+    "name": "CountriesReport",
+    "src": "src/modules/reports/views/publishers/CountriesReport.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_default-i18n-KrIlCc2E.js",
+      "src/modules/reports/main.js",
+      "_reportCache-DcJQ7wbP.js",
+      "_useReportPermissions-_eyKnlni.js",
+      "_useReport-Nv5_YTN8.js",
+      "_useOverviewChartData-DE1ommJa.js",
+      "_compareDateLabels-B56Y3XjZ.js",
+      "_buildGaExplorerReportUrl-EaZ84MNO.js",
+      "_aggregateDateEntityRows-i7QMgwng.js",
+      "_ReportPageLayout-C4sDdqO7.js",
+      "_ReportChartSection-W3cI7Zby.js",
+      "_Icon-BKVJ2HHT.js",
+      "_LoadingSpinnerInline-CEN6fdH3.js",
+      "_overviewTableFormatters-CC_6ogRL.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_ajax-Uw5S1uqk.js",
+      "_AppOverlays-GGnrWZ9e.js",
+      "_dateIntervals-BPoui_3H.js",
+      "_addons-DcCBQDEz.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js",
+      "_DatePicker-0IkGB934.js",
+      "_flatpickr-rZFU0y0u.js",
+      "_useFeatureGate-Cpz_XvaQ.js",
+      "_UniversallyPromo-lKsveXRx.js",
+      "_useAuthGate-Ci3sAzws.js",
+      "_auth-Rcit4ziJ.js",
+      "_ApexLineChart-Df-zujYW.js",
+      "_vue3-apexcharts-ErQ4EB6K.js",
+      "_useChartColors-DfB5TXg7.js",
+      "_SiteNotes-DTNIQUYd.js",
+      "_siteNotes-DsF95A7r.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-B9O8V_Vm.css"
+    ]
+  },
+  "src/modules/reports/views/publishers/CustomEventsReport.vue": {
+    "file": "js/chunks/CustomEventsReport-DrnTIVZ6.js",
+    "name": "CustomEventsReport",
+    "src": "src/modules/reports/views/publishers/CustomEventsReport.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_default-i18n-KrIlCc2E.js",
+      "src/modules/reports/main.js",
+      "_reportCache-DcJQ7wbP.js",
+      "_useReportPermissions-_eyKnlni.js",
+      "_useReport-Nv5_YTN8.js",
+      "_useOverviewChartData-DE1ommJa.js",
+      "_compareDateLabels-B56Y3XjZ.js",
+      "_overviewTableFormatters-CC_6ogRL.js",
+      "_aggregateDateEntityRows-i7QMgwng.js",
+      "_ReportPageLayout-C4sDdqO7.js",
+      "_ReportChartSection-W3cI7Zby.js",
+      "_ReportDataTable-BRD0H1Zv.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_ajax-Uw5S1uqk.js",
+      "_AppOverlays-GGnrWZ9e.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_dateIntervals-BPoui_3H.js",
+      "_addons-DcCBQDEz.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js",
+      "_Icon-BKVJ2HHT.js",
+      "_DatePicker-0IkGB934.js",
+      "_flatpickr-rZFU0y0u.js",
+      "_useFeatureGate-Cpz_XvaQ.js",
+      "_UniversallyPromo-lKsveXRx.js",
+      "_useAuthGate-Ci3sAzws.js",
+      "_auth-Rcit4ziJ.js",
+      "_ApexLineChart-Df-zujYW.js",
+      "_vue3-apexcharts-ErQ4EB6K.js",
+      "_useChartColors-DfB5TXg7.js",
+      "_LoadingSpinnerInline-CEN6fdH3.js",
+      "_SiteNotes-DTNIQUYd.js",
+      "_siteNotes-DsF95A7r.js",
+      "_ReportTableModal-BsCwm9nW.js"
+    ]
+  },
+  "src/modules/reports/views/publishers/PublishersOverviewReport.vue": {
+    "file": "js/chunks/PublishersOverviewReport-CLex-2B0.js",
+    "name": "PublishersOverviewReport",
+    "src": "src/modules/reports/views/publishers/PublishersOverviewReport.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_default-i18n-KrIlCc2E.js",
+      "src/modules/reports/main.js",
+      "_useReportPermissions-_eyKnlni.js",
+      "_reportCache-DcJQ7wbP.js",
+      "_ajax-Uw5S1uqk.js",
+      "_overviewTableFormatters-CC_6ogRL.js",
+      "_buildGaExplorerReportUrl-EaZ84MNO.js",
+      "_ReportPageLayout-C4sDdqO7.js",
+      "_ReportDataTable-BRD0H1Zv.js",
+      "_ReportPieChart-CWTEHavI.js",
+      "_ApexBarChart-DqWhakFR.js",
+      "_LoadingSpinnerInline-CEN6fdH3.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_AppOverlays-GGnrWZ9e.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_dateIntervals-BPoui_3H.js",
+      "_addons-DcCBQDEz.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js",
+      "_Icon-BKVJ2HHT.js",
+      "_DatePicker-0IkGB934.js",
+      "_flatpickr-rZFU0y0u.js",
+      "_useFeatureGate-Cpz_XvaQ.js",
+      "_UniversallyPromo-lKsveXRx.js",
+      "_useAuthGate-Ci3sAzws.js",
+      "_auth-Rcit4ziJ.js",
+      "_ReportTableModal-BsCwm9nW.js",
+      "_vue3-apexcharts-ErQ4EB6K.js",
+      "_useChartColors-DfB5TXg7.js"
+    ]
+  },
+  "src/modules/reports/views/publishers/PublishersPagesReport.vue": {
+    "file": "js/chunks/PublishersPagesReport-OIlnzuhf.js",
+    "name": "PublishersPagesReport",
+    "src": "src/modules/reports/views/publishers/PublishersPagesReport.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_default-i18n-KrIlCc2E.js",
+      "src/modules/reports/main.js",
+      "_reportCache-DcJQ7wbP.js",
+      "_useReportPermissions-_eyKnlni.js",
+      "_useReport-Nv5_YTN8.js",
+      "_overviewTableFormatters-CC_6ogRL.js",
+      "_reportValues-WD297wEw.js",
+      "_aggregateDateEntityRows-i7QMgwng.js",
+      "_compareDateLabels-B56Y3XjZ.js",
+      "_ajax-Uw5S1uqk.js",
+      "_buildGaExplorerReportUrl-EaZ84MNO.js",
+      "_ReportPageLayout-C4sDdqO7.js",
+      "_ReportDataTable-BRD0H1Zv.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_AppOverlays-GGnrWZ9e.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_dateIntervals-BPoui_3H.js",
+      "_addons-DcCBQDEz.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js",
+      "_Icon-BKVJ2HHT.js",
+      "_DatePicker-0IkGB934.js",
+      "_flatpickr-rZFU0y0u.js",
+      "_useFeatureGate-Cpz_XvaQ.js",
+      "_UniversallyPromo-lKsveXRx.js",
+      "_useAuthGate-Ci3sAzws.js",
+      "_auth-Rcit4ziJ.js",
+      "_settings-BVkGy_Cz.js",
+      "_LoadingSpinnerInline-CEN6fdH3.js",
+      "_ReportTableModal-BsCwm9nW.js"
+    ]
+  },
+  "src/modules/reports/views/realtime/RealtimeReport.vue": {
+    "file": "js/chunks/RealtimeReport-CNBhjy_Q.js",
+    "name": "RealtimeReport",
+    "src": "src/modules/reports/views/realtime/RealtimeReport.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_default-i18n-KrIlCc2E.js",
+      "src/modules/reports/main.js",
+      "_toastStore-CjmlShHI.js",
+      "_ajax-Uw5S1uqk.js",
+      "_useReportPermissions-_eyKnlni.js",
+      "_addons-DcCBQDEz.js",
+      "_overviewTableFormatters-CC_6ogRL.js",
+      "_reportValues-WD297wEw.js",
+      "_ReportPageLayout-C4sDdqO7.js",
+      "_ReportDataTable-BRD0H1Zv.js",
+      "_ApexLineChart-Df-zujYW.js",
+      "_LoadingSpinnerInline-CEN6fdH3.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_AppOverlays-GGnrWZ9e.js",
+      "_dateIntervals-BPoui_3H.js",
+      "_Icon-BKVJ2HHT.js",
+      "_DatePicker-0IkGB934.js",
+      "_flatpickr-rZFU0y0u.js",
+      "_useFeatureGate-Cpz_XvaQ.js",
+      "_Modal-CzneZfPu.js",
+      "_UniversallyPromo-lKsveXRx.js",
+      "_useNotices-BosR4uY_.js",
+      "_useAuthGate-Ci3sAzws.js",
+      "_auth-Rcit4ziJ.js",
+      "_settings-BVkGy_Cz.js",
+      "_ReportTableModal-BsCwm9nW.js",
+      "_vue3-apexcharts-ErQ4EB6K.js",
+      "_useChartColors-DfB5TXg7.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-Dqpti7IV.css"
+    ]
+  },
+  "src/modules/reports/views/search-console/SearchConsoleReport.vue": {
+    "file": "js/chunks/SearchConsoleReport-DVES_TxT.js",
+    "name": "SearchConsoleReport",
+    "src": "src/modules/reports/views/search-console/SearchConsoleReport.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_default-i18n-KrIlCc2E.js",
+      "src/modules/reports/main.js",
+      "_ajax-Uw5S1uqk.js",
+      "_useReportPermissions-_eyKnlni.js",
+      "_addons-DcCBQDEz.js",
+      "_overviewTableFormatters-CC_6ogRL.js",
+      "_reportValues-WD297wEw.js",
+      "_useOverviewChartData-DE1ommJa.js",
+      "_ReportPageLayout-C4sDdqO7.js",
+      "_ReportChartSection-W3cI7Zby.js",
+      "_ReportDataTable-BRD0H1Zv.js",
+      "_ReportKeyMetrics-a29-oLzY.js",
+      "_seo-B-a9LBIc.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_AppOverlays-GGnrWZ9e.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_dateIntervals-BPoui_3H.js",
+      "_Icon-BKVJ2HHT.js",
+      "_DatePicker-0IkGB934.js",
+      "_flatpickr-rZFU0y0u.js",
+      "_useFeatureGate-Cpz_XvaQ.js",
+      "_Modal-CzneZfPu.js",
+      "_UniversallyPromo-lKsveXRx.js",
+      "_useNotices-BosR4uY_.js",
+      "_useAuthGate-Ci3sAzws.js",
+      "_auth-Rcit4ziJ.js",
+      "_settings-BVkGy_Cz.js",
+      "_ApexLineChart-Df-zujYW.js",
+      "_vue3-apexcharts-ErQ4EB6K.js",
+      "_useChartColors-DfB5TXg7.js",
+      "_LoadingSpinnerInline-CEN6fdH3.js",
+      "_SiteNotes-DTNIQUYd.js",
+      "_siteNotes-DsF95A7r.js",
+      "_ReportTableModal-BsCwm9nW.js"
+    ]
+  },
+  "src/modules/reports/views/site-speed/SiteSpeedReport.vue": {
+    "file": "js/chunks/SiteSpeedReport-BZDaEbZZ.js",
+    "name": "SiteSpeedReport",
+    "src": "src/modules/reports/views/site-speed/SiteSpeedReport.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_default-i18n-KrIlCc2E.js",
+      "_ReportPageLayout-C4sDdqO7.js",
+      "_LoadingSpinnerInline-CEN6fdH3.js",
+      "src/modules/reports/main.js",
+      "_useReportPermissions-_eyKnlni.js",
+      "_toastStore-CjmlShHI.js",
+      "_ajax-Uw5S1uqk.js",
+      "_addons-DcCBQDEz.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js",
+      "_useAuthGate-Ci3sAzws.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_auth-Rcit4ziJ.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_AppOverlays-GGnrWZ9e.js",
+      "_dateIntervals-BPoui_3H.js",
+      "_Icon-BKVJ2HHT.js",
+      "_DatePicker-0IkGB934.js",
+      "_flatpickr-rZFU0y0u.js",
+      "_useFeatureGate-Cpz_XvaQ.js",
+      "_UniversallyPromo-lKsveXRx.js"
+    ]
+  },
+  "src/modules/reports/views/traffic/TrafficAIReport.vue": {
+    "file": "js/chunks/TrafficAIReport-DpV5A-gw.js",
+    "name": "TrafficAIReport",
+    "src": "src/modules/reports/views/traffic/TrafficAIReport.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_default-i18n-KrIlCc2E.js",
+      "src/modules/reports/main.js",
+      "_trafficSampleData-Vl-puaTC.js",
+      "_useReportPermissions-_eyKnlni.js",
+      "_useReport-Nv5_YTN8.js",
+      "_overviewTableFormatters-CC_6ogRL.js",
+      "_useOverviewChartData-DE1ommJa.js",
+      "_aggregateDateEntityRows-i7QMgwng.js",
+      "_compareDateLabels-B56Y3XjZ.js",
+      "_ajax-Uw5S1uqk.js",
+      "_ReportPageLayout-C4sDdqO7.js",
+      "_ReportChartSection-W3cI7Zby.js",
+      "_ReportDataTable-BRD0H1Zv.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_AppOverlays-GGnrWZ9e.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_dateIntervals-BPoui_3H.js",
+      "_addons-DcCBQDEz.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js",
+      "_Icon-BKVJ2HHT.js",
+      "_DatePicker-0IkGB934.js",
+      "_flatpickr-rZFU0y0u.js",
+      "_useFeatureGate-Cpz_XvaQ.js",
+      "_UniversallyPromo-lKsveXRx.js",
+      "_reportCache-DcJQ7wbP.js",
+      "_useAuthGate-Ci3sAzws.js",
+      "_auth-Rcit4ziJ.js",
+      "_ApexLineChart-Df-zujYW.js",
+      "_vue3-apexcharts-ErQ4EB6K.js",
+      "_useChartColors-DfB5TXg7.js",
+      "_LoadingSpinnerInline-CEN6fdH3.js",
+      "_SiteNotes-DTNIQUYd.js",
+      "_siteNotes-DsF95A7r.js",
+      "_ReportTableModal-BsCwm9nW.js"
+    ]
+  },
+  "src/modules/reports/views/traffic/TrafficCampaignReport.vue": {
+    "file": "js/chunks/TrafficCampaignReport-DqkAjtOM.js",
+    "name": "TrafficCampaignReport",
+    "src": "src/modules/reports/views/traffic/TrafficCampaignReport.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_default-i18n-KrIlCc2E.js",
+      "src/modules/reports/main.js",
+      "_trafficSampleData-Vl-puaTC.js",
+      "_useReportPermissions-_eyKnlni.js",
+      "_useReport-Nv5_YTN8.js",
+      "_overviewTableFormatters-CC_6ogRL.js",
+      "_useOverviewChartData-DE1ommJa.js",
+      "_aggregateDateEntityRows-i7QMgwng.js",
+      "_compareDateLabels-B56Y3XjZ.js",
+      "_reportValues-WD297wEw.js",
+      "_ReportPageLayout-C4sDdqO7.js",
+      "_ReportChartSection-W3cI7Zby.js",
+      "_ReportDataTable-BRD0H1Zv.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_ajax-Uw5S1uqk.js",
+      "_AppOverlays-GGnrWZ9e.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_dateIntervals-BPoui_3H.js",
+      "_addons-DcCBQDEz.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js",
+      "_Icon-BKVJ2HHT.js",
+      "_DatePicker-0IkGB934.js",
+      "_flatpickr-rZFU0y0u.js",
+      "_useFeatureGate-Cpz_XvaQ.js",
+      "_UniversallyPromo-lKsveXRx.js",
+      "_reportCache-DcJQ7wbP.js",
+      "_useAuthGate-Ci3sAzws.js",
+      "_auth-Rcit4ziJ.js",
+      "_settings-BVkGy_Cz.js",
+      "_ApexLineChart-Df-zujYW.js",
+      "_vue3-apexcharts-ErQ4EB6K.js",
+      "_useChartColors-DfB5TXg7.js",
+      "_LoadingSpinnerInline-CEN6fdH3.js",
+      "_SiteNotes-DTNIQUYd.js",
+      "_siteNotes-DsF95A7r.js",
+      "_ReportTableModal-BsCwm9nW.js"
+    ]
+  },
+  "src/modules/reports/views/traffic/TrafficLandingPagesReport.vue": {
+    "file": "js/chunks/TrafficLandingPagesReport-BhDZ2SKg.js",
+    "name": "TrafficLandingPagesReport",
+    "src": "src/modules/reports/views/traffic/TrafficLandingPagesReport.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_default-i18n-KrIlCc2E.js",
+      "src/modules/reports/main.js",
+      "_trafficSampleData-Vl-puaTC.js",
+      "_useReportPermissions-_eyKnlni.js",
+      "_useReport-Nv5_YTN8.js",
+      "_overviewTableFormatters-CC_6ogRL.js",
+      "_useOverviewChartData-DE1ommJa.js",
+      "_ajax-Uw5S1uqk.js",
+      "_aggregateDateEntityRows-i7QMgwng.js",
+      "_compareDateLabels-B56Y3XjZ.js",
+      "_reportValues-WD297wEw.js",
+      "_ReportPageLayout-C4sDdqO7.js",
+      "_ReportChartSection-W3cI7Zby.js",
+      "_ReportDataTable-BRD0H1Zv.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_AppOverlays-GGnrWZ9e.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_dateIntervals-BPoui_3H.js",
+      "_addons-DcCBQDEz.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js",
+      "_Icon-BKVJ2HHT.js",
+      "_DatePicker-0IkGB934.js",
+      "_flatpickr-rZFU0y0u.js",
+      "_useFeatureGate-Cpz_XvaQ.js",
+      "_UniversallyPromo-lKsveXRx.js",
+      "_reportCache-DcJQ7wbP.js",
+      "_useAuthGate-Ci3sAzws.js",
+      "_auth-Rcit4ziJ.js",
+      "_settings-BVkGy_Cz.js",
+      "_ApexLineChart-Df-zujYW.js",
+      "_vue3-apexcharts-ErQ4EB6K.js",
+      "_useChartColors-DfB5TXg7.js",
+      "_LoadingSpinnerInline-CEN6fdH3.js",
+      "_SiteNotes-DTNIQUYd.js",
+      "_siteNotes-DsF95A7r.js",
+      "_ReportTableModal-BsCwm9nW.js"
+    ]
+  },
+  "src/modules/reports/views/traffic/TrafficOverviewReport.vue": {
+    "file": "js/chunks/TrafficOverviewReport-DvKH3Up6.js",
+    "name": "TrafficOverviewReport",
+    "src": "src/modules/reports/views/traffic/TrafficOverviewReport.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_default-i18n-KrIlCc2E.js",
+      "src/modules/reports/main.js",
+      "_trafficSampleData-Vl-puaTC.js",
+      "_overviewTableFormatters-CC_6ogRL.js",
+      "_useOverviewChartData-DE1ommJa.js",
+      "_aggregateDateEntityRows-i7QMgwng.js",
+      "_compareDateLabels-B56Y3XjZ.js",
+      "_reportValues-WD297wEw.js",
+      "_useReportPermissions-_eyKnlni.js",
+      "_useReport-Nv5_YTN8.js",
+      "_ReportPageLayout-C4sDdqO7.js",
+      "_ReportChartSection-W3cI7Zby.js",
+      "_ReportDataTable-BRD0H1Zv.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_ajax-Uw5S1uqk.js",
+      "_AppOverlays-GGnrWZ9e.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_dateIntervals-BPoui_3H.js",
+      "_addons-DcCBQDEz.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js",
+      "_Icon-BKVJ2HHT.js",
+      "_DatePicker-0IkGB934.js",
+      "_flatpickr-rZFU0y0u.js",
+      "_useFeatureGate-Cpz_XvaQ.js",
+      "_UniversallyPromo-lKsveXRx.js",
+      "_reportCache-DcJQ7wbP.js",
+      "_settings-BVkGy_Cz.js",
+      "_useAuthGate-Ci3sAzws.js",
+      "_auth-Rcit4ziJ.js",
+      "_ApexLineChart-Df-zujYW.js",
+      "_vue3-apexcharts-ErQ4EB6K.js",
+      "_useChartColors-DfB5TXg7.js",
+      "_LoadingSpinnerInline-CEN6fdH3.js",
+      "_SiteNotes-DTNIQUYd.js",
+      "_siteNotes-DsF95A7r.js",
+      "_ReportTableModal-BsCwm9nW.js"
+    ]
+  },
+  "src/modules/reports/views/traffic/TrafficSocialReport.vue": {
+    "file": "js/chunks/TrafficSocialReport-CAV2QGbu.js",
+    "name": "TrafficSocialReport",
+    "src": "src/modules/reports/views/traffic/TrafficSocialReport.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_default-i18n-KrIlCc2E.js",
+      "src/modules/reports/main.js",
+      "_trafficSampleData-Vl-puaTC.js",
+      "_useReportPermissions-_eyKnlni.js",
+      "_useReport-Nv5_YTN8.js",
+      "_overviewTableFormatters-CC_6ogRL.js",
+      "_useOverviewChartData-DE1ommJa.js",
+      "_aggregateDateEntityRows-i7QMgwng.js",
+      "_compareDateLabels-B56Y3XjZ.js",
+      "_ajax-Uw5S1uqk.js",
+      "_ReportPageLayout-C4sDdqO7.js",
+      "_ReportChartSection-W3cI7Zby.js",
+      "_ReportDataTable-BRD0H1Zv.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_AppOverlays-GGnrWZ9e.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_dateIntervals-BPoui_3H.js",
+      "_addons-DcCBQDEz.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js",
+      "_Icon-BKVJ2HHT.js",
+      "_DatePicker-0IkGB934.js",
+      "_flatpickr-rZFU0y0u.js",
+      "_useFeatureGate-Cpz_XvaQ.js",
+      "_UniversallyPromo-lKsveXRx.js",
+      "_reportCache-DcJQ7wbP.js",
+      "_useAuthGate-Ci3sAzws.js",
+      "_auth-Rcit4ziJ.js",
+      "_ApexLineChart-Df-zujYW.js",
+      "_vue3-apexcharts-ErQ4EB6K.js",
+      "_useChartColors-DfB5TXg7.js",
+      "_LoadingSpinnerInline-CEN6fdH3.js",
+      "_SiteNotes-DTNIQUYd.js",
+      "_siteNotes-DsF95A7r.js",
+      "_ReportTableModal-BsCwm9nW.js"
+    ]
+  },
+  "src/modules/reports/views/traffic/TrafficSourceMediumReport.vue": {
+    "file": "js/chunks/TrafficSourceMediumReport-hDkPpToC.js",
+    "name": "TrafficSourceMediumReport",
+    "src": "src/modules/reports/views/traffic/TrafficSourceMediumReport.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_default-i18n-KrIlCc2E.js",
+      "src/modules/reports/main.js",
+      "_trafficSampleData-Vl-puaTC.js",
+      "_useReportPermissions-_eyKnlni.js",
+      "_useReport-Nv5_YTN8.js",
+      "_overviewTableFormatters-CC_6ogRL.js",
+      "_useOverviewChartData-DE1ommJa.js",
+      "_aggregateDateEntityRows-i7QMgwng.js",
+      "_compareDateLabels-B56Y3XjZ.js",
+      "_reportValues-WD297wEw.js",
+      "_ReportPageLayout-C4sDdqO7.js",
+      "_ReportChartSection-W3cI7Zby.js",
+      "_ReportDataTable-BRD0H1Zv.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_ajax-Uw5S1uqk.js",
+      "_AppOverlays-GGnrWZ9e.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_dateIntervals-BPoui_3H.js",
+      "_addons-DcCBQDEz.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js",
+      "_Icon-BKVJ2HHT.js",
+      "_DatePicker-0IkGB934.js",
+      "_flatpickr-rZFU0y0u.js",
+      "_useFeatureGate-Cpz_XvaQ.js",
+      "_UniversallyPromo-lKsveXRx.js",
+      "_reportCache-DcJQ7wbP.js",
+      "_useAuthGate-Ci3sAzws.js",
+      "_auth-Rcit4ziJ.js",
+      "_settings-BVkGy_Cz.js",
+      "_ApexLineChart-Df-zujYW.js",
+      "_vue3-apexcharts-ErQ4EB6K.js",
+      "_useChartColors-DfB5TXg7.js",
+      "_LoadingSpinnerInline-CEN6fdH3.js",
+      "_SiteNotes-DTNIQUYd.js",
+      "_siteNotes-DsF95A7r.js",
+      "_ReportTableModal-BsCwm9nW.js"
+    ]
+  },
+  "src/modules/reports/views/traffic/TrafficTechnologyReport.vue": {
+    "file": "js/chunks/TrafficTechnologyReport-DO1s6CNA.js",
+    "name": "TrafficTechnologyReport",
+    "src": "src/modules/reports/views/traffic/TrafficTechnologyReport.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_default-i18n-KrIlCc2E.js",
+      "src/modules/reports/main.js",
+      "_trafficSampleData-Vl-puaTC.js",
+      "_useReportPermissions-_eyKnlni.js",
+      "_useReport-Nv5_YTN8.js",
+      "_useOverviewChartData-DE1ommJa.js",
+      "_reportValues-WD297wEw.js",
+      "_ReportPageLayout-C4sDdqO7.js",
+      "_ReportPieChart-CWTEHavI.js",
+      "_LoadingSpinnerInline-CEN6fdH3.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_ajax-Uw5S1uqk.js",
+      "_AppOverlays-GGnrWZ9e.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_dateIntervals-BPoui_3H.js",
+      "_addons-DcCBQDEz.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js",
+      "_Icon-BKVJ2HHT.js",
+      "_DatePicker-0IkGB934.js",
+      "_flatpickr-rZFU0y0u.js",
+      "_useFeatureGate-Cpz_XvaQ.js",
+      "_UniversallyPromo-lKsveXRx.js",
+      "_reportCache-DcJQ7wbP.js",
+      "_useAuthGate-Ci3sAzws.js",
+      "_auth-Rcit4ziJ.js",
+      "_settings-BVkGy_Cz.js",
+      "_vue3-apexcharts-ErQ4EB6K.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-Bf6g5qXz.css"
+    ]
+  },
+  "src/modules/settings/components/about/AboutShell.vue": {
+    "file": "js/chunks/AboutShell-JtttF2s8.js",
+    "name": "AboutShell",
+    "src": "src/modules/settings/components/about/AboutShell.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js"
+    ]
+  },
+  "src/modules/settings/components/about/exactmetrics-AboutTabAboutUs.vue": {
+    "file": "js/chunks/exactmetrics-AboutTabAboutUs-Bjip9v-C.js",
+    "name": "exactmetrics-AboutTabAboutUs",
+    "src": "src/modules/settings/components/about/exactmetrics-AboutTabAboutUs.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_addons-DcCBQDEz.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_toastStore-CjmlShHI.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_license-C6i4W44s.js",
+      "_ajax-Uw5S1uqk.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js"
+    ]
+  },
+  "src/modules/settings/components/about/exactmetrics-AboutTabGettingStarted.vue": {
+    "file": "js/chunks/exactmetrics-AboutTabGettingStarted-CcpfPWuz.js",
+    "name": "exactmetrics-AboutTabGettingStarted",
+    "src": "src/modules/settings/components/about/exactmetrics-AboutTabGettingStarted.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_Modal-CzneZfPu.js",
+      "_license-C6i4W44s.js",
+      "_ajax-Uw5S1uqk.js",
+      "_toastStore-CjmlShHI.js",
+      "_ContentIconList-Cbwc93uo.js",
+      "_LaunchWizardButton-BuPkh4Ew.js",
+      "_useNotices-BosR4uY_.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_addons-DcCBQDEz.js"
+    ]
+  },
+  "src/modules/settings/components/about/exactmetrics-AboutTabLiteVsPro.vue": {
+    "file": "js/chunks/exactmetrics-AboutTabLiteVsPro-r0GeP750.js",
+    "name": "exactmetrics-AboutTabLiteVsPro",
+    "src": "src/modules/settings/components/about/exactmetrics-AboutTabLiteVsPro.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_ajax-Uw5S1uqk.js",
+      "_toastStore-CjmlShHI.js"
+    ]
+  },
+  "src/modules/settings/components/addons/AddonsPage.vue": {
+    "file": "js/chunks/AddonsPage-BNLt9vJG.js",
+    "name": "AddonsPage",
+    "src": "src/modules/settings/components/addons/AddonsPage.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_toastStore-CjmlShHI.js",
+      "_addons-DcCBQDEz.js",
+      "_license-C6i4W44s.js",
+      "_ajax-Uw5S1uqk.js",
+      "_Modal-CzneZfPu.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_useNotices-BosR4uY_.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-CGAGRmkt.css"
+    ]
+  },
+  "src/modules/settings/components/exactmetrics-SettingsNetwork.vue": {
+    "file": "js/chunks/exactmetrics-SettingsNetwork-C6aikE8Y.js",
+    "name": "exactmetrics-SettingsNetwork",
+    "src": "src/modules/settings/components/exactmetrics-SettingsNetwork.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_ajax-Uw5S1uqk.js",
+      "_license-C6i4W44s.js",
+      "_SettingsBlock-Bsp6Fu6H.js",
+      "_SettingsInputCheckbox-B6Cq-zQE.js",
+      "_exactmetrics-SettingsInputAuthenticate-Lite-DNJt1JSz.js",
+      "_toastStore-CjmlShHI.js",
+      "_addons-DcCBQDEz.js",
+      "_ContentIntroFullWidth-Cv-KKuIE.js",
+      "_LaunchWizardButton-BuPkh4Ew.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_useNotices-BosR4uY_.js",
+      "_SlideDownUp-69HctpXG.js",
+      "_settings-BVkGy_Cz.js",
+      "_exactmetrics-Lite-BcFa0OAR.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_SettingsInfoTooltip-DGz1RdtP.js",
+      "_auth-Rcit4ziJ.js",
+      "_Modal-CzneZfPu.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-D39LKRVD.css"
+    ]
+  },
+  "src/modules/settings/components/google-ads/SettingsGoogleAds-Lite.vue": {
+    "file": "js/chunks/SettingsGoogleAds-Lite-CAM0zGxN.js",
+    "name": "SettingsGoogleAds-Lite",
+    "src": "src/modules/settings/components/google-ads/SettingsGoogleAds-Lite.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_Modal-CzneZfPu.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-CBX2MtVm.css"
+    ]
+  },
+  "src/modules/settings/components/popular-posts/PopularPostsInline.vue": {
+    "file": "js/chunks/PopularPostsInline-DvQrT-zr.js",
+    "name": "PopularPostsInline",
+    "src": "src/modules/settings/components/popular-posts/PopularPostsInline.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_settings-BVkGy_Cz.js",
+      "_PopularPostsVideoModal-BQ3eoJ-t.js",
+      "_SettingsBlock-Bsp6Fu6H.js",
+      "_SettingsInputRadio-BIIVvaRz.js",
+      "_SettingsInputNumber--SxI7Hdh.js",
+      "_LoadingSpinnerInline-CEN6fdH3.js",
+      "_toastStore-CjmlShHI.js",
+      "_addons-DcCBQDEz.js",
+      "_SettingsInputCheckbox-B6Cq-zQE.js",
+      "_exactmetrics-Lite-BcFa0OAR.js",
+      "_ajax-Uw5S1uqk.js",
+      "_popularPosts-LBEcKCPS.js",
+      "_SettingsInputText-Si-V9oum.js",
+      "_SettingsInfoTooltip-DGz1RdtP.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_vue-multiselect.esm-CupFr6V6.js",
+      "_SettingsInputSelect-Dtl5Sysl.js",
+      "_Modal-CzneZfPu.js",
+      "_SlideDownUp-69HctpXG.js",
+      "_default-i18n-KrIlCc2E.js",
+      "_useNotices-BosR4uY_.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_license-C6i4W44s.js"
+    ]
+  },
+  "src/modules/settings/components/popular-posts/PopularPostsSettings.vue": {
+    "file": "js/chunks/PopularPostsSettings-BIy9R97f.js",
+    "name": "PopularPostsSettings",
+    "src": "src/modules/settings/components/popular-posts/PopularPostsSettings.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_addons-DcCBQDEz.js",
+      "_SettingsBlock-Bsp6Fu6H.js",
+      "_SettingsInputCheckbox-B6Cq-zQE.js",
+      "_SettingsInputRadio-BIIVvaRz.js",
+      "_popularPosts-LBEcKCPS.js",
+      "_useNotices-BosR4uY_.js",
+      "_ajax-Uw5S1uqk.js",
+      "_Modal-CzneZfPu.js",
+      "_SlideDownUp-69HctpXG.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_settings-BVkGy_Cz.js",
+      "_exactmetrics-Lite-BcFa0OAR.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_license-C6i4W44s.js",
+      "_SettingsInfoTooltip-DGz1RdtP.js"
+    ]
+  },
+  "src/modules/settings/components/popular-posts/PopularPostsShell.vue": {
+    "file": "js/chunks/PopularPostsShell-DaU6lg0f.js",
+    "name": "PopularPostsShell",
+    "src": "src/modules/settings/components/popular-posts/PopularPostsShell.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js"
+    ]
+  },
+  "src/modules/settings/components/popular-posts/PopularPostsWidget.vue": {
+    "file": "js/chunks/PopularPostsWidget-C92s7b8w.js",
+    "name": "PopularPostsWidget",
+    "src": "src/modules/settings/components/popular-posts/PopularPostsWidget.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_settings-BVkGy_Cz.js",
+      "_PopularPostsVideoModal-BQ3eoJ-t.js",
+      "_SettingsBlock-Bsp6Fu6H.js",
+      "_SettingsInputRadio-BIIVvaRz.js",
+      "_SettingsInputCheckbox-B6Cq-zQE.js",
+      "_SettingsInputText-Si-V9oum.js",
+      "_LoadingSpinnerInline-CEN6fdH3.js",
+      "_toastStore-CjmlShHI.js",
+      "_addons-DcCBQDEz.js",
+      "_exactmetrics-Lite-BcFa0OAR.js",
+      "_SettingsInputSelect-Dtl5Sysl.js",
+      "_license-C6i4W44s.js",
+      "_ajax-Uw5S1uqk.js",
+      "_SettingsInfoTooltip-DGz1RdtP.js",
+      "_popularPosts-LBEcKCPS.js",
+      "_Icon-BKVJ2HHT.js",
+      "_vue-multiselect.esm-CupFr6V6.js",
+      "_Modal-CzneZfPu.js",
+      "_SlideDownUp-69HctpXG.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_default-i18n-KrIlCc2E.js",
+      "_useNotices-BosR4uY_.js",
+      "_TheAppHeader-BI_ZrtNW.js"
+    ]
+  },
+  "src/modules/settings/components/popular-posts/exactmetrics-PopularPostsProducts-Lite.vue": {
+    "file": "js/chunks/exactmetrics-PopularPostsProducts-Lite-DR20SPTW.js",
+    "name": "exactmetrics-PopularPostsProducts-Lite",
+    "src": "src/modules/settings/components/popular-posts/exactmetrics-PopularPostsProducts-Lite.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_ajax-Uw5S1uqk.js",
+      "_toastStore-CjmlShHI.js"
+    ]
+  },
+  "src/modules/settings/components/rewardswp/RewardsWpShell.vue": {
+    "file": "js/chunks/RewardsWpShell-D52oNArT.js",
+    "name": "RewardsWpShell",
+    "src": "src/modules/settings/components/rewardswp/RewardsWpShell.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_addons-DcCBQDEz.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_useNotices-BosR4uY_.js",
+      "_ajax-Uw5S1uqk.js",
+      "_Modal-CzneZfPu.js"
+    ],
+    "assets": [
+      "assets/rewardswp-rewards-widget-promo-Do7LAdUj.png"
+    ]
+  },
+  "src/modules/settings/components/seo/SeoShell.vue": {
+    "file": "js/chunks/SeoShell-PtXI20O_.js",
+    "name": "SeoShell",
+    "src": "src/modules/settings/components/seo/SeoShell.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_addons-DcCBQDEz.js",
+      "_seo-B-a9LBIc.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_license-C6i4W44s.js",
+      "_useNotices-BosR4uY_.js",
+      "_ajax-Uw5S1uqk.js",
+      "_Modal-CzneZfPu.js"
+    ]
+  },
+  "src/modules/settings/components/site-notes/SiteNotesCategory.vue": {
+    "file": "js/chunks/SiteNotesCategory-Cd8Le477.js",
+    "name": "SiteNotesCategory",
+    "src": "src/modules/settings/components/site-notes/SiteNotesCategory.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_SettingsBlock-Bsp6Fu6H.js",
+      "_siteNotes-DsF95A7r.js",
+      "_addons-DcCBQDEz.js",
+      "_SlideDownUp-69HctpXG.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_ajax-Uw5S1uqk.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js"
+    ]
+  },
+  "src/modules/settings/components/site-notes/SiteNotesExport.vue": {
+    "file": "js/chunks/SiteNotesExport-C2NJ_ELl.js",
+    "name": "SiteNotesExport",
+    "src": "src/modules/settings/components/site-notes/SiteNotesExport.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_SettingsBlock-Bsp6Fu6H.js",
+      "_toastStore-CjmlShHI.js",
+      "_SlideDownUp-69HctpXG.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js"
+    ]
+  },
+  "src/modules/settings/components/site-notes/SiteNotesIntegration.vue": {
+    "file": "js/chunks/SiteNotesIntegration-CKjmgGXh.js",
+    "name": "SiteNotesIntegration",
+    "src": "src/modules/settings/components/site-notes/SiteNotesIntegration.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_addons-DcCBQDEz.js",
+      "_license-C6i4W44s.js",
+      "_useNotices-BosR4uY_.js",
+      "_ajax-Uw5S1uqk.js",
+      "_Modal-CzneZfPu.js"
+    ],
+    "assets": [
+      "assets/logo-mi-CN6yrjqJ.svg",
+      "assets/logo-em-Dwc2Jt52.svg",
+      "assets/logo-uncanny-Bx5rB0v5.svg"
+    ]
+  },
+  "src/modules/settings/components/site-notes/SiteNotesLayout.vue": {
+    "file": "js/chunks/SiteNotesLayout-BK8uS3ee.js",
+    "name": "SiteNotesLayout",
+    "src": "src/modules/settings/components/site-notes/SiteNotesLayout.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js"
+    ]
+  },
+  "src/modules/settings/components/site-notes/SiteNotesList.vue": {
+    "file": "js/chunks/SiteNotesList-6blXP3hn.js",
+    "name": "SiteNotesList",
+    "src": "src/modules/settings/components/site-notes/SiteNotesList.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_SettingsBlock-Bsp6Fu6H.js",
+      "_ajax-Uw5S1uqk.js",
+      "_flatpickr-rZFU0y0u.js",
+      "_siteNotes-DsF95A7r.js",
+      "_addons-DcCBQDEz.js",
+      "_SlideDownUp-69HctpXG.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js"
+    ]
+  },
+  "src/modules/settings/components/tabs/exactmetrics-SettingsTabAdvanced.vue": {
+    "file": "js/chunks/exactmetrics-SettingsTabAdvanced-fFdmnzcn.js",
+    "name": "exactmetrics-SettingsTabAdvanced",
+    "src": "src/modules/settings/components/tabs/exactmetrics-SettingsTabAdvanced.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_ajax-Uw5S1uqk.js",
+      "_exactmetrics-Lite-BcFa0OAR.js",
+      "_SettingsBlock-Bsp6Fu6H.js",
+      "_SettingsInputSelect-Dtl5Sysl.js",
+      "_SettingsInputRadio-BIIVvaRz.js",
+      "_SettingsInputCheckbox-B6Cq-zQE.js",
+      "_SettingsInputText-Si-V9oum.js",
+      "_toastStore-CjmlShHI.js",
+      "_settings-BVkGy_Cz.js",
+      "_addons-DcCBQDEz.js",
+      "_SettingsInputRepeater-B2m236qz.js",
+      "_SettingsAddonUpgrade-DbDUMvnr.js",
+      "_license-C6i4W44s.js",
+      "_SettingsAddonDisabled-BK0ydGiM.js",
+      "_SettingsInputNumber--SxI7Hdh.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_SlideDownUp-69HctpXG.js",
+      "_vue-multiselect.esm-CupFr6V6.js",
+      "_SettingsInfoTooltip-DGz1RdtP.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-DrI7nlOt.css"
+    ]
+  },
+  "src/modules/settings/components/tabs/exactmetrics-SettingsTabConversions.vue": {
+    "file": "js/chunks/exactmetrics-SettingsTabConversions-sSJyyXWE.js",
+    "name": "exactmetrics-SettingsTabConversions",
+    "src": "src/modules/settings/components/tabs/exactmetrics-SettingsTabConversions.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_ajax-Uw5S1uqk.js",
+      "_ContentTitleTop-8n-knvtm.js",
+      "_ContentIntroFullWidth-Cv-KKuIE.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_addons-DcCBQDEz.js",
+      "_license-C6i4W44s.js",
+      "_SettingsBlock-Bsp6Fu6H.js",
+      "_SettingsAddonUpgrade-DbDUMvnr.js",
+      "_SettingsAddonDisabled-BK0ydGiM.js",
+      "_SettingsInputCheckbox-B6Cq-zQE.js",
+      "_toastStore-CjmlShHI.js",
+      "_settings-BVkGy_Cz.js",
+      "_exactmetrics-Lite-BcFa0OAR.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_SettingsInputText-Si-V9oum.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js",
+      "_SlideDownUp-69HctpXG.js",
+      "_SettingsInfoTooltip-DGz1RdtP.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-CsR3wNZX.css"
+    ]
+  },
+  "src/modules/settings/components/tabs/exactmetrics-SettingsTabEcommerce-Lite.vue": {
+    "file": "js/chunks/exactmetrics-SettingsTabEcommerce-Lite-Be8S8ck7.js",
+    "name": "exactmetrics-SettingsTabEcommerce-Lite",
+    "src": "src/modules/settings/components/tabs/exactmetrics-SettingsTabEcommerce-Lite.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_ajax-Uw5S1uqk.js",
+      "_ContentTitleTop-8n-knvtm.js",
+      "_ContentIntroFullWidth-Cv-KKuIE.js",
+      "_ContentIconList-Cbwc93uo.js",
+      "_toastStore-CjmlShHI.js",
+      "_TheAppHeader-BI_ZrtNW.js"
+    ]
+  },
+  "src/modules/settings/components/tabs/exactmetrics-SettingsTabEngagement.vue": {
+    "file": "js/chunks/exactmetrics-SettingsTabEngagement-WUvaOlRG.js",
+    "name": "exactmetrics-SettingsTabEngagement",
+    "src": "src/modules/settings/components/tabs/exactmetrics-SettingsTabEngagement.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_ajax-Uw5S1uqk.js",
+      "_addons-DcCBQDEz.js",
+      "_settings-BVkGy_Cz.js",
+      "_SettingsBlock-Bsp6Fu6H.js",
+      "_SettingsInputCheckbox-B6Cq-zQE.js",
+      "_SettingsInputText-Si-V9oum.js",
+      "_SettingsInputRepeater-B2m236qz.js",
+      "_SettingsAddonUpgrade-DbDUMvnr.js",
+      "_toastStore-CjmlShHI.js",
+      "_SlideDownUp-69HctpXG.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js",
+      "_exactmetrics-Lite-BcFa0OAR.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_license-C6i4W44s.js",
+      "_SettingsInfoTooltip-DGz1RdtP.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js"
+    ]
+  },
+  "src/modules/settings/components/tabs/exactmetrics-SettingsTabGeneral-Lite.vue": {
+    "file": "js/chunks/exactmetrics-SettingsTabGeneral-Lite-C6tGZ4ug.js",
+    "name": "exactmetrics-SettingsTabGeneral-Lite",
+    "src": "src/modules/settings/components/tabs/exactmetrics-SettingsTabGeneral-Lite.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_ajax-Uw5S1uqk.js",
+      "_SlideDownUp-69HctpXG.js",
+      "_exactmetrics-SettingsInputAuthenticate-Lite-DNJt1JSz.js",
+      "_LaunchWizardButton-BuPkh4Ew.js",
+      "_license-C6i4W44s.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_addons-DcCBQDEz.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js",
+      "_auth-Rcit4ziJ.js"
+    ]
+  },
+  "src/modules/settings/components/tabs/exactmetrics-SettingsTabPublisher.vue": {
+    "file": "js/chunks/exactmetrics-SettingsTabPublisher-DTYGeUrr.js",
+    "name": "exactmetrics-SettingsTabPublisher",
+    "src": "src/modules/settings/components/tabs/exactmetrics-SettingsTabPublisher.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_ajax-Uw5S1uqk.js",
+      "_settings-BVkGy_Cz.js",
+      "_addons-DcCBQDEz.js",
+      "_SettingsBlock-Bsp6Fu6H.js",
+      "_SettingsInputRepeater-B2m236qz.js",
+      "_SettingsInfoTooltip-DGz1RdtP.js",
+      "_SettingsAddonUpgrade-DbDUMvnr.js",
+      "_toastStore-CjmlShHI.js",
+      "_SettingsInputCheckbox-B6Cq-zQE.js",
+      "_SettingsInputRadio-BIIVvaRz.js",
+      "_UniversallyPromo-lKsveXRx.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js",
+      "_SlideDownUp-69HctpXG.js",
+      "_exactmetrics-Lite-BcFa0OAR.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_license-C6i4W44s.js",
+      "_default-i18n-KrIlCc2E.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-CAyDtN88.css"
+    ]
+  },
+  "src/modules/settings/components/tabs/exactmetrics-SettingsTabSetupChecklist.vue": {
+    "file": "js/chunks/exactmetrics-SettingsTabSetupChecklist-DnwWj4Zs.js",
+    "name": "exactmetrics-SettingsTabSetupChecklist",
+    "src": "src/modules/settings/components/tabs/exactmetrics-SettingsTabSetupChecklist.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_ajax-Uw5S1uqk.js",
+      "_addons-DcCBQDEz.js",
+      "_license-C6i4W44s.js",
+      "_SettingsBlock-Bsp6Fu6H.js",
+      "_LaunchWizardButton-BuPkh4Ew.js",
+      "_ContentTitleTop-8n-knvtm.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js",
+      "_SlideDownUp-69HctpXG.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_TheAppHeader-BI_ZrtNW.js"
+    ]
+  },
+  "src/modules/settings/components/tools/ToolsLayout.vue": {
+    "file": "js/chunks/ToolsLayout-_TAlDL_p.js",
+    "name": "ToolsLayout",
+    "src": "src/modules/settings/components/tools/ToolsLayout.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js"
+    ]
+  },
+  "src/modules/settings/components/tools/ToolsTabEEACompliance.vue": {
+    "file": "js/chunks/ToolsTabEEACompliance-DIN31INz.js",
+    "name": "ToolsTabEEACompliance",
+    "src": "src/modules/settings/components/tools/ToolsTabEEACompliance.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_SettingsBlock-Bsp6Fu6H.js",
+      "_SettingsInfoTooltip-DGz1RdtP.js",
+      "_settings-BVkGy_Cz.js",
+      "_addons-DcCBQDEz.js",
+      "_ajax-Uw5S1uqk.js",
+      "_toastStore-CjmlShHI.js",
+      "_SlideDownUp-69HctpXG.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js"
+    ]
+  },
+  "src/modules/settings/components/tools/ToolsTabVerifiedBadge.vue": {
+    "file": "js/chunks/ToolsTabVerifiedBadge-CM9FPS9e.js",
+    "name": "ToolsTabVerifiedBadge",
+    "src": "src/modules/settings/components/tools/ToolsTabVerifiedBadge.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_SettingsBlock-Bsp6Fu6H.js",
+      "_SettingsInputCheckbox-B6Cq-zQE.js",
+      "_SettingsInputRadio-BIIVvaRz.js",
+      "_settings-BVkGy_Cz.js",
+      "_SlideDownUp-69HctpXG.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_exactmetrics-Lite-BcFa0OAR.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_ajax-Uw5S1uqk.js",
+      "_addons-DcCBQDEz.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js",
+      "_license-C6i4W44s.js",
+      "_SettingsInfoTooltip-DGz1RdtP.js"
+    ]
+  },
+  "src/modules/settings/components/tools/exactmetrics-ToolsPrettyLinksFlow.vue": {
+    "file": "js/chunks/exactmetrics-ToolsPrettyLinksFlow-xI3JaNMa.js",
+    "name": "exactmetrics-ToolsPrettyLinksFlow",
+    "src": "src/modules/settings/components/tools/exactmetrics-ToolsPrettyLinksFlow.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_addons-DcCBQDEz.js",
+      "_ajax-Uw5S1uqk.js",
+      "_toastStore-CjmlShHI.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js"
+    ],
+    "assets": [
+      "assets/prettylinks-illustration-mi-DQmg-MF9.svg",
+      "assets/prettylinks-illustration-DiDnqFhJ.svg"
+    ]
+  },
+  "src/modules/settings/components/tools/exactmetrics-ToolsTabImportExport.vue": {
+    "file": "js/chunks/exactmetrics-ToolsTabImportExport-BKkbFsC7.js",
+    "name": "exactmetrics-ToolsTabImportExport",
+    "src": "src/modules/settings/components/tools/exactmetrics-ToolsTabImportExport.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_SettingsBlock-Bsp6Fu6H.js",
+      "_SettingsInfoTooltip-DGz1RdtP.js",
+      "_settings-BVkGy_Cz.js",
+      "_addons-DcCBQDEz.js",
+      "_ajax-Uw5S1uqk.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_SlideDownUp-69HctpXG.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-DFCy1PHe.css"
+    ]
+  },
+  "src/modules/settings/components/tools/exactmetrics-ToolsTabReportExport.vue": {
+    "file": "js/chunks/exactmetrics-ToolsTabReportExport-BMel71M4.js",
+    "name": "exactmetrics-ToolsTabReportExport",
+    "src": "src/modules/settings/components/tools/exactmetrics-ToolsTabReportExport.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_SettingsBlock-Bsp6Fu6H.js",
+      "_LoadingSpinnerInline-CEN6fdH3.js",
+      "_ajax-Uw5S1uqk.js",
+      "_addons-DcCBQDEz.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_SlideDownUp-69HctpXG.js",
+      "_default-i18n-KrIlCc2E.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-89q6pPXJ.css"
+    ]
+  },
+  "src/modules/settings/components/tools/exactmetrics-ToolsTabUrlBuilder.vue": {
+    "file": "js/chunks/exactmetrics-ToolsTabUrlBuilder-DUVUD0cb.js",
+    "name": "exactmetrics-ToolsTabUrlBuilder",
+    "src": "src/modules/settings/components/tools/exactmetrics-ToolsTabUrlBuilder.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_SettingsBlock-Bsp6Fu6H.js",
+      "_SettingsInfoTooltip-DGz1RdtP.js",
+      "_addons-DcCBQDEz.js",
+      "_SlideDownUp-69HctpXG.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_useNotices-BosR4uY_.js",
+      "_ajax-Uw5S1uqk.js",
+      "_Modal-CzneZfPu.js"
+    ]
+  },
+  "src/modules/settings/components/userfeedback/UserFeedbackShell.vue": {
+    "file": "js/chunks/UserFeedbackShell-DITrmcYk.js",
+    "name": "UserFeedbackShell",
+    "src": "src/modules/settings/components/userfeedback/UserFeedbackShell.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_addons-DcCBQDEz.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_useNotices-BosR4uY_.js",
+      "_ajax-Uw5S1uqk.js",
+      "_Modal-CzneZfPu.js"
+    ]
+  },
+  "src/modules/settings/components/wpconsent/WpconsentShell.vue": {
+    "file": "js/chunks/WpconsentShell-QfY4awhQ.js",
+    "name": "WpconsentShell",
+    "src": "src/modules/settings/components/wpconsent/WpconsentShell.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_addons-DcCBQDEz.js",
+      "_ajax-Uw5S1uqk.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js"
+    ]
+  },
+  "src/modules/settings/main-network.js": {
+    "file": "js/settings-network-Bc9_hEat.js",
+    "name": "settings-network",
+    "src": "src/modules/settings/main-network.js",
+    "isEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_ajax-Uw5S1uqk.js",
+      "_exactmetrics-Lite-BcFa0OAR.js",
+      "_addons-DcCBQDEz.js",
+      "_settings-BVkGy_Cz.js",
+      "_license-C6i4W44s.js",
+      "_auth-Rcit4ziJ.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js"
+    ],
+    "dynamicImports": [
+      "src/modules/settings/components/exactmetrics-SettingsNetwork.vue",
+      "src/modules/settings/components/addons/AddonsPage.vue",
+      "src/modules/settings/components/about/AboutShell.vue",
+      "src/modules/settings/components/about/exactmetrics-AboutTabAboutUs.vue",
+      "src/modules/settings/components/about/exactmetrics-AboutTabGettingStarted.vue",
+      "src/modules/settings/components/about/exactmetrics-AboutTabLiteVsPro.vue"
+    ],
+    "css": [
+      "css/main-exactmetrics-Dwd990oN.css"
+    ]
+  },
+  "src/modules/settings/main.js": {
+    "file": "js/settings-BzZB_cPI.js",
+    "name": "settings",
+    "src": "src/modules/settings/main.js",
+    "isEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_TheAppHeader-BI_ZrtNW.js",
+      "_AppOverlays-GGnrWZ9e.js",
+      "_ajax-Uw5S1uqk.js",
+      "_vTooltip-DWqiyUWL.js",
+      "_exactmetrics-Lite-BcFa0OAR.js",
+      "_addons-DcCBQDEz.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_settings-BVkGy_Cz.js",
+      "_license-C6i4W44s.js",
+      "_auth-Rcit4ziJ.js",
+      "_useNotices-BosR4uY_.js",
+      "_Modal-CzneZfPu.js"
+    ],
+    "dynamicImports": [
+      "src/modules/settings/components/tabs/exactmetrics-SettingsTabGeneral-Lite.vue",
+      "src/modules/settings/components/tabs/exactmetrics-SettingsTabEngagement.vue",
+      "src/modules/settings/components/tabs/exactmetrics-SettingsTabEcommerce-Lite.vue",
+      "src/modules/settings/components/tabs/exactmetrics-SettingsTabPublisher.vue",
+      "src/modules/settings/components/tabs/exactmetrics-SettingsTabConversions.vue",
+      "src/modules/settings/components/tabs/exactmetrics-SettingsTabAdvanced.vue",
+      "src/modules/settings/components/tabs/exactmetrics-SettingsTabSetupChecklist.vue",
+      "src/modules/settings/components/google-ads/SettingsGoogleAds-Lite.vue",
+      "src/modules/settings/components/popular-posts/PopularPostsShell.vue",
+      "src/modules/settings/components/popular-posts/PopularPostsInline.vue",
+      "src/modules/settings/components/popular-posts/PopularPostsWidget.vue",
+      "src/modules/settings/components/popular-posts/exactmetrics-PopularPostsProducts-Lite.vue",
+      "src/modules/settings/components/popular-posts/PopularPostsSettings.vue",
+      "src/modules/settings/components/about/AboutShell.vue",
+      "src/modules/settings/components/about/exactmetrics-AboutTabAboutUs.vue",
+      "src/modules/settings/components/about/exactmetrics-AboutTabGettingStarted.vue",
+      "src/modules/settings/components/about/exactmetrics-AboutTabLiteVsPro.vue",
+      "src/modules/settings/components/seo/SeoShell.vue",
+      "src/modules/settings/components/wpconsent/WpconsentShell.vue",
+      "src/modules/settings/components/userfeedback/UserFeedbackShell.vue",
+      "src/modules/settings/components/rewardswp/RewardsWpShell.vue",
+      "src/modules/settings/components/tools/ToolsLayout.vue",
+      "src/modules/settings/components/tools/exactmetrics-ToolsTabUrlBuilder.vue",
+      "src/modules/settings/components/tools/exactmetrics-ToolsTabImportExport.vue",
+      "src/modules/settings/components/tools/exactmetrics-ToolsTabReportExport.vue",
+      "src/modules/settings/components/tools/exactmetrics-ToolsPrettyLinksFlow.vue",
+      "src/modules/settings/components/tools/ToolsTabVerifiedBadge.vue",
+      "src/modules/settings/components/tools/ToolsTabEEACompliance.vue",
+      "src/modules/settings/components/site-notes/SiteNotesLayout.vue",
+      "src/modules/settings/components/site-notes/SiteNotesList.vue",
+      "src/modules/settings/components/site-notes/SiteNotesCategory.vue",
+      "src/modules/settings/components/site-notes/SiteNotesExport.vue",
+      "src/modules/settings/components/site-notes/SiteNotesIntegration.vue",
+      "src/modules/settings/components/addons/AddonsPage.vue"
+    ],
+    "css": [
+      "css/main-exactmetrics-CBE7hW0v.css"
+    ]
+  },
+  "src/modules/widget/main.js": {
+    "file": "js/widget-Cqitmvyo.js",
+    "name": "widget",
+    "src": "src/modules/widget/main.js",
+    "isEntry": true,
+    "imports": [
+      "_toastStore-CjmlShHI.js",
+      "_ajax-Uw5S1uqk.js",
+      "_AppOverlays-GGnrWZ9e.js",
+      "_dateIntervals-BPoui_3H.js",
+      "_license-C6i4W44s.js",
+      "_vue3-apexcharts-ErQ4EB6K.js",
+      "_vTooltip-DWqiyUWL.js",
+      "__plugin-vue_export-helper-1tPrXgE0.js",
+      "_default-i18n-KrIlCc2E.js",
+      "_useNotices-BosR4uY_.js"
+    ],
+    "css": [
+      "css/main-exactmetrics-bYInCFta.css"
+    ],
+    "assets": [
+      "fonts/icons.woff2",
+      "fonts/icons.woff",
+      "fonts/icons.ttf",
+      "assets/flags-Ck9rBLLL.png",
+      "assets/upsell-screen-DU5gKqan.png",
+      "assets/exactmetrics-Bg-IbxMo.png",
+      "assets/one-click-integrations-CKb4nKpx.png",
+      "assets/publishers-screen-KVLGYgNW.png",
+      "assets/addons-help-screen-GpaLKPNl.png",
+      "assets/search-console-screen-DpC1s2FO.png",
+      "assets/traffic-overview-screen-D2QfD0By.png",
+      "assets/traffic-landing-pages-screen-D6ajy99M.png",
+      "assets/traffic-technology-screen-g_-jWG7b.png",
+      "assets/traffic-source-medium-screen-DNkv8GJI.png",
+      "assets/traffic-campaigns-screen-D8US3qTo.png",
+      "assets/traffic-social-screen-8tAxluFY.png",
+      "assets/traffic-ai-screen-EaYKB90k.jpeg",
+      "assets/engagement-pages-screen-BUMX-t6M.png",
+      "assets/ecommerce-overview-screen-GGv9wdyw.png",
+      "assets/ecommerce-coupons-screen-CJzS-99J.png",
+      "assets/cart-abandonment-screen-Mu4LjlvL.png",
+      "assets/ecommerce-funnel-upsell-CDIZtMoT.png",
+      "assets/real-time-screen-lrNAdsm-.png",
+      "assets/site-speed-screen-BLIxY8p3.png",
+      "assets/country-report-screen-B5HBG0hM.png",
+      "assets/forms-report-screen-vpTdd3UW.png",
+      "assets/dimensions-report-screen-BV3EGZCN.png",
+      "assets/media-report-upsell-CE0-Wy_S.png",
+      "assets/exception-report-screen-lYJ_W3io.png",
+      "assets/custom-events-report-screen-D5UtywA8.png",
+      "assets/bg-ecommerce-refunds-CKrYyTpX.png",
+      "assets/bg-ecommerce-refunds-by-geo-BvdVH8Od.png",
+      "assets/bg-ecommerce-purchases-by-location-DrPnzxXe.png",
+      "assets/bg-ecommerce-spend-by-day-DRlj_Gv_.png",
+      "assets/bg-ecommerce-spend-by-hour-D9VAnAWv.png",
+      "assets/user-journey-report-screen-YDBN-Xzo.png",
+      "assets/forms-screen-C9hswgIt.png",
+      "assets/optimize-screen-BIXAkako.png",
+      "assets/custom-dimensions-screen-BRXR6iez.png",
+      "assets/forms-wpforms-upsell-DiGJ1ioc.png",
+      "assets/yir-map-bg-CKEdtzdG.svg",
+      "assets/yir-icon-world-CwfbI13I.svg",
+      "assets/em-thankyou-bg-Bmhmoyy_.png",
+      "assets/em-dashboard-preview-BOd2zFLo.png",
+      "assets/yir-em-hero-ERYG3vtb.svg",
+      "assets/devices-summary-left-icon-gX_b0Ok3.svg",
+      "assets/devices-summary-right-icon-BoEqE0Bn.svg",
+      "assets/em-behavior-section-bg-DvwjdNKA.png",
+      "assets/behavior-funnel-Bqu0VQSD.png",
+      "assets/em-google-performance-bar-left-icon-Dhe9nwji.png",
+      "assets/site-speed-blur-DoVih4Q8.png",
+      "assets/reports-upsell-bg-Ce6isHlL.png",
+      "assets/upsell-background-Do7dbo25.png",
+      "assets/loading-background-Dayz1jqc.jpg",
+      "assets/em-logo-D9qqdn5z.png"
+    ]
+  },
+  "src/stores/sample-data/custom-dashboard/sample-view.json": {
+    "file": "js/chunks/sample-view-DCgpbF5N.js",
+    "name": "sample-view",
+    "src": "src/stores/sample-data/custom-dashboard/sample-view.json",
+    "isDynamicEntry": true
+  },
+  "src/stores/sample-data/custom-dashboard/widgets-data.json": {
+    "file": "js/chunks/widgets-data-TjimP1Ju.js",
+    "name": "widgets-data",
+    "src": "src/stores/sample-data/custom-dashboard/widgets-data.json",
+    "isDynamicEntry": true
+  }
+}

@@ -167,6 +167,8 @@ class ExactMetrics_Product_Feed_Cronjob extends ExactMetrics_Notification_Event 
 	 */
 	public function manual_check() {
 		// Security check
+		check_ajax_referer( 'mi-admin-nonce', 'nonce' );
+
 		if ( ! current_user_can( 'exactmetrics_view_dashboard' ) ) {
 			wp_send_json_error( array( 'message' => __( 'Insufficient permissions', 'google-analytics-dashboard-for-wp' ) ) );
 		}
