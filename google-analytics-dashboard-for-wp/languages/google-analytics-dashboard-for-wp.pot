@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Google Analytics Dashboard for WP (GADWP) plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Google Analytics Dashboard for WP (GADWP) 10.1.0\n"
+"Project-Id-Version: Google Analytics Dashboard for WP (GADWP) 10.1.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/google-analytics-dashboard-for-wp-working-dir\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-07-15T15:13:43+00:00\n"
+"POT-Creation-Date: 2026-07-22T14:20:16+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.13.0-alpha\n"
 "X-Domain: google-analytics-dashboard-for-wp\n"
@@ -7445,15 +7445,15 @@ msgid "You don't have the correct WordPress user permissions to authenticate int
 msgstr ""
 
 #: includes/admin/api-auth.php:105
-#: includes/admin/api-auth.php:871
+#: includes/admin/api-auth.php:876
 msgid "Cannot authenticate. Please enter a valid, active license key for ExactMetrics Pro into the settings page."
 msgstr ""
 
 #. translators: %1$s: Opening support link tag, %2$s: Closing support link tag.
 #: includes/admin/api-auth.php:113
 #: includes/admin/api-auth.php:121
-#: includes/admin/api-auth.php:878
-#: includes/admin/api-auth.php:886
+#: includes/admin/api-auth.php:883
+#: includes/admin/api-auth.php:891
 #, php-format
 msgid "Oops! There has been an error authenticating. Please try again in a few minutes. If the problem persists, please %1$scontact our support%2$s team."
 msgstr ""
@@ -7525,12 +7525,12 @@ msgstr ""
 msgid "Oops! There has been an error while trying to deauthenticate. Please try again. If the issue persists, please %1$scontact our support%2$s team."
 msgstr ""
 
-#: includes/admin/api-auth.php:839
+#: includes/admin/api-auth.php:844
 msgid "Website & Google Analytics Timezone Mismatch"
 msgstr ""
 
 #. translators: %1$s: Opening link tag, %2$s: Closing link tag.
-#: includes/admin/api-auth.php:842
+#: includes/admin/api-auth.php:847
 #, php-format
 msgid "We detected your Google Analytics property is set to a different timezone than your website. This may slightly impact your stats, especially when comparing day over day performance. You may want to adjust your website's time zone %1$shere%2$s."
 msgstr ""

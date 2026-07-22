@@ -663,7 +663,12 @@ final class ExactMetrics_API_Auth {
 		$this->rotate_tt();
 
 		// Invalidate the cached Bearer token so the next page load
-		// generates a fresh token with new credentials.
+		// generates a fresh token with new credentials. The token class is
+		// only loaded on the `init` hook, which does not run during the
+		// plugin uninstall flow, so load it on demand here.
+		if ( ! class_exists( 'ExactMetrics_API_Token' ) ) {
+			require_once EXACTMETRICS_PLUGIN_DIR . 'includes/api/class-exactmetrics-api-token.php';
+		}
 		ExactMetrics_API_Token::invalidate( $this->is_network_admin() );
 
 		if ( is_wp_error( $ret ) && ! $force ) {
