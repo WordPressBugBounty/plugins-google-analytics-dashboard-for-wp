@@ -559,7 +559,9 @@ class ExactMetrics_Popular_Posts {
 							$style_key = 'border-color';
 						}
 						$safe_value = wp_strip_all_tags( (string) $atts[ $atts_key ] );
-						$safe_value = str_replace( array( ';', '{', '}', '<', '>' ), '', $safe_value );
+						// Keep only characters valid in a CSS declaration value (hex colors, rgb()/rgba(), px sizes, percentages, named colors).
+						$safe_value = preg_replace( '/[^A-Za-z0-9#(),.%\s-]/', '', (string) $safe_value );
+						$safe_value = trim( preg_replace( '/\s+/', ' ', (string) $safe_value ) );
 						$style_css .= $style_key . ':' . $safe_value . ';';
 					}
 				}

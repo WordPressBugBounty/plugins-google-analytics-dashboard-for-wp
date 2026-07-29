@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Google Analytics Dashboard for WP (GADWP) plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Google Analytics Dashboard for WP (GADWP) 10.1.1\n"
+"Project-Id-Version: Google Analytics Dashboard for WP (GADWP) 10.1.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/google-analytics-dashboard-for-wp-working-dir\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-07-22T14:20:16+00:00\n"
+"POT-Creation-Date: 2026-07-29T15:54:27+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.13.0-alpha\n"
 "X-Domain: google-analytics-dashboard-for-wp\n"
@@ -1225,8 +1225,8 @@ msgstr ""
 msgid "Categories"
 msgstr ""
 
-#: includes/admin/site-notes/Controller.php:527
-#: includes/admin/site-notes/Controller.php:1208
+#: includes/admin/site-notes/Controller.php:563
+#: includes/admin/site-notes/Controller.php:1252
 msgid "Category"
 msgstr ""
 
@@ -1816,7 +1816,7 @@ msgstr ""
 msgid "Data Error"
 msgstr ""
 
-#: includes/admin/site-notes/Controller.php:525
+#: includes/admin/site-notes/Controller.php:561
 msgid "Date"
 msgstr ""
 
@@ -3267,7 +3267,7 @@ msgstr ""
 msgid "Import/Export"
 msgstr ""
 
-#: includes/admin/site-notes/Controller.php:528
+#: includes/admin/site-notes/Controller.php:564
 msgid "Important"
 msgstr ""
 
@@ -3909,7 +3909,7 @@ msgstr ""
 msgid "Measurement Protocol API Secret"
 msgstr ""
 
-#: includes/admin/site-notes/Controller.php:529
+#: includes/admin/site-notes/Controller.php:565
 msgid "Media"
 msgstr ""
 
@@ -5551,7 +5551,7 @@ msgstr ""
 msgid "Site Health Notifications"
 msgstr ""
 
-#: includes/admin/site-notes/Controller.php:526
+#: includes/admin/site-notes/Controller.php:562
 msgid "Site Note"
 msgstr ""
 
@@ -5727,7 +5727,7 @@ msgstr ""
 msgid "Steps to Purchase"
 msgstr ""
 
-#: includes/admin/api-auth.php:500
+#: includes/admin/api-auth.php:515
 msgid "Successfully verified."
 msgstr ""
 
@@ -6965,7 +6965,7 @@ msgid "Your license key for ExactMetrics has been disabled. Please use a differe
 msgstr ""
 
 #: includes/admin/admin.php:622
-#: includes/admin/api-auth.php:307
+#: includes/admin/api-auth.php:317
 msgid "Your license key for ExactMetrics is invalid. The key no longer exists or the user associated with the key has been deleted. Please use a different key."
 msgstr ""
 
@@ -7036,6 +7036,12 @@ msgid "Toggle analytics insights"
 msgstr ""
 
 msgid "Unable to load insights"
+msgstr ""
+
+msgid "Unlock %s"
+msgstr ""
+
+msgid "Upgrade to %s Pro"
 msgstr ""
 
 msgid "Upgrade to see detailed page-specific analytics and more."
@@ -7329,7 +7335,7 @@ msgid "We've detected you have our %1$sExactMetrics Ads%2$s addon activated. Ple
 msgstr ""
 
 #: includes/admin/admin.php:1027
-#: includes/admin/class-exactmetrics-onboarding.php:133
+#: includes/admin/class-exactmetrics-onboarding.php:144
 #: includes/admin/product-feed-cronjob.php:173
 msgid "Insufficient permissions"
 msgstr ""
@@ -7444,93 +7450,103 @@ msgstr ""
 msgid "You don't have the correct WordPress user permissions to authenticate into ExactMetrics. Please check with your site administrator that your role is included in the ExactMetrics permissions settings. %1$sClick here for more information%2$s."
 msgstr ""
 
-#: includes/admin/api-auth.php:105
-#: includes/admin/api-auth.php:876
+#: includes/admin/api-auth.php:100
+#: includes/admin/api-auth.php:307
+#: includes/admin/api-auth.php:475
+#: includes/admin/api-auth.php:580
+#: includes/admin/api-auth.php:891
+#: includes/admin/routes.php:989
+#: includes/admin/routes.php:1046
+msgid "You do not have permission to update network settings."
+msgstr ""
+
+#: includes/admin/api-auth.php:110
+#: includes/admin/api-auth.php:901
 msgid "Cannot authenticate. Please enter a valid, active license key for ExactMetrics Pro into the settings page."
 msgstr ""
 
 #. translators: %1$s: Opening support link tag, %2$s: Closing support link tag.
-#: includes/admin/api-auth.php:113
-#: includes/admin/api-auth.php:121
-#: includes/admin/api-auth.php:883
-#: includes/admin/api-auth.php:891
+#: includes/admin/api-auth.php:118
+#: includes/admin/api-auth.php:126
+#: includes/admin/api-auth.php:908
+#: includes/admin/api-auth.php:916
 #, php-format
 msgid "Oops! There has been an error authenticating. Please try again in a few minutes. If the problem persists, please %1$scontact our support%2$s team."
 msgstr ""
 
 #. translators: %1$s: Opening link tag, %2$s: Closing link tag.
-#: includes/admin/api-auth.php:292
+#: includes/admin/api-auth.php:297
 #, php-format
 msgid "You don't have the correct WordPress user permissions to re-authenticate into ExactMetrics. Please check with your site administrator that your role is included in the ExactMetrics permissions settings. %1$sClick here for more information%2$s."
 msgstr ""
 
 #. translators: %1$s: Opening wizard link tag, %2$s: Closing wizard link tag, %3$s: Opening support link tag, %4$s: Closing support link tag.
-#: includes/admin/api-auth.php:315
 #: includes/admin/api-auth.php:325
+#: includes/admin/api-auth.php:335
 #, php-format
 msgid "Oops! There was a problem while re-authenticating. Please try to complete the ExactMetrics %1$ssetup wizard%2$s again. If the problem persists, please %3$scontact our support%4$s team."
 msgstr ""
 
 #. translators: %1$s: Opening link tag, %2$s: Closing link tag.
-#: includes/admin/api-auth.php:455
+#: includes/admin/api-auth.php:465
 #, php-format
 msgid "You don't have the correct user permissions to verify the ExactMetrics license you are trying to use. Please check with your site administrator that your role is included in the ExactMetrics permissions settings. %1$sClick here for more information%2$s."
 msgstr ""
 
 #. translators: %1$s: Opening link tag, %2$s: Closing link tag.
-#: includes/admin/api-auth.php:470
-#: includes/admin/api-auth.php:478
-#: includes/admin/api-auth.php:490
+#: includes/admin/api-auth.php:485
+#: includes/admin/api-auth.php:493
+#: includes/admin/api-auth.php:505
 #, php-format
 msgid "Please enter a valid license within the ExactMetrics settings panel. You can check your license by logging into your ExactMetrics account by %1$sclicking here%2$s."
 msgstr ""
 
 #. translators: %1$s: Opening support link tag, %2$s: Closing support link tag.
-#: includes/admin/api-auth.php:504
-#: includes/admin/api-auth.php:518
+#: includes/admin/api-auth.php:519
+#: includes/admin/api-auth.php:533
 #, php-format
 msgid "Oops! There has been an error while trying to verify your license. Please try again or contact our support team by %1$sclicking here%2$s."
 msgstr ""
 
 #. translators: %1$s: Opening link tag, %2$s: Closing link tag.
-#: includes/admin/api-auth.php:555
+#: includes/admin/api-auth.php:570
 #, php-format
 msgid "You don't have the correct WordPress user permissions to deauthenticate into ExactMetrics. Please check with your site administrator that your role is included in the ExactMetrics permissions settings. %1$sClick here for more information%2$s."
 msgstr ""
 
 #. translators: %1$s: Opening wizard link tag, %2$s: Closing wizard link tag, %3$s: Opening support link tag, %4$s: Closing support link tag.
-#: includes/admin/api-auth.php:570
-#: includes/admin/api-auth.php:580
+#: includes/admin/api-auth.php:590
+#: includes/admin/api-auth.php:600
 #, php-format
 msgid "Could not disconnect as you are not currently authenticated properly. Please try to authenticate again with our ExactMetrics %1$ssetup wizard%2$s.  If you are still having problems, please %3$scontact our support%4$s team."
 msgstr ""
 
 #. translators: %1$s: Opening wizard link tag, %2$s: Closing wizard link tag, %3$s: Opening support link tag, %4$s: Closing support link tag.
-#: includes/admin/api-auth.php:594
+#: includes/admin/api-auth.php:614
 #, php-format
 msgid "Could not disconnect your account, as you are not currently authenticated properly. Please try to authenticate again with our %1$sExactMetrics setup wizard%2$s.  If you are still having problems, please %3$scontact our support%4$s team."
 msgstr ""
 
-#: includes/admin/api-auth.php:608
+#: includes/admin/api-auth.php:628
 msgid "Successfully deauthenticated."
 msgstr ""
 
-#: includes/admin/api-auth.php:611
+#: includes/admin/api-auth.php:631
 msgid "Successfully force deauthenticated."
 msgstr ""
 
 #. translators: %1$s: Opening support link tag, %2$s: Closing support link tag.
-#: includes/admin/api-auth.php:615
+#: includes/admin/api-auth.php:635
 #, php-format
 msgid "Oops! There has been an error while trying to deauthenticate. Please try again. If the issue persists, please %1$scontact our support%2$s team."
 msgstr ""
 
-#: includes/admin/api-auth.php:844
+#: includes/admin/api-auth.php:864
 msgid "Website & Google Analytics Timezone Mismatch"
 msgstr ""
 
 #. translators: %1$s: Opening link tag, %2$s: Closing link tag.
-#: includes/admin/api-auth.php:847
+#: includes/admin/api-auth.php:867
 #, php-format
 msgid "We detected your Google Analytics property is set to a different timezone than your website. This may slightly impact your stats, especially when comparing day over day performance. You may want to adjust your website's time zone %1$shere%2$s."
 msgstr ""
@@ -7589,21 +7605,22 @@ msgstr ""
 msgid "Skip %s Deactivate"
 msgstr ""
 
-#: includes/admin/class-exactmetrics-onboarding.php:120
+#: includes/admin/class-exactmetrics-onboarding.php:121
+#: includes/admin/class-exactmetrics-onboarding.php:135
 msgid "Invalid onboarding key"
 msgstr ""
 
-#: includes/admin/class-exactmetrics-onboarding.php:361
+#: includes/admin/class-exactmetrics-onboarding.php:372
 #: includes/connect.php:105
 #: includes/connect.php:128
 msgid "Please enter your license key to connect."
 msgstr ""
 
-#: includes/admin/class-exactmetrics-onboarding.php:369
+#: includes/admin/class-exactmetrics-onboarding.php:380
 msgid "Failed to generate connect URL."
 msgstr ""
 
-#: includes/admin/class-exactmetrics-onboarding.php:513
+#: includes/admin/class-exactmetrics-onboarding.php:640
 msgid "There was an error connecting to the remote key API. Please try again later."
 msgstr ""
 
@@ -7676,7 +7693,7 @@ msgstr ""
 msgid "There was an error installing the addon, %1$s. Please try again. If you are still having issues, please %2$scontact our support%3$s team."
 msgstr ""
 
-#: includes/admin/notice.php:238
+#: includes/admin/notice.php:247
 msgid "Dismiss this notice"
 msgstr ""
 
@@ -8135,246 +8152,241 @@ msgstr ""
 msgid "I already did"
 msgstr ""
 
-#: includes/admin/routes.php:219
+#: includes/admin/routes.php:223
 msgid "You do not have permission to update this setting."
 msgstr ""
 
-#: includes/admin/routes.php:406
+#: includes/admin/routes.php:410
 msgid "The best WordPress eCommerce plugin for selling digital downloads. Start selling eBooks, software, music, digital art, and more within minutes. Accept payments, manage subscriptions, advanced access control, and more."
 msgstr ""
 
-#: includes/admin/routes.php:440
-#: includes/admin/routes.php:802
+#: includes/admin/routes.php:444
+#: includes/admin/routes.php:806
 msgid "Top-rated WordPress donation and fundraising plugin. Over 10,000+ non-profit organizations and website owners use Charitable to create fundraising campaigns and raise more money online."
 msgstr ""
 
-#: includes/admin/routes.php:452
-#: includes/admin/routes.php:813
+#: includes/admin/routes.php:456
+#: includes/admin/routes.php:817
 msgid "Future proof your WordPress customizations with the most popular code snippet management plugin for WordPress. Trusted by over 1,500,000+ websites for easily adding code to WordPress right from the admin area."
 msgstr ""
 
-#: includes/admin/routes.php:475
-#: includes/admin/routes.php:824
+#: includes/admin/routes.php:479
+#: includes/admin/routes.php:828
 msgid "Leading WordPress backup & site migration plugin. Over 1,500,000+ smart website owners use Duplicator to make reliable and secure WordPress backups to protect their websites. It also makes website migration really easy."
 msgstr ""
 
-#: includes/admin/routes.php:528
+#: includes/admin/routes.php:532
 msgid "The #1 affiliate management plugin for WordPress. Easily create an affiliate program for your eCommerce store or membership site within minutes and start growing your sales with the power of referral marketing."
 msgstr ""
 
-#: includes/admin/routes.php:541
+#: includes/admin/routes.php:545
 msgid "The #1 Stripe payments plugin for WordPress. Start accepting one-time and recurring payments on your WordPress site without setting up a shopping cart. No code required."
 msgstr ""
 
-#: includes/admin/routes.php:553
-#: includes/admin/routes.php:791
+#: includes/admin/routes.php:557
+#: includes/admin/routes.php:795
 msgid "A simple & powerful event calendar plugin for WordPress that comes with all the event management features including payments, scheduling, timezones, ticketing, recurring events, and more."
 msgstr ""
 
-#: includes/admin/routes.php:565
+#: includes/admin/routes.php:569
 msgid "The best drag & drop WordPress form builder. Easily create beautiful contact forms, surveys, payment forms, and more with our 1000+ form templates. Trusted by over 6 million websites as the best forms plugin."
 msgstr ""
 
-#: includes/admin/routes.php:577
+#: includes/admin/routes.php:581
 msgid "Ask visitors questions about how they use your website or what features can make you more money."
 msgstr ""
 
-#: includes/admin/routes.php:589
-#: includes/admin/routes.php:874
+#: includes/admin/routes.php:593
+#: includes/admin/routes.php:878
 msgid "Build a powerful loyalty rewards program for your WooCommerce store and turn one-time buyers into loyal customers."
 msgstr ""
 
-#: includes/admin/routes.php:602
+#: includes/admin/routes.php:606
 msgid "The original WordPress SEO plugin and toolkit that improves your website’s search rankings. Comes with all the SEO features like Local SEO, WooCommerce SEO, sitemaps, SEO optimizer, schema, and more."
 msgstr ""
 
-#: includes/admin/routes.php:614
+#: includes/admin/routes.php:618
 msgid "Stripe Payment Gateway for WooCommerce is an integrated solution that lets you accept payments on your online store for web and mobile."
 msgstr ""
 
-#: includes/admin/routes.php:629
+#: includes/admin/routes.php:633
 msgid "Improve your WordPress email deliverability and make sure that your website emails reach user’s inbox with the #1 SMTP plugin for WordPress. Over 3 million websites use it to fix WordPress email issues."
 msgstr ""
 
-#: includes/admin/routes.php:639
+#: includes/admin/routes.php:643
 msgid "The fastest drag & drop landing page builder for WordPress. Create custom landing pages without writing code, connect them with your CRM, collect subscribers, and grow your audience. Trusted by 1 million sites."
 msgstr ""
 
-#: includes/admin/routes.php:650
+#: includes/admin/routes.php:654
 msgid "Turn your website visitors into brand ambassadors! Easily grow your email list, website traffic, and social media followers with the most powerful giveaways & contests plugin for WordPress."
 msgstr ""
 
-#: includes/admin/routes.php:661
+#: includes/admin/routes.php:665
 msgid "Boost your sales and conversions by up to 15% with real-time social proof notifications. TrustPulse helps you show live user activity and purchases to help convince other users to purchase."
 msgstr ""
 
-#: includes/admin/routes.php:674
-#: includes/admin/routes.php:780
+#: includes/admin/routes.php:678
+#: includes/admin/routes.php:784
 msgid "The most advanced WordPress search plugin. Customize your WordPress search algorithm, reorder search results, track search metrics, and everything you need to leverage search to grow your business."
 msgstr ""
 
-#: includes/admin/routes.php:686
+#: includes/admin/routes.php:690
 msgid "Easily display Instagram content on your WordPress site without writing any code. Comes with multiple templates, ability to show content from multiple accounts, hashtags, and more. Trusted by 1 million websites."
 msgstr ""
 
-#: includes/admin/routes.php:700
+#: includes/admin/routes.php:704
 msgid "Easily display Facebook content on your WordPress site without writing any code. Comes with multiple templates, ability to embed albums, group content, reviews, live videos, comments, and reactions."
 msgstr ""
 
-#: includes/admin/routes.php:714
+#: includes/admin/routes.php:718
 msgid "Easily display YouTube videos on your WordPress site without writing any code. Comes with multiple layouts, ability to embed live streams, video filtering, ability to combine multiple channel videos, and more."
 msgstr ""
 
-#: includes/admin/routes.php:729
+#: includes/admin/routes.php:733
 msgid "Easily display Twitter content in WordPress without writing any code. Comes with multiple layouts, ability to combine multiple Twitter feeds, Twitter card support, tweet moderation, and more."
 msgstr ""
 
-#: includes/admin/routes.php:744
+#: includes/admin/routes.php:748
 msgid "Connect with your visitors after they leave your website with the leading web push notification software. Over 10,000+ businesses worldwide use PushEngage to send 15 billion notifications each month."
 msgstr ""
 
-#: includes/admin/routes.php:755
+#: includes/admin/routes.php:759
 msgid "Automate everything with the #1 no-code Automation tool for WordPress."
 msgstr ""
 
-#: includes/admin/routes.php:769
+#: includes/admin/routes.php:773
 msgid "Pretty Links helps you shrink, beautify, track, manage and share any URL on or off of your WordPress website. Create links that look how you want using your own domain name!"
 msgstr ""
 
-#: includes/admin/routes.php:835
+#: includes/admin/routes.php:839
 msgid "Start accepting one-time and recurring payments on your WordPress site without setting up a shopping cart. No code required."
 msgstr ""
 
-#: includes/admin/routes.php:847
+#: includes/admin/routes.php:851
 msgid "Advanced Coupons for WooCommerce (Free Version) gives WooCommerce store owners extra coupon features so they can market their stores better."
 msgstr ""
 
-#: includes/admin/routes.php:860
+#: includes/admin/routes.php:864
 msgid "See what your analytics software isn’t telling you with powerful UserFeedback surveys."
 msgstr ""
 
-#: includes/admin/routes.php:897
+#: includes/admin/routes.php:901
 msgid "Instantly get more subscribers, leads, and sales with the #1 conversion optimization toolkit. Create high converting popups, announcement bars, spin a wheel, and more with smart targeting and personalization."
 msgstr ""
 
-#: includes/admin/routes.php:917
+#: includes/admin/routes.php:921
 msgid "Automatically translate your website into 110+ languages with AI to reach a global audience and grow international traffic."
 msgstr ""
 
-#: includes/admin/routes.php:985
-#: includes/admin/routes.php:1042
-msgid "You do not have permission to update network settings."
-msgstr ""
-
 #. translators: %1$s: Opening link tag, %2$s: Closing link tag.
-#: includes/admin/routes.php:1022
+#: includes/admin/routes.php:1026
 #, php-format
 msgid "Oops! Please enter a valid Google Analytics 4 Measurement ID. %1$sLearn how to find your Measurement ID%2$s."
 msgstr ""
 
-#: includes/admin/routes.php:1102
+#: includes/admin/routes.php:1106
 msgid "Please upload a valid .json file"
 msgstr ""
 
-#: includes/admin/routes.php:1110
+#: includes/admin/routes.php:1114
 msgid "Please select a valid file to upload."
 msgstr ""
 
 #. translators: %1$s: Opening link tag, %2$s: Closing link tag.
-#: includes/admin/routes.php:1173
-#: includes/admin/routes.php:1897
+#: includes/admin/routes.php:1177
+#: includes/admin/routes.php:1905
 #, php-format
 msgid "Oops! You do not have permissions to view ExactMetrics reporting. Please check with your site administrator that your role is included in the ExactMetrics permissions settings. %1$sClick here for more information%2$s."
 msgstr ""
 
 #. translators: %1$s: Opening support link tag, %2$s: Closing support link tag.
-#: includes/admin/routes.php:1192
-#: includes/admin/routes.php:1915
+#: includes/admin/routes.php:1196
+#: includes/admin/routes.php:1923
 #, php-format
 msgid "Oops! You cannot view ExactMetrics reports because you are not licensed. Please try again in a few minutes. If the issue continues, please %1$scontact our support%2$s team."
 msgstr ""
 
-#: includes/admin/routes.php:1198
-#: includes/admin/routes.php:1615
-#: includes/admin/routes.php:1921
+#: includes/admin/routes.php:1202
+#: includes/admin/routes.php:1623
+#: includes/admin/routes.php:1929
 msgid "Add your license"
 msgstr ""
 
 #. translators: %1$s: Opening support link tag, %2$s: Closing support link tag.
-#: includes/admin/routes.php:1207
-#: includes/admin/routes.php:1930
+#: includes/admin/routes.php:1211
+#: includes/admin/routes.php:1938
 #, php-format
 msgid "Oops! We had a problem due to a license key error. Please try again in a few minutes. If the problem persists, please %1$scontact our support%2$s team."
 msgstr ""
 
 #. translators: %1$s: Opening wizard link tag, %2$s: Closing wizard link tag.
-#: includes/admin/routes.php:1226
-#: includes/admin/routes.php:1949
+#: includes/admin/routes.php:1230
+#: includes/admin/routes.php:1957
 #, php-format
 msgid "You need to authenticate into ExactMetrics before viewing reports. Please run our %1$ssetup wizard%2$s."
 msgstr ""
 
 #. translators: %1$s: Opening support link tag, %2$s: Closing support link tag.
-#: includes/admin/routes.php:1238
+#: includes/admin/routes.php:1242
 #, php-format
 msgid "Oops! We ran into a problem displaying this report. Please %1$scontact our support%2$s team if this issue persists."
 msgstr ""
 
 #. translators: %1$s: Opening support link tag, %2$s: Closing support link tag.
-#: includes/admin/routes.php:1303
-#: includes/admin/routes.php:1656
-#: includes/admin/routes.php:1710
-#: includes/admin/routes.php:2064
-#: includes/admin/routes.php:2107
+#: includes/admin/routes.php:1307
+#: includes/admin/routes.php:1664
+#: includes/admin/routes.php:1718
+#: includes/admin/routes.php:2072
+#: includes/admin/routes.php:2115
 #, php-format
 msgid "Oops! We encountered an error while generating your reports. Please wait a few minutes and try again. If the issue persists, please %1$scontact our support%2$s team."
 msgstr ""
 
-#: includes/admin/routes.php:1318
+#: includes/admin/routes.php:1322
 msgid "Oops! You are not allowed to install plugins. Please contact your website administrator for further assistance."
 msgstr ""
 
-#: includes/admin/routes.php:1326
+#: includes/admin/routes.php:1330
 msgid "Missing plugin name."
 msgstr ""
 
-#: includes/admin/routes.php:1332
+#: includes/admin/routes.php:1336
 msgid "Plugin already installed."
 msgstr ""
 
-#: includes/admin/routes.php:1496
+#: includes/admin/routes.php:1504
 msgid "Homepage"
 msgstr ""
 
 #. translators: %1$s: Opening link tag, %2$s: Closing link tag.
-#: includes/admin/routes.php:1586
+#: includes/admin/routes.php:1594
 #, php-format
 msgid "Oops! You do not have permissions to view or access Popular Posts. Please check with your site administrator that your role is included in the ExactMetrics permissions settings. %1$sClick here for more information%2$s."
 msgstr ""
 
 #. translators: %1$s: Opening settings page link tag, %2$s: Closing settings page link tag.
-#: includes/admin/routes.php:1609
+#: includes/admin/routes.php:1617
 #, php-format
 msgid "Oops! We could not find a valid license key for ExactMetrics. Please %1$senter a valid license key%2$s to view this report."
 msgstr ""
 
 #. translators: %1$s: Opening account link tag, %2$s: Closing account link tag.
-#: includes/admin/routes.php:1624
+#: includes/admin/routes.php:1632
 #, php-format
 msgid "Oops! We could not find a valid license key. Please enter a valid license key to view this report. You can find your license by logging into your %1$sExactMetrics account%2$s."
 msgstr ""
 
 #. translators: %1$s: Opening wizard link tag, %2$s: Closing wizard link tag.
-#: includes/admin/routes.php:1644
+#: includes/admin/routes.php:1652
 #, php-format
 msgid "You need to authenticate into ExactMetrics before viewing reports. Please complete the setup by going through our %1$ssetup wizard%2$s."
 msgstr ""
 
-#: includes/admin/routes.php:1859
+#: includes/admin/routes.php:1867
 msgid "You do not have permission to do this."
 msgstr ""
 
-#: includes/admin/routes.php:1867
+#: includes/admin/routes.php:1875
 msgid "Missing promo id."
 msgstr ""
 
@@ -8405,9 +8417,9 @@ msgstr ""
 
 #: includes/admin/site-notes/Controller.php:236
 #: includes/admin/site-notes/Controller.php:353
-#: includes/admin/site-notes/Controller.php:391
-#: includes/admin/site-notes/Controller.php:429
-#: includes/admin/site-notes/Controller.php:467
+#: includes/admin/site-notes/Controller.php:403
+#: includes/admin/site-notes/Controller.php:453
+#: includes/admin/site-notes/Controller.php:503
 msgid "You don't have permission to update notes."
 msgstr ""
 
@@ -8427,82 +8439,94 @@ msgstr ""
 msgid "Please choose a site note to trash!"
 msgstr ""
 
-#: includes/admin/site-notes/Controller.php:402
+#: includes/admin/site-notes/Controller.php:380
+msgid "You don't have permission to trash one or more of these notes."
+msgstr ""
+
+#: includes/admin/site-notes/Controller.php:414
 msgid "Please choose a site note(s) to restore!"
 msgstr ""
 
-#: includes/admin/site-notes/Controller.php:440
+#: includes/admin/site-notes/Controller.php:430
+msgid "You don't have permission to restore one or more of these notes."
+msgstr ""
+
+#: includes/admin/site-notes/Controller.php:464
 msgid "Please choose a site note(s) to delete!"
 msgstr ""
 
-#: includes/admin/site-notes/Controller.php:478
+#: includes/admin/site-notes/Controller.php:480
+msgid "You don't have permission to delete one or more of these notes."
+msgstr ""
+
+#: includes/admin/site-notes/Controller.php:514
 msgid "Please choose a category to delete!"
 msgstr ""
 
-#: includes/admin/site-notes/Controller.php:538
+#: includes/admin/site-notes/Controller.php:574
 msgid "NA"
 msgstr ""
 
-#: includes/admin/site-notes/Controller.php:572
-#: includes/admin/site-notes/Controller.php:726
+#: includes/admin/site-notes/Controller.php:608
+#: includes/admin/site-notes/Controller.php:762
 msgid "You do not have sufficient permissions to access this page."
 msgstr ""
 
-#: includes/admin/site-notes/Controller.php:585
+#: includes/admin/site-notes/Controller.php:621
 msgid "No annotations data provided."
 msgstr ""
 
-#: includes/admin/site-notes/Controller.php:596
+#: includes/admin/site-notes/Controller.php:632
 msgid "You must be properly authenticated with ExactMetrics to export annotations."
 msgstr ""
 
-#: includes/admin/site-notes/Controller.php:669
+#: includes/admin/site-notes/Controller.php:705
 msgid "Annotations exported successfully."
 msgstr ""
 
-#: includes/admin/site-notes/Controller.php:685
+#: includes/admin/site-notes/Controller.php:721
 msgid "You must be properly authenticated with ExactMetrics to delete annotations."
 msgstr ""
 
-#: includes/admin/site-notes/Controller.php:741
+#: includes/admin/site-notes/Controller.php:777
 msgid "You must be properly authenticated with ExactMetrics to import annotations."
 msgstr ""
 
-#: includes/admin/site-notes/Controller.php:788
+#: includes/admin/site-notes/Controller.php:824
 msgid "No annotations found to import."
 msgstr ""
 
 #. translators: %s: annotation ID
-#: includes/admin/site-notes/Controller.php:823
+#: includes/admin/site-notes/Controller.php:859
 #, php-format
 msgid "Skipped annotation with empty title (ID: %s)"
 msgstr ""
 
 #. translators: %1$s: annotation title, %2$s: error message
-#: includes/admin/site-notes/Controller.php:851
+#: includes/admin/site-notes/Controller.php:887
 #, php-format
 msgid "Failed to import annotation \"%1$s\": %2$s"
 msgstr ""
 
 #. translators: %d: number of annotations successfully imported
-#: includes/admin/site-notes/Controller.php:870
+#: includes/admin/site-notes/Controller.php:906
 #, php-format
 msgid "Successfully imported %d annotations."
 msgstr ""
 
 #. translators: %d: number of annotations skipped
-#: includes/admin/site-notes/Controller.php:880
+#: includes/admin/site-notes/Controller.php:916
 #, php-format
 msgid "%d annotations were skipped (already exist)."
 msgstr ""
 
 #. translators: %d: number of annotations that failed to import
-#: includes/admin/site-notes/Controller.php:888
+#: includes/admin/site-notes/Controller.php:924
 #, php-format
 msgid "%d annotations could not be imported."
 msgstr ""
 
-#: includes/admin/site-notes/Controller.php:1197
+#: includes/admin/site-notes/Controller.php:1241
 msgid "Add a Site Note"
 msgstr ""
 
@@ -8518,16 +8542,26 @@ msgstr ""
 msgid "Promotion"
 msgstr ""
 
-#: includes/admin/site-notes/Database.php:104
+#: includes/admin/site-notes/Database.php:125
 msgid "Your Site Note Cannot be Empty"
 msgstr ""
 
-#: includes/admin/site-notes/Database.php:108
+#: includes/admin/site-notes/Database.php:131
 msgid "Invalid site note."
 msgstr ""
 
-#: includes/admin/site-notes/Database.php:196
+#: includes/admin/site-notes/Database.php:135
+msgid "You don't have permission to update this note."
+msgstr ""
+
+#: includes/admin/site-notes/Database.php:228
 msgid "Note not found"
+msgstr ""
+
+#: includes/admin/site-notes/Database.php:470
+#: includes/admin/site-notes/Database.php:487
+#: includes/admin/site-notes/Database.php:512
+msgid "You don't have permission to modify this note."
 msgstr ""
 
 #. translators: %s: Error message
@@ -11186,12 +11220,12 @@ msgid "United States"
 msgstr ""
 
 #: includes/helpers.php:488
-#: includes/helpers.php:2235
+#: includes/helpers.php:2306
 msgid "Canada"
 msgstr ""
 
 #: includes/helpers.php:489
-#: includes/helpers.php:2280
+#: includes/helpers.php:2351
 msgid "United Kingdom"
 msgstr ""
 
@@ -11232,7 +11266,7 @@ msgid "Antarctica"
 msgstr ""
 
 #: includes/helpers.php:499
-#: includes/helpers.php:2228
+#: includes/helpers.php:2299
 msgid "Antigua and Barbuda"
 msgstr ""
 
@@ -11249,7 +11283,7 @@ msgid "Aruba"
 msgstr ""
 
 #: includes/helpers.php:503
-#: includes/helpers.php:2229
+#: includes/helpers.php:2300
 msgid "Australia"
 msgstr ""
 
@@ -11274,7 +11308,7 @@ msgid "Bangladesh"
 msgstr ""
 
 #: includes/helpers.php:509
-#: includes/helpers.php:2230
+#: includes/helpers.php:2301
 msgid "Barbados"
 msgstr ""
 
@@ -11287,7 +11321,7 @@ msgid "Belgium"
 msgstr ""
 
 #: includes/helpers.php:512
-#: includes/helpers.php:2231
+#: includes/helpers.php:2302
 msgid "Belize"
 msgstr ""
 
@@ -11316,7 +11350,7 @@ msgid "Bosnia and Herzegovina"
 msgstr ""
 
 #: includes/helpers.php:519
-#: includes/helpers.php:2232
+#: includes/helpers.php:2303
 msgid "Botswana"
 msgstr ""
 
@@ -11345,7 +11379,7 @@ msgid "Burkina Faso"
 msgstr ""
 
 #: includes/helpers.php:526
-#: includes/helpers.php:2233
+#: includes/helpers.php:2304
 msgid "Burundi"
 msgstr ""
 
@@ -11354,7 +11388,7 @@ msgid "Cambodia"
 msgstr ""
 
 #: includes/helpers.php:528
-#: includes/helpers.php:2234
+#: includes/helpers.php:2305
 msgid "Cameroon"
 msgstr ""
 
@@ -11447,7 +11481,7 @@ msgid "Djibouti"
 msgstr ""
 
 #: includes/helpers.php:551
-#: includes/helpers.php:2236
+#: includes/helpers.php:2307
 msgid "Dominica"
 msgstr ""
 
@@ -11496,7 +11530,7 @@ msgid "Faroe Islands"
 msgstr ""
 
 #: includes/helpers.php:563
-#: includes/helpers.php:2237
+#: includes/helpers.php:2308
 msgid "Fiji"
 msgstr ""
 
@@ -11525,7 +11559,7 @@ msgid "Gabon"
 msgstr ""
 
 #: includes/helpers.php:570
-#: includes/helpers.php:2240
+#: includes/helpers.php:2311
 msgid "Gambia"
 msgstr ""
 
@@ -11542,7 +11576,7 @@ msgid "Greece"
 msgstr ""
 
 #: includes/helpers.php:574
-#: includes/helpers.php:2241
+#: includes/helpers.php:2312
 msgid "Ghana"
 msgstr ""
 
@@ -11555,7 +11589,7 @@ msgid "Greenland"
 msgstr ""
 
 #: includes/helpers.php:577
-#: includes/helpers.php:2238
+#: includes/helpers.php:2309
 msgid "Grenada"
 msgstr ""
 
@@ -11584,7 +11618,7 @@ msgid "Guinea-Bissau"
 msgstr ""
 
 #: includes/helpers.php:584
-#: includes/helpers.php:2239
+#: includes/helpers.php:2310
 msgid "Guyana"
 msgstr ""
 
@@ -11617,7 +11651,7 @@ msgid "Iceland"
 msgstr ""
 
 #: includes/helpers.php:592
-#: includes/helpers.php:2243
+#: includes/helpers.php:2314
 #: includes/popular-posts/class-popular-posts-themes.php:296
 msgid "India"
 msgstr ""
@@ -11635,7 +11669,7 @@ msgid "Iraq"
 msgstr ""
 
 #: includes/helpers.php:596
-#: includes/helpers.php:2242
+#: includes/helpers.php:2313
 msgid "Ireland"
 msgstr ""
 
@@ -11652,7 +11686,7 @@ msgid "Italy"
 msgstr ""
 
 #: includes/helpers.php:600
-#: includes/helpers.php:2244
+#: includes/helpers.php:2315
 msgid "Jamaica"
 msgstr ""
 
@@ -11673,12 +11707,12 @@ msgid "Kazakhstan"
 msgstr ""
 
 #: includes/helpers.php:605
-#: includes/helpers.php:2245
+#: includes/helpers.php:2316
 msgid "Kenya"
 msgstr ""
 
 #: includes/helpers.php:606
-#: includes/helpers.php:2246
+#: includes/helpers.php:2317
 msgid "Kiribati"
 msgstr ""
 
@@ -11703,12 +11737,12 @@ msgid "Lebanon"
 msgstr ""
 
 #: includes/helpers.php:612
-#: includes/helpers.php:2247
+#: includes/helpers.php:2318
 msgid "Lesotho"
 msgstr ""
 
 #: includes/helpers.php:613
-#: includes/helpers.php:2248
+#: includes/helpers.php:2319
 msgid "Liberia"
 msgstr ""
 
@@ -11741,7 +11775,7 @@ msgid "Madagascar"
 msgstr ""
 
 #: includes/helpers.php:621
-#: includes/helpers.php:2249
+#: includes/helpers.php:2320
 msgid "Malawi"
 msgstr ""
 
@@ -11758,12 +11792,12 @@ msgid "Mali"
 msgstr ""
 
 #: includes/helpers.php:625
-#: includes/helpers.php:2250
+#: includes/helpers.php:2321
 msgid "Malta"
 msgstr ""
 
 #: includes/helpers.php:626
-#: includes/helpers.php:2251
+#: includes/helpers.php:2322
 msgid "Marshall Islands"
 msgstr ""
 
@@ -11776,7 +11810,7 @@ msgid "Mauritania"
 msgstr ""
 
 #: includes/helpers.php:629
-#: includes/helpers.php:2252
+#: includes/helpers.php:2323
 msgid "Mauritius"
 msgstr ""
 
@@ -11789,7 +11823,7 @@ msgid "Mexico"
 msgstr ""
 
 #: includes/helpers.php:632
-#: includes/helpers.php:2253
+#: includes/helpers.php:2324
 msgid "Micronesia"
 msgstr ""
 
@@ -11826,12 +11860,12 @@ msgid "Myanmar"
 msgstr ""
 
 #: includes/helpers.php:641
-#: includes/helpers.php:2255
+#: includes/helpers.php:2326
 msgid "Namibia"
 msgstr ""
 
 #: includes/helpers.php:642
-#: includes/helpers.php:2256
+#: includes/helpers.php:2327
 msgid "Nauru"
 msgstr ""
 
@@ -11852,7 +11886,7 @@ msgid "New Caledonia"
 msgstr ""
 
 #: includes/helpers.php:647
-#: includes/helpers.php:2254
+#: includes/helpers.php:2325
 msgid "New Zealand"
 msgstr ""
 
@@ -11865,7 +11899,7 @@ msgid "Niger"
 msgstr ""
 
 #: includes/helpers.php:650
-#: includes/helpers.php:2257
+#: includes/helpers.php:2328
 msgid "Nigeria"
 msgstr ""
 
@@ -11894,12 +11928,12 @@ msgid "Oman"
 msgstr ""
 
 #: includes/helpers.php:657
-#: includes/helpers.php:2258
+#: includes/helpers.php:2329
 msgid "Pakistan"
 msgstr ""
 
 #: includes/helpers.php:658
-#: includes/helpers.php:2259
+#: includes/helpers.php:2330
 msgid "Palau"
 msgstr ""
 
@@ -11912,7 +11946,7 @@ msgid "Panama"
 msgstr ""
 
 #: includes/helpers.php:661
-#: includes/helpers.php:2260
+#: includes/helpers.php:2331
 msgid "Papua New Guinea"
 msgstr ""
 
@@ -11925,7 +11959,7 @@ msgid "Peru"
 msgstr ""
 
 #: includes/helpers.php:664
-#: includes/helpers.php:2261
+#: includes/helpers.php:2332
 msgid "Philippines"
 msgstr ""
 
@@ -11966,7 +12000,7 @@ msgid "Russian Federation"
 msgstr ""
 
 #: includes/helpers.php:674
-#: includes/helpers.php:2262
+#: includes/helpers.php:2333
 msgid "Rwanda"
 msgstr ""
 
@@ -12023,17 +12057,17 @@ msgid "Serbia"
 msgstr ""
 
 #: includes/helpers.php:688
-#: includes/helpers.php:2269
+#: includes/helpers.php:2340
 msgid "Seychelles"
 msgstr ""
 
 #: includes/helpers.php:689
-#: includes/helpers.php:2270
+#: includes/helpers.php:2341
 msgid "Sierra Leone"
 msgstr ""
 
 #: includes/helpers.php:690
-#: includes/helpers.php:2263
+#: includes/helpers.php:2334
 msgid "Singapore"
 msgstr ""
 
@@ -12046,7 +12080,7 @@ msgid "Slovenia"
 msgstr ""
 
 #: includes/helpers.php:693
-#: includes/helpers.php:2271
+#: includes/helpers.php:2342
 msgid "Solomon Islands"
 msgstr ""
 
@@ -12055,7 +12089,7 @@ msgid "Somalia"
 msgstr ""
 
 #: includes/helpers.php:695
-#: includes/helpers.php:2272
+#: includes/helpers.php:2343
 msgid "South Africa"
 msgstr ""
 
@@ -12068,7 +12102,7 @@ msgid "South Korea"
 msgstr ""
 
 #: includes/helpers.php:698
-#: includes/helpers.php:2273
+#: includes/helpers.php:2344
 msgid "South Sudan"
 msgstr ""
 
@@ -12081,7 +12115,7 @@ msgid "Sri Lanka"
 msgstr ""
 
 #: includes/helpers.php:701
-#: includes/helpers.php:2274
+#: includes/helpers.php:2345
 msgid "Sudan"
 msgstr ""
 
@@ -12094,7 +12128,7 @@ msgid "Svalbard and Jan Mayen Islands"
 msgstr ""
 
 #: includes/helpers.php:704
-#: includes/helpers.php:2267
+#: includes/helpers.php:2338
 msgid "Swaziland"
 msgstr ""
 
@@ -12119,7 +12153,7 @@ msgid "Tajikistan"
 msgstr ""
 
 #: includes/helpers.php:710
-#: includes/helpers.php:2277
+#: includes/helpers.php:2348
 msgid "Tanzania"
 msgstr ""
 
@@ -12140,12 +12174,12 @@ msgid "Tokelau"
 msgstr ""
 
 #: includes/helpers.php:715
-#: includes/helpers.php:2278
+#: includes/helpers.php:2349
 msgid "Tonga"
 msgstr ""
 
 #: includes/helpers.php:716
-#: includes/helpers.php:2275
+#: includes/helpers.php:2346
 msgid "Trinidad and Tobago"
 msgstr ""
 
@@ -12166,12 +12200,12 @@ msgid "Turks and Caicos Islands"
 msgstr ""
 
 #: includes/helpers.php:721
-#: includes/helpers.php:2279
+#: includes/helpers.php:2350
 msgid "Tuvalu"
 msgstr ""
 
 #: includes/helpers.php:722
-#: includes/helpers.php:2282
+#: includes/helpers.php:2353
 msgid "Uganda"
 msgstr ""
 
@@ -12196,7 +12230,7 @@ msgid "Uzbekistan"
 msgstr ""
 
 #: includes/helpers.php:728
-#: includes/helpers.php:2283
+#: includes/helpers.php:2354
 msgid "Vanuatu"
 msgstr ""
 
@@ -12233,12 +12267,12 @@ msgid "Yemen"
 msgstr ""
 
 #: includes/helpers.php:737
-#: includes/helpers.php:2284
+#: includes/helpers.php:2355
 msgid "Zambia"
 msgstr ""
 
 #: includes/helpers.php:738
-#: includes/helpers.php:2285
+#: includes/helpers.php:2356
 msgid "Zimbabwe"
 msgstr ""
 
@@ -12246,148 +12280,148 @@ msgstr ""
 msgid "Unknown Country"
 msgstr ""
 
-#: includes/helpers.php:1557
+#: includes/helpers.php:1628
 msgid "Archives"
 msgstr ""
 
 #. translators: Category archive title. %s: Category name
-#: includes/helpers.php:1561
+#: includes/helpers.php:1632
 #, php-format
 msgid "Category: %s"
 msgstr ""
 
 #. translators: Tag archive title. %s: Tag name
-#: includes/helpers.php:1564
+#: includes/helpers.php:1635
 #, php-format
 msgid "Tag: %s"
 msgstr ""
 
 #. translators: Author archive title. %s: Author name
-#: includes/helpers.php:1567
+#: includes/helpers.php:1638
 #, php-format
 msgid "Author: %s"
 msgstr ""
 
 #. translators: Yearly archive title. %s: Year
-#: includes/helpers.php:1570
+#: includes/helpers.php:1641
 #, php-format
 msgid "Year: %s"
 msgstr ""
 
 #. translators: Yearly archive title. %s: Year
-#: includes/helpers.php:1570
+#: includes/helpers.php:1641
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
 #. translators: Monthly archive title. %s: Month name and year
-#: includes/helpers.php:1573
+#: includes/helpers.php:1644
 #, php-format
 msgid "Month: %s"
 msgstr ""
 
 #. translators: Monthly archive title. %s: Month name and year
-#: includes/helpers.php:1573
+#: includes/helpers.php:1644
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr ""
 
 #. translators: Daily archive title. %s: Date
-#: includes/helpers.php:1576
+#: includes/helpers.php:1647
 #, php-format
 msgid "Day: %s"
 msgstr ""
 
 #. translators: Daily archive title. %s: Date
-#: includes/helpers.php:1576
+#: includes/helpers.php:1647
 msgctxt "daily archives date format"
 msgid "F j, Y"
 msgstr ""
 
-#: includes/helpers.php:1579
+#: includes/helpers.php:1650
 msgctxt "post format archive title"
 msgid "Asides"
 msgstr ""
 
-#: includes/helpers.php:1581
+#: includes/helpers.php:1652
 msgctxt "post format archive title"
 msgid "Galleries"
 msgstr ""
 
-#: includes/helpers.php:1583
+#: includes/helpers.php:1654
 msgctxt "post format archive title"
 msgid "Images"
 msgstr ""
 
-#: includes/helpers.php:1585
+#: includes/helpers.php:1656
 msgctxt "post format archive title"
 msgid "Videos"
 msgstr ""
 
-#: includes/helpers.php:1587
+#: includes/helpers.php:1658
 msgctxt "post format archive title"
 msgid "Quotes"
 msgstr ""
 
-#: includes/helpers.php:1589
+#: includes/helpers.php:1660
 msgctxt "post format archive title"
 msgid "Links"
 msgstr ""
 
-#: includes/helpers.php:1591
+#: includes/helpers.php:1662
 msgctxt "post format archive title"
 msgid "Statuses"
 msgstr ""
 
-#: includes/helpers.php:1593
+#: includes/helpers.php:1664
 msgctxt "post format archive title"
 msgid "Audio"
 msgstr ""
 
-#: includes/helpers.php:1595
+#: includes/helpers.php:1666
 msgctxt "post format archive title"
 msgid "Chats"
 msgstr ""
 
 #. translators: Post type archive title. %s: Post type name
-#: includes/helpers.php:1599
+#: includes/helpers.php:1670
 #, php-format
 msgid "Archives: %s"
 msgstr ""
 
 #. translators: %1$s: Opening bold tag, %2$s: Closing bold tag, %3$s: Opening link tag, %4$s: Closing link tag.
-#: includes/helpers.php:1661
+#: includes/helpers.php:1732
 #, php-format
 msgid "%1$sWe noticed you're using a caching plugin or caching from your hosting provider.%2$s Be sure to clear the cache to ensure the tracking appears on all pages and posts. %3$s(See this guide on how to clear cache)%4$s."
 msgstr ""
 
 #. translators: the placeholders are for making the "We have detected multiple tracking codes" text bold & adding a link to support.
-#: includes/helpers.php:1724
+#: includes/helpers.php:1795
 #, php-format
 msgid "%1$sWe have detected multiple tracking codes%2$s! You should remove non-ExactMetrics ones. If you need help finding them please %3$sread this article%4$s."
 msgstr ""
 
-#: includes/helpers.php:2264
+#: includes/helpers.php:2335
 msgid "St Kitts and Nevis"
 msgstr ""
 
-#: includes/helpers.php:2265
+#: includes/helpers.php:2336
 msgid "St Lucia"
 msgstr ""
 
-#: includes/helpers.php:2266
+#: includes/helpers.php:2337
 msgid "St Vincent and the Grenadines"
 msgstr ""
 
-#: includes/helpers.php:2268
+#: includes/helpers.php:2339
 msgid "Samoa"
 msgstr ""
 
-#: includes/helpers.php:2276
+#: includes/helpers.php:2347
 msgid "The Bahamas"
 msgstr ""
 
-#: includes/helpers.php:2281
+#: includes/helpers.php:2352
 msgid "United States of America"
 msgstr ""
 

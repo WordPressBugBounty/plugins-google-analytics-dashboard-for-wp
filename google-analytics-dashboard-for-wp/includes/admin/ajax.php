@@ -234,7 +234,7 @@ function exactmetrics_ajax_dismiss_notice() {
 	// Deactivate the notice
 	if ( isset( $_POST['notice'] ) ) {
 		// Init the notice class and mark notice as deactivated
-		ExactMetrics()->notices->dismiss( $_POST['notice'] );
+		ExactMetrics()->notices->dismiss( sanitize_key( wp_unslash( $_POST['notice'] ) ) );
 
 		// Return true
 		echo wp_json_encode( true );

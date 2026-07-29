@@ -14,16 +14,16 @@ class ExactMetrics_Site_Insights_Block {
 	public function register_frontend_scripts() {
 		$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
-		wp_register_script( 'apexcharts', plugins_url( 'assets/js/frontend/apexcharts.min.js', EXACTMETRICS_PLUGIN_FILE ), array(), exactmetrics_get_asset_version(), true );
+		wp_register_script( 'exactmetrics-apexcharts', plugins_url( 'assets/js/frontend/apexcharts.min.js', EXACTMETRICS_PLUGIN_FILE ), array(), exactmetrics_get_asset_version(), true );
 
-		wp_register_style( 'apexcharts', plugins_url( 'assets/js/frontend/apexcharts.css', EXACTMETRICS_PLUGIN_FILE ), array(), exactmetrics_get_asset_version(), true );
+		wp_register_style( 'exactmetrics-apexcharts', plugins_url( 'assets/js/frontend/apexcharts.css', EXACTMETRICS_PLUGIN_FILE ), array(), exactmetrics_get_asset_version(), 'all' );
 
 		$scripts_url = apply_filters(
 			'exactmetrics_frontend_scripts_url',
 			plugins_url( 'assets/js/frontend/block-scripts' . $suffix . '.js', EXACTMETRICS_PLUGIN_FILE )
 		);
 
-		wp_register_script( 'exactmetrics-block-scripts', $scripts_url, array( 'apexcharts', 'jquery' ), exactmetrics_get_asset_version(), true );
+		wp_register_script( 'exactmetrics-block-scripts', $scripts_url, array( 'exactmetrics-apexcharts', 'jquery' ), exactmetrics_get_asset_version(), true );
 
 		$style_url = apply_filters(
 			'exactmetrics_frontend_style_url',
@@ -39,7 +39,7 @@ class ExactMetrics_Site_Insights_Block {
 		$use_async = apply_filters( 'exactmetrics_frontend_gtag_script_async', true );
 
 		if ( $use_async ) {
-			wp_script_add_data( 'apexcharts', 'strategy', 'async' );
+			wp_script_add_data( 'exactmetrics-apexcharts', 'strategy', 'async' );
 			wp_script_add_data( 'exactmetrics-block-scripts', 'strategy', 'defer' );
 		}
 	}

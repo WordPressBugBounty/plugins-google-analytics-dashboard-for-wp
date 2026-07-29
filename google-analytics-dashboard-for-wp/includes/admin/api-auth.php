@@ -95,6 +95,11 @@ final class ExactMetrics_API_Auth {
 		}
 
 		if ( ! empty( $_REQUEST['isnetwork'] ) && $_REQUEST['isnetwork'] ) { // phpcs:ignore
+			if ( ! current_user_can( 'manage_network_options' ) ) {
+				wp_send_json_error( array(
+					'error' => esc_html__( 'You do not have permission to update network settings.', 'google-analytics-dashboard-for-wp' ),
+				) );
+			}
 			define( 'WP_NETWORK_ADMIN', true );
 		}
 
@@ -179,7 +184,7 @@ final class ExactMetrics_API_Auth {
 			}
 		}
 
-		if ( ! empty( $_REQUEST['network'] ) && 'network' === $_REQUEST['network'] ) {
+		if ( ! empty( $_REQUEST['network'] ) && 'network' === $_REQUEST['network'] && current_user_can( 'manage_network_options' ) ) {
 			define( 'WP_NETWORK_ADMIN', true );
 		}
 
@@ -297,6 +302,11 @@ final class ExactMetrics_API_Auth {
 		}
 
 		if ( ! empty( $_REQUEST['isnetwork'] ) && filter_var(wp_unslash($_REQUEST['isnetwork']), FILTER_VALIDATE_BOOLEAN) ) {
+			if ( ! current_user_can( 'manage_network_options' ) ) {
+				wp_send_json_error( array(
+					'error' => esc_html__( 'You do not have permission to update network settings.', 'google-analytics-dashboard-for-wp' ),
+				) );
+			}
 			define( 'WP_NETWORK_ADMIN', true );
 		}
 
@@ -460,6 +470,11 @@ final class ExactMetrics_API_Auth {
 		}
 
 		if ( ! empty( $_REQUEST['isnetwork'] ) && filter_var(wp_unslash($_REQUEST['isnetwork']), FILTER_VALIDATE_BOOL) ) {
+			if ( ! current_user_can( 'manage_network_options' ) ) {
+				wp_send_json_error( array(
+					'error' => esc_html__( 'You do not have permission to update network settings.', 'google-analytics-dashboard-for-wp' ),
+				) );
+			}
 			define( 'WP_NETWORK_ADMIN', true );
 		}
 
@@ -560,6 +575,11 @@ final class ExactMetrics_API_Auth {
 		}
 
 		if ( ! empty( $_REQUEST['isnetwork'] ) && filter_var(wp_unslash($_REQUEST['isnetwork']), FILTER_VALIDATE_BOOL) ) {
+			if ( ! current_user_can( 'manage_network_options' ) ) {
+				wp_send_json_error( array(
+					'error' => esc_html__( 'You do not have permission to update network settings.', 'google-analytics-dashboard-for-wp' ),
+				) );
+			}
 			define( 'WP_NETWORK_ADMIN', true );
 		}
 
@@ -866,6 +886,11 @@ final class ExactMetrics_API_Auth {
 			wp_send_json_error( array( 'message' => 'Nonce not valid' ) );
 		}
 		if ( ! empty( $_REQUEST['isnetwork'] ) && $_REQUEST['isnetwork'] ) { // phpcs:ignore
+			if ( ! current_user_can( 'manage_network_options' ) ) {
+				wp_send_json_error( array(
+					'error' => esc_html__( 'You do not have permission to update network settings.', 'google-analytics-dashboard-for-wp' ),
+				) );
+			}
 			define( 'WP_NETWORK_ADMIN', true );
 		}
 

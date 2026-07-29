@@ -77,8 +77,12 @@ class ExactMetrics_Rest_Routes {
 			return;
 		}
 
+		// The license key is only exposed to users who can manage settings; view-only
+		// delegates still receive the license status fields they need for the UI.
+		$can_view_key = current_user_can( 'exactmetrics_save_settings' );
+
 		$site_license    = array(
-			'key'         => ExactMetrics()->license->get_site_license_key(),
+			'key'         => $can_view_key ? ExactMetrics()->license->get_site_license_key() : '',
 			'type'        => ExactMetrics()->license->get_site_license_type(),
 			'is_disabled' => ExactMetrics()->license->site_license_disabled(),
 			'is_expired'  => ExactMetrics()->license->site_license_expired(),
@@ -87,7 +91,7 @@ class ExactMetrics_Rest_Routes {
 			'is_agency'   => ExactMetrics()->license->site_is_agency(),
 		);
 		$network_license = array(
-			'key'         => ExactMetrics()->license->get_network_license_key(),
+			'key'         => $can_view_key ? ExactMetrics()->license->get_network_license_key() : '',
 			'type'        => ExactMetrics()->license->get_network_license_type(),
 			'is_disabled' => ExactMetrics()->license->network_license_disabled(),
 			'is_expired'  => ExactMetrics()->license->network_license_expired(),
@@ -365,7 +369,7 @@ class ExactMetrics_Rest_Routes {
 			require_once ABSPATH . 'wp-admin/includes/plugin.php';
 		}
 
-		if ( isset( $_POST['network'] ) && intval( wp_unslash( $_POST['network'] ) ) > 0 ) {
+		if ( isset( $_POST['network'] ) && intval( wp_unslash( $_POST['network'] ) ) > 0 && current_user_can( 'manage_network_options' ) ) {
 			define( 'WP_NETWORK_ADMIN', true );
 		}
 
@@ -1177,7 +1181,7 @@ class ExactMetrics_Rest_Routes {
 			wp_send_json_error( array( 'message' => $message ) );
 		}
 
-		if ( ! empty( $_REQUEST['isnetwork'] ) && wp_unslash( $_REQUEST['isnetwork'] ) ) {
+		if ( ! empty( $_REQUEST['isnetwork'] ) && wp_unslash( $_REQUEST['isnetwork'] ) && current_user_can( 'manage_network_options' ) ) {
 			define( 'WP_NETWORK_ADMIN', true );
 		}
 		$settings_page    = admin_url( 'admin.php?page=exactmetrics_settings' );
@@ -1464,6 +1468,10 @@ class ExactMetrics_Rest_Routes {
 		// Run a security check first.
 		check_ajax_referer( 'mi-admin-nonce', 'nonce' );
 
+		if ( ! current_user_can( 'exactmetrics_view_dashboard' ) ) {
+			wp_send_json_error();
+		}
+
 		$post_type = isset( $_POST['post_type'] ) ? sanitize_text_field( wp_unslash( $_POST['post_type'] ) ) : 'any';
 
 		$already_added = exactmetrics_get_option('popular_posts_inline_curated', []);
@@ -1590,7 +1598,7 @@ class ExactMetrics_Rest_Routes {
 			wp_send_json_error( array( 'message' => $message ) );
 		}
 
-		if ( ! empty( $_REQUEST['isnetwork'] ) && wp_unslash( $_REQUEST['isnetwork'] ) ) {
+		if ( ! empty( $_REQUEST['isnetwork'] ) && wp_unslash( $_REQUEST['isnetwork'] ) && current_user_can( 'manage_network_options' ) ) {
 			define( 'WP_NETWORK_ADMIN', true );
 		}
 		$settings_page = admin_url( 'admin.php?page=exactmetrics_settings' );
@@ -1901,7 +1909,7 @@ class ExactMetrics_Rest_Routes {
 			wp_send_json_error( array( 'message' => $message ) );
 		}
 
-		if ( ! empty( $_REQUEST['isnetwork'] ) && wp_unslash( $_REQUEST['isnetwork'] ) ) {
+		if ( ! empty( $_REQUEST['isnetwork'] ) && wp_unslash( $_REQUEST['isnetwork'] ) && current_user_can( 'manage_network_options' ) ) {
 			define( 'WP_NETWORK_ADMIN', true );
 		}
 

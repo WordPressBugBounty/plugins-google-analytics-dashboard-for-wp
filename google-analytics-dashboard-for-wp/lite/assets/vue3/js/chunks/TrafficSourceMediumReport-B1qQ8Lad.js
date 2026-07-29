@@ -1,0 +1,195 @@
+import { a1 as storeToRefs, o as openBlock, E as createBlock, D as withCtx, b as createVNode, u as unref, m as computed, j as ref } from "./toastStore-sH51RcCX.js";
+import { _ as __ } from "./default-i18n-KrIlCc2E.js";
+import { u as useOverviewReportStore, b as buildApiFilters } from "../reports-kVhDfd9w.js";
+import { i as generateTrafficSourceMediumSample, j as fetchTrafficSourceMediumData } from "./trafficSampleData-D3Ni9B72.js";
+import { u as useReportPermissions } from "./useReportPermissions-BGwVQAy9.js";
+import { u as useReport } from "./useReport-6Zw_p6BE.js";
+import { a as formatCurr, f as formatPct, b as formatNum } from "./overviewTableFormatters-Bc6bK3SS.js";
+import { f as formatDateLabel } from "./useOverviewChartData-Ccn3qC5j.js";
+import { a as aggregateDateEntityRows } from "./aggregateDateEntityRows-i7QMgwng.js";
+import { g as getCompareDateLabels } from "./compareDateLabels-B56Y3XjZ.js";
+import { s as shouldHideNotSetValue } from "./reportValues-Ckt09zwt.js";
+import { R as ReportPageLayout } from "./ReportPageLayout-D7v09292.js";
+import { _ as _sfc_main$2 } from "./ReportChartSection-C4RkaV-p.js";
+import { _ as _sfc_main$1 } from "./ReportDataTable-BfpnkYWc.js";
+import "./TheAppHeader-51M_NUwz.js";
+import "./ajax-2wfIeviZ.js";
+import "./AppOverlays-BO6Mjp3d.js";
+import "./_plugin-vue_export-helper-1tPrXgE0.js";
+import "./dateIntervals-BPoui_3H.js";
+import "./addons-CsEzvEzl.js";
+import "./useNotices-hr94Odsg.js";
+import "./Modal-DdttPho6.js";
+import "./Icon-Cg43wlAV.js";
+import "./useAuthGate-BtD0Zsbw.js";
+import "./flatpickr-DYNmg7pa.js";
+import "./useFeatureGate-C0SiaHQU.js";
+import "./UniversallyPromo-BPT5Wy-b.js";
+import "./reportCache-ADs19wpk.js";
+import "./settings-Dlq_FiwT.js";
+import "./ReAuthModal-CFu-8z-7.js";
+import "./auth-Bb25iND9.js";
+import "./ApexLineChart-X_YU3QTg.js";
+import "./vue3-apexcharts-RNNa8YS7.js";
+import "./useChartColors-DfB5TXg7.js";
+import "./LoadingSpinnerInline-Cx1PqN-5.js";
+import "./SiteNotes-BeOhsw7I.js";
+import "./siteNotes-Dr3kC5XC.js";
+import "./ReportTableModal-DX5s7bAv.js";
+const _sfc_main = {
+  __name: "TrafficSourceMediumReport",
+  setup(__props) {
+    const overviewStore = useOverviewReportStore();
+    const { dateRange, activeFilters: storeActiveFilters, activeDevice: storeActiveDevice } = storeToRefs(overviewStore);
+    const { isBlocked } = useReportPermissions({ minTier: "plus" });
+    const activeChartTab = ref("sessions");
+    const chartTabs = [
+      { id: "sessions", label: __("Sessions", "google-analytics-dashboard-for-wp"), icon: "users" },
+      { id: "pageviews", label: __("Pageviews", "google-analytics-dashboard-for-wp"), icon: "view" }
+    ];
+    const chartRawDates = computed(() => {
+      const chartResult = rawData.value?.sessions_chart;
+      if (!chartResult?.rows?.length) return [];
+      return chartResult.rows.map((row) => row?.d?.[0] || "");
+    });
+    const isCompareActive = computed(
+      () => !!(dateRange.value?.compareReport && dateRange.value?.compareStart && dateRange.value?.compareEnd)
+    );
+    const chartData = computed(() => {
+      const chartResult = rawData.value?.sessions_chart;
+      if (!chartResult?.rows?.length) return { categories: [], series: [] };
+      const rows = chartResult.rows;
+      const categories = [];
+      const sessionsCurr = [];
+      const pageViewsCurr = [];
+      const sessionsPrev = [];
+      const pageViewsPrev = [];
+      const firstM = rows[0]?.m;
+      const isCompareFormat = Array.isArray(firstM) && firstM.length === 2 && Array.isArray(firstM[0]) && firstM[0].length === 2 && isCompareActive.value;
+      for (const row of rows) {
+        const date = row?.d?.[0] || "";
+        categories.push(formatDateLabel(date));
+        if (isCompareFormat) {
+          const mSessions = row?.m?.[0] || [];
+          const mPageViews = row?.m?.[1] || [];
+          sessionsPrev.push(Number(mSessions[0]) || 0);
+          sessionsCurr.push(Number(mSessions[1]) || 0);
+          pageViewsPrev.push(Number(mPageViews[0]) || 0);
+          pageViewsCurr.push(Number(mPageViews[1]) || 0);
+        } else {
+          const m0 = Array.isArray(row?.m?.[0]) ? row.m[0] : [];
+          sessionsCurr.push(Number(m0[0]) || 0);
+          pageViewsCurr.push(Number(m0[1]) || 0);
+        }
+      }
+      const primaryColor = "#6528F5";
+      const compareColor = "#A0AEC0";
+      const isSessionsTab = activeChartTab.value === "sessions";
+      const series = [];
+      const colors = [];
+      const strokeDashArray = [];
+      series.push({
+        name: isSessionsTab ? "Sessions" : "Pageviews",
+        data: isSessionsTab ? sessionsCurr : pageViewsCurr
+      });
+      colors.push(primaryColor);
+      strokeDashArray.push(0);
+      if (isCompareFormat) {
+        series.push({
+          name: "Previous Period",
+          data: isSessionsTab ? sessionsPrev : pageViewsPrev
+        });
+        colors.push(compareColor);
+        strokeDashArray.push(5);
+      }
+      return { categories, series, colors, strokeDashArray };
+    });
+    const columns = [
+      { key: "sourceMedium", label: __("Source / Medium", "google-analytics-dashboard-for-wp"), sortable: true },
+      { key: "sessions", label: __("Sessions", "google-analytics-dashboard-for-wp"), sortable: true },
+      { key: "engagedSessions", label: __("Engaged Sessions", "google-analytics-dashboard-for-wp"), sortable: true },
+      { key: "pagesPerSession", label: __("Pages / Sessions", "google-analytics-dashboard-for-wp"), sortable: true, totalType: "average" },
+      { key: "purchases", label: __("Purchases", "google-analytics-dashboard-for-wp"), sortable: true },
+      { key: "conversionRate", label: __("Conversion Rate", "google-analytics-dashboard-for-wp"), sortable: true, totalType: "average" },
+      { key: "revenue", label: __("Revenue", "google-analytics-dashboard-for-wp"), sortable: true }
+    ];
+    const aggregatedSourceMedium = computed(
+      () => aggregateDateEntityRows(rawData.value?.source_medium_table?.rows, {
+        metricCount: 6,
+        avgIndices: [2, 4],
+        weightIndex: 0
+      }).filter((entity) => !shouldHideNotSetValue(entity.dims?.[0]))
+    );
+    function formatSourceMediumRow(dims, vals) {
+      const name = dims[0] != null && String(dims[0]).trim() !== "" ? String(dims[0]) : __("(not set)", "google-analytics-dashboard-for-wp");
+      return {
+        sourceMedium: name,
+        sessions: formatNum(vals[0] || 0),
+        engagedSessions: formatNum(vals[1] || 0),
+        pagesPerSession: (vals[2] || 0).toFixed(2),
+        purchases: formatNum(vals[3] || 0),
+        // API returns session key event rate as a decimal (0.05 = 5%)
+        conversionRate: formatPct((vals[4] || 0) * 100),
+        revenue: formatCurr(vals[5] || 0)
+      };
+    }
+    const tableRows = computed(
+      () => aggregatedSourceMedium.value.map((entity) => formatSourceMediumRow(entity.dims, entity.current))
+    );
+    const compareRows = computed(
+      () => aggregateDateEntityRows(rawData.value?.source_medium_table_prev?.rows, {
+        metricCount: 6,
+        avgIndices: [2, 4],
+        weightIndex: 0
+      }).map((entity) => formatSourceMediumRow(entity.dims, entity.current))
+    );
+    const compareDateLabelsForTable = computed(() => getCompareDateLabels(dateRange.value));
+    const { rawData, loading, error, reload } = useReport({
+      fetch: () => fetchTrafficSourceMediumData(
+        dateRange.value,
+        buildApiFilters(storeActiveFilters.value, storeActiveDevice.value)
+      ),
+      sample: () => generateTrafficSourceMediumSample(dateRange.value),
+      isBlocked,
+      watch: [dateRange, storeActiveFilters, storeActiveDevice],
+      guard: () => !!(dateRange.value?.start && dateRange.value?.end)
+    });
+    return (_ctx, _cache) => {
+      return openBlock(), createBlock(ReportPageLayout, {
+        "required-license": "plus",
+        "upsell-feature": "traffic-source-medium"
+      }, {
+        chart: withCtx(() => [
+          createVNode(_sfc_main$2, {
+            tabs: chartTabs,
+            "active-tab": activeChartTab.value,
+            "chart-data": chartData.value,
+            loading: unref(loading),
+            error: unref(error),
+            "show-site-notes": !unref(isBlocked),
+            "date-range": unref(overviewStore).dateRange,
+            "raw-dates": chartRawDates.value,
+            "onUpdate:activeTab": _cache[0] || (_cache[0] = ($event) => activeChartTab.value = $event),
+            onSiteNotesSaved: unref(reload)
+          }, null, 8, ["active-tab", "chart-data", "loading", "error", "show-site-notes", "date-range", "raw-dates", "onSiteNotesSaved"])
+        ]),
+        table: withCtx(() => [
+          createVNode(_sfc_main$1, {
+            title: unref(__)("Source / Medium Details", "google-analytics-dashboard-for-wp"),
+            columns,
+            rows: tableRows.value,
+            "compare-rows": compareRows.value,
+            "compare-date-labels": compareDateLabelsForTable.value,
+            loading: unref(loading),
+            searchable: "",
+            "empty-message": unref(__)("No data currently for the Source / Medium report.", "google-analytics-dashboard-for-wp")
+          }, null, 8, ["title", "rows", "compare-rows", "compare-date-labels", "loading", "empty-message"])
+        ]),
+        _: 1
+      });
+    };
+  }
+};
+export {
+  _sfc_main as default
+};

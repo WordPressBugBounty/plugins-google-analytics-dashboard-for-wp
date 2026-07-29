@@ -90,6 +90,27 @@ class ExactMetrics_Site_Notes_DB_Base
 	}
 
 	/**
+	 * Check whether the current user is allowed to manage a given note.
+	 *
+	 * A user may manage a note when they are its author, or when they hold a
+	 * capability that legitimately allows editing content created by others.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param int $note_id The note ID.
+	 *
+	 * @return bool
+	 */
+	private function current_user_can_manage_note( $note_id )
+	{
+		if ( current_user_can( 'edit_others_posts' ) ) {
+			return true;
+		}
+
+		return (int) get_post_field( 'post_author', $note_id ) === get_current_user_id();
+	}
+
+	/**
 	 * Add new Site Note.
 	 *
 	 * @since 1.0.0
@@ -104,18 +125,29 @@ class ExactMetrics_Site_Notes_DB_Base
 			return new WP_Error(400, __('Your Site Note Cannot be Empty', 'google-analytics-dashboard-for-wp'));
 		}
 
-		if ( ! empty( $data['id'] ) && 'exactmetrics_note' !== get_post_type( $data['id'] ) ) {
+		$is_update = ! empty( $data['id'] );
+
+		if ( $is_update && 'exactmetrics_note' !== get_post_type( $data['id'] ) ) {
 			return new WP_Error( 403, __( 'Invalid site note.', 'google-analytics-dashboard-for-wp' ) );
 		}
 
+		if ( $is_update && ! $this->current_user_can_manage_note( $data['id'] ) ) {
+			return new WP_Error( 403, __( "You don't have permission to update this note.", 'google-analytics-dashboard-for-wp' ) );
+		}
+
 		$note_post = array(
-			'ID' => isset($data['id']) ? $data['id'] : null,
+			'ID' => $is_update ? $data['id'] : null,
 			'post_title'    => sanitize_text_field($data['note']),
 			'post_status'   => 'publish',
-			'post_author'   => isset( $data['author_id'] ) ? intval( $data['author_id'] ) : get_current_user_id(),
 			'post_date'     => !empty($data['date']) ? $data['date'] : current_datetime()->format('Y-m-d'),
 			'post_type'     => 'exactmetrics_note',
 		);
+
+		// Only assign authorship when creating a note. On update the original
+		// author is preserved rather than reassigned to the acting user.
+		if ( ! $is_update ) {
+			$note_post['post_author'] = isset( $data['author_id'] ) ? intval( $data['author_id'] ) : get_current_user_id();
+		}
 		$post_id = wp_insert_post($note_post, true, false);
 
 		if (is_wp_error($post_id)) {
@@ -434,6 +466,10 @@ class ExactMetrics_Site_Notes_DB_Base
 			return;
 		}
 
+		if ( ! $this->current_user_can_manage_note( $note_id ) ) {
+			return new WP_Error( 403, __( "You don't have permission to modify this note.", 'google-analytics-dashboard-for-wp' ) );
+		}
+
 		return wp_trash_post($note_id);
 	}
 
@@ -445,6 +481,10 @@ class ExactMetrics_Site_Notes_DB_Base
 
 		if ( 'exactmetrics_note' !== get_post_type( $note_id ) ) {
 			return;
+		}
+
+		if ( ! $this->current_user_can_manage_note( $note_id ) ) {
+			return new WP_Error( 403, __( "You don't have permission to modify this note.", 'google-analytics-dashboard-for-wp' ) );
 		}
 
 		return wp_untrash_post($note_id);
@@ -466,6 +506,10 @@ class ExactMetrics_Site_Notes_DB_Base
 
 		if ( 'exactmetrics_note' !== get_post_type( $note_id ) ) {
 			return;
+		}
+
+		if ( ! $this->current_user_can_manage_note( $note_id ) ) {
+			return new WP_Error( 403, __( "You don't have permission to modify this note.", 'google-analytics-dashboard-for-wp' ) );
 		}
 
 		// Check if this note has a GA4 annotation ID and delete it from GA4 first

@@ -366,8 +366,20 @@ class ExactMetrics_SiteNotes_Controller {
 			);
 		}
 
+		$blocked = false;
 		foreach ($ids as $id) {
-			$this->db->trash_note($id);
+			if ( is_wp_error( $this->db->trash_note($id) ) ) {
+				$blocked = true;
+			}
+		}
+
+		if ( $blocked ) {
+			wp_send_json(
+				array(
+					'success' => false,
+					'message' => __( "You don't have permission to trash one or more of these notes.", 'google-analytics-dashboard-for-wp' ),
+				)
+			);
 		}
 
 		wp_send_json(
@@ -404,8 +416,20 @@ class ExactMetrics_SiteNotes_Controller {
 			);
 		}
 
+		$blocked = false;
 		foreach ($ids as $id) {
-			$this->db->restore_note($id);
+			if ( is_wp_error( $this->db->restore_note($id) ) ) {
+				$blocked = true;
+			}
+		}
+
+		if ( $blocked ) {
+			wp_send_json(
+				array(
+					'success' => false,
+					'message' => __( "You don't have permission to restore one or more of these notes.", 'google-analytics-dashboard-for-wp' ),
+				)
+			);
 		}
 
 		wp_send_json(
@@ -442,8 +466,20 @@ class ExactMetrics_SiteNotes_Controller {
 			);
 		}
 
+		$blocked = false;
 		foreach ($ids as $id) {
-			$this->db->delete_note($id);
+			if ( is_wp_error( $this->db->delete_note($id) ) ) {
+				$blocked = true;
+			}
+		}
+
+		if ( $blocked ) {
+			wp_send_json(
+				array(
+					'success' => false,
+					'message' => __( "You don't have permission to delete one or more of these notes.", 'google-analytics-dashboard-for-wp' ),
+				)
+			);
 		}
 
 		wp_send_json(
@@ -1063,6 +1099,10 @@ class ExactMetrics_SiteNotes_Controller {
 			return;
 		}
 
+		if ( ! current_user_can( 'exactmetrics_save_settings' ) ) {
+			return;
+		}
+
 		if ('exactmetrics_note' === get_post_type($current_post_id) || 'publish' !== get_post_status($current_post_id)) {
 			return;
 		}
@@ -1087,6 +1127,10 @@ class ExactMetrics_SiteNotes_Controller {
 	}
 
 	public function create_note_with_post($post_ID) {
+		if ( ! current_user_can( 'exactmetrics_save_settings' ) ) {
+			return;
+		}
+
 		if ('exactmetrics_note' === get_post_type($post_ID) || 'publish' !== get_post_status($post_ID)) {
 			return;
 		}

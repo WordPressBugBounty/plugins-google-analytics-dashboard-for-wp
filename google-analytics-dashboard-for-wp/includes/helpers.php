@@ -1071,34 +1071,104 @@ function exactmetrics_get_onboarding_url() {
  * @return string The onboarding key
  */
 function exactmetrics_get_onboarding_key() {
-	$ttl = 30 * MINUTE_IN_SECONDS;
-	$key = get_transient( 'exactmetrics_onboarding_key' );
+	$ttl    = 30 * MINUTE_IN_SECONDS;
+	$stored = exactmetrics_get_onboarding_key_data();
+	$key    = $stored['key'];
 
 	if ( empty( $key ) ) {
 		// Expired or never set: generate a fresh key bound to the current user.
-		$key = wp_generate_password( 32, false );
-		set_transient( 'exactmetrics_onboarding_key', $key, $ttl );
-		set_transient( 'exactmetrics_onboarding_user_id', get_current_user_id(), $ttl );
-
-		return $key;
-	}
-
-	// Still valid: slide the window so an active admin session keeps a launch-ready
-	// key (the pre-generated wizard URL stays valid without an admin-ajax round-trip).
-	// Re-set BOTH transients together - preserving the original generator's user id -
-	// so the key and its associated user id always expire in step.
-	$user_id = get_transient( 'exactmetrics_onboarding_user_id' );
-	if ( empty( $user_id ) ) {
+		$key     = wp_generate_password( 32, false );
 		$user_id = get_current_user_id();
+	} else {
+		// Still valid: slide the window so an active admin session keeps a launch-ready
+		// key (the pre-generated wizard URL stays valid without an admin-ajax round-trip).
+		// Preserve the launching user id recorded when the key was minted.
+		$user_id = $stored['user_id'];
+		if ( empty( $user_id ) ) {
+			$user_id = get_current_user_id();
+		}
 	}
-	set_transient( 'exactmetrics_onboarding_key', $key, $ttl );
-	set_transient( 'exactmetrics_onboarding_user_id', $user_id, $ttl );
+
+	exactmetrics_store_onboarding_key( $key, $user_id, $ttl );
 
 	return $key;
 }
 
+/**
+ * Stores the onboarding key together with the launching user id.
+ *
+ * The key and the launching user id share a single transient so they always
+ * expire together and cannot be evicted independently under a persistent
+ * object cache.
+ *
+ * @since 9.5.0
+ *
+ * @param string $key     The 32-char onboarding key.
+ * @param int    $user_id The user id that launched the wizard.
+ * @param int    $ttl     Transient lifetime in seconds.
+ * @return void
+ */
+function exactmetrics_store_onboarding_key( $key, $user_id, $ttl ) {
+	set_transient(
+		'exactmetrics_onboarding_key',
+		array(
+			'key'     => (string) $key,
+			'user_id' => (int) $user_id,
+		),
+		$ttl
+	);
+}
+
+/**
+ * Reads the onboarding key transient and normalizes it to key + user id.
+ *
+ * Handles both the combined array format and the legacy string format, where
+ * the launching user id lived in a companion transient.
+ *
+ * @since 9.5.0
+ *
+ * @return array {
+ *     @type string $key     The stored onboarding key, or empty string.
+ *     @type int    $user_id The launching user id, or 0.
+ * }
+ */
+function exactmetrics_get_onboarding_key_data() {
+	$stored = get_transient( 'exactmetrics_onboarding_key' );
+
+	if ( is_array( $stored ) ) {
+		return array(
+			'key'     => isset( $stored['key'] ) ? (string) $stored['key'] : '',
+			'user_id' => isset( $stored['user_id'] ) ? (int) $stored['user_id'] : 0,
+		);
+	}
+
+	// Back-compat: a key minted before the combined format recorded the
+	// launching user id in a companion transient. Read it so an in-flight
+	// wizard keeps working across an upgrade.
+	if ( is_string( $stored ) && '' !== $stored ) {
+		return array(
+			'key'     => $stored,
+			'user_id' => (int) get_transient( 'exactmetrics_onboarding_user_id' ),
+		);
+	}
+
+	return array(
+		'key'     => '',
+		'user_id' => 0,
+	);
+}
+
+/**
+ * Gets the user id that launched the onboarding wizard.
+ *
+ * @since 9.5.0
+ *
+ * @return int The launching user id, or 0 if none is stored.
+ */
 function exactmetrics_get_onboarding_user_id() {
-	return (int) get_transient( 'exactmetrics_onboarding_user_id' );
+	$data = exactmetrics_get_onboarding_key_data();
+
+	return (int) $data['user_id'];
 }
 /**
  * Clears the onboarding key
@@ -1107,6 +1177,7 @@ function exactmetrics_get_onboarding_user_id() {
  */
 function exactmetrics_clear_onboarding_key() {
 	delete_transient( 'exactmetrics_onboarding_key' );
+	delete_transient( 'exactmetrics_onboarding_user_id' );
 }
 
 /**

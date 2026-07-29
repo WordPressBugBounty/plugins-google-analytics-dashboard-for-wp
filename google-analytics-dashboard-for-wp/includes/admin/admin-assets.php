@@ -184,7 +184,9 @@ class ExactMetrics_Admin_Assets {
 
 		// Pro-only license fields (methods don't exist in Lite's ExactMetrics_License_Compat)
 		if ( exactmetrics_is_pro_version() ) {
-			$license_info['key']         = $license->get_site_license_key();
+			// The license key is only needed by the capability-gated settings/license
+			// screens. Keep it out of the bootstrap for view-only report delegates.
+			$license_info['key']         = current_user_can( 'exactmetrics_save_settings' ) ? $license->get_site_license_key() : '';
 			$license_info['is_expired']  = $license->site_license_expired();
 			$license_info['is_disabled'] = $license->site_license_disabled();
 			$license_info['is_invalid']  = $license->site_license_invalid();
@@ -193,15 +195,19 @@ class ExactMetrics_Admin_Assets {
 
 		// Get auth data (shared across Vue 2 and Vue 3 apps)
 		$auth      = ExactMetrics()->auth;
-		$auth_data = array(
+		// The measurement protocol secret is only consumed by the capability-gated
+		// settings/authenticate screens; keep it out of the bootstrap for view-only
+		// report delegates.
+		$can_manage_secrets = current_user_can( 'exactmetrics_save_settings' );
+		$auth_data          = array(
 			'v4'                                  => $auth->get_v4_id(),
 			'network_v4'                          => is_multisite() ? $auth->get_network_v4_id() : '',
 			'manual_v4'                           => $auth->get_manual_v4_id(),
 			'network_manual_v4'                   => is_multisite() ? $auth->get_network_manual_v4_id() : '',
 			'viewname'                            => $auth->get_viewname(),
 			'network_viewname'                    => is_multisite() ? $auth->get_network_viewname() : '',
-			'measurement_protocol_secret'         => $auth->get_measurement_protocol_secret(),
-			'network_measurement_protocol_secret' => is_multisite() ? $auth->get_network_measurement_protocol_secret() : '',
+			'measurement_protocol_secret'         => $can_manage_secrets ? $auth->get_measurement_protocol_secret() : '',
+			'network_measurement_protocol_secret' => ( $can_manage_secrets && is_multisite() ) ? $auth->get_network_measurement_protocol_secret() : '',
 		);
 
 		// Route to the appropriate Vue 3 entry based on the current admin page.
@@ -694,10 +700,13 @@ class ExactMetrics_Admin_Assets {
 		$site_auth = $auth->get_viewname();
 		$ms_auth   = is_multisite() && $auth->get_network_viewname();
 
-		// Reporting API credentials for direct client-side requests to api/v3/reporting/query
-		$reporting_api = array(
+		// Reporting API credentials for direct client-side requests to api/v3/reporting/query.
+		// The relay key/token below authenticate the report query; the license key is only
+		// surfaced to capability-gated screens and is omitted for view-only delegates.
+		$can_view_license = current_user_can( 'exactmetrics_save_settings' );
+		$reporting_api    = array(
 			'url'      => apply_filters( 'exactmetrics_api_url_custom_dashboard', 'https://app.exactmetrics.com/' ),
-			'license'  => exactmetrics_is_pro_version() ? ( is_network_admin() ? ExactMetrics()->license->get_network_license_key() : ExactMetrics()->license->get_site_license_key() ) : '',
+			'license'  => ( exactmetrics_is_pro_version() && $can_view_license ) ? ( is_network_admin() ? ExactMetrics()->license->get_network_license_key() : ExactMetrics()->license->get_site_license_key() ) : '',
 			'key'      => is_network_admin() ? $auth->get_network_key() : $auth->get_key(),
 			'token'    => is_network_admin() ? $auth->get_network_token() : $auth->get_token(),
 			'site_url' => is_network_admin() ? network_admin_url() : home_url(),
