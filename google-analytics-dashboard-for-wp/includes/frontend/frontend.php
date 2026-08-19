@@ -294,32 +294,32 @@ function exactmetrics_frontend_admin_bar_scripts() {
 		plugin_dir_path( EXACTMETRICS_PLUGIN_FILE ) . $version . '/languages'
 	);
 
-	// Skip localizing the shared `exactmetrics` global if another MI app already owns it —
-	// otherwise this admin-bar payload would clobber config like relay_api_url / license / reporting_api.
-	$competing_handles = array(
-		'exactmetrics-vue-script',
-		'exactmetrics-vue-reports',
-		'exactmetrics-vue-widget',
-		'exactmetrics-vue3-custom-dashboard',
-		'exactmetrics-vue3-reports',
-		'exactmetrics-vue3-settings',
-		'exactmetrics-vue3-widget',
-	);
+	// The admin bar app reads its own `exactmetrics_admin_bar` global, so it
+	// can be localized on every page: the shared `exactmetrics` global stays
+	// owned by whichever page app (reports, settings, widget, custom dashboard)
+	// is present, with no clobbering in either direction.
+	$page_title   = is_singular() ? get_the_title() : exactmetrics_get_page_title();
+	$site_auth    = ExactMetrics()->auth->get_viewname();
+	$ms_auth      = is_multisite() && ExactMetrics()->auth->get_network_viewname();
+	$reports_url  = is_network_admin() ? add_query_arg( 'page', 'exactmetrics_overview_report', network_admin_url( 'admin.php' ) ) : add_query_arg( 'page', 'exactmetrics_reports', admin_url( 'admin.php' ) );
+	$settings_url = is_network_admin() ? network_admin_url( 'admin.php?page=exactmetrics_network' ) : admin_url( 'admin.php?page=exactmetrics_settings' );
 
-	foreach ( $competing_handles as $handle ) {
-		if ( wp_script_is( $handle ) ) {
-			return;
+	if ( function_exists( 'exactmetrics_get_upgrade_link' ) ) {
+		$upgrade_url = exactmetrics_get_upgrade_link( 'admin-bar', 'powered-by' );
+	} else {
+		// Front-end: admin/common.php isn't loaded, so build the same link
+		// from the always-loaded helpers.
+		$upgrade_url   = exactmetrics_get_url( 'admin-bar', 'powered-by', '', false );
+		$shareasale_id = exactmetrics_get_shareasale_id();
+		if ( ! exactmetrics_is_pro_version() && ! empty( $shareasale_id ) ) {
+			$upgrade_url = exactmetrics_get_shareasale_url( absint( $shareasale_id ), $upgrade_url );
 		}
+		$upgrade_url = esc_url( $upgrade_url );
 	}
 
-	// Localize data (same structure as Vue version for compatibility)
-	$page_title  = is_singular() ? get_the_title() : exactmetrics_get_page_title();
-	$site_auth   = ExactMetrics()->auth->get_viewname();
-	$ms_auth     = is_multisite() && ExactMetrics()->auth->get_network_viewname();
-	$reports_url = is_network_admin() ? add_query_arg( 'page', 'exactmetrics_overview_report', network_admin_url( 'admin.php' ) ) : add_query_arg( 'page', 'exactmetrics_reports', admin_url( 'admin.php' ) );
 	wp_localize_script(
 		'exactmetrics-admin-bar',
-		'exactmetrics',
+		'exactmetrics_admin_bar',
 		array(
 			'ajax'                 => admin_url( 'admin-ajax.php' ),
 			'nonce'                => wp_create_nonce( 'mi-admin-nonce' ),
@@ -333,13 +333,16 @@ function exactmetrics_frontend_admin_bar_scripts() {
 			'shareasale_url'       => exactmetrics_get_shareasale_url( exactmetrics_get_shareasale_id(), '' ),
 			'is_admin'             => is_admin(),
 			'reports_url'          => $reports_url,
+			'site_name'            => get_bloginfo( 'name' ),
+			'settings_url'         => $settings_url,
+			'upgrade_url'          => $upgrade_url,
 			'authed'               => $site_auth || $ms_auth,
 			'auth_connect_url'     => exactmetrics_can_install_plugins() ? exactmetrics_get_onboarding_url() : '',
 			'getting_started_url'  => is_multisite() ? network_admin_url( 'admin.php?page=exactmetrics_network#/about/getting-started' ) : admin_url( 'admin.php?page=exactmetrics_settings#/about/getting-started' ),
 			'wizard_url'           => exactmetrics_can_install_plugins() ? exactmetrics_get_onboarding_url() : '',
 			'roles_manage_options' => exactmetrics_get_manage_options_roles(),
 			'user_roles'           => $current_user->roles,
-			'roles_view_reports'   => exactmetrics_get_option('view_reports'),
+			'roles_view_reports'   => exactmetrics_get_option( 'view_reports' ),
 		)
 	);
 }

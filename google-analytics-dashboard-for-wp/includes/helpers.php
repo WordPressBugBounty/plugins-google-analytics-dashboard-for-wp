@@ -1046,17 +1046,23 @@ function exactmetrics_get_onboarding_url() {
 		$auth = ExactMetrics()->api_auth = new ExactMetrics_API_Auth();
 	}
 
+	// Only a user who can install plugins can complete the wizard flow, and
+	// `validate_onboarding_request()` enforces the same rule on the way back.
+	// Callers include screens open to any report viewer, so carry the wizard
+	// credentials only for users who can actually launch it.
+	$can_launch_wizard = exactmetrics_can_install_plugins();
+
 	$is_network = is_network_admin();
 	$params = array(
-		'tt'                => $auth->get_tt(),
-		'sitei'             => $auth->get_sitei(),
+		'tt'                => $can_launch_wizard ? $auth->get_tt() : '',
+		'sitei'             => $can_launch_wizard ? $auth->get_sitei() : '',
 		'site_url'          => get_site_url(),
-		'onboarding_key'    => exactmetrics_get_onboarding_key(),
+		'onboarding_key'    => $can_launch_wizard ? exactmetrics_get_onboarding_key() : '',
 		'triggered_by'      => get_current_user_id(),
 		'rest_url'          => rest_url( 'exactmetrics/v1' ),
 		'return_url'        => $is_network ? network_admin_url( 'admin.php?page=exactmetrics_settings' ) : admin_url( 'admin.php?page=exactmetrics_settings' ),
 		'is_network'        => $is_network ? 1 : 0,
-		'can_install'       => exactmetrics_can_install_plugins() ? 1 : 0,
+		'can_install'       => $can_launch_wizard ? 1 : 0,
 	);
 
 	// Apply args filter for backwards compatibility.
@@ -2691,6 +2697,105 @@ add_action( 'admin_init', 'exactmetrics_disable_wpconsent_onboarding_redirect', 
 function exactmetrics_disable_wpconsent_onboarding_redirect() {
 	if ( is_plugin_active( 'wpconsent-cookies-banner-privacy-suite/wpconsent.php' ) ) {
 		delete_transient( 'wpconsent_onboarding_redirect' );
+	}
+}
+
+/**
+ * Whether a plugin basename belongs to WPForms, in either edition.
+ *
+ * @since 11.1.3
+ *
+ * @param string $basename Plugin basename, e.g. `wpforms-lite/wpforms.php`.
+ *
+ * @return bool
+ */
+function exactmetrics_is_wpforms_plugin( $basename ) {
+	return in_array(
+		$basename,
+		array(
+			'wpforms-lite/wpforms.php',
+			'wpforms/wpforms.php',
+		),
+		true
+	);
+}
+
+/**
+ * Mark WPForms' first-run redirect for suppression after we install or activate it.
+ *
+ * Called from every path that puts WPForms on the site on the user's behalf, so the
+ * suppression below is scoped to activations ExactMetrics initiated. A user who
+ * installs WPForms themselves is untouched and still gets its Setup Wizard.
+ *
+ * @since 11.1.3
+ *
+ * @param string $basename Plugin basename that was just installed or activated.
+ *
+ * @return void
+ */
+function exactmetrics_suppress_wpforms_first_run( $basename ) {
+	if ( ! exactmetrics_is_wpforms_plugin( $basename ) ) {
+		return;
+	}
+
+	// Deliberately not a timed transient. WPForms arms its first-run signal lazily, on
+	// the first admin page load after activation, however long after install that is -
+	// nothing counts down from activation. A marker with any TTL therefore leaves a gap
+	// for a user who finishes onboarding and comes back later. This is cleared instead
+	// by the handler below, once WPForms can no longer arm.
+	update_option( 'exactmetrics_suppress_wpforms_first_run', 1 );
+}
+
+// Prevents WPForms from taking over the page the user lands on when the onboarding
+// wizard finishes. Priority 11 is load bearing - see the note below.
+add_action( 'admin_init', 'exactmetrics_disable_wpforms_first_run_redirect', 11 );
+/**
+ * Disarm WPForms' first-run redirect after ExactMetrics installs it.
+ *
+ * WPForms 2.x drives its Setup Wizard from `admin_init`, not from its activation
+ * hook: `maybe_record_first_activation()` arms a one-shot transient at priority 10,
+ * and `maybe_launch()` consumes it at `PHP_INT_MAX`, replacing whatever page is
+ * rendering with an off-site handoff to wpformsapi.com. Because the signal is armed
+ * on the first admin page load *after* install, the reports page the user lands on
+ * when onboarding finishes is exactly the page that gets taken over. Activating
+ * silently does not prevent it, so the signal has to be cleared here instead.
+ *
+ * Priority 11 places this after WPForms arms the signal and before both of its
+ * consumers: the legacy Welcome redirect at 9999 and the Setup Wizard at
+ * `PHP_INT_MAX`. The manual `?wpforms_setup_wizard` launch does not read either
+ * signal, so a user who asks for the wizard by hand still gets it.
+ *
+ * @since 11.1.3
+ *
+ * @return void
+ */
+function exactmetrics_disable_wpforms_first_run_redirect() {
+	// WPForms is not loaded on this request, so it cannot arm or consume a first-run
+	// signal and there is nothing to disarm. Checked first because it is free, whereas
+	// the lookup below costs a query on every admin request once the option is absent
+	// and no persistent object cache is caching the miss - a cost most sites would
+	// otherwise pay forever, having never installed WPForms at all.
+	if ( ! function_exists( 'wpforms' ) ) {
+		return;
+	}
+
+	if ( ! get_option( 'exactmetrics_suppress_wpforms_first_run' ) ) {
+		return;
+	}
+
+	// WPForms 2.0+ Setup Wizard.
+	delete_transient( 'wpforms_setup_wizard_first_run' );
+	// WPForms < 2.0 Welcome screen activation redirect.
+	delete_transient( 'wpforms_activation_redirect' );
+
+	// Stop watching once WPForms can no longer arm a first run. In 2.x it records its
+	// initial version on the same request it would have armed, at priority 10, so by
+	// the time we get here that option is the reliable "the window has closed" signal.
+	// Releases before 2.0 have no Setup Wizard, and the legacy transient cleared above
+	// is only ever set once, at activation.
+	if ( get_option( 'wpforms_setup_wizard_initial_version' )
+		|| ! class_exists( '\WPForms\SetupWizard\SetupWizard' ) ) {
+		delete_option( 'exactmetrics_suppress_wpforms_first_run' );
 	}
 }
 add_action( 'wp_ajax_exactmetrics_report_error', 'exactmetrics_report_error' );

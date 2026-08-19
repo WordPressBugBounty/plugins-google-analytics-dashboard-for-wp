@@ -211,6 +211,9 @@ class ExactMetrics_Onboarding_Wizard {
 			// Set this option to prevent WP Forms setup from showing up after the wizard completes.
 			update_option( 'wpforms_activation_redirect', true );
 			activate_plugin( $installer->plugin_info() );
+			// The option above only covers WPForms' legacy Welcome redirect. WPForms 2.x
+			// launches its Setup Wizard from a separate signal that has to be disarmed too.
+			exactmetrics_suppress_wpforms_first_run( $installer->plugin_info() );
 			wp_send_json_success();
 		}
 

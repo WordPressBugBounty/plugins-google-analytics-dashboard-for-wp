@@ -337,11 +337,13 @@ class ExactMetrics_Onboarding {
 						break;
 					case 'activation':
 						activate_plugin( $plugin['installation_path'], '', $is_network, true );
+						exactmetrics_suppress_wpforms_first_run( $plugin['installation_path'] );
 						$activated_plugins[] = $plugin['title'];
 						break;
 				}
 				if ( $installed ) {
 					activate_plugin( $installed, '', $is_network, true );
+					exactmetrics_suppress_wpforms_first_run( $installed );
 					$activated_plugins[] = $plugin['title'];
 				}
 			}

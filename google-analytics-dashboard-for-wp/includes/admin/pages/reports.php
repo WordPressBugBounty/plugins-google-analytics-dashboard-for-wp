@@ -49,6 +49,146 @@ function exactmetrics_get_reports()
 }
 
 /**
+ * Whether the Vue 3 overview report page is registered in this context.
+ *
+ * exactmetrics_admin_menu() only adds `exactmetrics_overview_report` when
+ * the menu hook resolves to the reports screen. With the `dashboards_disabled`
+ * option set it resolves to the settings screen instead and that page is never
+ * registered — while the `Insights` top level menu still points at the legacy
+ * reports slug. Redirecting there regardless would swap one dead screen for
+ * another: WordPress answers an unregistered page with "Sorry, you are not
+ * allowed to access this page."
+ *
+ * @return bool True when the overview report page exists for this request.
+ * @since 11.1.3
+ */
+function exactmetrics_overview_report_page_exists() {
+	if ( ! function_exists( 'exactmetrics_get_menu_hook' ) ) {
+		return false;
+	}
+
+	return 'exactmetrics_reports' === exactmetrics_get_menu_hook();
+}
+
+/**
+ * The page slug the legacy reports screen should hand off to.
+ *
+ * Falls back to the settings screen when the overview report is not registered,
+ * because that is the screen this configuration actually lands people on — see
+ * exactmetrics_overview_report_page_exists().
+ *
+ * Returns an empty string when neither screen is available to this user, which
+ * leaves the request where it is rather than moving it somewhere it would be
+ * refused. A viewer — `exactmetrics_view_dashboard` without
+ * `exactmetrics_save_settings` — on a site with dashboards disabled has no
+ * ExactMetrics screen to be sent to, and swapping one refusal for another
+ * helps nobody.
+ *
+ * @return string The target page slug, or an empty string to stay put.
+ * @since 11.1.3
+ */
+function exactmetrics_get_legacy_reports_target_page() {
+	if ( exactmetrics_overview_report_page_exists() ) {
+		return 'exactmetrics_overview_report';
+	}
+
+	if ( current_user_can( 'exactmetrics_save_settings' ) ) {
+		return 'exactmetrics_settings';
+	}
+
+	return '';
+}
+
+/**
+ * Build the URL the legacy reports screen should redirect to.
+ *
+ * Kept separate from the redirect itself so the decision — which requests move
+ * and what carries over with them — can be exercised without a live request.
+ *
+ * @param array  $query_args  The request's query arguments, i.e. $_GET.
+ * @param string $target_page Page slug to hand off to. Defaults to the overview
+ *                            report; callers pass the resolved slug so a site
+ *                            without that page registered is not sent to it.
+ *
+ * @return string The redirect target, or an empty string to leave the request alone.
+ * @since 11.1.3
+ */
+function exactmetrics_get_legacy_reports_redirect_url( $query_args, $target_page = 'exactmetrics_overview_report' ) {
+	if ( ! is_array( $query_args ) || empty( $query_args['page'] ) ) {
+		return '';
+	}
+
+	if ( 'exactmetrics_reports' !== $query_args['page'] ) {
+		return '';
+	}
+
+	if ( ! is_string( $target_page ) || '' === $target_page || 'exactmetrics_reports' === $target_page ) {
+		return '';
+	}
+
+	// Carry the rest of the query string over — notification links append their
+	// own arguments and lose their effect if those are dropped here.
+	$args = map_deep( $query_args, 'sanitize_text_field' );
+
+	$args['page'] = $target_page;
+
+	return add_query_arg( $args, admin_url( 'admin.php' ) );
+}
+
+/**
+ * Redirect the legacy reports screen to the Vue 3 overview report page.
+ *
+ * This screen no longer enqueues an app of its own, so there is nothing to keep
+ * a visitor here for. Runs before any output so a visitor never sees this page,
+ * even with JavaScript unavailable. Browsers carry the original hash fragment
+ * over to the redirect target, so deep links keep working; the Vue 3 router
+ * resolves anything it does not recognise to the overview report.
+ *
+ * @return void
+ * @since 11.1.3
+ */
+function exactmetrics_redirect_legacy_reports_page() {
+	// The network screen registers this page under its own menu and has no
+	// overview report of its own, so leave it to the inline script fallback.
+	if ( wp_doing_ajax() || is_network_admin() ) {
+		return;
+	}
+
+	// This runs on every admin request, so test the page with a plain string
+	// comparison before doing anything that copies or walks the query string.
+	// exactmetrics_get_legacy_reports_redirect_url() repeats the check so it
+	// stays safe to call on its own.
+	if ( ! isset( $_GET['page'] ) || 'exactmetrics_reports' !== $_GET['page'] ) { // phpcs:ignore WordPress.Security.NonceVerification
+		return;
+	}
+
+	// Let WordPress render its own error when the user cannot view reports.
+	if ( ! current_user_can( 'exactmetrics_view_dashboard' ) ) {
+		return;
+	}
+
+	$target = exactmetrics_get_legacy_reports_redirect_url(
+		wp_unslash( $_GET ), // phpcs:ignore WordPress.Security.NonceVerification
+		exactmetrics_get_legacy_reports_target_page()
+	);
+
+	if ( '' === $target ) {
+		return;
+	}
+
+	// Output already started, so headers cannot be sent. The inline script in
+	// exactmetrics_reports_page() takes over from here.
+	if ( headers_sent() ) {
+		return;
+	}
+
+	wp_safe_redirect( $target );
+	exit;
+}
+
+add_action( 'admin_init', 'exactmetrics_redirect_legacy_reports_page' );
+
+/**
  * Callback to output the ExactMetrics reports page.
  *
  * @return void
@@ -58,67 +198,45 @@ function exactmetrics_get_reports()
  */
 function exactmetrics_reports_page()
 {
-	// Redirect routes that have been migrated to the Vue 3 overview report page.
-	// PHP cannot read the hash fragment, so we use JavaScript.
-	// Non-migrated routes are preserved on this page (hash routes not listed in vue3Routes).
-	// TODO: Remove this once the reports pages are fully migrated to the new app.
-	$overview_url = admin_url( 'admin.php?page=exactmetrics_overview_report' );
-	?>
-	<script>
-	(function () {
-		var hash = window.location.hash;
-		var path = hash.replace(/^#\/?/, '/');
+	// Fallback for the rare case exactmetrics_redirect_legacy_reports_page()
+	// could not send headers, and for the network screen it skips. Redirect
+	// every hash: this screen has no app of its own, and the Vue 3 router
+	// resolves unknown paths to the overview report on its own — matching a
+	// hard-coded route table here only stranded the hashes it did not list.
+	// PHP cannot read the hash fragment, so it is carried over in JavaScript.
+	//
+	// In the network admin this is a behaviour change rather than a like-for-like
+	// fallback: the old route table redirected an empty hash and stranded every
+	// other one. There is no network-level report app to send anyone to, so both
+	// cases now land on the main site's overview report — a working screen
+	// instead of a dead one, at the cost of leaving the network admin.
+	//
+	// The target is resolved the same way there as anywhere else. In the network
+	// admin `admin_url()` and `get_option()` both address the main site, so
+	// exactmetrics_get_legacy_reports_target_page() reads the settings of the
+	// very site it is about to send the visitor to — which is what decides
+	// whether that site registered an overview report at all.
+	$target_page = exactmetrics_get_legacy_reports_target_page();
 
-		// Routes already migrated to the Vue 3 overview report app.
-		var vue3Routes = [
-			'/',
-			// Traffic reports (Phase 1)
-			'/traffic-overview',
-			'/traffic-technology',
-			'/traffic-landing-pages',
-			'/traffic-campaign',
-			'/traffic-source-medium',
-			'/traffic-social',
-			'/traffic-ai',
-			'/countries',
-			// eCommerce reports (Phase 2)
-			'/ecommerce',
-			'/ecommerce-coupons',
-			'/cart-abandonment',
-			'/ecommerce-funnel',
-			'/ecommerce-purchases-by-location',
-			'/ecommerce-spend-by-day',
-			'/ecommerce-spend-by-hour',
-			'/ecommerce-refunds',
-			'/ecommerce-refunds-by-geo',
-			'/ecommerce-product-feed',
-			'/publishers',
-			'/publishers-pages',
-			'/custom-events',
-			// Standalone reports (migrated to Vue 3)
-			'/user-journey-report',
-			'/forms',
-			'/exceptions',
-			'/media',
-			'/dimensions',
-			'/real-time',
-			'/search-console',
-			'/site-speed',
-		];
-
-		var shouldRedirect = hash === '' || hash === '#' || vue3Routes.indexOf(path) !== -1;
-
-		if ( shouldRedirect ) {
-			// Preserve the hash route when redirecting so the Vue 3 router picks it up.
+	// No screen this user can be sent to, so stay put rather than bounce the
+	// request into a page WordPress would refuse.
+	if ( '' !== $target_page ) {
+		$overview_url = add_query_arg( 'page', $target_page, admin_url( 'admin.php' ) );
+		?>
+		<script>
+		(function () {
 			var targetUrl = <?php echo wp_json_encode( $overview_url ); ?>;
+			var hash = window.location.hash;
+
 			if ( hash && hash !== '#' && hash !== '#/' ) {
 				targetUrl += hash;
 			}
+
 			window.location.replace( targetUrl );
-		}
-	})();
-	</script>
-	<?php
+		})();
+		</script>
+		<?php
+	}
 
 	/**
 	 * Developer Alert:
@@ -128,7 +246,11 @@ function exactmetrics_reports_page()
 	 * or the hook may be removed at any time, without warning.
 	 */
 	do_action('exactmetrics_head');
-	echo exactmetrics_ublock_notice(); // phpcs:ignore
-	exactmetrics_settings_error_page('exactmetrics-reports');
-	exactmetrics_settings_inline_js();
+
+	// Show the same spinner as the report screen we are on the way to. The
+	// "JavaScript didn't load" panel exactmetrics_settings_error_page()
+	// reveals on a 2 second timer cannot be right here — this screen enqueues
+	// no app for an ad blocker to block — and it sent customers looking for a
+	// blocked script while all they were waiting on was this redirect.
+	exactmetrics_app_loading_placeholder();
 }

@@ -162,6 +162,11 @@ function exactmetrics_ajax_activate_addon() {
 			wp_die();
 		}
 
+		// This activation is deliberately not silent: skipping a plugin's activation
+		// hook can leave it without its tables, options or cron events. WPForms' own
+		// first-run redirect is disarmed on the next admin page load instead.
+		exactmetrics_suppress_wpforms_first_run( $plugin );
+
 		do_action( 'exactmetrics_after_ajax_activate_addon', sanitize_text_field( $_POST['plugin'] ) );
 
 		// Flush report caches so the newly activated addon's data is fetched fresh.

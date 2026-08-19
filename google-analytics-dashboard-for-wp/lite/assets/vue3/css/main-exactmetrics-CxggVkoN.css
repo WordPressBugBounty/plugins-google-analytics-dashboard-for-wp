@@ -1,0 +1,50 @@
+
+.exactmetrics-report-table-modal__row-icon-img {
+	width: 20px;
+	height: 20px;
+	object-fit: contain;
+	vertical-align: middle;
+}
+
+/* The rank number and its `__cell-inner` wrapper are styled in `_overview.scss`,
+   next to the rest of this modal's table rules, so the colour can come from the
+   shared `$color-report-row-number` token the in-table view also uses. */
+
+/* Truncate long text in first column and links */
+.exactmetrics-report-table-modal__table tbody td:first-child span,
+.exactmetrics-report-table-modal__table tbody td .exactmetrics-report-table-modal__cell-with-icon span {
+	display: inline-block;
+	max-width: 30ch;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	vertical-align: middle;
+}
+.exactmetrics-report-table-modal__cell-link {
+	display: inline-block;
+	max-width: 35ch;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	vertical-align: middle;
+	color: #509fe2;
+	text-decoration: none;
+}
+.exactmetrics-report-table-modal__cell-link:hover {
+	text-decoration: underline;
+}
+.exactmetrics-report-table-modal__th--key-event .exactmetrics-report-table-modal__th-content {
+	justify-content: flex-end;
+	width: 100%;
+}
+.exactmetrics-report-table-modal__td--key-event {
+	text-align: right;
+	vertical-align: middle;
+}
+.exactmetrics-report-table-modal__td--key-event .exactmetrics-report-table-modal__cell-with-icon {
+	justify-content: flex-end;
+	width: 100%;
+}
+.exactmetrics-report-table-modal__td--key-event .exactmetrics-report-table-modal__cell-with-icon span {
+	max-width: none;
+}

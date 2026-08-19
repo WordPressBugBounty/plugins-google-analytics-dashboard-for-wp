@@ -272,7 +272,7 @@ class ExactMetrics_Admin_Assets {
 					'custom_dashboard_url' => add_query_arg( 'page', 'exactmetrics_custom_dashboard', admin_url( 'admin.php' ) ),
 					'license'              => $license_info,
 					'auth'                 => $auth_data,
-					'authed'               => $site_auth || $ms_auth, // Boolean for admin bar compatibility
+					'authed'               => $site_auth || $ms_auth, // Boolean auth flag (used by settings tools/Google Ads views via getMiGlobal)
 					'plugin_version'       => EXACTMETRICS_VERSION,
 					'wizard_url'           => exactmetrics_can_install_plugins() ? exactmetrics_get_onboarding_url() : '',
 					'rest_url'             => get_rest_url(),
@@ -700,15 +700,19 @@ class ExactMetrics_Admin_Assets {
 		$site_auth = $auth->get_viewname();
 		$ms_auth   = is_multisite() && $auth->get_network_viewname();
 
-		// Reporting API credentials for direct client-side requests to api/v3/reporting/query.
-		// The relay key/token below authenticate the report query; the license key is only
-		// surfaced to capability-gated screens and is omitted for view-only delegates.
+		// Reporting API endpoint for direct client-side requests to api/v3/reporting/query,
+		// authenticated with the short-lived bearer token issued below — same pattern as
+		// the Custom Dashboard bootstrap. The license key is capability-gated.
+		//
+		// The relay key and token are deliberately absent. Every v3/reporting route
+		// requires `Authorization: Bearer` and rejects X-Relay header auth, so a host
+		// that cannot mint a bearer gets a 401 whether or not the pair is localised —
+		// sending it would disclose a long-lived credential to every dashboard-tier
+		// user and buy nothing.
 		$can_view_license = current_user_can( 'exactmetrics_save_settings' );
 		$reporting_api    = array(
 			'url'      => apply_filters( 'exactmetrics_api_url_custom_dashboard', 'https://app.exactmetrics.com/' ),
 			'license'  => ( exactmetrics_is_pro_version() && $can_view_license ) ? ( is_network_admin() ? ExactMetrics()->license->get_network_license_key() : ExactMetrics()->license->get_site_license_key() ) : '',
-			'key'      => is_network_admin() ? $auth->get_network_key() : $auth->get_key(),
-			'token'    => is_network_admin() ? $auth->get_network_token() : $auth->get_token(),
 			'site_url' => is_network_admin() ? network_admin_url() : home_url(),
 		);
 
@@ -779,7 +783,7 @@ class ExactMetrics_Admin_Assets {
 				'nonce'              => wp_create_nonce( 'mi-admin-nonce' ),
 				'license'            => $license_info,
 				'auth'               => $auth_data,
-				'authed'             => $site_auth || $ms_auth, // Boolean for admin bar compatibility
+				'authed'             => $site_auth || $ms_auth, // Boolean auth flag (used by settings tools/Google Ads views via getMiGlobal)
 				'can_view_reports'   => current_user_can( 'exactmetrics_view_dashboard' ),
 				'license_expired'    => exactmetrics_is_pro_version() && ExactMetrics()->license->license_has_error(),
 				'plugin_version'     => EXACTMETRICS_VERSION,

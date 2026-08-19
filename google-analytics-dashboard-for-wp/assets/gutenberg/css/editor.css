@@ -1,9 +1,10 @@
-/*!********************************************************************************************************************************************************************************************************************************************************************!*\
+/*!*****************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/assets/scss/exactmetrics/editor.scss ***!
-  \********************************************************************************************************************************************************************************************************************************************************************/
-.exactmetrics-block-placeholder .exactmetrics-block-error-placeholder-content {
+  \*****************************************************************************************************************************************************************************************************************************************************************/
+.exactmetrics-block-error-placeholder-content {
   text-align: center;
 }
+
 .exactmetrics-block-placeholder .components-placeholder__fieldset {
   align-items: center;
   justify-content: center;
@@ -936,7 +937,7 @@
   color: #393F4C;
 }
 .exactmetrics-theme-picker-slide label.exactmetrics-theme-picker-label-selected {
-  border: 3px solid #338EEF;
+  border: 3px solid #6528f5;
 }
 .exactmetrics-theme-picker-slide label.exactmetrics-theme-picker-label-disabled {
   opacity: 0.6;
@@ -999,6 +1000,11 @@
   flex-grow: 0;
   flex-shrink: 0;
   margin-right: 16px;
+}
+.exactmetrics-inline-popular-posts-image img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .exactmetrics-inline-popular-posts-widget {
@@ -1380,8 +1386,16 @@
 .exactmetrics-widget-popular-posts-widget {
   margin-bottom: 24px;
 }
+.exactmetrics-widget-popular-posts-widget .exactmetrics-widget-popular-posts-list li {
+  border-width: 0;
+}
 .exactmetrics-widget-popular-posts-widget .exactmetrics-widget-popular-posts-list {
   padding: 0;
+}
+.exactmetrics-widget-popular-posts-widget .exactmetrics-widget-popular-posts-image img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 .exactmetrics-widget-popular-posts-widget .exactmetrics-widget-popular-posts-title {
   box-shadow: none;
@@ -1395,7 +1409,7 @@
   background: #F0F2F4;
   border-radius: 3px;
   margin: 0 6px 12px 6px;
-  width: calc(50% - 61px);
+  width: calc(50% - 12px);
   vertical-align: top;
   font-size: 16px;
   line-height: 1.2;
@@ -1410,7 +1424,7 @@
   background: #fff;
   border-radius: 3px;
   margin: 0 6px 30px 6px;
-  width: calc(50% - 61px);
+  width: calc(50% - 12px);
   vertical-align: top;
   font-size: 16px;
   line-height: 1.2;
@@ -1428,7 +1442,7 @@
   background: #F0F2F4;
   border-radius: 3px;
   margin: 0 6px 12px 6px;
-  width: calc(50% - 61px);
+  width: calc(50% - 12px);
   vertical-align: top;
   font-size: 16px;
   line-height: 1.2;
@@ -1442,16 +1456,22 @@
   padding: 0;
   float: left;
   margin-right: 16px;
-  margin-bottom: 12px;
+}
+.exactmetrics-widget-popular-posts-widget.exactmetrics-widget-popular-posts-delta .exactmetrics-widget-popular-posts-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .exactmetrics-widget-popular-posts-widget.exactmetrics-widget-popular-posts-delta .exactmetrics-widget-popular-posts-list {
   margin: 0 -6px;
 }
 .exactmetrics-widget-popular-posts-widget.exactmetrics-widget-popular-posts-delta .exactmetrics-widget-popular-posts-list li {
   display: inline-block;
-  padding: 16px 0 0;
+  padding: 16px 0 12px;
   margin: 0 6px 0 6px;
-  width: calc(50% - 61px);
+  width: calc(50% - 12px);
   vertical-align: top;
   font-size: 16px;
   line-height: 1.2;
@@ -1468,12 +1488,6 @@
   display: inline-block;
   margin-right: 5px;
 }
-.exactmetrics-widget-popular-posts-widget.exactmetrics-widget-popular-posts-delta.exactmetrics-widget-popular-posts-columns-3 .exactmetrics-widget-popular-posts-list {
-  margin: 0;
-}
-.exactmetrics-widget-popular-posts-widget.exactmetrics-widget-popular-posts-delta.exactmetrics-widget-popular-posts-columns-3 .exactmetrics-widget-popular-posts-list li {
-  width: calc(33.333333% - 12px);
-}
 .exactmetrics-widget-popular-posts-widget.exactmetrics-widget-popular-posts-echo .exactmetrics-widget-popular-posts-image {
   margin-bottom: 14px;
   width: 100%;
@@ -1484,7 +1498,7 @@
 .exactmetrics-widget-popular-posts-widget.exactmetrics-widget-popular-posts-echo .exactmetrics-widget-popular-posts-list li {
   display: inline-block;
   margin: 0 6px 24px 6px;
-  width: calc(50% - 61px);
+  width: calc(50% - 12px);
   vertical-align: top;
   font-size: 16px;
   line-height: 1.2;
@@ -1506,12 +1520,6 @@
   display: inline-block;
   margin-right: 5px;
 }
-.exactmetrics-widget-popular-posts-widget.exactmetrics-widget-popular-posts-echo.exactmetrics-widget-popular-posts-columns-3 .exactmetrics-widget-popular-posts-list {
-  margin: 0;
-}
-.exactmetrics-widget-popular-posts-widget.exactmetrics-widget-popular-posts-echo.exactmetrics-widget-popular-posts-columns-3 .exactmetrics-widget-popular-posts-list li {
-  width: calc(33.333333% - 12px);
-}
 .exactmetrics-widget-popular-posts-widget.exactmetrics-widget-popular-posts-foxtrot .exactmetrics-widget-popular-posts-list {
   margin: 0 -6px;
 }
@@ -1521,7 +1529,7 @@
   background: #F0F2F4;
   border-radius: 5px;
   margin: 0 6px 12px 6px;
-  width: calc(50% - 61px);
+  width: calc(50% - 12px);
   vertical-align: top;
   font-size: 16px;
   line-height: 1.2;
@@ -1552,7 +1560,7 @@
   background: #F0F2F4;
   border-radius: 5px;
   margin: 0 6px 12px 6px;
-  width: calc(50% - 61px);
+  width: calc(50% - 12px);
   vertical-align: top;
   font-size: 16px;
   line-height: 1.2;
@@ -1592,7 +1600,7 @@
 .exactmetrics-widget-popular-posts-widget.exactmetrics-widget-popular-posts-hotel .exactmetrics-widget-popular-posts-list li {
   display: inline-block;
   margin: 0 6px 24px 6px;
-  width: calc(50% - 61px);
+  width: calc(50% - 12px);
   vertical-align: top;
   font-size: 16px;
   line-height: 1.2;
@@ -1614,12 +1622,6 @@
 .exactmetrics-widget-popular-posts-widget.exactmetrics-widget-popular-posts-hotel .exactmetrics-widget-popular-posts-list .exactmetrics-widget-popular-posts-meta span {
   display: inline-block;
   margin-right: 5px;
-}
-.exactmetrics-widget-popular-posts-widget.exactmetrics-widget-popular-posts-hotel.exactmetrics-widget-popular-posts-columns-3 .exactmetrics-widget-popular-posts-list {
-  margin: 0;
-}
-.exactmetrics-widget-popular-posts-widget.exactmetrics-widget-popular-posts-hotel.exactmetrics-widget-popular-posts-columns-3 .exactmetrics-widget-popular-posts-list li {
-  width: calc(33.333333% - 12px);
 }
 .exactmetrics-widget-popular-posts-widget.exactmetrics-widget-popular-posts-hotel .exactmetrics-bg-img {
   margin-bottom: 0;
@@ -1670,7 +1672,7 @@
   margin: 0;
 }
 .exactmetrics-widget-popular-posts-widget.exactmetrics-widget-popular-posts-columns-3 .exactmetrics-widget-popular-posts-list li {
-  width: calc(33.333333% - 64px);
+  width: calc(33.333333% - 12px);
 }
 
 .exactmetrics-wide-column-options input[type=radio] {
@@ -1707,12 +1709,12 @@
   width: 100%;
 }
 .exactmetrics-wide-column-options input[type=radio]:checked + label .exactmetrics-wide-column {
-  border: 2px solid #338EEF;
+  border: 2px solid #6528f5;
   background: #ECF4FE;
   padding: 9px 4px;
 }
 .exactmetrics-wide-column-options input[type=radio]:checked + label .exactmetrics-wide-column > span {
-  background: #338EEF;
+  background: #6528f5;
 }
 .exactmetrics-wide-column-options.exactmetrics-popular-posts-widget-columns-control .components-h-stack {
   flex-direction: row;
@@ -1737,6 +1739,13 @@
   padding: 0;
   float: left;
   margin-right: 18px;
+}
+.exactmetrics-products-popular-posts-widget.exactmetrics-products-popular-posts-alpha .exactmetrics-products-popular-posts-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .exactmetrics-products-popular-posts-widget.exactmetrics-widget-popular-posts-echo .exactmetrics-products-popular-posts-image {
   margin-bottom: 14px;
@@ -1798,7 +1807,7 @@
 }
 .exactmetrics-products-popular-posts-widget.exactmetrics-products-popular-posts-beta .exactmetrics-products-popular-posts-list li, .exactmetrics-products-popular-posts-widget.exactmetrics-products-popular-posts-delta .exactmetrics-products-popular-posts-list li {
   display: inline-block;
-  width: calc(50% - 61px);
+  width: calc(50% - 12px);
   vertical-align: top;
   font-size: 16px;
   padding: 10px 12px;
@@ -1807,12 +1816,6 @@
   margin: 0 6px 24px;
   border-radius: 3px;
   position: relative;
-}
-.exactmetrics-products-popular-posts-widget.exactmetrics-products-popular-posts-beta.exactmetrics-widget-popular-posts-columns-3 .exactmetrics-widget-popular-posts-list, .exactmetrics-products-popular-posts-widget.exactmetrics-products-popular-posts-delta.exactmetrics-widget-popular-posts-columns-3 .exactmetrics-widget-popular-posts-list {
-  margin: 0;
-}
-.exactmetrics-products-popular-posts-widget.exactmetrics-products-popular-posts-beta.exactmetrics-widget-popular-posts-columns-3 .exactmetrics-widget-popular-posts-list li, .exactmetrics-products-popular-posts-widget.exactmetrics-products-popular-posts-delta.exactmetrics-widget-popular-posts-columns-3 .exactmetrics-widget-popular-posts-list li {
-  width: calc(33.333333% - 12px);
 }
 .exactmetrics-products-popular-posts-widget.exactmetrics-products-popular-posts-beta .exactmetrics-products-popular-posts-price, .exactmetrics-products-popular-posts-widget.exactmetrics-products-popular-posts-delta .exactmetrics-products-popular-posts-price {
   display: block;
@@ -1833,7 +1836,7 @@
 }
 .exactmetrics-products-popular-posts-widget.exactmetrics-products-popular-posts-charlie .exactmetrics-products-popular-posts-list li {
   display: inline-block;
-  width: calc(50% - 61px);
+  width: calc(50% - 12px);
   vertical-align: top;
   font-size: 16px;
   padding: 0;

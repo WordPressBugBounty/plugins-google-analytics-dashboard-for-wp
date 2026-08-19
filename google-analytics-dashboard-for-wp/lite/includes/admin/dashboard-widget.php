@@ -233,11 +233,13 @@ class ExactMetrics_Dashboard_Widget {
 				'is_agency'   => false,
 			);
 
+			// Reporting API endpoint, authenticated with the short-lived bearer token
+			// issued below. The relay key and token are deliberately absent: the
+			// reporting routes accept only a bearer, so shipping the pair would
+			// disclose a long-lived credential without making anything work.
 			$reporting_api = array(
 				'url'      => apply_filters( 'exactmetrics_api_url_custom_dashboard', 'https://app.exactmetrics.com/' ),
 				'license'  => '',
-				'key'      => is_network_admin() ? $auth->get_network_key() : $auth->get_key(),
-				'token'    => is_network_admin() ? $auth->get_network_token() : $auth->get_token(),
 				'site_url' => is_network_admin() ? network_admin_url() : home_url(),
 			);
 
