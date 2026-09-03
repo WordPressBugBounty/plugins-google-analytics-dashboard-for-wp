@@ -4,7 +4,7 @@ Donate link: http://www.wpbeginner.com/wpbeginner-needs-your-help/
 Tags: analytics,google analytics,google analytics dashboard,google analytics plugin,website stats
 Requires at least: 5.6.0
 Tested up to: 7.1
-Stable tag: 10.1.3
+Stable tag: 10.2.0
 Requires PHP: 7.2
 License: GPL v3
 
@@ -131,6 +131,18 @@ You can translate Google Analytics Dashboard for WP by ExactMetrics on [translat
 4. Want more features? <a href="https://www.exactmetrics.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion">Purchase ExactMetrics Pro</a>!
 
 == Changelog ==
+= 10.2.0: September 3, 2026 =
+- Fixes: Every report view honours the sample-data toggle, so sample rows no longer mix in with your real numbers
+- Fixes: Rows in sample reports no longer link out to live pages
+- Fixes: An expired Google connection now prompts you to reconnect instead of showing a report error
+- Fixes: Dashboard widget shows the upgrade prompt for reports your plan doesn't include, instead of an error
+- Fixes: Upgrade links on paid plans now open the pricing page instead of the account area
+- Fixes: Dashboard widget no longer links to reports that have been disabled
+- Fixes: No more false "multiple tracking codes" notice on eCommerce homepages
+- Fixes: Previous-period totals now match the rows the table actually shows
+- Fixes: The AMP addon notice no longer appears on report screens
+- Fixes: Various bug fixes and updates
+
 = 10.1.3: August 19, 2026 =
 - WP 7.1: Popular Posts blocks work in the iframed block editor
 - Fixes: Report tables show row numbers again and the expand arrow is back on the right side

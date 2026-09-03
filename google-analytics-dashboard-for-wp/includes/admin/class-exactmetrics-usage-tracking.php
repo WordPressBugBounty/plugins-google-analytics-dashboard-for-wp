@@ -24,9 +24,7 @@ class ExactMetrics_Usage_Tracking {
 
 	public function __construct() {
 		add_action( 'init', array( $this, 'schedule_send' ) );
-		add_action( 'exactmetrics_settings_save_general_end', array( $this, 'check_for_settings_optin' ) );
-		add_action( 'admin_head', array( $this, 'check_for_optin' ) );
-		add_action( 'admin_head', array( $this, 'check_for_optout' ) );
+		add_action( 'exactmetrics_after_update_settings', array( $this, 'maybe_clear_retained_report_data' ), 10, 2 );
 		add_filter( 'cron_schedules', array( $this, 'add_schedules' ) );
 		add_action( 'exactmetrics_usage_tracking_cron', array( $this, 'send_checkin' ) );
 	}
@@ -147,6 +145,15 @@ class ExactMetrics_Usage_Tracking {
 		$data['inactive_plugins'] = wp_json_encode( $plugins );
 		$data['locale']           = get_locale();
 
+		// Customer360 telemetry: local report-view counts and last admin activity.
+		$data['reports_viewed'] = wp_json_encode( ExactMetrics_Report_Views::get_aggregated_counts() );
+
+		$last_admin_seen = get_option( 'exactmetrics_last_admin_seen', false );
+		if ( is_numeric( $last_admin_seen ) ) {
+			// gmdate() rather than date() -- the payload contract requires UTC, not the site timezone.
+			$data['last_admin_seen'] = gmdate( 'Y-m-d\TH:i:s\Z', $last_admin_seen );
+		}
+
 		return $data;
 	}
 
@@ -156,7 +163,7 @@ class ExactMetrics_Usage_Tracking {
 			return false;
 		}
 
-		if ( ! $this->tracking_allowed() && ! $override ) {
+		if ( ! self::tracking_allowed() && ! $override ) {
 			return false;
 		}
 		// Send a maximum of once per week
@@ -181,7 +188,20 @@ class ExactMetrics_Usage_Tracking {
 		return true;
 	}
 
-	private function tracking_allowed() {
+	/**
+	 * Whether this install has consented to usage tracking.
+	 *
+	 * Public and static because the Customer360 recorders gate their local writes on
+	 * the same condition -- collecting locally and only gating transmission would let
+	 * a Lite opt-in ship history from before consent was given, and consent is not
+	 * retroactive.
+	 *
+	 * @since 11.2.0
+	 * @access public
+	 *
+	 * @return bool True when tracking data may be collected and sent.
+	 */
+	public static function tracking_allowed() {
 		return (bool) exactmetrics_get_option( 'anonymous_data', false ) || exactmetrics_is_pro_version();
 	}
 
@@ -203,64 +223,28 @@ class ExactMetrics_Usage_Tracking {
 		}
 	}
 
-	public function check_for_settings_optin() {
-		if ( ! current_user_can( 'exactmetrics_save_settings' ) ) {
+	/**
+	 * Clears the retained report-view telemetry when consent is withdrawn.
+	 *
+	 * Consent isn't retroactive: without this, a withdrawal leaves the
+	 * existing 90-day report-views log and last-admin-seen timestamp in
+	 * place, and the next opt-in would ship that pre-withdrawal history on
+	 * its immediate check-in.
+	 *
+	 * @since 11.2.0
+	 * @access public
+	 *
+	 * @param string $setting Name of the setting that was written.
+	 * @param mixed  $value   New value of the setting.
+	 * @return void
+	 */
+	public function maybe_clear_retained_report_data( $setting, $value ) {
+		if ( 'anonymous_data' !== $setting || ! empty( $value ) ) {
 			return;
 		}
 
-		if ( exactmetrics_is_pro_version() ) {
-			return;
-		}
-
-		// Send an intial check in on settings save
-		$anonymous_data = isset( $_POST['anonymous_data'] ) ? 1 : 0; // phpcs:ignore
-		if ( $anonymous_data ) {
-			$this->send_checkin( true, true );
-		}
-
-	}
-
-	public function check_for_optin() {
-		if ( ! ( ! empty( $_REQUEST['mi_action'] ) && 'opt_into_tracking' === $_REQUEST['mi_action'] ) ) {
-			return;
-		}
-
-		if ( exactmetrics_get_option( 'anonymous_data', false ) ) {
-			return;
-		}
-
-		if ( ! current_user_can( 'exactmetrics_save_settings' ) ) {
-			return;
-		}
-
-		if ( exactmetrics_is_pro_version() ) {
-			return;
-		}
-
-		exactmetrics_update_option( 'anonymous_data', 1 );
-		$this->send_checkin( true, true );
-		update_option( 'exactmetrics_tracking_notice', 1 );
-	}
-
-	public function check_for_optout() {
-		if ( ! ( ! empty( $_REQUEST['mi_action'] ) && 'opt_out_of_tracking' === $_REQUEST['mi_action'] ) ) {
-			return;
-		}
-
-		if ( exactmetrics_get_option( 'anonymous_data', false ) ) {
-			return;
-		}
-
-		if ( ! current_user_can( 'exactmetrics_save_settings' ) ) {
-			return;
-		}
-
-		if ( exactmetrics_is_pro_version() ) {
-			return;
-		}
-
-		exactmetrics_update_option( 'anonymous_data', 0 );
-		update_option( 'exactmetrics_tracking_notice', 1 );
+		delete_option( ExactMetrics_Report_Views::OPTION );
+		delete_option( ExactMetrics_Last_Seen::OPTION );
 	}
 
 	public function add_schedules( $schedules = array() ) {

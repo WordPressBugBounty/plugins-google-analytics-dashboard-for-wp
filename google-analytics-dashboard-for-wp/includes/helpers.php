@@ -1772,8 +1772,12 @@ function exactmetrics_detect_tracking_code_error( $body ) {
 	// Count all the codes from the page.
 	$total_count = substr_count( $body, $current_code );
 
-	// Count the `send_to` instances which are valid
-	$pattern = '/send_to[\'"]*?:\s*[\'"]' . $current_code . '/m';
+	// Count the `send_to` instances which are valid. Both object syntax
+	// (`send_to: 'G-XXXX'`, `"send_to":"G-XXXX"`) and assignment syntax
+	// (`parameters.send_to = 'G-XXXX'`, emitted by the eCommerce addon's
+	// __gtagTracker fallback) point at our own property, so neither one is
+	// a duplicate tracking code.
+	$pattern = '/send_to[\'"]*?\s*[:=]\s*[\'"]' . $current_code . '/m';
 	if ( preg_match_all( $pattern, $body, $matches ) ) {
 		$total_count -= count( $matches[0] );
 	}

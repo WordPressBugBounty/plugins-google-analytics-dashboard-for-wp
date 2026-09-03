@@ -5,7 +5,7 @@
  * Plugin URI: https://exactmetrics.com
  * Description: Displays Google Analytics Reports and Real-Time Statistics in your Dashboard. Automatically inserts the tracking code in every page of your website.
  * Author: ExactMetrics
- * Version: 10.1.3
+ * Version: 10.2.0
  * Requires at least: 5.6.0
  * Requires PHP: 7.2
  * Author URI: https://exactmetrics.com/lite/?utm_source=liteplugin&utm_medium=pluginheader&utm_campaign=authoruri&utm_content=7%2E0%2E0
@@ -55,7 +55,7 @@ final class ExactMetrics_Lite {
 	 * @var string $version Plugin version.
 	 */
 
-	public $version = '10.1.3';
+	public $version = '10.2.0';
 
 	/**
 	 * Plugin file.
@@ -637,6 +637,8 @@ function exactmetrics_lite_uninstall_hook() {
 		return;
 	}
 
+	require_once 'includes/admin/uninstall.php';
+
 	if ( is_multisite() ) {
 		$site_list = get_sites();
 		foreach ( (array) $site_list as $site ) {
@@ -674,6 +676,12 @@ function exactmetrics_lite_uninstall_hook() {
 			}
 		}
 	}
+
+	// Delete only the options this ExactMetrics build owns the writes for.
+	// exactmetrics_uninstall_remove_options() also deletes MI-Lite-only
+	// options (db_version, etc.) and can fire while a ExactMetrics
+	// install is still live on the same site.
+	exactmetrics_uninstall_remove_report_view_telemetry_options();
 }
 
 register_uninstall_hook( __FILE__, 'exactmetrics_lite_uninstall_hook' );

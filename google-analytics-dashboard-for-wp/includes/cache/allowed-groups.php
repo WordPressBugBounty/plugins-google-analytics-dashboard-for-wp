@@ -48,3 +48,36 @@ if ( ! function_exists( 'exactmetrics_backfill_cache_allowed_groups' ) ) {
 		return apply_filters( 'exactmetrics_backfill_cache_allowed_groups', $groups );
 	}
 }
+
+if ( ! function_exists( 'exactmetrics_report_view_slug_for_cache_group' ) ) {
+	/**
+	 * Maps a backfill cache group to the report-view telemetry slug it represents.
+	 *
+	 * Kept as its own map rather than recording the cache group name directly so
+	 * a future cache-group rename doesn't silently rename or reset a telemetry
+	 * bucket, and so 'custom_dashboard' (the cache group written by the Vue 3
+	 * custom dashboard) aligns with 'custom-dashboard', the slug the Pro
+	 * custom-dashboard AJAX handler already records, instead of splitting one
+	 * feature's views into two buckets.
+	 *
+	 * @since 11.2.0
+	 *
+	 * @param string $cache_group Cache group slug.
+	 * @return string|null The report-view slug, or null if the group isn't mapped.
+	 */
+	function exactmetrics_report_view_slug_for_cache_group( $cache_group ) {
+		$map = array(
+			'overview'          => 'overview',
+			'custom_dashboard'  => 'custom-dashboard',
+			'custom_dimensions' => 'custom_dimensions',
+			'traffic'           => 'traffic',
+			'ecommerce'         => 'ecommerce',
+			'publishers'        => 'publishers',
+			'dimensions'        => 'dimensions',
+			'forms'             => 'forms',
+			'media'             => 'media',
+		);
+
+		return isset( $map[ $cache_group ] ) ? $map[ $cache_group ] : null;
+	}
+}

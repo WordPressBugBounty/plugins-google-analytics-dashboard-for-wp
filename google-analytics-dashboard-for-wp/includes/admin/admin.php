@@ -698,31 +698,6 @@ function exactmetrics_admin_setup_notices()
 
 	}
 
-	// 5. Optin setting not configured
-	// if ( ! is_network_admin() ) {
-	//     if ( ! get_option( 'exactmetrics_tracking_notice' ) ) {
-	//         if ( ! exactmetrics_get_option( 'anonymous_data', false ) ) {
-	//             if ( ! exactmetrics_is_dev_url( network_site_url( '/' ) ) ) {
-	//                 if ( exactmetrics_is_pro_version() ) {
-	//                     exactmetrics_update_option( 'anonymous_data', 1 );
-	//                     return;
-	//                 }
-	//                 $optin_url  = add_query_arg( 'mi_action', 'opt_into_tracking' );
-	//                 $optout_url = add_query_arg( 'mi_action', 'opt_out_of_tracking' );
-	//                 echo '<div class="updated"><p>';
-	//                 echo esc_html__( 'Allow ExactMetrics to track plugin usage? Opt-in to tracking and our newsletter to stay informed of the latest changes to ExactMetrics and help us ensure compatibility.', 'google-analytics-dashboard-for-wp' );
-	//                 echo '&nbsp;<a href="' . esc_url( $optin_url ) . '" class="button-secondary">' . __( 'Allow', 'google-analytics-dashboard-for-wp' ) . '</a>';
-	//                 echo '&nbsp;<a href="' . esc_url( $optout_url ) . '" class="button-secondary">' . __( 'Do not allow', 'google-analytics-dashboard-for-wp' ) . '</a>';
-	//                 echo '</p></div>';
-	//                 return;
-	//             } else {
-	//                 // is testing site
-	//                  update_option( 'exactmetrics_tracking_notice', '1' );
-	//             }
-	//         }
-	//     }
-	// }
-
 	$notices = get_option('exactmetrics_notices');
 	if (!is_array($notices)) {
 		$notices = array();
@@ -1239,3 +1214,14 @@ require_once __DIR__ . '/translations.php';
  * Report filter CRUD ajax handler.
  */
 require_once __DIR__ . '/reports/filter-ajax.php';
+
+/**
+ * Customer360 telemetry: last-admin-seen recorder.
+ */
+require_once __DIR__ . '/class-exactmetrics-last-seen.php';
+
+/**
+ * Customer360 telemetry: report-view recorder. Required here rather than from its
+ * callers so the check-in payload builder cannot depend on bootstrap ordering.
+ */
+require_once __DIR__ . '/class-exactmetrics-report-views.php';

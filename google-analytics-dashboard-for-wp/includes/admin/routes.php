@@ -1289,6 +1289,14 @@ class ExactMetrics_Rest_Routes {
 				'error'   => 'license_level',
 			);
 		} else {
+			// Customer360 telemetry: recorded inside the served branch, not next to
+			// get_report() -- a tier-gated upsell response is not a view, and the log
+			// feeds CS decisions where "opened a report they cannot open" is worse than
+			// no data at all. Still above get_data(), so cache hits keep counting.
+			// Recorded from the resolved report rather than the posted slug, so an
+			// arbitrary `report` value can't seed the log.
+			ExactMetrics_Report_Views::maybe_record( $report->name );
+
 			$data = apply_filters( 'exactmetrics_vue_reports_data', $report->get_data( $args ), $report_name, $report );
 		}
 		if ( ! empty( $data['success'] ) ) {
@@ -1704,6 +1712,12 @@ class ExactMetrics_Rest_Routes {
 				'error'   => 'license_level',
 			);
 		} else {
+			// Customer360 telemetry: recorded inside the served branch, not next to
+			// get_report() -- a tier-gated upsell response is not a view, and the log
+			// feeds CS decisions where "opened a report they cannot open" is worse than
+			// no data at all. Still above get_data(), so cache hits keep counting.
+			ExactMetrics_Report_Views::maybe_record( $report_name );
+
 			$data = apply_filters( 'exactmetrics_vue_reports_data', $report->get_data( $args ), $report_name, $report );
 		}
 
@@ -1999,7 +2013,8 @@ class ExactMetrics_Rest_Routes {
 		$user_included_metrics = $this->remove_premium_metrics( $user_included_metrics );
 
 		// Get overview report for date defaults.
-		$overview_report = ExactMetrics()->reporting->get_report( 'overview' );
+		$overview_report     = ExactMetrics()->reporting->get_report( 'overview' );
+		$site_summary_report = ExactMetrics()->reporting->get_report( 'site_summary' );
 
 		$isnetwork = ! empty( $_REQUEST['isnetwork'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['isnetwork'] ) ) : '';
 		$start     = ! empty( $_POST['start'] ) ? sanitize_text_field( wp_unslash( $_POST['start'] ) ) : $overview_report->default_start_date();
@@ -2027,6 +2042,20 @@ class ExactMetrics_Rest_Routes {
 			$metrics_hash
 		);
 
+		// Customer360 telemetry: count both bundled reports before the bundle cache
+		// is consulted, so cache hits count too. Gated on the license check below so
+		// an underlicensed report served an upsell isn't counted as viewed.
+		// This is the only place site_summary is recorded, so its count is always
+		// coupled to overview's from this path -- it carries no independent signal
+		// unless site_summary is also viewed standalone elsewhere.
+		$is_pro_version = exactmetrics_is_pro_version();
+		if ( ! $is_pro_version || ExactMetrics()->license->license_can( $overview_report->level ) ) {
+			ExactMetrics_Report_Views::maybe_record( 'overview' );
+		}
+		if ( ! $is_pro_version || ExactMetrics()->license->license_can( $site_summary_report->level ) ) {
+			ExactMetrics_Report_Views::maybe_record( 'site_summary' );
+		}
+
 		// Check cache for bundled data.
 		$cached_bundle = exactmetrics_cache_get( $cache_key, 'reports' );
 		if ( false !== $cached_bundle ) {
@@ -2051,7 +2080,7 @@ class ExactMetrics_Rest_Routes {
 		}
 		$args['included_metrics'] = $user_included_metrics;
 
-		if ( exactmetrics_is_pro_version() && ! ExactMetrics()->license->license_can( $overview_report->level ) ) {
+		if ( $is_pro_version && ! ExactMetrics()->license->license_can( $overview_report->level ) ) {
 			$overview_data = array(
 				'success' => false,
 				'error'   => 'license_level',
@@ -2091,10 +2120,7 @@ class ExactMetrics_Rest_Routes {
 			wp_send_json_error( array( 'message' => $message ) );
 		}
 
-		// 3. Get site_summary report.
-		$site_summary_report = ExactMetrics()->reporting->get_report( 'site_summary' );
-
-		if ( exactmetrics_is_pro_version() && ! ExactMetrics()->license->license_can( $site_summary_report->level ) ) {
+		if ( $is_pro_version && ! ExactMetrics()->license->license_can( $site_summary_report->level ) ) {
 			$site_summary_data = array(
 				'success' => false,
 				'error'   => 'license_level',

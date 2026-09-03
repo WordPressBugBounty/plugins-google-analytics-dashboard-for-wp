@@ -511,6 +511,14 @@ function exactmetrics_ajax_backfill_cache() {
 		wp_send_json_error( array( 'message' => __( 'Invalid cache group.', 'google-analytics-dashboard-for-wp' ) ) );
 	}
 
+	// Vue 3 reports fetch Relay data directly and only reach WP to backfill or
+	// read the cache, so this -- not the Vue 2-era routes.php handlers -- is
+	// where those views actually need to be counted.
+	$report_view_slug = exactmetrics_report_view_slug_for_cache_group( $cache_group );
+	if ( $report_view_slug ) {
+		ExactMetrics_Report_Views::maybe_record( $report_view_slug );
+	}
+
 	$raw_data = ! empty( $_POST['data'] ) ? wp_unslash( $_POST['data'] ) : '';
 	if ( strlen( $raw_data ) > 500000 ) {
 		wp_send_json_error( array( 'message' => __( 'Data payload too large.', 'google-analytics-dashboard-for-wp' ) ) );
@@ -570,6 +578,13 @@ function exactmetrics_ajax_get_backfill_cache() {
 
 	if ( ! in_array( $cache_group, $allowed_groups, true ) ) {
 		wp_send_json_error( array( 'message' => __( 'Invalid cache group.', 'google-analytics-dashboard-for-wp' ) ) );
+	}
+
+	// Recorded above the cache lookup below so a cache hit still counts as a
+	// view, matching the rule the routes.php recorders already follow.
+	$report_view_slug = exactmetrics_report_view_slug_for_cache_group( $cache_group );
+	if ( $report_view_slug ) {
+		ExactMetrics_Report_Views::maybe_record( $report_view_slug );
 	}
 
 	// Extract additional parameters for sample data filtering

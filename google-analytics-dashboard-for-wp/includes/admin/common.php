@@ -458,6 +458,48 @@ add_action( 'admin_print_scripts', 'hide_non_exactmetrics_warnings' );
 add_action( 'admin_head', 'hide_non_exactmetrics_warnings', PHP_INT_MAX );
 
 /**
+ * License key to attach to a paid-tier upgrade link, if one should be attached.
+ *
+ * Returns an empty string whenever the pricing page cannot price an upgrade for
+ * this user, in which case callers keep the existing Account Center default.
+ * A bare `/pricing/` is not a usable fallback: it redirects to the full-price
+ * lite pricing page and drops the UTM parameters on the way.
+ *
+ * The capability check is what keeps the key off the block-editor globals
+ * (`includes/gutenberg/register-scripts.php`) and the front-end admin bar
+ * (`includes/frontend/frontend.php`), both of which render for roles that
+ * cannot otherwise see the license key.
+ *
+ * @return string The license key, or '' to fall back to the default URL.
+ * @since 11.1.4
+ */
+function exactmetrics_get_upgrade_license_key() {
+	// Elite is the top tier, so it is deliberately absent — sending an Elite
+	// customer to the pricing page is as much of a dead end as the Account Center.
+	$upgradable_tiers = array( 'basic', 'plus', 'pro' );
+
+	if ( ! exactmetrics_is_pro_version() ) {
+		return '';
+	}
+
+	if ( ! current_user_can( 'exactmetrics_save_settings' ) ) {
+		return '';
+	}
+
+	$license = ExactMetrics()->license;
+
+	if ( ! in_array( strtolower( $license->get_license_type() ), $upgradable_tiers, true ) ) {
+		return '';
+	}
+
+	$key = is_network_admin()
+		? $license->get_network_license_key()
+		: $license->get_site_license_key();
+
+	return ! empty( $key ) ? $key : '';
+}
+
+/**
  * Called whenever an upgrade button / link is displayed in Lite, this function will
  * check if there's a shareasale ID specified.
  *
@@ -477,7 +519,24 @@ add_action( 'admin_head', 'hide_non_exactmetrics_warnings', PHP_INT_MAX );
  *
  */
 function exactmetrics_get_upgrade_link( $medium = '', $campaign = '', $url = '' ) {
+	$license_key = '';
+
+	// Only override the default; an explicit URL is always honoured as passed.
+	if ( empty( $url ) ) {
+		$license_key = exactmetrics_get_upgrade_license_key();
+
+		if ( ! empty( $license_key ) ) {
+			$url = 'https://www.exactmetrics.com/pricing/';
+		}
+	}
+
 	$url = exactmetrics_get_url( $medium, $campaign, $url, false );
+
+	// Appended after exactmetrics_get_url(), whose trailingslashit() would
+	// otherwise append a slash to the key itself.
+	if ( ! empty( $license_key ) ) {
+		$url = add_query_arg( 'license_key', rawurlencode( $license_key ), $url );
+	}
 
 	if ( exactmetrics_is_pro_version() ) {
 		return esc_url( $url );

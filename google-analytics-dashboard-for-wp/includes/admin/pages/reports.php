@@ -71,6 +71,40 @@ function exactmetrics_overview_report_page_exists() {
 }
 
 /**
+ * The report screen URLs the dashboard widget links to.
+ *
+ * In "Dashboard Widget Only" mode — `dashboards_disabled` set to
+ * `dashboard_widget` — the widget is the only ExactMetrics reporting screen
+ * there is: the reports page is never registered and hands off to Settings.
+ * Every CTA in the widget that points at a report is a dead end there, so this
+ * returns empty URLs for that configuration.
+ *
+ * The widget's Vue components each hide themselves when their URL is empty
+ * (`WidgetReportsLink`, `settings/WidgetFullReportButton`, and the per-report
+ * "View Full Report" buttons by way of `utils/reportLinks.js`), so emptying the
+ * URLs here is what removes the links.
+ *
+ * @return array {
+ *     @type string $reports_url          Legacy reports screen, or '' when unreachable.
+ *     @type string $overview_reports_url Vue 3 overview report screen, or '' when unreachable.
+ * }
+ * @since 11.1.4
+ */
+function exactmetrics_get_widget_report_urls() {
+	if ( ! exactmetrics_overview_report_page_exists() ) {
+		return array(
+			'reports_url'          => '',
+			'overview_reports_url' => '',
+		);
+	}
+
+	return array(
+		'reports_url'          => add_query_arg( 'page', 'exactmetrics_reports', admin_url( 'admin.php' ) ),
+		'overview_reports_url' => add_query_arg( 'page', 'exactmetrics_overview_report', admin_url( 'admin.php' ) ),
+	);
+}
+
+/**
  * The page slug the legacy reports screen should hand off to.
  *
  * Falls back to the settings screen when the overview report is not registered,
