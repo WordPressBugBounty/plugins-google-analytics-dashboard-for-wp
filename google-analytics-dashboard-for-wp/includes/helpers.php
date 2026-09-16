@@ -25,6 +25,32 @@ function exactmetrics_get_plugin_textdomain() {
 	return exactmetrics_is_pro_version() ? 'exactmetrics-premium' : 'google-analytics-dashboard-for-wp';
 }
 
+/**
+ * Explicitly load the plugin text domain.
+ *
+ * WordPress just-in-time translation loading covers most requests, but is
+ * unreliable in WP-CLI, REST, and early-hook contexts. Registering the text
+ * domain on init guarantees translations load everywhere. Translations are
+ * looked up in WP_LANG_DIR/plugins first (where language packs and the Pro
+ * translation downloader install them), then the plugin's /languages folder.
+ *
+ * @since 11.1.2
+ *
+ * @return void
+ */
+function exactmetrics_load_textdomain() {
+	if ( ! defined( 'EXACTMETRICS_PLUGIN_FILE' ) ) {
+		return;
+	}
+
+	load_plugin_textdomain(
+		exactmetrics_get_plugin_textdomain(),
+		false,
+		dirname( plugin_basename( EXACTMETRICS_PLUGIN_FILE ) ) . '/languages'
+	);
+}
+add_action( 'init', 'exactmetrics_load_textdomain' );
+
 function exactmetrics_get_url($medium = '', $campaign = '', $url = '', $escape = true)
 {
 	// Setup Campaign variables
@@ -1523,9 +1549,18 @@ function exactmetrics_get_printable_translations( $domain ) {
 		return '';
 	}
 
-	// Check if JSON is too large (> 100KB to prevent browser issues)
-	if ( strlen( $json_translations ) > 102400 ) {
-		// If still too large, return empty to prevent page breaking
+	/**
+	 * Filters the maximum byte size of the inline JED translations payload.
+	 *
+	 * Large locales (e.g. Korean) routinely exceed 100KB, so the guard only
+	 * exists to stop pathological payloads from breaking the page. Return 0
+	 * to disable the limit entirely.
+	 *
+	 * @param int $max_size Maximum payload size in bytes. Default 1MB.
+	 */
+	$max_size = apply_filters( 'exactmetrics_printable_translations_max_size', 1048576 );
+
+	if ( $max_size > 0 && strlen( $json_translations ) > $max_size ) {
 		return '';
 	}
 
@@ -2725,6 +2760,64 @@ function exactmetrics_is_wpforms_plugin( $basename ) {
 }
 
 /**
+ * Name the form plugin loaded on this request, if any.
+ *
+ * Every entry is a load-state check on a symbol the plugin itself defines, so
+ * detection needs no plugin-list lookup and behaves the same on single sites
+ * and network-activated multisite. When more than one is loaded the first match
+ * wins, in the order below.
+ *
+ * Two consumers, asking different questions: the form-conversion upgrade nudge
+ * uses the name in its copy, and exactmetrics_site_has_form_plugin() turns
+ * it into a yes/no for the install-WPForms cross-sell. Adding a plugin here
+ * changes both.
+ *
+ * @since 11.2.0
+ *
+ * @return string Human-readable plugin name, or an empty string when none is detected.
+ */
+function exactmetrics_get_active_form_plugin() {
+	if ( function_exists( 'wpforms' ) ) {
+		return 'WPForms';
+	}
+
+	if ( defined( 'WPCF7_VERSION' ) ) {
+		return 'Contact Form 7';
+	}
+
+	if ( class_exists( 'GFAPI' ) ) {
+		return 'Gravity Forms';
+	}
+
+	if ( function_exists( 'frm_forms_autoloader' ) ) {
+		return 'Formidable Forms';
+	}
+
+	// Verified against Jotform (wordpress.org slug `embed-form`) 1.4.0, which declares
+	// this class at file scope in jotform-wp-embed.php.
+	if ( class_exists( 'JotFormWPEmbed' ) ) {
+		return 'Jotform';
+	}
+
+	return '';
+}
+
+/**
+ * Whether this site already runs a supported form plugin.
+ *
+ * Kept separate from exactmetrics_get_active_form_plugin() so a caller that
+ * only needs to suppress a "install a form plugin" nudge states that intent,
+ * rather than comparing a display name against an empty string.
+ *
+ * @since 11.2.0
+ *
+ * @return bool
+ */
+function exactmetrics_site_has_form_plugin() {
+	return '' !== exactmetrics_get_active_form_plugin();
+}
+
+/**
  * Mark WPForms' first-run redirect for suppression after we install or activate it.
  *
  * Called from every path that puts WPForms on the site on the user's behalf, so the
@@ -2911,4 +3004,45 @@ function exactmetrics_get_ecommerce_currency() {
 	 * @param string $currency The 3-letter ISO 4217 currency code. Default 'USD'.
 	 */
 	return apply_filters( 'exactmetrics_ecommerce_currency', 'USD' );
+}
+
+/**
+ * Timestamp of when this site first started tracking with Google Analytics.
+ *
+ * Reports use this to explain a date range that predates the connection
+ * instead of telling the user to widen a range that can never return data.
+ * Because the resulting claim is *"there is no data before this date"*, the
+ * **earliest** known connection wins: a site that ran Lite for years before
+ * upgrading to Pro does have data from the Lite era.
+ *
+ * Only the keys `ExactMetrics_Auth::set_analytics_profile()` writes are
+ * trusted. The legacy `connected_date` key is deliberately ignored: it is
+ * stamped by the 7.8.0/7.9.0 upgrade routines and by the review-notice
+ * bootstrap ("already tracking when this code first ran"), so it is an upper
+ * bound on when tracking started rather than the start itself, and on modern
+ * installs it is usually never written at all.
+ *
+ * Contrast `ExactMetrics_Report_Overview::get_connection_time()`, which
+ * takes the *latest* connection date because it answers a different question:
+ * "did this site connect within the last 24 hours" (the chart overlay).
+ *
+ * @since 11.2.0
+ *
+ * @return int Unix timestamp, or 0 when unknown.
+ */
+function exactmetrics_get_connection_date() {
+	$over_time = get_option( 'exactmetrics_over_time', array() );
+
+	if ( ! is_array( $over_time ) ) {
+		return 0;
+	}
+
+	$dates = array();
+	foreach ( array( 'connected_date_lite', 'connected_date_pro' ) as $key ) {
+		if ( ! empty( $over_time[ $key ] ) ) {
+			$dates[] = absint( $over_time[ $key ] );
+		}
+	}
+
+	return empty( $dates ) ? 0 : min( $dates );
 }

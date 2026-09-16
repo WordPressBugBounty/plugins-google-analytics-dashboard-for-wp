@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Google Analytics Dashboard for WP (GADWP) plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Google Analytics Dashboard for WP (GADWP) 10.2.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/google-analytics-dashboard-for-wp-working-dir\n"
+"Project-Id-Version: Google Analytics Dashboard for WP (GADWP) 10.3.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/google-analytics-dashboard-for-wp\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-09-03T15:18:28+00:00\n"
+"POT-Creation-Date: 2026-09-16T12:29:24+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.13.0-alpha\n"
 "X-Domain: google-analytics-dashboard-for-wp\n"
@@ -90,6 +90,9 @@ msgstr ""
 msgid "%1$s <span class=\"exactmetrics-dark\">%2$s</span>"
 msgstr ""
 
+msgid "%1$s started tracking on %2$s, so earlier dates may have little or no data."
+msgstr ""
+
 msgid "%1$sAffiliate Link & Ads Tracking%2$s - Automatically track clicks on your affiliate links, banner ads, and other outbound links with our link tracking."
 msgstr ""
 
@@ -138,7 +141,7 @@ msgstr ""
 msgid "%1$sExactMetrics%2$s can automatically upgrade the installed version to the Pro and walk you through the process."
 msgstr ""
 
-msgid "%1$sExactMetrics%2$s makes it “effortless” to setup Google Analytics in WordPress, the RIGHT Way. You can watch the video tutorial or use our 3 minute setup wizard."
+msgid "%1$sExactMetrics%2$s makes it “effortless” to set up Google Analytics in WordPress, the RIGHT Way. You can watch the video tutorial or use our 3 minute setup wizard."
 msgstr ""
 
 msgid "%1$sGiveWP%2$s has been detected and eCommerce data is being tracked."
@@ -370,6 +373,9 @@ msgid "A Complete Guide to GA4 Conversion Tracking for WordPress"
 msgstr ""
 
 msgid "A custom campaign is any ad campaign that does not use the Google Ads auto-tagging feature. When users click one of the custom links, the unique parameters are sent to your Google Analytics account so you can identify the most effective URLs in attracting users to your content."
+msgstr ""
+
+msgid "A funnel is measured between steps, so there is nothing to report until it has at least two. Use Manage Funnels to add another step."
 msgstr ""
 
 msgid "A funnel with at least two steps is required."
@@ -1278,6 +1284,9 @@ msgstr ""
 msgid "Check out %1$sour documentation%2$s for step-by-step instructions."
 msgstr ""
 
+msgid "Check that these events are being tracked on your site:"
+msgstr ""
+
 msgid "Checking..."
 msgstr ""
 
@@ -1562,6 +1571,9 @@ msgid "Copy to Pretty Links"
 msgstr ""
 
 msgid "Could not activate addon"
+msgstr ""
+
+msgid "Could not activate license"
 msgstr ""
 
 msgid "Could not deactivate addon"
@@ -3213,6 +3225,9 @@ msgstr ""
 msgid "How to Install and Activate ExactMetrics Addons"
 msgstr ""
 
+msgid "How to set up eCommerce tracking"
+msgstr ""
+
 msgid "How to Set Up Marketing Campaign Tracking in Google Analytics"
 msgstr ""
 
@@ -3743,6 +3758,9 @@ msgstr ""
 msgid "Legal Disclaimer"
 msgstr ""
 
+msgid "License activated"
+msgstr ""
+
 msgid "License deactivated"
 msgstr ""
 
@@ -3973,7 +3991,7 @@ msgstr ""
 msgid "ExactMetrics Lite users get "
 msgstr ""
 
-msgid "ExactMetrics makes it easy to connect your website with Google Analytics and see all important website stats right inside your WordPress dashboard. In order to setup website analytics, please take a look at our %1$sGetting started video%2$s"
+msgid "ExactMetrics makes it easy to connect your website with Google Analytics and see all important website stats right inside your WordPress dashboard. In order to set up website analytics, please take a look at our %1$sGetting started video%2$s"
 msgstr ""
 
 msgid "ExactMetrics makes it easy to track your affiliate links with Google Analytics."
@@ -4122,6 +4140,9 @@ msgstr ""
 msgid "No data currently for the %s report"
 msgstr ""
 
+msgid "No data for this date range"
+msgstr ""
+
 msgid "No device data available."
 msgstr ""
 
@@ -4138,9 +4159,6 @@ msgid "No File Found Yet."
 msgstr ""
 
 msgid "No funnel data for this period"
-msgstr ""
-
-msgid "No funnel data for this period."
 msgstr ""
 
 msgid "No funnels found"
@@ -4185,6 +4203,15 @@ msgstr ""
 msgid "No view to save"
 msgstr ""
 
+msgid "No visitors completed any step of this funnel between %1$s and %2$s."
+msgstr ""
+
+msgid "No visitors completed any step of this funnel in this period."
+msgstr ""
+
+msgid "No visitors completed any step of this funnel on %s."
+msgstr ""
+
 msgid "No-Code-Needed Tracking Features"
 msgstr ""
 
@@ -4203,12 +4230,12 @@ msgstr ""
 msgid "Not Installed"
 msgstr ""
 
-msgid "Note: You will be transfered to %1$s.com to complete the setup wizard."
+msgid "Note: You will be transferred to %1$s.com to complete the setup wizard."
 msgstr ""
 
 #: includes/admin/admin.php:593
 #: lite/includes/admin/dashboard-widget.php:147
-msgid "Note: You will be transfered to ExactMetrics.com to complete the setup wizard."
+msgid "Note: You will be transferred to ExactMetrics.com to complete the setup wizard."
 msgstr ""
 
 msgid "Notifications"
@@ -5465,6 +5492,10 @@ msgstr ""
 msgid "Set Up UserFeedback"
 msgstr ""
 
+#: lite/includes/admin/dashboard-widget.php:146
+msgid "Set Up Website Analytics"
+msgstr ""
+
 msgid "Set Up WPConsent"
 msgstr ""
 
@@ -5491,10 +5522,6 @@ msgid "Setup Instructions"
 msgstr ""
 
 msgid "Setup tracking for authors, categories, tags, custom post types, users and more"
-msgstr ""
-
-#: lite/includes/admin/dashboard-widget.php:146
-msgid "Setup Website Analytics"
 msgstr ""
 
 msgid "Setup Wizard"
@@ -5749,6 +5776,9 @@ msgstr ""
 msgid "Switch to AIOSEO"
 msgstr ""
 
+msgid "Switch to Last 7 days"
+msgstr ""
+
 msgid "Table"
 msgstr ""
 
@@ -5948,6 +5978,9 @@ msgstr ""
 msgid "this article"
 msgstr ""
 
+msgid "This connection is missing its Google credentials, so reports will not load. Reconnect ExactMetrics, or use Force Deauthenticate to reset the connection and start over."
+msgstr ""
+
 msgid "This feature anonymizes all IP addresses for Google Analytics, eCommerce, and form tracking hits."
 msgstr ""
 
@@ -5967,6 +6000,9 @@ msgid "This feature disables UserID tracking on Google Analytics hits, eCommerce
 msgstr ""
 
 msgid "This feature requires ExactMetrics Pro"
+msgstr ""
+
+msgid "This funnel needs at least two steps"
 msgstr ""
 
 msgid "This graph shows the percentage of sessions on your site from different types of devices: traditional desktops/laptops, tablets, and mobile phones."
@@ -6280,6 +6316,9 @@ msgstr ""
 msgid "Try it out today, for free."
 msgstr ""
 
+msgid "Try selecting a wider date range."
+msgstr ""
+
 msgid "Tuesday"
 msgstr ""
 
@@ -6345,7 +6384,7 @@ msgid "Upgrade ExactMetrics Now"
 msgstr ""
 
 #: includes/admin/admin.php:973
-#: includes/admin/notifications/notification-upgrade-for-form-conversion.php:31
+#: includes/admin/notifications/notification-upgrade-for-form-conversion.php:74
 #: includes/admin/notifications/notification-upgrade-for-search-console.php:32
 #: includes/admin/notifications/notification-upgrade-to-pro-five-hundred-session.php:44
 #: includes/admin/reports/abstract-report.php:533
@@ -6433,7 +6472,7 @@ msgstr ""
 msgid "Use Fragment"
 msgstr ""
 
-msgid "Use our configuration wizard to properly setup Google Analytics with WordPress (with just a few clicks)."
+msgid "Use our configuration wizard to properly set up Google Analytics with WordPress (with just a few clicks)."
 msgstr ""
 
 msgid "use our setup wizard"
@@ -6639,7 +6678,7 @@ msgstr ""
 msgid "Visit addons page"
 msgstr ""
 
-msgid "Visit our knowledge base to learn %1$show to setup%2$s and %3$show to use%4$s custom dimensions in Google Analytics."
+msgid "Visit our knowledge base to learn %1$show to set up%2$s and %3$show to use%4$s custom dimensions in Google Analytics."
 msgstr ""
 
 msgid "Visit Website"
@@ -6720,7 +6759,7 @@ msgstr ""
 msgid "We're waiting to process your data which might take up to 24 hours."
 msgstr ""
 
-msgid "Website Analytics is not Setup"
+msgid "Website Analytics is not Set Up"
 msgstr ""
 
 msgid "Website Badge"
@@ -7008,6 +7047,9 @@ msgstr ""
 msgid "An error occurred while fetching insights data."
 msgstr ""
 
+msgid "An unexpected error occurred. Please try again."
+msgstr ""
+
 msgid "Insights"
 msgstr ""
 
@@ -7045,6 +7087,1052 @@ msgid "Upgrade to %s Pro"
 msgstr ""
 
 msgid "Upgrade to see detailed page-specific analytics and more."
+msgstr ""
+
+msgid "Your session expired. Reload the page to see insights."
+msgstr ""
+
+#: src/blocks/site-insights/edit/components/Table.js:86
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "% of Interest"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlineAISuggestionItem.js:133
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "%1$s, score %2$d out of 100"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelWordBalance.js:103
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "10–15%"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelWordBalance.js:98
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "10–20%"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelWordBalance.js:90
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "20–30%"
+msgstr ""
+
+#: src/plugins/metabox/components/site-notes.js:37
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Add a Site Note"
+msgstr ""
+
+#: src/plugins/metabox/components/site-notes.js:33
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Add a Site Note when publishing this post"
+msgstr ""
+
+#: src/blocks/popular-posts-inline/index.js:90
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Add inline popular posts from ExactMetrics"
+msgstr ""
+
+#: src/blocks/popular-posts-widget/index.js:99
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Add popular posts from ExactMetrics"
+msgstr ""
+
+#: src/blocks/popular-posts-products/index.js:95
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Add popular products from ExactMetrics"
+msgstr ""
+
+#: src/blocks/popular-posts-products/index.js:322
+#: src/blocks/popular-posts-widget/index.js:378
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Adjust the number of columns displayed when the widget is placed in a wide container."
+msgstr ""
+
+#: src/blocks/site-insights/edit/components/BarChart.js:42
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Age"
+msgstr ""
+
+#: src/blocks/site-insights/config/general.js:49
+#: src/blocks/site-insights/edit/components/Graph.js:109
+#: src/blocks/site-insights/edit/components/Scorecard.js:126
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Age Breakdown"
+msgstr ""
+
+#: src/blocks/site-insights/edit/components/Table.js:105
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Age Range"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/block-toolbar.js:315
+#: src/plugins/Headline-Analyzer/index.js:525
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "AI service is temporarily unavailable. Please try again in a moment."
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/block-toolbar.js:333
+#: src/plugins/Headline-Analyzer/index.js:541
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "An unexpected error occurred. Please try again."
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelWordBalance.js:108
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "At least one"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelCharacterCount.js:57
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "At this length, it will get cut off in search results. Try reducing it to about 55 characters."
+msgstr ""
+
+#: src/blocks/site-insights/edit/components/RadialBar.js:36
+#: src/blocks/site-insights/edit/components/Scorecard.js:209
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Average Scroll Depth"
+msgstr ""
+
+#: src/blocks/site-insights/edit/components/Scorecard.js:75
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Avg. Session Duration"
+msgstr ""
+
+#: src/blocks/popular-posts-inline/index.js:351
+#: src/blocks/popular-posts-products/index.js:656
+#: src/blocks/popular-posts-widget/index.js:699
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Background Color"
+msgstr ""
+
+#: src/blocks/popular-posts-inline/index.js:362
+#: src/blocks/popular-posts-products/index.js:667
+#: src/blocks/popular-posts-widget/index.js:710
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Background Settings"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelStartEndWords.js:6
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Beginning & Ending Words"
+msgstr ""
+
+#: src/blocks/popular-posts-products/index.js:423
+#: src/blocks/popular-posts-widget/index.js:479
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Behavior Settings"
+msgstr ""
+
+#: src/blocks/popular-posts-inline/index.js:286
+#: src/blocks/popular-posts-inline/index.js:314
+#: src/blocks/popular-posts-products/index.js:591
+#: src/blocks/popular-posts-products/index.js:619
+#: src/blocks/popular-posts-widget/index.js:634
+#: src/blocks/popular-posts-widget/index.js:662
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Border Color"
+msgstr ""
+
+#: src/blocks/popular-posts-inline/index.js:328
+#: src/blocks/popular-posts-products/index.js:633
+#: src/blocks/popular-posts-widget/index.js:676
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Border Settings"
+msgstr ""
+
+#: src/blocks/popular-posts-inline/index.js:300
+#: src/blocks/popular-posts-products/index.js:605
+#: src/blocks/popular-posts-widget/index.js:648
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Bottom Border Color"
+msgstr ""
+
+#: src/blocks/site-insights/edit/components/Scorecard.js:79
+#: src/plugins/metabox/components/page-insights-Lite.js:24
+#: src/plugins/metabox/components/page-insights-tab-content.js:11
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Bounce Rate"
+msgstr ""
+
+#: src/blocks/site-insights/edit/components/Table.js:85
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Categories"
+msgstr ""
+
+#: src/plugins/metabox/components/site-notes.js:43
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Category"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelCharacterCount.js:11
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Character Count"
+msgstr ""
+
+#: src/blocks/site-insights/edit/inspector-controls/index.js:45
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Choose a Metric"
+msgstr ""
+
+#: src/blocks/popular-posts-products/index.js:318
+#: src/blocks/popular-posts-widget/index.js:374
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Choose Layout"
+msgstr ""
+
+#: src/blocks/site-insights/edit/inspector-controls/index.js:89
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Colors settings"
+msgstr ""
+
+#: src/blocks/popular-posts-widget/index.js:301
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Comment Color"
+msgstr ""
+
+#: src/blocks/popular-posts-widget/index.js:294
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Comment Settings"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelWordBalance.js:86
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Common Words"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelWordBalance.js:15
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Compare the percentages of your results to the goal for each category and adjust as necessary."
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlineTabCurrentScore.js:13
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Could Be Better"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/block-toolbar.js:279
+#: src/plugins/Headline-Analyzer/index.js:493
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Couldn't process this headline. Please try a different one."
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/block-toolbar.js:324
+#: src/plugins/Headline-Analyzer/index.js:533
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Couldn't reach the AI service. Check your connection and try again."
+msgstr ""
+
+#: src/blocks/site-insights/config/general.js:45
+#: src/blocks/site-insights/edit/components/BarChart.js:362
+#: src/blocks/site-insights/edit/components/Graph.js:87
+#: src/blocks/site-insights/edit/components/PieChart.js:135
+#: src/blocks/site-insights/edit/components/Scorecard.js:104
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Device Breakdown"
+msgstr ""
+
+#: src/blocks/popular-posts-widget/index.js:543
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Display Author"
+msgstr ""
+
+#: src/blocks/popular-posts-widget/index.js:579
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Display Comments"
+msgstr ""
+
+#: src/blocks/popular-posts-widget/index.js:561
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Display Date"
+msgstr ""
+
+#: src/blocks/popular-posts-products/index.js:536
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Display Image"
+msgstr ""
+
+#: src/blocks/popular-posts-products/index.js:406
+#: src/blocks/popular-posts-widget/index.js:462
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Display Options"
+msgstr ""
+
+#: src/blocks/popular-posts-products/index.js:500
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Display Price"
+msgstr ""
+
+#: src/blocks/popular-posts-products/index.js:518
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Display Rating"
+msgstr ""
+
+#: src/blocks/popular-posts-products/index.js:430
+#: src/blocks/popular-posts-widget/index.js:486
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Display Widget Title"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/index.js:443
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Duplicate analytics scripts have been found. Please ensure there is only one Google Analytics plugin active on your site."
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelWordBalance.js:99
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Emotional Words"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelWordBalance.js:74
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Emotionally triggered headlines are likely to drive more clicks."
+msgstr ""
+
+#: src/plugins/metabox/components/page-insights-Lite.js:36
+#: src/plugins/metabox/components/page-insights-tab-content.js:23
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Entrances"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlineTabCurrentScore.js:11
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Excellent"
+msgstr ""
+
+#: src/plugins/metabox/index.js:59
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Exclude page from Google Analytics Tracking"
+msgstr ""
+
+#: src/blocks/popular-posts-products/index.js:472
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Exclude These Product IDs"
+msgstr ""
+
+#: src/plugins/metabox/components/page-insights-Lite.js:38
+#: src/plugins/metabox/components/page-insights-tab-content.js:25
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Exits"
+msgstr ""
+
+#: src/blocks/site-insights/edit/components/Table.js:126
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Gender"
+msgstr ""
+
+#: src/blocks/site-insights/config/general.js:53
+#: src/blocks/site-insights/edit/components/Graph.js:138
+#: src/blocks/site-insights/edit/components/Scorecard.js:150
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Gender Breakdown"
+msgstr ""
+
+#: src/blocks/site-insights/edit/components/ErrorPlaceholder.js:22
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Go to Settings"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlineWordsBlock.js:6
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Goal:"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelCharacterCount.js:50
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelWordCount.js:36
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Good"
+msgstr ""
+
+#: src/blocks/site-insights/config/general.js:17
+#: src/blocks/site-insights/edit/components/BlockPlaceholder.js:41
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Graph"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/index.js:76
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Headline Analyzer"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelType.js:7
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Headline Type"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelCharacterCount.js:51
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Headlines that are about 55 characters long will display fully in search results and tend to get more clicks."
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelType.js:19
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Headlines that are lists and how-to get more engagement on average than other types of headlines. %1$sRead more about %2$sdifferent types of headlines here.%3$s"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelSentiment.js:13
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Headlines that are strongly positive or negative tend to get more engagement then neutral ones."
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelWordBalance.js:39
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Headlines with 20–30% common words are more likely to get clicks."
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelWordBalance.js:82
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Headlines with Power Words are more likely to get clicks."
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelWordBalance.js:58
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Headlines with uncommon words are more likely to get clicks."
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelSearchPreview.js:11
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Here is how your headline will look like in google search results page."
+msgstr ""
+
+#: src/plugins/metabox/components/page-insights-hide-btn.js:8
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Hide Page Insights"
+msgstr ""
+
+#: src/blocks/popular-posts-inline/index.js:393
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Icon Background Color"
+msgstr ""
+
+#: src/blocks/popular-posts-inline/index.js:382
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Icon Color"
+msgstr ""
+
+#: src/blocks/popular-posts-inline/index.js:404
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Icon Settings"
+msgstr ""
+
+#: src/blocks/popular-posts-inline/index.js:99
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Inline"
+msgstr ""
+
+#: src/blocks/popular-posts-inline/index.js:89
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Inline Popular Posts"
+msgstr ""
+
+#: src/blocks/popular-posts-products/index.js:942
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Install WooCommerce"
+msgstr ""
+
+#: src/blocks/popular-posts-inline/index.js:255
+#: src/blocks/popular-posts-widget/index.js:341
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Label Background"
+msgstr ""
+
+#: src/blocks/popular-posts-inline/index.js:244
+#: src/blocks/popular-posts-widget/index.js:330
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Label Color"
+msgstr ""
+
+#: src/blocks/popular-posts-inline/index.js:266
+#: src/blocks/popular-posts-widget/index.js:352
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Label Settings"
+msgstr ""
+
+#: src/blocks/popular-posts-inline/index.js:233
+#: src/blocks/popular-posts-widget/index.js:319
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Label Text"
+msgstr ""
+
+#: src/plugins/metabox/components/page-insights-Lite.js:19
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Last 30 days"
+msgstr ""
+
+#: src/blocks/site-insights/config/exactmetrics-config.js:22
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Learn more"
+msgstr ""
+
+#: src/plugins/metabox/components/page-insights-Lite.js:32
+#: src/plugins/metabox/components/page-insights-tab-content.js:19
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Load Time"
+msgstr ""
+
+#: src/blocks/popular-posts-widget/index.js:266
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Meta Color"
+msgstr ""
+
+#: src/blocks/popular-posts-widget/index.js:255
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Meta Font Size"
+msgstr ""
+
+#: src/blocks/popular-posts-widget/index.js:277
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Meta Settings"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelStartEndWords.js:11
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Most readers only look at the first and last 3 words of a headline before deciding whether to click."
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelSentiment.js:42
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Negative"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelSentiment.js:29
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Negative headlines are attention-grabbing and tend to perform better than neutral ones."
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelSentiment.js:39
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Neutral"
+msgstr ""
+
+#: src/blocks/site-insights/edit/components/BarChart.js:326
+#: src/blocks/site-insights/edit/components/PieChart.js:78
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "New Visitors"
+msgstr ""
+
+#: src/blocks/site-insights/config/general.js:37
+#: src/blocks/site-insights/edit/components/PieChart.js:50
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "New vs Returning"
+msgstr ""
+
+#: src/blocks/site-insights/edit/components/BarChart.js:264
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "New vs. Returning Visitors"
+msgstr ""
+
+#: src/blocks/site-insights/config/exactmetrics-config.js:17
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "No \"%s\" data"
+msgstr ""
+
+#: src/blocks/site-insights/edit/components/Graph.js:98
+#: src/blocks/site-insights/edit/components/Scorecard.js:115
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "No data is found."
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelWordCount.js:25
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Not Enough Words"
+msgstr ""
+
+#: src/blocks/popular-posts-widget/index.js:421
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Number of posts displayed."
+msgstr ""
+
+#: src/blocks/popular-posts-products/index.js:365
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Number of products displayed."
+msgstr ""
+
+#: src/blocks/popular-posts-products/index.js:459
+#: src/blocks/popular-posts-widget/index.js:515
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Only Show Posts From These Categories"
+msgstr ""
+
+#: src/blocks/site-insights/edit/components/ErrorPlaceholder.js:16
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Oops!"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/block-toolbar.js:205
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Optimize this headline"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlineOptimizeButton.js:56
+#: src/plugins/Headline-Analyzer/components/HeadlineOptimizeButton.js:81
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Optimize This Headline"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/block-toolbar.js:239
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Optimizing your headline…"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/block-toolbar.js:201
+#: src/plugins/Headline-Analyzer/components/HeadlineOptimizeButton.js:77
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Optimizing…"
+msgstr ""
+
+#: src/blocks/site-insights/config/general.js:33
+#: src/blocks/site-insights/edit/components/Graph.js:67
+#: src/blocks/site-insights/edit/components/Scorecard.js:58
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Page views"
+msgstr ""
+
+#: src/plugins/metabox/components/page-insights-Lite.js:37
+#: src/plugins/metabox/components/page-insights-tab-content.js:24
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Page Views"
+msgstr ""
+
+#: src/blocks/site-insights/edit/components/Table.js:107
+#: src/blocks/site-insights/edit/components/Table.js:128
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Percent"
+msgstr ""
+
+#: src/blocks/site-insights/config/exactmetrics-config.js:18
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Please make sure you have \"Google Signals\" enabled on the property."
+msgstr ""
+
+#: src/blocks/site-insights/edit/components/BlockPlaceholder.js:30
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Please select a display method."
+msgstr ""
+
+#: src/blocks/popular-posts-inline/index.js:97
+#: src/blocks/popular-posts-products/index.js:102
+#: src/blocks/popular-posts-widget/index.js:106
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Popular"
+msgstr ""
+
+#: src/blocks/popular-posts-widget/index.js:98
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Popular Posts"
+msgstr ""
+
+#: src/blocks/popular-posts-products/index.js:94
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Popular Products"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelSentiment.js:41
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Positive"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelSentiment.js:21
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Positive headlines tend to get better engagement than neutral or negative ones."
+msgstr ""
+
+#: src/blocks/popular-posts-widget/index.js:415
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Post Count"
+msgstr ""
+
+#: src/blocks/popular-posts-inline/index.js:98
+#: src/blocks/popular-posts-widget/index.js:107
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Posts"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelWordBalance.js:104
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Power Words"
+msgstr ""
+
+#: src/blocks/popular-posts-products/index.js:263
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Price Color"
+msgstr ""
+
+#: src/blocks/popular-posts-products/index.js:252
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Price Font Size"
+msgstr ""
+
+#: src/blocks/popular-posts-products/index.js:274
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Price Settings"
+msgstr ""
+
+#: src/blocks/site-insights/edit/inspector-controls/index.js:97
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Primary color"
+msgstr ""
+
+#: src/blocks/popular-posts-products/index.js:103
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Products"
+msgstr ""
+
+#: src/blocks/popular-posts-products/index.js:359
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Products Count"
+msgstr ""
+
+#: src/plugins/metabox/components/site-notes.js:45
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Published: %s"
+msgstr ""
+
+#: src/blocks/popular-posts-products/index.js:298
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Rating Color"
+msgstr ""
+
+#: src/blocks/popular-posts-products/index.js:291
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Rating Settings"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlineAISuggestionItem.js:181
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Reason"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelWordCount.js:44
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Reduce Word Count"
+msgstr ""
+
+#: src/blocks/site-insights/edit/components/BarChart.js:322
+#: src/blocks/site-insights/edit/components/PieChart.js:79
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Returning Visitors"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlineAISuggestions.js:16
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Sample optimized headline preview"
+msgstr ""
+
+#: src/blocks/site-insights/config/general.js:22
+#: src/blocks/site-insights/edit/components/BlockPlaceholder.js:49
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Scorecard"
+msgstr ""
+
+#: src/blocks/site-insights/config/general.js:61
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Scroll Depth"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelSearchPreview.js:7
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Search Preview"
+msgstr ""
+
+#: src/blocks/site-insights/edit/inspector-controls/index.js:114
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Secondary color"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlineAISuggestions.js:35
+#: src/plugins/Headline-Analyzer/components/HeadlineAISuggestions.js:66
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Select a headline to replace current one"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelSentiment.js:33
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Sentiment"
+msgstr ""
+
+#: src/blocks/site-insights/config/general.js:29
+#: src/blocks/site-insights/edit/components/Graph.js:52
+#: src/blocks/site-insights/edit/components/Scorecard.js:54
+#: src/blocks/site-insights/edit/components/Table.js:106
+#: src/blocks/site-insights/edit/components/Table.js:127
+#: src/blocks/site-insights/edit/components/Table.js:66
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Sessions"
+msgstr ""
+
+#: src/plugins/metabox/components/page-insights-show-btn.js:8
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Show Page Insights"
+msgstr ""
+
+#: src/blocks/site-insights/index.js:36
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Site Insights"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/index.js:51
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Something went wrong. Please reload the page."
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlineAISuggestions.js:29
+#: src/plugins/Headline-Analyzer/components/HeadlineAISuggestions.js:60
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Suggested Improvements"
+msgstr ""
+
+#: src/blocks/popular-posts-inline/index.js:626
+#: src/blocks/popular-posts-products/index.js:953
+#: src/blocks/popular-posts-widget/index.js:981
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Theme"
+msgstr ""
+
+#: src/plugins/metabox/components/page-insights-status-message.js:7
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "There are no Page Insights available because your page is not published or has been published for less than 24 hours."
+msgstr ""
+
+#: src/blocks/popular-posts-products/index.js:896
+#: src/blocks/popular-posts-products/index.js:991
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "This Block requires ExactMetrics Pro."
+msgstr ""
+
+#: src/blocks/popular-posts-products/index.js:1004
+#: src/blocks/popular-posts-products/index.js:925
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "This Block requires WooCommerce."
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/index.js:86
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "This headline analyzer is part of ExactMetrics to help you increase your traffic. See your %1swebsite traffic reports%2s."
+msgstr ""
+
+#: src/plugins/metabox/components/pro-badge.js:10
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "This is a PRO feature."
+msgstr ""
+
+#: src/plugins/metabox/components/page-insights-Lite.js:28
+#: src/plugins/metabox/components/page-insights-tab-content.js:15
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Time On Page"
+msgstr ""
+
+#: src/blocks/popular-posts-inline/index.js:203
+#: src/blocks/popular-posts-products/index.js:222
+#: src/blocks/popular-posts-widget/index.js:225
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Title Color"
+msgstr ""
+
+#: src/blocks/popular-posts-inline/index.js:192
+#: src/blocks/popular-posts-products/index.js:211
+#: src/blocks/popular-posts-widget/index.js:214
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Title Font Size"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlineTabCurrentScore.js:22
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Title Optimization"
+msgstr ""
+
+#: src/blocks/popular-posts-inline/index.js:214
+#: src/blocks/popular-posts-products/index.js:233
+#: src/blocks/popular-posts-widget/index.js:236
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Title Settings"
+msgstr ""
+
+#: src/blocks/popular-posts-products/index.js:902
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "To use the Popular Products Block, you must have a ExactMetrics Pro license."
+msgstr ""
+
+#: src/blocks/popular-posts-products/index.js:931
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "To use the Popular Products Block, you must have WooCommerce installed and activated."
+msgstr ""
+
+#: src/plugins/metabox/index.js:55
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Toggle to prevent Google Analytics from tracking this page."
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelCharacterCount.js:56
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Too Long"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/block-toolbar.js:261
+#: src/plugins/Headline-Analyzer/index.js:476
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Too many requests. Please try again."
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/block-toolbar.js:254
+#: src/plugins/Headline-Analyzer/index.js:469
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Too many requests. Try again in %ds."
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelWordCount.js:51
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Too Many Words"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelCharacterCount.js:41
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Too Short"
+msgstr ""
+
+#: src/blocks/site-insights/edit/components/BarChart.js:195
+#: src/blocks/site-insights/edit/components/Table.js:65
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Top 10 Countries"
+msgstr ""
+
+#: src/blocks/site-insights/config/general.js:41
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Top Countries"
+msgstr ""
+
+#: src/blocks/site-insights/config/general.js:57
+#: src/blocks/site-insights/edit/components/BarChart.js:119
+#: src/blocks/site-insights/edit/components/Graph.js:168
+#: src/blocks/site-insights/edit/components/Scorecard.js:176
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Top Interests"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelWordBalance.js:94
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Uncommon Words"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/block-toolbar.js:303
+#: src/plugins/Headline-Analyzer/index.js:513
+#: src/plugins/metabox/components/pro-badge.js:14
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Upgrade"
+msgstr ""
+
+#: src/blocks/popular-posts-products/index.js:913
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Upgrade to Pro and Unlock Popular Products"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlineOptimizeButton.js:45
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Upgrade to Pro to optimize headlines"
+msgstr ""
+
+#: src/blocks/site-insights/edit/components/DuoScorecard.js:26
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "vs. Previous 30 days"
+msgstr ""
+
+#: src/blocks/site-insights/edit/components/ErrorPlaceholder.js:17
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "We cannot get data for this metric. Please make sure the license is valid and properly connected."
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/block-toolbar.js:270
+#: src/plugins/Headline-Analyzer/index.js:485
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "We couldn't verify your license with the AI service. Please check that your website is connected and your license is active."
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlineAISuggestionItem.js:164
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Why this suggestion"
+msgstr ""
+
+#: src/blocks/popular-posts-products/index.js:311
+#: src/blocks/popular-posts-widget/index.js:367
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Wide-Layout Options"
+msgstr ""
+
+#: src/blocks/popular-posts-products/index.js:104
+#: src/blocks/popular-posts-widget/index.js:108
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Widget"
+msgstr ""
+
+#: src/blocks/popular-posts-products/index.js:444
+#: src/blocks/popular-posts-widget/index.js:500
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Widget Title"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelWordBalance.js:11
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Word Balance"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelWordCount.js:11
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Word Count"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/index.js:80
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Write your post title to see the analyzer data. This Headline Analyzer tool enables you to write irresistible SEO headlines that drive traffic, shares, and rank better in search results."
+msgstr ""
+
+#: src/plugins/metabox/components/page-insights-Lite.js:23
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Yesterday"
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelCharacterCount.js:45
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "You have space to add more keywords and power words to boost your rankings and click-through rate."
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/block-toolbar.js:288
+#: src/plugins/Headline-Analyzer/index.js:501
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "You've used all your AI credits for this month."
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelWordCount.js:29
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Your headline doesn’t use enough words. You have more space to add keywords and power words to improve your SEO and get more engagement."
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelSentiment.js:25
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Your headline has a negative sentiment."
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelSentiment.js:9
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Your headline has a neutral sentiment."
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelSentiment.js:17
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Your headline has a positive sentiment."
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelWordCount.js:37
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Your headline has the right amount of words. Headlines are more likely to be clicked on in search results if they have about 6 words."
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelWordCount.js:55
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Your headline has too many words. Long headlines will get cut off in search results and won’t get as many clicks."
+msgstr ""
+
+#: src/plugins/Headline-Analyzer/components/HeadlinePanelWordBalance.js:32
+msgctxt "google-analytics-dashboard-for-wp"
+msgid "Your headline would be more likely to get clicks if it had more uncommon words."
 msgstr ""
 
 #. Plugin Name of the plugin
@@ -7206,7 +8294,7 @@ msgid "Urgent: Your Website is Not Tracking Any Google Analytics Data!"
 msgstr ""
 
 #: includes/admin/admin.php:562
-msgid "Google Analytics 3 (UA) and support was sunset on July 1, 2023. Your website is currently NOT tracking any analytics. </br>Create or connect a new Google Analytics 4 property immediately to start tracking."
+msgid "Google Analytics 3 (UA) support was sunset on July 1, 2023. Your website is currently NOT tracking any analytics. <br>Create or connect a new Google Analytics 4 property immediately to start tracking."
 msgstr ""
 
 #: includes/admin/admin.php:572
@@ -7218,7 +8306,7 @@ msgid "Connect a Property"
 msgstr ""
 
 #: includes/admin/admin.php:589
-msgid "Please Setup Website Analytics to See Audience Insights"
+msgid "Please Set Up Website Analytics to See Audience Insights"
 msgstr ""
 
 #: includes/admin/admin.php:590
@@ -7282,7 +8370,7 @@ msgstr ""
 #. translators: placeholders add links to the settings panel.
 #: includes/admin/admin.php:716
 #, php-format
-msgid "Click %1$shere%2$s to reauthenticate to be able to access reports. For more information why this is required, see our %3$sblog post%4$s."
+msgid "Click %1$shere%2$s to reauthenticate to be able to access reports. For more information on why this is required, see our %3$sblog post%4$s."
 msgstr ""
 
 #. translators: %1$s: Opening link tag, %2$s: Closing link tag.
@@ -7301,7 +8389,7 @@ msgid "Add eCommerce Analytics to your WooCommerce Store"
 msgstr ""
 
 #: includes/admin/admin.php:782
-msgid "Unlock all of our advanced eCommerce features specifically designed to help your store make more money.."
+msgid "Unlock all of our advanced eCommerce features specifically designed to help your store make more money."
 msgstr ""
 
 #: includes/admin/admin.php:783
@@ -7454,22 +8542,22 @@ msgstr ""
 #: includes/admin/api-auth.php:307
 #: includes/admin/api-auth.php:475
 #: includes/admin/api-auth.php:580
-#: includes/admin/api-auth.php:891
+#: includes/admin/api-auth.php:919
 #: includes/admin/routes.php:1004
 #: includes/admin/routes.php:1061
 msgid "You do not have permission to update network settings."
 msgstr ""
 
 #: includes/admin/api-auth.php:110
-#: includes/admin/api-auth.php:901
+#: includes/admin/api-auth.php:929
 msgid "Cannot authenticate. Please enter a valid, active license key for ExactMetrics Pro into the settings page."
 msgstr ""
 
 #. translators: %1$s: Opening support link tag, %2$s: Closing support link tag.
 #: includes/admin/api-auth.php:118
 #: includes/admin/api-auth.php:126
-#: includes/admin/api-auth.php:908
-#: includes/admin/api-auth.php:916
+#: includes/admin/api-auth.php:936
+#: includes/admin/api-auth.php:944
 #, php-format
 msgid "Oops! There has been an error authenticating. Please try again in a few minutes. If the problem persists, please %1$scontact our support%2$s team."
 msgstr ""
@@ -7515,38 +8603,38 @@ msgid "You don't have the correct WordPress user permissions to deauthenticate i
 msgstr ""
 
 #. translators: %1$s: Opening wizard link tag, %2$s: Closing wizard link tag, %3$s: Opening support link tag, %4$s: Closing support link tag.
-#: includes/admin/api-auth.php:590
-#: includes/admin/api-auth.php:600
+#: includes/admin/api-auth.php:596
+#: includes/admin/api-auth.php:606
 #, php-format
 msgid "Could not disconnect as you are not currently authenticated properly. Please try to authenticate again with our ExactMetrics %1$ssetup wizard%2$s.  If you are still having problems, please %3$scontact our support%4$s team."
 msgstr ""
 
 #. translators: %1$s: Opening wizard link tag, %2$s: Closing wizard link tag, %3$s: Opening support link tag, %4$s: Closing support link tag.
-#: includes/admin/api-auth.php:614
+#: includes/admin/api-auth.php:620
 #, php-format
 msgid "Could not disconnect your account, as you are not currently authenticated properly. Please try to authenticate again with our %1$sExactMetrics setup wizard%2$s.  If you are still having problems, please %3$scontact our support%4$s team."
 msgstr ""
 
-#: includes/admin/api-auth.php:628
+#: includes/admin/api-auth.php:633
 msgid "Successfully deauthenticated."
 msgstr ""
 
-#: includes/admin/api-auth.php:631
+#: includes/admin/api-auth.php:636
 msgid "Successfully force deauthenticated."
 msgstr ""
 
 #. translators: %1$s: Opening support link tag, %2$s: Closing support link tag.
-#: includes/admin/api-auth.php:635
+#: includes/admin/api-auth.php:640
 #, php-format
 msgid "Oops! There has been an error while trying to deauthenticate. Please try again. If the issue persists, please %1$scontact our support%2$s team."
 msgstr ""
 
-#: includes/admin/api-auth.php:864
+#: includes/admin/api-auth.php:892
 msgid "Website & Google Analytics Timezone Mismatch"
 msgstr ""
 
 #. translators: %1$s: Opening link tag, %2$s: Closing link tag.
-#: includes/admin/api-auth.php:867
+#: includes/admin/api-auth.php:895
 #, php-format
 msgid "We detected your Google Analytics property is set to a different timezone than your website. This may slightly impact your stats, especially when comparing day over day performance. You may want to adjust your website's time zone %1$shere%2$s."
 msgstr ""
@@ -7610,17 +8698,17 @@ msgstr ""
 msgid "Invalid onboarding key"
 msgstr ""
 
-#: includes/admin/class-exactmetrics-onboarding.php:374
+#: includes/admin/class-exactmetrics-onboarding.php:392
 #: includes/connect.php:105
 #: includes/connect.php:128
 msgid "Please enter your license key to connect."
 msgstr ""
 
-#: includes/admin/class-exactmetrics-onboarding.php:382
+#: includes/admin/class-exactmetrics-onboarding.php:400
 msgid "Failed to generate connect URL."
 msgstr ""
 
-#: includes/admin/class-exactmetrics-onboarding.php:642
+#: includes/admin/class-exactmetrics-onboarding.php:660
 msgid "There was an error connecting to the remote key API. Please try again later."
 msgstr ""
 
@@ -7772,11 +8860,11 @@ msgstr ""
 msgid "Install & Activate"
 msgstr ""
 
-#: includes/admin/notifications/notification-install-wp-forms.php:30
+#: includes/admin/notifications/notification-install-wp-forms.php:29
 msgid "Create a Contact Form in Only Minutes"
 msgstr ""
 
-#: includes/admin/notifications/notification-install-wp-forms.php:31
+#: includes/admin/notifications/notification-install-wp-forms.php:30
 msgid "Install WPForms and create contact forms in a matter of minutes."
 msgstr ""
 
@@ -7910,12 +8998,24 @@ msgstr ""
 msgid "Upgrade to ExactMetrics Pro to see which content and events your visitors are performing in real time."
 msgstr ""
 
-#: includes/admin/notifications/notification-upgrade-for-form-conversion.php:25
+#. translators: %s: Name of the form plugin detected on the site, e.g. WPForms.
+#: includes/admin/notifications/notification-upgrade-for-form-conversion.php:62
+#, php-format
+msgid "Track Your %s Conversions"
+msgstr ""
+
+#. translators: %1$s: Name of the form plugin detected on the site. %2$s and %3$s wrap the link to the upgrade page.
+#: includes/admin/notifications/notification-upgrade-for-form-conversion.php:64
+#, php-format
+msgid "You are already collecting submissions with %1$s. Upgrade to %2$sExactMetrics Pro%3$s to see which of your forms convert and where those visitors came from."
+msgstr ""
+
+#: includes/admin/notifications/notification-upgrade-for-form-conversion.php:66
 msgid "Easily Track Form Conversions"
 msgstr ""
 
-#. translators: Placeholders add a link to the settings page.
-#: includes/admin/notifications/notification-upgrade-for-form-conversion.php:27
+#. translators: %1$s and %2$s wrap the link to the upgrade page.
+#: includes/admin/notifications/notification-upgrade-for-form-conversion.php:68
 #, php-format
 msgid "Track your website's form conversion rates by upgrading to %1$sExactMetrics Pro%2$s."
 msgstr ""
@@ -8712,12 +9812,12 @@ msgstr ""
 msgid "Sent from %s"
 msgstr ""
 
-#: includes/frontend/frontend.php:389
+#: includes/frontend/frontend.php:412
 msgid "Tracking is Disabled for Administrators"
 msgstr ""
 
 #. Translators: %s is the link to the article where more details about tracking are listed.
-#: includes/frontend/frontend.php:402
+#: includes/frontend/frontend.php:425
 #, php-format
 msgid "To keep stats accurate, we do not load Google Analytics scripts for admin users. %1$sLearn More &raquo;%2$s"
 msgstr ""
@@ -11215,1213 +12315,1213 @@ msgstr ""
 msgid "Top 10 Countries"
 msgstr ""
 
-#: includes/helpers.php:487
+#: includes/helpers.php:513
 msgid "United States"
 msgstr ""
 
-#: includes/helpers.php:488
-#: includes/helpers.php:2316
+#: includes/helpers.php:514
+#: includes/helpers.php:2351
 msgid "Canada"
 msgstr ""
 
-#: includes/helpers.php:489
-#: includes/helpers.php:2361
+#: includes/helpers.php:515
+#: includes/helpers.php:2396
 msgid "United Kingdom"
 msgstr ""
 
-#: includes/helpers.php:490
+#: includes/helpers.php:516
 msgid "Afghanistan"
 msgstr ""
 
-#: includes/helpers.php:491
+#: includes/helpers.php:517
 msgid "&#197;land Islands"
 msgstr ""
 
-#: includes/helpers.php:492
+#: includes/helpers.php:518
 msgid "Albania"
 msgstr ""
 
-#: includes/helpers.php:493
+#: includes/helpers.php:519
 msgid "Algeria"
 msgstr ""
 
-#: includes/helpers.php:494
+#: includes/helpers.php:520
 msgid "American Samoa"
 msgstr ""
 
-#: includes/helpers.php:495
+#: includes/helpers.php:521
 msgid "Andorra"
 msgstr ""
 
-#: includes/helpers.php:496
+#: includes/helpers.php:522
 msgid "Angola"
 msgstr ""
 
-#: includes/helpers.php:497
+#: includes/helpers.php:523
 msgid "Anguilla"
 msgstr ""
 
-#: includes/helpers.php:498
+#: includes/helpers.php:524
 msgid "Antarctica"
 msgstr ""
 
-#: includes/helpers.php:499
-#: includes/helpers.php:2309
+#: includes/helpers.php:525
+#: includes/helpers.php:2344
 msgid "Antigua and Barbuda"
 msgstr ""
 
-#: includes/helpers.php:500
+#: includes/helpers.php:526
 msgid "Argentina"
 msgstr ""
 
-#: includes/helpers.php:501
+#: includes/helpers.php:527
 msgid "Armenia"
 msgstr ""
 
-#: includes/helpers.php:502
+#: includes/helpers.php:528
 msgid "Aruba"
 msgstr ""
 
-#: includes/helpers.php:503
-#: includes/helpers.php:2310
+#: includes/helpers.php:529
+#: includes/helpers.php:2345
 msgid "Australia"
 msgstr ""
 
-#: includes/helpers.php:504
+#: includes/helpers.php:530
 msgid "Austria"
 msgstr ""
 
-#: includes/helpers.php:505
+#: includes/helpers.php:531
 msgid "Azerbaijan"
 msgstr ""
 
-#: includes/helpers.php:506
+#: includes/helpers.php:532
 msgid "Bahamas"
 msgstr ""
 
-#: includes/helpers.php:507
+#: includes/helpers.php:533
 msgid "Bahrain"
 msgstr ""
 
-#: includes/helpers.php:508
+#: includes/helpers.php:534
 msgid "Bangladesh"
 msgstr ""
 
-#: includes/helpers.php:509
-#: includes/helpers.php:2311
+#: includes/helpers.php:535
+#: includes/helpers.php:2346
 msgid "Barbados"
 msgstr ""
 
-#: includes/helpers.php:510
+#: includes/helpers.php:536
 msgid "Belarus"
 msgstr ""
 
-#: includes/helpers.php:511
+#: includes/helpers.php:537
 msgid "Belgium"
 msgstr ""
 
-#: includes/helpers.php:512
-#: includes/helpers.php:2312
+#: includes/helpers.php:538
+#: includes/helpers.php:2347
 msgid "Belize"
 msgstr ""
 
-#: includes/helpers.php:513
+#: includes/helpers.php:539
 msgid "Benin"
 msgstr ""
 
-#: includes/helpers.php:514
+#: includes/helpers.php:540
 msgid "Bermuda"
 msgstr ""
 
-#: includes/helpers.php:515
+#: includes/helpers.php:541
 msgid "Bhutan"
 msgstr ""
 
-#: includes/helpers.php:516
+#: includes/helpers.php:542
 msgid "Bolivia"
 msgstr ""
 
-#: includes/helpers.php:517
+#: includes/helpers.php:543
 msgid "Bonaire, Saint Eustatius and Saba"
 msgstr ""
 
-#: includes/helpers.php:518
+#: includes/helpers.php:544
 msgid "Bosnia and Herzegovina"
 msgstr ""
 
-#: includes/helpers.php:519
-#: includes/helpers.php:2313
+#: includes/helpers.php:545
+#: includes/helpers.php:2348
 msgid "Botswana"
 msgstr ""
 
-#: includes/helpers.php:520
+#: includes/helpers.php:546
 msgid "Bouvet Island"
 msgstr ""
 
-#: includes/helpers.php:521
+#: includes/helpers.php:547
 msgid "Brazil"
 msgstr ""
 
-#: includes/helpers.php:522
+#: includes/helpers.php:548
 msgid "British Indian Ocean Territory"
 msgstr ""
 
-#: includes/helpers.php:523
+#: includes/helpers.php:549
 msgid "Brunei Darrussalam"
 msgstr ""
 
-#: includes/helpers.php:524
+#: includes/helpers.php:550
 msgid "Bulgaria"
 msgstr ""
 
-#: includes/helpers.php:525
+#: includes/helpers.php:551
 msgid "Burkina Faso"
 msgstr ""
 
-#: includes/helpers.php:526
-#: includes/helpers.php:2314
+#: includes/helpers.php:552
+#: includes/helpers.php:2349
 msgid "Burundi"
 msgstr ""
 
-#: includes/helpers.php:527
+#: includes/helpers.php:553
 msgid "Cambodia"
 msgstr ""
 
-#: includes/helpers.php:528
-#: includes/helpers.php:2315
+#: includes/helpers.php:554
+#: includes/helpers.php:2350
 msgid "Cameroon"
 msgstr ""
 
-#: includes/helpers.php:529
+#: includes/helpers.php:555
 msgid "Cape Verde"
 msgstr ""
 
-#: includes/helpers.php:530
+#: includes/helpers.php:556
 msgid "Cayman Islands"
 msgstr ""
 
-#: includes/helpers.php:531
+#: includes/helpers.php:557
 msgid "Central African Republic"
 msgstr ""
 
-#: includes/helpers.php:532
+#: includes/helpers.php:558
 msgid "Chad"
 msgstr ""
 
-#: includes/helpers.php:533
+#: includes/helpers.php:559
 msgid "Chile"
 msgstr ""
 
-#: includes/helpers.php:534
+#: includes/helpers.php:560
 msgid "China"
 msgstr ""
 
-#: includes/helpers.php:535
+#: includes/helpers.php:561
 msgid "Christmas Island"
 msgstr ""
 
-#: includes/helpers.php:536
+#: includes/helpers.php:562
 msgid "Cocos Islands"
 msgstr ""
 
-#: includes/helpers.php:537
+#: includes/helpers.php:563
 msgid "Colombia"
 msgstr ""
 
-#: includes/helpers.php:538
+#: includes/helpers.php:564
 msgid "Comoros"
 msgstr ""
 
-#: includes/helpers.php:539
+#: includes/helpers.php:565
 msgid "Congo, Democratic People's Republic"
 msgstr ""
 
-#: includes/helpers.php:540
+#: includes/helpers.php:566
 msgid "Congo, Republic of"
 msgstr ""
 
-#: includes/helpers.php:541
+#: includes/helpers.php:567
 msgid "Cook Islands"
 msgstr ""
 
-#: includes/helpers.php:542
+#: includes/helpers.php:568
 msgid "Costa Rica"
 msgstr ""
 
-#: includes/helpers.php:543
+#: includes/helpers.php:569
 msgid "Cote d'Ivoire"
 msgstr ""
 
-#: includes/helpers.php:544
+#: includes/helpers.php:570
 msgid "Croatia/Hrvatska"
 msgstr ""
 
-#: includes/helpers.php:545
+#: includes/helpers.php:571
 msgid "Cuba"
 msgstr ""
 
-#: includes/helpers.php:546
+#: includes/helpers.php:572
 msgid "Cura&Ccedil;ao"
 msgstr ""
 
-#: includes/helpers.php:547
+#: includes/helpers.php:573
 msgid "Cyprus"
 msgstr ""
 
-#: includes/helpers.php:548
+#: includes/helpers.php:574
 msgid "Czechia"
 msgstr ""
 
-#: includes/helpers.php:549
+#: includes/helpers.php:575
 msgid "Denmark"
 msgstr ""
 
-#: includes/helpers.php:550
+#: includes/helpers.php:576
 msgid "Djibouti"
 msgstr ""
 
-#: includes/helpers.php:551
-#: includes/helpers.php:2317
+#: includes/helpers.php:577
+#: includes/helpers.php:2352
 msgid "Dominica"
 msgstr ""
 
-#: includes/helpers.php:552
+#: includes/helpers.php:578
 msgid "Dominican Republic"
 msgstr ""
 
-#: includes/helpers.php:553
+#: includes/helpers.php:579
 msgid "East Timor"
 msgstr ""
 
-#: includes/helpers.php:554
+#: includes/helpers.php:580
 msgid "Ecuador"
 msgstr ""
 
-#: includes/helpers.php:555
+#: includes/helpers.php:581
 msgid "Egypt"
 msgstr ""
 
-#: includes/helpers.php:556
+#: includes/helpers.php:582
 msgid "Equatorial Guinea"
 msgstr ""
 
-#: includes/helpers.php:557
+#: includes/helpers.php:583
 msgid "El Salvador"
 msgstr ""
 
-#: includes/helpers.php:558
+#: includes/helpers.php:584
 msgid "Eritrea"
 msgstr ""
 
-#: includes/helpers.php:559
+#: includes/helpers.php:585
 msgid "Estonia"
 msgstr ""
 
-#: includes/helpers.php:560
+#: includes/helpers.php:586
 msgid "Ethiopia"
 msgstr ""
 
-#: includes/helpers.php:561
+#: includes/helpers.php:587
 msgid "Falkland Islands"
 msgstr ""
 
-#: includes/helpers.php:562
+#: includes/helpers.php:588
 msgid "Faroe Islands"
 msgstr ""
 
-#: includes/helpers.php:563
-#: includes/helpers.php:2318
+#: includes/helpers.php:589
+#: includes/helpers.php:2353
 msgid "Fiji"
 msgstr ""
 
-#: includes/helpers.php:564
+#: includes/helpers.php:590
 msgid "Finland"
 msgstr ""
 
-#: includes/helpers.php:565
+#: includes/helpers.php:591
 msgid "France"
 msgstr ""
 
-#: includes/helpers.php:566
+#: includes/helpers.php:592
 msgid "French Guiana"
 msgstr ""
 
-#: includes/helpers.php:567
+#: includes/helpers.php:593
 msgid "French Polynesia"
 msgstr ""
 
-#: includes/helpers.php:568
+#: includes/helpers.php:594
 msgid "French Southern Territories"
 msgstr ""
 
-#: includes/helpers.php:569
+#: includes/helpers.php:595
 msgid "Gabon"
 msgstr ""
 
-#: includes/helpers.php:570
-#: includes/helpers.php:2321
+#: includes/helpers.php:596
+#: includes/helpers.php:2356
 msgid "Gambia"
 msgstr ""
 
-#: includes/helpers.php:571
+#: includes/helpers.php:597
 msgid "Georgia"
 msgstr ""
 
-#: includes/helpers.php:572
+#: includes/helpers.php:598
 msgid "Germany"
 msgstr ""
 
-#: includes/helpers.php:573
+#: includes/helpers.php:599
 msgid "Greece"
 msgstr ""
 
-#: includes/helpers.php:574
-#: includes/helpers.php:2322
+#: includes/helpers.php:600
+#: includes/helpers.php:2357
 msgid "Ghana"
 msgstr ""
 
-#: includes/helpers.php:575
+#: includes/helpers.php:601
 msgid "Gibraltar"
 msgstr ""
 
-#: includes/helpers.php:576
+#: includes/helpers.php:602
 msgid "Greenland"
 msgstr ""
 
-#: includes/helpers.php:577
-#: includes/helpers.php:2319
+#: includes/helpers.php:603
+#: includes/helpers.php:2354
 msgid "Grenada"
 msgstr ""
 
-#: includes/helpers.php:578
+#: includes/helpers.php:604
 msgid "Guadeloupe"
 msgstr ""
 
-#: includes/helpers.php:579
+#: includes/helpers.php:605
 msgid "Guam"
 msgstr ""
 
-#: includes/helpers.php:580
+#: includes/helpers.php:606
 msgid "Guatemala"
 msgstr ""
 
-#: includes/helpers.php:581
+#: includes/helpers.php:607
 msgid "Guernsey"
 msgstr ""
 
-#: includes/helpers.php:582
+#: includes/helpers.php:608
 msgid "Guinea"
 msgstr ""
 
-#: includes/helpers.php:583
+#: includes/helpers.php:609
 msgid "Guinea-Bissau"
 msgstr ""
 
-#: includes/helpers.php:584
-#: includes/helpers.php:2320
+#: includes/helpers.php:610
+#: includes/helpers.php:2355
 msgid "Guyana"
 msgstr ""
 
-#: includes/helpers.php:585
+#: includes/helpers.php:611
 msgid "Haiti"
 msgstr ""
 
-#: includes/helpers.php:586
+#: includes/helpers.php:612
 msgid "Heard and McDonald Islands"
 msgstr ""
 
-#: includes/helpers.php:587
+#: includes/helpers.php:613
 msgid "Holy See (City Vatican State)"
 msgstr ""
 
-#: includes/helpers.php:588
+#: includes/helpers.php:614
 msgid "Honduras"
 msgstr ""
 
-#: includes/helpers.php:589
+#: includes/helpers.php:615
 msgid "Hong Kong"
 msgstr ""
 
-#: includes/helpers.php:590
+#: includes/helpers.php:616
 msgid "Hungary"
 msgstr ""
 
-#: includes/helpers.php:591
+#: includes/helpers.php:617
 msgid "Iceland"
 msgstr ""
 
-#: includes/helpers.php:592
-#: includes/helpers.php:2324
+#: includes/helpers.php:618
+#: includes/helpers.php:2359
 #: includes/popular-posts/class-popular-posts-themes.php:296
 msgid "India"
 msgstr ""
 
-#: includes/helpers.php:593
+#: includes/helpers.php:619
 msgid "Indonesia"
 msgstr ""
 
-#: includes/helpers.php:594
+#: includes/helpers.php:620
 msgid "Iran"
 msgstr ""
 
-#: includes/helpers.php:595
+#: includes/helpers.php:621
 msgid "Iraq"
 msgstr ""
 
-#: includes/helpers.php:596
-#: includes/helpers.php:2323
+#: includes/helpers.php:622
+#: includes/helpers.php:2358
 msgid "Ireland"
 msgstr ""
 
-#: includes/helpers.php:597
+#: includes/helpers.php:623
 msgid "Isle of Man"
 msgstr ""
 
-#: includes/helpers.php:598
+#: includes/helpers.php:624
 msgid "Israel"
 msgstr ""
 
-#: includes/helpers.php:599
+#: includes/helpers.php:625
 msgid "Italy"
 msgstr ""
 
-#: includes/helpers.php:600
-#: includes/helpers.php:2325
+#: includes/helpers.php:626
+#: includes/helpers.php:2360
 msgid "Jamaica"
 msgstr ""
 
-#: includes/helpers.php:601
+#: includes/helpers.php:627
 msgid "Japan"
 msgstr ""
 
-#: includes/helpers.php:602
+#: includes/helpers.php:628
 msgid "Jersey"
 msgstr ""
 
-#: includes/helpers.php:603
+#: includes/helpers.php:629
 msgid "Jordan"
 msgstr ""
 
-#: includes/helpers.php:604
+#: includes/helpers.php:630
 msgid "Kazakhstan"
 msgstr ""
 
-#: includes/helpers.php:605
-#: includes/helpers.php:2326
+#: includes/helpers.php:631
+#: includes/helpers.php:2361
 msgid "Kenya"
 msgstr ""
 
-#: includes/helpers.php:606
-#: includes/helpers.php:2327
+#: includes/helpers.php:632
+#: includes/helpers.php:2362
 msgid "Kiribati"
 msgstr ""
 
-#: includes/helpers.php:607
+#: includes/helpers.php:633
 msgid "Kuwait"
 msgstr ""
 
-#: includes/helpers.php:608
+#: includes/helpers.php:634
 msgid "Kyrgyzstan"
 msgstr ""
 
-#: includes/helpers.php:609
+#: includes/helpers.php:635
 msgid "Lao People's Democratic Republic"
 msgstr ""
 
-#: includes/helpers.php:610
+#: includes/helpers.php:636
 msgid "Latvia"
 msgstr ""
 
-#: includes/helpers.php:611
+#: includes/helpers.php:637
 msgid "Lebanon"
 msgstr ""
 
-#: includes/helpers.php:612
-#: includes/helpers.php:2328
+#: includes/helpers.php:638
+#: includes/helpers.php:2363
 msgid "Lesotho"
 msgstr ""
 
-#: includes/helpers.php:613
-#: includes/helpers.php:2329
+#: includes/helpers.php:639
+#: includes/helpers.php:2364
 msgid "Liberia"
 msgstr ""
 
-#: includes/helpers.php:614
+#: includes/helpers.php:640
 msgid "Libyan Arab Jamahiriya"
 msgstr ""
 
-#: includes/helpers.php:615
+#: includes/helpers.php:641
 msgid "Liechtenstein"
 msgstr ""
 
-#: includes/helpers.php:616
+#: includes/helpers.php:642
 msgid "Lithuania"
 msgstr ""
 
-#: includes/helpers.php:617
+#: includes/helpers.php:643
 msgid "Luxembourg"
 msgstr ""
 
-#: includes/helpers.php:618
+#: includes/helpers.php:644
 msgid "Macau"
 msgstr ""
 
-#: includes/helpers.php:619
+#: includes/helpers.php:645
 msgid "Macedonia (FYROM)"
 msgstr ""
 
-#: includes/helpers.php:620
+#: includes/helpers.php:646
 msgid "Madagascar"
 msgstr ""
 
-#: includes/helpers.php:621
-#: includes/helpers.php:2330
+#: includes/helpers.php:647
+#: includes/helpers.php:2365
 msgid "Malawi"
 msgstr ""
 
-#: includes/helpers.php:622
+#: includes/helpers.php:648
 msgid "Malaysia"
 msgstr ""
 
-#: includes/helpers.php:623
+#: includes/helpers.php:649
 msgid "Maldives"
 msgstr ""
 
-#: includes/helpers.php:624
+#: includes/helpers.php:650
 msgid "Mali"
 msgstr ""
 
-#: includes/helpers.php:625
-#: includes/helpers.php:2331
+#: includes/helpers.php:651
+#: includes/helpers.php:2366
 msgid "Malta"
 msgstr ""
 
-#: includes/helpers.php:626
-#: includes/helpers.php:2332
+#: includes/helpers.php:652
+#: includes/helpers.php:2367
 msgid "Marshall Islands"
 msgstr ""
 
-#: includes/helpers.php:627
+#: includes/helpers.php:653
 msgid "Martinique"
 msgstr ""
 
-#: includes/helpers.php:628
+#: includes/helpers.php:654
 msgid "Mauritania"
 msgstr ""
 
-#: includes/helpers.php:629
-#: includes/helpers.php:2333
+#: includes/helpers.php:655
+#: includes/helpers.php:2368
 msgid "Mauritius"
 msgstr ""
 
-#: includes/helpers.php:630
+#: includes/helpers.php:656
 msgid "Mayotte"
 msgstr ""
 
-#: includes/helpers.php:631
+#: includes/helpers.php:657
 msgid "Mexico"
 msgstr ""
 
-#: includes/helpers.php:632
-#: includes/helpers.php:2334
+#: includes/helpers.php:658
+#: includes/helpers.php:2369
 msgid "Micronesia"
 msgstr ""
 
-#: includes/helpers.php:633
+#: includes/helpers.php:659
 msgid "Moldova, Republic of"
 msgstr ""
 
-#: includes/helpers.php:634
+#: includes/helpers.php:660
 msgid "Monaco"
 msgstr ""
 
-#: includes/helpers.php:635
+#: includes/helpers.php:661
 msgid "Mongolia"
 msgstr ""
 
-#: includes/helpers.php:636
+#: includes/helpers.php:662
 msgid "Montenegro"
 msgstr ""
 
-#: includes/helpers.php:637
+#: includes/helpers.php:663
 msgid "Montserrat"
 msgstr ""
 
-#: includes/helpers.php:638
+#: includes/helpers.php:664
 msgid "Morocco"
 msgstr ""
 
-#: includes/helpers.php:639
+#: includes/helpers.php:665
 msgid "Mozambique"
 msgstr ""
 
-#: includes/helpers.php:640
+#: includes/helpers.php:666
 msgid "Myanmar"
 msgstr ""
 
-#: includes/helpers.php:641
-#: includes/helpers.php:2336
+#: includes/helpers.php:667
+#: includes/helpers.php:2371
 msgid "Namibia"
 msgstr ""
 
-#: includes/helpers.php:642
-#: includes/helpers.php:2337
+#: includes/helpers.php:668
+#: includes/helpers.php:2372
 msgid "Nauru"
 msgstr ""
 
-#: includes/helpers.php:643
+#: includes/helpers.php:669
 msgid "Nepal"
 msgstr ""
 
-#: includes/helpers.php:644
+#: includes/helpers.php:670
 msgid "Netherlands"
 msgstr ""
 
-#: includes/helpers.php:645
+#: includes/helpers.php:671
 msgid "Netherlands Antilles"
 msgstr ""
 
-#: includes/helpers.php:646
+#: includes/helpers.php:672
 msgid "New Caledonia"
 msgstr ""
 
-#: includes/helpers.php:647
-#: includes/helpers.php:2335
+#: includes/helpers.php:673
+#: includes/helpers.php:2370
 msgid "New Zealand"
 msgstr ""
 
-#: includes/helpers.php:648
+#: includes/helpers.php:674
 msgid "Nicaragua"
 msgstr ""
 
-#: includes/helpers.php:649
+#: includes/helpers.php:675
 msgid "Niger"
 msgstr ""
 
-#: includes/helpers.php:650
-#: includes/helpers.php:2338
+#: includes/helpers.php:676
+#: includes/helpers.php:2373
 msgid "Nigeria"
 msgstr ""
 
-#: includes/helpers.php:651
+#: includes/helpers.php:677
 msgid "Niue"
 msgstr ""
 
-#: includes/helpers.php:652
+#: includes/helpers.php:678
 msgid "Norfolk Island"
 msgstr ""
 
-#: includes/helpers.php:653
+#: includes/helpers.php:679
 msgid "North Korea"
 msgstr ""
 
-#: includes/helpers.php:654
+#: includes/helpers.php:680
 msgid "Northern Mariana Islands"
 msgstr ""
 
-#: includes/helpers.php:655
+#: includes/helpers.php:681
 msgid "Norway"
 msgstr ""
 
-#: includes/helpers.php:656
+#: includes/helpers.php:682
 msgid "Oman"
 msgstr ""
 
-#: includes/helpers.php:657
-#: includes/helpers.php:2339
+#: includes/helpers.php:683
+#: includes/helpers.php:2374
 msgid "Pakistan"
 msgstr ""
 
-#: includes/helpers.php:658
-#: includes/helpers.php:2340
+#: includes/helpers.php:684
+#: includes/helpers.php:2375
 msgid "Palau"
 msgstr ""
 
-#: includes/helpers.php:659
+#: includes/helpers.php:685
 msgid "Palestinian Territories"
 msgstr ""
 
-#: includes/helpers.php:660
+#: includes/helpers.php:686
 msgid "Panama"
 msgstr ""
 
-#: includes/helpers.php:661
-#: includes/helpers.php:2341
+#: includes/helpers.php:687
+#: includes/helpers.php:2376
 msgid "Papua New Guinea"
 msgstr ""
 
-#: includes/helpers.php:662
+#: includes/helpers.php:688
 msgid "Paraguay"
 msgstr ""
 
-#: includes/helpers.php:663
+#: includes/helpers.php:689
 msgid "Peru"
 msgstr ""
 
-#: includes/helpers.php:664
-#: includes/helpers.php:2342
+#: includes/helpers.php:690
+#: includes/helpers.php:2377
 msgid "Philippines"
 msgstr ""
 
-#: includes/helpers.php:665
+#: includes/helpers.php:691
 msgid "Pitcairn Island"
 msgstr ""
 
-#: includes/helpers.php:666
+#: includes/helpers.php:692
 msgid "Poland"
 msgstr ""
 
-#: includes/helpers.php:667
+#: includes/helpers.php:693
 msgid "Portugal"
 msgstr ""
 
-#: includes/helpers.php:668
+#: includes/helpers.php:694
 msgid "Puerto Rico"
 msgstr ""
 
-#: includes/helpers.php:669
+#: includes/helpers.php:695
 msgid "Qatar"
 msgstr ""
 
-#: includes/helpers.php:670
+#: includes/helpers.php:696
 msgid "Republic of Kosovo"
 msgstr ""
 
-#: includes/helpers.php:671
+#: includes/helpers.php:697
 msgid "Reunion Island"
 msgstr ""
 
-#: includes/helpers.php:672
+#: includes/helpers.php:698
 msgid "Romania"
 msgstr ""
 
-#: includes/helpers.php:673
+#: includes/helpers.php:699
 msgid "Russian Federation"
 msgstr ""
 
-#: includes/helpers.php:674
-#: includes/helpers.php:2343
+#: includes/helpers.php:700
+#: includes/helpers.php:2378
 msgid "Rwanda"
 msgstr ""
 
-#: includes/helpers.php:675
+#: includes/helpers.php:701
 msgid "Saint Barth&eacute;lemy"
 msgstr ""
 
-#: includes/helpers.php:676
+#: includes/helpers.php:702
 msgid "Saint Helena"
 msgstr ""
 
-#: includes/helpers.php:677
+#: includes/helpers.php:703
 msgid "Saint Kitts and Nevis"
 msgstr ""
 
-#: includes/helpers.php:678
+#: includes/helpers.php:704
 msgid "Saint Lucia"
 msgstr ""
 
-#: includes/helpers.php:679
+#: includes/helpers.php:705
 msgid "Saint Martin (French)"
 msgstr ""
 
-#: includes/helpers.php:680
+#: includes/helpers.php:706
 msgid "Saint Martin (Dutch)"
 msgstr ""
 
-#: includes/helpers.php:681
+#: includes/helpers.php:707
 msgid "Saint Pierre and Miquelon"
 msgstr ""
 
-#: includes/helpers.php:682
+#: includes/helpers.php:708
 msgid "Saint Vincent and the Grenadines"
 msgstr ""
 
-#: includes/helpers.php:683
+#: includes/helpers.php:709
 msgid "San Marino"
 msgstr ""
 
-#: includes/helpers.php:684
+#: includes/helpers.php:710
 msgid "S&atilde;o Tom&eacute; and Pr&iacute;ncipe"
 msgstr ""
 
-#: includes/helpers.php:685
+#: includes/helpers.php:711
 msgid "Saudi Arabia"
 msgstr ""
 
-#: includes/helpers.php:686
+#: includes/helpers.php:712
 msgid "Senegal"
 msgstr ""
 
-#: includes/helpers.php:687
+#: includes/helpers.php:713
 msgid "Serbia"
 msgstr ""
 
-#: includes/helpers.php:688
-#: includes/helpers.php:2350
+#: includes/helpers.php:714
+#: includes/helpers.php:2385
 msgid "Seychelles"
 msgstr ""
 
-#: includes/helpers.php:689
-#: includes/helpers.php:2351
+#: includes/helpers.php:715
+#: includes/helpers.php:2386
 msgid "Sierra Leone"
 msgstr ""
 
-#: includes/helpers.php:690
-#: includes/helpers.php:2344
+#: includes/helpers.php:716
+#: includes/helpers.php:2379
 msgid "Singapore"
 msgstr ""
 
-#: includes/helpers.php:691
+#: includes/helpers.php:717
 msgid "Slovak Republic"
 msgstr ""
 
-#: includes/helpers.php:692
+#: includes/helpers.php:718
 msgid "Slovenia"
 msgstr ""
 
-#: includes/helpers.php:693
-#: includes/helpers.php:2352
+#: includes/helpers.php:719
+#: includes/helpers.php:2387
 msgid "Solomon Islands"
 msgstr ""
 
-#: includes/helpers.php:694
+#: includes/helpers.php:720
 msgid "Somalia"
 msgstr ""
 
-#: includes/helpers.php:695
-#: includes/helpers.php:2353
+#: includes/helpers.php:721
+#: includes/helpers.php:2388
 msgid "South Africa"
 msgstr ""
 
-#: includes/helpers.php:696
+#: includes/helpers.php:722
 msgid "South Georgia"
 msgstr ""
 
-#: includes/helpers.php:697
+#: includes/helpers.php:723
 msgid "South Korea"
 msgstr ""
 
-#: includes/helpers.php:698
-#: includes/helpers.php:2354
+#: includes/helpers.php:724
+#: includes/helpers.php:2389
 msgid "South Sudan"
 msgstr ""
 
-#: includes/helpers.php:699
+#: includes/helpers.php:725
 msgid "Spain"
 msgstr ""
 
-#: includes/helpers.php:700
+#: includes/helpers.php:726
 msgid "Sri Lanka"
 msgstr ""
 
-#: includes/helpers.php:701
-#: includes/helpers.php:2355
+#: includes/helpers.php:727
+#: includes/helpers.php:2390
 msgid "Sudan"
 msgstr ""
 
-#: includes/helpers.php:702
+#: includes/helpers.php:728
 msgid "Suriname"
 msgstr ""
 
-#: includes/helpers.php:703
+#: includes/helpers.php:729
 msgid "Svalbard and Jan Mayen Islands"
 msgstr ""
 
-#: includes/helpers.php:704
-#: includes/helpers.php:2348
+#: includes/helpers.php:730
+#: includes/helpers.php:2383
 msgid "Swaziland"
 msgstr ""
 
-#: includes/helpers.php:705
+#: includes/helpers.php:731
 msgid "Sweden"
 msgstr ""
 
-#: includes/helpers.php:706
+#: includes/helpers.php:732
 msgid "Switzerland"
 msgstr ""
 
-#: includes/helpers.php:707
+#: includes/helpers.php:733
 msgid "Syrian Arab Republic"
 msgstr ""
 
-#: includes/helpers.php:708
+#: includes/helpers.php:734
 msgid "Taiwan"
 msgstr ""
 
-#: includes/helpers.php:709
+#: includes/helpers.php:735
 msgid "Tajikistan"
 msgstr ""
 
-#: includes/helpers.php:710
-#: includes/helpers.php:2358
+#: includes/helpers.php:736
+#: includes/helpers.php:2393
 msgid "Tanzania"
 msgstr ""
 
-#: includes/helpers.php:711
+#: includes/helpers.php:737
 msgid "Thailand"
 msgstr ""
 
-#: includes/helpers.php:712
+#: includes/helpers.php:738
 msgid "Timor-Leste"
 msgstr ""
 
-#: includes/helpers.php:713
+#: includes/helpers.php:739
 msgid "Togo"
 msgstr ""
 
-#: includes/helpers.php:714
+#: includes/helpers.php:740
 msgid "Tokelau"
 msgstr ""
 
-#: includes/helpers.php:715
-#: includes/helpers.php:2359
+#: includes/helpers.php:741
+#: includes/helpers.php:2394
 msgid "Tonga"
 msgstr ""
 
-#: includes/helpers.php:716
-#: includes/helpers.php:2356
+#: includes/helpers.php:742
+#: includes/helpers.php:2391
 msgid "Trinidad and Tobago"
 msgstr ""
 
-#: includes/helpers.php:717
+#: includes/helpers.php:743
 msgid "Tunisia"
 msgstr ""
 
-#: includes/helpers.php:718
+#: includes/helpers.php:744
 msgid "Turkey"
 msgstr ""
 
-#: includes/helpers.php:719
+#: includes/helpers.php:745
 msgid "Turkmenistan"
 msgstr ""
 
-#: includes/helpers.php:720
+#: includes/helpers.php:746
 msgid "Turks and Caicos Islands"
 msgstr ""
 
-#: includes/helpers.php:721
-#: includes/helpers.php:2360
+#: includes/helpers.php:747
+#: includes/helpers.php:2395
 msgid "Tuvalu"
 msgstr ""
 
-#: includes/helpers.php:722
-#: includes/helpers.php:2363
+#: includes/helpers.php:748
+#: includes/helpers.php:2398
 msgid "Uganda"
 msgstr ""
 
-#: includes/helpers.php:723
+#: includes/helpers.php:749
 msgid "Ukraine"
 msgstr ""
 
-#: includes/helpers.php:724
+#: includes/helpers.php:750
 msgid "United Arab Emirates"
 msgstr ""
 
-#: includes/helpers.php:725
+#: includes/helpers.php:751
 msgid "Uruguay"
 msgstr ""
 
-#: includes/helpers.php:726
+#: includes/helpers.php:752
 msgid "US Minor Outlying Islands"
 msgstr ""
 
-#: includes/helpers.php:727
+#: includes/helpers.php:753
 msgid "Uzbekistan"
 msgstr ""
 
-#: includes/helpers.php:728
-#: includes/helpers.php:2364
+#: includes/helpers.php:754
+#: includes/helpers.php:2399
 msgid "Vanuatu"
 msgstr ""
 
-#: includes/helpers.php:729
+#: includes/helpers.php:755
 msgid "Venezuela"
 msgstr ""
 
-#: includes/helpers.php:730
+#: includes/helpers.php:756
 msgid "Vietnam"
 msgstr ""
 
-#: includes/helpers.php:731
+#: includes/helpers.php:757
 msgid "Virgin Islands (British)"
 msgstr ""
 
-#: includes/helpers.php:732
+#: includes/helpers.php:758
 msgid "Virgin Islands (USA)"
 msgstr ""
 
-#: includes/helpers.php:733
+#: includes/helpers.php:759
 msgid "Wallis and Futuna Islands"
 msgstr ""
 
-#: includes/helpers.php:734
+#: includes/helpers.php:760
 msgid "Western Sahara"
 msgstr ""
 
-#: includes/helpers.php:735
+#: includes/helpers.php:761
 msgid "Western Samoa"
 msgstr ""
 
-#: includes/helpers.php:736
+#: includes/helpers.php:762
 msgid "Yemen"
 msgstr ""
 
-#: includes/helpers.php:737
-#: includes/helpers.php:2365
+#: includes/helpers.php:763
+#: includes/helpers.php:2400
 msgid "Zambia"
 msgstr ""
 
-#: includes/helpers.php:738
-#: includes/helpers.php:2366
+#: includes/helpers.php:764
+#: includes/helpers.php:2401
 msgid "Zimbabwe"
 msgstr ""
 
-#: includes/helpers.php:739
+#: includes/helpers.php:765
 msgid "Unknown Country"
 msgstr ""
 
-#: includes/helpers.php:1634
+#: includes/helpers.php:1669
 msgid "Archives"
 msgstr ""
 
 #. translators: Category archive title. %s: Category name
-#: includes/helpers.php:1638
+#: includes/helpers.php:1673
 #, php-format
 msgid "Category: %s"
 msgstr ""
 
 #. translators: Tag archive title. %s: Tag name
-#: includes/helpers.php:1641
+#: includes/helpers.php:1676
 #, php-format
 msgid "Tag: %s"
 msgstr ""
 
 #. translators: Author archive title. %s: Author name
-#: includes/helpers.php:1644
+#: includes/helpers.php:1679
 #, php-format
 msgid "Author: %s"
 msgstr ""
 
 #. translators: Yearly archive title. %s: Year
-#: includes/helpers.php:1647
+#: includes/helpers.php:1682
 #, php-format
 msgid "Year: %s"
 msgstr ""
 
 #. translators: Yearly archive title. %s: Year
-#: includes/helpers.php:1647
+#: includes/helpers.php:1682
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
 #. translators: Monthly archive title. %s: Month name and year
-#: includes/helpers.php:1650
+#: includes/helpers.php:1685
 #, php-format
 msgid "Month: %s"
 msgstr ""
 
 #. translators: Monthly archive title. %s: Month name and year
-#: includes/helpers.php:1650
+#: includes/helpers.php:1685
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr ""
 
 #. translators: Daily archive title. %s: Date
-#: includes/helpers.php:1653
+#: includes/helpers.php:1688
 #, php-format
 msgid "Day: %s"
 msgstr ""
 
 #. translators: Daily archive title. %s: Date
-#: includes/helpers.php:1653
+#: includes/helpers.php:1688
 msgctxt "daily archives date format"
 msgid "F j, Y"
 msgstr ""
 
-#: includes/helpers.php:1656
+#: includes/helpers.php:1691
 msgctxt "post format archive title"
 msgid "Asides"
 msgstr ""
 
-#: includes/helpers.php:1658
+#: includes/helpers.php:1693
 msgctxt "post format archive title"
 msgid "Galleries"
 msgstr ""
 
-#: includes/helpers.php:1660
+#: includes/helpers.php:1695
 msgctxt "post format archive title"
 msgid "Images"
 msgstr ""
 
-#: includes/helpers.php:1662
+#: includes/helpers.php:1697
 msgctxt "post format archive title"
 msgid "Videos"
 msgstr ""
 
-#: includes/helpers.php:1664
+#: includes/helpers.php:1699
 msgctxt "post format archive title"
 msgid "Quotes"
 msgstr ""
 
-#: includes/helpers.php:1666
+#: includes/helpers.php:1701
 msgctxt "post format archive title"
 msgid "Links"
 msgstr ""
 
-#: includes/helpers.php:1668
+#: includes/helpers.php:1703
 msgctxt "post format archive title"
 msgid "Statuses"
 msgstr ""
 
-#: includes/helpers.php:1670
+#: includes/helpers.php:1705
 msgctxt "post format archive title"
 msgid "Audio"
 msgstr ""
 
-#: includes/helpers.php:1672
+#: includes/helpers.php:1707
 msgctxt "post format archive title"
 msgid "Chats"
 msgstr ""
 
 #. translators: Post type archive title. %s: Post type name
-#: includes/helpers.php:1676
+#: includes/helpers.php:1711
 #, php-format
 msgid "Archives: %s"
 msgstr ""
 
 #. translators: %1$s: Opening bold tag, %2$s: Closing bold tag, %3$s: Opening link tag, %4$s: Closing link tag.
-#: includes/helpers.php:1738
+#: includes/helpers.php:1773
 #, php-format
 msgid "%1$sWe noticed you're using a caching plugin or caching from your hosting provider.%2$s Be sure to clear the cache to ensure the tracking appears on all pages and posts. %3$s(See this guide on how to clear cache)%4$s."
 msgstr ""
 
 #. translators: the placeholders are for making the "We have detected multiple tracking codes" text bold & adding a link to support.
-#: includes/helpers.php:1805
+#: includes/helpers.php:1840
 #, php-format
 msgid "%1$sWe have detected multiple tracking codes%2$s! You should remove non-ExactMetrics ones. If you need help finding them please %3$sread this article%4$s."
 msgstr ""
 
-#: includes/helpers.php:2345
+#: includes/helpers.php:2380
 msgid "St Kitts and Nevis"
 msgstr ""
 
-#: includes/helpers.php:2346
+#: includes/helpers.php:2381
 msgid "St Lucia"
 msgstr ""
 
-#: includes/helpers.php:2347
+#: includes/helpers.php:2382
 msgid "St Vincent and the Grenadines"
 msgstr ""
 
-#: includes/helpers.php:2349
+#: includes/helpers.php:2384
 msgid "Samoa"
 msgstr ""
 
-#: includes/helpers.php:2357
+#: includes/helpers.php:2392
 msgid "The Bahamas"
 msgstr ""
 
-#: includes/helpers.php:2362
+#: includes/helpers.php:2397
 msgid "United States of America"
 msgstr ""
 

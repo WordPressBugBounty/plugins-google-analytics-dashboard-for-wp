@@ -143,8 +143,8 @@ class ExactMetrics_Dashboard_Widget {
 			<h2><?php echo $message; // phpcs:ignore ?></h2>
 			<?php if ( current_user_can( 'exactmetrics_save_settings' ) ) { ?>
 				<p><?php esc_html_e( 'To see your website stats, please connect ExactMetrics to Google Analytics.', 'google-analytics-dashboard-for-wp' ); ?></p>
-				<a class="mi-dw-btn-large exactmetrics-setup-wizard-link"><?php esc_html_e( 'Setup Website Analytics', 'google-analytics-dashboard-for-wp' ); ?></a>
-				<p><?php esc_html_e( 'Note: You will be transfered to ExactMetrics.com to complete the setup wizard.', 'google-analytics-dashboard-for-wp' ); ?></p>
+				<a class="mi-dw-btn-large exactmetrics-setup-wizard-link"><?php esc_html_e( 'Set Up Website Analytics', 'google-analytics-dashboard-for-wp' ); ?></a>
+				<p><?php esc_html_e( 'Note: You will be transferred to ExactMetrics.com to complete the setup wizard.', 'google-analytics-dashboard-for-wp' ); ?></p>
 			<?php } else { ?>
 				<p><?php esc_html_e( 'To see your website stats, please ask your site administrator to connect ExactMetrics to Google Analytics.', 'google-analytics-dashboard-for-wp' ); ?></p>
 			<?php } ?>

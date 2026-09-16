@@ -298,25 +298,43 @@ class ExactMetrics_Onboarding {
 		// Process auth data from request, if present
 		$auth = $request->get_param( 'auth' );
 		if ( ! empty( $auth ) ) {
-			if( isset( $auth['is_authed'] ) &&  true === $auth['is_authed'] ) {
-				// If the user is authed, we probably have an existing key and token.
-				$existing = $is_network ? ExactMetrics()->auth->get_network_analytics_profile() : ExactMetrics()->auth->get_analytics_profile();
-				$auth['key']   = $existing['key'];
-				$auth['token'] = $existing['token'];
+			// The request does not always carry credentials — `is_authed` marks a payload
+			// that relies on the ones already stored, and a partial payload may omit them
+			// entirely. Reading them straight from the request wrote a profile with the
+			// property but an empty `key`/`token` over a working connection, which then
+			// looked connected while every report failed (GH-3343). Fall back to what is
+			// stored instead, and never overwrite real credentials with nothing.
+			$existing = $is_network
+				? ExactMetrics()->auth->get_network_analytics_profile()
+				: ExactMetrics()->auth->get_analytics_profile();
+			if ( ! is_array( $existing ) ) {
+				$existing = array();
 			}
+
+			$auth_value = function ( $key ) use ( $auth ) {
+				return isset( $auth[ $key ] ) ? $auth[ $key ] : '';
+			};
+
+			$key   = ! empty( $auth['key'] ) ? $auth['key'] : ( isset( $existing['key'] ) ? $existing['key'] : '' );
+			$token = ! empty( $auth['token'] ) ? $auth['token'] : ( isset( $existing['token'] ) ? $existing['token'] : '' );
+
 			$profile = array(
-				'key'                         => $auth['key'],
-				'token'                       => $auth['token'],
-				'v4'                          => $auth['v4'],
-				'viewname'                    => $auth['v4'],
-				'a'                           => $auth['account_id'], // AccountID
-				'w'                           => $auth['property_id'], // PropertyID
-				'p'                           => $auth['view_id'],
+				'key'                         => $key,
+				'token'                       => $token,
+				'v4'                          => $auth_value( 'v4' ),
+				'viewname'                    => $auth_value( 'v4' ),
+				'a'                           => $auth_value( 'account_id' ), // AccountID
+				'w'                           => $auth_value( 'property_id' ), // PropertyID
+				'p'                           => $auth_value( 'view_id' ),
 				'siteurl'                     => home_url(),
 				'neturl'                      => network_admin_url(),
-				'measurement_protocol_secret' => $auth['measurement_protocol_secret'],
+				'measurement_protocol_secret' => $auth_value( 'measurement_protocol_secret' ),
 			);
 			$is_network ? ExactMetrics()->auth->set_network_analytics_profile( $profile ) : ExactMetrics()->auth->set_analytics_profile( $profile );
+
+			// This is the route the hosted onboarding app posts the newly selected
+			// property back to, and it performed no invalidation at all (MI-247).
+			exactmetrics_flush_property_scoped_caches( $is_network );
 		}
 		$can_install = exactmetrics_can_install_plugins( $onboarding_user_id ?: null );
 		if ( $can_install && ! empty( $settings['addons_to_install'] ) ) {

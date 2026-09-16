@@ -1,0 +1,58 @@
+import { u as useRouter } from "./TheAppHeader-CjMtIms2.js";
+import { U as UpsellModal, u as useSampleData } from "./useSampleData-D9O_leSW.js";
+import { u as useFeatureGate } from "./useFeatureGate-Vb1-hi59.js";
+import { z as onMounted, o as openBlock, c as createElementBlock, b as createVNode, u as unref } from "./AppOverlays-DcHCG-3q.js";
+import "./ajax-C95mIScv.js";
+import "./default-i18n-KrIlCc2E.js";
+import "./Modal-BJTydlxw.js";
+import "./Icon-BU8BTUxW.js";
+import "./license-DUHYGbJw.js";
+import "./useNotices-CnkWF1QQ.js";
+const _hoisted_1 = { class: "exactmetrics-dashboard-list" };
+const _sfc_main = {
+  __name: "DashboardList.lite",
+  setup(__props) {
+    const router = useRouter();
+    const {
+      shouldShowUpsell,
+      upsellContent,
+      hasSampleData,
+      openUpsellModal,
+      closeUpsellModal,
+      enableSampleMode
+    } = useFeatureGate("custom-dashboard");
+    const { sampleData: sampleViewData, loadSampleData: loadSampleView } = useSampleData("custom-dashboard", "sample-view");
+    onMounted(async () => {
+      await loadSampleView();
+      openUpsellModal();
+    });
+    async function handleSeeSample() {
+      if (!sampleViewData.value) {
+        await loadSampleView();
+      }
+      enableSampleMode();
+      if (sampleViewData.value?.[0]?.id) {
+        router.push({
+          name: "dashboard-view",
+          params: { id: sampleViewData.value[0].id }
+        });
+      }
+    }
+    return (_ctx, _cache) => {
+      return openBlock(), createElementBlock("div", _hoisted_1, [
+        createVNode(UpsellModal, {
+          isOpen: unref(shouldShowUpsell),
+          feature: "custom-dashboard",
+          content: unref(upsellContent),
+          showSampleButton: unref(hasSampleData),
+          customImage: "sample-image-exactmetrics.png",
+          onClose: unref(closeUpsellModal),
+          onSeeSample: handleSeeSample
+        }, null, 8, ["isOpen", "content", "showSampleButton", "onClose"])
+      ]);
+    };
+  }
+};
+export {
+  _sfc_main as default
+};

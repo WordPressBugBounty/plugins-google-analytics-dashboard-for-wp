@@ -559,7 +559,7 @@ function exactmetrics_admin_setup_notices()
 
 	if ( !empty($profile['ua']) && empty($profile['v4']) && !exactmetrics_is_own_admin_page() ) {
 		$title = __('Urgent: Your Website is Not Tracking Any Google Analytics Data!', 'google-analytics-dashboard-for-wp');
-		$message = __('Google Analytics 3 (UA) and support was sunset on July 1, 2023. Your website is currently NOT tracking any analytics. </br>Create or connect a new Google Analytics 4 property immediately to start tracking.', 'google-analytics-dashboard-for-wp');
+		$message = __('Google Analytics 3 (UA) support was sunset on July 1, 2023. Your website is currently NOT tracking any analytics. <br>Create or connect a new Google Analytics 4 property immediately to start tracking.', 'google-analytics-dashboard-for-wp');
 
 		$wizard_url     = exactmetrics_get_onboarding_url();
 
@@ -586,11 +586,11 @@ function exactmetrics_admin_setup_notices()
 	if ( ! is_network_admin() && ! exactmetrics_get_v4_id() && ! defined( 'EXACTMETRICS_DISABLE_TRACKING' ) && ! exactmetrics_is_own_admin_page() ) {
 
 		$submenu_base = is_network_admin() ? add_query_arg( 'page', 'exactmetrics_network', network_admin_url( 'admin.php' ) ) : add_query_arg( 'page', 'exactmetrics_settings', admin_url( 'admin.php' ) );
-		$title        = esc_html__( 'Please Setup Website Analytics to See Audience Insights', 'google-analytics-dashboard-for-wp' );
+		$title        = esc_html__( 'Please Set Up Website Analytics to See Audience Insights', 'google-analytics-dashboard-for-wp' );
 		$primary      = esc_html__( 'Please Connect Your Website to ExactMetrics', 'google-analytics-dashboard-for-wp' );
 		$secondary    = esc_html__( 'Learn More', 'google-analytics-dashboard-for-wp' );
 		$urltwo       = $submenu_base . '#/about/getting-started';
-		$disclaimer   = __( 'Note: You will be transfered to ExactMetrics.com to complete the setup wizard.', 'google-analytics-dashboard-for-wp' );
+		$disclaimer   = __( 'Note: You will be transferred to ExactMetrics.com to complete the setup wizard.', 'google-analytics-dashboard-for-wp' );
 		$message      = esc_html__( 'ExactMetrics, the WordPress Analytics plugin, helps you easily connect your website to Google Analytics, so that you can see how people find and use your website. Over 1 million smart website owners use ExactMetrics to grow faster.', 'google-analytics-dashboard-for-wp' );
 		echo '<div class="notice notice-info"><p style="font-weight:700">' . $title . '</p><p>' . $message . '</p><p><a class="button-primary exactmetrics-setup-wizard-link">' . $primary . '</a>&nbsp;&nbsp;&nbsp;<a href="' . $urltwo . '" class="button-secondary">' . $secondary . '</a></p><p class="exactmetrics-disclaimer-note">' . $disclaimer . '</p></div>'; // phpcs:ignore -- All escaped above
 
@@ -713,7 +713,7 @@ function exactmetrics_admin_setup_notices()
 	if ($migrated > 0) {
 		$url = exactmetrics_get_onboarding_url();
 		/* translators: placeholders add links to the settings panel. */
-		$text        = esc_html__('Click %1$shere%2$s to reauthenticate to be able to access reports. For more information why this is required, see our %3$sblog post%4$s.', 'google-analytics-dashboard-for-wp');
+		$text        = esc_html__('Click %1$shere%2$s to reauthenticate to be able to access reports. For more information on why this is required, see our %3$sblog post%4$s.', 'google-analytics-dashboard-for-wp');
 		$manual_text = sprintf($text, '<a href="' . esc_url($url) . '">', '</a>', '<a href="' . exactmetrics_get_url('notice', 'manual-ua', 'https://www.exactmetrics.com/why-did-we-implement-the-new-google-analytics-authentication-flow-challenges-explained/') . '" target="_blank">', '</a>');
 	}
 
@@ -779,7 +779,7 @@ function exactmetrics_admin_setup_notices()
 				$woo_notice_template,
 				$woo_notice_style,
 				__('Add eCommerce Analytics to your WooCommerce Store', 'google-analytics-dashboard-for-wp'),
-				__('Unlock all of our advanced eCommerce features specifically designed to help your store make more money..', 'google-analytics-dashboard-for-wp'),
+				__('Unlock all of our advanced eCommerce features specifically designed to help your store make more money.', 'google-analytics-dashboard-for-wp'),
 				__('ExactMetrics Pro users instantly gain access to valuable insights such as average order value, conversion rates, as well as marketing performance with UTM tracking.', 'google-analytics-dashboard-for-wp'),
 				__('And by upgrading, Pro users also get enhanced tracking for Forms, User Journeys, PPC Pixels, Custom UserID tracking, SEO Reports, and much more.', 'google-analytics-dashboard-for-wp'),
 				__('Start making better data-driven decisions today!', 'google-analytics-dashboard-for-wp'),

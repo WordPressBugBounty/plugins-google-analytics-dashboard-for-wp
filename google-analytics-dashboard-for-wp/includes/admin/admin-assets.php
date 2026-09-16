@@ -187,10 +187,37 @@ class ExactMetrics_Admin_Assets {
 			// The license key is only needed by the capability-gated settings/license
 			// screens. Keep it out of the bootstrap for view-only report delegates.
 			$license_info['key']         = current_user_can( 'exactmetrics_save_settings' ) ? $license->get_site_license_key() : '';
-			$license_info['is_expired']  = $license->site_license_expired();
-			$license_info['is_disabled'] = $license->site_license_disabled();
-			$license_info['is_invalid']  = $license->site_license_invalid();
+			// `type` above comes from get_license_type(), which returns the network
+			// license when using_network_license() — so these flags must describe the
+			// same license, or a network-licensed subsite reports the state of its
+			// absent site license (GH-3342). get_license_expiry_date() below is
+			// already network-aware for the same reason.
+			$using_network               = $license->using_network_license();
+			$license_info['is_expired']  = $using_network ? $license->network_license_expired() : $license->site_license_expired();
+			$license_info['is_disabled'] = $using_network ? $license->network_license_disabled() : $license->site_license_disabled();
+			$license_info['is_invalid']  = $using_network ? $license->network_license_invalid() : $license->site_license_invalid();
 			$license_info['expiry_date'] = $license->get_license_expiry_date();
+		}
+
+		// Multisite needs the network license alongside the site one: the Pinia store
+		// reads `license_network` at first paint, and without it a network-licensed
+		// install renders as unlicensed until fetchLicenseData() resolves (GH-3342).
+		$license_network_info = array();
+		if ( exactmetrics_is_pro_version() && is_multisite() ) {
+			$license_network_info = array(
+				// Capability-gated exactly as $license_info['key'] above.
+				'key'         => current_user_can( 'exactmetrics_save_settings' ) ? $license->get_network_license_key() : '',
+				'type'        => $license->get_network_license_type(),
+				'is_agency'   => $license->network_is_agency(),
+				'is_expired'  => $license->network_license_expired(),
+				'is_disabled' => $license->network_license_disabled(),
+				'is_invalid'  => $license->network_license_invalid(),
+				// Mirrors $license_info's shape so the network object is a complete
+				// license, not a partial one: the renewal row keys off expiry_date and
+				// the license-type label off is_agency, and both were absent at first
+				// paint. Network-scoped variants of the same getters used above.
+				'expiry_date' => $license->get_network_license_expiry_date(),
+			);
 		}
 
 		// Get auth data (shared across Vue 2 and Vue 3 apps)
@@ -208,23 +235,36 @@ class ExactMetrics_Admin_Assets {
 			'network_viewname'                    => is_multisite() ? $auth->get_network_viewname() : '',
 			'measurement_protocol_secret'         => $can_manage_secrets ? $auth->get_measurement_protocol_secret() : '',
 			'network_measurement_protocol_secret' => ( $can_manage_secrets && is_multisite() ) ? $auth->get_network_measurement_protocol_secret() : '',
+			// Whether the profile actually holds the credentials a Reporting API call
+			// needs (key + v4), per scope. A profile can keep `v4`/`viewname` and lose
+			// its key/token, which looks connected but fails every report request, so
+			// the app must be able to tell the two states apart.
+			'has_credentials'                     => $auth->is_authed(),
+			'network_has_credentials'             => is_multisite() ? $auth->is_network_authed() : false,
 		);
 
 		// Route to the appropriate Vue 3 entry based on the current admin page.
 		if ( strpos( $screen->id, 'exactmetrics_overview_report' ) !== false ) {
+			// Reports use this to explain empty date ranges that predate the
+			// connection instead of telling the user to widen a range that can
+			// never return data. `exactmetrics_over_time` is autoload=false and
+			// only the reports need it, so it is read here rather than for every
+			// ExactMetrics admin screen.
+			$auth_data['connected_date'] = exactmetrics_get_connection_date();
+
 			$this->load_vue3_report_script( $auth, $auth_data, $license_info, $version_path );
 			return;
 		}
 
 		if ( strpos( $screen->id, 'exactmetrics_settings' ) !== false ) {
-			$this->load_vue3_settings_script( $auth, $auth_data, $license_info, $version_path );
+			$this->load_vue3_settings_script( $auth, $auth_data, $license_info, $license_network_info, $version_path );
 			return;
 		}
 
 		// Multisite Network-Admin settings screen (page=exactmetrics_network).
 		// Shares the settings localization but loads the reduced network entry.
 		if ( strpos( $screen->id, 'exactmetrics_network' ) !== false ) {
-			$this->load_vue3_settings_script( $auth, $auth_data, $license_info, $version_path, 'src/modules/settings/main-network.js', 'exactmetrics-vue3-settings-network' );
+			$this->load_vue3_settings_script( $auth, $auth_data, $license_info, $license_network_info, $version_path, 'src/modules/settings/main-network.js', 'exactmetrics-vue3-settings-network' );
 			return;
 		}
 
@@ -247,8 +287,10 @@ class ExactMetrics_Admin_Assets {
 			}
 
 			// Provide bootstrap payload for the Vue 3 app in build
-			$site_auth = $auth->get_viewname();
-			$ms_auth   = is_multisite() && $auth->get_network_viewname();
+			// Base "authed" on real credentials (key + v4), not just the property name,
+			// so a profile that lost its key/token is reported as not connected.
+			$site_auth = $auth->is_authed();
+			$ms_auth   = is_multisite() && $auth->is_network_authed();
 
 			// Get bearer token for direct browser-to-API requests.
 			$bearer_token_data = ExactMetrics_API_Token::get_token( is_network_admin() );
@@ -631,15 +673,20 @@ class ExactMetrics_Admin_Assets {
 	private function load_vue3_report_script($auth, $auth_data, $license_info, $version_path) {
 		$handle = 'exactmetrics-vue3-reports';
 
+		// `wp-date` supplies wp.date.dateI18n(), which reports use to render dates
+		// embedded in translated copy with localized month names instead of
+		// moment's hard-coded English ones.
+		$deps = array( 'wp-i18n', 'wp-util', 'wp-date' );
+
 		if ( defined( 'EXACTMETRICS_V3_DEV_URL' ) && EXACTMETRICS_V3_DEV_URL ) {
 			$dev_url = trailingslashit( EXACTMETRICS_V3_DEV_URL ) . 'src/modules/reports/main.js';
-			wp_register_script( $handle, $dev_url, array( 'wp-i18n', 'wp-util' ), exactmetrics_get_asset_version(), true );
+			wp_register_script( $handle, $dev_url, $deps, exactmetrics_get_asset_version(), true );
 			wp_enqueue_script( $handle );
 		} else {
 			list( $base_url, $entry ) = $this->get_vue3_entry( 'src/modules/reports/main.js' );
 			if ( ! empty( $entry['file'] ) ) {
 				$src = $base_url . ltrim( $entry['file'], '/' );
-				wp_register_script( $handle, $src, array( 'wp-i18n', 'wp-util' ), exactmetrics_get_asset_version(), true );
+				wp_register_script( $handle, $src, $deps, exactmetrics_get_asset_version(), true );
 				wp_enqueue_script( $handle );
 			}
 		}
@@ -697,8 +744,10 @@ class ExactMetrics_Admin_Assets {
 		' );
 
 		// Provide bootstrap payload for the Vue 3 app in build
-		$site_auth = $auth->get_viewname();
-		$ms_auth   = is_multisite() && $auth->get_network_viewname();
+		// Base "authed" on real credentials (key + v4), not just the property name,
+		// so a profile that lost its key/token is reported as not connected.
+		$site_auth = $auth->is_authed();
+		$ms_auth   = is_multisite() && $auth->is_network_authed();
 
 		// Reporting API endpoint for direct client-side requests to api/v3/reporting/query,
 		// authenticated with the short-lived bearer token issued below — same pattern as
@@ -828,7 +877,7 @@ class ExactMetrics_Admin_Assets {
 	 * Load Vue 3 Settings script and localize all data the settings module needs.
 	 * Mirrors the localization data from the Vue 2 settings loading block.
 	 */
-	private function load_vue3_settings_script( $auth, $auth_data, $license_info, $version_path, $entry_key = 'src/modules/settings/main.js', $handle = 'exactmetrics-vue3-settings' ) {
+	private function load_vue3_settings_script( $auth, $auth_data, $license_info, $license_network_info, $version_path, $entry_key = 'src/modules/settings/main.js', $handle = 'exactmetrics-vue3-settings' ) {
 
 		if ( defined( 'EXACTMETRICS_V3_DEV_URL' ) && EXACTMETRICS_V3_DEV_URL ) {
 			$dev_url = trailingslashit( EXACTMETRICS_V3_DEV_URL ) . $entry_key;
@@ -939,9 +988,9 @@ class ExactMetrics_Admin_Assets {
 			}
 		}
 
+		// This payload already localizes `authed` from $is_authed; the viewname-based
+		// $site_auth/$ms_auth pair it used to need is unused here.
 		$is_authed   = ( ExactMetrics()->auth->is_authed() || ExactMetrics()->auth->is_network_authed() );
-		$site_auth   = $auth->get_viewname();
-		$ms_auth     = is_multisite() && $auth->get_network_viewname();
 
 		wp_localize_script(
 			$handle,
@@ -986,6 +1035,7 @@ class ExactMetrics_Admin_Assets {
 				'authed'                          => $is_authed,
 				'auth'                            => $auth_data,
 				'license'                         => $license_info,
+				'license_network'                 => $license_network_info,
 				'new_pretty_link_url'             => admin_url( 'post-new.php?post_type=pretty-link' ),
 				'load_headline_analyzer_settings' => exactmetrics_load_gutenberg_app() ? 'true' : 'false',
 				'exit_url'                        => add_query_arg( 'page', 'exactmetrics_settings', admin_url( 'admin.php' ) ),

@@ -299,8 +299,11 @@ function exactmetrics_frontend_admin_bar_scripts() {
 	// owned by whichever page app (reports, settings, widget, custom dashboard)
 	// is present, with no clobbering in either direction.
 	$page_title   = is_singular() ? get_the_title() : exactmetrics_get_page_title();
-	$site_auth    = ExactMetrics()->auth->get_viewname();
-	$ms_auth      = is_multisite() && ExactMetrics()->auth->get_network_viewname();
+	// Base "authed" on real credentials (key + v4), not just the property name, so the
+	// admin bar reports a profile that lost its key/token as not connected. Matches the
+	// admin bootstrap payloads in admin-assets.php.
+	$site_auth    = ExactMetrics()->auth->is_authed();
+	$ms_auth      = is_multisite() && ExactMetrics()->auth->is_network_authed();
 	$reports_url  = is_network_admin() ? add_query_arg( 'page', 'exactmetrics_overview_report', network_admin_url( 'admin.php' ) ) : add_query_arg( 'page', 'exactmetrics_reports', admin_url( 'admin.php' ) );
 	$settings_url = is_network_admin() ? network_admin_url( 'admin.php?page=exactmetrics_network' ) : admin_url( 'admin.php?page=exactmetrics_settings' );
 
@@ -317,33 +320,53 @@ function exactmetrics_frontend_admin_bar_scripts() {
 		$upgrade_url = esc_url( $upgrade_url );
 	}
 
+	$admin_bar_data = array(
+		'ajax'                 => admin_url( 'admin-ajax.php' ),
+		'nonce'                => wp_create_nonce( 'mi-admin-nonce' ),
+		'network'              => is_network_admin(),
+		'assets'               => plugins_url( $version . '/assets/admin-bar', EXACTMETRICS_PLUGIN_FILE ),
+		'addons_url'           => is_multisite() ? network_admin_url( 'admin.php?page=exactmetrics_network#/addons' ) : admin_url( 'admin.php?page=exactmetrics_settings#/addons' ),
+		'page_id'              => is_singular() ? get_the_ID() : false,
+		'page_title'           => $page_title,
+		'plugin_version'       => EXACTMETRICS_VERSION,
+		'shareasale_id'        => exactmetrics_get_shareasale_id(),
+		'shareasale_url'       => exactmetrics_get_shareasale_url( exactmetrics_get_shareasale_id(), '' ),
+		'is_admin'             => is_admin(),
+		'reports_url'          => $reports_url,
+		'site_name'            => get_bloginfo( 'name' ),
+		'settings_url'         => $settings_url,
+		'upgrade_url'          => $upgrade_url,
+		'authed'               => $site_auth || $ms_auth,
+		'auth_connect_url'     => exactmetrics_can_install_plugins() ? exactmetrics_get_onboarding_url() : '',
+		'getting_started_url'  => is_multisite() ? network_admin_url( 'admin.php?page=exactmetrics_network#/about/getting-started' ) : admin_url( 'admin.php?page=exactmetrics_settings#/about/getting-started' ),
+		'wizard_url'           => exactmetrics_can_install_plugins() ? exactmetrics_get_onboarding_url() : '',
+		'roles_manage_options' => exactmetrics_get_manage_options_roles(),
+		'user_roles'           => $current_user->roles,
+		'roles_view_reports'   => exactmetrics_get_option( 'view_reports' ),
+	);
+
+	/**
+	 * Filters the data localized for the admin bar app.
+	 *
+	 * Addons use this to hand the app data it would otherwise have to fetch on
+	 * open. The Page Insights addon adds an already-cached report here so the
+	 * panel can paint its numbers on the first frame and revalidate behind
+	 * them, instead of showing a spinner while the first AJAX call runs.
+	 *
+	 * Anything added here ships in the page HTML on every request the admin bar
+	 * loads on, so keep additions small and read-only — never trigger a remote
+	 * request from a callback.
+	 *
+	 * @since 11.2.0
+	 *
+	 * @param array $admin_bar_data The localized data array.
+	 */
+	$admin_bar_data = apply_filters( 'exactmetrics_admin_bar_localize_data', $admin_bar_data );
+
 	wp_localize_script(
 		'exactmetrics-admin-bar',
 		'exactmetrics_admin_bar',
-		array(
-			'ajax'                 => admin_url( 'admin-ajax.php' ),
-			'nonce'                => wp_create_nonce( 'mi-admin-nonce' ),
-			'network'              => is_network_admin(),
-			'assets'               => plugins_url( $version . '/assets/admin-bar', EXACTMETRICS_PLUGIN_FILE ),
-			'addons_url'           => is_multisite() ? network_admin_url( 'admin.php?page=exactmetrics_network#/addons' ) : admin_url( 'admin.php?page=exactmetrics_settings#/addons' ),
-			'page_id'              => is_singular() ? get_the_ID() : false,
-			'page_title'           => $page_title,
-			'plugin_version'       => EXACTMETRICS_VERSION,
-			'shareasale_id'        => exactmetrics_get_shareasale_id(),
-			'shareasale_url'       => exactmetrics_get_shareasale_url( exactmetrics_get_shareasale_id(), '' ),
-			'is_admin'             => is_admin(),
-			'reports_url'          => $reports_url,
-			'site_name'            => get_bloginfo( 'name' ),
-			'settings_url'         => $settings_url,
-			'upgrade_url'          => $upgrade_url,
-			'authed'               => $site_auth || $ms_auth,
-			'auth_connect_url'     => exactmetrics_can_install_plugins() ? exactmetrics_get_onboarding_url() : '',
-			'getting_started_url'  => is_multisite() ? network_admin_url( 'admin.php?page=exactmetrics_network#/about/getting-started' ) : admin_url( 'admin.php?page=exactmetrics_settings#/about/getting-started' ),
-			'wizard_url'           => exactmetrics_can_install_plugins() ? exactmetrics_get_onboarding_url() : '',
-			'roles_manage_options' => exactmetrics_get_manage_options_roles(),
-			'user_roles'           => $current_user->roles,
-			'roles_view_reports'   => exactmetrics_get_option( 'view_reports' ),
-		)
+		$admin_bar_data
 	);
 }
 

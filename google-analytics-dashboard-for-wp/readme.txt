@@ -4,20 +4,20 @@ Donate link: http://www.wpbeginner.com/wpbeginner-needs-your-help/
 Tags: analytics,google analytics,google analytics dashboard,google analytics plugin,website stats
 Requires at least: 5.6.0
 Tested up to: 7.1
-Stable tag: 10.2.0
+Stable tag: 10.3.0
 Requires PHP: 7.2
 License: GPL v3
 
 Connects Google Analytics with your WordPress site. Displays stats to help you understand your users and site content on a whole new level!
 
 == Description ==
-The [ExactMetrics](https://exactmetrics.com?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) Google Analytics for WordPress plugin helps you properly setup all the powerful Google Analytics tracking features without writing any code or hiring a developer.
+The [ExactMetrics](https://exactmetrics.com?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) Google Analytics for WordPress plugin helps you properly set up all the powerful Google Analytics tracking features without writing any code or hiring a developer.
 
 More importantly, over 1 million users love ExactMetrics because of our signature Google Analytics Dashboard that helps you view key Google Analytics stats right inside your WordPress dashboard.
 
 Our goal at ExactMetrics is to help you grow your business faster with data-driven decisions.
 
-This is why we built the most comprehensive Google Analytics plugin for WordPress, so you can setup all the powerful tracking features that website owners otherwise miss out on when simply pasting the analytics code in WordPress.
+This is why we built the most comprehensive Google Analytics plugin for WordPress, so you can set up all the powerful tracking features that website owners otherwise miss out on when simply pasting the analytics code in WordPress.
 
 We go beyond the simple google analytics script and add the advanced event tracking, so you can see all important user behavior in WordPress with just a few clicks (without hiring a developer).
 
@@ -25,7 +25,7 @@ ExactMetrics works automatically Google Analytics 4 (GA4) so that you can your w
 
 Basically, we made the same advanced Google analytics setup that big enterprise companies used to pay thousands of dollars for, available to every small business owner without the high costs.
 
-This is why even the large companies like Microsoft, Quickbooks, Pizza Hut, Delta, Pepsi, Coldwell Bankers, and many others are using ExactMetrics to properly setup Google Analytics and see the custom analytics reports in WordPress.
+This is why even the large companies like Microsoft, Quickbooks, Pizza Hut, Delta, Pepsi, Coldwell Bankers, and many others are using ExactMetrics to properly set up Google Analytics and see the custom analytics reports in WordPress.
 
 > <strong>ExactMetrics Pro</strong><br />
 > This plugin is the lite version of ExactMetrics Pro plugin that comes with all the Google analytics tracking features you will ever need including events tracking, ecommerce tracking, custom dimensions tracking, form conversion tracking, affiliate link tracking, and tons more. [click here to purchase the best premium Google Analytics plugin for WordPress Now!](https://exactmetrics.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion).
@@ -63,24 +63,24 @@ See what one business owner is saying about ExactMetrics:
 
 = Integrations =
 
-* WooCommerce Google Analytics - Automatically setup Google analytics enhanced eCommerce tracking for WooCommerce and WooCommerce analytics.
-* Easy Digital Downloads Google Analytics - Automatically setup Google analytics enhanced eCommerce tracking for EDD.
-* MemberPress Google Analytics - Automatically setup Google analytics enhanced eCommerce tracking for MemberPress.
-* WPForms Google Analytics - Automatically setup form conversion tracking for WPForms.
-* Formidable Forms Google Analytics - Automatically setup form conversion tracking for Formidable Forms.
-* Gravity Forms Google Analytics - Automatically setup form conversion tracking for Gravity Forms.
+* WooCommerce Google Analytics - Automatically set up Google analytics enhanced eCommerce tracking for WooCommerce and WooCommerce analytics.
+* Easy Digital Downloads Google Analytics - Automatically set up Google analytics enhanced eCommerce tracking for EDD.
+* MemberPress Google Analytics - Automatically set up Google analytics enhanced eCommerce tracking for MemberPress.
+* WPForms Google Analytics - Automatically set up form conversion tracking for WPForms.
+* Formidable Forms Google Analytics - Automatically set up form conversion tracking for Formidable Forms.
+* Gravity Forms Google Analytics - Automatically set up form conversion tracking for Gravity Forms.
 * YouTube Google Analytics - Automatically track video starts, stops, and watch progression of video plays of your YouTube videos.
 * Vimeo Google Analytics - Automatically track video starts, stops, and watch progression of video plays of your Vimeo videos.
 * HTML5 Video Google Analytics - Automatically track video starts, stops, and watch progression of video plays of your Vimeo videos.
 * Exclude from Tracking Google Analytics - Disable loading of Google Analytics tracking on specific pages or posts.
-* Contact Form 7 Google Analytics - Automatically setup form conversion tracking for Contact Form 7.
-* Yoast Google Analytics - Automatically setup SEO score tracking for Yoast SEO with custom dimensions.
-* Pretty Links Google Analytics - Automatically setup affiliate link tracking for Pretty Links.
-* Thirsty Affiliates Google Analytics - Automatically setup affiliate link tracking for Thirsty Affiliates.
-* AffiliateWP Google Analytics - Automatically setup affiliate link tracking for AffiliateWP.
+* Contact Form 7 Google Analytics - Automatically set up form conversion tracking for Contact Form 7.
+* Yoast Google Analytics - Automatically set up SEO score tracking for Yoast SEO with custom dimensions.
+* Pretty Links Google Analytics - Automatically set up affiliate link tracking for Pretty Links.
+* Thirsty Affiliates Google Analytics - Automatically set up affiliate link tracking for Thirsty Affiliates.
+* AffiliateWP Google Analytics - Automatically set up affiliate link tracking for AffiliateWP.
 * User Journey Orders - See which pages visit before becoming customers with WooCommerce, Easy Digital Downloads, MemberPress, LifterLMS, Restrict Content Pro, or GiveWP.
 * User Feedback - Automatically track events and impressions with the popular User Feedback plugin.
-* Google AdSense + Google Analytics - Automatically setup banner ads tracking for Google AdSense.
+* Google AdSense + Google Analytics - Automatically set up banner ads tracking for Google AdSense.
 * Google Optimize + Google Analytics - Easily enable A/B testing in WordPress with Google Optimize and Google Analytics.
 
 After reading this comprehensive feature list, you can probably imagine why over 1 million websites use ExactMetrics as their preferred Google Analytics plugin for WordPress.
@@ -131,6 +131,32 @@ You can translate Google Analytics Dashboard for WP by ExactMetrics on [translat
 4. Want more features? <a href="https://www.exactmetrics.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion">Purchase ExactMetrics Pro</a>!
 
 == Changelog ==
+= 10.3.0: September 16, 2026 =
+- Enhancements: Page Insights now opens instantly in the editor sidebar, the admin bar panel, and the classic editor metabox
+- Enhancements: The Overview report loads faster and shows the Pages widget even without the Page Insights addon
+- Enhancements: Update checks for your addons are faster, with one request covering all of them instead of one for each
+- Enhancements: The form conversion upgrade prompt now names the form plugin you already use, and appears far less often
+- Enhancements: Sites already using Contact Form 7 or Jotform are no longer prompted to install WPForms
+- Fixes: Subsites on a network license can now connect to Google Analytics
+- Fixes: Saving Google settings no longer overwrites a working connection with another site's credentials or with blank ones
+- Fixes: A damaged Google Analytics connection now explains the problem and lets you reconnect
+- Fixes: Connecting a new property now clears the cached reports, so you no longer see the previous property's numbers
+- Fixes: Larger translation catalogues are no longer truncated, so languages such as German, Brazilian Portuguese and Korean now translate fully in reports and blocks
+- Fixes: Translations now also load in contexts that previously skipped them, including WP-CLI, REST requests and cron
+- Fixes: The eCommerce funnel report and Overview widget now say when there is no funnel data, instead of drawing a chart of zeros
+- Fixes: The Measurement Protocol API Secret field is hidden on sites connected through Google
+- Fixes: Screen readers no longer announce the verified badge twice
+- Fixes: The verified badge no longer shifts the page layout while it loads
+- Fixes: Corrected wording and spacing on several admin screens
+- Fixes: A single failing report section no longer blanks the rest of the Overview report
+- Fixes: License actions in the network admin now show confirmation and error messages instead of appearing to do nothing
+- Fixes: An expired network license no longer appears active on subsites
+- Fixes: The network admin no longer reports "No license key activated on this subsite" while a network license is active
+- Fixes: The admin bar insights panel now shows a clear message instead of "-1" when its session has expired
+- Fixes: The admin bar no longer shows zeros for pages that do have data
+- Fixes: The Page Insights metabox no longer gets stuck on "Loading Page Insights" when a request fails
+- Fixes: Various bug fixes and updates
+
 = 10.2.0: September 3, 2026 =
 - Fixes: Every report view honours the sample-data toggle, so sample rows no longer mix in with your real numbers
 - Fixes: Rows in sample reports no longer link out to live pages

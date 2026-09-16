@@ -105,7 +105,7 @@ final class ExactMetrics_API_Auth {
 
 		// Only for Pro users, require a license key to be entered first so we can link to things.
 		if ( exactmetrics_is_pro_version() ) {
-			$valid = is_network_admin() ? ExactMetrics()->license->is_network_licensed() : ExactMetrics()->license->is_site_licensed();
+			$valid = ExactMetrics()->license->is_licensed_for_auth();
 			if ( ! $valid ) {
 				wp_send_json_error( array( 'message' => __( "Cannot authenticate. Please enter a valid, active license key for ExactMetrics Pro into the settings page.", 'google-analytics-dashboard-for-wp' ) ) );
 			}
@@ -151,7 +151,7 @@ final class ExactMetrics_API_Auth {
 		$siteurl = add_query_arg($auth_request_args, $this->get_route( 'https://' . exactmetrics_get_api_url() . 'auth/new/{type}' ) );
 
 		if ( exactmetrics_is_pro_version() ) {
-			$key     = is_network_admin() ? ExactMetrics()->license->get_network_license_key() : ExactMetrics()->license->get_site_license_key();
+			$key     = ExactMetrics()->license->get_auth_license_key();
 			$siteurl = add_query_arg( 'license', $key, $siteurl );
 		}
 
@@ -267,7 +267,7 @@ final class ExactMetrics_API_Auth {
 		// Clear cache
 		$where = $this->is_network_admin() ? 'network' : 'site';
 		ExactMetrics()->reporting->delete_aggregate_data( $where );
-		exactmetrics_flag_flush_cache_registry();
+		exactmetrics_flush_property_scoped_caches( $this->is_network_admin() );
 
 		// Check site and property timezone.
 		$this->check_property_timezone();
@@ -312,7 +312,7 @@ final class ExactMetrics_API_Auth {
 
 		// Only for Pro users, require a license key to be entered first so we can link to things.
 		if ( exactmetrics_is_pro_version() ) {
-			$valid = is_network_admin() ? ExactMetrics()->license->is_network_licensed() : ExactMetrics()->license->is_site_licensed();
+			$valid = ExactMetrics()->license->is_licensed_for_auth();
 			if ( exactmetrics_is_pro_version() && ! $valid ) {
 				wp_send_json_error( array( 'message' => __( "Your license key for ExactMetrics is invalid. The key no longer exists or the user associated with the key has been deleted. Please use a different key.", 'google-analytics-dashboard-for-wp' ) ) );
 			}
@@ -362,7 +362,7 @@ final class ExactMetrics_API_Auth {
 		$siteurl = add_query_arg( $auth_request_args, $this->get_route( 'https://' . exactmetrics_get_api_url() . 'auth/reauth/{type}' ) );
 
 		if ( exactmetrics_is_pro_version() ) {
-			$key     = is_network_admin() ? ExactMetrics()->license->get_network_license_key() : ExactMetrics()->license->get_site_license_key();
+			$key     = ExactMetrics()->license->get_auth_license_key();
 			$siteurl = add_query_arg( 'license', $key, $siteurl );
 		}
 
@@ -436,7 +436,7 @@ final class ExactMetrics_API_Auth {
 		// Clear cache
 		$where = $this->is_network_admin() ? 'network' : 'site';
 		ExactMetrics()->reporting->delete_aggregate_data( $where );
-		exactmetrics_flag_flush_cache_registry();
+		exactmetrics_flush_property_scoped_caches( $this->is_network_admin() );
 
 		// Check site and property timezone.
 		$this->check_property_timezone();
@@ -498,7 +498,7 @@ final class ExactMetrics_API_Auth {
 		}
 
 		if ( exactmetrics_is_pro_version() ) {
-			$valid = is_network_admin() ? ExactMetrics()->license->is_network_licensed() : ExactMetrics()->license->is_site_licensed();
+			$valid = ExactMetrics()->license->is_licensed_for_auth();
 			if ( ! $valid ) {
 				$message = sprintf(
 					/* translators: %1$s: Opening link tag, %2$s: Closing link tag. */
@@ -583,35 +583,27 @@ final class ExactMetrics_API_Auth {
 			define( 'WP_NETWORK_ADMIN', true );
 		}
 
-		// we have an auth to delete
-		if ( $this->is_network_admin() && ! ExactMetrics()->auth->is_network_authed() ) {
-			$message = sprintf(
-				/* translators: %1$s: Opening wizard link tag, %2$s: Closing wizard link tag, %3$s: Opening support link tag, %4$s: Closing support link tag. */
-				__( 'Could not disconnect as you are not currently authenticated properly. Please try to authenticate again with our ExactMetrics %1$ssetup wizard%2$s.  If you are still having problems, please %3$scontact our support%4$s team.', 'google-analytics-dashboard-for-wp' ),
-				'<a href="' . esc_url( $url ) . '">',
-				'</a>',
-				'<a target="_blank" href="' . exactmetrics_get_url( 'notice', 'cannot-de-authenticate-license', 'https://www.exactmetrics.com/my-account/support/' ) . '">',
-				'</a>'
-			);
-			wp_send_json_error( array( 'message' => $message ) );
-		} else if ( ! $this->is_network_admin() && ! ExactMetrics()->auth->is_authed() ) {
-			$message = sprintf(
-				/* translators: %1$s: Opening wizard link tag, %2$s: Closing wizard link tag, %3$s: Opening support link tag, %4$s: Closing support link tag. */
-				__( 'Could not disconnect as you are not currently authenticated properly. Please try to authenticate again with our ExactMetrics %1$ssetup wizard%2$s.  If you are still having problems, please %3$scontact our support%4$s team.', 'google-analytics-dashboard-for-wp' ),
-				'<a href="' . esc_url( $url ) . '">',
-				'</a>',
-				'<a target="_blank" href="' . exactmetrics_get_url( 'notice', 'cannot-de-authenticate-license', 'https://www.exactmetrics.com/my-account/support/' ) . '">',
-				'</a>'
-			);
-			wp_send_json_error( array( 'message' => $message ) );
-		}
+		$force = ! empty( $_REQUEST['forcedelete'] ) && wp_unslash( $_REQUEST['forcedelete'] ) === 'true';
 
-		if ( exactmetrics_is_pro_version() ) {
-			$valid = is_network_admin() ? ExactMetrics()->license->is_network_licensed() : ExactMetrics()->license->is_site_licensed();
-			if ( ! $valid ) {
+		// A normal disconnect requires a valid auth (and license) first. A forced disconnect
+		// must work even when the stored auth is missing or corrupt, so users can recover a
+		// broken connection from the UI instead of having to edit the database.
+		if ( ! $force ) {
+			// we have an auth to delete
+			if ( $this->is_network_admin() && ! ExactMetrics()->auth->is_network_authed() ) {
 				$message = sprintf(
 					/* translators: %1$s: Opening wizard link tag, %2$s: Closing wizard link tag, %3$s: Opening support link tag, %4$s: Closing support link tag. */
-					__( 'Could not disconnect your account, as you are not currently authenticated properly. Please try to authenticate again with our %1$sExactMetrics setup wizard%2$s.  If you are still having problems, please %3$scontact our support%4$s team.', 'google-analytics-dashboard-for-wp' ),
+					__( 'Could not disconnect as you are not currently authenticated properly. Please try to authenticate again with our ExactMetrics %1$ssetup wizard%2$s.  If you are still having problems, please %3$scontact our support%4$s team.', 'google-analytics-dashboard-for-wp' ),
+					'<a href="' . esc_url( $url ) . '">',
+					'</a>',
+					'<a target="_blank" href="' . exactmetrics_get_url( 'notice', 'cannot-de-authenticate-license', 'https://www.exactmetrics.com/my-account/support/' ) . '">',
+					'</a>'
+				);
+				wp_send_json_error( array( 'message' => $message ) );
+			} else if ( ! $this->is_network_admin() && ! ExactMetrics()->auth->is_authed() ) {
+				$message = sprintf(
+					/* translators: %1$s: Opening wizard link tag, %2$s: Closing wizard link tag, %3$s: Opening support link tag, %4$s: Closing support link tag. */
+					__( 'Could not disconnect as you are not currently authenticated properly. Please try to authenticate again with our ExactMetrics %1$ssetup wizard%2$s.  If you are still having problems, please %3$scontact our support%4$s team.', 'google-analytics-dashboard-for-wp' ),
 					'<a href="' . esc_url( $url ) . '">',
 					'</a>',
 					'<a target="_blank" href="' . exactmetrics_get_url( 'notice', 'cannot-de-authenticate-license', 'https://www.exactmetrics.com/my-account/support/' ) . '">',
@@ -619,9 +611,22 @@ final class ExactMetrics_API_Auth {
 				);
 				wp_send_json_error( array( 'message' => $message ) );
 			}
-		}
 
-		$force = ! empty( $_REQUEST['forcedelete'] ) && wp_unslash( $_REQUEST['forcedelete'] ) === 'true';
+			if ( exactmetrics_is_pro_version() ) {
+				$valid = ExactMetrics()->license->is_licensed_for_auth();
+				if ( ! $valid ) {
+					$message = sprintf(
+						/* translators: %1$s: Opening wizard link tag, %2$s: Closing wizard link tag, %3$s: Opening support link tag, %4$s: Closing support link tag. */
+						__( 'Could not disconnect your account, as you are not currently authenticated properly. Please try to authenticate again with our %1$sExactMetrics setup wizard%2$s.  If you are still having problems, please %3$scontact our support%4$s team.', 'google-analytics-dashboard-for-wp' ),
+						'<a href="' . esc_url( $url ) . '">',
+						'</a>',
+						'<a target="_blank" href="' . exactmetrics_get_url( 'notice', 'cannot-de-authenticate-license', 'https://www.exactmetrics.com/my-account/support/' ) . '">',
+						'</a>'
+					);
+					wp_send_json_error( array( 'message' => $message ) );
+				}
+			}
+		}
 
 		$worked = $this->delete_auth( $force );
 		if ( $worked && ! is_wp_error( $worked ) ) {
@@ -642,15 +647,32 @@ final class ExactMetrics_API_Auth {
 	}
 
 	public function delete_auth( $force = false ) {
-		if ( $this->is_network_admin() && ! ExactMetrics()->auth->is_network_authed() ) {
-			return false;
-		} else if ( ! $this->is_network_admin() && ! ExactMetrics()->auth->is_authed() ) {
-			return false;
+		// A forced disconnect must be able to clear a missing or corrupt profile, so the
+		// authentication guards below only apply to a normal disconnect.
+		if ( ! $force ) {
+			if ( $this->is_network_admin() && ! ExactMetrics()->auth->is_network_authed() ) {
+				return false;
+			} else if ( ! $this->is_network_admin() && ! ExactMetrics()->auth->is_authed() ) {
+				return false;
+			}
 		}
 
 		$creds = $this->is_network_admin() ? ExactMetrics()->auth->get_network_analytics_profile( true ) : ExactMetrics()->auth->get_analytics_profile( true );
 
+		// Without a stored key we cannot make a remote delete request. For a normal
+		// disconnect that is a failure, but a forced disconnect should still clear the
+		// local profile so the user can recover from a broken connection.
 		if ( empty( $creds['key'] ) ) {
+			if ( $force ) {
+				if ( $this->is_network_admin() ) {
+					ExactMetrics()->auth->delete_network_analytics_profile( true );
+				} else {
+					ExactMetrics()->auth->delete_analytics_profile( true );
+				}
+
+				return true;
+			}
+
 			return false;
 		}
 
@@ -659,6 +681,7 @@ final class ExactMetrics_API_Auth {
 			$siteurl = network_admin_url();
 			if ( ! empty( $creds['neturl'] ) && $creds['neturl'] !== $siteurl ) {
 				ExactMetrics()->auth->delete_network_analytics_profile( true );
+				exactmetrics_flush_property_scoped_caches( true );
 
 				return true;
 			}
@@ -666,6 +689,7 @@ final class ExactMetrics_API_Auth {
 			$siteurl = home_url();
 			if ( ! empty( $creds['siteurl'] ) && $creds['siteurl'] !== $siteurl ) {
 				ExactMetrics()->auth->delete_analytics_profile( true );
+				exactmetrics_flush_property_scoped_caches( false );
 
 				return true;
 			}
@@ -689,6 +713,8 @@ final class ExactMetrics_API_Auth {
 		if ( ! class_exists( 'ExactMetrics_API_Token' ) ) {
 			require_once EXACTMETRICS_PLUGIN_DIR . 'includes/api/class-exactmetrics-api-token.php';
 		}
+		// Kept for the `is_wp_error( $ret ) && ! $force` path below, which returns
+		// early without reaching exactmetrics_flush_property_scoped_caches().
 		ExactMetrics_API_Token::invalidate( $this->is_network_admin() );
 
 		if ( is_wp_error( $ret ) && ! $force ) {
@@ -699,6 +725,8 @@ final class ExactMetrics_API_Auth {
 			} else {
 				ExactMetrics()->auth->delete_analytics_profile( true );
 			}
+
+			exactmetrics_flush_property_scoped_caches( $this->is_network_admin() );
 
 			return true;
 		}
@@ -896,7 +924,7 @@ final class ExactMetrics_API_Auth {
 
 		// Only for Pro users, require a license key to be entered first so we can link to things.
 		if ( exactmetrics_is_pro_version() ) {
-			$valid = is_network_admin() ? ExactMetrics()->license->is_network_licensed() : ExactMetrics()->license->is_site_licensed();
+			$valid = ExactMetrics()->license->is_licensed_for_auth();
 			if ( ! $valid ) {
 				wp_send_json_error( array( 'message' => __( 'Cannot authenticate. Please enter a valid, active license key for ExactMetrics Pro into the settings page.', 'google-analytics-dashboard-for-wp' ) ) );
 			}
@@ -940,7 +968,7 @@ final class ExactMetrics_API_Auth {
 		$siteurl = add_query_arg( $auth_request_args, $this->get_route( 'https://' . exactmetrics_get_api_url() . 'auth/new/{type}' ) );
 
 		if ( exactmetrics_is_pro_version() ) {
-			$key     = is_network_admin() ? ExactMetrics()->license->get_network_license_key() : ExactMetrics()->license->get_site_license_key();
+			$key     = ExactMetrics()->license->get_auth_license_key();
 			$siteurl = add_query_arg( 'license', $key, $siteurl );
 		}
 

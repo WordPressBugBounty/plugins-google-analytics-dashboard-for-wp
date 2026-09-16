@@ -221,3 +221,56 @@ function exactmetrics_cleanup_expired_cache() {
 function exactmetrics_get_cache_cleanup_stats() {
 	return ExactMetrics_Cache_Cleanup::get_cleanup_stats();
 }
+
+/**
+ * Flush every cache that describes the currently connected GA4 property.
+ *
+ * Call whenever the connected property can have changed -- connect, reconnect
+ * or disconnect.
+ *
+ * `ExactMetrics_Reporting::delete_aggregate_data()` is NOT a substitute. It
+ * loops registered reports into `ExactMetrics_Report::delete_cache()`, which
+ * removes exactly one key per report -- the DEFAULT date range, with no
+ * comparison range and no `get_cache_key_suffix()` variant -- so custom ranges
+ * and comparisons survive it. And it never touches the backfill cache groups at
+ * all, which is where the Vue reports actually read from: those keys are a hash
+ * of {start, end, filters} with no property id and no viewid check on read, so
+ * left behind they still describe the previous property and are served verbatim
+ * until the TTL lapses (MI-247).
+ *
+ * Lives here, rather than on ExactMetrics_API_Auth, because that object is
+ * only instantiated for admin/cron requests -- the onboarding REST route needs
+ * this too. includes/cache/functions.php is loaded unconditionally.
+ *
+ * @since 11.2.0
+ *
+ * @param bool $network Whether the network-level auth is the one that changed.
+ * @return void
+ */
+function exactmetrics_flush_property_scoped_caches( $network = false ) {
+	// The allowlist lives in includes/cache/allowed-groups.php, required by
+	// includes/admin/ajax.php -- which is admin/cron only. Load it on demand so
+	// this works from REST as well. It is filterable, so groups registered by
+	// addons come along too.
+	if ( ! function_exists( 'exactmetrics_backfill_cache_allowed_groups' ) ) {
+		require_once EXACTMETRICS_PLUGIN_DIR . 'includes/cache/allowed-groups.php';
+	}
+
+	// 'reports' is deliberately NOT in that allowlist (it is the legacy
+	// per-report group, not one the Vue reports may write to), so name it here.
+	$groups = array_merge( array( 'reports' ), (array) exactmetrics_backfill_cache_allowed_groups() );
+
+	foreach ( $groups as $group ) {
+		exactmetrics_cache_flush_group( $group );
+	}
+
+	// The cached Relay Bearer token is encrypted with the relay token from the
+	// credentials being replaced, so it cannot outlive them.
+	if ( ! class_exists( 'ExactMetrics_API_Token' ) ) {
+		require_once EXACTMETRICS_PLUGIN_DIR . 'includes/api/class-exactmetrics-api-token.php';
+	}
+	ExactMetrics_API_Token::invalidate( $network );
+
+	// Clear the Vue client's localStorage cache registry on the next admin load.
+	exactmetrics_flag_flush_cache_registry();
+}
